@@ -10,6 +10,9 @@ loginRouter.post("/login/modify", verifyToken, async (req, res, next) => {
     const { email, password, name } = req.body;
     const userId = req.user;
     const updatedUser = await LoginService.modify({ userId, email, password, name });
+    if (updatedUser.errorMessage) {
+      throw new Error(updatedUser.errorMessage);
+    }
     res.status(200).json(updatedUser);
   } catch (error) {
     next(error);
