@@ -1,8 +1,8 @@
 import cors from "cors";
 import express from "express";
 
-import { registerRouter } from "./routes/registerRouter";
-import { loginRouter } from "./routes/loginRouter";
+import { registerRouter } from "./routers/registerRouter";
+import { loginRouter } from "./routers/loginRouter";
 const app = express();
 
 app.use(cors());

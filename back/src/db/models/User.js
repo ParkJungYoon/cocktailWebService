@@ -1,4 +1,4 @@
-import { User } from "../Schema/user";
+import { User } from "../schemas/user";
 
 class UserModel {
   static delete = async ({ userId }) => {
