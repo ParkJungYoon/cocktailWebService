@@ -1,6 +1,8 @@
 import { Router } from "express";
 
 import { LoginService } from "../service/loginService";
+
+import { verifyToken } from "../middleware/verifyToken";
 const loginRouter = Router();
 
 loginRouter.post("/login", async (req, res, next) => {
@@ -11,6 +13,13 @@ loginRouter.post("/login", async (req, res, next) => {
   } catch (error) {
     next(error);
   }
+});
+
+loginRouter.get("/verify", verifyToken, (req, res) => {
+  res.status(200).json({
+    status: "succ",
+    userId: req.user,
+  });
 });
 
 export { loginRouter };
