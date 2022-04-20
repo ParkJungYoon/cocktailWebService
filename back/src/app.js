@@ -2,6 +2,8 @@ import cors from "cors";
 import express from "express";
 import { errorMiddleware } from "./middlewares/errorMiddleware";
 
+import { registerRouter } from "./routers/registerRouter";
+import { loginRouter } from "./routers/loginRouter";
 const app = express();
 
 app.use(cors());
