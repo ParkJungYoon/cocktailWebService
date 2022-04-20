@@ -10,7 +10,7 @@ class UserModel {
     const updatedUser = await User.findOneAndUpdate(filter, updateData, option);
     return updatedUser;
   };
-  static findByEmail = async email => {
+  static findByEmail = async({ email }) => {
     const user = User.findOne({ email });
     return user;
   };

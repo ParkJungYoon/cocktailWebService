@@ -1,8 +1,8 @@
 import { Router } from "express";
-
 import { LoginService } from "../service/loginService";
-
 import { verifyToken } from "../middleware/verifyToken";
+
+
 const loginRouter = Router();
 
 loginRouter.delete("/login/delete", verifyToken, async (req, res, next) => {
