@@ -5,6 +5,19 @@ import { LoginService } from "../service/loginService";
 import { verifyToken } from "../middleware/verifyToken";
 const loginRouter = Router();
 
+loginRouter.delete("/login/delete", verifyToken, async (req, res, next) => {
+  try {
+    const userId = req.user;
+    const deletedUser = await LoginService.delete({ userId });
+    if (deletedUser.errorMessage) {
+      throw new Error(deletedUser.errorMessage);
+    }
+    res.status(200).json(deletedUser);
+  } catch (error) {
+    next(error);
+  }
+});
+
 loginRouter.post("/login/modify", verifyToken, async (req, res, next) => {
   try {
     const { email, password, name } = req.body;

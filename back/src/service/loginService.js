@@ -4,6 +4,14 @@ import { hashPassword } from "../utils/hashPassword";
 import { makeToken } from "../utils/makeToken";
 
 class LoginService {
+  static delete = async ({ userId }) => {
+    const deletedUser = await UserModel.delete({ userId });
+    if (!deletedUser) {
+      const errorMessage = "해당 이메일로 가입된 내역이 없습니다. 다시 한 번 확인해주세요";
+      return { errorMessage };
+    }
+    return deletedUser;
+  };
   static modify = async ({ userId, email, password, name }) => {
     const user = await UserModel.findByEmail(email);
     if (user) {

@@ -1,10 +1,13 @@
 import { User } from "../Schema/user";
 
 class UserModel {
+  static delete = async ({ userId }) => {
+    const deleteUser = await User.findByIdAndDelete({ _id: userId });
+    return deleteUser;
+  };
   static modify = async ({ filter, updateData }) => {
     const option = { returnOriginal: false };
     const updatedUser = await User.findOneAndUpdate(filter, updateData, option);
-    console.log(updatedUser);
     return updatedUser;
   };
   static findByEmail = async email => {
