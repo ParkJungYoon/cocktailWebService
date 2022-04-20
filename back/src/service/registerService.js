@@ -2,7 +2,7 @@ import { UserModel } from "../db";
 
 import { hashPassword } from "../utils/hashPassword";
 
-class registerService {
+class RegisterService {
   static addUser = async ({ email, password, name }) => {
     const user = await UserModel.findByEmail(email);
     if (user) {
@@ -16,4 +16,4 @@ class registerService {
   };
 }
 
-export { registerService };
+export { RegisterService };

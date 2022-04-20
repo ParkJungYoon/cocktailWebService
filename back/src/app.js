@@ -2,7 +2,7 @@ import cors from "cors";
 import express from "express";
 
 import { registerRouter } from "./routes/registerRouter";
-
+import { loginRouter } from "./routes/loginRouter";
 const app = express();
 
 app.use(cors());
@@ -15,5 +15,6 @@ app.get("/", (req, res) => {
 });
 
 app.use(registerRouter);
+app.use(loginRouter);
 
 export { app };
