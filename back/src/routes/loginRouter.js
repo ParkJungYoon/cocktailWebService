@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { LoginService } from "../service/loginService";
-import { verifyToken } from "../middleware/verifyToken";
+import { verifyToken } from "../middlewares/verifyToken";
 
 
 const loginRouter = Router();
