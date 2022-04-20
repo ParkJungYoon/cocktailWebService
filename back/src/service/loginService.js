@@ -4,6 +4,18 @@ import { hashPassword } from "../utils/hashPassword";
 import { makeToken } from "../utils/makeToken";
 
 class LoginService {
+  static modify = async ({ userId, email, password, name }) => {
+    const hashedPassword = hashPassword(password);
+    const filter = { userId };
+    const updateData = {
+      email,
+      password: hashedPassword,
+      name,
+    };
+    const updatedUser = await UserModel.modify({ filter, updateData });
+    return updatedUser;
+  };
+
   static findUser = async ({ email, password }) => {
     const discoveredUser = await UserModel.findByEmail(email);
     const hashedPassword = hashPassword(password);
