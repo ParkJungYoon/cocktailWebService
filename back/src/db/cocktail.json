@@ -1,0 +1,4474 @@
+{
+  "Flor de Amaras": {
+    "Mezcal": "1.5oz",
+    "Hibiscus Simple Syrup": "1oz",
+    "Lime Juice": "0.5oz"
+  },
+  "The Happy Place": {
+    "Junipero Gin": "2oz",
+    "Housemade Cranberry Syrup": "0.75oz",
+    "Lemon Juice": "0.5oz",
+    "Cranberry Juice": "0.5oz",
+    "Lillet Blanc": "0.25oz",
+    "ForgeryEarthDayBitters": "4 dash"
+  },
+  "Bon Voyage Pisco Punch": {
+    "BarSolSelectoItaliaPisco": "1500 ml",
+    "LemonJuice": "750 ml",
+    "PineappleGommeSyrup*": "750 ml",
+    "Fee Bros Lemon Bitters": "0.5oz",
+    "OldVineZin": "1 float"
+  },
+  "Still Life of a Pineapple": {
+    "BarSol Primero Quebranta Pisco": "1.5oz",
+    "Dry Vermouth": "0.75oz",
+    "St Germain": "0.5oz",
+    "Pineapple Syrup": "0.25oz",
+    "VieuxPontarlierAbsintheFrancaiseSuperieure": "1 bsp"
+  },
+  "The Bittered Valley": {
+    "Luxardo Maraschino Liqueur": "1.25oz",
+    "Acidphosphate": "4 drops",
+    "BarSol Primero Quebranta Pisco": "2oz",
+    "Luxardo Amaro Abano": "0.75oz",
+    "Luxardo Fernet": "0.25oz",
+    "Scrappy'sAromaticBitters": "3 dash"
+  },
+  "OH Snap!": {
+    "Junipero Gin": "1oz",
+    "Housemade Simple Syrup": "1oz",
+    "Manzanilla Sherry": "1oz",
+    "Lemon Juice": "0.75oz",
+    "Absinthe": "2 dash",
+    "SugarSnapPeas": "6-8 "
+  },
+  "Wabash Avenue Sour": {
+    "Bourbon": "2oz",
+    "Fresh Lemon Juice": "1oz",
+    "Luxardo Sangue Morlacco Cherry Liqueur": "0.5oz",
+    "Small Hand Foods Pineapple Gum Syrup": "0.5oz",
+    "Egg White": "0.5oz"
+  },
+  "IPA Mule": {
+    "Hophead Vodka": "1.5oz",
+    "Ginger Liqueur": "0.5oz",
+    "Lime Juice": "0.75oz",
+    "Pure Cane Simple Syrup": "0.5oz",
+    "DeschutesFreshSqueezedIPA(fromtap)": "2 count"
+  },
+  "Ritz Cocktail": {
+    "Cognac": "0.75oz",
+    "Cointreau": "0.5oz",
+    "Luxardo Maraschino Liqueur": "0.25oz",
+    "Fresh Lemon Juice": "0.25oz",
+    "Champagne": "3oz"
+  },
+  "King's Snap the Chocolate Out of You": {
+    "Kings Ginger Liqueur": "1oz",
+    "Homemade milk chocolate": "1.5oz",
+    "Hazelnut Cinnamon syrup": "0.75oz",
+    "Marshmallow whip cream": "oz",
+    "Ginger snaps": "oz"
+  },
+  "Happiness": {
+    "Jasmine TeaRiceInfused Junipero Gin": "1.5oz",
+    "Leopold Bros Sour Apple Liqueur": "0.75oz",
+    "Lime": "0.75oz",
+    "Housemade Honey Syrup": "0.5oz",
+    "LoFi Gentian Amaro": "0.25oz"
+  },
+  "Fourth Generation": {
+    "Mezcal": "1.5oz",
+    "Luxardo Espresso Italian Liqueur": "0.25oz",
+    "Luxardo Bitter Bianco": "0.75oz",
+    "SaltedChocolateBitters": "2 dash"
+  },
+  "West Coast Punch": {
+    "Junipero Gin": "1.5oz",
+    "Pineapple Juice": "0.75oz",
+    "Monin Strawberry Puree": "0.5oz",
+    "MintLeaves": "6-7 ",
+    "Lemon Sour": "0.5oz",
+    "Lemon Lime Soda": "1oz"
+  },
+  "Mille Miglia": {
+    "Luxardo Maraschino Liqueur": "0.75oz",
+    "Luxardo Sangue Morlacco Cherry Liqueur": "0.5oz",
+    "BasilLeaf": "1 ",
+    "Lime Juice": "0.25oz",
+    "RoseWater": "5 dash"
+  },
+  "Paradiso Sun": {
+    "Junipero Gin": "1.5oz",
+    "Lime Sour": "1oz",
+    "Orange Juice": "0.5oz",
+    "Dry Curacao": "0.25oz"
+  },
+  "Lux Orchard Lemonade": {
+    "Luxardo Maraschino Liqueur": "0.75oz",
+    "Junipero Gin": "0.5oz",
+    "Monin Apple Puree": "0.75oz",
+    "Lemon Juice": "0.25oz",
+    "FennelBitters": "1 dash"
+  },
+  "Cut & Rum": {
+    "Banks 5 Rum": "0.75oz",
+    "Denizen Aged White Rum": "0.75oz",
+    "Luxardo Amaro Abano": "0.75oz"
+  },
+  "The King's Spring Daisy": {
+    "Kings Ginger Liqueur": "1oz",
+    "H by HINE": "1oz",
+    "Lemon juice": "0.25oz",
+    "Simple syrup": "0.25oz",
+    "FeeBrothersRhubardbitters": "2 dash"
+  },
+  "The King's Ginger Spiced Punch": {
+    "Kings Ginger Liqueur": "25oz",
+    "Cranberry Juice": "37.5oz",
+    "FeverTree Lemonade": "37.5oz"
+  },
+  "War of the Roses": {
+    "JuniperoGin": "0.75 c",
+    "C.DrouinCalvadosSelection": "0.75 c",
+    "LemonJuice": "0.5 c",
+    "Ginger-VanillaSyrup": "0.5 c",
+    "AngosturaBitters": "4 dash",
+    "SparklingRose": "1 bottle"
+  },
+  "The King's Medicine": {
+    "Kings Ginger Liqueur": "1.5oz",
+    "Luxardo Fernet": "0.5oz",
+    "BenRiach Curiositas Single Malt 10 YO": "0.25oz",
+    "Lemon Juice": "0.75oz"
+  },
+  "A.Nise": {
+    "Pink Pigeon Rum": "1.5oz",
+    "Luxardo Amaretto di Saschira": "0.5oz",
+    "Osha Falernum": "0.5oz",
+    "Lemon juice": "0.5oz",
+    "Pineapple juice": "1oz",
+    "Orangebitters": "3 dash"
+  },
+  "Down the Rabbit Hole": {
+    "Junipero Gin": "oz",
+    "Lemon": "oz",
+    "Elder Flower Liquor": "oz",
+    "Honey Syrup": "oz",
+    "Carrot Juice": "oz"
+  },
+  "Peace Daiquiri": {
+    "Pink Pigeon Rum": "1.5oz",
+    "Luxardo Maraschino Liqueur": "0.5oz",
+    "Fresh Lime Juice": "0.75oz",
+    "Simple Syrup": "0.5oz",
+    "Fresh Grapefruit Juice": "0.5oz"
+  },
+  "The King's Autumn Cobbler": {
+    "Kings Ginger Liqueur": "1oz",
+    "Briottet Creme de Mure Blackberry": "0.25oz"
+  },
+  "The Mad King": {
+    "Glenrothes Vintage Reserve": "2oz",
+    "Kings Ginger Liqueur": "1oz",
+    "Honey Syrup": "0.25oz",
+    "AngosturaBitters": "1 dash"
+  },
+  "The Robert Baratheon": {
+    "Single Malt Scotch": "2oz",
+    "Dry Vermouth": "0.25oz",
+    "Luxardo Maraschino Liqueur": "0.25oz",
+    "AngosturaBitters": "2 dash"
+  },
+  "Lux Shandy": {
+    "Luxardo Aperitivo": "1oz",
+    "Lemon Juice": "0.5oz",
+    "Orange Juice": "0.5oz",
+    "Simple Syrup": "0.5oz"
+  },
+  "Fiona Graham": {
+    "Luxardo Bitter Bianco": "1.5oz",
+    "Junmai Sake": "1oz",
+    "Coconut Rum": "0.25oz",
+    "OrangeBitters": "1 dash",
+    "CoconutVinegar": "1 dash"
+  },
+  "Le Sang et Sable": {
+    "H by HINE": "1.5oz",
+    "Dubonnet Rouge": "0.5oz",
+    "Cherry Herring": "0.5oz",
+    "Blood Orange Juice": "0.375oz",
+    "Lemon Juice": "0.375oz"
+  },
+  "Martinez": {
+    "Old Tom Gin": "2oz",
+    "Tempus Fugit Alessio Vermouth di Torino Rosso": "0.75oz",
+    "Luxardo Maraschino Liqueur": "0.25oz",
+    "OrangeBitters": "2 dash"
+  },
+  "Amaretto Sour BV-Style": {
+    "Luxardo Amaretto di Saschira": "1.5oz",
+    "Bourbon": "0.5oz",
+    "Fresh Lime Juice": "0.5oz",
+    "Pineapple Juice": "0.75oz",
+    "Fresh Egg White": "0.75oz",
+    "AngosturaBitters": "2 dash"
+  },
+  "Julia's Child": {
+    "Brokers Gin": "1oz",
+    "Karlssons Gold Vodka": "1oz",
+    "Celery Root Puree": "2oz",
+    "Fresh Lemon Juice": "0.5oz",
+    "Simple Syrup": "0.75oz",
+    "AppleBitters": "3 dash",
+    "AngosturaBitters": "1 dash"
+  },
+  "The Bitter King": {
+    "Kings Ginger Liqueur": "2oz",
+    "Lemon Juice": "0.75oz",
+    "Simple Syrup": "0.75oz"
+  },
+  "La Maracuja": {
+    "Ypioca Brasilizar Cachaca Prata Reserva Especial": "2oz",
+    "Fresh Passion Fruit": "1.5oz",
+    "Condense Milk": "1oz",
+    "Brown Sugar Syrup 21": "0.25oz"
+  },
+  "San Francisco Strong (Skrong)": {
+    "Junipero Gin": "0.75oz",
+    "Tempus Fugit Kina LAero dOr": "0.75oz",
+    "Luxardo Bitter Bianco": "0.75oz",
+    "Lemon Juice": "0.75oz",
+    "Egg Whites": "0.75oz",
+    "Rich Simple Syrup": "0.5oz"
+  },
+  "Nuestra Julep": {
+    "High West Oat Whisky": "1oz",
+    "Kings Ginger Liqueur": "0.5oz",
+    "Peach Shrub": "0.5oz",
+    "Lime": "0.75oz",
+    "AngosturaBitters": "1 dash",
+    "GrapefruitBitters": "1 dash"
+  },
+  "Pisco Punch": {
+    "BarSol Selecto Italia Pisco": "2oz",
+    "Pineapple Juice": "2oz",
+    "Fresh Lime Juice": "1oz",
+    "Simple Syrup": "1oz"
+  },
+  "La Batida Loca": {
+    "Ypioca Brasilizar Cachaca Prata Reserva Especial": "2oz",
+    "Sweetened Condensed Milk": "1.5oz",
+    "Passion Fruit fresh or puree": "1oz",
+    "Pilon Syrup": "0.5oz"
+  },
+  "Neighborhood Negroni": {
+    "Junipero Gin": "1oz",
+    "Campari": "1oz",
+    "Tempus Fugit Alessio Vermouth di Torino Rosso": "1oz"
+  },
+  "Rothes Roy": {
+    "Glenrothes Vintage Reserve": "2oz",
+    "Tempus Fugit Alessio Vermouth di Torino Rosso": "0.75oz",
+    "AngosturaBitters": "3 dash"
+  },
+  "Angel's Face": {
+    "No3 London Dry Gin": "1oz",
+    "Applejack": "1oz",
+    "Luxardo Apricot Liqueur": "1oz"
+  },
+  "Kiss": {
+    "Gin": "2oz",
+    "Sweet Vermouth": "0.75oz",
+    "Dubonnet Rouge": "0.75oz",
+    "Luxardo Maraschino Liqueur": "0.25oz"
+  },
+  "The Cappa": {
+    "Gin": "1.5oz",
+    "Pineau des Charentes": "1.5oz",
+    "Luxardo Maraschino Liqueur": "0.5oz"
+  },
+  "The Inside Job": {
+    "Bourbon": "2oz",
+    "Luxardo Maraschino Liqueur": "0.25oz",
+    "Simple Syrup": "0.5oz",
+    "AngosturaBitters": "1 dash",
+    "VieuxPontarlierAbsintheFrancaiseSuperieure": "1 dash"
+  },
+  "The Sun Also Rises": {
+    "Banks 5 Island Rum": "2oz",
+    "Fresh Lime Juice": "0.75oz",
+    "Fresh Grapefruit Juice": "0.5oz",
+    "Luxardo Maraschino Liqueur": "0.5oz",
+    "VieuxPontarlierAbsintheFrancaiseSuperieure": "1 tsp"
+  },
+  "Trato Hecho": {
+    "PineappleInfused Mezcal": "0.75oz",
+    "Green Chartreuse": "0.75oz",
+    "Luxardo Maraschino Liqueur": "0.75oz",
+    "Lime Juice": "0.75oz"
+  },
+  "Nick & Janae": {
+    "H by HINE": "1.5oz",
+    "Luxardo Amaro Abano": "0.5oz",
+    "Fresh Lemon Juice": "0.75oz",
+    "Strawberry Syrup": "0.75oz",
+    "Egg White": "0.5oz"
+  },
+  "On the Wings of Eagles": {
+    "H by HINE": "1.5oz",
+    "Rye Whiskey": "0.75oz",
+    "Green Chartreuse": "0.75oz",
+    "LemonBitters": "2 dash",
+    "Fernet-Branca": "1 splash"
+  },
+  "Mule Pigeon": {
+    "PinkPigeonRum": "40 ml",
+    "AngosturaBitters": "2 dash"
+  },
+  "Cuba Liberation": {
+    "Pink Pigeon Rum": "2oz",
+    "Fresh lime juice": "1.5oz",
+    "Simple syrup": "0.25oz",
+    "Mexican Coca Cola": "oz",
+    "LuxardoFernet": "1 float"
+  },
+  "Off the Radar": {
+    "Junipero Gin": "1.5oz",
+    "Lemon Juice": "0.5oz",
+    "Luxardo Maraschino Liqueur": "0.25oz",
+    "Liqueur de Violette": "0.25oz",
+    "Tonic Water": "3-4oz"
+  },
+  "Maraschino Side Car": {
+    "Luxardo Maraschino Liqueur": "0.75oz",
+    "Dry Curacao": "0.25oz",
+    "Bourbon Rye": "0.5oz",
+    "Lemon Juice": "0.25oz"
+  },
+  "The Royal Buck": {
+    "No3 London Dry Gin": "1oz",
+    "Kings Ginger Liqueur": "1oz",
+    "Lemon juice": "0.75oz",
+    "Simple syrup": "0.5oz",
+    "Club soda": "2oz"
+  },
+  "Rx Hot Toddy": {
+    "Old Potrero Straight Rye Whiskey": "1.5oz",
+    "Lemon Juice": "0.5oz",
+    "Coldpressed Apple Cider": "2oz",
+    "Hot Water": "2oz",
+    "HoneyGinger Syrup": "0.5oz",
+    "Ghost-Pepper-InfusedCampari**": "1 tsp",
+    "CinnamonTincture***": "3 dash"
+  },
+  "Spanish G&T": {
+    "Junipero Gin": "1.5oz",
+    "East Imperial Superior Tonic": "2oz"
+  },
+  "Chilcano": {
+    "BarSol Selecto Acholado Pisco": "2oz",
+    "Fresh Lime Juice": "0.5oz",
+    "AngosturaBitters": "2-3 drops"
+  },
+  "Kir Royale": {
+    "BriottetCremedeCassis": "1 part",
+    "ChilledDryChampagne": "4 part"
+  },
+  "Kir": {
+    "BriottetCremedeCassis": "1 part",
+    "ChilledDryWhiteWine": "4 part"
+  },
+  "Citrus Agave Caipirinha": {
+    "Ypioca Brasilizar Cachaca Prata Classica": "1.5oz",
+    "Citrus Agave Blend": "1.5oz",
+    "SodaWater": "1 splash"
+  },
+  "Bermuda Highball": {
+    "Chateau de Montifaud Cognac VSOP": "1oz",
+    "Plymouth Gin": "1oz",
+    "Contratto Bianco Vermouth": "1oz",
+    "Regans'OrangeBittersNo.6": "2 dash",
+    "Club Soda": "3oz"
+  },
+  "Lux Cherry Sparkler": {
+    "Luxardo Sangue Morlacco Cherry Liqueur": "1oz",
+    "Prosecco": "4oz"
+  },
+  "French Maid": {
+    "H by HINE": "1.5oz",
+    "House Ginger Beer": "1oz",
+    "Lime juice": "0.75oz",
+    "Simple syrup": "0.75oz",
+    "John D Taylors Velvet Falernum": "0.25oz",
+    "Cucumberwheels": "3 ",
+    "Mintleaves": "8 ",
+    "Mintsprig": "1 "
+  },
+  "Karlsson's Mule": {
+    "Karlssons Gold Vodka": "1.5oz",
+    "Lime juice": "0.25oz",
+    "Ginger beer": "3oz"
+  },
+  "Creek Ran Dry": {
+    "Pear Brandy": "1oz",
+    "Dry Vermouth": "1oz",
+    "Chateau de Montifaud Pineau des Charentes Blanc": "0.5oz",
+    "Dolin Genepy": "0.5oz"
+  },
+  "Mandrake": {
+    "BarSol Primero Quebranta Pisco": "1.5oz",
+    "BarSol Perfecto Amor Aperitif Wine": "1oz",
+    "Leopold Bros Bitter": "0.25oz",
+    "Velvet Falernum": "0.25oz"
+  },
+  "Redondo Beach": {
+    "Chinaco Blanco Tequila": "1.5oz",
+    "F Meyer Mirabelle Yellow Plum": "0.25oz",
+    "Fino Sherry": "0.5oz",
+    "The Genuine Curacao Liqueur Blue": "0.75oz",
+    "Horchata": "2oz",
+    "Simple Syrup 21": "0.5oz",
+    "Lime Juice": "0.5oz"
+  },
+  "The Tahoe Toddy": {
+    "Hot Water": "2oz",
+    "Glenrothes": "2oz",
+    "Kings Ginger Liqueur": "1oz",
+    "Honey": "1 dash"
+  },
+  "Pink Ribbon": {
+    "BrownSugar": "1 cube",
+    "Pink Pigeon Rum": "0.75oz"
+  },
+  "Short Round II": {
+    "Avuá Prata Cachaça": "2oz",
+    "Bacardi Superior Rum": "2oz",
+    "Chateau de Montifaud Pineau des Charentes Rose": "3oz",
+    "Lime Juice": "2oz",
+    "Cannella Cinnamon Cordial": "1oz",
+    "Simple Syrup": "2oz"
+  },
+  "A Gift from Zara": {
+    "Luxardo Bitter Bianco": "1.5oz",
+    "London Dry Gin": "0.75oz",
+    "Elderflower Liqueur": "0.75oz",
+    "CitricAcid": "2 dash",
+    "OrangeFlowerWater": "4 drops",
+    "Topo Chico Mineral Water": "2.5oz"
+  },
+  "Gin Made Me Do It": {
+    "Junipero Gin": "1oz",
+    "C Drouin Calvados Selection": "1oz",
+    "Vermouth del Professore": "1oz",
+    "AngosturaBitters": "2 dash",
+    "St.GeorgeAbsinthe": "1 dash"
+  },
+  "Clearly Bitter": {
+    "Luxardo Bitter Bianco": "0.75oz",
+    "Junipero Gin": "1oz",
+    "Dry Vermouth": "0.75oz",
+    "Curacao": "0.5oz",
+    "RhubarbBitters": "2 dash"
+  },
+  "Short Round": {
+    "Bacardi Superior Rum": "5oz",
+    "Chateau de Montifaud Pineau des Charentes Blanc": "4oz",
+    "Lemon Juice": "3.5oz",
+    "Velvet Falernum": "3.5oz"
+  },
+  "Ypioca Yellow Card": {
+    "Ypioca Brasilizar Cachaca Prata Reserva Especial": "1.5oz",
+    "Kings Ginger Liqueur": "0.5oz",
+    "Pineapple Juice": "1oz",
+    "Simple Syrup": "0.5oz",
+    "Coconut Water": "2oz",
+    "SodaWater": "1 fill"
+  },
+  "Buzzard's Bay": {
+    "No.3LondonDryGin": "2 part",
+    "RealCranberryJuice": "0.5 part",
+    "LuxardoFernet": "0.25 part",
+    "Limejuice": "0.5 part",
+    "PuerBlackTea": "1.5 part"
+  },
+  "Kick the Pigeon": {
+    "Pink Pigeon Rum": "oz",
+    "St Germaine Elderflower Liqueur": "oz",
+    "Lemon": "oz",
+    "Vanilla Syrup": "oz",
+    "Prosecco": "oz"
+  },
+  "Croatia Firing Squad": {
+    "Luxardo Bitter Bianco": "1oz",
+    "Lillet Blanc": "1oz",
+    "No3 London Dry Gin": "1oz",
+    "Rose Wine": "0.5oz"
+  },
+  "The King's Ginger Summer Cup": {
+    "Kings Ginger Liqueur": "1oz",
+    "Cranberry Juice": "1.5oz",
+    "FeverTree Lemonade": "1.5oz"
+  },
+  "Pink Pigeon Punch": {
+    "Pink Pigeon Rum": "7oz",
+    "Agave Syrup": "1oz",
+    "Watermelon": "7oz",
+    "LemonJuice": "2 "
+  },
+  "Kentucky Garrigue": {
+    "Wild Turkey 101 Bourbon": "1.5oz",
+    "Strawberry": "0.75oz",
+    "Luxardo Sangue Morlacco Cherry Liqueur": "0.75oz",
+    "FeverTree Tonic Water": "1oz"
+  },
+  "Bitter Valencia": {
+    "Luxardo Bitter Bianco": "0.75oz",
+    "Gin": "0.75oz",
+    "Clarified Milk": "0.75oz",
+    "OrangeBitters": "2 dash",
+    "Vanilla": "4 drops"
+  },
+  "Chilcano (variation)": {
+    "BarSol Primero Quebranta Pisco": "1.25oz",
+    "Kings Ginger Liqueur": "0.25oz",
+    "Fresh Lime Juice": "0.5oz",
+    "Agave Nectar": "0.25oz",
+    "CranberryBitters": "3-4 drops",
+    "Ginger Beer": "4oz"
+  },
+  "Little Ground Tapper": {
+    "H by HINE": "2oz",
+    "Small Hand Foods Pineapple Gum Syrup": "0.25oz",
+    "LuxardoMaraschinoLiqueur": "1 bsp",
+    "AngosturaBitters": "2 dash"
+  },
+  "Prince of Humbugs": {
+    "Hirsch Small Batch Reserve Bourbon": "2oz",
+    "Luxardo Bitter": "0.75oz",
+    "Cold Blue Bottle Coffee": "0.5oz",
+    "Luxardo Anisette": "0.25oz",
+    "Peychaud'sBitters": "2 dash"
+  },
+  "The Big Picture": {
+    "Tempus Fugit Alessio Vino Chinato": "1.5oz",
+    "FigInfused C Drouin Calvados Selection": "1.5oz",
+    "Lemon": "0.5oz",
+    "Simple Syrup": "0.25oz"
+  },
+  "The King's Squeeze": {
+    "King'sGingerLiqueur": "35 ml",
+    "Fever-TreeBitterLemon": "125 ml"
+  },
+  "English Harbour Colada": {
+    "English Harbour Rum 5 YO": "2oz",
+    "Fresh Squeezed Pineapple Juice": "2oz",
+    "Fresh Coconut Water": "2oz"
+  },
+  "Rita's Song": {
+    "Nikka Whisky Taketsuru Pure Malt 12 YO": "2oz",
+    "15 YO Sherry": "0.5oz",
+    "Dr.Adam'sBoker'sbitters": "2 dash",
+    "Simple syrup": "0.25oz"
+  },
+  "Le Femme Nikita": {
+    "Nikka Whisky Taketsuru Pure Malt 12 YO": "2oz",
+    "Rich Cane Syrup": "0.25oz",
+    "BittermensXocolatlMoleBitters": "2 dash",
+    "CinnamonBitters": "2 dash"
+  },
+  "1880's Americana": {
+    "Hirsch Small Batch Reserve Bourbon": "2oz",
+    "AmerPicon": "10 ml",
+    "HouseColaSyrup": "10 ml"
+  },
+  "Luxardo Maraschino Simple Spritz": {
+    "Luxardo Maraschino Liqueur": "0.5oz",
+    "Squeeze of Lime": "0.5oz",
+    "Italian Sparkling Water": "3oz"
+  },
+  "Aperitivo Spritz": {
+    "Luxardo Aperitivo": "2oz",
+    "Prosecco": "3oz",
+    "SparklingWater": "1 splash"
+  },
+  "La Chiara": {
+    "Luxardo Bitter Bianco": "1oz",
+    "BarSol Primero Quebranta Pisco": "1oz",
+    "FeverTree Indian Tonic": "2oz",
+    "LuxardoMaraschinoLiqueur": "1 dash"
+  },
+  "Luxardo Ice Cream Float": {
+    "Luxardo Cherry Syrup from jar of cherries": "1oz",
+    "VanillaIceCream": "1 scoop"
+  },
+  "Negroni": {
+    "No3 London Dry Gin": "1oz",
+    "Tempus Fugit Alessio Vermouth di Torino Rosso": "1oz",
+    "Luxardo Bitter": "1oz"
+  },
+  "Nellie Fer' Toddy": {
+    "Blended Scotch": "1oz",
+    "Kings Ginger Liqueur": "1oz",
+    "The Genuine Curacao Liqueur Orange": "0.5oz",
+    "Fresh Lemon Juice": "0.75oz",
+    "Peychaud'sBitters": "1 dash"
+  },
+  "Almond Crusta": {
+    "H by HINE": "1oz",
+    "Junipero Gin": "0.5oz",
+    "LemonJuice": "0.75oz",
+    "Orgeat": "0.5oz",
+    "AngosturaBitters": "1 dash"
+  },
+  "Mexico Mule": {
+    "Montelobos Mezcal": "1oz",
+    "Kings Ginger Liqueur": "0.67oz",
+    "Fresh Lime Juice": "0.5oz",
+    "Apple Cider": "3oz",
+    "Monin French Raspberry Syrup": "0.5oz"
+  },
+  "Hidarite": {
+    "Nikka Coffey Grain Whiskey": "1.5oz",
+    "Luxardo Bitter": "0.75oz",
+    "Tempus Fugit Alessio Vermouth di Torino Rosso": "0.75oz",
+    "ChocolateBitters": "2 dash"
+  },
+  "Bird is the Word": {
+    "Pink Pigeon Rum": "0.75oz",
+    "Luxardo Maraschino Liqueur": "0.75oz",
+    "Green Chartreuse": "0.75oz",
+    "Lime Juice": "0.5oz",
+    "Pineapple Juice": "0.5oz"
+  },
+  "Jammie Dodger Fizz": {
+    "H by HINE": "2oz",
+    "Tempus Fugit Creme de Noyaux": "0.5oz",
+    "Orgeat": "0.5oz",
+    "Lemon": "0.375oz",
+    "Lime": "0.375oz",
+    "Heavy Whipping Cream": "1oz",
+    "EggWhite": "1 "
+  },
+  "Rudolph's Rose": {
+    "Christmas Spirit": "1.5oz",
+    "Luxardo Maraschino Liqueur": "0.25oz",
+    "Chateau de Montifaud Pineau des Charentes Rose": "0.5oz",
+    "Tempus Fugit Gran Classico Bitter": "0.75oz"
+  },
+  "Heard It Through The Grapevine": {
+    "H by HINE": "1.5oz",
+    "Grahams 20 Year Tawny Port": "0.75oz",
+    "Tempus Fugit Kina LAero dOr": "0.5oz",
+    "Velvet Falernum": "0.33oz",
+    "Benedictine": "0.25oz"
+  },
+  "Snow Bunny": {
+    "Christmas Spirit": "1.5oz",
+    "Kings Ginger Liqueur": "0.5oz",
+    "Lemon juice": "0.5oz",
+    "Honey syrup": "0.5oz",
+    "Egg white": "0.5oz",
+    "Ale": "2oz",
+    "DaleDeGroff'sPimentoAromaticBitters": "3 drops"
+  },
+  "A Love Song": {
+    "No3 London Dry Gin": "1oz",
+    "Maurin Quina": "1oz",
+    "Luxardo Bitter": "0.5oz",
+    "Kings Ginger Liqueur": "0.5oz"
+  },
+  "Drops of Jupiter": {
+    "Junipero Gin": "1.5oz",
+    "Genevieve Gin": "0.5oz",
+    "Rich Wild Sage Honey Syrup": "0.25oz",
+    "AngosturaBitters": "1 dash",
+    "WhiskeyBarrelAgedBitters": "1 dash",
+    "Spring Water": "0.75oz"
+  },
+  "Mother Superior": {
+    "Blanc Vermouth": "1.5oz",
+    "Lemon Juice": "0.75oz",
+    "Junipero Gin": "0.5oz",
+    "Giffard Pamplemousse": "0.5oz",
+    "Housemade Yellow Shawtreuse": "0.5oz",
+    "Tonic": "0.5oz",
+    "CeleryBitters": "2 dash",
+    "CorianderTincture": "2 dash"
+  },
+  "Round Pond Aperitif": {
+    "Luxardo Aperitivo": "1.5oz",
+    "Round Pond Blood Orange Syrup": "0.5oz",
+    "Fresh Lemon Juice": "0.5oz",
+    "SparklingWine": "1 splash"
+  },
+  "Across The Pond": {
+    "Junipero Gin": "1oz",
+    "Kings Ginger Liqueur": "1oz",
+    "Round Pond Meyer Lemon Syrup": "0.5oz",
+    "Fresh Lemon Juice": "0.75oz",
+    "Sodawater": "1 splash"
+  },
+  "Fizzy Rhubarb Mule": {
+    "Rhubarb Infused Gin": "2oz",
+    "Kings Ginger Liqueur": "0.5oz",
+    "Lemon": "0.75oz",
+    "Simple Syrup": "0.75oz",
+    "EggWhite": "1 "
+  },
+  "Charente Royale": {
+    "H by HINE": "1.5oz",
+    "Elderflower Liqueur": "0.5oz",
+    "Absinthe": "2 dash"
+  },
+  "Peachy Keane": {
+    "Old Forester Bourbon": "1.5oz",
+    "Kings Ginger Liqueur": "0.5oz",
+    "Giffard Crème de Pêche de Vigne": "0.5oz",
+    "Honey syrup local honey cut 21 with water": "0.5oz",
+    "Lemon juice": "0.75oz",
+    "Eggwhite": "1 ",
+    "AngosturaBitters": "1 dash"
+  },
+  "Hopped-Up Mary": {
+    "Hophead Vodka": "2oz",
+    "Tomato Juice": "6oz",
+    "Demitri'sBloodyMarySeasoning": "1.5 tsp",
+    "Fresh Lemon Juice": "0.5oz"
+  },
+  "The Palace Cellar": {
+    "Kings Ginger Liqueur": "1.5oz",
+    "Pink Pigeon Rum": "0.5oz",
+    "Freshpressed Lemon Juice": "0.5oz",
+    "Snake Oils Housemade Sarsaparilla Syrup": "0.5oz",
+    "Carbonated Water": "0.75oz",
+    "SnakeOil'sHouse-madePomegranateBitters": "1 dash"
+  },
+  "Swedish Royal": {
+    "Karlssons Gold Vodka": "2oz",
+    "Apricot brandy": "1oz",
+    "Dry vermouth": "0.5oz",
+    "Sweet vermouth": "0.5oz"
+  },
+  "Gold Spritz": {
+    "Cocchi Americano": "1oz",
+    "Karlssons Gold Vodka": "1oz",
+    "Club Soda": "2oz"
+  },
+  "La Madrugada": {
+    "BarSol Perfecto Amor Aperitif Wine": "1.5oz",
+    "Lemon juice": "0.5oz",
+    "Luxardo Amaro Abano": "0.5oz",
+    "Luxardo Maraschino Liqueur": "0.25oz"
+  },
+  "The Rickenbacker": {
+    "Hophead Vodka": "2oz",
+    "Tempus Fugit Alessio Vermouth Bianco": "1oz",
+    "LuxardoMaraschinoLiqueur": "2 dash"
+  },
+  "The Douglas Tilden": {
+    "Junipero Gin": "2oz",
+    "Lacuesta Blanco Vermouth": "0.5oz",
+    "Salers Gentiane Aperitif": "0.25oz",
+    "LuxardoMaraschinoLiqueur": "1 bsp",
+    "Germain-RobinAbsinthe": "1 bsp",
+    "Scrappy’sLimeBitters": "2 dash"
+  },
+  "Willow": {
+    "Old Potrero Straight Rye Whiskey": "1oz",
+    "BarSol Perfecto Amor Aperitif Wine": "1.5oz",
+    "LuxardoAmaroAbano": "1 bsp",
+    "Angosturabitters": "1 dash"
+  },
+  "Sahara Glowing Heart": {
+    "Junipero Gin": "1.5oz",
+    "Apricot EaudeVie": "0.75oz",
+    "Grenadine": "0.25oz",
+    "LemonBitters": "2 dash",
+    "Absinthe": "2 dash"
+  },
+  "Nori & Islay": {
+    "Junipero Gin": "1.5oz",
+    "NoriInfused Sake": "1.5oz",
+    "CeleryBitters": "1 dash",
+    "IslayScotch": "3 dash"
+  },
+  "You Bet Your Ascot": {
+    "H by HINE": "1.5oz",
+    "Bonal": "0.75oz",
+    "Luxardo Amaro Abano": "0.5oz",
+    "Nocino": "0.25oz"
+  },
+  "Speyside Orchard": {
+    "Glenrothes Bourbon Reserve": "1oz",
+    "C Drouin Pommeau de Normandie": "1.5oz",
+    "Chamomile Tea Syrup": "0.5oz",
+    "Lemon Juice": "0.75oz"
+  },
+  "Chippendale Rosetone": {
+    "Gin": "1.5 part",
+    "LuxardoApricotLiqueur": "0.25 part",
+    "Casoni1814": "0.75 part",
+    "DryVermouth": "0.5 part",
+    "UnfilteredAppleJuice": "1 part",
+    "FreshLemonJuice": "1 part",
+    "RichSimpleSyrup(2:1)": "0.5 part",
+    "JasmineGreenTea": "2 part"
+  },
+  "La Hops Vie": {
+    "Hophead Vodka": "2oz",
+    "Fresh Lemon Juice": "0.75oz",
+    "Fresh Grapefruit Juice": "0.75oz",
+    "Simple Syrup": "0.5oz"
+  },
+  "Cap't of the Seven Seas": {
+    "Ypioca Brasilizar Cachaca Ouro Reserva Especial": "2oz",
+    "JalapenoOrange Simple Syrup": "1oz",
+    "Coconut Milk": "1oz",
+    "OrangeFlowerWater": "4 dash",
+    "MoleBitters": "9 drops"
+  },
+  "Boko Buku": {
+    "Mezcal": "1.5oz",
+    "Don Ciccio & Figli Concerto": "0.75oz",
+    "Vanilla Marinade": "0.125oz",
+    "MoleBitters": "8 dash"
+  },
+  "Chapman Cobbler": {
+    "Applejack": "1oz",
+    "Amontillado Sherry": "1oz",
+    "Orgeat": "0.75oz",
+    "Fresh Lemon Juice": "0.75oz",
+    "TempusFugitCremedeNoyaux": "1 bsp"
+  },
+  "Baile de Verano": {
+    "BarSol Perfecto Amor Aperitif Wine": "2oz",
+    "Penny Blue Mauritian Rum": "0.5oz",
+    "CeleryShrub": "6 dash",
+    "House-madeTarragonTincture": "3 dash"
+  },
+  "Peter Pumpkin": {
+    "Junipero Gin": "1.5oz",
+    "Orange Liquor": "0.5oz",
+    "Housemade Spiced Pumpkin Puree": "1.5oz",
+    "Lemon Juice": "0.5oz",
+    "Ginger Syrup": "0.5oz",
+    "EggWhite": "1 "
+  },
+  "A Botanical Garden": {
+    "Hophead Vodka": "1.5oz",
+    "Zirbenz Stone Pine": "0.75oz",
+    "Fresh Strawberry Juice w Xanthan Gum": "0.75oz",
+    "Lemon Juice": "0.75oz",
+    "Simple Syrup": "0.5oz"
+  },
+  "The Bossa Nova": {
+    "Chinaco Blanco Tequila": "2oz",
+    "Lemon Juice": "0.5oz",
+    "Small Hand Foods Pineapple Gum Syrup": "0.5oz",
+    "Vanilla Syrup": "0.25oz",
+    "Coconut Cream": "0.5oz",
+    "Egg White": "0.5oz"
+  },
+  "The Monte Rua": {
+    "Ca Secco Sparkling": "4oz",
+    "LuxardoCherrySyrup": "1 bsp"
+  },
+  "See ya Amaro!": {
+    "H by HINE": "1.5oz",
+    "Luxardo Amaro Abano": "0.75oz",
+    "Luxardo Apricot Liqueur": "0.5oz",
+    "Luxardo Amaretto di Saschira": "0.25oz",
+    "Luxardo Maraschino Liqueur": "0.16oz",
+    "Perfect Puree Apricot": "0.5oz",
+    "Lemon Juice": "0.5oz"
+  },
+  "Rose Sangria": {
+    "Pink Pigeon Rum": "1.5oz",
+    "Fresh Lemon Juice": "0.5oz",
+    "Honey Syrup 11 honey & water": "0.75oz",
+    "Pomegranate Juice": "1oz",
+    "Rose Wine": "3oz"
+  },
+  "White Tie": {
+    "Luxardo Bitter Bianco": "1oz",
+    "No3 London Dry Gin": "2oz",
+    "OrangeBitters": "2 dash",
+    "LuxardoMaraschinoLiqueur": "1 bsp"
+  },
+  "The Italian Diplomat": {
+    "Luxardo Bitter Bianco": "1oz",
+    "BarSol Primero Quebranta Pisco": "1.5oz",
+    "Bay Leaf Syrup": "0.25oz",
+    "SaltTincture**": "2 dash"
+  },
+  "Bunny Poison": {
+    "Rhubarb Cucumber & MintInfused Junipero Gin": "2oz",
+    "Lemon Juice": "0.75oz",
+    "Tempus Fugit Alessio Vermouth Bianco": "0.75oz",
+    "Rhubarb Juice": "0.5oz",
+    "Grapefruit Juice": "0.5oz",
+    "Rhubarb Syrup": "0.5oz",
+    "FeeBrothersCeleryBitters": "2 dash"
+  },
+  "See You T'Amaro": {
+    "Luxardo Amaro Abano": "1.5oz",
+    "Lemon juice": "0.5oz",
+    "Simple syrup": "0.25oz",
+    "Egg white": "0.5oz",
+    "FeeBrosRhubarbbitters": "1 dash"
+  },
+  "Cut To The Chase": {
+    "JH Cutter Whisky": "2oz",
+    "Averna Amaro": "0.75oz",
+    "Alvear PX Sherry": "0.5oz",
+    "AngosturaBitters": "2 dash"
+  },
+  "The Lover's Quarrel ": {
+    "No3 London Dry Gin": "1oz",
+    "Maurin Quina": "1oz",
+    "Kings Ginger Liqueur": "0.75oz",
+    "Honey Jalapeño syrup": "0.5oz",
+    "Orange juice": "1oz",
+    "Lemon juice": "0.5oz",
+    "Soda water": "1oz"
+  },
+  "Hophead Dirty Martini": {
+    "Hophead Vodka": "4oz",
+    "Olive Juice": "0.5oz",
+    "DryVermouth": "1 dash"
+  },
+  "Newton's Theory": {
+    "Nikka Whisky Taketsuru Pure Malt 12 YO": "2oz",
+    "C Drouin Pommeau de Normandie": "0.75oz",
+    "Luxardo Maraschino Liqueur": "0.25oz",
+    "BlackWalnutBitters": "4 dash"
+  },
+  "West Coast Vesper": {
+    "Hophead Vodka": "1oz",
+    "Junipero Gin": "1oz",
+    "Maurin Quina": "0.5oz"
+  },
+  "Hophead Old Fashioned": {
+    "Hophead Vodka": "2oz",
+    "Simple syrup": "0.25oz",
+    "Angosturabitters": "2 dash",
+    "FeeBrothersGinBarrelAgedBitters": "1 dash"
+  },
+  "Bacio Romana": {
+    "Luxardo Bitter Bianco": "1.5oz",
+    "BarSol Pisco": "0.5oz",
+    "Luxardo Maraschino Liqueur": "0.5oz",
+    "Dry Vermouth": "0.5oz"
+  },
+  "3 Degrees": {
+    "No3 London Dry Gin": "1.75oz",
+    "Velvet Falernum": "0.75oz",
+    "Lime juice": "0.5oz",
+    "Pear Sage Foam": "0.5oz",
+    "Prosecco": "1 float"
+  },
+  "Jack Cherry Sour (2001 Remix)": {
+    "Jack Daniels": "1.5oz",
+    "Luxardo Sangue Morlacco Cherry Liqueur": "0.5oz",
+    "Fresh Lemon Juice": "1oz",
+    "Cane Sugar Syrup": "0.25oz",
+    "AngosturaOrangeBitters": "1 dash"
+  },
+  "Spring Forward": {
+    "Old Tom Gin": "2oz",
+    "Noilly Prat Ambre Vermouth": "0.5oz",
+    "Pineapple Juice": "0.5oz",
+    "Lime Juice": "0.5oz",
+    "Rich Simple 21": "0.25oz",
+    "DrySparklingWine": "0.75 float"
+  },
+  "Three Flips": {
+    "No3 London Dry Gin": "1.5oz",
+    "Averna": "1.5oz",
+    "Honey": "0.75oz",
+    "Egg": "1 whole"
+  },
+  "Buenaventura": {
+    "BarSol Primero Quebranta Pisco": "0.75oz",
+    "El Tesoro Reposado Tequila": "0.75oz",
+    "Grüner Veltliner": "0.5oz",
+    "Lime": "0.5oz",
+    "Pineapple Gum": "0.25oz",
+    "SweetMarmalade": "1 bsp"
+  },
+  "Nieux Carré": {
+    "Karlssons Gold Vodka": "1.5oz",
+    "Gran Duque d Alba Solera gran Reserva brandy": "0.75oz",
+    "Carpano Antica Vermouth": "0.75oz",
+    "Benedictine": "0.25oz",
+    "Peychaud'sBitters": "1 tincture",
+    "Angosturabitters": "1 tincture"
+  },
+  "L.E.S. Is More": {
+    "Karlssons Gold Vodka": "1.5oz",
+    "Esprit de June": "0.75oz",
+    "Fresh lemon juice": "0.5oz",
+    "Simple syrup": "0.5oz"
+  },
+  "La Perle de Verre": {
+    "Luxardo Bitter Bianco": "1oz",
+    "Citadelle Gin": "1oz",
+    "OrangeBitters": "2 dash",
+    "Rose Poached Pear Syrup": "0.25oz",
+    "Topo Chico Mineral Water": "1oz",
+    "FeverTree Sparkling Lemon": "1oz"
+  },
+  "A Tall Tell": {
+    "C Drouin Calvados Selection": "9oz",
+    "Marrakesh Mint Tea": "6oz",
+    "Prosecco": "6oz",
+    "Kings Ginger Liqueur": "3oz",
+    "Lemon Juice": "2oz",
+    "Velvet Falernum": "1.5oz",
+    "Dale DeGroffs Pimento Aromatic Bitters": "0.5oz"
+  },
+  "Cut and Run": {
+    "JH Cutter Whisky": "1.5oz",
+    "Moroccan Mint Tea chilled": "1oz",
+    "The Kings Ginger": "0.75oz",
+    "Lemon Juice": "0.5oz",
+    "Rich Honey Syrup": "0.25oz"
+  },
+  "The Stand By": {
+    "Junipero Gin": "2oz",
+    "Luxardo Bitter": "0.5oz",
+    "KalaniCoconutLiqueur": "1 bsp",
+    "AngosturaBitters": "1 dash",
+    "Peychaud'sBitters": "1 dash"
+  },
+  "Second City Sour": {
+    "Hirsch Small Batch Reserve Bourbon": "2oz",
+    "Fresh Lemon Juice": "1oz",
+    "Orangescented Maple Syrup": "0.5oz",
+    "Tempus Fugit Alessio Vermouth di Torino Rosso": "1oz"
+  },
+  "California's Callin'": {
+    "Junipero Gin": "1.5oz",
+    "Luxardo Maraschino Liqueur": "0.5oz",
+    "Grapefruit Juice": "1oz",
+    "Lemon Juice": "0.75oz",
+    "TempusFugitAbbott'sBitters": "1 dash"
+  },
+  "End of Winter": {
+    "H by HINE Brown ButterInfused": "2oz",
+    "Kings Ginger Liqueur": "0.5oz",
+    "FeeBrothersBlackWalnutBitters": "3 dash"
+  },
+  "Hopped-Up Mule": {
+    "Hophead Vodka": "2oz",
+    "Kings Ginger Liqueur": "0.5oz",
+    "Lime Juice": "0.75oz"
+  },
+  "Bay City Shandy": {
+    "Hophead Vodka": "1.5oz",
+    "Giffard Pamplemousse": "0.75oz",
+    "Lemon Juice": "0.5oz",
+    "OrangeBitters": "2 dash"
+  },
+  "San Fran Shandy": {
+    "Hophead Vodka": "2oz",
+    "Kings Ginger Liqueur": "0.5oz",
+    "Breckles Brown Ale": "3oz",
+    "Fresh Lemon Juice": "1oz",
+    "Honey Syrup": "0.5oz",
+    "Egg White": "0.5oz",
+    "AngosturaBitters": "2 dash"
+  },
+  "West Bank": {
+    "HINE Rare VSOP": "1.5oz",
+    "Cynar": "0.5oz",
+    "Bywater Spice Mix": "0.5oz",
+    "ColdBrew Coffee": "1oz"
+  },
+  "Hotaling White Manhattan": {
+    "Christmas Spirit": "2oz",
+    "Tempus Fugit Alessio Vermouth Bianco": "1oz",
+    "Luxardo Triplum Triple Sec": "0.25oz",
+    "FeeBrother'sOrangeBitters": "1 dash"
+  },
+  "Coffey Grain Manhattan": {
+    "Nikka Coffey Grain Whisky": "2oz",
+    "Tempus Fugit Alessio Vermouth di Torino Rosso": "1oz",
+    "TempusFugitAbbott'sBitters": "1 dash"
+  },
+  "Shadowcat": {
+    "Luxardo Bitter Bianco": "1oz",
+    "Barr Hill Gin": "1oz",
+    "Falernum": "0.75oz",
+    "Topo Chico Mineral Water": "1oz",
+    "LemonBitters": "1 dash"
+  },
+  "San Francisco Harvest": {
+    "Junipero Gin": "1.5oz",
+    "Oloroso Sherry": "0.75oz",
+    "Lemon Juice": "0.75oz",
+    "Winter Spice Brown Sugar Syrup": "0.75oz",
+    "Pineapple Juice": "1oz"
+  },
+  "Negroni D'Amore": {
+    "Old Tom Gin": "1.5oz",
+    "Barolo Chinato": "1oz",
+    "Tempus Fugit Kina LAero dOr": "1oz"
+  },
+  "Radice Amara": {
+    "Luxardo Bitter Bianco": "1.5oz",
+    "Reisetbauer Carrot Eau De Vie": "1oz",
+    "Genevieve Gin": "0.75oz"
+  },
+  "Don't Rock the Boat Punch": {
+    "No.3LondonDryGin": "1 part",
+    "RooibusTea(steepedandcooled)": "1 part",
+    "MulledCider(cooled)": "1 part",
+    "CloverHoneySyrup": "0.5 part",
+    "Cava": "0.33 part"
+  },
+  "Miyagikyo Kick": {
+    "Nikka Whisky Miyagikyo Single Malt 12 YO": "1.5oz",
+    "Rare Wine Co Charleston Sercial Madeira": "0.75oz",
+    "Fresh lime juice": "0.75oz",
+    "Small Hands Food orgeat": "0.625oz"
+  },
+  "King's Toddy": {
+    "No3 London Dry Gin": "1oz",
+    "Lemon Juice": "0.75oz",
+    "Kings Ginger Liqueur": "0.5oz",
+    "Clover Honey Syrup": "0.5oz"
+  },
+  "Picadilly": {
+    "No3 London Dry Gin": "1.5oz",
+    "Pimms": "0.5oz",
+    "LuxardoAmarettodiSaschira": "1 bsp",
+    "Fresh lime juice": "1oz",
+    "Simple syrup": "0.75oz",
+    "Basilleaves": "5 leaves"
+  },
+  "Elgin Elixir": {
+    "BenRiach Single Malt 12 YO": "1oz",
+    "C Drouin Calvados Selection": "1oz",
+    "Luxardo Aperitivo": "1oz"
+  },
+  "The Canevari Cocktail": {
+    "Old Tom Gin": "1.5oz",
+    "Cocchi Vermouth di Torino": "1oz",
+    "Luxardo Bitter": "0.5oz",
+    "AngosturaBitters": "3 dash"
+  },
+  "Erasmus' Revenge": {
+    "Junipero Gin": "2oz",
+    "Carpano Antica": "0.5oz",
+    "Calisaya": "1 bsp",
+    "TheBitterTruthGrapefruitBitters": "3 dash"
+  },
+  "The Sparkler": {
+    "Luxardo Bitter Bianco": "0.75oz",
+    "Dolin Blanc": "0.75oz",
+    "Prosecco": "2.5oz"
+  },
+  "Shroud of the Inca": {
+    "Luxardo Bitter Bianco": "1oz",
+    "Castilian Tincture": "0.25oz",
+    "BarSol Supremo Moste Verde Italia Pisco": "0.75oz",
+    "Prosecco": "2oz"
+  },
+  "New Beginnings": {
+    "Luxardo Bitter Bianco": "0.75oz",
+    "Avua Cachaca Prata": "0.75oz",
+    "Brokers London Dry Gin": "0.75oz",
+    "Coconut Water": "0.75oz",
+    "ToastedCoconutTincture*": "2 dash",
+    "AlmondExtract": "1 dash"
+  },
+  "Fuji-La": {
+    "Luxardo Bitter Bianco": "0.5oz",
+    "Junipero Gin": "1oz",
+    "Apple Water": "1.5oz",
+    "CitricAcidSolution**": "1 ml"
+  },
+  "The Cliffdiver": {
+    "Daristi 10 YR Rum": "1.25oz",
+    "The Genuine Curacao Liqueur Blue": "0.5oz",
+    "Tempus Fugit Liqueur de Violettes": "0.25oz",
+    "Lime Juice": "1oz",
+    "Tahitian Vanilla Bean Syrup": "0.5oz",
+    "GingerBeer": "1 float",
+    "AngosturaBitters": "3 dash"
+  },
+  "Irish Goodbye": {
+    "Nikka Coffey Grain Whisky": "1.5oz",
+    "Absinthe": "0.25oz",
+    "Hot coffee": "4oz",
+    "Homemade Irish Cream": "2-3oz"
+  },
+  "Beachcomber": {
+    "Light Rum": "1.5oz",
+    "Cointreau": "0.75oz",
+    "Lime Juice": "0.75oz",
+    "Luxardo Maraschino Liqueur": "0.25oz",
+    "Simple Syrup optional": "0.125oz"
+  },
+  "Old Tom and The Sea": {
+    "Old Tom Gin": "1.5oz",
+    "Tempus Fugit Alessio Vermouth Bianco": "1oz",
+    "Luxardo Sangue Morlacco Cherry Liqueur": "0.5oz",
+    "Lemon Juice": "0.5oz"
+  },
+  "Salty Swede": {
+    "Karlssons Gold Vodka": "2oz",
+    "Fresh grapefruit juice": "2oz",
+    "Club soda": "1oz",
+    "Grapefruitbitters": "1 tincture"
+  },
+  "The Last Tango": {
+    "Junipero Gin": "1.5oz",
+    "Giffard Elderflower Liqueur": "1oz",
+    "Lime Juice": "1oz",
+    "ChiliTincture*": "8-9 drops",
+    "LuxardoMaraschinoCherries": "6 "
+  },
+  "Pink & Black": {
+    "Pink Pigeon Rum": "2oz",
+    "CocaCola": "3oz",
+    "Lime Juice": "0.5oz"
+  },
+  "Pink & Ginger": {
+    "Pink Pigeon Rum": "2oz",
+    "Ginger Beer": "3oz",
+    "Lime Juice": "0.5oz"
+  },
+  "A Regal Air ": {
+    "Domingo Perez Marin la Guita Manzanilla Sherry": "3oz",
+    "Kings Ginger Liqueur": "0.5oz",
+    "Chartreuse": "0.25oz",
+    "Juice of an Orange": "0.25oz"
+  },
+  "King's Mule": {
+    "Absolut Vodka": "1.5oz",
+    "Kings Ginger Liqueur": "0.5oz",
+    "Fresh Lemon Juice": "1oz",
+    "GingerCinnamon Syrup": "1oz",
+    "BarKeepLavenderSpiceBitters": "2 dash"
+  },
+  "Caipirinha": {
+    "Lime": "4 pieces",
+    "Sugar": "1-2 Tbsp",
+    "Ypiòca": "1 1/2oz"
+  },
+  "Bubbly Bird": {
+    "Pink Pigeon Rum": "1oz",
+    "Champagne": "1 fill",
+    "Angosturabitters": "1 dash",
+    "Peachbitters": "1 dash",
+    "LuxardoFernet": "1 dash"
+  },
+  "Framboise de Pigeon": {
+    "Pink Pigeon Rum": "2oz",
+    "Briottet Creme de Framboise Raspberry": "0.5oz",
+    "Lemon juice": "0.5oz",
+    "Simple syrup": "0.25oz"
+  },
+  "Far From the Tree": {
+    "C Drouin Calvados Selection": "1.5oz",
+    "Orgeat": "0.75oz",
+    "Lemon Juice": "0.5oz",
+    "Pear & Celery Puree": "1oz",
+    "Eggwhite": "0.5 "
+  },
+  "Luxardo Sour": {
+    "Luxardo Amaretto di Saschira": "1.25oz",
+    "Rye Whiskey": "1oz",
+    "Lemon Juice": "1oz",
+    "Angostura Bitters": "0.75oz",
+    "EggWhite": "1 "
+  },
+  "The Molino": {
+    "Bourbon": "1.5oz",
+    "Luxardo Amaretto di Saschira": "0.5oz",
+    "Demerara Syrup 11": "0.5oz",
+    "Lemon Juice": "0.75oz",
+    "EggWhite": "1 "
+  },
+  "The King's Egg Nog": {
+    "No3 London Dry Gin": "1oz",
+    "Kings Ginger Liqueur": "0.5oz",
+    "English Harbour Rum": "0.25oz",
+    "Sugar": "3 spoon",
+    "Egg": "1 whole",
+    "Milk": "0.5oz",
+    "Cream": "0.5oz"
+  },
+  "White Walker Flip": {
+    "Glenrothes Vintage Reserve": "1oz",
+    "Kings Ginger Liqueur": "1oz",
+    "Green Chartreuse": "0.25oz",
+    "Sweetened Apple Cider": "0.75oz",
+    "BakedAppleBitters": "2 dash",
+    "Egg": "1 whole"
+  },
+  "Hibiscus Pisco Sour": {
+    "BarSol Primero Quebranta Pisco": "2oz",
+    "Lime juice": "0.75oz",
+    "Hibiscusrose syrup": "0.75oz",
+    "Eggwhite": "1 "
+  },
+  "Lux Japanese Lemonade": {
+    "No3 London Dry Gin": "1.5oz",
+    "Jummai Ginjo Sake": "0.5oz",
+    "Luxardo Limoncello": "0.25oz",
+    "Dill Cordial": "0.25oz",
+    "Meyer Lemon Juice": "0.5oz",
+    "Yuzu Juice": "0.25oz",
+    "Fresh egg White": "0.5oz"
+  },
+  "Flip and Flight": {
+    "PinkPigeonRum": "30 ml",
+    "DryOlorosoSherry": "15 ml",
+    "Grenadine": "15oz",
+    "Egg": "1 whole"
+  },
+  "Dry Mauritian Sour": {
+    "PinkPigeonRum": "40 ml",
+    "Campari": "10 ml",
+    "Lavendersyrup": "10 ml",
+    "Lemonjuice": "10 ml",
+    "Orangejuice": "10 ml",
+    "Eggwhite": "25 ml"
+  },
+  "Platonic Snuggle": {
+    "H by HINE": "0.5oz",
+    "El Dorado 12 Year Old Rum": "0.5oz",
+    "Hamilton Black Jamaican Pot Still Rum": "0.5oz",
+    "Cinnamon Syrup": "0.5oz",
+    "Heavy Cream": "0.5oz",
+    "St.ElizabethAllspiceDram": "1 tsp",
+    "Egg": "1 whole"
+  },
+  "The Brightside": {
+    "Pink Pigeon Rum": "1.5oz",
+    "Fresh orange juice": "2.5oz",
+    "LuxardoBitter": "1 Tbsp",
+    "Milkpowder(orcream)": "1 dash"
+  },
+  "The King's Froth & Frizz": {
+    "BarSol Selecto Italia Pisco": "1oz",
+    "Kings Ginger Liqueur": "1.25oz",
+    "Peach Brandy": "0.5oz",
+    "Lemon juice": "0.5oz",
+    "Egg white": "0.5oz"
+  },
+  "The Queen's A Redhead": {
+    "King'sGingerLiqueur": "50 ml",
+    "PinkPeppercorns": "4 ",
+    "Freshlemonjuice": "25 ml",
+    "Gommesyrup": "15 ml",
+    "Eggwhite": "25 ml"
+  },
+  "Delicious Sour": {
+    "C Drouin Calvados Selection": "2oz",
+    "Lemon Juice": "0.75oz",
+    "Giffard Abricot du Roussillon": "0.75oz",
+    "Egg White": "0.5oz"
+  },
+  "Jalapeño Sour": {
+    "Chinaco Blanco Tequila": "2oz",
+    "Green Chartreuse": "0.5oz",
+    "Lime juice": "0.5oz",
+    "Pineapple juice": "1oz",
+    "Jalapeño Syrup": "0.5oz",
+    "Egg White": "0.5oz"
+  },
+  "Hanny's Hot Apple Toddy": {
+    "Luxardo Amaretto di Saschira": "1.5oz",
+    "Apple Cider": "8oz",
+    "Heavy Cream": "oz",
+    "Cinnamon": "oz"
+  },
+  "The Alpine Mist": {
+    "Mezcal": "2oz",
+    "Reeds Premium Ginger Brew": "2oz",
+    "SeedlessBlackberryJam": "1 tsp",
+    "Lime": "1 ",
+    "MintLeaves": "12 "
+  },
+  "Division Bell": {
+    "Mezcal": "1oz",
+    "Aperol": "0.75oz",
+    "Luxardo Maraschino Liqueur": "0.5oz",
+    "Lime Juice": "0.75oz"
+  },
+  "Golden Gun": {
+    "Blended Lightly Aged Rum": "1oz",
+    "Blended Aged Rum": "1oz",
+    "Lime Juice": "0.75oz",
+    "Luxardo Apricot Liqueur": "0.5oz",
+    "SC Demerara Syrup": "0.5oz",
+    "Grapefruit Juice": "0.5oz",
+    "AngosturaBitters": "2 dash"
+  },
+  "Grown-Up Shirley Temple": {
+    "Luxardo Cherry Syrup from jar of cherries": "1oz",
+    "Fresh Lemon Juice optional": "0.25oz",
+    "Soda Water": "6oz"
+  },
+  "Japanese Cocktail": {
+    "H by HINE": "2oz",
+    "Luxardo Orgeat Syrup": "0.5oz",
+    "AngosturaBitters": "3 dash"
+  },
+  "Vinterpäls": {
+    "Karlssons Gold Vodka": "1.5oz",
+    "Luxardo Amaretto di Saschira": "0.5oz",
+    "Benedictine": "0.5oz",
+    "Orange juice": "0.5oz",
+    "Honey": "0.5oz"
+  },
+  "A Southern Jackass": {
+    "Prichards Lincoln County Lightning": "1.5oz",
+    "Kings Ginger Liqueur": "0.5oz",
+    "CinnamonCandied Ginger Syrup": "0.5oz",
+    "AngosturaBitters": "3 dash"
+  },
+  "Mayan Sacrifice Champagne Cocktail": {
+    "Chinaco Blanco Tequila": "0.5oz",
+    "DAristi Xtabentun Honey Liqueur": "0.5oz"
+  },
+  "Pacific Kick": {
+    "Japanese Whisky": "1oz",
+    "Amaro Angeleno": "3oz",
+    "Luxardo Orgeat Syrup": "1oz",
+    "Lemon Juice": "1oz"
+  },
+  "Citrus Quo (Adapted)": {
+    "No3 London Dry Gin": "1.5oz",
+    "Luxardo Limoncello": "0.5oz",
+    "Luxardo Aperitivo": "0.5oz",
+    "Tonic water": "3oz"
+  },
+  "The Mayan Premonition": {
+    "Chinaco Blanco Tequila": "1.5oz",
+    "Luxardo Sangue Morlacco Cherry Liqueur": "0.75oz",
+    "Fresh Lime Juice": "0.5oz",
+    "BitterLemonSoda": "1 float"
+  },
+  "Club Med": {
+    "Luxardo Apricot Liqueur": "0.75oz",
+    "BarSol Selecto Italia Pisco": "0.75oz",
+    "Elderflower Liqueur": "0.75oz",
+    "White dry whitepreferably Sauvignon": "2oz",
+    "Club soda": "2oz"
+  },
+  "Pisco Sour": {
+    "BarSol Primero Quebranta Pisco": "2oz",
+    "Fresh lime juice": "1oz",
+    "Simple syrup": "1oz",
+    "Egg white": "0.5oz",
+    "Angosturabitters": "3 dash"
+  },
+  "Jamaica Paloma": {
+    "Mezcal": "2oz",
+    "Jamaica basil flower syrup": "1oz",
+    "Fresh grapefruit juice": "0.75oz",
+    "Fresh lime juice": "0.5oz"
+  },
+  "Ypioca Chile Punch": {
+    "YpiocaBrasilizarCachacaPrataClassica": "2 part",
+    "FreshLimeJuice": "1 part",
+    "Agave": "0.5 part",
+    "AnchoReyesAnchoChileLiqueur": "0.5 part"
+  },
+  "Prata Punch": {
+    "YpiocaBrasilizarCachacaPrataReservaEspecial": "2 part",
+    "LilletRose": "0.5 part",
+    "GuavaNectar": "0.5 part",
+    "FreshLimeJuice": "0.25 part",
+    "Agave": "0.25 part"
+  },
+  "Engaged and Cant-Aloupe": {
+    "BarSol Supremo Moste Verde Italia Pisco": "1.5oz",
+    "Fresh Cantaloupe Juice": "1.25oz",
+    "Fresh Lime Juice": "0.5oz",
+    "Beet Sugar Water": "0.75oz",
+    "EggWhite": "1 "
+  },
+  "Mauritian Made": {
+    "Pink Pigeon Rum": "1.5oz",
+    "Darjeeling simple syrup": "0.75oz",
+    "Lime juice": "1oz"
+  },
+  "Hotaling Old Tom Gin": {
+    "Old Tom Gin": "1.5oz",
+    "7Spice Syrup": "0.5oz",
+    "Lemon Juice": "0.75oz",
+    "FeverTree Tonic": "1.5oz"
+  },
+  "Hotaling Seaside Shandy": {
+    "Genevieve Gin": "1oz",
+    "Lager": "1 bottle"
+  },
+  "Blind Luck": {
+    "Luxardo Bitter Bianco": "1oz",
+    "Old Tom Gin": "2.5oz",
+    "RealLemonJuice": "2 bsp",
+    "Strawberry-RaspberrySimpleSyrup*": "2 bsp"
+  },
+  "The Naughty & Nice": {
+    "Glenrothes Vintage Reserve": "1.25oz",
+    "Drambuie": "0.75oz",
+    "Woodchuck Pumpkin Cider": "2oz",
+    "Spiced Butter": "0.75oz",
+    "BittermensElemakuleTikiBitters": "3 dash"
+  },
+  "The King's Cranberry Sauce": {
+    "Cranberries": "14oz",
+    "BrownSugar": "1.5 c",
+    "OrangeJuice": "0.5 c",
+    "King'sGingerLiqueur": "0.3 c",
+    "PepperCorns": "8 whole",
+    "AllspiceBerries": "6 ",
+    "Cloves": "5 ",
+    "Cinnamon": "2 in"
+  },
+  "Mexican Sazerac": {
+    "Chinaco Reposado Tequila": "2oz",
+    "DAristi Xtabentun Honey Liqueur": "0.75oz",
+    "Peychaud'sBitters": "3 dash"
+  },
+  "Roasted Cherry Colada": {
+    "White Rum": "2oz",
+    "Luxardo Sangue Morlacco Cherry Liqueur": "1.75oz",
+    "Coconut Milk": "1oz",
+    "Fresh Lime Juice": "1oz",
+    "DemeraraSugar": "0.5 tsp",
+    "MiracleMileForbiddenBarrelAgedBitters": "10 dash",
+    "RoastedCherries": "3 ",
+    "Black Rum": "1oz",
+    "Everclear": "1 tsp"
+  },
+  "Karlsson's Kold Brew": {
+    "Karlssons Gold Vodka CoffeeInfused": "1oz",
+    "Café Moka": "0.75oz",
+    "Cardamom syrup": "0.75oz",
+    "Soymilkcoffeefoam**": "2 Tbsp",
+    "Espressopowder": "1 pinch"
+  },
+  "Root Down": {
+    "Karlssons Gold Vodka RootInfused": "2oz",
+    "Cardamaro": "0.5oz",
+    "Fresh lemon juice": "0.5oz",
+    "GradeA dark maple syrup": "0.5oz",
+    "Fentemans ginger beer": "1.5oz",
+    "Wholelicoriceroot": "4 inch"
+  },
+  "Chilli Vanilli": {
+    "Karlssons Gold Vodka": "2oz",
+    "Lustau Amontillado Sherry": "0.5oz",
+    "St Elizabeth Allspice Dram": "0.75oz",
+    "Burned Demerara Sugar Syrup": "0.75oz",
+    "Bob'sVanillaBitters": "1 tincture",
+    "Vanilla Powder": "0.75oz",
+    "EggWhite": "1 "
+  },
+  "Pear and Cranberry Fizz": {
+    "Karlssons Gold Vodka": "1.5oz",
+    "Fresh Lemon Juice": "0.5oz",
+    "Rothman & Winter Orchard Pear Liqueur": "1oz",
+    "Cranberry Juice": "0.75oz",
+    "FeeBrothersCranberryBitters": "1 tincture",
+    "FreshCranberries": "10 "
+  },
+  "Asian Affair": {
+    "Karlssons Gold Vodka": "2oz",
+    "Boiron Kalamansi Juice": "0.75oz",
+    "Thai Basil Syrup": "0.5oz",
+    "Cocchi Americano": "0.5oz",
+    "Fentimans Ginger Beer": "2oz"
+  },
+  "Pumpkin and Spice": {
+    "OatmealInfused Karlssons Gold Vodka": "1.5oz",
+    "Ginger Beer": "1.5oz",
+    "Oloroso Sherry": "0.5oz",
+    "St Elizabeth Allspice Dram": "0.25oz",
+    "Molasses": "0.25oz",
+    "PumpkinPuree": "1 bsp",
+    "FeeBrothersBlackWalnutBitters": "1 tincture"
+  },
+  "Tambourine": {
+    "Karlssons Gold Vodka": "2oz",
+    "Pineapple juice": "0.75oz",
+    "Fresh lime juice": "0.5oz",
+    "Kaffir lime & tamarind compound syrup": "0.5oz"
+  },
+  "Eden's Apple": {
+    "Apple & CinnamonInfused Karlssons Gold Vodka": "1.5oz",
+    "J T Taylors Falernum": "0.75oz",
+    "Fresh lemon juice": "0.5oz",
+    "Fresh Cider": "1oz",
+    "BarKeepBakedapplebitters": "1 tincture"
+  },
+  "Swedish 75": {
+    "Karlssons Gold Vodka": "1oz",
+    "Lemon curd or a large bar spoon": "1oz",
+    "Brut Champagne": "1.5oz"
+  },
+  "Barbary Coast Bulldog": {
+    "Hophead Vodka": "1.5oz",
+    "Luxardo Espresso Italian Liqueur": "0.75oz",
+    "Cream": "2oz",
+    "Mexican Coca Cola": "2oz"
+  },
+  "Apple Shrub Spritz": {
+    "Karlssons Gold Vodka": "1oz",
+    "Spiced apple shrub": "2.5oz",
+    "Chilled club soda": "2oz"
+  },
+  "Goat Town Swizzle": {
+    "Old Potrero Straight Rye Whiskey": "1oz",
+    "Luxardo Apricot Liqueur": "0.5oz",
+    "Luxardo Fernet": "0.33oz",
+    "Lemon juice": "0.75oz",
+    "Homemade orgeat": "0.5oz",
+    "Angosturabitters": "4 dash",
+    "FeeBrosOrangebitters": "3 dash"
+  },
+  "The No.3 Winter Cup": {
+    "No.3LondonDryGin": "25 ml",
+    "King'sGingerLiqueur": "25 ml",
+    "RedVermouth(AnticaFormula)": "12.5 ml",
+    "Goodqualitysharplemonade": "150 ml"
+  },
+  "La La Land": {
+    "Karlssons Gold Vodka": "1.5oz",
+    "Aperol": "0.5oz",
+    "Raspberrywhite pepper syrup": "0.5oz",
+    "Fresh lemon juice": "0.5oz",
+    "Fresh cucumber juice": "0.5oz",
+    "Freshmint": "4-5 pc",
+    "Celerybitters": "2 dashes"
+  },
+  "Vieux Carré": {
+    "Rye Whiskey": "0.75oz",
+    "H by HINE": "0.75oz",
+    "Tempus Fugit Alessio Vermouth Bianco": "0.75oz",
+    "Benedictine": "1 bsp",
+    "AngosturaBitters": "2 dash",
+    "Peychaud'sBitters": "2 dash"
+  },
+  "Mack's Apple": {
+    "Mezcal": "1.5oz",
+    "Fresh Lemon Juice": "0.5oz",
+    "Apple Cider Reduction": "1oz",
+    "CinnamonChipotle Syrup": "0.5oz",
+    "House-madeApplePieBitters**": "1 dash"
+  },
+  "The Ladybird": {
+    "Pink Pigeon Rum": "2oz",
+    "FeeBrothersBlackWalnutBitters": "2 dash",
+    "Luxardo Sangue Morlacco Cherry Liqueur": "0.5oz",
+    "Luxardo Fernet": "0.5oz"
+  },
+  "Passionate Pigeon ": {
+    "PinkPigeonRum": "50 ml",
+    "Lycheejuice": "50 ml",
+    "Lime": "0.5 ",
+    "Passionfruit": "1 ",
+    "Gingerbeer": "1 float"
+  },
+  "Mayan Decadence": {
+    "Chinaco Anejo Tequila": "1.75oz",
+    "Xtabentun Liqueur honey": "0.5oz",
+    "BittermensXocolatlMoleBitters": "3 dash",
+    "FeeBrothersAztecChocolateBitters": "3 dash"
+  },
+  "The No.3 Winter Punch": {
+    "No.3LondonDryGin": "1 part",
+    "King'sGingerLiqueur": "1 part",
+    "RedVermouth(AnticaFormula)": "0.5 part",
+    "Goodqualitysharplemonade": "6 part"
+  },
+  "Xmas in Juniper": {
+    "Junipero Gin": "1oz",
+    "Spiced Apricot Syrup": "0.75oz",
+    "Housemade Orgeat": "0.5oz",
+    "Lemon Juice": "0.5oz",
+    "ChristmasAle2016": "top Anchor"
+  },
+  "Muddled Mission": {
+    "Junipero Gin": "1.5oz",
+    "St Germain": "1oz",
+    "Yellow Chartreuse": "0.25oz",
+    "Lemon Juice": "0.75oz",
+    "Strawberry": "1 "
+  },
+  "The Southside": {
+    "No3 London Dry Gin": "2oz",
+    "Fresh lemon juice": "1oz",
+    "Simple syrup": "1oz",
+    "Mintleaves": "5 leaves"
+  },
+  "Apricot Blush": {
+    "Vanilla flavored Vodka": "1oz",
+    "Luxardo Apricot Liqueur": "0.75oz",
+    "Fresh sweet n sour mix": "1oz",
+    "Prosecco": "3oz",
+    "Sliced plum": "oz",
+    "Mintsprig": "2 sprigs"
+  },
+  "Nikka Coffey Malt Old Fashioned": {
+    "Nikka Coffey Malt Whisky": "2.5oz",
+    "Demerara Syrup": "0.5oz",
+    "TempusFugitAbbott'sBitters": "4 dash"
+  },
+  "Honey Basil Smash": {
+    "English Harbour Rum 5 YO": "1.5oz",
+    "Honey": "0.25oz",
+    "LimeWedges": "3 ",
+    "BasilLeaves": "4 "
+  },
+  "Nikka Coffey Grain Perfect Manhattan": {
+    "Nikka Coffey Grain Whisky": "2oz",
+    "Tempus Fugit Alessio Vermouth di Torino Rosso": "0.5oz",
+    "Dolin Vermouth": "0.5oz",
+    "TempusFugitAbbott'sBitters": "2 dash"
+  },
+  "Juniperotivo": {
+    "Junipero Gin": "1.5oz",
+    "Simple Syrup": "0.5oz",
+    "Lime Juice": "0.5oz",
+    "Pomegranate Syrup": "0.25oz",
+    "MintLeaves": "4 large"
+  },
+  "Desmond's Choice": {
+    "Hirsch Small Batch Reserve Bourbon": "2oz",
+    "Creme de Cacao": "0.5oz",
+    "Pierre Ferrand Dry Orange Curacao": "0.25oz",
+    "TheBitterTruthJerryThomasBitters": "3 dash"
+  },
+  "Cafe Creole": {
+    "Pink Pigeon Rum": "1.5oz",
+    "Luxardo Espresso Italian Liqueur": "1oz",
+    "Heavy cream": "1.5oz",
+    "Simple syrup": "0.75oz"
+  },
+  "La Nueva Moda (The New Fashion)": {
+    "Chinaco Anejo Tequila": "2oz",
+    "Mezcal": "0.25oz",
+    "Luxardo Maraschino Liqueur": "0.25oz",
+    "AgaveNectar": "2 drops",
+    "FeeBrothersAztecChocolateBitters": "3 dash",
+    "Sugar": "2 cubes"
+  },
+  "And The Cherry On Top Is...": {
+    "Luxardo Maraschino Liqueur": "1oz",
+    "Vodka": "3oz",
+    "Root 23 Cherry Almond Simple Syrup": "0.5oz",
+    "Lemon Juice": "1oz"
+  },
+  "Phad Thai": {
+    "Karlssons Gold Vodka": "2oz",
+    "Nigori sake Unfiltered": "1oz",
+    "Fresh Shibori Yuzu juice": "0.5oz",
+    "Simple syrup 21 sugar water": "0.5oz",
+    "Thaichili": "0.5 pc",
+    "Freshcilantro(stemson)": "4-5 sprigs"
+  },
+  "The Swedish": {
+    "Karlssons Gold Vodka": "1.5oz",
+    "Potato juice": "1oz",
+    "Benedictine": "0.5oz",
+    "Lemon juice": "0.5oz",
+    "Cinnamon honey syrup": "0.25oz",
+    "Blackpepper": "1 bsp",
+    "Salt": "0.5 bsp"
+  },
+  "Spring Cleanse": {
+    "HalfSmallCucumber": "1 ",
+    "MediumCarrot": "1 ",
+    "GreenApple": "1 ",
+    "KaleLeaves": "3-4 ",
+    "BigHandfulSpinachLeaves": "1 ",
+    "SmallHunkGinger": "1 ",
+    "Pastis Prado": "0.5-1oz"
+  },
+  "The King's Winter Cup": {
+    "Kings Ginger Liqueur": "1.5oz",
+    "Fresh pressed Apple Cider": "1oz",
+    "Hard Apple Cider": "4oz",
+    "Cinnamonstick": "1 stick"
+  },
+  "Prickly Pear Margarita": {
+    "Chinaco Blanco Tequila": "2oz",
+    "Lime Juice": "1oz",
+    "Prickly Pear Puree": "0.5oz",
+    "Agave": "0.5oz"
+  },
+  "The Sixth Sense": {
+    "Junipero Gin": "1oz",
+    "Luxardo Amaro Abano": "1oz",
+    "Cream of Coconut": "1.5oz",
+    "Fresh pineapple juice": "0.5oz",
+    "Fresh lime juice": "0.5oz",
+    "Angosturabitters": "3 dashes"
+  },
+  "Pink Punch": {
+    "PinkPigeonRum": "3 c",
+    "OrangeJuice": "3 c",
+    "PineappleJuice": "3 c",
+    "GingerAle": "3 c",
+    "Grenadine": "0.25 c",
+    "Fresh-SqueezedLimeJuice": "1 "
+  },
+  "The 42nd Round": {
+    "Junipero Gin": "1oz",
+    "Compas Box Great King Street Blended Scotch Whisky": "5oz",
+    "Byrrh Grand Quinquina": "1oz",
+    "Anchor Christmas Ale 2016": "0.5oz",
+    "BittercubeCorazonBitters": "2 dash",
+    "TheBitterTruthOrangeBitters": "2 dash"
+  },
+  "The Nutty Sensation": {
+    "Junipero Gin": "0.75oz",
+    "H by HINE": "0.75oz",
+    "Chateau de Montifaud Pineau des Charentes Blanc": "0.75oz",
+    "Oloroso & Moscatel Blend": "0.75oz",
+    "TheBitterTruthXocolateBitters": "2 dash",
+    "OrangeBitters": "2 dash"
+  },
+  "Maria Canevari Punch": {
+    "Luxardo Maraschino Liqueur": "0.5oz",
+    "Luxardo Apricot Liqueur": "0.75oz",
+    "Fresh Lemon Juice": "1oz",
+    "Simple Syrup": "0.25oz",
+    "Perfect Puree White Peach": "1oz",
+    "Soda Water": "3oz"
+  },
+  "Trip to Jarnac": {
+    "H by HINE": "1oz",
+    "Orange Juice": "0.5oz",
+    "Lemon Juice": "0.75oz",
+    "Batavia Arrack": "0.25oz",
+    "Simple Syrup": "0.5oz",
+    "AngosturaBitters": "1 dash"
+  },
+  "No.3 Negroni": {
+    "No3 London Dry Gin": "1oz",
+    "Tempus Fugit Alessio Vermouth di Torino Rosso": "1oz",
+    "Luxardo Bitter": "1oz"
+  },
+  "Clover Holiday Cocktail": {
+    "Hophead Vodka": "2oz",
+    "Lime Juice": "0.75oz",
+    "Bay LeafInfused Honey Syrup": "0.5oz",
+    "Clovers Gingersnap": "2oz",
+    "Cinnamon": "1 pinch"
+  },
+  "Barrel Aged Ginger Negroni": {
+    "JuniperoGin": "1 part",
+    "King'sGingerLiqueur": "1 part",
+    "Campari": "1 part",
+    "SweetVermouth": "1 part"
+  },
+  "Amaretto Bourbon Punch": {
+    "Hirsch Small Batch Reserve Bourbon": "37.5oz",
+    "Luxardo Amaretto di Saschira": "6.25oz",
+    "Fresh Lemon Juice": "12.5oz",
+    "Sparkling Apple Juice": "12.5oz",
+    "Simple Syrup": "6.25oz",
+    "Seltzer": "37.5oz"
+  },
+  "Merry Sherry Cobbler": {
+    "Christmas Spirit": "1.5oz",
+    "Oloroso Sherry": "1oz",
+    "Walnut Liqueur": "0.25oz",
+    "Regans'OrangeBitters": "3 dash",
+    "PearBitters": "3 dash"
+  },
+  "French 75": {
+    "No3 London Dry Gin or H by HINE": "0.75oz",
+    "Fresh Lemon Juice": "0.75oz",
+    "SimpleSyrup": "1 dash",
+    "SparklingWine": "1 float"
+  },
+  "A Mi Manera (My Way) Pisco Punch": {
+    "BarSol Selecto Italia Pisco": "2oz",
+    "Luxardo Apricot Liqueur": "1oz",
+    "Minta Soda": "2oz",
+    "CitricAcidorLimeJuice": "1 pinch",
+    "PineappleSorbet": "1 scoop"
+  },
+  "You're Bitter Than That": {
+    "Blanco Tequila": "0.75oz",
+    "Luxardo Bitter Bianco": "0.75oz",
+    "Luxardo Sangue Morlacco Cherry Liqueur": "0.75oz",
+    "Fresh Lime Juice": "0.75oz",
+    "Rich Simple Syrup 21": "0.25oz"
+  },
+  "Cocao Martini ": {
+    "Karlssons Gold Vodka": "2.5oz",
+    "Ginger Brown": "0.5oz",
+    "Hellahulabitters": "4 dash",
+    "Cocaobeans": "3 beans"
+  },
+  "On the Flipside": {
+    "Pink Pigeon Rum": "1.5oz",
+    "Lime juice": "1oz",
+    "Simple syrup": "0.75oz",
+    "Mintleaves": "2 ",
+    "Cucumberslices": "3 "
+  },
+  "Farmer's Gold": {
+    "Karlssons Gold Vodka": "2oz",
+    "Fresh Lemon Juice": "0.75oz",
+    "Simple Syrup 11": "1oz",
+    "Regans'OrangeBitters": "3 dash",
+    "BasilLeaves": "5 large",
+    "BlackPeppercorns": "16 whole"
+  },
+  "Winter Swizzle": {
+    "Pink Pigeon Rum": "2oz",
+    "Fresh lime juice": "1oz"
+  },
+  "Lost at Sea": {
+    "Kings Ginger Liqueur": "2oz",
+    "Lime juice": "1oz",
+    "Cane sugar syrup": "0.5oz",
+    "Club soda": "2oz"
+  },
+  "Feingold": {
+    "Brandy": "2oz",
+    "Orange Cordial": "0.5oz",
+    "LuxardoSangueMorlaccoCherryLiqueur": "1 bsp",
+    "LuxardoCherry(muddled)": "1 ",
+    "AromaticBitters": "1 dash",
+    "CherryBitters": "1 dash"
+  },
+  "Lovage In The Garden": {
+    "Hophead Vodka": "2oz",
+    "SunGoldCherryTomatoes": "3 ",
+    "LovageLeaves": "4 ",
+    "Lime Juice": "0.75oz",
+    "Agave Syrup 11 agave to water": "0.5oz",
+    "Luxardo Aperitivo": "0.5oz",
+    "HeppsGhostPepperSalt": "1 pinch"
+  },
+  "Georgia Old Fashioned": {
+    "Nikka Coffey Grain Whisky": "2.5oz",
+    "Tipplemans Barrel Smoked Maple Syrup": "0.25oz",
+    "Regans'OrangeBitters": "2 dash",
+    "AngosturaBitters": "5 dash",
+    "Orange": "1 disc",
+    "Lemon": "1 disc",
+    "Peach": "1 slice"
+  },
+  "Stroll Through the Park": {
+    "BarSol Primero Quebranta Pisco": "2oz",
+    "Simple Syrup": "0.5oz",
+    "Orange Juice": "0.5oz",
+    "Lemon": "0.5oz",
+    "ElGuapoTonicSyrup": "1 bsp",
+    "ElGuapoTonicBitters": "4 dash",
+    "CucumberSlices": "3 ",
+    "MintSprig": "2 "
+  },
+  "Naughty Nikka": {
+    "Nikka Whisky Taketsuru Pure Malt 12 YO": "2oz",
+    "Fresh Ginger Syrup": "1oz",
+    "Orangeslice": "1 slice",
+    "ChineseFiveSpiceBitters": "1 dash"
+  },
+  "Masataka's Vision": {
+    "Nikka Whisky Taketsuru Pure Malt 12 YO": "2oz",
+    "Luxardo Amaro Abano": "0.5oz",
+    "House-madeRastaBitters": "3 dash"
+  },
+  "Ginger Pigeon": {
+    "Pink Pigeon Rum": "1oz",
+    "Luxardo Aperitivo": "0.5oz",
+    "Simple syrup": "0.5oz",
+    "Lemon juice": "0.5oz",
+    "Gingerbeer": "1 float",
+    "Choppedpineapple": "4 pieces",
+    "Gingerroot": "3 pieces"
+  },
+  "Spice and Stormy": {
+    "Pink Pigeon Rum": "1.5oz",
+    "Simple syrup": "0.5oz",
+    "Lemon juice": "0.5oz",
+    "Luxardo Bitter": "0.5oz",
+    "Gingerbeer": "1 float",
+    "Pineapple": "4 pieces",
+    "Gingerroot": "4 pieces"
+  },
+  "Stone Fruit Patch V2": {
+    "Luxardo Maraschino Liqueur": "1oz",
+    "Peach Puree": "0.5oz",
+    "Lime Juice": "0.75oz",
+    "Raspberries": "3 ",
+    "Sparkling Wine": "1oz"
+  },
+  "Stone Fruit Patch V1": {
+    "Luxardo Maraschino Liqueur": "1oz",
+    "Peach Puree": "0.5oz",
+    "Lime Juice": "0.75oz",
+    "Raspberries": "3 "
+  },
+  "Mint Garden": {
+    "Chinaco Reposado Tequila": "1.5oz",
+    "Luxardo Triplum Triple Sec": "0.5oz",
+    "Fresh grapefruit juice": "0.75oz",
+    "Lemon juice": "0.5oz",
+    "Simple syrup": "0.5oz",
+    "Redbellpepper": "4 pieces",
+    "Mint sprigs": "4oz"
+  },
+  "Sabotage": {
+    "Breck Bourbon": "2oz",
+    "Dancing Pines Black Walnut Bourbon": "0.5oz",
+    "Punt e Mes": "0.5oz",
+    "Kings Ginger Liqueur": "0.25oz"
+  },
+  "Rhapsody in Red": {
+    "Chinaco Blanco Tequila": "1.5oz",
+    "Wild Hibiscus Tea": "1oz",
+    "Fresh Lime Juice": "0.5oz",
+    "Agave Nectar": "0.5oz"
+  },
+  "Cherry Old Fashioned": {
+    "DemeraraSugar": "0.5 tsp",
+    "RoastedCherry": "1 ",
+    "CherryInfused Vodka": "2oz",
+    "AmarodiAngostura": "0.25 tsp",
+    "LuxardoMaraschinoLiqueur": "0.25 tsp",
+    "MiracleMileForbiddenBarrelAgedBitters": "5 dash"
+  },
+  "Basil Gin and Tonic": {
+    "Lime Juice": "1oz",
+    "Basil": "1 spg",
+    "Tonic Water": "2oz",
+    "Junipero Gin": "1oz"
+  },
+  "Kumquat Smash": {
+    "Luxardo Triplum Triple Sec": "1oz",
+    "Ypioca Brasilizar Cachaca Prata Classica": "1oz",
+    "Luxardo Sour Cherry Syrup Previously Amarena": "0.5oz",
+    "Kumquats": "5 ",
+    "MangoFlavoredRum": "1 float"
+  },
+  "Mystique Green (Adapted)": {
+    "No3 London Dry Gin": "1.5oz",
+    "Luxardo Triplum Triple Sec": "0.75oz",
+    "Elderflower Liqueur": "0.75oz",
+    "Fresh lime juice": "1oz",
+    "Kiwi": "0.5 "
+  },
+  "Nara Mule": {
+    "Kumquats": "2 ",
+    "Lychee": "2 ",
+    "Bulleit Rye": "2oz",
+    "Kings Ginger Liqueur": "1oz",
+    "Fresh Lemon Juice": "0.75oz",
+    "Simple Syrup": "0.5oz",
+    "Egg White": "0.5oz",
+    "Fever Tree Ginger Beer": "0.5oz"
+  },
+  "The Reserved King": {
+    "Glenrothes Vintage Reserve": "2.5oz",
+    "Kings Ginger Liqueur": "0.5oz",
+    "AngosturaBitters": "3-4 dash"
+  },
+  "Buccaneer": {
+    "Junipero Gin": "2oz",
+    "Campari": "0.5oz",
+    "Velvet Falernum": "0.5oz",
+    "Lime Juice": "1oz",
+    "Simple Syrup": "0.5oz",
+    "chunksPineapple": "3 large"
+  },
+  "Sage & Sound": {
+    "Junipero Gin": "1.5oz",
+    "White Port": "1oz",
+    "Lemon Juice": "0.75oz",
+    "Honey Cinnamon Syrup": "0.5oz",
+    "WholeEgg": "1 ",
+    "MuddledSageLeaves": "8 "
+  },
+  "Japonais No.3": {
+    "No3 London Dry Gin": "1.5oz",
+    "Kings Ginger Liqueur": "1oz",
+    "Orange juice": "1oz",
+    "Simplesyrup": "1 dash",
+    "Cucumberslices": "2 ",
+    "Raspberries": "2 "
+  },
+  "PDA": {
+    "New York Apple Whiskey": "1.5oz",
+    "Kings Ginger Liqueur": "1oz",
+    "Lemon": "0.75oz",
+    "Lemongrass ginger syrup": "0.5oz",
+    "Egg white": "0.5oz"
+  },
+  "Apples & Grapes": {
+    "Tempus Fugit Kina LAero dOr": "1.5oz",
+    "C Drouin Pommeau de Normandie": "1oz",
+    "OrangeBitters": "2 dash"
+  },
+  "The Proverb": {
+    "H by HINE": "2oz",
+    "Maurin Quina": "0.5oz",
+    "Luxardo Maraschino Liqueur": "0.25oz",
+    "AngosturaBitters": "1 dash",
+    "BlackWalnutBitters": "2 dash"
+  },
+  "Raspberry Batida": {
+    "Ypioca Brasilizar Cachaca Prata Reserva Especial": "2oz",
+    "Sweetened Condensed Coconut Milk": "1oz",
+    "Almond Milk": "1oz",
+    "Briottet Creme de Framboise Raspberry": "0.5oz",
+    "Tempus Fugit Creme de Cacao": "0.5oz",
+    "FreshRaspberries": "1 handful",
+    "RubarbBitters": "2 dash"
+  },
+  "Ode to Kinshi": {
+    "Nikka Whisky Yoichi Single Malt 15 YO": "1.5oz",
+    "Cocchi Americano Rosa": "0.75oz",
+    "Luxardo Amaro Abano": "0.5oz",
+    "BittermensXocolatlMoleBitters": "5 dash"
+  },
+  "Junipero Gin and Tonic": {
+    "Junipero Gin": "2oz",
+    "FeverTree Tonic Water": "4oz",
+    "TonicWaterIceCubes*": "3 cubes"
+  },
+  "L'Aviation": {
+    "No3 London Dry Gin": "1.5oz",
+    "Luxardo Maraschino Liqueur": "0.5oz",
+    "Tempus Fugit Liqueur de Violettes": "0.5oz",
+    "Fresh lemon juice": "0.75oz"
+  },
+  "The Kings Mule": {
+    "Kings Ginger Liqueur": "1oz",
+    "OrangeBitters": "3 dash",
+    "Sparkling Wine": "5oz"
+  },
+  "The Bacchus Cocktail": {
+    "Concordgrapes": "5 ",
+    "Blackberries": "3 ",
+    "BarSol Primero Quebranta Pisco": "1.5oz",
+    "Crème Yvette": "1oz",
+    "Lemon juice": "1oz",
+    "Egg white": "0.5oz"
+  },
+  "Garrison's New Fashioned": {
+    "Garrison Brothers Flagship Bourbon": "2oz",
+    "Luxardo Apricot Liqueur": "0.5oz",
+    "AustralianBittersCompanyAromaticBitters": "2 dash"
+  },
+  "Pina Del Este": {
+    "Luxardo Amaretto di Saschira": "1.5oz",
+    "Limewedges": "4 ",
+    "Pinapplewheel": "1 ",
+    "Gomme syrup": "0.5oz",
+    "Pisco": "1 float"
+  },
+  "Vida Verde (Adapted)": {
+    "Chinaco Blanco Tequila": "1.5oz",
+    "Luxardo Maraschino Liqueur": "0.75oz",
+    "Lime Sweet n Sour mix": "1.5oz",
+    "Cucumber wheels": "oz",
+    "Sprigs of Mint": "oz"
+  },
+  "Culebra": {
+    "Rhum Agricolestyle": "1.5oz",
+    "Luxardo Amaretto di Saschira": "0.75oz",
+    "Fresh lime juice": "0.5oz",
+    "Cola": "4oz",
+    "Mint sprigs": "3oz",
+    "Bitters": "2 dash"
+  },
+  "Morlacco Julep": {
+    "Brandy de Jerez": "1.25oz",
+    "Luxardo Sangue Morlacco Cherry Liqueur": "0.75oz",
+    "Mint": "4 sprigs",
+    "LuxardoAmarettodiSaschira": "1 float"
+  },
+  "Sorrentino": {
+    "Luxardo Limoncello": "1oz",
+    "Luxardo Bitter": "1oz",
+    "Tempus Fugit Alessio Vermouth di Torino Rosso": "1oz",
+    "Club Soda": "2oz"
+  },
+  "SOMA Fizz": {
+    "Junipero Gin": "1.5oz",
+    "Lemon juice": "0.5oz",
+    "Luxardo Triplum Triple Sec": "0.75oz",
+    "Heavy Cream": "0.75oz",
+    "OrangeBitters": "2 dash",
+    "Club Soda": "2oz"
+  },
+  "The Ginger Royale": {
+    "King'sGingerLiqueur": "35 ml",
+    "Champagne": "140 ml"
+  },
+  "The Royal King": {
+    "Kings Ginger Liqueur": "1oz",
+    "Champagne": "4oz"
+  },
+  "Brazilian Mai Tai": {
+    "Ypioca Brasilizar Cachaca Prata Classica": "1.5oz",
+    "Mai Tai Mix": "3oz",
+    "SodaWater": "1 splash",
+    "EnglishHarbourRum": "1 float"
+  },
+  "Sorriso (Adapted)": {
+    "No3 London Dry Gin": "1oz",
+    "Pear flavored Vodka": "1oz",
+    "Luxardo Sangue Morlacco Cherry Liqueur": "0.5oz",
+    "Sherry": "0.5oz",
+    "Bitters": "2 dash"
+  },
+  "Pacific Breeze": {
+    "Luxardo Triplum Triple Sec": "1.5oz",
+    "Watermelon Liqueur": "0.75oz",
+    "Cranberry juice": "3oz",
+    "Fresh lime sweet n sour mix": "oz"
+  },
+  "Heart Breaker": {
+    "Bonded Rye": "1.5oz",
+    "Luxardo Amaro Abano": "0.5oz",
+    "Punt e Mes": "0.5oz",
+    "AngosturaBitters": "7 dash"
+  },
+  "Blood & Sand": {
+    "Glenrothes Vintage Reserve": "0.75oz",
+    "Tempus Fugit Alessio Vermouth di Torino Rosso": "0.75oz",
+    "Luxardo Sangue Morlacco Cherry Liqueur": "0.75oz",
+    "Orange Juice": "0.75oz"
+  },
+  "Harms' Way": {
+    "Luxardo Bitter Bianco": "1oz",
+    "Blanco Tequila": "1.25oz",
+    "DOM Benedictine": "0.25oz",
+    "BittermensXocolatlMoleBitters": "1 dash"
+  },
+  "Amaretto Rose": {
+    "Luxardo Amaretto di Saschira": "1.5oz",
+    "Lime Juice": "0.5oz"
+  },
+  "The Touch  of Glass": {
+    "Brandy de Jerez Foie GrasInfused": "1.5oz",
+    "TruffleTincture": "2-3 drops"
+  },
+  "La Capilla": {
+    "Mezcal": "1.5oz",
+    "Pierre Ferrand Curaçao": "0.75oz",
+    "Gordys Cocktail Pickle Brine": "0.5oz",
+    "Watermelon Juice": "1oz",
+    "Fresh Grapefruit Juice": "0.5oz",
+    "Fresh Lime Juice": "0.5oz"
+  },
+  "Palais Royal": {
+    "Champagne": "3oz",
+    "H by HINE": "1oz",
+    "Cherry Brandy": "0.33oz",
+    "LemonJuice": "1 tsp"
+  },
+  "Rothes Julep": {
+    "Glenrothes Vintage Reserve": "2oz",
+    "MintLeaves": "5 "
+  },
+  "Rio De Janeiro Mule": {
+    "Ypioca Brasilizar Cachaca Prata Classica": "1.5oz",
+    "Ginger Citrus Agave Blend": "1.5oz",
+    "Ginger Ale": "5oz",
+    "AromaticBitters": "1 dash"
+  },
+  "Fernet Frappe": {
+    "Luxardo Fernet": "1.5oz",
+    "Kings Ginger Liqueur": "0.5oz",
+    "Cola": "2oz",
+    "Lemonjuice": "1 wedge"
+  },
+  "Red Bud Trail": {
+    "No3 London Dry Gin": "1.5oz",
+    "Luxardo Sangue Morlacco Cherry Liqueur": "0.75oz",
+    "Dry Vermouth": "0.5oz",
+    "Tempus Fugit Alessio Vermouth di Torino Rosso": "0.25oz",
+    "AngosturaBitters": "1 dash"
+  },
+  "The Twinger ": {
+    "Kings Ginger Liqueur": "1.5oz",
+    "AngosturaBitters": "2 dash"
+  },
+  "No.3 & T": {
+    "No3 London Dry Gin": "1.5oz",
+    "Lemon": "1 lemon",
+    "Tonicwater": "1 fill"
+  },
+  "3 & Tree ": {
+    "No3 London Dry Gin": "1.5oz",
+    "Maurin Quina": "0.25oz"
+  },
+  "Crooked Kilt": {
+    "Glenrothes Vintage Reserve": "1.5oz",
+    "Lime Juice": "0.75oz",
+    "Green Chartreuse": "0.5oz",
+    "Velvet Falernum": "0.5oz",
+    "Pineapple Juice": "0.5oz"
+  },
+  "Orange Crush": {
+    "Glenrothes Vintage Reserve": "2.5oz"
+  },
+  "San Fran Soda": {
+    "Hophead Vodka": "1.25oz",
+    "Fresh Lime Juice": "0.5oz"
+  },
+  "Simply Perfecto": {
+    "BarSol Perfecto Amor Aperitif Wine": "2oz"
+  },
+  "Château Montifaud Creation": {
+    "Chateau de Montifaud Cognac VS": "1.5oz",
+    "Lemon Juice": "1oz",
+    "Orgeat Almond Syrup": "0.25oz",
+    "Triple Sec": "0.25oz"
+  },
+  "Château Montifaud on the Rocks": {
+    "Chateau de Montifaud Cognac XO": "1.5oz",
+    "IceCubes": "3 "
+  },
+  "Château Montifaud Pink Love": {
+    "Chateau de Montifaud XO Silver": "0.75oz",
+    "Sugar Syrup": "0.75oz",
+    "Lemon Juice": "0.75oz",
+    "Raspberries": "3 "
+  },
+  "Duke's Classic Dry Martini": {
+    "No3 London Dry Gin": "3oz",
+    "ExtraDryVermouth": "1 tsp",
+    "AmalfiLemon": "1 "
+  },
+  "Glimpse of Seduction": {
+    "Luxardo Maraschino Liqueur": "0.75oz",
+    "Grapefruit flavored Vodka": "0.75oz",
+    "Fresh lemon juice": "0.5oz",
+    "Pomegranateliqueur": "1 float",
+    "Lemonsorbet": "2 scoop"
+  },
+  "Bloody Fernet": {
+    "Luxardo Fernet": "1oz",
+    "Luxardo Maraschino Liqueur": "0.75oz",
+    "Bloodorangesorbet": "2 scoop"
+  },
+  "Kentucky Likker": {
+    "Hirsch Small Batch Reserve Bourbon": "1.5oz",
+    "Luxardo Amaro Abano": "1oz",
+    "OrangeBitters": "2 dash",
+    "ClubSoda": "1 splash"
+  },
+  "Château Montifaud Lady Touch Triple Sec": {
+    "Chateau de Montifaud Reserve Speciale Michel Vallet": "1.5oz",
+    "Triple Sec": "0.75oz",
+    "Lemon Juice": "1oz",
+    "Sugar Syrup": "1oz",
+    "FreshMint": "8 "
+  },
+  "Pink Colada": {
+    "Pink Pigeon Rum": "2oz",
+    "Pineapple Juice": "2oz",
+    "Cream of Coconut": "1.5oz"
+  },
+  "Profundo": {
+    "Hirsch Small Batch Reserve Bourbon": "1.25oz",
+    "Luxardo Sangue Morlacco Cherry Liqueur": "1.25oz",
+    "Chocolate Liqueur": "0.5oz",
+    "Heavy cream flavored with Hum Liqueur": "1oz"
+  },
+  "Château Montifaud on Mint": {
+    "spoonSugarSyrup": "1 coffee",
+    "FreshMint": "10 ",
+    "SlicedGreenLemon": "0.25 ",
+    "Chateau de Montifaud Cognac VSOP": "1oz",
+    "Lemon Juice": "0.75oz",
+    "Sparkling Water": "0.75oz"
+  },
+  "Tequila Sunflare": {
+    "Chinaco Blanco Tequila": "1.5oz",
+    "SageCilantroLime Syrup": "0.75oz",
+    "PomegranateIceCube": "1 "
+  },
+  "Kiss Of Persuasion": {
+    "Luxardo Maraschino Liqueur": "1oz",
+    "HoneyPear Liqueur": "1oz",
+    "Heavy Cream": "0.5oz",
+    "Pinch of Cardamom": "oz",
+    "Dehydrated pear slice": "oz"
+  },
+  "Marchesa": {
+    "LuxardoMaraschinoLiqueur": "30 ml",
+    "Bitter": "20 ml",
+    "LuxardoSangueMorlaccoCherryLiqueur": "20 ml",
+    "Bourbon": "20 ml",
+    "ChocolateBitters": "2 dash"
+  },
+  "Brazilian Mule Punch": {
+    "YpiocaBrasilizarCachacaPrataReservaEspecial": "2 part",
+    "FreshLimeJuice": "1 part",
+    "AnchoChile-InfusedSimpleSyrup": "1 part",
+    "GingerBeer": "1 float",
+    "AngosturaBitters": "2 dash"
+  },
+  "Coco Batida": {
+    "Coconut milk": "1 1/2oz",
+    "Condensed milk": "1 1/2oz",
+    "Ypiòca": "3oz",
+    "Sugar": "1 Tbsp"
+  },
+  "Orange Batida": {
+    "Orange Juice": "2 1/2oz",
+    "Ypiòca": "1 1/2oz",
+    "Sugar": "1-2 Tbsp"
+  },
+  "Passion Fruit Batida": {
+    "Sugar": "1-2 Tbsp",
+    "Ypiòca": "1 1/2oz"
+  },
+  "Peach Batida": {
+    "Peach Juice": "3oz",
+    "Condensed milk": "1 1/2oz",
+    "Ypiòca": "1 1/2oz",
+    "Sugar": "1 Tbsp"
+  },
+  "Karlsson's Old Fashioned": {
+    "Karlssons Gold Vodka": "2oz",
+    "Brownsugar": "1 cube",
+    "Bitter": "1 splash"
+  },
+  "Gold Rush": {
+    "BasilLeaves": "3 ",
+    "Karlssons Gold Vodka": "1.5oz",
+    "Pineapple Juice": "0.75oz",
+    "Simple Syrup": "0.5oz",
+    "Sweet Vermouth": "0.5oz",
+    "Lime Juice": "0.5oz",
+    "Egg White": "0.5oz",
+    "AngosturaBitters": "1 dash"
+  },
+  "The Improved Sazerac": {
+    "H by HINE": "1.5oz",
+    "Luxardo Maraschino Liqueur": "0.25oz",
+    "SimpleSyrup(1:1)": "0.5 tsp",
+    "Peychaud'sBitters": "3 dash",
+    "AngosturaBitters": "1 dash"
+  },
+  "Luxardo Fresco": {
+    "Luxardo Maraschino Liqueur": "1.5oz",
+    "Cucumber": "1 strip",
+    "LemonJuice": "1 dash"
+  },
+  "Stranger in the Alps": {
+    "Junipero Gin": "1.5oz",
+    "Carpano Antica": "1oz",
+    "Campari": "0.75oz",
+    "Braulio Amaro": "0.25oz",
+    "Salt": "1 pinch"
+  },
+  "Corpse Reviver No.2": {
+    "No3 London Dry Gin": "0.75oz",
+    "Tempus Fugit Kina LAero dOr": "0.75oz",
+    "The Genuine Curacao Liqueur Clear": "0.75oz",
+    "Lemon Juice": "0.75oz"
+  },
+  "Sazerac": {
+    "Vieux Pontarlier Absinthe Francaise Superieure": "0.5oz",
+    "H by HINE": "2oz",
+    "TempusFugitAbbott'sBitters": "3 dash",
+    "Sugar": "0.5 tsp"
+  },
+  "The Last Marasca": {
+    "Gin": "50 ml",
+    "LuxardoMaraschinoLiqueur": "20 ml",
+    "LuxardoOrgeatSyrup": "5 ml",
+    "LemonJuice": "5 ml",
+    "Absinthe": "1 dash"
+  },
+  "Seersucker Sunshine": {
+    "Luxardo Bitter Bianco": "0.75oz",
+    "Seersucker Gin": "1.5oz",
+    "Lillet Blanc": "0.5oz",
+    "Sauternes": "1.5oz",
+    "OrangeBlossomWater": "2 dash"
+  },
+  "Bubbleliciously Delicious": {
+    "Luxardo Fernet": "0.5oz",
+    "Luxardo Triplum Triple Sec": "1.5oz",
+    "Angosturabitters": "1 dash",
+    "Satsumaslices": "2 slices",
+    "Sioux City Sarsparilla Soda": "2oz"
+  },
+  "Wooster 53": {
+    "No3 London Dry Gin": "1.5oz",
+    "Grapefruit Juice": "0.75oz",
+    "GingerCardamomHoney Syrup": "0.75oz",
+    "Lime Juice": "0.25oz"
+  },
+  "The King's Mulled Cider": {
+    "Kings Ginger Liqueur": "2oz",
+    "Hard Apple Cider": "5oz",
+    "Fresh Apple Juice": "5oz"
+  },
+  "Mango No. 3": {
+    "No3 London Dry Gin": "2oz",
+    "Lemon Juice": "0.75oz",
+    "Serrano Pepper Syrup": "0.25oz",
+    "Mango Juice": "1.5oz",
+    "AngosturaBitters": "2 dash"
+  },
+  "Vintage Reserve Sour": {
+    "Glenrothes Vintage Reserve": "1.5oz",
+    "Lemon Juice": "0.5oz",
+    "SimpleSyrup": "1 dash"
+  },
+  "The King's Queen": {
+    "King'sGingerLiqueur": "50 ml",
+    "Freshlime": "25 ml",
+    "Freshginger": "1 slice",
+    "Strawberries(muddled)": "4 strawberries"
+  },
+  "The Rusty Tack": {
+    "Kings Ginger Liqueur": "1oz",
+    "Glenrothes Vintage Reserve": "1oz"
+  },
+  "Space Age Pop": {
+    "Chinaco Reposado": "1 1/2oz",
+    "Luxardo Amaro Abano": "1oz",
+    "Luxardo Maraschino Liqueur": "1/2oz",
+    "Fresh Lemon Juice": "1/4oz"
+  },
+  "The House of Duncan": {
+    "Glenrothes Vintage Reserve": "1.5oz",
+    "Luxardo Sangue Morlacco Cherry Liqueur": "0.5oz",
+    "Kings Ginger Liqueur": "0.25oz",
+    "AngosturaBitters": "1 dash"
+  },
+  "The King and Tonic": {
+    "Kings Ginger Liqueur": "1.5oz",
+    "FeverTree Tonic Water": "3oz",
+    "AngosturaBitters": "1 dash"
+  },
+  "Big and Bright": {
+    "No3 London Dry Gin": "1.5oz",
+    "Kings Ginger Liqueur": "0.5oz",
+    "Fresh grapefruit juice": "1oz",
+    "Honey": "0.25oz",
+    "Fresh lime juice": "0.25oz",
+    "FireandDamnationbitters": "1 dash",
+    "Clubsoda": "1 splash"
+  },
+  "Bakko & Zengo": {
+    "Nikka Coffey Grain Whisky": "1.5oz",
+    "Housemade Allspice Dram": "0.25oz",
+    "Heavy Cream": "0.25oz",
+    "Simple Syrup": "0.25oz",
+    "WholeEgg": "1 ",
+    "ChocolateBitters": "2 dash"
+  },
+  "Tamaulipas Margarita": {
+    "Chinaco Blanco Tequila": "2oz",
+    "Fresh Lime Juice": "1.5oz",
+    "Agave Nectar": "1oz"
+  },
+  "Long Island Limoncello Martini": {
+    "Hangar 1 Buddhas Hand Citron Vodka": "1oz",
+    "Luxardo Limoncello": "1oz",
+    "Fresh Lemon Juice": "0.75oz",
+    "Monin Cane Syrup": "0.25oz"
+  },
+  "Endless Summer": {
+    "Ypioca Brasilizar Cachaca Prata Reserva Especial": "1.5oz",
+    "Luxardo Bitter": "0.75oz",
+    "Luxardo Maraschino Liqueur": "0.25oz",
+    "Lemon Juice": "0.75oz",
+    "LemonBitters": "1 dash"
+  },
+  "Yes, Queen!": {
+    "H by HINE": "2oz",
+    "Dolin Dry Vermouth": "1oz",
+    "GiffardBananeduBrésil": "0.5 tsp",
+    "HoneySyrup": "0.5 tsp"
+  },
+  "Northern Hemisphere (Nikka 12 Edition)": {
+    "Nikka Whisky Taketsuru Pure Malt 12 YO": "2oz",
+    "English Harbour Rum": "1oz",
+    "The Genuine Curacao Liqueur Clear": "0.75oz",
+    "Lemon Juice": "0.75oz",
+    "Pineapple Juice": "0.75oz",
+    "Grenadine": "0.75oz"
+  },
+  "Italian Riviera Mojito": {
+    "Coconut Rum": "1oz",
+    "Funkin Passion Fruit Puree": "0.5oz",
+    "Briottet Creme de Banane": "0.5oz",
+    "Fresh squeezed lime": "0.5oz",
+    "MintLeaves": "8 leaves"
+  },
+  "On the Fritz": {
+    "Junipero Gin": "1.5oz",
+    "Chateau de Montifaud Pineau des Charentes Blanc": "0.5oz",
+    "Lemon Verbena Cordial": "0.75oz",
+    "Lemon Juice": "0.5oz"
+  },
+  "Bajo Control": {
+    "BarSol Perfecto Amor Aperitif Wine": "2oz",
+    "Dolin Dry Vermouth": "1oz",
+    "Lemon Juice": "0.75oz",
+    "Agave Syrup": "0.5oz"
+  },
+  "Cock-tail": {
+    "Junipero Gin": "1.5oz",
+    "Tempus Fugit Alessio Vermouth di Torino Rosso": "0.75oz",
+    "Drambuie": "0.25oz",
+    "Rich Brown Sugar Simple Syrup": "0.25oz",
+    "LargePiecesCandiedGinger": "4 ",
+    "AngosturaBitters": "3 dash"
+  },
+  "Tea Party Cocktail": {
+    "No3 London Dry Gin": "1.5oz",
+    "Kings Ginger Liqueur": "0.5oz",
+    "Orange marmalade syrup": "0.5oz",
+    "Lemon juice": "0.25oz",
+    "Bergamot tea foam": "1oz"
+  },
+  "Delicious in Mauritius": {
+    "Pink Pigeon Rum": "1.5oz",
+    "White peach puree": "0.5oz",
+    "Hibiscus syrup": "0.25oz",
+    "Lemon juice": "0.25oz",
+    "Ginger ale": "0.5oz"
+  },
+  "Oaxacan Martini": {
+    "Mezcal": "2oz",
+    "Mandarine Napoleon": "0.5oz",
+    "Lime Juice": "0.5oz",
+    "Castelvetrano Olive Brine": "1oz",
+    "FennelBitters": "3 dash"
+  },
+  "Geaux Geaux Cup": {
+    "Junipero Gin": "1oz",
+    "Maurin Quina": "1oz",
+    "Fresh Lemon": "0.5oz",
+    "Pages Elderflower Syrup": "0.5oz"
+  },
+  "Creole Cobbler": {
+    "Junipero Gin": "1oz",
+    "Sathenay Crème de Peche": "1 1/2oz",
+    "Fresh Lemon Juice": "1/2oz",
+    "2 Dashes Orange Bitters": "oz"
+  },
+  "7th Heaven ": {
+    "No3 London Dry Gin": "1.5oz",
+    "Luxardo Maraschino Liqueur": "0.5oz",
+    "Grapefruit juice": "1oz",
+    "Pages Elderflower Syrup": "0.25oz",
+    "Angosturabitters": "1 dash"
+  },
+  "Amaretto Sourball": {
+    "Vodka": "1oz",
+    "Luxardo Amaretto di Saschira": "1oz",
+    "LemonJuice": "1 splash",
+    "OrangeJuice": "1 splash"
+  },
+  "Santa Patricia": {
+    "Blanco Tequila": "1oz",
+    "Dry Curacao": "0.5oz",
+    "Luxardo Bitter": "0.5oz",
+    "Fresh Ruby Red Grapefruit Juice": "0.75oz",
+    "Cinnamon Syrup": "0.5oz"
+  },
+  "Banana's Froster": {
+    "Junipero Gin": "1.5oz",
+    "Briottet Creme de Banane": "1oz",
+    "Cream Half & Half": "0.5oz",
+    "ChocolateBitters": "2 dash"
+  },
+  "P.T. Barnum Cocktail": {
+    "No3 London Dry Gin": "1.5oz",
+    "Luxardo Apricot Liqueur": "0.5oz",
+    "Fresh Lemon Juice": "0.5oz",
+    "Angosturabitters": "1 dash"
+  },
+  "No.3 Bramble": {
+    "No3 London Dry Gin": "1.5oz",
+    "Fresh Lemon Juice": "0.5oz",
+    "Briottet Creme de Mure Blackberry": "0.5oz",
+    "Pages Elderflower Syrup": "0.25oz",
+    "Angosturabitters(optional)": "1 dash"
+  },
+  "Tahitian Fix": {
+    "BarSol Selecto Italia Pisco": "2oz",
+    "Fresh Lemon Juice": "0.75oz",
+    "Vanilla Agave Nectar": "0.5oz",
+    "Pineapple Gomme Syrup": "0.5oz",
+    "Seltzer Water": "1.5oz"
+  },
+  "Pisco Punch (Adaptation by The Commissary)": {
+    "BarSol Selecto Italia Pisco": "2oz",
+    "Lemon Juice": "1oz",
+    "Small Hand Foods Pineapple Gum Syrup": "0.75oz",
+    "Falernum": "0.5oz"
+  },
+  "The King Merlet Sidecar": {
+    "H by HINE": "1.5oz",
+    "Luxardo Triplum Triple Sec": "0.5oz",
+    "Kings Ginger Liqueur": "0.5oz",
+    "Fresh Lemon Juice": "0.5oz",
+    "Pressed Apple Juice": "1oz"
+  },
+  "3AM": {
+    "No3 London Dry Gin": "1.5oz",
+    "H by HINE": "0.75oz",
+    "Luxardo Triplum Triple Sec": "0.75oz",
+    "Kings Ginger Liqueur": "0.5oz",
+    "Fresh Lime Juice": "0.5oz"
+  },
+  "Apricot Lady": {
+    "Light Rum": "1.25oz",
+    "Luxardo Apricot Liqueur": "1oz",
+    "TripleSec": "0.25 tsp",
+    "LimeJuice": "1 Tbsp",
+    "EggWhite": "1 "
+  },
+  "Essence No.5 (Adapted)": {
+    "No3 London Dry Gin": "1.5oz",
+    "Luxardo Triplum Triple Sec": "0.75oz",
+    "Lavander syrup": "0.5oz",
+    "Fresh lime juice": "1oz",
+    "Raspberries": "4 "
+  },
+  "Last Word": {
+    "Luxardo Maraschino Liqueur": "0.75oz",
+    "Junipero Gin": "0.75oz",
+    "Green Chartreuse": "0.75oz",
+    "Fresh Lime Juice": "0.75oz"
+  },
+  "White Lady (Classic) (Adapted)": {
+    "No3 London Dry Gin": "1.5oz",
+    "Luxardo Triplum Triple Sec": "0.75oz",
+    "Fresh Lemon Juice": "0.75oz",
+    "Egg White": "0.5oz"
+  },
+  "Toasted Drop": {
+    "Citrusflavored Vodka": "1.5oz",
+    "Luxardo Limoncello": "0.75oz",
+    "Luxardo Amaretto di Saschira": "0.5oz",
+    "Fresh sweet n sour": "1oz",
+    "Egg white": "0.5oz"
+  },
+  "The Windtalker": {
+    "Hirsch Small Batch Reserve Bourbon": "1.5oz",
+    "Luxardo Amaretto di Saschira": "0.75oz",
+    "Kings Ginger Liqueur": "0.5oz",
+    "Fresh lemon juice": "0.75oz",
+    "Egg white": "0.5oz"
+  },
+  "Arapa Cocktail": {
+    "BarSol Supremo Moste Verde Italia Pisco": "1.5oz",
+    "Junipero Gin": "0.5oz",
+    "Luxardo Triplum Triple Sec": "0.75oz",
+    "Lemon juice": "0.5oz",
+    "FeeBros.RhubardBitters": "1 dash"
+  },
+  "Kay Pacha Mi Pacha": {
+    "BarSol Supremo Moste Verde Italia Pisco": "1.5oz",
+    "No3 London Dry Gin": "0.5oz",
+    "Luxardo Maraschino Liqueur": "0.5oz",
+    "Lemon juice": "0.5oz",
+    "AngosturaOrangeBitters": "2 dash"
+  },
+  "Creole Summer": {
+    "Vanilla flavored Vodka": "1.5oz",
+    "Luxardo Limoncello": "0.75oz",
+    "Fresh sweet n sour": "1oz",
+    "Passion fruit puree": "0.5oz",
+    "Egg white": "0.5oz",
+    "GreenTabasco": "7 dash"
+  },
+  "Pontchartrain Punch": {
+    "Junipero Gin": "1.25oz",
+    "Fresh Lime Juice": "0.5oz",
+    "The Genuine Curacao Liqueur Blue": "0.5oz",
+    "Pages Elderflower Syrup": "0.25oz"
+  },
+  "Junipero Jolly": {
+    "Junipero Gin": "1oz",
+    "Lemorton Pommeau de Normandie": "0.5oz",
+    "Housemade Green Apple Purée": "0.75oz",
+    "Lemon Juice": "0.75oz",
+    "Honey Syrup": "0.5oz"
+  },
+  "Mayan Mule": {
+    "Kings Ginger Liqueur": "0.5oz",
+    "Ancho Reyes Chile Liqueur": "0.5oz",
+    "Montelobos Mezcal": "0.5oz",
+    "Aviation Gin": "0.5oz",
+    "Grapefruit Juice": "0.5oz",
+    "Lime Juice": "0.5oz",
+    "BittercubeBittersJamaican#2": "2 dash",
+    "FeverTree Ginger Beer": "2oz"
+  },
+  "Assemble Mule": {
+    "MonkeyShoulderBlendedScotchWhisky": "20 ml",
+    "King'sGingerLiqueur": "15 ml",
+    "Mezcal": "20 ml",
+    "AgaveSyrup": "20 ml",
+    "LimeJuice": "15 ml",
+    "MintLeaves": "4 "
+  },
+  "Corpse Reviver No 1": {
+    "HbyHINE": "50 ml",
+    "Calvados": "25 ml",
+    "TempusFugitAlessioVermouthBianco": "25 ml"
+  },
+  "Solera Sidecar": {
+    "H by HINE": "1.5oz",
+    "Lustau East India Solera": "0.5oz",
+    "Grand Marnier": "0.25oz",
+    "Luxardo Amaretto di Saschira": "0.25oz",
+    "Lemon Juice": "0.5oz",
+    "Simple Syrup": "0.25oz"
+  },
+  "Flamenco": {
+    "Lustau Amontillado Sherry": "1.5oz",
+    "Bols Genever": "1oz",
+    "Orange Juice": "0.5oz",
+    "Lemon Juice": "0.5oz",
+    "Luxardo Orgeat Syrup": "0.75oz",
+    "AngosturaBitters": "2 dash"
+  },
+  "Orchard Malt Mule": {
+    "Glenrothes Vintage Reserve": "2oz",
+    "St Elizabeth Allspice Dram": "0.25oz",
+    "Apple Cider": "1oz",
+    "Belle Brillet": "0.5oz",
+    "Lemon": "0.5oz",
+    "AngosturaBitters": "2 dash",
+    "Ginger Beer": "2oz"
+  },
+  "#106 Cocktail": {
+    "Chinaco Blanco Tequila": "1oz",
+    "Luxardo Bitter Bianco": "1oz",
+    "Pear Syrup": "0.5oz",
+    "Lemon Juice": "0.5oz"
+  },
+  "Figge bout it": {
+    "Westland American Single Malt": "2oz",
+    "Lustau Pedro Ximénez Sherry": "0.25oz",
+    "Lemon Juice": "0.75oz",
+    "Fig & Cinnamon Syrup": "0.5oz",
+    "AngosturaBitters": "1 dash"
+  },
+  "10 to 7": {
+    "No 209 Gin": "1oz",
+    "Luxardo Maraschino Liqueur": "1oz",
+    "St Germain": "1oz",
+    "Lemon Juice": "1oz"
+  },
+  "Frankie and Johnnie": {
+    "Kings Ginger Liqueur": "1oz",
+    "C Drouin Pommeau de Normandie": "1oz",
+    "Fresh lemon juice": "0.5oz",
+    "Fresh orange juice": "0.5oz",
+    "JerryThomasBitters": "1 dash"
+  },
+  "Flight to Peru": {
+    "BarSol Selecto Italia Pisco": "1.5oz",
+    "Fresh Grapefruit Juice": "1oz",
+    "Simple Syrup": "0.25oz",
+    "Luxardo Maraschino Liqueur": "0.25oz",
+    "ChocolateMoleBitters": "1 dash"
+  },
+  "Primo Carnera": {
+    "LuxardoSangueMorlaccoCherryLiqueur": "45 ml",
+    "LuxardoTriplum(TripleSec)": "15 ml",
+    "LuxardoLiquoreSt.Antonio": "20 ml"
+  },
+  "Floral Summer": {
+    "No3 London Dry Gin": "1.5oz",
+    "Honey syrup": "0.5oz",
+    "Fresh lemon syrup": "0.75oz"
+  },
+  "Daisy Mae": {
+    "Junipero Gin": "2oz",
+    "Lime Juice": "1oz",
+    "Green Chartreuse": "0.75oz",
+    "Simple Syrup": "0.75oz"
+  },
+  "Neko Colada": {
+    "Miso washed White Rhum Agricole": "1oz",
+    "Cocchi Vermouth di Torino": "1oz",
+    "Falernum": "0.75oz",
+    "Coconut Cream": "0.75oz",
+    "Luxardo Amaretto di Saschira": "0.25oz",
+    "Lime": "0.75oz",
+    "Mandarin Orange": "0.5oz"
+  },
+  "Opaka Raka": {
+    "Junipero Gin": "1.5oz",
+    "Dons Mix": "1.5oz",
+    "Lime Juice": "0.75oz",
+    "Simple Syrup": "0.25oz",
+    "Bittermens'ElemakuleTikiBitters": "1 dash"
+  },
+  "Chingerito": {
+    "BarSol Primero Quebranta Pisco": "2oz",
+    "Grape juice": "1.5oz",
+    "BarSol Perfecto Amor Aperitif Wine": "1oz",
+    "Fresh pomegranate juice": "1oz",
+    "Cinnamon syrup": "0.75oz",
+    "Fresh lime juice": "0.75oz",
+    "Grapes": "4 "
+  },
+  "Tokyo Tea": {
+    "Nikka Coffey Grain Whisky": "1.5oz",
+    "Yogurt Liquor": "1oz",
+    "Milk": "0.5oz",
+    "Golden Sesame Honey": "0.5oz",
+    "AngosturaBitters": "1 dash",
+    "MatchaTea": "1 tsp"
+  },
+  "Knockemdown Key": {
+    "English Harbour Rum": "2oz",
+    "Briottet Creme de Banane": "0.5oz",
+    "Luxardo Maraschino Liqueur": "0.25oz",
+    "Lime juice": "0.5oz",
+    "Richsimplesyrup": "1 bsp"
+  },
+  "Andy Warhol": {
+    "No3 London Dry Gin": "1.5oz",
+    "Tempus Fugit Alessio Vermouth Bianco": "0.5oz",
+    "Fresh Squeezed Ruby Grapefruit": "1oz",
+    "Simple Syrup": "0.5oz",
+    "Cucumber": "3 slices",
+    "SodaWater": "1 fill"
+  },
+  "Ginger Drop": {
+    "Kings Ginger Liqueur": "0.5oz",
+    "Momokawa Organic Junmai Ginjo Sake": "1.5oz",
+    "Lemon juice": "0.75oz",
+    "Simple syrup": "0.5oz"
+  },
+  "Pants off Dance off": {
+    "BarSol Perfecto Amor Aperitif Wine": "0.75oz",
+    "Lime Juice": "0.5oz",
+    "Junipero Gin": "1oz",
+    "Grenadine": "0.5oz",
+    "AngosturaBitters": "1 dash",
+    "BittermensBurlesqueBitters": "1 drop"
+  },
+  "Gin n' Celery": {
+    "Old Tom Gin": "1.5oz",
+    "Lemon Juice": "0.75oz",
+    "Small Hand Foods Gum Syrup": "0.5oz",
+    "CeleryBitters": "7 dash",
+    "Tonic Water": "1oz",
+    "Salt": "1 pinch"
+  },
+  "“Prepare for Destiny! Where’s my Pizza?”": {
+    "Green Hat SpringSummer Gin": "1oz",
+    "Luxardo Maraschino Liqueur": "0.25oz",
+    "Lime": "0.5oz",
+    "Sugar Rich Simple": "0.5oz",
+    "CeleryBitters": "1 dash",
+    "FeverTree Soda": "3oz"
+  },
+  "Eat, Drink and Be Cherry": {
+    "Nikka Coffey Grain Whisky": "0.75oz",
+    "Luxardo Sangue Morlacco Cherry Liqueur": "0.75oz",
+    "Mendolera": "0.5oz",
+    "Cane Sugar": "0.5oz",
+    "Lemon": "0.5oz",
+    "FeverTree Soda": "3oz"
+  },
+  "Bird to Buck": {
+    "partPinkPigeonRum": "1 1/2",
+    "Benedictine": "1/2 part",
+    "Orgeatsyrup": "1/4 part",
+    "Lime": "1/2 part"
+  },
+  "Palermo Breeze": {
+    "Luxardo Bitter Bianco": "1.5oz",
+    "Velvet Falernum": "0.5oz",
+    "Lime": "0.5oz",
+    "Passion Fruit Syrup": "0.5oz",
+    "Belstar Sparkling Rose": "2oz"
+  },
+  "Nola '75": {
+    "Junipero Gin": "1.25oz",
+    "Pages Elderflower Syrup": "0.5oz",
+    "Fresh Lemon Juice": "0.5oz",
+    "Champagne Sparkling Wine": "oz"
+  },
+  "The Last Wish": {
+    "Luxardo Amaro Abano": "1oz",
+    "Luxardo Amaretto di Saschira": "1oz",
+    "Espresso coffee": "2oz",
+    "Vanillaicecream": "1 scoop"
+  },
+  "Aviation (Adapted)": {
+    "No3 London Dry Gin": "2oz",
+    "Luxardo Maraschino Liqueur": "0.5oz",
+    "Fresh Lemon Juice": "0.5oz",
+    "Tempus Fugit Liqueur de Violettes": "0.25oz"
+  },
+  "Vesper's Sister": {
+    "Van Gogh Blue Vodka": "1oz",
+    "No3 London Dry Gin": "1oz",
+    "Lillet Blanc": "0.5oz",
+    "St Germain": "0.25oz"
+  },
+  "The French Connection": {
+    "H by HINE": "2oz",
+    "Fresh Lemon Juice": "1oz",
+    "Demarara Simple Syrup": "1oz",
+    "AppleBitters": "4 dash"
+  },
+  "Hanky Panky (Classic)": {
+    "No3 London Dry Gin": "1.5oz",
+    "Tempus Fugit Alessio Vermouth di Torino Rosso": "1.5oz",
+    "LuxardoFernet": "2 dash"
+  },
+  "Pistachio Follies": {
+    "Luxardo Amaro Abano": "1oz",
+    "Aged Rum": "1oz",
+    "Fresh creamnot whipped": "1oz",
+    "Pistachio syrup": "0.5oz"
+  },
+  "Smoke On The Dock": {
+    "Luxardo Fernet": "0.75oz",
+    "Mezcal": "0.34oz",
+    "Fresh lime sweet n sour mix": "1.5oz",
+    "Pomegranate juice": "2oz"
+  },
+  "Abano Sour": {
+    "Luxardo Amaro Abano": "1.5oz",
+    "Fresh Lemon Juice": "1oz",
+    "Agave Nectar": "0.25oz",
+    "GrapefruitBitters": "1 dash",
+    "Egg White": "0.5oz"
+  },
+  "Singapore Sling (1915 Recipe)": {
+    "No3 London Dry Gin": "1.5oz",
+    "Luxardo Sangue Morlacco Cherry Liqueur": "0.5oz",
+    "Luxardo Triplum Triple Sec": "0.25oz",
+    "Luxardo Fernet": "0.25oz",
+    "Pineapple Juice": "3oz",
+    "Fresh Lime Juice": "0.5oz",
+    "Bitters": "2 dash"
+  },
+  "Windtalker": {
+    "Hirsch Small Batch Reserve Bourbon": "1.5oz",
+    "Luxardo Amaretto di Saschira": "0.75oz",
+    "Kings Ginger Liqueur": "0.5oz",
+    "Fresh Lemon Juice": "0.75oz",
+    "Egg White": "0.5oz"
+  },
+  "Stinger": {
+    "TempusFugitCremedeMentheGlaciale": "1 part",
+    "HbyHINE": "3 part"
+  },
+  "The Great Pumpkin Cocktail": {
+    "PumpkinInfused Glenrothes Vintage Reserve": "1oz",
+    "Kings Ginger Liqueur": "1oz",
+    "Fresh Lemon Juice": "0.5oz",
+    "GradeA Maple Syrup prefer McClures": "0.5oz"
+  },
+  "Cherry Orchard": {
+    "Luxardo Sangue Morlacco Cherry Liqueur": "0.5oz",
+    "Luxardo Maraschino Liqueur": "0.25oz",
+    "Lairds Straight Bonded": "0.5oz",
+    "Clear Creek Kirschwasser Eau de Vie": "1.25oz",
+    "Lemon juice": "0.25oz",
+    "Grapefruit juice": "0.5oz",
+    "Simple syrup": "0.25oz",
+    "Peychaud'sBitters": "2 dash"
+  },
+  "Slow Ride": {
+    "Rittenhouse Straight Rye Whisky": "1oz",
+    "Pussers Rum": "0.5oz",
+    "Kings Ginger Liqueur": "0.5oz",
+    "Basic House Lemonade": "2oz"
+  },
+  "Tropical Bronzer": {
+    "Aged Rum": "1.5oz",
+    "Luxardo Amaretto di Saschira": "1oz",
+    "Passion fruit puree": "1oz",
+    "Fresh lime sweet n sour": "2oz",
+    "Bitters": "2 dash",
+    "Coconutfoam": "1 float"
+  },
+  "Padova Collins": {
+    "Pear flavored Vodka": "1.5oz",
+    "Luxardo Limoncello": "0.75oz",
+    "Luxardo Sambuca dei Cesari": "0.25oz",
+    "Fresh sweet n sour mix": "1.5oz",
+    "Lemon lime soda": "2oz"
+  },
+  "Black Jam": {
+    "Luxardo Fernet": "1.5oz",
+    "Honey syrup": "0.75oz",
+    "Fresh lemon juice": "0.75oz",
+    "Tonic water": "4oz"
+  },
+  "Americana Fizz (Layered Cocktail)": {
+    "Junipero Gin": "1.5oz",
+    "Fresh Lemon Juice": "0.75oz",
+    "Simple Syrup": "0.25oz",
+    "The Genuine Curacao Liqueur Blue": "0.75oz",
+    "Luxardo Aperitivo": "0.5oz"
+  },
+  "Dutch Stories": {
+    "Genevieve Gin": "1.5oz",
+    "Luxardo Apricot Liqueur": "0.75oz",
+    "Luxardo Maraschino Liqueur": "0.25oz",
+    "Fresh lemon juice": "0.5oz",
+    "GooseberryJam": "1 Tbsp"
+  },
+  "Strike No.3": {
+    "No3 London Dry Gin": "2oz",
+    "St Germaine Elderflower Liqueur": "0.5oz",
+    "Orgeat Syrup": "0.5oz",
+    "Fresh Lemon Juice": "0.5oz"
+  },
+  "Final Ward": {
+    "Rye Whiskey": "0.75oz",
+    "Green Chartreuse": "0.75oz",
+    "Luxardo Maraschino Liqueur": "0.75oz",
+    "Fresh Lemon Juice": "0.75oz"
+  },
+  "Dernier Mot": {
+    "Rhum Agricole": "0.75oz",
+    "Green Chartreuse": "0.75oz",
+    "Luxardo Maraschino Liqueur": "0.75oz",
+    "Fresh Lime Juice": "0.75oz"
+  },
+  "The Asterisk": {
+    "Brandy": "0.75oz",
+    "Green Chartreuse": "0.75oz",
+    "Luxardo Maraschino Liqueur": "0.75oz",
+    "Lemon Juice": "0.75oz"
+  },
+  "Phineas Flip": {
+    "English Harbour Rum": "2oz",
+    "Kings Ginger Liqueur": "0.75oz",
+    "Egg": "1 whole"
+  },
+  "Luxardo Sling": {
+    "Luxardo Sangue Morlacco Cherry Liqueur": "0.25oz",
+    "No3 London Dry Gin": "0.5oz",
+    "Grapefruit Juice": "0.25oz",
+    "Sodawater": "1 fill"
+  },
+  "White Lady": {
+    "Junipero Gin": "2oz",
+    "Luxardo Triplum Triple Sec": "0.5oz",
+    "Lemon Juice": "0.5oz",
+    "EggWhite": "1 "
+  },
+  "Blue 88": {
+    "No3 London Dry Gin": "1.5oz",
+    "Lemon Juice": "0.25oz",
+    "Pages Elderflower Syrup": "0.25oz",
+    "Tempus Fugit Liqueur de Violettes": "0.25oz",
+    "Luxardo Maraschino Liqueur": "0.25oz"
+  },
+  "Cherries St. James": {
+    "No3 London Dry Gin": "1.5oz",
+    "Lemon Juice": "0.25oz",
+    "Pages Elderflower Syrup": "0.25oz",
+    "Luxardo Sangue Morlacco Cherry Liqueur": "0.25oz",
+    "Luxardo Maraschino Liqueur": "0.25oz"
+  },
+  "Bachelor's Bait": {
+    "Junipero Gin": "2oz",
+    "GrapefruitShrub": "6 dash",
+    "OrangeBitters": "3 dash",
+    "Grenadine": "1 dash",
+    "EggWhite": "1 "
+  },
+  "Boomin' Granny": {
+    "H by HINE": "1.5oz",
+    "Granny Smith Apple Juice": "1oz",
+    "Fresh Lime Juice": "0.5oz",
+    "Acacia Honey Syrup": "0.5oz"
+  },
+  "Basilway Daquiri": {
+    "BasilInfused White Rum": "1.5oz",
+    "Kings Ginger Liqueur": "0.5oz",
+    "Fresh Lime Juice": "0.25oz",
+    "Luxardo Maraschino Liqueur": "0.25oz"
+  },
+  "The Pink Pussycat": {
+    "Pink Pigeon Rum": "1.5oz",
+    "FAIR Goji Berry Liqueur": "0.5oz",
+    "Noyeau de Poissy  B": "0.5oz",
+    "Cream": "0.5oz",
+    "Chocolatebitters": "5 dash"
+  },
+  "Double Trouble": {
+    "Junipero Gin": "1.5oz",
+    "Strawberry & Black Pepper Shrub": "1oz",
+    "Hidalgo La Gitana Manzanilla Sherry": "0.75oz",
+    "Lemon Juice": "0.5oz"
+  },
+  "Yawkey Way ": {
+    "No3 London Dry Gin": "1.5oz",
+    "Smith & Cross": "0.5oz",
+    "Strawberry juice": "0.5oz",
+    "Black tea syrup": "0.5oz",
+    "Lemon juice": "0.5oz",
+    "Orangebitters": "2 dashes"
+  },
+  "Cream of the Crop": {
+    "Mezcal": "1oz",
+    "Kings Ginger Liqueur": "1oz",
+    "Coconut Pistachio Puree": "0.75oz",
+    "Lemon Juice": "0.75oz"
+  },
+  "Hemingway Daiquiri": {
+    "Pink Pigeon Rum": "1.5oz",
+    "Fresh Lime Juice": "0.75oz",
+    "Fresh Grapefruit Juice": "0.5oz",
+    "Luxardo Maraschino Liqueur": "0.5oz"
+  },
+  "Amaretto Sour (Modern)": {
+    "Luxardo Amaretto di Saschira": "2oz",
+    "Fresh Squeezed Lemon Juice": "1oz",
+    "Pasteurized Egg White": "0.5oz"
+  },
+  "Amaretto Sour": {
+    "Luxardo Amaretto di Saschira": "2oz",
+    "Fresh Lemon Juice": "1oz",
+    "Simple Syrup": "0.75oz",
+    "Egg White": "0.5oz"
+  },
+  "Red Letters": {
+    "Bols Genever": "0.75oz",
+    "Luxardo Maraschino Liqueur": "0.75oz",
+    "Absinthe": "0.75oz",
+    "Lime Juice": "0.75oz"
+  },
+  "Almond Brother": {
+    "Reposado Tequila": "2oz",
+    "Luxardo Amaretto di Saschira": "0.25oz",
+    "LuxardoApricotLiqueur": "1 tsp",
+    "Lime Juice": "0.75oz",
+    "Luxardo Orgeat Syrup": "0.25oz",
+    "Maple Syrup": "0.25oz"
+  },
+  "French 33": {
+    "No3 London Dry Gin": "1.5oz",
+    "Simple syrup": "0.75oz",
+    "Lime juice": "0.75oz"
+  },
+  "20th Century": {
+    "No3 London Dry Gin": "1.5oz",
+    "Tempus Fugit Kina LAero dOr": "0.75oz",
+    "Tempus Fugit Creme de Cacao": "0.75oz",
+    "Fresh Lemon Juice": "0.75oz"
+  },
+  "Vesper": {
+    "No3 London Dry Gin": "2.25oz",
+    "Hophead Vodka": "0.75oz",
+    "Tempus Fugit Kina LAero dOr": "0.5oz"
+  },
+  "The Seniorita": {
+    "The Genuine Curacao Liqueur Orange": "1.5oz",
+    "Lime Juice": "0.5oz",
+    "Thai Coconut Milk": "1.5oz",
+    "AngosturaBitters": "2 dash",
+    "Gosslings151Rum": "1 float"
+  },
+  "Champs Élysées": {
+    "H by HINE": "2oz",
+    "Lemon juice": "0.75oz",
+    "Green Chartreuse": "0.5oz",
+    "Simple syrup": "0.25oz",
+    "Angosturabitters": "2 dash"
+  },
+  "The Double Crown": {
+    "Compass Box Great King Street Glasgow Blend": "1.25oz",
+    "Lemon Juice": "0.75oz",
+    "Cyril Zangs Double Zero Eau de Vie de Cidre": "0.5oz",
+    "Kings Ginger Liqueur": "0.5oz",
+    "Honey Syrup": "0.5oz",
+    "EggWhite": "1 "
+  },
+  "Flip the Bird": {
+    "Pink Pigeon Rum": "1.5oz",
+    "Simple syrup": "0.75oz",
+    "Cream": "0.75oz",
+    "Punt e Mes": "0.5oz",
+    "Eggyolk": "1 "
+  },
+  "Mauritius Sour": {
+    "Pink Pigeon Rum": "0.75oz",
+    "Hirsch Small Batch Reserve Bourbon": "0.75oz",
+    "Angostura Bitters": "0.5oz",
+    "Lemon Juice": "0.75oz",
+    "Simple Syrup": "0.75oz"
+  },
+  "I'm Only Happy when it Rains": {
+    "Old Potrero Straight Rye Whiskey": "1 1/2oz",
+    "Hirsh Pinot Noir Reduction": "3/4oz",
+    "Luxardo Sangue Morlacco Cherry Liqueur": "1/4oz",
+    "Lemon Juice": "3/4oz"
+  },
+  "Monet": {
+    "H by HINE": "1.75oz",
+    "BenRiach Madeira 15 YO": "1oz",
+    "Lemon Juice": "0.5oz",
+    "Briottet Creme de Banane": "0.25oz",
+    "Small Hand Foods Pineapple Gum Syrup": "0.25oz"
+  },
+  "Hippi Hill": {
+    "Hophead Vodka": "1.5oz",
+    "Kings Ginger Liqueur": "0.75oz",
+    "Lime Juice": "0.5oz",
+    "Cranberry Juice": "0.5oz"
+  },
+  "Buster Crusta": {
+    "H by HINE": "2oz",
+    "Lemon Juice": "1oz",
+    "The Genuine Curacao Liqueur Orange": "0.75oz",
+    "Luxardo Maraschino Liqueur": "0.5oz",
+    "Small Hand Foods Gum Syrup": "0.5oz",
+    "LuxardoFernet": "1 bsp"
+  },
+  "Bird On": {
+    "Tempus Fugit Creme de Menthe Glaciale": "0.75oz",
+    "Tempus Fugit Alessio Vermouth Bianco": "0.75oz",
+    "H by HINE": "0.75oz",
+    "Lemon Juice": "0.375oz",
+    "Lime Juice": "0.375oz"
+  },
+  "Iron Tonic": {
+    "Luxardo Maraschino Liqueur": "0.75oz",
+    "Genepy": "0.75oz",
+    "Luxardo Fernet": "0.75oz",
+    "Lime Juice": "0.75oz",
+    "TonicWater": "1 float"
+  },
+  "King's Medicine": {
+    "Kings Ginger Liqueur": "1.5oz",
+    "Lemon Juice": "0.75oz",
+    "Luxardo Fernet": "0.5oz",
+    "BenRiach Curiositas Single Malt 10 YO": "0.25oz"
+  },
+  "Where's the Orgeat?": {
+    "H by HINE": "2oz",
+    "Small Hand Foods Orgeat": "1oz",
+    "Lemon Juice": "0.75oz",
+    "Luxardo Apricot Liqueur": "0.5oz",
+    "AngosturaBitters": "3 dash"
+  },
+  "Fortune & Glory": {
+    "Chinaco Reposado Tequila": "1.5oz",
+    "Lime Juice": "1oz",
+    "H by HINE": "0.5oz",
+    "Small Hand Foods Orgeat": "0.5oz",
+    "Falernum": "0.5oz",
+    "MoleBitters": "2 dash"
+  },
+  "Pisco Punch (Adaptation by The Comstock Saloon)": {
+    "BarSol Selecto Italia Pisco": "1.5oz",
+    "Small Hand Foods Pineapple Gum Syrup": "0.75oz",
+    "Lemon Juice": "0.75oz",
+    "KaffirTincture": "3 dash"
+  },
+  "Cupid's Carrier Pigeon": {
+    "No3 London Dry Gin": "1oz",
+    "Velvet Falernum": "1oz",
+    "Pink Pigeon Rum": "0.75oz",
+    "Unfiltered Apple Juice": "1oz",
+    "Lime juice": "1oz",
+    "Angosturabitters": "3 dash"
+  },
+  "The Fall 75": {
+    "Junipero Gin": "1oz",
+    "Spiced kuri squash purée": "1oz",
+    "Freshlemon": "2 dash",
+    "Honeysyrup": "2 dash"
+  },
+  "Kentucky Mai Tai": {
+    "Mezcal": "1oz",
+    "Bourbon": "1oz",
+    "Lemon": "0.5oz",
+    "Peche de Vigne": "0.5oz",
+    "Cynar": "0.5oz",
+    "Orgeat": "0.5oz",
+    "AngosturaBitters": "4 dash"
+  },
+  "Drink Lab #16": {
+    "Brandy": "2oz",
+    "Orgeat": "0.75oz",
+    "Luxardo Sangue Morlacco Cherry Liqueur": "0.75oz",
+    "Lemon Juice": "0.5oz",
+    "BittermensBurlesqueBitters": "10 drops"
+  },
+  "Grey Anchor": {
+    "Hophead Vodka": "2oz",
+    "Lime Juice": "0.75oz",
+    "St Germaine Elderflower Liqueur": "0.5oz",
+    "Luxardo Maraschino Liqueur": "0.25oz",
+    "BittercubeDoorCountyHopBitters": "5 drops"
+  },
+  "Pumpkin & Pecan": {
+    "H by HINE": "2oz",
+    "Toasted Pecan Syrup": "0.5oz",
+    "Lemon Juice": "0.75oz",
+    "Cynar": "0.5oz",
+    "SpicedPumpkinButter": "1 bsp",
+    "CinnamonTincture": "2 dash"
+  },
+  "The Red Anchor": {
+    "Junipero Gin": "1.75oz",
+    "Lemon Juice": "0.75oz",
+    "Grapefruit Juice": "0.5oz",
+    "Tempus Fugit Kina LAero dOr": "0.5oz",
+    "Ginger Syrup": "0.25oz",
+    "Simple Syrup 15  1": "0.25oz"
+  },
+  "Holland House": {
+    "Genever": "1oz",
+    "Luxardo Maraschino Liqueur": "1oz",
+    "Dry Vermouth": "0.5oz",
+    "Lemon Juice": "0.5oz",
+    "Pineapple Gomme Syrup": "0.5oz"
+  },
+  "Last Samurai": {
+    "Vodka": "1oz",
+    "Gin": "1oz",
+    "Luxardo Maraschino Liqueur": "1oz",
+    "Cointreau": "0.5oz"
+  },
+  "Long Division": {
+    "Tequila": "1.5oz",
+    "Luxardo Maraschino Liqueur": "1oz",
+    "Aperol": "0.5oz",
+    "Lime Juice": "0.25oz"
+  },
+  "Sidecar": {
+    "HINE Rare VSOP": "2oz",
+    "Mathilde Orange XO Liqueur": "0.75oz",
+    "Lemon Juice": "0.75oz",
+    "DemeraraSyrup(2:1)": "1 tsp"
+  },
+  "Spiced Marmalade": {
+    "Junipero Gin": "2oz",
+    "Orangemarmalade": "1 bsp",
+    "Lemon juice": "0.5oz",
+    "Orange juice": "1oz",
+    "Simple syrup": "0.25oz",
+    "Orangebitters": "2 dash",
+    "Clovestorched&muddled": "4 "
+  },
+  "Mezcal Witch": {
+    "Mezcal": "2oz",
+    "Lime": "0.75oz",
+    "Strega": "0.75oz",
+    "Simple Syrup": "0.75oz",
+    "Cucumbersmuddled": "3-4 ",
+    "Mintleaves": "3-4 ",
+    "Salt": "1 pinch"
+  },
+  "Italian Margarita": {
+    "Maestro Dobel Diamante Tequila": "1.5oz",
+    "Luxardo Amaretto di Saschira": "0.5oz",
+    "Fresh Lime Juice": "1oz",
+    "Monin Cane Syrup": "0.25oz"
+  },
+  "A Bloody Shame": {
+    "Vodka": "1.5oz",
+    "Luxardo Amaretto di Saschira": "0.5oz",
+    "Blood Orange Vanilla Mint Puree": "0.75oz",
+    "Lime Juice": "0.75oz"
+  },
+  "Full of Bologna": {
+    "C Drouin Calvados Selection": "1oz",
+    "Luxardo Amaro Abano": "1oz",
+    "Pear Watercress Puree": "0.75oz",
+    "Lemon Juice": "0.75oz"
+  },
+  "Donaji": {
+    "Mezcal": "2oz",
+    "Fresh Lemon Juice": "0.5oz",
+    "Fresh Lime Juice": "0.5oz",
+    "Agave Nectar": "0.75oz"
+  },
+  "Monkey Gland": {
+    "No3 London Dry Gin": "2oz",
+    "Orange juice": "1oz",
+    "Grenadine": "0.25oz",
+    "DuplaisSwissAbsintheBlanche": "1 dash"
+  },
+  "You Go Glen Coco": {
+    "Old Potrero Straight Rye Whiskey Toasted Coconut Infused": "1.25oz",
+    "Kings Ginger Liqueur": "0.5oz",
+    "Turmeric Coconut Cream": "1.25oz"
+  },
+  "Just Beet It": {
+    "Junipero Gin": "1.5oz",
+    "Beet Thyme Reduction": "1oz",
+    "Licor 43": "0.5oz",
+    "Lemon Juice": "0.5oz",
+    "EggWhite": "0.5 "
+  },
+  "Nectar of the Amazon": {
+    "Ypioca Cachaca Prata": "2oz",
+    "Passion fruit juice": "1oz",
+    "Condensed milk": "1oz"
+  },
+  "Thyme for Bed": {
+    "Chamucos Blanco Tequila": "1.5oz",
+    "Luxardo Sangue Morlacco Cherry Liqueur": "0.5oz",
+    "Thyme Simple Syrup": "0.5oz",
+    "Lime Juice": "0.5oz"
+  },
+  "Mott and Mulberry": {
+    "Luxardo Amaro Abano": "1oz",
+    "Old Overholt Rye": "1oz",
+    "Demerara Simple Syrup 11": "0.5oz",
+    "Lemon Juice": "0.5oz",
+    "Fuji Apple Cider": "0.75oz"
+  },
+  "Carrier Pigeon (an Airmail with Pink Pigeon)": {
+    "Pink Pigeon Rum": "1oz",
+    "Lime juice": "0.5oz",
+    "Honey": "0.5oz"
+  },
+  "The King's Mulled Wine": {
+    "RedWine": "1 bottle",
+    "King'sGingerLiqueur": "0.3 bottle",
+    "CasterSugar": "3 Tbsp",
+    "Lemons": "2 ",
+    "Orange": "1 ",
+    "Cinnamon": "1 stick",
+    "Nutmeg": "1 dash",
+    "StarAnise": "1 "
+  },
+  "Tea & Sympathy": {
+    "Avua Amburana Cachaça": "1oz",
+    "Kings Ginger Liqueur": "1oz",
+    "Fresh Squeezed Lemon Juice": "0.5oz",
+    "ChaiTea": "1 bag"
+  },
+  "Huntsman": {
+    "Pink Pigeon Rum": "2oz",
+    "BrownSugar": "1 cube"
+  },
+  "The Callas Cocktail": {
+    "Luxardo Bitter Bianco": "1oz",
+    "No3 London Dry Gin": "0.75oz",
+    "PomegranateCordial*": "1 bsp",
+    "Brachetto": "1.25oz",
+    "SugarCube": "1 ",
+    "TempusFugitAbbott'sBitters": "8 dash"
+  },
+  "Mauritian Buck": {
+    "PinkPigeonRum": "40 ml",
+    "Pressedapplejuice": "40 ml"
+  },
+  "The Cavalier White Lady": {
+    "Junipero Gin": "1oz",
+    "Creole Shrub": "0.75oz",
+    "Lemon juice": "0.75oz",
+    "Lemon bitters": "0.25oz",
+    "Simple syrup": "0.5oz",
+    "Eggwhite": "1 "
+  },
+  "Winter Season": {
+    "Barr Hill Honey Gin": "2oz",
+    "Lemon Juice": "1oz",
+    "Liquid Alchemist Orgeat": "0.25oz",
+    "Luxardo Maraschino Liqueur": "0.25oz",
+    "DijonBlueCuraçao": "1 bsp"
+  },
+  "Land of Valencia": {
+    "Luxardo Bitter Bianco": "0.75oz",
+    "Bols Genever": "1.5oz",
+    "Clarified Coconut Sugar Blood Orange Cordial": "0.5oz",
+    "Copper&KingsAbsinthe": "1 dash"
+  },
+  "Smashing Great Pumpkins": {
+    "Pumpkin vodka": "1.5oz",
+    "New York Apple Whisky": "0.75oz",
+    "Kings Ginger Liqueur": "0.75oz",
+    "Hot water": "0.5oz"
+  },
+  "Green and Gold": {
+    "bottleKarlsson'sGoldVodka": "750 ml",
+    "Dill": "5 sprigs",
+    "CrushedGarlic": "2 cloves",
+    "LemonPeel(whitepithremovedandjulienned)": "1 ",
+    "WholePeppercorns": "1 Tbsp"
+  },
+  "Deviled Negroni ": {
+    "No3 London Dry Gin": "1oz",
+    "Maurin Quina": "1oz",
+    "Luxardo Bitter": "1oz"
+  },
+  "El Mustavo": {
+    "Mezcal": "2oz",
+    "Tempus Fugit Alessio Vermouth Chinato": "1oz",
+    "Campari": "1oz",
+    "RhubarbBitters": "2 dash",
+    "OrangeBitters": "2 dash"
+  },
+  "Temple of the Moon": {
+    "Junipero Gin": "1oz",
+    "BarSol Primero Quebranta Pisco": "1oz",
+    "Amaro Sibilla": "1oz",
+    "Simple syrup": "0.25oz",
+    "FeeBrothersOrangeFlowerWater": "3 drops"
+  },
+  "Clear Intentions": {
+    "Luxardo Bitter Bianco": "1.5oz",
+    "Krogstad Aquavit": "0.5oz",
+    "LuxardoApricotLiqueur": "1 bsp",
+    "OrangeCreamCitrate": "1 dash",
+    "Almond Cream Soda": "1.25oz"
+  },
+  "The Queen Mother": {
+    "Bombay Dry Gin": "1.75oz",
+    "Dubonnet Rouge": "0.75oz",
+    "Kings Ginger Liqueur": "0.5oz",
+    "Lemon-CeleryBitters*": "3 dash"
+  },
+  "Espèce de Sazerac": {
+    "H by HINE": "1oz",
+    "Old Overholt Straight Rye Whiskey": "0.5oz",
+    "Rittenhouse Straight Rye Whisky": "0.5oz",
+    "RichDemeraraSimpleSyrup": "1 bsp",
+    "Peychaud'sBitters": "3 dash"
+  },
+  "Kanazawa": {
+    "Nikka Coffey Grain Whisky": "2oz",
+    "Dry Vermouth": "0.75oz",
+    "Luxardo Amaro Abano": "0.25oz",
+    "LuxardoMaraschinoLiqueur": "1 bsp",
+    "AngosturaBitters": "1 dash"
+  },
+  "Frisco San": {
+    "Nikka Whisky Taketsuru Pure Malt 12 YO": "1.5oz",
+    "BarSol Perfecto Amor Aperitif Wine": "0.75oz",
+    "Benedictine": "0.25oz",
+    "AngosturaBitters": "1 dash"
+  },
+  "Sidewinder": {
+    "H by HINE": "2oz",
+    "Apple Brandy": "0.5oz",
+    "Benedictine": "0.25oz",
+    "Yellow Chartreuse": "0.25oz",
+    "VieuxPontarlierAbsintheFrancaiseSuperieure": "1 dash",
+    "Peychaud'sBitters": "1 dash"
+  },
+  "Sade's Taboo": {
+    "H by HINE": "2oz",
+    "Cocchi Americano": "0.75oz",
+    "Dolin Rouge Vermouth": "0.75oz",
+    "BittermensHoppedGrapefruitBitters": "1 dash"
+  },
+  "Conference": {
+    "H by HINE": "0.5oz",
+    "Rye Whiskey": "0.5oz",
+    "Bourbon": "0.5oz",
+    "Calvados": "0.5oz",
+    "DemeraraSyrup": "1 tsp",
+    "AngosturaBitters": "2 dash",
+    "BittermensXocolatlMoleBitters": "1 dash"
+  },
+  "Piedra de sol": {
+    "Mezcal": "1.5oz",
+    "Montenegro Amaro Liquore Italiano": "0.75oz",
+    "Calisaya Liqueur": "0.75oz",
+    "Regans'OrangeBittersNo.6": "2 dash"
+  },
+  "Parisian Manhattan": {
+    "H by HINE": "2oz",
+    "Cocchi Americano Rosa": "1oz",
+    "AngosturaBitters": "1 dash",
+    "BittercubeCherryBarkVanillaBitters": "3 drops"
+  },
+  "Improved Whisky Cocktail": {
+    "Nikka Whisky Taketsuru Pure Malt 12 YO": "2oz",
+    "LuxardoMaraschinoLiqueur": "1 dash",
+    "PontarlierAnis": "1 dash"
+  },
+  "Day For Night": {
+    "C Drouin Calvados Selection": "1.5oz",
+    "La Quintinye Vermouth Rouge": "0.5oz",
+    "Pedro Ximenez Sherry": "0.25oz",
+    "Cannella Cinnamon Cordial": "0.25oz",
+    "Angosturabitters": "1 dash"
+  },
+  "Canary vs. the Coal Mine": {
+    "Old Forester Bonded Bourbon": "0.5oz",
+    "H by HINE": "0.5oz",
+    "Rock & Rye": "1oz",
+    "Cocchi Americano Rosa": "1oz"
+  },
+  "In HINEsight": {
+    "H by HINE": "1.5oz",
+    "Luxardo Bitter": "1oz",
+    "Quady Muscat Wine": "0.5oz"
+  },
+  "Cherry Bark Martinez": {
+    "Old Tom Gin": "2oz",
+    "Carpano Antica": "0.75oz",
+    "LuxardoMaraschinoLiqueur": "1 spoon",
+    "Angosturabitters": "1 dash",
+    "Bittercubecherrybarkbitters": "2 dash"
+  },
+  "Coos Bay": {
+    "Nikka Whisky Taketsuru Pure Malt 12 YO": "1.5oz",
+    "Etter Zuger Kirsch": "0.5oz",
+    "Doug Fir Riesling Syrup": "0.5oz",
+    "Kombutincture**": "15 dash"
+  },
+  "Divine Aspect": {
+    "No3 London Dry Gin": "1oz",
+    "Appleinfused Wild Turkey Bourbon 101": "1oz",
+    "Luxardo Apricot Liqueur": "1oz"
+  },
+  "Above My Pay Grade": {
+    "Semper Fi White Whiskey": "1.5oz",
+    "Chateau de Montifaud Pineau des Charentes Rose": "0.75oz",
+    "Tempus Fugit Gran Classico Bitter": "0.75oz",
+    "House-madeCitrusBitters": "3 dash"
+  },
+  "Manhattan": {
+    "Rye or Bourbon Whiskey": "2oz",
+    "Tempus Fugit Spirits Alessio Vermouth di Torino": "1oz",
+    "TempusFugitAbbott'sBitters": "2 dash"
+  },
+  "Polish Penance": {
+    "Housemade Slivovitz Plum Brandy": "1.5oz",
+    "Chamomile TeaInfused Noilly Prat Dry Vermouth": "1oz",
+    "Kings Ginger Liqueur": "0.5oz",
+    "Peychaud'sBitters": "3 dash"
+  },
+  "Sloe & Steady": {
+    "C Drouin Calvados Selection": "1.5oz",
+    "Spirit Works Sloe Gin": "0.75oz",
+    "Bonal": "0.5oz",
+    "BlackSaltTincture": "4 drops"
+  },
+  "50/50 Split": {
+    "Junipero Gin": "1.5oz",
+    "Dry Vermouth": "0.75oz",
+    "Tempus Fugit Alessio Vermouth Bianco": "0.75oz",
+    "TheBitterTruthOrangeBitters": "1 dash"
+  },
+  "Mayahuel's Revenge": {
+    "Chinaco Blanco Tequila": "1.5oz",
+    "Vermut Vermouth": "1oz",
+    "Giffard Banane du Brésil": "0.5oz",
+    "BittercubeJamaican#2Bitters": "3 dash"
+  },
+  "The Commissioner's Trophy #3": {
+    "No3 London Dry Gin": "1.5oz",
+    "Amaro": "1oz",
+    "BarSol Perfecto Amor Aperitif Wine": "0.5oz",
+    "Strawberry shrub": "0.5oz"
+  },
+  "Alaska Cocktail": {
+    "No3 London Dry Gin": "2.25oz",
+    "Green Chartreuse": "0.75oz",
+    "Orangebitters": "3 dash"
+  },
+  "Bushido Cocktail": {
+    "Nikka Whisky Taketsuru Pure Malt 12 YO": "2oz",
+    "Pedro Ximenez Sherry": "0.5oz",
+    "AngosturaBitters": "2 dash"
+  },
+  "Abrazo Latino": {
+    "Chinaco Reposado Tequila": "1.5oz",
+    "Luxardo Amaro Abano": "0.75oz",
+    "Luxardo Triplum Triple Sec": "0.75oz"
+  },
+  "Peruvian Wish (Adapted)": {
+    "BarSol Pisco": "1.5oz",
+    "Luxardo Amaro Abano": "0.75oz",
+    "Luxardo Maraschino Liqueur": "0.75oz"
+  },
+  "The Awen": {
+    "Pot stillstyle Irish Whiskey": "1.5oz",
+    "Luxardo Maraschino Liqueur": "0.5oz",
+    "Cocchi Americano": "1oz",
+    "OrangeBitters": "1 dash"
+  },
+  "Nikka's Golden Cherry": {
+    "Nikka Coffey Grain Whisky": "2oz",
+    "Luxardo Maraschino Liqueur": "0.5oz",
+    "Dry Vermouth Infusion": "0.75oz",
+    "BittermensBurlesqueBitters": "2 dash"
+  },
+  "Bird on a Wire": {
+    "Pink Pigeon Rum": "1.5oz",
+    "Nikka Whisky Taketsuru Pure Malt 12 YO": "0.5oz",
+    "Peychauds Bitters": "0.5oz",
+    "Luxardo Maraschino Liqueur": "0.5oz"
+  },
+  "Kind of Fancy": {
+    "H by HINE": "1.5oz",
+    "Wild Turkey 101 Rye": "0.75oz",
+    "Bin 27 Port": "0.5oz",
+    "Yellow Chartreuse": "0.25oz",
+    "MoleBitters": "2 dash"
+  },
+  "Cherry Shandy": {
+    "Luxardo Sangue Morlacco Cherry Liqueur": "1.5oz",
+    "IPA": "6oz"
+  },
+  "Playa Matalan (Mezcal Negroni)": {
+    "Mezcal": "2oz",
+    "Tempus Fugit Alessio Vermouth Chinato": "0.75oz",
+    "Tempus Fugit Gran Classico Bitter": "0.75oz",
+    "TempusFugitAbbott'sBitters": "2 dash"
+  },
+  "Party in the Agave Fields": {
+    "Mezcal": "2oz",
+    "Luxardo Triplum Triple Sec": "0.75oz",
+    "Luxardo Amaro Abano": "0.75oz",
+    "TempusFugitAbbott'sBitters": "3 dash"
+  },
+  "The Pink Aperitivo": {
+    "PinkPigeonRum": "30 ml",
+    "LuxardoAperitivo": "15 ml",
+    "RedVermouth": "15 ml",
+    "Peychaud'sBitters": "2 dash"
+  },
+  "Nikka Earl Grey": {
+    "Nikka Whisky Taketsuru Pure Malt 12 YO": "2.5oz",
+    "Honey": "0.5oz",
+    "Earl Grey Syrup": "0.5oz"
+  },
+  "Mean Martinez": {
+    "Old Tom Gin": "1.5oz",
+    "Lustau East India Solera": "1oz",
+    "Grand Poppy Liqueur": "0.5oz"
+  },
+  "Astoria": {
+    "Junipero Gin": "2oz",
+    "Dry Vermouth": "1oz",
+    "OrangeBitters": "1-2 dash"
+  },
+  "Cherry Champagne Cocktail": {
+    "Champagne or Prosecco": "4oz",
+    "Tart Cherry Juice": "1oz",
+    "Luxardo Maraschino Liqueur": "0.5oz",
+    "MoleBitters": "4 dash",
+    "LuxardoAmaroAbano": "1 bsp"
+  },
+  "The Chief": {
+    "Junipero Gin": "1.5oz",
+    "Cocchi Americano": "0.75oz",
+    "Salers Gentiane Aperitif": "0.5oz",
+    "BlackLicorice-InfusedAngosturaBitters": "2 drops",
+    "SeaSaltTincture": "1 drop"
+  },
+  "El Cortez": {
+    "Luxardo Apricot Liqueur": "1oz",
+    "Chinaco Reposado Tequila": "1.5oz",
+    "Dry Riesling": "2oz"
+  },
+  "The Lady Whisper": {
+    "Aged Rum": "1oz",
+    "Old Potrero Straight Rye Whiskey": "1oz",
+    "Luxardo Apricot Liqueur": "0.5oz",
+    "Luxardo Sangue Morlacco Cherry Liqueur": "0.5oz",
+    "Bitters": "2 dash"
+  },
+  "Angel Face (Classic)": {
+    "Luxardo Apricot Liqueur": "1oz",
+    "C Drouin Calvados Selection": "1oz",
+    "No3 London Dry Gin": "1oz"
+  },
+  "Improved Calvados Cocktail": {
+    "C Drouin Calvados Selection": "2oz",
+    "Benedictine": "1 bsp",
+    "GreenChartreuse": "1 bsp",
+    "SmallHandFoodsGumSyrup": "1 bsp",
+    "AngosturaBitters": "2 dash"
+  },
+  "Dirt Nap": {
+    "Noilly Prat Dry Vermouth": "1.5oz",
+    "Oloroso Sherry": "0.75oz",
+    "Kings Ginger Liqueur": "0.75oz"
+  },
+  "Cherry Blossom Martini": {
+    "Karlssons Gold Vodka": "2oz",
+    "Dolin Dry Vermouth": "1oz",
+    "Luxardo Maraschino Liqueur": "0.25oz",
+    "CeleryBitters": "6 dash"
+  },
+  "Pineapple Express": {
+    "Charbay Ruby Red Grapefruit Vodka": "1oz",
+    "Vya Dry Vermouth": "1oz",
+    "Hophead Vodka": "0.75oz",
+    "Small Hand Foods Pineapple Gum Syrup": "0.25oz"
+  },
+  "Iron Fist in a Velvet Glove": {
+    "Lillet Rose": "1.25oz",
+    "BarSol Primero Quebranta Pisco": "0.75oz",
+    "Prata Cachaca": "0.75oz",
+    "Velvet Falernum": "0.25oz"
+  },
+  "The Fritz": {
+    "Junipero Gin": "0.75oz",
+    "Luxardo Maraschino Liqueur": "0.75oz",
+    "Peychauds Bitters": "0.75oz",
+    "Punt e Mes": "0.75oz"
+  },
+  "Lonesome George": {
+    "ApricotInfused H by HINE": "1.25oz",
+    "Napoleon Amontillado": "1oz",
+    "Mandarine Napoléon": "0.25oz",
+    "Lazzaroni Amaro": "0.5oz"
+  },
+  "Under the Sun": {
+    "Plantation Pineapple Rum": "1.5oz",
+    "BarSol Perfecto Amor Aperitif Wine": "1oz",
+    "Ancho Reyes": "0.5oz",
+    "House-madeRoastedBananaBitters": "3 dash"
+  },
+  "B-String": {
+    "H by HINE": "1.5oz",
+    "Lustau Amontillado Sherry": "1oz",
+    "Giffard Banane du Brésil": "0.5oz",
+    "House-madeRoastedBananaBitters(orBittermensTikiBitters)": "3 dash"
+  },
+  "The Silver Cocktail": {
+    "Junipero Gin": "1.5oz",
+    "Dry Vermouth": "1.5oz",
+    "Luxardo Maraschino Liqueur": "0.25oz",
+    "OrangeBitters": "2 dash"
+  },
+  "Obituary Cocktail": {
+    "Mansinthe Absinthe": "0.25oz",
+    "Genevieve Gin": "2oz",
+    "Tempus Fugit Alessio Extra Dry Vermouth": "0.25oz"
+  },
+  "Bourbon Crusta": {
+    "Bourbon": "2oz",
+    "Orchard Syrup": "0.25oz",
+    "Lemon Juice": "0.25oz",
+    "LuxardoTriplum(TripleSec)": "1 bsp",
+    "LuxardoMaraschinoLiqueur": "1 bsp",
+    "Boker’sBitters": "3 dash"
+  },
+  "International Mistress": {
+    "Amaro Nonino Quintessentia": "1.5oz",
+    "Lemon Juice": "0.75oz",
+    "Mezcal": "0.5oz",
+    "Small Hand Foods Orgeat": "0.5oz",
+    "Soda Water": "2oz"
+  },
+  "Mezcal Coffee Old Fashioned": {
+    "Mezcal": "2oz",
+    "Rich coffee syrup": "0.5oz",
+    "Amargo Vallet": "0.5oz"
+  },
+  "Scotch Joplin": {
+    "Ardbeg Ten": "2oz",
+    "Luxardo Aperitivo": "0.75oz",
+    "The Genuine Curacao Liqueur Orange": "0.5oz",
+    "OrangeBitters": "5 dash"
+  },
+  "Virgil St.": {
+    "Mezcal": "1oz",
+    "Tempus Fugit Alessio Vermouth di Torino Rosso": "0.75oz",
+    "Old Tom Gin": "0.5oz",
+    "Tempus Fugit Kina LAero dOr": "0.5oz",
+    "DuplaisSwissAbsintheVerte": "1 dash"
+  },
+  "The Hollinger Manhattan": {
+    "Rittenhouse Rye": "2oz",
+    "Sweet Vermouth": "0.5oz",
+    "Luxardo Maraschino Liqueur": "0.25oz",
+    "Duplais Swiss Absinthe Verte": "0.25oz"
+  },
+  "The Claridge": {
+    "Gin": "2.25oz",
+    "Dry Vermouth": "2.25oz",
+    "Luxardo Apricot Liqueur": "0.75oz",
+    "Cointreau": "0.75oz"
+  },
+  "Venetian": {
+    "Luxardo Amaretto di Saschira": "0.5oz",
+    "Campari": "0.5oz",
+    "Dry Vermouth": "0.5oz"
+  },
+  "The Professor": {
+    "Nikka Coffey Grain Whisky": "1.5oz",
+    "Madeira": "0.75oz",
+    "Dolin Dry Vermouth": "0.75oz",
+    "Nux Alpina Walnut Nocino Liqueur": "0.25oz",
+    "AngosturaBitters": "1 dash"
+  },
+  "Cullerton Street": {
+    "Barley TeaInfused Nikka Coffey Grain Whisky": "2oz",
+    "Verjus Blanc": "0.25oz",
+    "Kummel Liqueur": "0.25oz",
+    "Pineau des Charentes": "0.75oz",
+    "DemeraraSugarSyrup": "1 tsp"
+  },
+  "Doctor's Orders": {
+    "Junipero Gin": "1.75oz",
+    "Dry Vermouth": "0.75oz",
+    "Curacao": "0.25oz",
+    "TempusFugitAbbott'sBitters": "1 dash"
+  },
+  "Creole": {
+    "H by HINE": "1.5oz",
+    "Clement Creole Shrubb": "0.75oz",
+    "Fino Sherry": "0.75oz",
+    "OrangeBitters": "2 dash"
+  },
+  "Coffee & Clove": {
+    "Nikka Coffey Grain Whisky": "1.5oz",
+    "Manzanilla Sherry": "0.75oz",
+    "Orange Liqueur": "0.75oz",
+    "CloveTincture": "2 dash"
+  },
+  "Swedish Nightingale": {
+    "No3 London Dry Gin": "1.5oz",
+    "Maurin Quina": "0.5oz",
+    "Pineapple Gomme Syrup": "0.25oz",
+    "PeatedKolaNutTincture": "1 bsp",
+    "AngosturaBitters": "2 dash"
+  },
+  "Nigamono": {
+    "Nikka Coffey Grain Whisky": "2oz",
+    "Maurin Quina": "0.75oz",
+    "Luxardo Amaro Abano": "0.75oz"
+  },
+  "Gran Classico Negroni": {
+    "Tempus Fugit Gran Classico Bitter": "0.75oz",
+    "No3 London Dry Gin": "0.75oz",
+    "Tempus Fugit Alessio Vermouth di Torino Rosso": "0.75oz"
+  },
+  "Pink Mojito": {
+    "Pink Pigeon Rum": "2oz",
+    "Simple syrup": "0.25oz",
+    "Cranberry juice": "2oz",
+    "Clubsoda": "1 fill",
+    "Lime": "1 whole"
+  },
+  "Karlsson's Winter Punch": {
+    "bottleKarlsson'sGoldVodka": "750 ml",
+    "Pomegranate Juice": "5oz",
+    "Cranberry Juice": "9oz",
+    "Aperol": "9oz",
+    "Simple Syrup equal parts sugar and water": "4oz",
+    "StarAnise": "3 ",
+    "Cloves": "5 ",
+    "AllspiceBerries": "4 ",
+    "CinnamonSticks": "3 ",
+    "Orange Peel": "2oz"
+  },
+  "The Boys of Summer Cup": {
+    "No3 London Dry Gin": "1oz",
+    "Dolin Rouge Vermouth": "1oz",
+    "The Genuine Curacao Liqueur Orange": "0.5oz",
+    "Kings Ginger Liqueur": "0.5oz",
+    "Chareau Liqueur": "0.25oz",
+    "Fresh Lemon Juice": "0.5oz"
+  },
+  "Brisa del Sur": {
+    "BarSol Selecto Italia Pisco": "1.5oz",
+    "Rocoto passion fruit reduction": "0.5oz",
+    "Fresh lime juice": "0.5oz",
+    "Simple syrup": "0.5oz"
+  },
+  "Bianco Americano": {
+    "Luxardo Bitter Bianco": "1.5oz",
+    "Tempus Fugit Kina LAero dOr": "1oz",
+    "Junipero Gin": "0.5oz"
+  },
+  "Soleo": {
+    "Luxardo Limoncello": "1oz",
+    "Herbal Liqueur": "1oz"
+  },
+  "Vieja Moda": {
+    "Chinaco Anejo Tequila": "2oz",
+    "Cinnamon-CloveSyrup*": "1 tsp",
+    "BittermensHellfireHabaneroShrubBitters": "4 drops",
+    "Grapefruit": "1 peel"
+  },
+  "Flambeed Brandy Alexander": {
+    "H by HINE": "2oz",
+    "Tempus Fugit Creme de Cacao": "1oz",
+    "Cream steamed as for a cappuccino": "1oz"
+  },
+  "PB&K Old Fashioned": {
+    "Karlssons Gold Vodka": "1oz",
+    "Cognac": "1oz",
+    "Benedictine": "0.5oz",
+    "AngosturaBitters": "1 tincture",
+    "Peychaud'sBitters": "1 tincture",
+    "LemonTwist": "1 pc",
+    "OrangeTwist": "1 pc"
+  },
+  "Fiery Clydesdale": {
+    "Pussers Blue Label Rum": "1.5oz",
+    "Kings Ginger Liqueur": "0.5oz",
+    "Ginger Syrup": "0.5oz",
+    "Lime Juice": "0.25oz"
+  },
+  "Mister Gingy": {
+    "Kings Ginger Liqueur": "1oz",
+    "Glenrothes Vintage Reserve": "1oz",
+    "Pineapple Gum": "0.75oz",
+    "Lemon Juice": "0.75oz",
+    "AngosturaBitters": "2 dash"
+  },
+  "Negroni Sorbetto": {
+    "Junipero Gin": "0.5oz",
+    "Luxardo Bitter": "0.5oz",
+    "Tempus Fugit Alessio Vermouth Bianco": "0.5oz",
+    "Dry Vermouth": "0.5oz",
+    "OrangeSorbet": "1 scoop",
+    "BittermensOrangeCreamCitrate": "2 drops"
+  },
+  "Amaretto Jello Shot, Why Not": {
+    "Boilingwater": "2 cups",
+    "RaspberryJellopackages": "6 packages",
+    "LuxardoAmarettodiSaschira": "1.25 cup",
+    "Freshlimejuice": "0.25 cup",
+    "Coldwater": "0.5 cup"
+  },
+  "Local Edition Punch": {
+    "HbyHINE": "12 bottles",
+    "LuxardoApricotLiqueur": "4 bottles",
+    "King'sGingerLiqueur": "1 bottle",
+    "LuxardoAperitivo": "1 bottle",
+    "Lemonjuice": "4 bottles"
+  },
+  "Classic Lolita": {
+    "Nikka Whisky Taketsuru": "2oz",
+    "Okinawa sugar": "0.5oz",
+    "Soda": "0.5oz",
+    "OrangeBitters": "2 dash",
+    "OldFashionedBitters": "2 dash"
+  },
+  "Bloody Swede": {
+    "Karlssons Gold Vodka": "2oz",
+    "Bloody mix": "2oz",
+    "Caperberry": "1 ",
+    "Celerystalk": "1 ",
+    "Cherrytomato": "1 ",
+    "Pepperoncini": "1 ",
+    "Pickledokra": "1 ",
+    "Cocktailonion": "1 ",
+    "PipparasPepper": "1 ",
+    "Lemonslice": "1 ",
+    "Jalapenostuffedolive": "1 "
+  },
+  "Ju-Ju Hurricane": {
+    "Luxardo Amaretto di Saschira": "1oz",
+    "Briottet Creme de Cassis": "0.25oz",
+    "Pink Pigeon Rum": "2oz",
+    "No3 London Dry Gin": "1oz",
+    "Gosslings 151 Rum": "1oz",
+    "Grapefruit Juice": "2oz",
+    "Pineapple Juice": "2oz"
+  },
+  "Bay Shandy": {
+    "Pink Pigeon Rum": "2oz",
+    "Blood Orange Juice": "1.5oz"
+  },
+  "II Piacere": {
+    "English Harbour Rum": "1.5oz",
+    "Luxardo Angioletto Hazelnut Liqueur": "0.5oz",
+    "Luxardo Sangue Morlacco Cherry Liqueur": "0.5oz",
+    "Fresh lemon juice": "0.5oz",
+    "Luxardo Maraschino CherryCherries": "0.25oz",
+    "Eggwhite": "1 ",
+    "BittermensBostonBittahs": "4 dash"
+  },
+  "True Dish": {
+    "No3 London Dry Gin": "1oz",
+    "Luxardo Angioletto Hazelnut Liqueur": "0.5oz",
+    "Luxardo Amaretto di Saschira": "0.5oz",
+    "Cinnamon honey syrup": "0.5oz",
+    "Luxardo Limoncello": "0.25oz",
+    "Orangeblossomwater": "1 dash",
+    "Egg": "1 whole"
+  },
+  "The Fifth Star": {
+    "Nikka Whisky Taketsuru Pure Malt 12 YO": "1.5oz",
+    "Luxardo Amaretto di Saschira": "0.5oz",
+    "Luxardo Bitter": "0.5oz",
+    "Luxardo Fernet": "0.5oz",
+    "Lustau Dry Olorosso Sherry": "0.25oz",
+    "La Colombe Cold Draft Coffee": "oz"
+  },
+  "California Aurora": {
+    "Luxardo Aperitivo": "1.5oz",
+    "Luxardo Apricot Liqueur": "0.5oz",
+    "Honey syrup": "0.5oz",
+    "Fresh lemon juice": "0.75oz",
+    "CaliforniaPoppyOil": "4 dash",
+    "AnchorCaliforniaLager": "1 float",
+    "FreshSageleaves": "6 "
+  },
+  "Plum Loco": {
+    "Luxardo Slivovitz": "1.5oz",
+    "Junipero Gin": "0.5oz",
+    "Grapefruit Juice": "0.75oz",
+    "Coco KJ Housemade Coco Lopez": "0.5oz",
+    "Luxardo Limoncello": "0.25oz",
+    "AngosturaBitters": "1 dash"
+  },
+  "Port's North Fogcutter Cup": {
+    "Luxardo Aperitivo": "1oz",
+    "Luxardo Apricot Liqueur": "0.5oz",
+    "Napa Valley Moscato Late Harvest Mondavi Moscato dOro": "1oz",
+    "Dry Amontillado Sherry": "1oz",
+    "Lemon Juice": "0.75oz",
+    "Junipero Gin": "0.5oz",
+    "Housemade Orgeat": "0.5oz",
+    "CinnamonTincture": "15 microdrops"
+  },
+  "Mayan Sacrifice": {
+    "Chinaco Blanco Tequila": "1.5oz",
+    "DArisit Xtabentun Honey Liqueur": "0.5oz"
+  },
+  "Lox, Stock & Two Smoking Barrels": {},
+  "Speyside Highball": {
+    "Glenrothes Vintage Reserve": "1.5oz",
+    "Tuaca": "1oz",
+    "Lemon Juice": "0.75oz",
+    "Lemon Verbana Simple": "0.75oz"
+  },
+  "The Shah's Shandy": {
+    "Kings Ginger Liqueur": "1oz",
+    "No3 London Dry Gin": "0.5oz",
+    "Meyer lemon juice": "0.75oz",
+    "Rich simple syrup 21 sugar to water": "0.25oz",
+    "Anchor Liberty Ale": "3oz"
+  },
+  "Elderfashion": {
+    "Hirsch Small Batch Reserve Bourbon": "2oz",
+    "Pages Elderflower Syrup": "1oz",
+    "Angosturabitters": "1 dash"
+  },
+  "Lychee & 3": {
+    "No3 London Dry Gin": "1.5oz",
+    "Dry Vermouth": "0.5oz",
+    "Kings Ginger Liqueur": "0.5oz",
+    "Yuzu": "0.75oz",
+    "Lychee Puree": "0.75oz",
+    "Simple Syrup": "0.5oz"
+  },
+  "Mauritian Sunrise": {
+    "Pink Pigeon Rum": "1.5oz",
+    "Orange Juice": "2oz",
+    "LuxardoAperitivo": "1 float"
+  },
+  "My Spicy Valentine": {
+    "Karlssons Gold Vodka": "1.5oz",
+    "Creme de Cacao": "1oz",
+    "Orange liqueur": "0.5oz",
+    "Milk": "2oz",
+    "Chocolatebitters": "3 dash"
+  },
+  "Five Star Cocktail": {
+    "Kings Ginger Liqueur": "1.5oz",
+    "BG Reynolds Cinnamon syrup": "0.5oz",
+    "Grapefruit juice": "0.5oz",
+    "Lemon juice": "0.5oz",
+    "Luxardo Amaro Abano": "0.5oz",
+    "BarKeepfennelbitters": "1 dash"
+  },
+  "Doitashimashie": {
+    "Nikka Coffey Grain Whisky": "2oz",
+    "Demerara Syrup": "0.25oz",
+    "Angosturabitters": "1 dash"
+  },
+  "Lucky No.3": {
+    "No3 London Dry Gin": "1.5oz",
+    "Luxardo Aperitivo": "1oz",
+    "Tempus Fugit Alessio Vermouth di Torino Rosso": "0.75oz",
+    "GrapefruitBitters": "1 dash",
+    "KosherSalt": "1 pinch"
+  },
+  "Motel Nacional": {
+    "Chinaco Blanco Tequila": "1.5oz",
+    "Luxardo Apricot Liqueur": "0.5oz",
+    "Lime juice": "0.75oz",
+    "Fresh Pineapple juice": "1oz",
+    "Simple syrup": "0.5oz",
+    "Soda water": "1oz"
+  },
+  "Southside Fizz": {
+    "No3 London Dry Gin": "2oz",
+    "Simple syrup": "1oz",
+    "Lime juice": "0.75oz",
+    "Mintleaves": "4 leaves",
+    "Fever Tree Club Soda": "oz"
+  },
+  "Champagne Sidecar": {
+    "H by HINE": "0.75oz",
+    "Luxardo Triplum Triple Sec": "0.75oz",
+    "Lemon juice": "0.5oz",
+    "Simple syrup": "0.25oz",
+    "Champagne": "1oz"
+  },
+  "Pisco Sling": {
+    "BarSol Primero Quebranta Pisco": "1.5oz",
+    "Luxardo Sangue Morlacco Cherry Liqueur": "0.5oz",
+    "Luxardo Triplum Triple Sec": "0.25oz",
+    "Benedictine": "0.25oz",
+    "Pineapple juice": "2oz",
+    "Lime juice": "0.5oz",
+    "Grenadine": "0.25oz"
+  },
+  "T&T": {
+    "Chinaco Reposado Tequila": "1.5oz",
+    "Luxardo Aperitivo": "0.5oz",
+    "FeverTree Tonic Water": "3oz"
+  },
+  "Scottish Fruit Tart": {
+    "Glenrothes Vintage Reserve": "0.75oz",
+    "Luxardo Sangue Morlacco Cherry Liqueur": "0.75oz",
+    "Sweet Vermouth": "0.75oz",
+    "Fresh Orange Juice": "0.75oz"
+  },
+  "The Greatest Punch on Earth": {
+    "Don Cesar Pisco": "4oz",
+    "Luxardo Triplum Triple Sec": "1oz",
+    "Apple Cider": "4oz",
+    "Oloroso Sherry": "2oz",
+    "Sherry Vinegar": "1oz"
+  },
+  "3 & Tree Tonic": {
+    "No3 London Dry Gin": "1.5oz"
+  },
+  "The King's Ginger Truffles ": {
+    "cupsGoodqualitydarkchocolate": "1 1/2",
+    "Doublecream": "1 cup",
+    "TheKing'sGinger": "5 Tbsp",
+    "Finelychoppeddrainedstemgingerinsyrup": "1 tsp"
+  },
+  "Kerouac": {
+    "Chinaco Reposado Tequila": "1.5oz",
+    "Gran Classico": "0.5oz",
+    "Luxardo Triplum Triple Sec": "0.5oz",
+    "Lime": "0.5oz",
+    "Grapefruit": "0.5oz"
+  },
+  "Cove": {
+    "Nikka Whisky Taketsuru Pure Malt 12 YO": "1oz",
+    "Cynar": "1oz",
+    "Mancino Vermouth Secco": "1oz",
+    "Regans'OrangeBittersNo.6": "1 tsp"
+  },
+  "Margarita": {
+    "Mezcal": "2oz",
+    "Luxardo Triplum Triple Sec": "1oz",
+    "Lime juice freshly squeezed": "1oz"
+  },
+  "Paloma": {
+    "Chinaco Blanco Tequila": "2oz",
+    "Fresh Grapefruit Soda": "6oz",
+    "Lime Juice": "0.5oz"
+  },
+  "Margarita Ahumeada": {
+    "Mezcal": "2oz",
+    "Fresh squeezed lime juice": "1oz",
+    "Agave Nectar": "0.5oz",
+    "Luxardo Triplum Triple Sec": "0.5oz",
+    "Habanerotincture": "3 dash"
+  },
+  "Yuzu Sazerac": {
+    "Nikka Coffey Grain Whisky": "2oz",
+    "CaneSugarSyrup": "2 tsp",
+    "Yuzu-InfusedVieuxPontarlierAbsintheFrancaiseSuperieure": "0.125 tsp"
+  },
+  "An Oaxacan Christmas": {
+    "Mezcal": "1.5oz",
+    "Green Chartreuse": "0.5oz",
+    "Campari": "0.25oz",
+    "Regans'OrangeBitters": "2 dash"
+  },
+  "Im(pear)ed Fashioned": {
+    "BarSol Pisco": "2oz",
+    "Pear Brandy": "0.5oz",
+    "Housemade Organic Pear Syrup": "0.5oz",
+    "Fresh Lemon": "0.5oz"
+  },
+  "Spring Fling Sipper": {
+    "Junipero Gin": "1oz",
+    "Kings Ginger Liqueur": "0.75oz",
+    "Fresh Grapefruit Juice": "3oz",
+    "Simple Syrup": "0.5oz",
+    "Fresh Lemon Juice": "0.25oz",
+    "Soda Water": "1oz"
+  },
+  "Potrero Hill": {
+    "Junipero Gin": "1oz",
+    "White Peach & Orange Chamomile Infused Sweet Vermouth": "0.5oz",
+    "Cinnamon Wineshine Brandy": "0.5oz",
+    "SimpleSyrup": "1 dash",
+    "Grapefruit Juice": "0.5oz",
+    "Lemon Juice": "0.5oz",
+    "Bundaberg Ginger Beer": "4oz"
+  },
+  "No3": {
+    "Hangar 1 Vodka": "1.5oz",
+    "Lemon Juice": "0.75oz",
+    "Ginger Zest": "0.75oz",
+    "Fragoli Strawberry": "0.5oz",
+    "Luxardo Bitter": "0.5oz"
+  },
+  "No.10": {
+    "Woodford Reserve Double Oaked": "1.5oz",
+    "Luxardo Bitter": "0.75oz",
+    "Rothman & Winter Orchard Apricot Liqueur": "0.75oz",
+    "Luxardo Maraschino Liqueur": "0.25oz"
+  },
+  "The Negroni Bianco": {
+    "Luxardo Bitter Bianco": "1.5oz",
+    "Tempus Fugit Alessio Vermouth Bianco": "0.75oz",
+    "Junipero Gin": "1.5oz"
+  },
+  "Match Grip Julep": {
+    "H by HINE": "1.5oz",
+    "Jamaican Rum": "0.5oz",
+    "Cacao": "1 tsp",
+    "BrancaMenta": "1 tsp",
+    "Demerara": "1 tsp",
+    "Mole": "1 dash"
+  },
+  "The Dry Cruise": {
+    "Luxardo Bitter Bianco": "1oz",
+    "Lustau Oloroso Sherry": "1oz",
+    "St Germain": "0.25oz",
+    "Lemon Juice": "0.75oz",
+    "Honey Syrup": "0.5oz"
+  },
+  "Red Hook": {
+    "Rye Whiskey": "2oz",
+    "Punt e Mes": "5oz",
+    "Luxardo Maraschino Liqueur": "0.5oz"
+  },
+  "Union Jack": {
+    "Luxardo Maraschino Liqueur": "0.75oz",
+    "Green Chartreuse": "0.75oz",
+    "Grenadine Layered Beer Back": "0.5oz"
+  }
+}
