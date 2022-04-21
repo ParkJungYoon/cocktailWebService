@@ -6,7 +6,10 @@ const CocktailSchema = new Schema({
     required: true,
   },
   ingredient: {
-    type: Object,
+    type: [String],
+  },
+  imageUrl: {
+    type: String,
   },
   rank: {
     type: Schema.Types.ObjectId,
