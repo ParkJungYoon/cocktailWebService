@@ -1,0 +1,10 @@
+# dependencies
+node_modules
+
+**/.env
+**/.DS_Store
+back/yarn-error.log
+ecosystem.config.js
+**/.env.production
+front/build/
+back/dist/

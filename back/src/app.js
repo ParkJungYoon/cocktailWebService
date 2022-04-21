@@ -3,7 +3,7 @@ import express from "express";
 import { errorMiddleware } from "./middlewares/errorMiddleware";
 import { registerRouter } from "./routers/registerRouter";
 import { loginRouter } from "./routers/loginRouter";
-import { addCocktailRouter } from "./routers/addCocktailRouter";
+import { CocktailRouter } from "./routers/CocktailRouter";
 import passport from "passport";
 import session from "express-session";
 import googleOAuth from "./utils/googleOAuth";
@@ -20,7 +20,7 @@ passport.serializeUser((user, done) => {
 });
 app.use(registerRouter);
 app.use(loginRouter);
-app.use(addCocktailRouter);
+app.use(CocktailRouter);
 
 passport.deserializeUser((user, done) => {
   done(null, user);
