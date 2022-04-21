@@ -81,7 +81,7 @@ const Firstpage = () => (
   <div
     style={{
       width: "100%",
-      height: "30%",
+      height: "40%",
       justifyContent: "center",
       alignItems: "center",
       display: "flex",
