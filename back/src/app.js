@@ -3,11 +3,7 @@ import express from "express";
 import { errorMiddleware } from "./middlewares/errorMiddleware";
 import { registerRouter } from "./routers/registerRouter";
 import { loginRouter } from "./routers/loginRouter";
-<<<<<<< HEAD
-import { addCocktailRouter } from "./routers/addCocktailRouter";
-=======
 import { CocktailRouter } from "./routers/CocktailRouter";
->>>>>>> 5c66ab382a34016a8402276d0b739ca3bc54f73c
 import passport from "passport";
 import session from "express-session";
 import googleOAuth from "./utils/googleOAuth";
