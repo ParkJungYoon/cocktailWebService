@@ -3,7 +3,7 @@ import express from "express";
 import { errorMiddleware } from "./middlewares/errorMiddleware";
 import { registerRouter } from "./routers/registerRouter";
 import { loginRouter } from "./routers/loginRouter";
-
+import { addCocktailRouter } from "./routers/addCocktailRouter";
 import passport from "passport";
 import session from "express-session";
 import googleOAuth from "./utils/googleOAuth";
