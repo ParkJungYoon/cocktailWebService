@@ -1,12 +1,32 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import Nav from "react-bootstrap/Nav";
 import { UserStateContext, DispatchContext } from "../App";
+
+import Box from "@mui/material/Box";
+import Link from "@mui/material/Link";
+import { AppBar } from "@mui/material";
+import { Toolbar } from "@mui/material";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+
+const darkTheme = createTheme({
+  palette: {
+    mode: "dark",
+    primary: {
+      main: "#1976d2",
+    },
+  },
+});
+const rightLink = {
+  fontSize: 16,
+  color: "common.white",
+  ml: 3,
+};
 
 function Header() {
   const navigate = useNavigate();
   const location = useLocation();
 
+  // 상태관리
   const userState = useContext(UserStateContext);
   const dispatch = useContext(DispatchContext);
 
@@ -24,22 +44,58 @@ function Header() {
   };
 
   return (
-    <Nav activeKey={location.pathname}>
-      <Nav.Item className="me-auto mb-5">
-        <Nav.Link disabled>안녕하세요, 포트폴리오 공유 서비스입니다.</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link onClick={() => navigate("/")}>나의 페이지</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link onClick={() => navigate("/network")}>네트워크</Nav.Link>
-      </Nav.Item>
-      {isLogin && (
-        <Nav.Item>
-          <Nav.Link onClick={logout}>로그아웃</Nav.Link>
-        </Nav.Item>
-      )}
-    </Nav>
+    <ThemeProvider theme={darkTheme}>
+      <AppBar position="fixed">
+        <Toolbar sx={{ justifyContent: "space-between" }}>
+          <Box sx={{ flex: 0 }} />
+          <Link
+            variant="h6"
+            underline="none"
+            color="inherit"
+            sx={{ fontSize: 24 }}
+            onClick={() => navigate("/")}
+          >
+            {"JACKPOT"}
+          </Link>
+          <Box sx={{ flex: 1, display: "flex", justifyContent: "flex-end" }}>
+            <Link
+              color="inherit"
+              variant="h6"
+              underline="none"
+              sx={rightLink}
+              onClick={() => navigate("/prolog")}
+            >
+              {"Prolog"}
+            </Link>
+            <Link
+              variant="h6"
+              underline="none"
+              sx={{ ...rightLink }}
+              onClick={() => navigate("/recommend")}
+            >
+              {"Recommend"}
+            </Link>
+            <Link
+              variant="h6"
+              underline="none"
+              sx={{ ...rightLink }}
+              onClick={() => navigate("/myPage")}
+            >
+              {"My Page"}
+            </Link>
+            <Link
+              variant="h6"
+              underline="none"
+              sx={{ ...rightLink }}
+              onClick={() => navigate("/login")}
+            >
+              {"Login"}
+            </Link>
+          </Box>
+        </Toolbar>
+      </AppBar>
+      <Toolbar />
+    </ThemeProvider>
   );
 }
 
