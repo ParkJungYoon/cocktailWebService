@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { LoginService } from "../service/loginService";
+import { LoginService } from "../services/loginService";
 import { verifyToken } from "../middlewares/verifyToken";
 
 
