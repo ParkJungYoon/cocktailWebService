@@ -9,6 +9,14 @@ class CocktailModel {
     const findCocktail = await Cocktail.findOne({ name: cocktail });
     return findCocktail;
   };
+
+  static modify = async (filter, updateCocktailData) => {
+    const option = { returnOriginal: false };
+    console.log(filter);
+    console.log(updateCocktailData);
+    const modifiedCocktail = await Cocktail.findByIdAndUpdate(filter, updateCocktailData, option);
+    return modifiedCocktail;
+  };
 }
 
 export { CocktailModel };

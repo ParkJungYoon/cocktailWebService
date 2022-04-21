@@ -19,6 +19,12 @@ class CocktailService {
     }
     return findCocktail;
   };
+  static modify = async ({ cocktailId, name, ingredient, rank }) => {
+    const updateCocktailData = { name, ingredient, rank };
+    const filter = { _id: cocktailId };
+    const modifiedCocktail = await CocktailModel.modify(filter, updateCocktailData);
+    return modifiedCocktail;
+  };
 }
 
 export { CocktailService };
