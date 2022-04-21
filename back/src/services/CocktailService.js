@@ -6,8 +6,8 @@ class CocktailService {
     const addCocktail = await RankModel.addCocktail(addCocktailRankData);
     return addCocktail;
   };
-  static addCocktail = async ({ name, ingredient, rank }) => {
-    const addCocktailData = { name, ingredient, rank };
+  static addCocktail = async ({ name, ingredient, imageUrl, rank }) => {
+    const addCocktailData = { name, ingredient, imageUrl, rank };
     const addCocktail = await CocktailModel.addCocktail(addCocktailData);
     return addCocktail;
   };
@@ -19,8 +19,8 @@ class CocktailService {
     }
     return findCocktail;
   };
-  static modify = async ({ cocktailId, name, ingredient, rank }) => {
-    const updateCocktailData = { name, ingredient, rank };
+  static modify = async ({ cocktailId, name, ingredient, imageUrl, rank }) => {
+    const updateCocktailData = { name, ingredient, imageUrl, rank };
     const filter = { _id: cocktailId };
     const modifiedCocktail = await CocktailModel.modify(filter, updateCocktailData);
     return modifiedCocktail;
