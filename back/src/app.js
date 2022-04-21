@@ -3,6 +3,7 @@ import express from "express";
 import { errorMiddleware } from "./middlewares/errorMiddleware";
 import { registerRouter } from "./routers/registerRouter";
 import { loginRouter } from "./routers/loginRouter";
+import { cocktailRouter } from "./routers/cocktailRouter";
 
 import passport from "passport";
 import session from "express-session";
@@ -24,22 +25,25 @@ passport.deserializeUser((user, done) => {
 });
 
 app.get("/", (req, res) => {
-    res.send("안녕하세요, 레이서 프로젝트 API 입니다.");
+  res.send("안녕하세요, 레이서 프로젝트 API 입니다.");
 });
 
+app.get(
+  "/auth/google",
+  passport.authenticate("google", { scope: ["profile", "email"] })
+);
 
-app.get('/auth/google', 
-    passport.authenticate('google', { scope : ['profile', 'email'] }));
- 
-app.get('/auth/google/callback', 
-    passport.authenticate('google', { failureRedirect: '/error' }),
-    function(req, res) {
-        res.redirect('/');
-    }
+app.get(
+  "/auth/google/callback",
+  passport.authenticate("google", { failureRedirect: "/error" }),
+  function (req, res) {
+    res.redirect("/");
+  }
 );
 
 app.use(registerRouter);
 app.use(loginRouter);
+app.use(cocktailRouter);
 app.use(errorMiddleware);
 
 export { app };
