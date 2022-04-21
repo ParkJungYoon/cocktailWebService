@@ -8,6 +8,7 @@ const serverUrl = "http://localhost:" + backendPortNumber + "/";
 for (const [key, value] of Object.entries(cocktail)) {
   axios.post(serverUrl + "addCocktail", {
     name: key,
-    ingredient: value,
+    ingredient: value["ingredient"],
+    imageUrl: value["imageUrl"],
   });
 }

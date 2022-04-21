@@ -40,7 +40,7 @@ CocktailRouter.post("/findCocktail", async (req, res, next) => {
 
 CocktailRouter.post("/modifyCocktail", async (req, res, next) => {
   try {
-    const { cocktailId, name, ingredient, rank } = req.body;
+    const { cocktailId, name, ingredient, rank, imageUrl } = req.body;
     const modifiedCocktail = await CocktailService.modify({ cocktailId, name, ingredient, imageUrl, rank });
     res.status(200).json(modifiedCocktail);
   } catch (error) {
