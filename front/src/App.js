@@ -8,6 +8,9 @@ import Header from "./components/Header";
 import LoginForm from "./components/user/LoginForm";
 import RegisterForm from "./components/user/RegisterForm";
 import Fullpage from "./components/Landingpage/Fullpage";
+import Introduce from "./components/introduce/Introduce";
+import Mypage from "./components/mypage/Mypage";
+import Bookmark from "./components/mypage/Bookmark";
 
 export const UserStateContext = createContext(null);
 export const DispatchContext = createContext(null);
@@ -60,6 +63,9 @@ function App() {
             <Route path="/" exact element={<Fullpage />} />
             <Route path="/login" element={<LoginForm />} />
             <Route path="/register" element={<RegisterForm />} />
+            <Route path="/introduce" element={<Introduce />} />
+            <Route path="/mypage" element={<Mypage />} />
+            <Route path="/bookmark" element={<Bookmark />} />
           </Routes>
         </Router>
       </UserStateContext.Provider>

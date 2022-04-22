@@ -77,9 +77,9 @@ function Header() {
               variant="h6"
               underline="none"
               sx={rightLink}
-              onClick={() => navigate("/prolog")}
+              onClick={() => navigate("/introduce")}
             >
-              {"Prolog"}
+              {"Introduce"}
             </Link>
             <Link
               variant="h6"
