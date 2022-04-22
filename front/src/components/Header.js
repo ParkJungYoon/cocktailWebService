@@ -4,22 +4,14 @@ import { UserStateContext, DispatchContext } from "../App";
 
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
-import { AppBar } from "@mui/material";
+import { AppBar, tableBodyClasses } from "@mui/material";
 import { Toolbar } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
-const darkTheme = createTheme({
-  palette: {
-    mode: "dark",
-    primary: {
-      main: "#1976d2",
-    },
-  },
-});
 const rightLink = {
-  fontSize: 16,
-  color: "common.white",
-  ml: 3,
+  fontSize: 15,
+  color: "black",
+  mx: 2,
 };
 
 function Header() {
@@ -44,14 +36,14 @@ function Header() {
   };
 
   return (
-    <ThemeProvider theme={darkTheme}>
-      <AppBar position="fixed">
+    <>
+      <AppBar position="fixed" style={{ backgroundColor: "#F1F7ED" }}>
         <Toolbar sx={{ justifyContent: "space-between" }}>
           <Box sx={{ flex: 0 }} />
           <Link
             variant="h6"
             underline="none"
-            color="inherit"
+            color="black"
             sx={{ fontSize: 24 }}
             onClick={() => navigate("/")}
           >
@@ -95,7 +87,7 @@ function Header() {
         </Toolbar>
       </AppBar>
       <Toolbar />
-    </ThemeProvider>
+    </>
   );
 }
 
