@@ -30,11 +30,18 @@ app.get("/", (req, res) => {
   res.send("안녕하세요, 레이서 프로젝트 API 입니다.");
 });
 
-app.get("/auth/google", passport.authenticate("google", { scope: ["profile", "email"] }));
+app.get(
+  "/auth/google",
+  passport.authenticate("google", { scope: ["profile", "email"] })
+);
 
-app.get("/auth/google/callback", passport.authenticate("google", { failureRedirect: "/error" }), function (req, res) {
-  res.redirect("/");
-});
+app.get(
+  "/auth/google/callback",
+  passport.authenticate("google", { failureRedirect: "/error" }),
+  function (req, res) {
+    res.redirect("/");
+  }
+);
 
 app.use(registerRouter);
 app.use(loginRouter);
