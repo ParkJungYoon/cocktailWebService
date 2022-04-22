@@ -29,7 +29,14 @@ export default function Secondpage() {
             </Typography>
           </Grid>
           <Grid item xs={6} align="center">
-            <img src={cocktails} alt="" width={"100%"} />
+            <img
+              src={cocktails}
+              alt=""
+              width={"100%"}
+              style={{
+                border: "2px solid white",
+              }}
+            />
           </Grid>
         </Grid>
 

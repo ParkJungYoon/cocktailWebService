@@ -6,7 +6,6 @@ import { loginReducer } from "./reducer";
 
 import Header from "./components/Header";
 import LoginForm from "./components/user/LoginForm";
-
 import RegisterForm from "./components/user/RegisterForm";
 import Fullpage from "./components/Landingpage/Fullpage";
 

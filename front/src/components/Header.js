@@ -1,12 +1,21 @@
 import React, { useContext, useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { UserStateContext, DispatchContext } from "../App";
-
-import Box from "@mui/material/Box";
-import Link from "@mui/material/Link";
-import { AppBar, tableBodyClasses } from "@mui/material";
-import { Toolbar } from "@mui/material";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import {
+  Box,
+  Link,
+  AppBar,
+  Toolbar,
+  Container,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  Button,
+  Typography,
+} from "@mui/material";
+import LoginForm from "./user/LoginForm";
 
 const rightLink = {
   fontSize: 15,
@@ -16,7 +25,6 @@ const rightLink = {
 
 function Header() {
   const navigate = useNavigate();
-  const location = useLocation();
 
   // 상태관리
   const userState = useContext(UserStateContext);
@@ -34,7 +42,21 @@ function Header() {
     // 기본 페이지로 돌아감.
     navigate("/");
   };
-
+  // modal 관리
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  const style = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 400,
+    bgcolor: "background.paper",
+    border: "2px solid #000",
+    boxShadow: 24,
+    p: 4,
+  };
   return (
     <>
       <AppBar position="fixed" style={{ backgroundColor: "#F1F7ED" }}>
@@ -79,10 +101,26 @@ function Header() {
               variant="h6"
               underline="none"
               sx={{ ...rightLink }}
-              onClick={() => navigate("/login")}
+              onClick={handleOpen}
             >
               {"Login"}
             </Link>
+
+            <Dialog open={open} onClose={handleClose}>
+              <DialogTitle>로그인</DialogTitle>
+              <DialogContent>
+                <DialogContentText>
+                  To subscribe to this website, please enter your email address
+                  here. We will send updates occasionally.
+                </DialogContentText>
+                <LoginForm />
+              </DialogContent>
+              {/* <DialogActions>
+            <Button variant="outlined" color="primary" onClick={handleClose}>
+              닫기
+            </Button>
+          </DialogActions> */}
+            </Dialog>
           </Box>
         </Toolbar>
       </AppBar>
