@@ -11,6 +11,7 @@ import RegisterForm from "./components/user/RegisterForm";
 import Portfolio from "./components/Portfolio";
 import Introduce from "./components/introduce/Introduce";
 import Mypage from "./components/mypage/Mypage";
+import Bookmark from "./components/mypage/Bookmark";
 
 export const UserStateContext = createContext(null);
 export const DispatchContext = createContext(null);
@@ -68,6 +69,7 @@ function App() {
             <Route path="*" element={<Portfolio />} />
             <Route path="/introduce" element={<Introduce />} />
             <Route path="/mypage" element={<Mypage />} />
+            <Route path="/bookmark" element={<Bookmark />} />
           </Routes>
         </Router>
       </UserStateContext.Provider>

@@ -2,6 +2,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
+import Bookmark from "./Bookmark";
 
 function Mypage() {
   return (
@@ -63,7 +64,7 @@ function Mypage() {
                 }}
               >
                 <div>
-                  <p>아이디 : 123123123</p>
+                  <p>아이디 : 123@123123.com</p>
                   <p>닉네임 : 123213</p>
                 </div>
                 <div>
@@ -75,17 +76,39 @@ function Mypage() {
           <Box
             sx={{
               //   ml: 10,
-              width: 852,
+              width: "100%",
               height: 600,
             }}
           >
             <div
               style={{
                 backgroundColor: "skyblue",
-                height: "100%",
+                height: "50%",
               }}
             >
               북마크
+              <div
+                style={{
+                  margin: "3%",
+                }}
+              >
+                <Bookmark></Bookmark>
+              </div>
+            </div>
+            <div
+              style={{
+                backgroundColor: "gray",
+                height: "50%",
+              }}
+            >
+              좋아요
+              <div
+                style={{
+                  margin: "3%",
+                }}
+              >
+                <Bookmark></Bookmark>
+              </div>
             </div>
           </Box>
         </Box>
