@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { CocktailService } from "../services/CocktailService";
+import { verifyToken } from "../middlewares/verifyToken";
 
 const CocktailRouter = Router();
 
@@ -11,6 +12,15 @@ CocktailRouter.get("/cocktail", async (req, res, next) => {
       name,
     });
     res.status(200).json(cocktailInfo);
+  } catch (error) {
+    next(error);
+  }
+});
+
+CocktailRouter.use(verifyToken);
+// 유저 칵테일 생성
+CocktailRouter.post("cocktail/create/:user_id", async (req, res, next) => {
+  try {
   } catch (error) {
     next(error);
   }
