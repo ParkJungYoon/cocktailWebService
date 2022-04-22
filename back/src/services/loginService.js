@@ -7,7 +7,8 @@ class LoginService {
   static delete = async ({ userId }) => {
     const deletedUser = await UserModel.delete({ userId });
     if (!deletedUser) {
-      const errorMessage = "해당 이메일로 가입된 내역이 없습니다. 다시 한 번 확인해주세요";
+      const errorMessage =
+        "해당 이메일로 가입된 내역이 없습니다. 다시 한 번 확인해주세요";
       return { errorMessage };
     }
     return deletedUser;
@@ -31,7 +32,7 @@ class LoginService {
   };
 
   static findUser = async ({ email, password }) => {
-    const discoveredUser = await UserModel.findByEmail(email);
+    const discoveredUser = await UserModel.findByEmail({ email });
     const hashedPassword = hashPassword(password);
 
     const userId = String(discoveredUser._id);
