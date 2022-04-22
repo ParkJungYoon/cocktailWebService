@@ -1,6 +1,19 @@
 import React, { useContext } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+
+import Container from "@mui/material/Container";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
+// import TextField from "@material-ui/core/TextField";
+import LoginForm from "./user/LoginForm";
+
 import { UserStateContext, DispatchContext } from "../App";
 
 function Header() {
@@ -9,6 +22,23 @@ function Header() {
 
   const userState = useContext(UserStateContext);
   const dispatch = useContext(DispatchContext);
+
+  //modal 관리
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const style = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 400,
+    bgcolor: "background.paper",
+    border: "2px solid #000",
+    boxShadow: 24,
+    p: 4,
+  };
 
   // 전역상태에서 user가 null이 아니라면 로그인 성공 상태임.
   const isLogin = !!userState.user;
@@ -39,6 +69,26 @@ function Header() {
       </Nav.Item>
       <Nav.Item>
         <Nav.Link onClick={() => navigate("/")}>TOP 10</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link onClick={handleOpen}>로그인</Nav.Link>
+        <Container>
+          <Dialog open={open} onClose={handleClose}>
+            <DialogTitle>로그인</DialogTitle>
+            <DialogContent>
+              <DialogContentText>
+                To subscribe to this website, please enter your email address
+                here. We will send updates occasionally.
+              </DialogContentText>
+              <LoginForm />
+            </DialogContent>
+            {/* <DialogActions>
+            <Button variant="outlined" color="primary" onClick={handleClose}>
+              닫기
+            </Button>
+          </DialogActions> */}
+          </Dialog>
+        </Container>
       </Nav.Item>
 
       {isLogin && (
