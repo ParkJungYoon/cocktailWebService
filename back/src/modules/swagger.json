@@ -14,11 +14,15 @@
   "tags": [
     {
       "name": "User",
-      "description": "User 로그인, 회원가입"
+      "description": "User 로그인, 회원가입 API"
     },
     {
       "name": "Cocktail",
-      "description": "칵테일 조회, 유저 칵테일 CRUD"
+      "description": "칵테일 조회 API"
+    },
+    {
+      "name": "User Cocktail",
+      "description": "유저 칵테일 CRUD API"
     }
   ],
   "schemes": ["http"],
@@ -82,11 +86,38 @@
     "/cocktail": {
       "get": {
         "tags": ["Cocktail"],
-        "summary": "특정 칵테일 조회 API",
+        "summary": "특정 칵테일 조회",
         "parameters": [
           {
             "in": "body",
             "name": "body"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
+    },
+    "/cocktail/create/{user_id}": {
+      "post": {
+        "tags": ["User Cocktail"],
+        "summary": "유저 칵테일 생성",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "ingredient": "body",
+            "description": "body",
+            "imageUrl": "body"
+          },
+          {
+            "in": "query",
+            "user_id": "query"
           }
         ],
         "responses": {
