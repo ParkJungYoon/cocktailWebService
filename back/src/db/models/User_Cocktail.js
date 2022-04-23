@@ -1,8 +1,14 @@
 import { UserCocktail } from "../schemas/user_cocktail";
 
 class UserCocktailModel {
+  // user_id로 조회
   static findUserCocktail = async ({ user_id }) => {
     const findUserCocktail = await UserCocktail.find({ user_id: user_id });
+    return findUserCocktail;
+  };
+  // 게시글 _id로 조회
+  static findById = async ({ id }) => {
+    const findUserCocktail = await UserCocktail.find({ _id: id });
     return findUserCocktail;
   };
 
@@ -21,9 +27,9 @@ class UserCocktailModel {
     return updatedCocktail;
   };
 
-  static async delete({ _id }) {
+  static async delete({ _id: id }) {
     const deletedCocktail = await UserCocktail.deleteOne({
-      _id: _id,
+      _id: id,
     });
     return deletedCocktail;
   }
