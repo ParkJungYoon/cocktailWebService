@@ -1,15 +1,27 @@
 import { CocktailModel, UserCocktailModel } from "../db";
 
 class CocktailService {
-  // db 조회
+  // 칵테일 조회
   static getCocktailInfo = async ({ name }) => {
-    const cocktail = await CocktailModel.findCocktail({ name });
-    if (!cocktail) {
+    const cocktailInfo = await CocktailModel.findCocktail({ name });
+    if (!cocktailInfo) {
       const errorMessage =
         "해당 칵테일 내역이 없습니다. 다시 한 번 확인해 주세요.";
       return { errorMessage };
     }
-    return cocktail;
+    return cocktailInfo;
+  };
+  // 유저 칵테일 조회
+  static getUserCocktailInfo = async ({ user_id }) => {
+    const userCocktailInfo = await UserCocktailModel.findUserCocktail({
+      user_id,
+    });
+    if (!userCocktailInfo) {
+      const errorMessage =
+        "해당 유저의 칵테일 내역이 없습니다. 다시 한 번 확인해 주세요.";
+      return { errorMessage };
+    }
+    return userCocktailInfo;
   };
   // 유저 칵테일 추가
   static addCocktail = async ({
