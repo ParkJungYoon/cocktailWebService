@@ -1,7 +1,4 @@
 .logo {
-  p {
-    color: white;
-  }
   img {
     width: 10vw;
     cursor: pointer;
@@ -13,11 +10,11 @@
   .navbarMypage,
   .navbarRecommend,
   .navbarLogin {
-    color: white;
+    color: black;
     padding: 0.5vw;
     cursor: pointer;
     &:hover {
-      border: 2px solid white;
+      background-color: lightcoral;
     }
   }
 }
