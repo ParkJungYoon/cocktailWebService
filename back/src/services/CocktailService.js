@@ -1,9 +1,8 @@
-import { CocktailModel } from "../db";
+import { CocktailModel, UserCocktailModel } from "../db";
 
 class CocktailService {
   // db 조회
   static getCocktailInfo = async ({ name }) => {
-    console.log(name);
     const cocktail = await CocktailModel.findCocktail({ name });
     if (!cocktail) {
       const errorMessage =
@@ -18,9 +17,15 @@ class CocktailService {
     ingredient,
     description,
     imageUrl,
-    rank,
+    user_id,
   }) => {
-    const addCocktailData = { name, ingredient, imageUrl, user_id };
+    const addCocktailData = {
+      name,
+      ingredient,
+      description,
+      imageUrl,
+      user_id,
+    };
     const addCocktail = await UserCocktailModel.addCocktail(addCocktailData);
     return addCocktail;
   };
