@@ -1,0 +1,20 @@
+.logo {
+  img {
+    width: 10vw;
+    cursor: pointer;
+  }
+}
+
+.navbar {
+  .navbarIntro,
+  .navbarMypage,
+  .navbarRecommend,
+  .navbarLogin {
+    color: black;
+    padding: 0.5vw;
+    cursor: pointer;
+    &:hover {
+      background-color: lightcoral;
+    }
+  }
+}

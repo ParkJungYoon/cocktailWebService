@@ -1,0 +1,142 @@
+.firstPage {
+  background-color: #f1f7ed;
+}
+.firstPage .video {
+  /* border: 2px solid red; */
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+}
+.firstPage .video video {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  margin-bottom: 10;
+}
+.firstPage .video::before {
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  opacity: 0.3;
+  position: absolute;
+}
+.introTextWrapper {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  top: 30%;
+  right: 5vw;
+  text-align: right;
+}
+.introTextWrapper P {
+  padding: 0.5vw;
+  color: rgb(224, 224, 224);
+}
+.introTextWrapper .introText1 {
+  font-size: 2.5vw;
+  font-weight: bold;
+}
+
+.introTextWrapper .introText2 {
+  font-size: 1.5vw;
+}
+
+.firstPage .introButton {
+  position: absolute;
+  bottom: -20%;
+  right: 1.5vw;
+  font-size: 1.5vw;
+  color: rgb(224, 224, 224);
+  border: 2px solid white;
+  padding: 10px 20px;
+  &:hover {
+    cursor: pointer;
+    border: 2px solid black;
+    transition: 0.5s;
+    color: black;
+  }
+}
+// secondpage
+.chartTextWrapper {
+  .chartTextTitle {
+    font-size: 2vw;
+    font-weight: bold;
+    padding: 0.5vw;
+    .bold {
+      color: lightcoral;
+    }
+  }
+  img {
+    width: 100%;
+    height: 80%;
+    background-color: #f1f7ed;
+    border-radius: 30px;
+  }
+  .chartText1 {
+    font-size: 1.5vw;
+  }
+}
+
+.gotoTop10 {
+  color: black;
+  font-size: 1vw;
+  font-weight: bold;
+  border: 2px solid black;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  &:hover {
+    color: lightcoral;
+    transition: 0.5s;
+    border: 2px solid lightcoral;
+  }
+}
+// thirdpage
+.cocktailsWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .cocktails {
+    transform: translateX(-50%);
+    animation: bounce 0.8s infinite alternate;
+
+    @keyframes bounce {
+      from {
+        transform: translateY(0px);
+      }
+      to {
+        transform: translateY(-15px);
+      }
+    }
+  }
+  .cocktailsText {
+    p {
+      font-size: 2vw;
+      font-weight: bold;
+    }
+    .bold {
+      color: lightcoral;
+    }
+  }
+}
+
+.gotoRecommend {
+  color: black;
+  font-size: 1vw;
+  font-weight: bold;
+  border: 2px solid black;
+  padding: 10px 20px;
+  margin-top: 40px;
+  cursor: pointer;
+  &:hover {
+    color: lightcoral;
+    transition: 0.5s;
+    border: 2px solid lightcoral;
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "axiostest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "fs": "^0.0.1-security",
+    "mongoose": "^6.3.0"
+  }
+}
