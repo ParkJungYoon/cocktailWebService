@@ -5,6 +5,8 @@ import { registerRouter } from "./routers/registerRouter";
 import { loginRouter } from "./routers/loginRouter";
 import { cocktailRouter } from "./routers/cocktailRouter";
 import { CocktailRouter } from "./routers/CocktailRouter";
+import { RankRouter } from "./routers/RankRouter";
+
 import passport from "passport";
 import session from "express-session";
 import googleOAuth from "./utils/googleOAuth";
@@ -22,7 +24,7 @@ passport.serializeUser((user, done) => {
 app.use(registerRouter);
 app.use(loginRouter);
 app.use(CocktailRouter);
-
+app.use(RankRouter);
 passport.deserializeUser((user, done) => {
   done(null, user);
 });
@@ -44,9 +46,6 @@ app.get(
   }
 );
 
-app.use(registerRouter);
-app.use(loginRouter);
-app.use(cocktailRouter);
 app.use(errorMiddleware);
 
 export { app };
