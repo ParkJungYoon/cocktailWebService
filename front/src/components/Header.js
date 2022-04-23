@@ -75,7 +75,6 @@ function Header() {
           <Link underline="none" onClick={() => navigate("/")} className="logo">
             <img src={logo} alt="logo" />
           </Link>
-
           <Box
             sx={{ flex: 1, display: "flex", justifyContent: "flex-end" }}
             className="navbar"
@@ -112,7 +111,6 @@ function Header() {
             >
               {"로그인"}
             </Link>
-
             <Dialog open={open} onClose={handleClose}>
               <DialogTitle>로그인</DialogTitle>
               <DialogContent>
