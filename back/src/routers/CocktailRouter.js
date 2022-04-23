@@ -68,4 +68,20 @@ CocktailRouter.put("/cocktail/:id", async (req, res, next) => {
   }
 });
 
+// 유저 칵테일 삭제
+CocktailRouter.delete("/cocktail/:id", async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const deletedCocktail = await CocktailService.deleteCocktail({ id });
+
+    if (deletedCocktail.errorMessage) {
+      throw new Error(deletedCocktail.errorMessage);
+    }
+
+    res.status(200).json(deletedCocktail);
+  } catch (error) {
+    next(error);
+  }
+});
+
 export { CocktailRouter };

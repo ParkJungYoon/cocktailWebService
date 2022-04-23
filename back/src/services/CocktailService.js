@@ -66,6 +66,18 @@ class CocktailService {
     return updatedCocktail;
   };
   // 유저 칵테일 삭제
+  static async deleteCocktail({ id }) {
+    const userCocktail = await UserCocktailModel.findById({ id });
+
+    if (!userCocktail) {
+      const errorMessage =
+        "삭제할 유저 칵테일 내역이 없습니다. 다시 한 번 확인해 주세요.";
+      return { errorMessage };
+    }
+
+    const deletedCocktail = await UserCocktailModel.delete({ _id: id });
+    return deletedCocktail;
+  }
 }
 
 export { CocktailService };
