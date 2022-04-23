@@ -12,10 +12,11 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
+  Button,
+  Typography,
 } from "@mui/material";
 import LoginForm from "./user/LoginForm";
-import "../scss/Header.scss";
-import logo from "../img/logo.png";
+
 const rightLink = {
   fontSize: 15,
   color: "black",
@@ -45,50 +46,64 @@ function Header() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
+  const style = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 400,
+    bgcolor: "background.paper",
+    border: "2px solid #000",
+    boxShadow: 24,
+    p: 4,
+  };
   return (
     <>
-      <AppBar position="fixed" style={{ backgroundColor: "white" }}>
+      <AppBar position="fixed" style={{ backgroundColor: "#F1F7ED" }}>
         <Toolbar sx={{ justifyContent: "space-between" }}>
           <Box sx={{ flex: 0 }} />
-          <Link underline="none" onClick={() => navigate("/")} className="logo">
-            <img src={logo} alt="logo" />
-          </Link>
-          <Box
-            sx={{ flex: 1, display: "flex", justifyContent: "flex-end" }}
-            className="navbar"
+          <Link
+            variant="h6"
+            underline="none"
+            color="black"
+            sx={{ fontSize: 24 }}
+            onClick={() => navigate("/")}
           >
+            {"JACKPOT"}
+          </Link>
+          <Box sx={{ flex: 1, display: "flex", justifyContent: "flex-end" }}>
             <Link
-              className="navbarIntro"
+              color="inherit"
+              variant="h6"
               underline="none"
               sx={rightLink}
               onClick={() => navigate("/introduce")}
             >
-              {"프롤로그"}
+              {"Introduce"}
             </Link>
             <Link
-              className="navbarRecommend"
+              variant="h6"
               underline="none"
               sx={{ ...rightLink }}
               onClick={() => navigate("/recommend")}
             >
-              {"칵테일 한 잔"}
+              {"Recommend"}
             </Link>
             <Link
-              className="navbarMypage"
+              variant="h6"
               underline="none"
               sx={{ ...rightLink }}
               onClick={() => navigate("/myPage")}
             >
-              {"나의 페이지"}
+              {"My Page"}
             </Link>
             <Link
-              className="navbarLogin"
+              variant="h6"
               underline="none"
               sx={{ ...rightLink }}
               onClick={handleOpen}
             >
-              {"로그인"}
+              {"Login"}
             </Link>
 
             <Dialog open={open} onClose={handleClose}>
