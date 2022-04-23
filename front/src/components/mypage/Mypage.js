@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Bookmark from "./Bookmark";
+import defaultImage from "../../img/userDefaultImg.jpg";
 
 function Mypage() {
   return (
@@ -38,8 +39,10 @@ function Mypage() {
                     height: "10rem",
                     borderRadius: "10rem",
                   }}
-                  src="http://placekitten.com/200/200"
-                  alt="랜덤 고양이 사진 (http://placekitten.com API 사용)"
+                  src={defaultImage}
+                  alt="defaultImage"
+                  // src="http://placekitten.com/200/200"
+                  // alt="랜덤 고양이 사진 (http://placekitten.com API 사용)"
                 />
               </div>
             </Box>
@@ -86,7 +89,7 @@ function Mypage() {
                 height: "50%",
               }}
             >
-              북마크
+              북마크📌
               <div
                 style={{
                   margin: "3%",
@@ -101,7 +104,7 @@ function Mypage() {
                 height: "50%",
               }}
             >
-              좋아요
+              좋아요👍
               <div
                 style={{
                   margin: "3%",
