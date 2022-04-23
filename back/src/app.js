@@ -43,8 +43,6 @@ app.get(
   }
 );
 
-app.use(registerRouter);
-app.use(loginRouter);
 app.use(errorMiddleware);
 
 export { app };
