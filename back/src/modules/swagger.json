@@ -1,0 +1,186 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Swagger for Cocktail API",
+    "description": "Open API docs with Swagger",
+    "license": {
+      "name": "MIT",
+      "url": "http://localhost:5000"
+    }
+  },
+  "host": "localhost:5000",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "User",
+      "description": "User 로그인, 회원가입 API"
+    },
+    {
+      "name": "Cocktail",
+      "description": "칵테일 조회 API"
+    },
+    {
+      "name": "User Cocktail",
+      "description": "유저 칵테일 CRUD API"
+    }
+  ],
+  "schemes": ["HTTP"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/": {
+      "get": {
+        "tags": ["Main"],
+        "summary": "Main Page Get",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/register": {
+      "post": {
+        "tags": ["User"],
+        "summary": "register user Post",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "email": "body",
+            "password": "body"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": ["User"],
+        "summary": "login user Post",
+        "parameters": [
+          {
+            "in": "body",
+            "email": "body",
+            "password": "body",
+            "required": true,
+            "name": "body"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
+    },
+    "/cocktail": {
+      "post": {
+        "tags": ["Cocktail"],
+        "summary": "특정 칵테일 조회",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
+    },
+    "/cocktail/create/{user_id}": {
+      "post": {
+        "tags": ["User Cocktail"],
+        "summary": "유저 칵테일 생성",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "ingredient": "body",
+            "description": "body",
+            "imageUrl": "body"
+          },
+          {
+            "in": "path",
+            "user_id": "path"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "User": {
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "Cocktail": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "ingredient": {
+          "type": "[string]"
+        },
+        "imageUrl": {
+          "type": "string"
+        },
+        "rank": {
+          "type": "Schema.Types.ObjectId"
+        }
+      }
+    },
+    "User Cocktail": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "ingredient": {
+          "type": "[string]"
+        },
+        "description": {
+          "type": "string"
+        },
+        "imageUrl": {
+          "type": "string"
+        },
+        "user_id": {
+          "type": "Schema.Types.ObjectId"
+        }
+      }
+    }
+  }
+}
