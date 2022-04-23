@@ -21,6 +21,14 @@ CocktailRouter.use(verifyToken);
 // 유저 칵테일 생성
 CocktailRouter.post("cocktail/create/:user_id", async (req, res, next) => {
   try {
+    const { name, ingredient, description, imageUrl } = req.body;
+    const addCocktail = await CocktailService.addCocktail({
+      name,
+      ingredient,
+      description,
+      imageUrl,
+    });
+    res.status(200).json(addCocktail);
   } catch (error) {
     next(error);
   }
