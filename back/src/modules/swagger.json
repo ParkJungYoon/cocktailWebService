@@ -13,8 +13,8 @@
   "basePath": "/",
   "tags": [
     {
-      "name": "Login",
-      "description": "API for task"
+      "name": "User",
+      "description": "User 로그인, 회원가입"
     },
     {
       "name": "Cocktail",
@@ -38,12 +38,33 @@
     },
     "/register": {
       "post": {
-        "tags": ["register user"],
+        "tags": ["User"],
         "summary": "register user Post",
         "parameters": [
           {
             "in": "body",
             "name": "body",
+            "email": "body",
+            "password": "body"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": ["User"],
+        "summary": "register user Post",
+        "parameters": [
+          {
+            "in": "body",
             "email": "body",
             "password": "body"
           }
@@ -105,6 +126,25 @@
           "type": "string"
         },
         "rank": {
+          "type": "Schema.Types.ObjectId"
+        }
+      }
+    },
+    "User Cocktail": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "ingredient": {
+          "type": "[string]"
+        },
+        "description": {
+          "type": "string"
+        },
+        "imageUrl": {
+          "type": "string"
+        },
+        "user_id": {
           "type": "Schema.Types.ObjectId"
         }
       }
