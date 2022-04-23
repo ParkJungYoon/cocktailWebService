@@ -13,6 +13,7 @@ import {
   DialogContentText,
   DialogTitle,
 } from "@mui/material";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 import LoginForm from "./user/LoginForm";
 import "../scss/Header.scss";
 import logo from "../img/logo.png";
@@ -21,6 +22,13 @@ const rightLink = {
   color: "black",
   mx: 2,
 };
+const darkTheme = createTheme({
+  palette: {
+    primary: {
+      main: "#000000",
+    },
+  },
+});
 
 function Header() {
   const navigate = useNavigate();
@@ -48,68 +56,74 @@ function Header() {
 
   return (
     <>
-      <AppBar position="fixed" style={{ backgroundColor: "white" }}>
-        <Toolbar sx={{ justifyContent: "space-between" }}>
-          <Box sx={{ flex: 0 }} />
-          <Link underline="none" onClick={() => navigate("/")} className="logo">
-            <img src={logo} alt="logo" />
-          </Link>
-          <Box
-            sx={{ flex: 1, display: "flex", justifyContent: "flex-end" }}
-            className="navbar"
-          >
+      <ThemeProvider theme={darkTheme}>
+        <AppBar position="fixed">
+          <Toolbar sx={{ justifyContent: "space-between" }}>
+            <Box sx={{ flex: 0 }} />
             <Link
-              className="navbarIntro"
               underline="none"
-              sx={rightLink}
-              onClick={() => navigate("/introduce")}
+              onClick={() => navigate("/")}
+              className="logo"
             >
-              {"프롤로그"}
+              <p>저쪽 손님께서 보내신 겁니다</p>
             </Link>
-            <Link
-              className="navbarRecommend"
-              underline="none"
-              sx={{ ...rightLink }}
-              onClick={() => navigate("/recommend")}
+            <Box
+              sx={{ flex: 1, display: "flex", justifyContent: "flex-end" }}
+              className="navbar"
             >
-              {"칵테일 한 잔"}
-            </Link>
-            <Link
-              className="navbarMypage"
-              underline="none"
-              sx={{ ...rightLink }}
-              onClick={() => navigate("/myPage")}
-            >
-              {"나의 페이지"}
-            </Link>
-            <Link
-              className="navbarLogin"
-              underline="none"
-              sx={{ ...rightLink }}
-              onClick={handleOpen}
-            >
-              {"로그인"}
-            </Link>
+              <Link
+                className="navbarIntro"
+                underline="none"
+                sx={rightLink}
+                onClick={() => navigate("/introduce")}
+              >
+                {"프롤로그"}
+              </Link>
+              <Link
+                className="navbarRecommend"
+                underline="none"
+                sx={{ ...rightLink }}
+                onClick={() => navigate("/recommend")}
+              >
+                {"칵테일 한 잔"}
+              </Link>
+              <Link
+                className="navbarMypage"
+                underline="none"
+                sx={{ ...rightLink }}
+                onClick={() => navigate("/myPage")}
+              >
+                {"나의 페이지"}
+              </Link>
+              <Link
+                className="navbarLogin"
+                underline="none"
+                sx={{ ...rightLink }}
+                onClick={handleOpen}
+              >
+                {"로그인"}
+              </Link>
 
-            <Dialog open={open} onClose={handleClose}>
-              <DialogTitle>로그인</DialogTitle>
-              <DialogContent>
-                <DialogContentText>
-                  To subscribe to this website, please enter your email address
-                  here. We will send updates occasionally.
-                </DialogContentText>
-                <LoginForm />
-              </DialogContent>
-              {/* <DialogActions>
+              <Dialog open={open} onClose={handleClose}>
+                <DialogTitle>로그인</DialogTitle>
+                <DialogContent>
+                  <DialogContentText>
+                    To subscribe to this website, please enter your email
+                    address here. We will send updates occasionally.
+                  </DialogContentText>
+                  <LoginForm />
+                </DialogContent>
+                {/* <DialogActions>
             <Button variant="outlined" color="primary" onClick={handleClose}>
               닫기
             </Button>
           </DialogActions> */}
-            </Dialog>
-          </Box>
-        </Toolbar>
-      </AppBar>
-      <Toolbar />
+              </Dialog>
+            </Box>
+          </Toolbar>
+        </AppBar>
+        <Toolbar />
+      </ThemeProvider>
     </>
   );
 }

@@ -1,19 +1,23 @@
-.appbar {
-  background-color: white;
-}
-.logo img {
-  width: 10vw;
-  cursor: pointer;
+.logo {
+  p {
+    color: white;
+  }
+  img {
+    width: 10vw;
+    cursor: pointer;
+  }
 }
 
-.navbar .navbarIntro,
-.navbarMypage,
-.navbarRecommend,
-.navbarLogin {
-  padding: 0.5vw;
-  cursor: pointer;
-  &:hover {
-    background-color: lightcoral;
-    transition: 1s;
+.navbar {
+  .navbarIntro,
+  .navbarMypage,
+  .navbarRecommend,
+  .navbarLogin {
+    color: white;
+    padding: 0.5vw;
+    cursor: pointer;
+    &:hover {
+      border: 2px solid white;
+    }
   }
 }
