@@ -1,9 +1,9 @@
 import { UserCocktail } from "../schemas/user_cocktail";
 
 class UserCocktailModel {
-  static findCocktail = async ({ name }) => {
-    const findCocktail = await UserCocktail.findOne({ name: name });
-    return findCocktail;
+  static findUserCocktail = async ({ user_id }) => {
+    const findUserCocktail = await UserCocktail.find({ user_id: user_id });
+    return findUserCocktail;
   };
 
   static addCocktail = async (addCocktailData) => {
