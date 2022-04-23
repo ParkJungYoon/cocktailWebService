@@ -25,7 +25,7 @@
       "description": "유저 칵테일 CRUD API"
     }
   ],
-  "schemes": ["http"],
+  "schemes": ["HTTP"],
   "consumes": ["application/json"],
   "produces": ["application/json"],
   "paths": {
@@ -70,7 +70,9 @@
           {
             "in": "body",
             "email": "body",
-            "password": "body"
+            "password": "body",
+            "required": true,
+            "name": "body"
           }
         ],
         "responses": {
