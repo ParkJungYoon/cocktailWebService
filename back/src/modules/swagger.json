@@ -15,6 +15,10 @@
     {
       "name": "Login",
       "description": "API for task"
+    },
+    {
+      "name": "Cocktail",
+      "description": "칵테일 조회, 유저 칵테일 CRUD"
     }
   ],
   "schemes": ["http"],
@@ -53,10 +57,30 @@
           }
         }
       }
+    },
+    "/cocktail": {
+      "get": {
+        "tags": ["Cocktail"],
+        "summary": "특정 칵테일 조회 API",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
     }
   },
   "definitions": {
-    "user": {
+    "User": {
       "properties": {
         "email": {
           "type": "string"
@@ -66,6 +90,22 @@
         },
         "name": {
           "type": "string"
+        }
+      }
+    },
+    "Cocktail": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "ingredient": {
+          "type": "[string]"
+        },
+        "imageUrl": {
+          "type": "string"
+        },
+        "rank": {
+          "type": "Schema.Types.ObjectId"
         }
       }
     }
