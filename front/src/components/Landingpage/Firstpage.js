@@ -1,31 +1,49 @@
-import { Container, Typography, Box, Grid, Paper } from "@mui/material";
-import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
-import * as React from "react";
+import {
+  Container,
+  Typography,
+  Card,
+  CardActions,
+  CardContent,
+  Grid,
+  Button,
+  Box,
+  Link,
+} from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import video from "../../video/cocktail.mp4";
+import React from "react";
 
 export default function Firstpage() {
+  const navigate = useNavigate();
   return (
-    <Grid container spacing={1} sx={{ mx: 3 }}>
-      <Grid item xs={12}>
-        <Typography
-          fontWeight={"bold"}
-          color="saddlebrown"
-          variant="h3"
-          marked="center"
-          sx={{ mt: 15 }}
+    <>
+      <div className="introTextWrapper">
+        <div className="introText1">
+          <p>칵테일 좋아하세요?</p>
+          <p>저쪽 손님께서 보내신 겁니다</p>
+        </div>
+        <Link
+          className="introButton"
+          underline="none"
+          onClick={() => navigate("/recommend")}
         >
-          JACKPOT
-        </Typography>
-        <Typography color="saddlebrown" variant="h6" sx={{ my: 1 }}>
-          Welcome to JACKPOT!
-        </Typography>
-        <Typography color="saddlebrown" variant="h6" sx={{ my: 1 }}>
-          A cocktail is a mixed drink typically made with a distilled liquor
-        </Typography>
-        <Typography color="saddlebrown" variant="h6" sx={{ mb: 10 }}>
-          as its base ingredient that is then mixed with other ingredients or
-          garnishments
-        </Typography>
-      </Grid>
-    </Grid>
+          {"칵테일 한 잔 하러 가기"}
+        </Link>
+      </div>
+
+      <div className="video">
+        <video
+          muted
+          data-autoPlay
+          loop
+          style={{
+            width: "100%",
+            height: "100%",
+          }}
+        >
+          <source src={video} type="video/mp4" />
+        </video>
+      </div>
+    </>
   );
 }
