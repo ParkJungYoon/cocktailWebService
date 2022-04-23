@@ -65,7 +65,7 @@
     "/login": {
       "post": {
         "tags": ["User"],
-        "summary": "register user Post",
+        "summary": "login user Post",
         "parameters": [
           {
             "in": "body",
@@ -84,7 +84,7 @@
       }
     },
     "/cocktail": {
-      "get": {
+      "post": {
         "tags": ["Cocktail"],
         "summary": "특정 칵테일 조회",
         "parameters": [
@@ -116,8 +116,8 @@
             "imageUrl": "body"
           },
           {
-            "in": "query",
-            "user_id": "query"
+            "in": "path",
+            "user_id": "path"
           }
         ],
         "responses": {
