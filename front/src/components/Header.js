@@ -115,11 +115,15 @@ function Header() {
                 </DialogContentText>
                 <LoginForm />
               </DialogContent>
-              {/* <DialogActions>
-            <Button variant="outlined" color="primary" onClick={handleClose}>
-              닫기
-            </Button>
-          </DialogActions> */}
+              <DialogActions>
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  onClick={handleClose}
+                >
+                  닫기
+                </Button>
+              </DialogActions>
             </Dialog>
           </Box>
         </Toolbar>

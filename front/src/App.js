@@ -12,6 +12,11 @@ import Introduce from "./components/introduce/Introduce";
 import Mypage from "./components/mypage/Mypage";
 import Bookmark from "./components/mypage/Bookmark";
 
+//JY
+import SkeletonFunc from "./components/test/SkeletonFunc";
+import LandingPage from "./components/test/LandingPage";
+import TopTenSOTB from "./components/test/TopTenSOTB";
+
 export const UserStateContext = createContext(null);
 export const DispatchContext = createContext(null);
 
@@ -51,7 +56,7 @@ function App() {
   }, []);
 
   if (!isFetchCompleted) {
-    return "loading...";
+    return <SkeletonFunc />;
   }
 
   return (
@@ -60,12 +65,14 @@ function App() {
         <Router>
           <Header />
           <Routes>
+            {/* <Route path="/" exact element={<LandingPage />} /> */}
             <Route path="/" exact element={<Fullpage />} />
             <Route path="/login" element={<LoginForm />} />
             <Route path="/register" element={<RegisterForm />} />
             <Route path="/introduce" element={<Introduce />} />
             <Route path="/mypage" element={<Mypage />} />
             <Route path="/bookmark" element={<Bookmark />} />
+            <Route path="/top10" element={<TopTenSOTB />} />
           </Routes>
         </Router>
       </UserStateContext.Provider>

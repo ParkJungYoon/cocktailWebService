@@ -12,7 +12,9 @@ import {
   FormHelperText,
   Button,
   Form,
+  Stack,
 } from "@mui/material";
+import registerCocktail from "../../img/registerCocktail.jpg";
 
 // import imgSrc from "./test.png";
 import * as Api from "../../api";
@@ -70,15 +72,25 @@ function RegisterForm() {
   };
 
   return (
-    <Container>
-      <Grid container spacing={1}>
-        <Grid items xs={6}>
-          <img src="" alt="cocktail"></img>
-        </Grid>
-        <Grid items xs={6}>
-          <form onsubmit={handleSubmit}>
-            <Grid container justify="center" alignItems="center" spacing={2}>
-              <Grid items xs={12}>
+    <>
+      <Stack justifyContent={"center"} alignItems={"center"}>
+        <Box>
+          <h2>Register</h2>
+        </Box>
+        <Grid container>
+          <Grid
+            items
+            xs={6}
+            padding={"20px"}
+            display="flex"
+            alignItems={"center"}
+            justifyContent={"center"}
+          >
+            <img src={registerCocktail} alt="" width={"60%"} />
+          </Grid>
+          <Grid items xs={6} padding={"20px"}>
+            <Stack>
+              <form onsubmit={handleSubmit}>
                 <TextField
                   required
                   variant="standard"
@@ -93,8 +105,7 @@ function RegisterForm() {
                     이메일 형식이 올바르지 않습니다.
                   </FormHelperText>
                 )}
-              </Grid>
-              <Grid items xs={12}>
+                <br />
                 <TextField
                   required
                   variant="standard"
@@ -109,8 +120,7 @@ function RegisterForm() {
                     비밀번호는 4글자 이상으로 설정해 주세요.
                   </FormHelperText>
                 )}
-              </Grid>
-              <Grid items xs={12}>
+                <br />
                 <TextField
                   required
                   variant="standard"
@@ -125,8 +135,8 @@ function RegisterForm() {
                     비밀번호가 일치하지 않습니다
                   </FormHelperText>
                 )}
-              </Grid>
-              <Grid items xs={12}>
+                <br />
+                <br />
                 <TextField
                   required
                   variant="standard"
@@ -141,19 +151,16 @@ function RegisterForm() {
                     이름은 2글자 이상으로 설정해 주세요.
                   </FormHelperText>
                 )}
-              </Grid>
-              <Grid items xs={4}></Grid>
-              <Grid items xs={4}>
+                <br />
                 <Button variant="text" type="submit" disabled={!isFormValid}>
                   회원가입
                 </Button>
-              </Grid>
-              <Grid items xs={4}></Grid>
-            </Grid>
-          </form>
+              </form>
+            </Stack>
+          </Grid>
         </Grid>
-      </Grid>
-    </Container>
+      </Stack>
+    </>
   );
 }
 

@@ -6,10 +6,10 @@ export default function SkeletonFunc() {
   return (
     <Box
       sx={{
-        bgcolor: "#121212",
-        p: 8,
-        width: "100%",
-        height: "100%",
+        // bgcolor: "#121212",
+        p: 4,
+        width: "500",
+        height: "500",
         display: "flex",
         justifyContent: "center",
       }}
@@ -17,8 +17,9 @@ export default function SkeletonFunc() {
       <Skeleton
         sx={{ bgcolor: "grey.900" }}
         variant="rectangular"
-        width={210}
-        height={118}
+        width={300}
+        height={300}
+        display="block"
       />
     </Box>
   );
