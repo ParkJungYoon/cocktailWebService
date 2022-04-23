@@ -1,0 +1,29 @@
+$maincolor: black;
+
+.cocktails {
+  background-color: $maincolor;
+}
+
+.card {
+  height: 300px;
+  width: 180px;
+  transition: 0.7s;
+  transform-style: preserve-3d;
+  transform: perspective(500px);
+}
+
+.front,
+.back {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+// 뒷면은 사전에 미리 뒤집기
+.back {
+  transform: rotateY(180deg);
+}
+
+// 호버 시 뒤집기
+.card:hover {
+  transform: rotateY(180deg);
+}

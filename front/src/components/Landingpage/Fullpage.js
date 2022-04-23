@@ -4,7 +4,7 @@ import "../../scss/Landingpage.scss";
 import Firstpage from "./Firstpage";
 import Secondpage from "./Secondpage";
 import Thirdpage from "./Thirdpage";
-import video from "../../video/cocktail.mp4";
+import Fourthpage from "./Fourthpage";
 // img 파일 불러오기
 
 const Fullpage = () => {
@@ -23,6 +23,9 @@ const Fullpage = () => {
               </div>
               <div className="section thirdPage">
                 <Thirdpage />
+              </div>
+              <div className="section fourthPage">
+                <Fourthpage />
               </div>
             </ReactFullpage.Wrapper>
           );

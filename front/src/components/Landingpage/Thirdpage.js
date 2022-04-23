@@ -76,7 +76,7 @@ function srcset(image, size, rows = 1, cols = 1) {
 function QuiltedImageList() {
   return (
     <ImageList
-      sx={{ width: 500, height: 450 }}
+      sx={{ width: "90%", height: "80%" }}
       variant="quilted"
       cols={4}
       rowHeight={121}
@@ -124,7 +124,7 @@ export default function Thirdpage() {
         </div>
       </Grid>
       <Grid item xs={6} align="center">
-        <QuiltedImageList />
+        <QuiltedImageList sx={{ mr: 10 }} />
       </Grid>
     </Grid>
   );
