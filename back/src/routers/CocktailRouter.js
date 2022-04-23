@@ -49,4 +49,23 @@ CocktailRouter.get("/cocktail/:user_id", async (req, res, next) => {
   }
 });
 
+// 유저 칵테일 수정
+CocktailRouter.put("/cocktail/:id", async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const { name, ingredient, description, imageUrl, user_id } = req.body;
+    const updatedCocktail = await CocktailService.update({
+      _id: id,
+      name,
+      ingredient,
+      description,
+      imageUrl,
+      user_id,
+    });
+    res.status(200).json(updatedCocktail);
+  } catch (error) {
+    next(error);
+  }
+});
+
 export { CocktailRouter };

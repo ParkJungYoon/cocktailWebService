@@ -11,14 +11,14 @@ class UserCocktailModel {
     return addCocktail;
   };
 
-  static modify = async (filter, updateCocktailData) => {
+  static update = async (filter, updateCocktailData) => {
     const option = { returnOriginal: false };
-    const modifiedCocktail = await UserCocktail.findByIdAndUpdate(
+    const updatedCocktail = await UserCocktail.findByIdAndUpdate(
       filter,
       updateCocktailData,
       option
     );
-    return modifiedCocktail;
+    return updatedCocktail;
   };
 
   static async delete({ _id }) {

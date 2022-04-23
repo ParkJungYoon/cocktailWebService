@@ -42,14 +42,28 @@ class CocktailService {
     return addCocktail;
   };
   // 유저 칵테일 수정
-  static modify = async ({ _id, name, ingredient, imageUrl, user_id }) => {
-    const updateCocktailData = { _id, name, ingredient, imageUrl, user_id };
-    const filter = { _id: _id };
-    const modifiedCocktail = await UserCocktailModel.modify(
+  static update = async ({
+    _id: id,
+    name,
+    ingredient,
+    description,
+    imageUrl,
+    user_id,
+  }) => {
+    const updateCocktailData = {
+      _id: id,
+      name,
+      ingredient,
+      description,
+      imageUrl,
+      user_id,
+    };
+    const filter = { _id: id };
+    const updatedCocktail = await UserCocktailModel.update(
       filter,
       updateCocktailData
     );
-    return modifiedCocktail;
+    return updatedCocktail;
   };
   // 유저 칵테일 삭제
 }
