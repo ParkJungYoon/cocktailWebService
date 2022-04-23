@@ -1,12 +1,32 @@
-import React, { useContext } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
-import Nav from "react-bootstrap/Nav";
+import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { UserStateContext, DispatchContext } from "../App";
+import {
+  Box,
+  Link,
+  AppBar,
+  Toolbar,
+  Container,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  Button,
+  Typography,
+} from "@mui/material";
+import LoginForm from "./user/LoginForm";
+
+const rightLink = {
+  fontSize: 15,
+  color: "black",
+  mx: 2,
+};
 
 function Header() {
   const navigate = useNavigate();
-  const location = useLocation();
 
+  // 상태관리
   const userState = useContext(UserStateContext);
   const dispatch = useContext(DispatchContext);
 
@@ -22,34 +42,90 @@ function Header() {
     // 기본 페이지로 돌아감.
     navigate("/");
   };
-
+  // modal 관리
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  const style = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 400,
+    bgcolor: "background.paper",
+    border: "2px solid #000",
+    boxShadow: 24,
+    p: 4,
+  };
   return (
-    <Nav activeKey={location.pathname}>
-      <Nav.Item className="me-auto mb-5">
-        <Nav.Link disabled>JACKPOT</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link onClick={() => navigate("/introduce")}>소개</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link onClick={() => navigate("/network")}>프롤로그</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link onClick={() => navigate("/mypage")}>나의 페이지</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link onClick={() => navigate("/")}>나만의 칵테일</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link onClick={() => navigate("/")}>TOP 10</Nav.Link>
-      </Nav.Item>
+    <>
+      <AppBar position="fixed" style={{ backgroundColor: "#F1F7ED" }}>
+        <Toolbar sx={{ justifyContent: "space-between" }}>
+          <Box sx={{ flex: 0 }} />
+          <Link
+            variant="h6"
+            underline="none"
+            color="black"
+            sx={{ fontSize: 24 }}
+            onClick={() => navigate("/")}
+          >
+            {"JACKPOT"}
+          </Link>
+          <Box sx={{ flex: 1, display: "flex", justifyContent: "flex-end" }}>
+            <Link
+              color="inherit"
+              variant="h6"
+              underline="none"
+              sx={rightLink}
+              onClick={() => navigate("/introduce")}
+            >
+              {"Introduce"}
+            </Link>
+            <Link
+              variant="h6"
+              underline="none"
+              sx={{ ...rightLink }}
+              onClick={() => navigate("/recommend")}
+            >
+              {"Recommend"}
+            </Link>
+            <Link
+              variant="h6"
+              underline="none"
+              sx={{ ...rightLink }}
+              onClick={() => navigate("/myPage")}
+            >
+              {"My Page"}
+            </Link>
+            <Link
+              variant="h6"
+              underline="none"
+              sx={{ ...rightLink }}
+              onClick={handleOpen}
+            >
+              {"Login"}
+            </Link>
 
-      {isLogin && (
-        <Nav.Item>
-          <Nav.Link onClick={logout}>로그아웃</Nav.Link>
-        </Nav.Item>
-      )}
-    </Nav>
+            <Dialog open={open} onClose={handleClose}>
+              <DialogTitle>로그인</DialogTitle>
+              <DialogContent>
+                <DialogContentText>
+                  To subscribe to this website, please enter your email address
+                  here. We will send updates occasionally.
+                </DialogContentText>
+                <LoginForm />
+              </DialogContent>
+              {/* <DialogActions>
+            <Button variant="outlined" color="primary" onClick={handleClose}>
+              닫기
+            </Button>
+          </DialogActions> */}
+            </Dialog>
+          </Box>
+        </Toolbar>
+      </AppBar>
+      <Toolbar />
+    </>
   );
 }
 
