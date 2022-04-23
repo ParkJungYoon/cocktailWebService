@@ -36,4 +36,17 @@ CocktailRouter.post("/cocktail/create/:user_id", async (req, res, next) => {
   }
 });
 
+// 유저 칵테일 전체 조회
+CocktailRouter.get("/cocktail/:user_id", async (req, res, next) => {
+  try {
+    const { user_id } = req.params;
+    const userCocktailInfo = await CocktailService.getUserCocktailInfo({
+      user_id,
+    });
+    res.status(200).json(userCocktailInfo);
+  } catch (error) {
+    next(error);
+  }
+});
+
 export { CocktailRouter };
