@@ -11,7 +11,7 @@ for (let i = 0; i < 24; i++) {
   items.push({
     name: "드라이 마티니",
     img: "https://t1.daumcdn.net/thumb/R720x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/5Mz0/image/XnCm-TECJIbF3SB7CAphuGoqzxM.jpeg",
-    description: "우엥",
+    description: "여기는 뭘 보여줄까..?",
   });
 }
 
@@ -27,8 +27,8 @@ export default function Cocktails() {
 
   return (
     <div className="cocktails">
-      <Typography variant="h4" align="center" sx={{ pt: 5 }}>
-        26개 칵테일에 대한 정보 제공
+      <Typography variant="h4" align="center" sx={{ pt: 5, mb: 10 }}>
+        칵테일 백과사전
       </Typography>
       <Grid
         container

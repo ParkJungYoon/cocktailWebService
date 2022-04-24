@@ -101,7 +101,7 @@ $maincolor: #151516;
   .cocktails {
     transform: translateX(-50%);
     animation: bounce 0.8s infinite alternate;
-
+    background-color: $maincolor;
     @keyframes bounce {
       from {
         transform: translateY(0px);

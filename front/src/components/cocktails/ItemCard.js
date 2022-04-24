@@ -23,7 +23,6 @@ export default function ItemCard({ img, name, description }) {
 
       <Card className="back">
         <CardActionArea>
-          <CardMedia component="img" height="100%" image={img} />
           <CardContent>
             <Typography gutterBottom variant="h6">
               {description}
