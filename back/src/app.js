@@ -3,9 +3,9 @@ import express from "express";
 import { errorMiddleware } from "./middlewares/errorMiddleware";
 import { registerRouter } from "./routers/registerRouter";
 import { loginRouter } from "./routers/loginRouter";
-import { cocktailRouter } from "./routers/cocktailRouter";
 import { CocktailRouter } from "./routers/CocktailRouter";
 import { RankRouter } from "./routers/RankRouter";
+import { dbRouter } from "./routers/dbRouter";
 
 import swaggerUi from "swagger-ui-express";
 import * as swaggerDocument from "./modules/swagger.json";
@@ -44,6 +44,7 @@ app.get(
 app.use(registerRouter);
 app.use(loginRouter);
 app.use(CocktailRouter);
+app.use(dbRouter);
 app.use(RankRouter);
 
 // errorMessage yellow
