@@ -41,10 +41,10 @@ app.get(
 );
 // -----------------------------------------------------------------------------------------------------------
 // MVP router
+app.use(dbRouter);
 app.use(registerRouter);
 app.use(loginRouter);
 app.use(CocktailRouter);
-app.use(dbRouter);
 app.use(RankRouter);
 
 // errorMessage yellow
