@@ -1,7 +1,7 @@
-import { CocktailModel, UserCocktailModel } from "../db";
+import { CocktailModel, UserCocktailModel, CocktailInfoModel } from "../db";
 
 class CocktailService {
-  // 칵테일 조회
+  // 칵테일 조회(cocktail DB에서)
   static getCocktailInfo = async ({ name }) => {
     const cocktailInfo = await CocktailModel.findCocktail({ name });
     if (!cocktailInfo) {
@@ -11,7 +11,13 @@ class CocktailService {
     }
     return cocktailInfo;
   };
-  // 유저 칵테일 조회
+  // 칵테일 조회(cocktailInfo DB에서)
+  static getCocktailList = async () => {
+    const cocktailList = await CocktailInfoModel.findCocktail();
+
+    return cocktailList;
+  };
+  // 유저 칵테일 조회 (userCocktail DB에서)
   static getUserCocktailInfo = async ({ user_id }) => {
     const userCocktailInfo = await UserCocktailModel.findUserCocktail({
       user_id,
