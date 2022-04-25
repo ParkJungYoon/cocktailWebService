@@ -5,6 +5,9 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
+import UserInfo from "./UserInfo";
+import Bookmark from "./Bookmark";
+import Like from "./Like";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -39,13 +42,14 @@ function a11yProps(index) {
   };
 }
 
-function Introduce() {
+function UserTab(id) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const labels = ["서비스 소개", "팀 소개", "Item Three"];
+
+  const labels = ["😀 내 정보", "📌 북마크", "👍 좋아요"];
 
   return (
     <>
@@ -65,18 +69,17 @@ function Introduce() {
         </Box>
 
         <TabPanel value={value} index={0}>
-          <Box>주제 선정 이유</Box>
-          <Box>주제 선정 이유</Box>
+          <UserInfo></UserInfo>
         </TabPanel>
         <TabPanel value={value} index={1}>
-          @ @ @ @ @ @
+          <Bookmark></Bookmark>
         </TabPanel>
         <TabPanel value={value} index={2}>
-          Item Three
+          <Like></Like>
         </TabPanel>
       </Box>
     </>
   );
 }
 
-export default Introduce;
+export default UserTab;
