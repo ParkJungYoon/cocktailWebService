@@ -1,24 +1,20 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { UserStateContext, DispatchContext } from "../App";
 import {
   Box,
   Link,
   AppBar,
   Toolbar,
-  Container,
   Dialog,
-  DialogActions,
   DialogContent,
   DialogContentText,
   DialogTitle,
-  Button,
-  Typography,
 } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import LoginForm from "./user/LoginForm";
+
+import { UserStateContext, DispatchContext } from "../App";
 import "../scss/Header.scss";
-import logo from "../img/logo.png";
 
 const rightLink = {
   fontSize: 15,
@@ -28,7 +24,7 @@ const rightLink = {
 const darkTheme = createTheme({
   palette: {
     primary: {
-      main: "#000000",
+      main: "#151516",
     },
   },
 });
@@ -56,24 +52,16 @@ function Header() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const style = {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: 400,
-    bgcolor: "background.paper",
-    border: "2px solid #000",
-    boxShadow: 24,
-    p: 4,
-  };
+
   return (
-    <>
-      <AppBar position="fixed" style={{ backgroundColor: "white" }}>
+    <ThemeProvider theme={darkTheme}>
+      <AppBar position="fixed">
         <Toolbar sx={{ justifyContent: "space-between" }}>
           <Box sx={{ flex: 0 }} />
           <Link underline="none" onClick={() => navigate("/")} className="logo">
-            <img src={logo} alt="logo" />
+            <p>
+              저쪽 손님께서<br></br>보내신 겁니다
+            </p>
           </Link>
           <Box
             sx={{ flex: 1, display: "flex", justifyContent: "flex-end" }}
@@ -83,9 +71,9 @@ function Header() {
               className="navbarIntro"
               underline="none"
               sx={rightLink}
-              onClick={() => navigate("/introduce")}
+              onClick={() => navigate("/cocktails")}
             >
-              {"프롤로그"}
+              칵테일 종류
             </Link>
             <Link
               className="navbarRecommend"
@@ -93,7 +81,7 @@ function Header() {
               sx={{ ...rightLink }}
               onClick={() => navigate("/recommend")}
             >
-              {"칵테일 한 잔"}
+              칵테일 한 잔
             </Link>
             <Link
               className="navbarMypage"
@@ -101,7 +89,7 @@ function Header() {
               sx={{ ...rightLink }}
               onClick={() => navigate("/myPage")}
             >
-              {"나의 페이지"}
+              나의 페이지
             </Link>
             <Link
               className="navbarLogin"
@@ -109,8 +97,9 @@ function Header() {
               sx={{ ...rightLink }}
               onClick={handleOpen}
             >
-              {"로그인"}
+              로그인
             </Link>
+            <span className="indicator"></span>
             <Dialog open={open} onClose={handleClose}>
               <DialogTitle>로그인</DialogTitle>
               <DialogContent>
@@ -130,7 +119,7 @@ function Header() {
         </Toolbar>
       </AppBar>
       <Toolbar />
-    </>
+    </ThemeProvider>
   );
 }
 
