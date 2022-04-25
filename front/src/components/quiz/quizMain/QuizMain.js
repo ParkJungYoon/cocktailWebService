@@ -3,7 +3,6 @@ import Question from "../question/Question";
 import Answer from "../answer/Answer";
 import "./QuizMain.css";
 import QuestionImg from "../questionImg/QuestionImg";
-import defaultImage from "../questionImg/defaultImage.jpg";
 import StandardShaker from "../questionImg/StandardShaker.jpg";
 import { Container, Box, Grid } from "@mui/material";
 
@@ -71,12 +70,10 @@ export default class Quiz extends Component {
     if (answer === correctAnswers[step]) {
       this.setState({
         score: score + 1,
-        correctAnswer: correctAnswers[step],
         clickedAnswer: answer,
       });
     } else {
       this.setState({
-        correctAnswer: 0,
         clickedAnswer: answer,
       });
     }
@@ -86,21 +83,12 @@ export default class Quiz extends Component {
   nextStep = (step) => {
     this.setState({
       step: step + 1,
-      correctAnswer: 0,
       clickedAnswer: 0,
     });
   };
 
   render() {
-    let {
-      quiestions,
-      imgs,
-      answers,
-      correctAnswer,
-      clickedAnswer,
-      step,
-      score,
-    } = this.state;
+    let { quiestions, imgs, answers, clickedAnswer, step, score } = this.state;
     return (
       <div className="Content">
         {step <= Object.keys(quiestions).length ? (
@@ -130,9 +118,7 @@ export default class Quiz extends Component {
                   borderRadius: "5px",
                 }}
               ></Grid>
-              <Grid item xs={4} md={4}>
-                {/* 1-3 */}
-              </Grid>
+              <Grid item xs={4} md={4}></Grid>
             </Grid>
 
             <div>
@@ -140,30 +126,50 @@ export default class Quiz extends Component {
                 answer={answers[step]}
                 step={step}
                 checkAnswer={this.checkAnswer}
-                correctAnswer={correctAnswer}
                 clickedAnswer={clickedAnswer}
               />
             </div>
-            <button
-              className="NextStep"
-              disabled={
-                clickedAnswer && Object.keys(quiestions).length >= step
-                  ? false
-                  : true
-              }
-              onClick={() => this.nextStep(step)}
-            >
-              Next
-            </button>
+            <Grid container>
+              <Grid item xs={10} md={10}></Grid>
+              <Grid item xs={2} md={2}>
+                <button
+                  className="NextStep"
+                  disabled={
+                    clickedAnswer && Object.keys(quiestions).length >= step
+                      ? false
+                      : true
+                  }
+                  onClick={() => this.nextStep(step)}
+                >
+                  ⟶
+                </button>
+              </Grid>
+            </Grid>
           </>
         ) : (
-          <div className="finalPage">
-            <h1>You have completed the quiz!</h1>
-            <p>
-              Your score is: {score} of {Object.keys(quiestions).length}
-            </p>
-            <p>Thank you!</p>
-          </div>
+          <Grid container>
+            <Grid item xs={2} md={2}></Grid>
+            <Grid
+              item
+              xs={8}
+              md={8}
+              height="500px"
+              display="flex"
+              justifyContent="center"
+              direction="column"
+            >
+              <div className="finalPage">
+                <div>
+                  <h1>You have completed the quiz!</h1>
+                  <p>
+                    Your score is: {score} of {Object.keys(quiestions).length}
+                  </p>
+                  <p>Thank you!</p>
+                </div>
+              </div>
+            </Grid>
+            <Grid item xs={2} md={2}></Grid>
+          </Grid>
         )}
       </div>
     );

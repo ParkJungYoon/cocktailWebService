@@ -2,33 +2,25 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    color: #FFFFFF
+    color: #FFFFFF;
+    font-size: 20px;
 }
 .Answers li{
     text-align: left;
     padding: 10px;
-    /* border-left: 4px solid #FF3B3B; */
-    /* background-color: #bbb; */
     margin: 0 0 5px;
 }
 .Answers li:hover{
     cursor: pointer;
-    /* background-color: #a2a2a2; */
     color:#9d00b9
 }
-.Answers .correct,
-.Answers .correct:hover {
-    background-color: #1db900;
-    border-left: 4px solid #0f6300;
+.Answers .selectAnswer,
+.Answers .selectAnswer:hover {
+    background-color: #9d00b9;
     color: #fff;
 }
-.Answers .incorrect,
-.Answers .incorrect:hover {
-    background-color: #ec0000;
-    border-left: 4px solid #FF3B3B;
-    color: #fff;
-}
+
 .Answers[disabled] {
     pointer-events: none;
-    opacity: 0.7;
+    /* opacity: 0.7; */
 }
