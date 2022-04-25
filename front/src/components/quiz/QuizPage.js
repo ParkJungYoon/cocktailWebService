@@ -1,6 +1,15 @@
-import { Grid, Card, CardHeader, CardContent, CardMedia } from "@mui/material";
+import {
+  Grid,
+  Card,
+  CardHeader,
+  CardContent,
+  CardMedia,
+  Container,
+  Box,
+} from "@mui/material";
 import quizHeaderImg from "./quizHeaderImg.jpg";
 import QuizMain from "./quizMain/QuizMain";
+import bgImg from "./bgImg.jpg";
 
 function Quiz() {
   const quizGridStyle = {
@@ -8,11 +17,13 @@ function Quiz() {
     border: "3px solid gray",
     borderRadius: "1rem",
     marginBottom: "3%",
+    backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url(${bgImg})`,
+    backgroundSize: "cover",
   };
 
   return (
-    <>
-      <Card sx={{ maxWidth: 550, minHeight: 700 }}>
+    <Container>
+      <Box>
         <CardContent>
           <Grid
             container
@@ -22,29 +33,21 @@ function Quiz() {
               textAlign: "center",
             }}
           >
-            <Grid sx={{ height: "150px" }}>
-              <CardMedia
-                component="img"
-                image={quizHeaderImg}
-                alt="image"
-                sx={{ width: "100%", height: "100%", borderRadius: "1rem" }}
-              />
-            </Grid>
             <Grid
               item
               xs={12}
               md={12}
               mt={3}
               mb={3}
-              height="500px"
+              height="700px"
               sx={quizGridStyle}
             >
               <QuizMain></QuizMain>
             </Grid>
           </Grid>
         </CardContent>
-      </Card>
-    </>
+      </Box>
+    </Container>
   );
 }
 
