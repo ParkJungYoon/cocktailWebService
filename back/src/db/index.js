@@ -5,6 +5,7 @@ import { CocktailModel } from "./models/Cocktail";
 import { CocktailInfoModel } from "./models/Cocktail_Info";
 import { UserCocktailModel } from "./models/User_Cocktail";
 import { RankModel } from "./models/Rank";
+import { TokenModel } from "./models/Token";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -20,4 +21,5 @@ export {
   RankModel,
   UserCocktailModel,
   CocktailInfoModel,
+  TokenModel,
 };
