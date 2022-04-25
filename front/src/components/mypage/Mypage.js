@@ -3,9 +3,21 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Bookmark from "./Bookmark";
+import UserTab from "./UserTab";
 import defaultImage from "../../img/userDefaultImg.jpg";
 
 function Mypage() {
+  const aBoxStyle = {
+    width: 300,
+    height: 300,
+    border: "2px solid gray",
+    borderRadius: "1rem",
+    // backgroundColor: "info.dark",
+    // "&:hover": {
+    //   backgroundColor: "info.main",
+    //   opacity: [0.9, 0.8, 0.7],
+    // },
+  };
   return (
     <>
       <Container>
@@ -14,17 +26,7 @@ function Mypage() {
         </Box>
         <Box sx={{ display: "flex", flexDirection: "row" }}>
           <Box sx={{ display: "flex", flexDirection: "column" }}>
-            <Box
-              sx={{
-                width: 300,
-                height: 300,
-                backgroundColor: "primary.dark",
-                "&:hover": {
-                  backgroundColor: "primary.main",
-                  opacity: [0.9, 0.8, 0.7],
-                },
-              }}
-            >
+            <Box sx={aBoxStyle}>
               <div
                 style={{
                   display: "flex",
@@ -35,28 +37,16 @@ function Mypage() {
               >
                 <img
                   style={{
-                    width: "10rem",
-                    height: "10rem",
-                    borderRadius: "10rem",
+                    width: "80%",
+                    height: "80%",
+                    // borderRadius: "10rem",
                   }}
                   src={defaultImage}
                   alt="defaultImage"
-                  // src="http://placekitten.com/200/200"
-                  // alt="랜덤 고양이 사진 (http://placekitten.com API 사용)"
                 />
               </div>
             </Box>
-            <Box
-              sx={{
-                width: 300,
-                height: 300,
-                backgroundColor: "info.dark",
-                "&:hover": {
-                  backgroundColor: "info.main",
-                  opacity: [0.9, 0.8, 0.7],
-                },
-              }}
-            >
+            <Box sx={aBoxStyle}>
               <div
                 style={{
                   display: "flex",
@@ -67,11 +57,11 @@ function Mypage() {
                 }}
               >
                 <div>
-                  <p>아이디 : 123@123123.com</p>
-                  <p>닉네임 : 123213</p>
-                </div>
-                <div>
-                  <button>수정</button>
+                  <p>이메일 : 777@jackpot.com</p>
+                  <p>이름 : Jackpot</p>
+                  <p>닉네임 : 모히또</p>
+                  <p>북마크 : @@개</p>
+                  <p>좋아요 : @@개</p>
                 </div>
               </div>
             </Box>
@@ -85,33 +75,13 @@ function Mypage() {
           >
             <div
               style={{
-                backgroundColor: "skyblue",
-                height: "50%",
+                backgroundColor: "lightGray",
+                height: "100%",
+                border: "2px solid dark-gray",
+                borderRadius: "1rem",
               }}
             >
-              북마크📌
-              <div
-                style={{
-                  margin: "3%",
-                }}
-              >
-                <Bookmark></Bookmark>
-              </div>
-            </div>
-            <div
-              style={{
-                backgroundColor: "gray",
-                height: "50%",
-              }}
-            >
-              좋아요👍
-              <div
-                style={{
-                  margin: "3%",
-                }}
-              >
-                <Bookmark></Bookmark>
-              </div>
+              <UserTab></UserTab>
             </div>
           </Box>
         </Box>

@@ -45,7 +45,7 @@ const rows = [
   { id: 9, lastName: "Roxie", firstName: "Harvey", age: 65 },
 ];
 
-function Bookmark() {
+function Likes() {
   return (
     <PerfectScrollbar>
       <TableContainer component={Paper}>
@@ -66,4 +66,4 @@ function Bookmark() {
   );
 }
 
-export default Bookmark;
+export default Likes;
