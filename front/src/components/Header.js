@@ -5,14 +5,10 @@ import {
   Link,
   AppBar,
   Toolbar,
-  Container,
   Dialog,
-  DialogActions,
   DialogContent,
   DialogContentText,
   DialogTitle,
-  Button,
-  Typography,
 } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import LoginForm from "./user/LoginForm";
@@ -56,17 +52,6 @@ function Header() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const style = {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: 400,
-    bgcolor: "background.paper",
-    border: "2px solid #000",
-    boxShadow: 24,
-    p: 4,
-  };
 
   return (
     <ThemeProvider theme={darkTheme}>
@@ -88,7 +73,7 @@ function Header() {
               sx={rightLink}
               onClick={() => navigate("/cocktails")}
             >
-              {"칵테일 종류"}
+              칵테일 종류
             </Link>
             <Link
               className="navbarRecommend"
@@ -96,7 +81,7 @@ function Header() {
               sx={{ ...rightLink }}
               onClick={() => navigate("/recommend")}
             >
-              {"칵테일 한 잔"}
+              칵테일 한 잔
             </Link>
             <Link
               className="navbarMypage"
@@ -104,7 +89,7 @@ function Header() {
               sx={{ ...rightLink }}
               onClick={() => navigate("/myPage")}
             >
-              {"나의 페이지"}
+              나의 페이지
             </Link>
             <Link
               className="navbarLogin"
@@ -112,7 +97,7 @@ function Header() {
               sx={{ ...rightLink }}
               onClick={handleOpen}
             >
-              {"로그인"}
+              로그인
             </Link>
             <span className="indicator"></span>
             <Dialog open={open} onClose={handleClose}>

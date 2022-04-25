@@ -1,10 +1,8 @@
-import * as React from "react";
-import { Typography, Container, Grid } from "@mui/material";
+import React from "react";
+import { Container, Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 import Card from "./CocktailCard";
-import chart from "../../img/top10_chart.png";
-import cocktails from "../../img/secondpage.jpg";
 
 export default function Secondpage() {
   const navigate = useNavigate();
@@ -19,8 +17,6 @@ export default function Secondpage() {
         }}
         className="top10"
       >
-        {/* Increase the network loading priority of the background image. */}
-
         <Grid container>
           <Grid item xs={4} align="center">
             <Card

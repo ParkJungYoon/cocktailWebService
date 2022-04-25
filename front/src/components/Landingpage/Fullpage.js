@@ -1,11 +1,10 @@
 import React from "react";
 import ReactFullpage from "@fullpage/react-fullpage";
+
 import "../../scss/Landingpage.scss";
 import Firstpage from "./Firstpage";
 import Secondpage from "./Secondpage";
 import Thirdpage from "./Thirdpage";
-import Fourthpage from "./Fourthpage";
-// img 파일 불러오기
 
 const Fullpage = () => {
   return (
@@ -23,9 +22,6 @@ const Fullpage = () => {
               </div>
               <div className="section thirdPage">
                 <Thirdpage />
-              </div>
-              <div className="section fourthPage">
-                <Fourthpage />
               </div>
             </ReactFullpage.Wrapper>
           );
