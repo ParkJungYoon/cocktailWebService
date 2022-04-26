@@ -1,20 +1,22 @@
 .logo {
-  img {
-    width: 10vw;
-    cursor: pointer;
+  font-size: 1rem;
+  min-width: 10vw;
+  cursor: pointer;
+  p {
+    color: white;
   }
 }
-
 .navbar {
   .navbarIntro,
   .navbarMypage,
   .navbarRecommend,
   .navbarLogin {
-    color: black;
+    color: white;
     padding: 0.5vw;
+
     cursor: pointer;
     &:hover {
-      background-color: lightcoral;
+      border-bottom: 2px solid white;
     }
   }
 }
