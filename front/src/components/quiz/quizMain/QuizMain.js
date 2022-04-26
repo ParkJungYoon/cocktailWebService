@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Question from "../question/Question";
 import Answer from "../answer/Answer";
 import "./QuizMain.css";
@@ -6,9 +6,12 @@ import QuestionImg from "../questionImg/QuestionImg";
 import StandardShaker from "../questionImg/StandardShaker.jpg";
 import { Container, Box, Grid } from "@mui/material";
 
-export default class Quiz extends Component {
-  // initiating the local state
-  state = {
+function QuizMain(props) {
+  const [score, setScore] = useState(0);
+  const [step, setStep] = useState(1);
+  const [clickedAnswer, setClickedAnswer] = useState(0);
+
+  const state = {
     quiestions: {
       1: "Q1. 술에 술을 섞거나 술에 청량음료나 과즙 음료, 기타 부재료를 이용하여 혼합시킨 것은?",
       2: "Q2. 다음 기구의 이름은?",
@@ -65,113 +68,99 @@ export default class Quiz extends Component {
   };
 
   // the method that checks the correct answer
-  checkAnswer = (answer) => {
-    const { correctAnswers, step, score } = this.state;
-    if (answer === correctAnswers[step]) {
-      this.setState({
-        score: score + 1,
-        clickedAnswer: answer,
-      });
+  const checkAnswer = (answer) => {
+    if (answer === state.correctAnswers[step]) {
+      setScore(score + 10);
+      setClickedAnswer(answer);
     } else {
-      this.setState({
-        clickedAnswer: answer,
-      });
+      setClickedAnswer(answer);
     }
   };
 
   // method to move to the next question
-  nextStep = (step) => {
-    this.setState({
-      step: step + 1,
-      clickedAnswer: 0,
-    });
+  const nextStep = (step) => {
+    setStep(step + 1);
+    setClickedAnswer(0);
   };
 
-  render() {
-    let { quiestions, imgs, answers, clickedAnswer, step, score } = this.state;
-    return (
-      <div className="Content">
-        {step <= Object.keys(quiestions).length ? (
-          <>
-            <Question question={quiestions[step]} />
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                marginTop: "2rem",
-                marginBottom: "2rem",
-              }}
-            >
-              <QuestionImg img={imgs[step]} />
-            </div>
+  return (
+    <div className="Content">
+      {step <= Object.keys(state.quiestions).length ? (
+        <>
+          <Question question={state.quiestions[step]} />
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginTop: "2rem",
+              marginBottom: "2rem",
+            }}
+          >
+            <QuestionImg img={state.imgs[step]} />
+          </div>
 
-            <Grid container mb="5%">
-              <Grid item xs={4} md={4}></Grid>
-              <Grid
-                item
-                xs={4}
-                md={4}
-                //white bar
-                sx={{
-                  backgroundColor: "white",
-                  height: "3px",
-                  borderRadius: "5px",
-                }}
-              ></Grid>
-              <Grid item xs={4} md={4}></Grid>
-            </Grid>
-
-            <div>
-              <Answer
-                answer={answers[step]}
-                step={step}
-                checkAnswer={this.checkAnswer}
-                clickedAnswer={clickedAnswer}
-              />
-            </div>
-            <Grid container>
-              <Grid item xs={10} md={10}></Grid>
-              <Grid item xs={2} md={2}>
-                <button
-                  className="NextStep"
-                  disabled={
-                    clickedAnswer && Object.keys(quiestions).length >= step
-                      ? false
-                      : true
-                  }
-                  onClick={() => this.nextStep(step)}
-                >
-                  ⟶
-                </button>
-              </Grid>
-            </Grid>
-          </>
-        ) : (
-          <Grid container>
-            <Grid item xs={2} md={2}></Grid>
+          <Grid container mb="5%">
+            <Grid item xs={4} md={4}></Grid>
             <Grid
               item
-              xs={8}
-              md={8}
-              height="500px"
-              display="flex"
-              justifyContent="center"
-              direction="column"
-            >
-              <div className="finalPage">
-                <div>
-                  <h1>You have completed the quiz!</h1>
-                  <p>
-                    Your score is: {score} of {Object.keys(quiestions).length}
-                  </p>
-                  <p>Thank you!</p>
-                </div>
-              </div>
-            </Grid>
-            <Grid item xs={2} md={2}></Grid>
+              xs={4}
+              md={4}
+              //white bar
+              sx={{
+                backgroundColor: "white",
+                height: "3px",
+                borderRadius: "5px",
+              }}
+            ></Grid>
+            <Grid item xs={4} md={4}></Grid>
           </Grid>
-        )}
-      </div>
-    );
-  }
+
+          <div>
+            <Answer
+              answer={state.answers[step]}
+              step={step}
+              checkAnswer={checkAnswer}
+              clickedAnswer={clickedAnswer}
+            />
+          </div>
+          <Grid container>
+            <Grid item xs={10} md={10}></Grid>
+            <Grid item xs={2} md={2}>
+              <button
+                className="NextStep"
+                disabled={
+                  clickedAnswer && Object.keys(state.quiestions).length >= step
+                    ? false
+                    : true
+                }
+                onClick={() => nextStep(step)}
+              >
+                ⟶
+              </button>
+            </Grid>
+          </Grid>
+        </>
+      ) : (
+        <Grid container>
+          <Grid item xs={4} md={4}></Grid>
+          <Grid
+            item
+            xs={4}
+            md={4}
+            // height="500px"
+            // display="flex"
+            // justifyContent="center"
+            // direction="column"
+          >
+            <div className="finalPage">
+              <p>SCORE : {score}</p>
+            </div>
+          </Grid>
+          <Grid item xs={4} md={4}></Grid>
+        </Grid>
+        // <Final sc={score}></Final>
+      )}
+    </div>
+  );
 }
+export default QuizMain;
