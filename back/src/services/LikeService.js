@@ -5,6 +5,10 @@ class LikeService {
     const newLike = await LikeModel.addLike({ giveUserId, getCocktailId });
     return newLike;
   };
+  static getLikeList = async () => {
+    const likeList = await LikeModel.getLikeList();
+    return likeList;
+  };
 }
 
 export { LikeService };

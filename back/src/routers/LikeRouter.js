@@ -14,4 +14,13 @@ LikeRouter.post("/addLike", verifyToken, async (req, res, next) => {
   }
 });
 
+LikeRouter.get("/likeList", verifyToken, async (req, res, next) => {
+  try {
+    const likeList = await LikeService.getLikeList();
+    res.status(200).json(likeList);
+  } catch (error) {
+    next(error);
+  }
+});
+
 export { LikeRouter };
