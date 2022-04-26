@@ -34,7 +34,6 @@ class LoginService {
   static findUser = async ({ email, password }) => {
     const discoveredUser = await UserModel.findByEmail({ email });
     const hashedPassword = hashPassword(password);
-    console.log(discoveredUser);
     const userId = String(discoveredUser._id);
 
     if (!discoveredUser) {

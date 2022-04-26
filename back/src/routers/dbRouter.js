@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { dbService } from "../services/dbService";
+import { verifyToken } from "../middlewares/verifyToken";
 
 const dbRouter = Router();
 
