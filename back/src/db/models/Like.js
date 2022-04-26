@@ -9,6 +9,10 @@ class LikeModel {
     const likeList = await Like.find();
     return likeList;
   };
+  static deleteLike = async ({ id }) => {
+    const deleteLike = await Like.findByIdAndRemove({ _id: id });
+    return deleteLike;
+  };
 }
 
 export { LikeModel };

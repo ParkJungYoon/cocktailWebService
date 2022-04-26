@@ -9,6 +9,14 @@ class LikeService {
     const likeList = await LikeModel.getLikeList();
     return likeList;
   };
+  static deleteLike = async ({ id }) => {
+    const deleteCocktail = await LikeModel.deleteLike({ id });
+    if (deleteCocktail === null) {
+      const errorMessage = "해당 id의 좋아요가 없습니다.";
+      return { errorMessage };
+    }
+    return deleteCocktail;
+  };
 }
 
 export { LikeService };
