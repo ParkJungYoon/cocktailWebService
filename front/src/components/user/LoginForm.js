@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../user/reducer/userReducer";
 
 import {
   Grid,
@@ -16,11 +17,10 @@ import {
 } from "@mui/material";
 
 import * as Api from "../../api";
-import { DispatchContext } from "../../App";
 
 function LoginForm() {
   const navigate = useNavigate();
-  const dispatch = useContext(DispatchContext);
+  const { userState, userDispatch } = useContext(UserContext);
 
   //useState로 email 상태를 생성함.
   const [email, setEmail] = useState("");
@@ -60,7 +60,7 @@ function LoginForm() {
       // sessionStorage에 "userToken"이라는 키로 JWT 토큰을 저장함.
       sessionStorage.setItem("userToken", jwtToken);
       // dispatch 함수를 이용해 로그인 성공 상태로 만듦.
-      dispatch({
+      userDispatch({
         type: "LOGIN_SUCCESS",
         payload: user,
       });

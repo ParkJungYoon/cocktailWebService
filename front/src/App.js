@@ -1,8 +1,11 @@
-import React, { useState, useEffect, useReducer, createContext } from "react";
+import React, { useState, useEffect, useReducer, useContext } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import * as Api from "./api";
-import { loginReducer } from "./reducer";
+import {
+  UserContext,
+  UserProvider,
+} from "./components/user/reducer/userReducer";
 
 import Header from "./components/Header";
 import LoginForm from "./components/user/LoginForm";
@@ -21,14 +24,12 @@ import Cocktails from "./components/cocktails/Cocktails";
 import SkeletonFunc from "./components/test/SkeletonFunc";
 import TopTenSOTB from "./components/test/TopTenSOTB";
 
-export const UserStateContext = createContext(null);
-export const DispatchContext = createContext(null);
-
 function App() {
   // useReducer 훅을 통해 userState 상태와 dispatch함수를 생성함.
-  const [userState, dispatch] = useReducer(loginReducer, {
-    user: null,
-  });
+  // const [userState, dispatch] = useReducer(loginReducer, {
+  //   user: null,
+  // });
+  const { userState, userDispatch } = useContext(UserContext);
 
   // 아래의 fetchCurrentUser 함수가 실행된 다음에 컴포넌트가 구현되도록 함.
   // 아래 코드를 보면 isFetchCompleted 가 true여야 컴포넌트가 구현됨.
@@ -41,7 +42,7 @@ function App() {
       const currentUser = res.data;
 
       // dispatch 함수를 통해 로그인 성공 상태로 만듦.
-      dispatch({
+      userDispatch({
         type: "LOGIN_SUCCESS",
         payload: currentUser,
       });
@@ -64,27 +65,23 @@ function App() {
   }
 
   return (
-    <DispatchContext.Provider value={dispatch}>
-      <UserStateContext.Provider value={userState}>
-        <Router>
-          <Header />
-          <Routes>
-            <Route path="/" exact element={<Fullpage />} />
-            <Route path="/login" element={<LoginForm />} />
-            <Route path="/register" element={<RegisterForm />} />
-            <Route path="/introduce" element={<Introduce />} />
-            <Route path="/cocktails" element={<Cocktails />} />
-            <Route path="/mypage" element={<Mypage />} />
-            <Route path="/bookmark" element={<Bookmark />} />
-            <Route path="/like" element={<Like />} />
-            <Route path="/top10" element={<TopTenSOTB />} />
-            <Route path="/userinfo" element={<UserInfo />} />
-            <Route path="/usertab" element={<UserTab />} />
-            <Route path="/quiz" element={<QuizPage />} />
-          </Routes>
-        </Router>
-      </UserStateContext.Provider>
-    </DispatchContext.Provider>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" exact element={<Fullpage />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/register" element={<RegisterForm />} />
+        <Route path="/introduce" element={<Introduce />} />
+        <Route path="/cocktails" element={<Cocktails />} />
+        <Route path="/mypage" element={<Mypage />} />
+        <Route path="/bookmark" element={<Bookmark />} />
+        <Route path="/like" element={<Like />} />
+        <Route path="/top10" element={<TopTenSOTB />} />
+        <Route path="/userinfo" element={<UserInfo />} />
+        <Route path="/usertab" element={<UserTab />} />
+        <Route path="/quiz" element={<QuizPage />} />
+      </Routes>
+    </Router>
   );
 }
 
