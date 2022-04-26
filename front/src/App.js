@@ -11,7 +11,6 @@ import Fullpage from "./components/Landingpage/Fullpage";
 import Introduce from "./components/introduce/Introduce";
 import Mypage from "./components/mypage/Mypage";
 import Bookmark from "./components/mypage/Bookmark";
-
 import Dictionary from "./components/dictionary/Dictionary";
 import Like from "./components/mypage/Like";
 import UserInfo from "./components/mypage/UserInfo";
