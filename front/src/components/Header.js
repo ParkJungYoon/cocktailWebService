@@ -9,6 +9,8 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
+  DialogActions,
+  Button,
 } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import LoginForm from "./user/LoginForm";
@@ -109,11 +111,15 @@ function Header() {
                 </DialogContentText>
                 <LoginForm />
               </DialogContent>
-              {/* <DialogActions>
-            <Button variant="outlined" color="primary" onClick={handleClose}>
-              닫기
-            </Button>
-          </DialogActions> */}
+              <DialogActions>
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  onClick={handleClose}
+                >
+                  닫기
+                </Button>
+              </DialogActions>
             </Dialog>
           </Box>
         </Toolbar>

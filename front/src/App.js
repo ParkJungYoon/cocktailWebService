@@ -19,7 +19,6 @@ import Cocktails from "./components/cocktails/Cocktails";
 
 //JY
 import SkeletonFunc from "./components/test/SkeletonFunc";
-import LandingPage from "./components/test/LandingPage";
 import TopTenSOTB from "./components/test/TopTenSOTB";
 
 export const UserStateContext = createContext(null);
