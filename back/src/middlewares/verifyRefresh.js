@@ -1,6 +1,4 @@
 import jwt from "jsonwebtoken";
-import { verifyToken } from "./verifyToken";
-import { User, Token } from "../db";
 import { makeToken } from "../utils/makeToken";
 import { verify, refreshVerify } from "../utils/verify";
 
@@ -15,23 +13,20 @@ const verifyRefresh = async (req, res, next) => {
     // access token 검증 -> expired여야 함.
     const authResult = verify(token);
 
-    // access token 디코딩하여 user의 정보를 가져온다.
-    // 디코딩 결과가 없으면 권한이 없음을 응답.
+    // access token 디코딩하여 userId를 가져온다.
     const decoded = jwt.decode(token);
 
+    // 디코딩 결과가 없으면 권한이 없음을 응답.
     if (!decoded) {
       res.status(401).send({
         ok: false,
         message: "No authorized!",
       });
     }
-    // else {
-    //   userId = await User.findById({ _id: decoded.userId });
-    // }
 
     /* access token의 decoding 된 값에서
         유저의 id를 가져와 refresh token을 검증합니다. */
-    const refreshResult = refreshVerify(refreshToken, decoded.userId);
+    const refreshResult = await refreshVerify(refreshToken, decoded.userId);
 
     // 재발급을 위해서는 access token이 만료되어 있어야합니다.
     if (authResult.ok === false && authResult.message === "jwt expired") {
@@ -39,7 +34,7 @@ const verifyRefresh = async (req, res, next) => {
       if (refreshResult === false) {
         res.status(401).send({
           ok: false,
-          message: "No authorized!",
+          message: "No authorized! 다시 로그인해주세요.",
         });
       } else {
         // 2. access token이 만료되고, refresh token은 만료되지 않은 경우 => 새로운 access token을 발급
