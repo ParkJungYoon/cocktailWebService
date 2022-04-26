@@ -1,10 +1,14 @@
 const fs = require("fs");
 const axios = require("axios");
-const data = fs.readFileSync("cocktail_rank.json", {
+
+const cocktail = fs.readFileSync("cocktail_rank.json", {
   encoding: "utf8",
   flag: "r",
 });
-const cocktail_rank = JSON.parse(data);
+
+const cocktail_rank = JSON.parse(cocktail);
+
+
 const backendPortNumber = "5000";
 const serverUrl = "http://localhost:" + backendPortNumber + "/";
 
