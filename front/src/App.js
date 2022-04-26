@@ -11,7 +11,13 @@ import Fullpage from "./components/Landingpage/Fullpage";
 import Introduce from "./components/introduce/Introduce";
 import Mypage from "./components/mypage/Mypage";
 import Bookmark from "./components/mypage/Bookmark";
+
 import Dictionary from "./components/dictionary/Dictionary";
+import Like from "./components/mypage/Like";
+import UserInfo from "./components/mypage/UserInfo";
+import UserTab from "./components/mypage/UserTab";
+import QuizPage from "./components/quiz/QuizPage";
+
 //JY
 import SkeletonFunc from "./components/test/SkeletonFunc";
 import LandingPage from "./components/test/LandingPage";
@@ -72,7 +78,11 @@ function App() {
             <Route path="/dictionary" element={<Dictionary />} />
             <Route path="/mypage" element={<Mypage />} />
             <Route path="/bookmark" element={<Bookmark />} />
+            <Route path="/like" element={<Like />} />
             <Route path="/top10" element={<TopTenSOTB />} />
+            <Route path="/userinfo" element={<UserInfo />} />
+            <Route path="/usertab" element={<UserTab />} />
+            <Route path="/quiz" element={<QuizPage />} />
           </Routes>
         </Router>
       </UserStateContext.Provider>
