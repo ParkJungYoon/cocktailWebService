@@ -21,6 +21,7 @@ export default function Firstpage() {
           칵테일 한 잔 하러 가기
         </Link>
       </div>
+
       <div className="video">
         <video
           muted
@@ -31,7 +32,7 @@ export default function Firstpage() {
             height: "100%",
           }}
         >
-          <source src={video} type="video/mp4" />
+          <source src={video} type="video/webm" />
         </video>
       </div>
     </>

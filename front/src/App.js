@@ -11,7 +11,7 @@ import Fullpage from "./components/Landingpage/Fullpage";
 import Introduce from "./components/introduce/Introduce";
 import Mypage from "./components/mypage/Mypage";
 import Bookmark from "./components/mypage/Bookmark";
-import Cocktails from "./components/cocktails/Cocktails";
+import Dictionary from "./components/dictionary/Dictionary";
 //JY
 import SkeletonFunc from "./components/test/SkeletonFunc";
 import LandingPage from "./components/test/LandingPage";
@@ -69,7 +69,7 @@ function App() {
             <Route path="/login" element={<LoginForm />} />
             <Route path="/register" element={<RegisterForm />} />
             <Route path="/introduce" element={<Introduce />} />
-            <Route path="/cocktails" element={<Cocktails />} />
+            <Route path="/dictionary" element={<Dictionary />} />
             <Route path="/mypage" element={<Mypage />} />
             <Route path="/bookmark" element={<Bookmark />} />
             <Route path="/top10" element={<TopTenSOTB />} />

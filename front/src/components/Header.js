@@ -1,33 +1,29 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  Box,
-  Link,
-  AppBar,
-  Toolbar,
-  Dialog,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
-} from "@mui/material";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import LoginForm from "./user/LoginForm";
+import { Link, Grid, Tab, Tabs, Box } from "@mui/material";
 
 import { UserStateContext, DispatchContext } from "../App";
 import "../scss/Header.scss";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 
-const rightLink = {
-  fontSize: 15,
-  color: "black",
-  mx: 2,
-};
-const darkTheme = createTheme({
+const theme = createTheme({
   palette: {
     primary: {
-      main: "#151516",
+      main: "#ffffff",
     },
   },
 });
+function LinkTab(props) {
+  return (
+    <Tab
+      component="a"
+      onClick={(event) => {
+        event.preventDefault();
+      }}
+      {...props}
+    />
+  );
+}
 
 function Header() {
   const navigate = useNavigate();
@@ -53,72 +49,74 @@ function Header() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  // 탭 관리
+  const [value, setValue] = React.useState("1");
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
   return (
-    <ThemeProvider theme={darkTheme}>
-      <AppBar position="fixed">
-        <Toolbar sx={{ justifyContent: "space-between" }}>
-          <Box sx={{ flex: 0 }} />
-          <Link underline="none" onClick={() => navigate("/")} className="logo">
-            <p>
-              저쪽 손님께서<br></br>보내신 겁니다
-            </p>
+    <ThemeProvider theme={theme}>
+      <nav className="navbar">
+        <div className="navbarAccount">
+          <Link onClick={() => navigate("/introduce")} className="account">
+            Log In
           </Link>
-          <Box
-            sx={{ flex: 1, display: "flex", justifyContent: "flex-end" }}
-            className="navbar"
+          <span>/</span>
+          <Link className="account">Sign Up</Link>
+          {isLogin && <Link className="navbarButton">NickName</Link>}
+        </div>
+        <div className="navbarLogo">
+          <Link color="white" underline="none" onClick={() => navigate("/")}>
+            저쪽 손님께서
+            <br />
+            보내신 겁니다
+          </Link>
+        </div>
+
+        <Box sx={{ width: "100%", typography: "body1" }} className="navbarMenu">
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            centered
+            indicatorColor="primary"
+            textColor="inherit"
           >
-            <Link
-              className="navbarIntro"
-              underline="none"
-              sx={rightLink}
-              onClick={() => navigate("/cocktails")}
-            >
-              칵테일 종류
-            </Link>
-            <Link
-              className="navbarRecommend"
-              underline="none"
-              sx={{ ...rightLink }}
-              onClick={() => navigate("/recommend")}
-            >
-              칵테일 한 잔
-            </Link>
-            <Link
-              className="navbarMypage"
-              underline="none"
-              sx={{ ...rightLink }}
-              onClick={() => navigate("/myPage")}
-            >
-              나의 페이지
-            </Link>
-            <Link
-              className="navbarLogin"
-              underline="none"
-              sx={{ ...rightLink }}
-              onClick={handleOpen}
-            >
-              로그인
-            </Link>
-            <span className="indicator"></span>
-            <Dialog open={open} onClose={handleClose}>
-              <DialogTitle>로그인</DialogTitle>
-              <DialogContent>
-                <DialogContentText>
-                  To subscribe to this website, please enter your email address
-                  here. We will send updates occasionally.
-                </DialogContentText>
-                <LoginForm />
-              </DialogContent>
-              {/* <DialogActions>
-            <Button variant="outlined" color="primary" onClick={handleClose}>
-              닫기
-            </Button>
-          </DialogActions> */}
-            </Dialog>
-          </Box>
-        </Toolbar>
-      </AppBar>
-      <Toolbar />
+            <LinkTab
+              className="navbarButton"
+              label="Introduce"
+              value="1"
+              onClick={() => {
+                navigate("/introduce");
+              }}
+            />
+            <LinkTab
+              className="navbarButton"
+              label="Dictionary"
+              value="2"
+              onClick={() => {
+                navigate("/dictionary");
+              }}
+            />
+            <LinkTab
+              className="navbarButton"
+              label="CLineTest"
+              value="3"
+              onClick={() => {
+                navigate("/clinetest");
+              }}
+            />
+            <LinkTab
+              className="navbarButton"
+              label="Community"
+              value="4"
+              onClick={() => {
+                navigate("/community");
+              }}
+            />
+          </Tabs>
+        </Box>
+      </nav>
     </ThemeProvider>
   );
 }
