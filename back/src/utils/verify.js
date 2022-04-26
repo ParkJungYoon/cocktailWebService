@@ -1,9 +1,11 @@
 import jwt from "jsonwebtoken";
+import { TokenModel } from "../db";
 import dotenv from "dotenv";
 dotenv.config();
 
 const JWT_KEY = process.env.JWT_KEY;
 
+// access token 유효성 검사
 const verify = (token) => {
   try {
     const decoded = jwt.verify(token, JWT_KEY);
@@ -19,12 +21,12 @@ const verify = (token) => {
   }
 };
 
+// refresh token 유효성 검사
 const refreshVerify = async (token, userId) => {
-  // refresh token 확인
   try {
     // db에서 refresh token 가져오기
-    const refresh_token = await Token.findToken(userId);
-    if (token === refresh_token) {
+    const { refreshToken } = await TokenModel.findToken(userId);
+    if (token === refreshToken) {
       try {
         jwt.verify(token, JWT_KEY);
         return true;
