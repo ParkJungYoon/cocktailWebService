@@ -77,7 +77,7 @@ function App() {
         <Route path="/top10" element={<TopTenSOTB />} />
         <Route path="/userinfo" element={<UserInfo />} />
         <Route path="/usertab" element={<UserTab />} />
-        <Route path="/quiz" element={<QuizPage />} />
+        <Route path="/clinetest" element={<QuizPage />} />
       </Routes>
     </Router>
   );
