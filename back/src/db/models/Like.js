@@ -19,6 +19,10 @@ class LikeModel {
       .equals(id);
     return cocktailLikeList;
   };
+  static getUserLike = async ({ id }) => {
+    const userLikeList = await Like.find().where("giveUserId").equals(id);
+    return userLikeList;
+  };
 }
 
 export { LikeModel };

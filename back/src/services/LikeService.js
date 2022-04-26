@@ -21,6 +21,11 @@ class LikeService {
     const cocktailLikeList = await LikeModel.getCocktailList({ id });
     return cocktailLikeList;
   };
+
+  static getUserLike = async ({ id }) => {
+    const userLikeList = await LikeModel.getUserLike({ id });
+    return userLikeList;
+  };
 }
 
 export { LikeService };
