@@ -11,11 +11,11 @@ import Fullpage from "./components/Landingpage/Fullpage";
 import Introduce from "./components/introduce/Introduce";
 import Mypage from "./components/mypage/Mypage";
 import Bookmark from "./components/mypage/Bookmark";
+import Dictionary from "./components/dictionary/Dictionary";
 import Like from "./components/mypage/Like";
 import UserInfo from "./components/mypage/UserInfo";
 import UserTab from "./components/mypage/UserTab";
 import QuizPage from "./components/quiz/QuizPage";
-import Cocktails from "./components/cocktails/Cocktails";
 
 //JY
 import SkeletonFunc from "./components/test/SkeletonFunc";
@@ -74,7 +74,7 @@ function App() {
             <Route path="/login" element={<LoginForm />} />
             <Route path="/register" element={<RegisterForm />} />
             <Route path="/introduce" element={<Introduce />} />
-            <Route path="/cocktails" element={<Cocktails />} />
+            <Route path="/dictionary" element={<Dictionary />} />
             <Route path="/mypage" element={<Mypage />} />
             <Route path="/bookmark" element={<Bookmark />} />
             <Route path="/like" element={<Like />} />
