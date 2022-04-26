@@ -17,6 +17,10 @@ class LikeService {
     }
     return deleteCocktail;
   };
+  static getCocktailLike = async ({ id }) => {
+    const cocktailLikeList = await LikeModel.getCocktailList({ id });
+    return cocktailLikeList;
+  };
 }
 
 export { LikeService };

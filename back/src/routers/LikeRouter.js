@@ -35,4 +35,14 @@ LikeRouter.get("/likeList", verifyToken, async (req, res, next) => {
     next(error);
   }
 });
+
+LikeRouter.get("/cocktailLike/:id", verifyToken, async (req, res, next) => {
+  try {
+    const id = req.params.id;
+    const cocktailLikeList = await LikeService.getCocktailLike({ id });
+    res.status(200).json(cocktailLikeList);
+  } catch (error) {
+    next(error);
+  }
+});
 export { LikeRouter };

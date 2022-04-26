@@ -13,6 +13,12 @@ class LikeModel {
     const deleteLike = await Like.findByIdAndRemove({ _id: id });
     return deleteLike;
   };
+  static getCocktailList = async ({ id }) => {
+    const cocktailLikeList = await Like.find()
+      .where("getCocktailId")
+      .equals(id);
+    return cocktailLikeList;
+  };
 }
 
 export { LikeModel };
