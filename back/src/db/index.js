@@ -2,8 +2,6 @@ import mongoose from "mongoose";
 
 import { UserModel } from "./models/User";
 import { CocktailModel } from "./models/Cocktail";
-import { CocktailInfoModel } from "./models/Cocktail_Info";
-import { UserCocktailModel } from "./models/User_Cocktail";
 import { RankModel } from "./models/Rank";
 import dotenv from "dotenv";
 dotenv.config();
@@ -18,6 +16,4 @@ export {
   UserModel,
   CocktailModel,
   RankModel,
-  UserCocktailModel,
-  CocktailInfoModel,
 };

@@ -1,0 +1,2492 @@
+{
+    "gin": [
+        "A1",
+        "Ace",
+        "AT&T",
+        "Addison",
+        "Aviation",
+        "Alexander",
+        "Artillery",
+        "Bijou",
+        "Boxcar",
+        "Bramble",
+        "Bluebird",
+        "Boomerang",
+        "Casino",
+        "57 Chevy",
+        "Clover Club",
+        "Casino Royale",
+        "Corpse Reviver",
+        "Derby",
+        "Dragonfly",
+        "Dry Martini",
+        "Dubonnet Cocktail",
+        "English Highball",
+        "English Rose Cocktail",
+        "French 75",
+        "French Negroni",
+        "Flying Dutchman",
+        "Gimlet",
+        "Gin Fizz",
+        "Gin Sour",
+        "Gin Daisy",
+        "Gin Sling",
+        "Gin Smash",
+        "Gin Toddy",
+        "Gin Tonic",
+        "Gin Lemon",
+        "Gin Cooler",
+        "Gin Squirt",
+        "Gin Rickey",
+        "Gin Swizzle",
+        "Grass Skirt",
+        "Hawaiian Cocktail",
+        "Imperial Cocktail",
+        "Jewel Of The Nile",
+        "London Town",
+        "Lady Love Fizz",
+        "Long Island Icetea",
+        "Lone Tree Cooler",
+        "Lone Tree Cocktail",
+        "Long Island Iced Tea",
+        "77 Sunset Strip",
+        "Martini",
+        "Martinez 2",
+        "Munich Mule",
+        "Monkey Gland",
+        "Negroni",
+        "National Aquarium",
+        "Orange Oasis",
+        "Orange Rosemary Collins",
+        "Pink Gin",
+        "Paradise",
+        "Pink Lady",
+        "Pegu Club",
+        "Pink Moon",
+        "Tall Blonde",
+        "Poppy Cocktail",
+        "Queen Elizabeth",
+        "Rose",
+        "Royal Fizz",
+        "Ruby Tuesday",
+        "Rosemary Blue",
+        "Royal Gin Fizz",
+        "Ramos Gin Fizz",
+        "Radioactive Long Island Iced Tea",
+        "Salty Dog",
+        "Tom Collins",
+        "Turf Cocktail",
+        "The Laverstoke",
+        "Tuxedo Cocktail",
+        "The Philosopher",
+        "Victor",
+        "Vesper",
+        "White Lady",
+        "Waikiki Beachcomber",
+        "Highfly"
+    ],
+    "grand marnier": [
+        "A1",
+        "B-53",
+        "B-52",
+        "New York Lemonade",
+        "Talos Coffee"
+    ],
+    "lemon juice": [
+        "A1",
+        "Adam",
+        "Avalon",
+        "Applecar",
+        "Aviation",
+        "Allegheny",
+        "Boxcar",
+        "Bramble",
+        "Bora Bora",
+        "Brain Fart",
+        "Bloody Mary",
+        "Casino",
+        "City Slicker",
+        "Casino Royale",
+        "Coke and Drops",
+        "Corpse Reviver",
+        "English Rose Cocktail",
+        "Frosé",
+        "French 75",
+        "Gin Sour",
+        "Gin Daisy",
+        "Gagliardo",
+        "Gin Lemon",
+        "Honey Bee",
+        "Havana Cocktail",
+        "Ice Pick",
+        "John Collins",
+        "Lassi - Sweet",
+        "Lemon Elderflower Spritzer",
+        "Mojito Extra",
+        "New York Lemonade",
+        "Orangeade",
+        "Orange Rosemary Collins",
+        "Pisco Sour",
+        "Penicillin",
+        "Rose",
+        "Rum Sour",
+        "Rail Splitter",
+        "Ramos Gin Fizz",
+        "Russian Spring Punch",
+        "Sidecar",
+        "Sangria",
+        "Tom Collins",
+        "Tomato Tang",
+        "Tequila Fizz",
+        "The Philosopher",
+        "Van Vleet",
+        "Vodka Lemon",
+        "Victory Collins",
+        "White Lady",
+        "Zizi Coin-coin",
+        "Highfly"
+    ],
+    "grenadine": [
+        "A1",
+        "Ace",
+        "Adam",
+        "Afterglow",
+        "Boxcar",
+        "Bora Bora",
+        "57 Chevy",
+        "Clover Club",
+        "English Rose Cocktail",
+        "Gin Daisy",
+        "Gin Squirt",
+        "Gin Rickey",
+        "Grass Skirt",
+        "Grim Reaper",
+        "Jitterbug",
+        "Jack Rose Cocktail",
+        "77 Sunset Strip",
+        "Moranguito",
+        "Monkey Gland",
+        "Orange Push-up",
+        "Pink Lady",
+        "Planter’s Punch",
+        "Port And Starboard",
+        "Queen Charlotte",
+        "Rose",
+        "San Francisco",
+        "Space Odyssey",
+        "Tequila Fizz",
+        "Tequila Sunrise",
+        "Zombie"
+    ],
+    "amaretto": [
+        "ABC",
+        "Chocolate Milk",
+        "Wiki Waki Woo",
+        "Foxy Lady",
+        "French Connection",
+        "Flaming Dr. Pepper",
+        "Godchild",
+        "Godfather",
+        "Godmother",
+        "Grizzly Bear",
+        "Jackhammer",
+        "Kool-Aid Shot",
+        "Lunch Box",
+        "Orgasm",
+        "Red Snapper",
+        "Scooter",
+        "Turkeyball",
+        "Texas Sling",
+        "Tennesee Mud",
+        "The Jimmy Conway",
+        "Zippy's Revenge"
+    ],
+    "baileys irish cream": [
+        "ABC",
+        "Afternoon",
+        "B-52",
+        "Bumble Bee",
+        "Dirty Nipple",
+        "Flaming Lamborghini",
+        "H.D.",
+        "Hot Creamy Bush",
+        "Irish Curdling Cow",
+        "Jam Donut",
+        "Midnight Manx",
+        "Midnight Mint",
+        "Nutty Irishman",
+        "Oreo Mudslide",
+        "Oatmeal Cookie",
+        "Quick F**K",
+        "Zorro",
+        "Omas offenes Bein"
+    ],
+    "cognac": [
+        "ABC",
+        "French Connection",
+        "Sidecar"
+    ],
+    "heavy cream": [
+        "Ace",
+        "Drinking Chocolate",
+        "Godchild",
+        "Midnight Manx"
+    ],
+    "milk": [
+        "Ace",
+        "Cafe Savoy",
+        "Chocolate Milk",
+        "Chocolate Drink",
+        "Drinking Chocolate",
+        "Egg Cream",
+        "Egg Nog #4",
+        "Egg-Nog - Classic Cooked",
+        "Frappé",
+        "Grizzly Bear",
+        "Iced Coffee",
+        "Irish Cream",
+        "Jamaica Kiss",
+        "Just a Moonmint",
+        "Masala Chai",
+        "Mother's Milk",
+        "Nutty Irishman",
+        "Nuked Hot Chocolate",
+        "Orange Scented Hot Chocolate",
+        "Rum Milk Punch",
+        "Sweet Tooth",
+        "Sherry Eggnog",
+        "Sweet Bananas",
+        "Thai Iced Tea"
+    ],
+    "egg": [
+        "Ace",
+        "Almeria",
+        "Acapulco",
+        "Boxcar",
+        "Boston Sour",
+        "Clover Club",
+        "Chicago Fizz",
+        "Casino Royale",
+        "Egg Nog #4",
+        "Egg Nog #4",
+        "Egg Nog - Healthy",
+        "Egg-Nog - Classic Cooked",
+        "Japanese Fizz",
+        "Lady Love Fizz",
+        "Pink Lady",
+        "Pisco Sour",
+        "Porto flip",
+        "Port Wine Flip",
+        "Royal Fizz",
+        "Royal Gin Fizz",
+        "Ramos Gin Fizz",
+        "Sherry Flip",
+        "Sherry Eggnog",
+        "Tequila Fizz",
+        "Vesuvio",
+        "Highfly"
+    ],
+    "dark rum": [
+        "Adam",
+        "Abilene",
+        "Almeria",
+        "Cuba Libra",
+        "Dark and Stormy",
+        "Lord And Lady",
+        "Planter's Punch",
+        "Planter’s Punch",
+        "Quentin",
+        "Rum Cobbler",
+        "The Galah",
+        "Veteran"
+    ],
+    "absolut vodka": [
+        "AT&T",
+        "Lemon Drop"
+    ],
+    "tonic water": [
+        "AT&T",
+        "Figgy Thyme",
+        "Gin Tonic",
+        "Rosemary Blue",
+        "The Laverstoke",
+        "Vodka Tonic",
+        "Vodka And Tonic"
+    ],
+    "bacardi rum": [
+        "ACID",
+        "Downshift",
+        "Flaming Dr. Pepper",
+        "Grim Reaper",
+        "Miami Vice",
+        "Space Odyssey",
+        "Texas Sling"
+    ],
+    "wild turkey": [
+        "ACID",
+        "Shot-gun",
+        "Turkeyball"
+    ],
+    "applejack": [
+        "A. J.",
+        "Applecar"
+    ],
+    "grapefruit juice": [
+        "A. J.",
+        "Apello",
+        "Greyhound",
+        "Hemingway Special",
+        "Lazy Coconut Paloma",
+        "Monkey Wrench",
+        "Pineapple Paloma",
+        "Salty Dog",
+        "Sea breeze",
+        "Winter Paloma"
+    ],
+    "strawberry schnapps": [
+        "Affair"
+    ],
+    "orange juice": [
+        "Affair",
+        "Apello",
+        "Abilene",
+        "Afterglow",
+        "After sex",
+        "Bubble Gum",
+        "57 Chevy",
+        "Wiki Waki Woo",
+        "Darkwood Sling",
+        "Fruit Shake",
+        "Harvey Wallbanger",
+        "Irish Spring",
+        "Irish Curdling Cow",
+        "Lunch Box",
+        "Mimosa",
+        "Mudslinger",
+        "Monkey Gland",
+        "Orangeade",
+        "Orange Whip",
+        "Orange Oasis",
+        "Orange Crush",
+        "Orange Push-up",
+        "Orange Rosemary Collins",
+        "Paradise",
+        "Tall Blonde",
+        "Pink Penocha",
+        "Popped cherry",
+        "Planter's Punch",
+        "Planter’s Punch",
+        "Pysch Vitamin Light",
+        "Quick-sand",
+        "Rum Punch",
+        "Rum Runner",
+        "Rum Screwdriver",
+        "Smut",
+        "Sangria",
+        "Stone Sour",
+        "Screwdriver",
+        "San Francisco",
+        "Space Odyssey",
+        "Thriller",
+        "Tequila Sunrise",
+        "Vampiro",
+        "Valencia Cocktail",
+        "Wine Punch",
+        "Winter Rita",
+        "Baby Aspirin",
+        "Highfly",
+        "Sputnik",
+        "Sex On The Beach 3"
+    ],
+    "cranberry juice": [
+        "Affair",
+        "Sex On The Beach",
+        "Cosmopolitan",
+        "Wiki Waki Woo",
+        "Kool-Aid Shot",
+        "Pink Penocha",
+        "Popped cherry",
+        "Rum Runner",
+        "Red Snapper",
+        "Royal Flush",
+        "Ruby Tuesday",
+        "Sea breeze",
+        "The Jimmy Conway",
+        "Sex On The Beach 3"
+    ],
+    "club soda": [
+        "Affair",
+        "Gin Swizzle",
+        "John Collins",
+        "Mojito Extra",
+        "New York Lemonade",
+        "Rum Cobbler",
+        "Tom Collins"
+    ],
+    "apple juice": [
+        "Apello",
+        "Avalon",
+        "Fruit Cooler",
+        "Kiss me Quick",
+        "Pysch Vitamin Light",
+        "Ziemes Martini Apfelsaft"
+    ],
+    "maraschino cherry": [
+        "Apello",
+        "Bluebird",
+        "Brooklyn",
+        "Boomerang",
+        "57 Chevy",
+        "French 75",
+        "Gin Sour",
+        "Gin Daisy",
+        "Hunter's Moon",
+        "John Collins",
+        "Manhattan",
+        "Rum Sour",
+        "Rum Cobbler",
+        "Tom Collins"
+    ],
+    "vodka": [
+        "Avalon",
+        "Autodafé",
+        "After sex",
+        "Sex On The Beach",
+        "Bubble Gum",
+        "Bloody Mary",
+        "Blue Lagoon",
+        "57 Chevy",
+        "Coffee-Vodka",
+        "Coffee Liqueur",
+        "Wiki Waki Woo",
+        "Espresso Martini",
+        "Figgy Thyme",
+        "Freddy Kruger",
+        "French Martini",
+        "Flaming Dr. Pepper",
+        "Godchild",
+        "Godmother",
+        "Greyhound",
+        "Halloween Punch",
+        "Harvey Wallbanger",
+        "Ice Pick",
+        "Irish Russian",
+        "Irish Curdling Cow",
+        "Jello shots",
+        "Kamikaze",
+        "Kiwi Martini",
+        "Kool-Aid Shot",
+        "Kool-Aid Slammer",
+        "Long vodka",
+        "Long Island Icetea",
+        "Long Island Iced Tea",
+        "Lemon Elderflower Spritzer",
+        "77 Sunset Strip",
+        "Moscow Mule",
+        "National Aquarium",
+        "Orgasm",
+        "Orange Whip",
+        "Orange Crush",
+        "Oreo Mudslide",
+        "Tall Blonde",
+        "Pink Penocha",
+        "Popped cherry",
+        "Pornstar Martini",
+        "Pink Panty Pulldowns",
+        "Passion Fruit Martini",
+        "Russian Spring Punch",
+        "Radioactive Long Island Iced Tea",
+        "Snowday",
+        "Sea breeze",
+        "Screwdriver",
+        "Shark Attack",
+        "San Francisco",
+        "Vesper",
+        "Vodka Fizz",
+        "Vodka Slime",
+        "Vodka Lemon",
+        "Vodka Tonic",
+        "Vodka Martini",
+        "Vodka Russian",
+        "Victory Collins",
+        "Vodka And Tonic",
+        "White Russian der Echte",
+        "Zipperhead",
+        "Sputnik",
+        "Sex On The Beach 3"
+    ],
+    "pisang ambon": [
+        "Avalon"
+    ],
+    "lemonade": [
+        "Avalon",
+        "Blue Lagoon",
+        "Hunter's Moon",
+        "Owen's Grandmother's Revenge",
+        "Snowball",
+        "Shark Attack",
+        "Zoksel"
+    ],
+    "peach nectar": [
+        "Abilene"
+    ],
+    "kahlua": [
+        "Almeria",
+        "Afternoon",
+        "B-53",
+        "B-52",
+        "Bumble Bee",
+        "Dirty Nipple",
+        "Espresso Martini",
+        "Flaming Lamborghini",
+        "Grim Reaper",
+        "Grizzly Bear",
+        "Irish Russian",
+        "Iced Coffee Fillip",
+        "Kioki Coffee",
+        "Midnight Manx",
+        "Oreo Mudslide",
+        "Oatmeal Cookie",
+        "Quentin",
+        "Quick F**K",
+        "Texas Sling"
+    ],
+    "vermouth": [
+        "Addison",
+        "Affinity",
+        "Affinity",
+        "Algonquin",
+        "Allegheny",
+        "Artillery",
+        "Bijou",
+        "Balmoral",
+        "Balmoral",
+        "Brooklyn",
+        "Boomerang",
+        "Blackthorn",
+        "Clove Cocktail",
+        "Dry Rob Roy",
+        "Dry Martini",
+        "Dirty Martini",
+        "English Highball",
+        "English Rose Cocktail",
+        "French Negroni",
+        "Flying Scotchman",
+        "Hunter's Moon",
+        "Highland Fling Cocktail",
+        "Loch Lomond",
+        "Lone Tree Cooler",
+        "Lone Tree Cocktail",
+        "Martini",
+        "Manhattan",
+        "Martinez 2",
+        "Negroni",
+        "Old Pal",
+        "Queen Elizabeth",
+        "Rose",
+        "Tipperary",
+        "Turf Cocktail",
+        "Tuxedo Cocktail",
+        "Victor",
+        "Vesuvio",
+        "Vodka Martini",
+        "Vermouth Cassis",
+        "Ziemes Martini Apfelsaft"
+    ],
+    "light rum": [
+        "Acapulco",
+        "Cherry Rum",
+        "Cuba Libre",
+        "Casa Blanca",
+        "Chicago Fizz",
+        "Daiquiri",
+        "Wiki Waki Woo",
+        "Egg Nog #4",
+        "Frozen Daiquiri",
+        "Frozen Mint Daiquiri",
+        "Frozen Pineapple Daiquiri",
+        "Havana Cocktail",
+        "Imperial Fizz",
+        "Kool First Aid",
+        "Long Island Icetea",
+        "Long Island Iced Tea",
+        "Mojito original",
+        "Mai Tai",
+        "Monkey Wrench",
+        "Piña Colada",
+        "Quaker's Cocktail",
+        "Quarter Deck Cocktail",
+        "Rum Sour",
+        "Rum Milk Punch",
+        "Rum Screwdriver",
+        "Rum Old-fashioned",
+        "Vesuvio",
+        "Van Vleet"
+    ],
+    "triple sec": [
+        "Acapulco",
+        "Applecar",
+        "Boxcar",
+        "Bluebird",
+        "Bible Belt",
+        "Cafe Savoy",
+        "Casa Blanca",
+        "City Slicker",
+        "Corpse Reviver",
+        "Wiki Waki Woo",
+        "Flying Dutchman",
+        "Frozen Daiquiri",
+        "Grass Skirt",
+        "Hawaiian Cocktail",
+        "Kamikaze",
+        "Kool-Aid Shot",
+        "Mai Tai",
+        "77 Sunset Strip",
+        "Margarita",
+        "Orgasm",
+        "Orange Crush",
+        "Radioactive Long Island Iced Tea",
+        "White Lady",
+        "Waikiki Beachcomber",
+        "Yellow Bird",
+        "Baby Aspirin",
+        "Cuban Special"
+    ],
+    "lime juice": [
+        "Acapulco",
+        "Autodafé",
+        "Barracuda",
+        "Casa Blanca",
+        "Cosmopolitan",
+        "Duchamp's Punch",
+        "Frozen Daiquiri",
+        "Frozen Mint Daiquiri",
+        "Frozen Pineapple Daiquiri",
+        "Gimlet",
+        "Gin Swizzle",
+        "Hemingway Special",
+        "Imperial Cocktail",
+        "Jitterbug",
+        "Kamikaze",
+        "Margarita",
+        "Michelada",
+        "Moscow Mule",
+        "Munich Mule",
+        "Pegu Club",
+        "Pink Moon",
+        "Pure Passion",
+        "Pineapple Paloma",
+        "Spice 75",
+        "The Galah",
+        "The Last Word",
+        "Vampiro",
+        "Vodka Slime",
+        "Winter Rita",
+        "Whitecap Margarita",
+        "Yellow Bird",
+        "Zombie",
+        "Cuban Special"
+    ],
+    "sugar": [
+        "Acapulco",
+        "Caipirinha",
+        "Coffee-Vodka",
+        "Caipirissima",
+        "Coffee Liqueur",
+        "Creme de Menthe",
+        "Egg Nog #4",
+        "Egg Nog #4",
+        "Egg Nog - Healthy",
+        "Egg-Nog - Classic Cooked",
+        "Frosé",
+        "Frappé",
+        "Fruit Cooler",
+        "Frozen Daiquiri",
+        "Frozen Mint Daiquiri",
+        "Frozen Pineapple Daiquiri",
+        "Gluehwein",
+        "Homemade Kahlua",
+        "Iced Coffee",
+        "Irish Coffee",
+        "Kurant Tea",
+        "Limeade",
+        "Lassi Raita",
+        "Lemouroudji",
+        "Lassi - Sweet",
+        "Lassi - Mango",
+        "Mojito original",
+        "Masala Chai",
+        "Mulled Wine",
+        "New York Sour",
+        "Nuked Hot Chocolate",
+        "Pisco Sour",
+        "Sangria",
+        "Spice 75",
+        "Sweet Sangria",
+        "Thai Coffee",
+        "Thai Iced Coffee"
+    ],
+    "mint": [
+        "Acapulco",
+        "Frozen Mint Daiquiri",
+        "Gin Smash",
+        "Lassi - A South Indian Drink",
+        "Mojito original",
+        "Mint Julep",
+        "Pure Passion",
+        "Raspberry Julep",
+        "Thai Iced Tea"
+    ],
+    "scotch": [
+        "Affinity",
+        "Balmoral",
+        "Broadside",
+        "Dry Rob Roy",
+        "Flying Scotchman",
+        "Godfather",
+        "Highland Fling Cocktail",
+        "Irish Cream",
+        "Loch Lomond",
+        "Rusty Nail",
+        "Scotch Sour",
+        "Thriller",
+        "Whisky Mac"
+    ],
+    "orange bitters": [
+        "Affinity",
+        "Bijou",
+        "Casino",
+        "Casino Royale",
+        "Highland Fling Cocktail",
+        "London Town",
+        "Pegu Club",
+        "Tuxedo Cocktail",
+        "The Philosopher",
+        "Valencia Cocktail"
+    ],
+    "maraschino liqueur": [
+        "Aviation",
+        "Brooklyn",
+        "Boomerang",
+        "Casino",
+        "Casa Blanca",
+        "Casino Royale",
+        "Hemingway Special",
+        "London Town",
+        "Martinez 2",
+        "The Last Word",
+        "Tuxedo Cocktail"
+    ],
+    "creme de cacao": [
+        "Alexander",
+        "Foxy Lady",
+        "Grasshopper",
+        "Orgasm",
+        "Poppy Cocktail"
+    ],
+    "light cream": [
+        "Alexander",
+        "Cherry Rum",
+        "Foxy Lady",
+        "Grasshopper",
+        "Lady Love Fizz",
+        "Orgasm",
+        "Pink Lady",
+        "Port Wine Flip",
+        "Quentin",
+        "Scooter",
+        "Sherry Flip",
+        "White Russian der Echte"
+    ],
+    "nutmeg": [
+        "Alexander",
+        "Egg Nog - Healthy",
+        "Port Wine Flip",
+        "Rum Milk Punch",
+        "Sherry Flip",
+        "Sherry Eggnog",
+        "Vodka Fizz"
+    ],
+    "blended whiskey": [
+        "Algonquin",
+        "Boston Sour",
+        "Frisco Sour",
+        "Imperial Fizz",
+        "Japanese Fizz",
+        "New York Sour",
+        "Whiskey Sour"
+    ],
+    "pineapple juice": [
+        "Algonquin",
+        "Afterglow",
+        "Bora Bora",
+        "Barracuda",
+        "57 Chevy",
+        "Wiki Waki Woo",
+        "French Martini",
+        "Grass Skirt",
+        "Havana Cocktail",
+        "Hawaiian Cocktail",
+        "77 Sunset Strip",
+        "Planter's Punch",
+        "Pineapple Paloma",
+        "Planter’s Punch",
+        "Pysch Vitamin Light",
+        "Rum Runner",
+        "Space Odyssey",
+        "The Galah",
+        "Wine Punch",
+        "Waikiki Beachcomber",
+        "Cuban Special"
+    ],
+    "bourbon": [
+        "Allegheny",
+        "Egg Nog #4",
+        "Irish Curdling Cow",
+        "John Collins",
+        "Kentucky B And B",
+        "Kentucky Colonel",
+        "Mint Julep",
+        "Old Fashioned",
+        "Raspberry Julep",
+        "Sazerac"
+    ],
+    "blackberry brandy": [
+        "Allegheny",
+        "Jelly Bean",
+        "Rum Runner"
+    ],
+    "lemon": [
+        "Allegheny",
+        "Bluebird",
+        "Blackthorn",
+        "Boston Sour",
+        "Dry Rob Roy",
+        "Dirty Martini",
+        "Dubonnet Cocktail",
+        "English Highball",
+        "Frisco Sour",
+        "Fruit Cooler",
+        "Gin Toddy",
+        "Gluehwein",
+        "Gin Tonic",
+        "Gin Lemon",
+        "Gin Cooler",
+        "Hot Toddy",
+        "Kentucky Colonel",
+        "Kill the cold Smoothie",
+        "Lemon Shot",
+        "Loch Lomond",
+        "Lemouroudji",
+        "Lone Tree Cooler",
+        "Long Island Iced Tea",
+        "Mulled Wine",
+        "New York Sour",
+        "Rum Toddy",
+        "Rum Cooler",
+        "Rusty Nail",
+        "Rum Cobbler",
+        "Sazerac",
+        "Snowball",
+        "Scotch Sour",
+        "Sweet Sangria",
+        "Tequila Sour",
+        "Vodka Lemon",
+        "Vodka Tonic",
+        "Wine Punch",
+        "Whiskey Sour",
+        "White Wine Sangria",
+        "Zoksel"
+    ],
+    "bitters": [
+        "Artillery",
+        "Balmoral",
+        "Bluebird",
+        "Boomerang",
+        "Broadside",
+        "Dubonnet Cocktail",
+        "Flying Scotchman",
+        "Gin Swizzle",
+        "Horse's Neck",
+        "Monkey Wrench",
+        "Pink Gin",
+        "Rum Old-fashioned",
+        "Turf Cocktail"
+    ],
+    "soda water": [
+        "Autodafé",
+        "Darkwood Sling",
+        "Egg Cream",
+        "Fruit Cooler",
+        "Funk and Soul",
+        "Gin Rickey",
+        "Jitterbug",
+        "Lazy Coconut Paloma",
+        "Lemon Elderflower Spritzer",
+        "Mojito original",
+        "Mango Mojito",
+        "Orangeade",
+        "Orange Rosemary Collins",
+        "Ramos Gin Fizz",
+        "White Wine Sangria",
+        "Zipperhead"
+    ],
+    "frangelico": [
+        "Afternoon",
+        "Nutty Irishman",
+        "Royal Bitch"
+    ],
+    "coffee": [
+        "Afternoon",
+        "Cafe Savoy",
+        "Danbooka",
+        "Espresso Rumtini",
+        "Fuzzy Asshole",
+        "H.D.",
+        "Hot Creamy Bush",
+        "Irish Coffee",
+        "Karsk",
+        "Kioki Coffee",
+        "Mocha-Berry",
+        "Tia-Maria",
+        "Talos Coffee",
+        "Tennesee Mud"
+    ],
+    "cream": [
+        "Afternoon",
+        "Ramos Gin Fizz",
+        "Texas Sling"
+    ],
+    "creme de banane": [
+        "After sex",
+        "San Francisco",
+        "The Galah"
+    ],
+    "ice": [
+        "Sex On The Beach",
+        "Broadside",
+        "Cuba Libra",
+        "Caipirissima",
+        "Darkwood Sling",
+        "Fruit Shake",
+        "Fruit Cooler",
+        "Frozen Daiquiri",
+        "GG",
+        "Gin Tonic",
+        "Gin Lemon",
+        "Happy Skipper",
+        "Ipamena",
+        "Jamaica Kiss",
+        "Jack's Vanilla Coke",
+        "Kiwi Lemon",
+        "Kiss me Quick",
+        "Long vodka",
+        "Lassi Raita",
+        "Manhattan",
+        "Mango Mojito",
+        "Owen's Grandmother's Revenge",
+        "Pisco Sour",
+        "Pysch Vitamin Light",
+        "Rum Punch",
+        "Raspberry Cooler",
+        "Snowball",
+        "Thai Coffee",
+        "Thai Iced Tea",
+        "Vodka Fizz",
+        "Vodka Lemon",
+        "Wine Cooler",
+        "Whitecap Margarita",
+        "Yoghurt Cooler",
+        "Zambeer",
+        "Zizi Coin-coin"
+    ],
+    "peach schnapps": [
+        "Sex On The Beach",
+        "Bellini",
+        "Bubble Gum",
+        "Ghostbuster",
+        "Fuzzy Asshole",
+        "Grand Blue",
+        "Tall Blonde",
+        "Pink Penocha",
+        "Royal Flush",
+        "Smut",
+        "Sputnik",
+        "Sex On The Beach 3"
+    ],
+    "oranges juiced": [
+        "Sex On The Beach"
+    ],
+    "cherries": [
+        "Sex On The Beach",
+        "Space Odyssey"
+    ],
+    "sambuca": [
+        "B-53",
+        "Bumble Bee",
+        "Dirty Nipple",
+        "Freddy Kruger",
+        "Flander's Flake-Out",
+        "Flaming Lamborghini",
+        "Zorro",
+        "Zambeer"
+    ],
+    "green chartreuse": [
+        "Bijou",
+        "Brigadier",
+        "Jewel Of The Nile",
+        "Tipperary",
+        "The Last Word"
+    ],
+    "irish cream": [
+        "Big Red",
+        "Texas Sling"
+    ],
+    "goldschlager": [
+        "Big Red",
+        "Bob Marley",
+        "Midnight Manx",
+        "Mother's Milk",
+        "Oatmeal Cookie"
+    ],
+    "champagne": [
+        "Bellini",
+        "Death in the Afternoon",
+        "Kir",
+        "Kir Royale",
+        "Spice 75"
+    ],
+    "sugar syrup": [
+        "Bramble",
+        "Espresso Martini",
+        "Flying Scotchman",
+        "Gimlet",
+        "Hunter's Moon",
+        "Jitterbug",
+        "Jam Donut",
+        "Kiwi Martini",
+        "Orangeade",
+        "Planter’s Punch",
+        "Passion Fruit Martini",
+        "Rail Splitter",
+        "Ramos Gin Fizz",
+        "Russian Spring Punch",
+        "Vampiro"
+    ],
+    "creme de mure": [
+        "Bramble"
+    ],
+    "blue curacao": [
+        "Bluebird",
+        "Blue Lagoon",
+        "Flaming Lamborghini",
+        "Grand Blue",
+        "National Aquarium",
+        "Rosemary Blue"
+    ],
+    "rye whiskey": [
+        "Brooklyn",
+        "Old Pal"
+    ],
+    "angostura bitters": [
+        "Brooklyn",
+        "Corn n Oil",
+        "Duchamp's Punch",
+        "Figgy Thyme",
+        "Long vodka",
+        "Manhattan",
+        "Martinez 2",
+        "Mojito Extra",
+        "Old Fashioned",
+        "Pegu Club",
+        "Planter’s Punch",
+        "Snowday"
+    ],
+    "passion fruit juice": [
+        "Bora Bora",
+        "Ipamena",
+        "Pornstar Martini",
+        "Passion Fruit Martini"
+    ],
+    "rum": [
+        "Barracuda",
+        "Broadside",
+        "Brain Fart",
+        "Caipirissima",
+        "Wiki Waki Woo",
+        "Espresso Rumtini",
+        "Egg Nog - Healthy",
+        "Funk and Soul",
+        "Honey Bee",
+        "Hemingway Special",
+        "Jamaican Coffee",
+        "Lemon Shot",
+        "Mango Mojito",
+        "National Aquarium",
+        "Orange Whip",
+        "Pure Passion",
+        "Rum Old-fashioned",
+        "Radioactive Long Island Iced Tea",
+        "Spice 75",
+        "Tia-Maria",
+        "Yellow Bird",
+        "Zombie",
+        "Zombie",
+        "Zippy's Revenge",
+        "Cuban Special"
+    ],
+    "galliano": [
+        "Barracuda",
+        "GG",
+        "Gagliardo",
+        "Harvey Wallbanger",
+        "Lemon Shot",
+        "Yellow Bird"
+    ],
+    "prosecco": [
+        "Barracuda",
+        "Pornstar Martini",
+        "Spritz",
+        "The Philosopher"
+    ],
+    "corona": [
+        "Buccaneer",
+        "Limona Corona"
+    ],
+    "bacardi limon": [
+        "Buccaneer",
+        "Citrus Coke",
+        "Limona Corona"
+    ],
+    "chocolate": [
+        "Brigadier",
+        "Chocolate Drink"
+    ],
+    "cherry heering": [
+        "Brigadier",
+        "Darkwood Sling"
+    ],
+    "wormwood": [
+        "Broadside"
+    ],
+    "sloe gin": [
+        "Blackthorn",
+        "Clove Cocktail",
+        "Kool-Aid Shot"
+    ],
+    "midori melon liqueur": [
+        "Bob Marley",
+        "Quick F**K",
+        "Radioactive Long Island Iced Tea",
+        "Zimadori Zinger"
+    ],
+    "jägermeister": [
+        "Bob Marley",
+        "Freddy Kruger",
+        "Grizzly Bear",
+        "Zenmeister"
+    ],
+    "banana liqueur": [
+        "Bubble Gum"
+    ],
+    "southern comfort": [
+        "Bible Belt",
+        "57 Chevy",
+        "Mudslinger",
+        "Texas Rattlesnake"
+    ],
+    "wedges lime": [
+        "Bible Belt",
+        "Sweet Sangria",
+        "The Laverstoke"
+    ],
+    "sour": [
+        "Bible Belt",
+        "Grand Blue",
+        "Irish Spring",
+        "Mai Tai",
+        "National Aquarium",
+        "Royal Fizz",
+        "Stone Sour",
+        "Baby Aspirin"
+    ],
+    "fifth everclear": [
+        "Brain Fart"
+    ],
+    "fifth smirnoff red label vodka": [
+        "Brain Fart"
+    ],
+    "mountain dew": [
+        "Brain Fart"
+    ],
+    "surge": [
+        "Brain Fart",
+        "Zinger"
+    ],
+    "tomato juice": [
+        "Bloody Mary",
+        "Michelada",
+        "Tomato Tang",
+        "Vampiro"
+    ],
+    "worcestershire sauce": [
+        "Bloody Mary",
+        "Michelada"
+    ],
+    "tabasco sauce": [
+        "Bloody Mary",
+        "Fahrenheit 5000",
+        "Tequila Surprise"
+    ],
+    "lime": [
+        "Bloody Mary",
+        "Caipirinha",
+        "Cuba Libra",
+        "Corn n Oil",
+        "Caipirissima",
+        "Dragonfly",
+        "Dark Caipirinha",
+        "Elderflower Caipirinha",
+        "Frisco Sour",
+        "Gimlet",
+        "Gin Rickey",
+        "Happy Skipper",
+        "Ipamena",
+        "Limeade",
+        "Long vodka",
+        "Lassi Raita",
+        "Mango Mojito",
+        "Pineapple Paloma",
+        "Pornstar Martini",
+        "Rum Old-fashioned",
+        "White Wine Sangria",
+        "Zerstörer"
+    ],
+    "cherry": [
+        "Blue Lagoon",
+        "Boston Sour",
+        "Casino",
+        "English Rose Cocktail",
+        "Frozen Daiquiri",
+        "Gin Smash",
+        "Irish Spring",
+        "Mai Tai",
+        "New York Sour",
+        "Scotch Sour",
+        "Tequila Sour",
+        "Tuxedo Cocktail",
+        "Whiskey Sour"
+    ],
+    "juice lemon": [
+        "Boston Sour",
+        "Clover Club",
+        "Chicago Fizz",
+        "Frisco Sour",
+        "Funk and Soul",
+        "Gin Fizz",
+        "Gin Sling",
+        "Gin Rickey",
+        "Imperial Fizz",
+        "Japanese Fizz",
+        "Lemon Drop",
+        "Lady Love Fizz",
+        "Long Island Icetea",
+        "New York Sour",
+        "Quaker's Cocktail",
+        "Royal Gin Fizz",
+        "Tequila Sour",
+        "Vesuvio",
+        "Whiskey Sour"
+    ],
+    "powdered sugar": [
+        "Boston Sour",
+        "Chicago Fizz",
+        "Daiquiri",
+        "Gin Fizz",
+        "Gin Sling",
+        "Gin Toddy",
+        "Gin Cooler",
+        "Gin Squirt",
+        "Imperial Fizz",
+        "Japanese Fizz",
+        "Lady Love Fizz",
+        "Lone Tree Cooler",
+        "Mint Julep",
+        "Port Wine Flip",
+        "Rose",
+        "Rum Toddy",
+        "Royal Gin Fizz",
+        "Rum Milk Punch",
+        "Rum Old-fashioned",
+        "Scotch Sour",
+        "Sherry Flip",
+        "Sherry Eggnog",
+        "Tequila Sour",
+        "Vesuvio",
+        "Victory Collins",
+        "Whiskey Sour"
+    ],
+    "cachaca": [
+        "Caipirinha",
+        "Dark Caipirinha",
+        "Elderflower Caipirinha"
+    ],
+    "cherry brandy": [
+        "Cherry Rum",
+        "Orange Oasis",
+        "Texas Rattlesnake",
+        "Veteran"
+    ],
+    "juice lime": [
+        "Cuba Libre",
+        "Daiquiri",
+        "Frisco Sour",
+        "Jack Rose Cocktail",
+        "Limeade",
+        "Mojito original",
+        "Quarter Deck Cocktail",
+        "Scotch Sour"
+    ],
+    "coca cola": [
+        "Cuba Libre",
+        "Cuba Libra",
+        "Citrus Coke",
+        "Coke and Drops",
+        "Irish Russian",
+        "Jack's Vanilla Coke",
+        "Long Island Iced Tea",
+        "Royal Fizz",
+        "Zoksel"
+    ],
+    "brandy": [
+        "Cafe Savoy",
+        "City Slicker",
+        "English Highball",
+        "Horse's Neck",
+        "Kioki Coffee",
+        "Mulled Wine",
+        "Porto flip",
+        "Port Wine Cocktail",
+        "Quaker's Cocktail",
+        "Scooter",
+        "Stinger",
+        "Sol Y Sombra",
+        "Victor"
+    ],
+    "spiced rum": [
+        "Cream Soda",
+        "Happy Skipper",
+        "77 Sunset Strip",
+        "Orange Push-up"
+    ],
+    "ginger ale": [
+        "Cream Soda",
+        "Dragonfly",
+        "GG",
+        "Horse's Neck",
+        "Happy Skipper",
+        "Ipamena",
+        "Moscow Mule",
+        "Orange Oasis",
+        "Rum Punch",
+        "Rail Splitter",
+        "Tequila Fizz"
+    ],
+    "falernum": [
+        "Corn n Oil"
+    ],
+    "añejo rum": [
+        "Corn n Oil"
+    ],
+    "blackstrap rum": [
+        "Corn n Oil"
+    ],
+    "port": [
+        "Chicago Fizz",
+        "Japanese Fizz",
+        "Porto flip",
+        "Port Wine Flip",
+        "Port Wine Cocktail"
+    ],
+    "carbonated water": [
+        "Chicago Fizz",
+        "English Highball",
+        "Gin Fizz",
+        "Gin Smash",
+        "Gin Cooler",
+        "Gin Squirt",
+        "Imperial Fizz",
+        "Japanese Fizz",
+        "Lady Love Fizz",
+        "Lone Tree Cooler",
+        "Royal Gin Fizz",
+        "Vermouth Cassis"
+    ],
+    "water": [
+        "Coffee-Vodka",
+        "Coffee Liqueur",
+        "Chocolate Drink",
+        "Creme de Menthe",
+        "Gin Sling",
+        "Gin Toddy",
+        "Gluehwein",
+        "Iced Coffee",
+        "Jello shots",
+        "Jamaican Coffee",
+        "Kill the cold Smoothie",
+        "Lassi Khara",
+        "Lemouroudji",
+        "Lassi - Sweet",
+        "Lassi - Mango",
+        "Lassi - A South Indian Drink",
+        "Mint Julep",
+        "Masala Chai",
+        "Mulled Wine",
+        "Old Fashioned",
+        "Rum Toddy",
+        "Rum Old-fashioned",
+        "Sazerac",
+        "Sweet Sangria",
+        "Tia-Maria"
+    ],
+    "instant coffee": [
+        "Coffee-Vodka",
+        "Coffee Liqueur",
+        "Homemade Kahlua",
+        "Iced Coffee"
+    ],
+    "vanilla": [
+        "Coffee-Vodka",
+        "Drinking Chocolate"
+    ],
+    "caramel coloring": [
+        "Coffee-Vodka"
+    ],
+    "lager": [
+        "Campari Beer",
+        "Diesel"
+    ],
+    "campari": [
+        "Campari Beer",
+        "Negroni",
+        "Old Pal",
+        "Spritz",
+        "The Galah",
+        "Winter Rita"
+    ],
+    "absolut citron": [
+        "Cosmopolitan",
+        "Lemon Shot",
+        "New York Lemonade"
+    ],
+    "cointreau": [
+        "Cosmopolitan",
+        "Lemon Drop",
+        "Sidecar",
+        "Zizi Coin-coin"
+    ],
+    "muscatel wine": [
+        "Clove Cocktail"
+    ],
+    "vanilla extract": [
+        "Coffee Liqueur",
+        "Egg Nog #4",
+        "Egg Nog - Healthy",
+        "Egg-Nog - Classic Cooked",
+        "Homemade Kahlua",
+        "Hot Chocolate to Die for",
+        "Jack's Vanilla Coke",
+        "Nuked Hot Chocolate",
+        "Tia-Maria"
+    ],
+    "chocolate liqueur": [
+        "Chocolate Milk",
+        "Empellón Cocina's Fat-Washed Mezcal"
+    ],
+    "lillet blanc": [
+        "Corpse Reviver",
+        "Vesper"
+    ],
+    "absinthe": [
+        "Corpse Reviver",
+        "Death in the Afternoon",
+        "Moranguito",
+        "Absinth"
+    ],
+    "grain alcohol": [
+        "Creme de Menthe",
+        "Karsk"
+    ],
+    "pure peppermint extract": [
+        "Creme de Menthe"
+    ],
+    "green food coloring": [
+        "Creme de Menthe"
+    ],
+    "peach bitters": [
+        "Derby",
+        "Pure Passion"
+    ],
+    "leaves mint": [
+        "Derby"
+    ],
+    "cider": [
+        "Diesel"
+    ],
+    "blackcurrant cordial": [
+        "Diesel"
+    ],
+    "everclear": [
+        "Danbooka",
+        "Pink Penocha"
+    ],
+    "fruit punch": [
+        "Downshift",
+        "Rum Punch"
+    ],
+    "sprite": [
+        "Downshift",
+        "Pink Panty Pulldowns",
+        "Vodka Slime"
+    ],
+    "tequila": [
+        "Downshift",
+        "Long Island Icetea",
+        "Long Island Iced Tea",
+        "Margarita",
+        "Moranguito",
+        "Paloma",
+        "Pineapple Paloma",
+        "Radioactive Long Island Iced Tea",
+        "Tequila Fizz",
+        "Tequila Sour",
+        "Tequila Slammer",
+        "Tequila Surprise",
+        "Vampiro",
+        "Winter Rita",
+        "Winter Paloma",
+        "Whitecap Margarita"
+    ],
+    "olive": [
+        "Dry Martini",
+        "Dirty Martini",
+        "Highland Fling Cocktail",
+        "Martini",
+        "Vodka Martini"
+    ],
+    "fl vodka": [
+        "Dirty Martini"
+    ],
+    "olive brine": [
+        "Dirty Martini"
+    ],
+    "blanco tequila": [
+        "Wiki Waki Woo"
+    ],
+    "orange wheel maraschino cherry": [
+        "Wiki Waki Woo"
+    ],
+    "​melon liqueur": [
+        "Ghostbuster"
+    ],
+    "​irish cream liqueur": [
+        "Ghostbuster"
+    ],
+    "demerara sugar": [
+        "Dark Caipirinha"
+    ],
+    "pisco": [
+        "Duchamp's Punch",
+        "Pisco Sour"
+    ],
+    "pineapple syrup": [
+        "Duchamp's Punch"
+    ],
+    "germain": [
+        "Duchamp's Punch"
+    ],
+    "pinch pepper": [
+        "Duchamp's Punch"
+    ],
+    "sprigs lavender": [
+        "Duchamp's Punch"
+    ],
+    "ginger beer": [
+        "Dark and Stormy",
+        "Munich Mule"
+    ],
+    "whiskey": [
+        "Damned if you do",
+        "Hot Toddy",
+        "Owen's Grandmother's Revenge"
+    ],
+    "damn": [
+        "Damned if you do",
+        "Herbal flame"
+    ],
+    "dubonnet rouge": [
+        "Dubonnet Cocktail"
+    ],
+    "cinnamon": [
+        "Drinking Chocolate",
+        "Gluehwein",
+        "Hot Toddy",
+        "Masala Chai",
+        "Mulled Wine",
+        "Sangria"
+    ],
+    "finely chopped dark chocolate": [
+        "Drinking Chocolate"
+    ],
+    "whipped cream": [
+        "Drinking Chocolate",
+        "Irish Coffee",
+        "Jamaican Coffee",
+        "Mocha-Berry",
+        "Tennesee Mud"
+    ],
+    "chocolate syrup": [
+        "Egg Cream",
+        "Irish Cream",
+        "Just a Moonmint"
+    ],
+    "salt": [
+        "Egg Nog #4",
+        "Egg-Nog - Classic Cooked",
+        "Lassi Khara",
+        "Lassi Raita",
+        "Lassi - A South Indian Drink",
+        "Margarita",
+        "Salty Dog",
+        "Winter Rita"
+    ],
+    "whipping cream": [
+        "Egg Nog #4",
+        "Thai Coffee"
+    ],
+    "ground nutmeg": [
+        "Egg Nog #4",
+        "Orange Scented Hot Chocolate"
+    ],
+    "vanilla syrup": [
+        "Espresso Rumtini"
+    ],
+    "espresso": [
+        "Espresso Rumtini",
+        "Melya"
+    ],
+    "skimmed milk": [
+        "Egg Nog - Healthy",
+        "Egg Nog - Healthy"
+    ],
+    "apricot brandy": [
+        "English Rose Cocktail",
+        "Paradise",
+        "Rose",
+        "Stone Sour",
+        "Valencia Cocktail"
+    ],
+    "elderflower cordial": [
+        "Elderflower Caipirinha",
+        "Lemon Elderflower Spritzer",
+        "Pink Moon",
+        "The Laverstoke"
+    ],
+    "mezcal": [
+        "Empellón Cocina's Fat-Washed Mezcal"
+    ],
+    "coffee liqueur": [
+        "Empellón Cocina's Fat-Washed Mezcal",
+        "Jamaica Kiss",
+        "White Russian der Echte"
+    ],
+    "rose": [
+        "Frosé"
+    ],
+    "strawberries": [
+        "Frosé",
+        "Fruit Cooler",
+        "Gin Squirt",
+        "White Wine Sangria"
+    ],
+    "black coffee": [
+        "Frappé",
+        "Thai Iced Coffee"
+    ],
+    "superfine sugar": [
+        "French 75",
+        "Gin Sour",
+        "Gin Daisy",
+        "Gin Swizzle",
+        "John Collins",
+        "Rum Sour",
+        "Rum Cobbler",
+        "Sazerac",
+        "Tom Collins"
+    ],
+    "chilled champagne": [
+        "French 75",
+        "Mimosa"
+    ],
+    "orange": [
+        "French 75",
+        "French Negroni",
+        "Gin Sour",
+        "Gin Daisy",
+        "Gin Sling",
+        "Gin Smash",
+        "Halloween Punch",
+        "Irish Spring",
+        "John Collins",
+        "Manhattan",
+        "Orange Rosemary Collins",
+        "Rum Sour",
+        "Rum Cobbler",
+        "Snowday",
+        "Tom Collins",
+        "Turf Cocktail",
+        "Victory Collins",
+        "Wine Punch"
+    ],
+    "benedictine": [
+        "Frisco Sour",
+        "Kentucky B And B",
+        "Kentucky Colonel",
+        "Monkey Gland",
+        "Queen Elizabeth"
+    ],
+    "fruit yoghurt": [
+        "Fruit Shake"
+    ],
+    "banana": [
+        "Fruit Shake",
+        "Sweet Bananas"
+    ],
+    "textural fruit": [
+        "Fruit Shake"
+    ],
+    "honey": [
+        "Figgy Thyme",
+        "Honey Bee",
+        "Hot Toddy",
+        "Melya",
+        "Sweet Bananas"
+    ],
+    "figs": [
+        "Figgy Thyme"
+    ],
+    "sprig thyme": [
+        "Figgy Thyme"
+    ],
+    "apple": [
+        "Fruit Cooler",
+        "Sweet Sangria",
+        "White Wine Sangria"
+    ],
+    "apricot nectar": [
+        "Funk and Soul"
+    ],
+    "pomegranate juice": [
+        "Funk and Soul"
+    ],
+    "raspberry liqueur": [
+        "French Martini"
+    ],
+    "lillet": [
+        "French Negroni"
+    ],
+    "yoghurt": [
+        "Fruit Flip-Flop",
+        "Lassi Khara",
+        "Lassi Raita",
+        "Lassi - Sweet",
+        "Lassi - Mango",
+        "Yoghurt Cooler"
+    ],
+    "fruit juice": [
+        "Fruit Flip-Flop"
+    ],
+    "firewater": [
+        "Fahrenheit 5000"
+    ],
+    "absolut peppar": [
+        "Fahrenheit 5000"
+    ],
+    "dr pepper": [
+        "Flaming Dr. Pepper"
+    ],
+    "beer": [
+        "Flaming Dr. Pepper",
+        "Lunch Box",
+        "Michelada",
+        "Owen's Grandmother's Revenge",
+        "Radler",
+        "Zoksel"
+    ],
+    "sarsaparilla": [
+        "Flander's Flake-Out"
+    ],
+    "chunks pineapple": [
+        "Frozen Pineapple Daiquiri",
+        "Gin Squirt"
+    ],
+    "cube sugar": [
+        "Gin Smash",
+        "Old Fashioned"
+    ],
+    "peach vodka": [
+        "Gagliardo"
+    ],
+    "sirup roses": [
+        "Gagliardo"
+    ],
+    "red wine": [
+        "Gluehwein",
+        "Mulled Wine",
+        "Queen Charlotte",
+        "Smut",
+        "Sangria",
+        "Wine Punch",
+        "Wine Cooler"
+    ],
+    "cloves": [
+        "Gluehwein",
+        "Hot Toddy",
+        "Halloween Punch",
+        "Masala Chai",
+        "Mulled Wine",
+        "Sangria"
+    ],
+    "orange spiral": [
+        "Gin Cooler",
+        "Lone Tree Cooler",
+        "Spice 75"
+    ],
+    "malibu rum": [
+        "Grand Blue",
+        "Rum Runner",
+        "Radioactive Long Island Iced Tea",
+        "Space Odyssey"
+    ],
+    "pineapple": [
+        "Grass Skirt",
+        "Piña Colada",
+        "Pineapple Gingerale Smoothie"
+    ],
+    "green creme de menthe": [
+        "Grasshopper",
+        "Port And Starboard"
+    ],
+    "whisky": [
+        "H.D."
+    ],
+    "very tea": [
+        "Herbal flame"
+    ],
+    "long strip lemon": [
+        "Horse's Neck"
+    ],
+    "blackberries": [
+        "Hunter's Moon",
+        "Pink Moon"
+    ],
+    "grape juice": [
+        "Holloween Punch",
+        "Victory Collins"
+    ],
+    "orange carbonated soft drink": [
+        "Holloween Punch"
+    ],
+    "sherbet": [
+        "Holloween Punch",
+        "Holloween Punch"
+    ],
+    "irish whiskey": [
+        "Hot Creamy Bush",
+        "Irish Spring",
+        "Irish Coffee",
+        "Tipperary",
+        "The Jimmy Conway"
+    ],
+    "corn syrup": [
+        "Homemade Kahlua"
+    ],
+    "boiling water": [
+        "Homemade Kahlua",
+        "Thai Iced Tea"
+    ],
+    "fifth vodka": [
+        "Homemade Kahlua"
+    ],
+    "cherry juice": [
+        "Halloween Punch"
+    ],
+    "red chili flakes": [
+        "Halloween Punch"
+    ],
+    "ginger": [
+        "Halloween Punch",
+        "Kill the cold Smoothie",
+        "Lemouroudji",
+        "Pineapple Gingerale Smoothie",
+        "The Laverstoke"
+    ],
+    "fine chocolate": [
+        "Hot Chocolate to Die for"
+    ],
+    "butter": [
+        "Hot Chocolate to Die for"
+    ],
+    "half half": [
+        "Hot Chocolate to Die for",
+        "Irish Cream",
+        "Vodka Fizz",
+        "Sputnik"
+    ],
+    "mini marshmallows": [
+        "Hot Chocolate to Die for"
+    ],
+    "brown sugar": [
+        "Ipamena",
+        "Tia-Maria"
+    ],
+    "tea": [
+        "Ice Pick",
+        "Masala Chai"
+    ],
+    "coconut syrup": [
+        "Irish Cream"
+    ],
+    "peach brandy": [
+        "Irish Spring"
+    ],
+    "guinness stout": [
+        "Irish Russian"
+    ],
+    "aperol": [
+        "Imperial Cocktail"
+    ],
+    "strong coffee": [
+        "Iced Coffee Fillip"
+    ],
+    "jiggers gin": [
+        "Jitterbug"
+    ],
+    "jigger vodka": [
+        "Jitterbug"
+    ],
+    "around rim put pinch sugar": [
+        "Jitterbug"
+    ],
+    "chambord raspberry liqueur": [
+        "Jam Donut",
+        "Mocha-Berry",
+        "Royal Flush",
+        "Radioactive Long Island Iced Tea",
+        "Zipperhead",
+        "Zima Blaster"
+    ],
+    "pinches sugar": [
+        "Jam Donut"
+    ],
+    "anis": [
+        "Jelly Bean",
+        "Turf Cocktail",
+        "Tuxedo Cocktail"
+    ],
+    "jack daniels": [
+        "Jackhammer",
+        "Shot-gun",
+        "Tennesee Mud"
+    ],
+    "packages jello": [
+        "Jello shots"
+    ],
+    "jamaican light rum": [
+        "Jamaica Kiss"
+    ],
+    "mint syrup": [
+        "Just a Moonmint"
+    ],
+    "strong black coffee": [
+        "Jamaican Coffee"
+    ],
+    "yellow chartreuse": [
+        "Jewel Of The Nile"
+    ],
+    "apple brandy": [
+        "Jack Rose Cocktail",
+        "White Wine Sangria"
+    ],
+    "tennessee whiskey": [
+        "Jack's Vanilla Coke"
+    ],
+    "creme de cassis": [
+        "Kir",
+        "Kir Royale",
+        "Russian Spring Punch",
+        "Vermouth Cassis",
+        "Zoksel"
+    ],
+    "absolut kurant": [
+        "Kurant Tea"
+    ],
+    "turkish apple tea": [
+        "Kurant Tea"
+    ],
+    "kiwi liqueur": [
+        "Kiwi Lemon"
+    ],
+    "bitter lemon": [
+        "Kiwi Lemon"
+    ],
+    "kiwi": [
+        "Kiwi Martini",
+        "Kiwi Martini",
+        "Kiwi Papaya Smoothie"
+    ],
+    "cranberry vodka": [
+        "Kiss me Quick"
+    ],
+    "apfelkorn": [
+        "Kiss me Quick"
+    ],
+    "schweppes russchian": [
+        "Kiss me Quick",
+        "Vodka Russian"
+    ],
+    "tropical kool aid": [
+        "Kool First Aid"
+    ],
+    "grape kool aid": [
+        "Kool-Aid Slammer",
+        "Zippy's Revenge"
+    ],
+    "papaya": [
+        "Kiwi Papaya Smoothie"
+    ],
+    "seltzer water soda water": [
+        "Limeade"
+    ],
+    "bacardi sugar": [
+        "Lemon Shot"
+    ],
+    "schweppes tonic water": [
+        "Long vodka"
+    ],
+    "drambuie": [
+        "Loch Lomond",
+        "Rusty Nail"
+    ],
+    "pinch asafoetida": [
+        "Lassi Khara"
+    ],
+    "ground cayenne pepper": [
+        "Lemouroudji"
+    ],
+    "tia maria": [
+        "Lord And Lady"
+    ],
+    "pinch salt": [
+        "Lassi - Sweet",
+        "Vampiro"
+    ],
+    "mango": [
+        "Lassi - Mango",
+        "Mango Mojito",
+        "Mango Mojito"
+    ],
+    "splash coca cola": [
+        "Long Island Icetea"
+    ],
+    "coconut liqueur": [
+        "Lazy Coconut Paloma",
+        "Pink Moon"
+    ],
+    "plain yoghurt": [
+        "Lassi - A South Indian Drink"
+    ],
+    "ground roasted cumin seed": [
+        "Lassi - A South Indian Drink"
+    ],
+    "cocoa powder": [
+        "Melya",
+        "Mocha-Berry",
+        "Nuked Hot Chocolate"
+    ],
+    "orgeat syrup": [
+        "Mai Tai",
+        "Planter's Punch"
+    ],
+    "blended bourbon": [
+        "Manhattan"
+    ],
+    "sauce": [
+        "Michelada"
+    ],
+    "soy sauce": [
+        "Michelada"
+    ],
+    "pina colada": [
+        "Miami Vice"
+    ],
+    "daiquiri": [
+        "Miami Vice"
+    ],
+    "pepsi cola": [
+        "Mudslinger",
+        "Smut"
+    ],
+    "chunk ginger": [
+        "Masala Chai"
+    ],
+    "cardamom": [
+        "Masala Chai",
+        "Thai Iced Coffee"
+    ],
+    "black pepper": [
+        "Masala Chai"
+    ],
+    "chopped cucumber": [
+        "Munich Mule"
+    ],
+    "chopped lemon": [
+        "Munich Mule"
+    ],
+    "handful mint": [
+        "Mojito Extra"
+    ],
+    "jamaican dark rum": [
+        "Mojito Extra"
+    ],
+    "sprig mint": [
+        "Mango Mojito",
+        "The Laverstoke"
+    ],
+    "hazlenut coffee": [
+        "Midnight Manx"
+    ],
+    "butterscotch schnapps": [
+        "Mother's Milk",
+        "Oatmeal Cookie"
+    ],
+    "creme de menthe": [
+        "Midnight Mint",
+        "Stinger",
+        "Zorro"
+    ],
+    "double cream": [
+        "Midnight Mint"
+    ],
+    "claret red wine": [
+        "New York Sour"
+    ],
+    "splash lemon lime soda": [
+        "National Aquarium"
+    ],
+    "package cream": [
+        "Orange Whip"
+    ],
+    "over ice": [
+        "Orange Whip"
+    ],
+    "scoops vanilla ice cream": [
+        "Oreo Mudslide"
+    ],
+    "oreo cookie": [
+        "Oreo Mudslide"
+    ],
+    "splash sour": [
+        "Orange Push-up",
+        "Texas Rattlesnake"
+    ],
+    "jagermeister": [
+        "Oatmeal Cookie"
+    ],
+    "rosemary syrup": [
+        "Orange Rosemary Collins",
+        "Winter Rita"
+    ],
+    "rosemary": [
+        "Orange Rosemary Collins",
+        "Rosemary Blue"
+    ],
+    "chopped bittersweet semi chocolate": [
+        "Orange Scented Hot Chocolate"
+    ],
+    "strips orange": [
+        "Orange Scented Hot Chocolate"
+    ],
+    "instant espresso": [
+        "Orange Scented Hot Chocolate"
+    ],
+    "grape soda": [
+        "Paloma"
+    ],
+    "orange curacao": [
+        "Pegu Club"
+    ],
+    "blended scotch": [
+        "Penicillin"
+    ],
+    "honey syrup": [
+        "Penicillin"
+    ],
+    "ginger syrup": [
+        "Penicillin"
+    ],
+    "islay single malt scotch": [
+        "Penicillin"
+    ],
+    "southern comfort peach liqueur": [
+        "Tall Blonde"
+    ],
+    "coconut milk": [
+        "Piña Colada"
+    ],
+    "passoa": [
+        "Pure Passion",
+        "Pornstar Martini"
+    ],
+    "passion fruit syrup": [
+        "Pure Passion"
+    ],
+    "cherry liqueur": [
+        "Popped cherry"
+    ],
+    "rimmed pepper": [
+        "Pineapple Paloma"
+    ],
+    "pink lemonade": [
+        "Pink Panty Pulldowns"
+    ],
+    "grated nutmeg": [
+        "Quentin"
+    ],
+    "coffee brandy": [
+        "Queen Bee"
+    ],
+    "lime vodka": [
+        "Queen Bee"
+    ],
+    "cream sherry": [
+        "Queen Bee",
+        "Quarter Deck Cocktail",
+        "Sherry Flip",
+        "Sherry Eggnog"
+    ],
+    "black sambuca": [
+        "Quick-sand"
+    ],
+    "lemon lime soda": [
+        "Queen Charlotte",
+        "Rum Cooler",
+        "Raspberry Cooler",
+        "Wine Cooler"
+    ],
+    "raspberry syrup": [
+        "Quaker's Cocktail",
+        "Raspberry Julep"
+    ],
+    "light dark rum": [
+        "Rum Toddy",
+        "Rum Cooler"
+    ],
+    "mikey rum": [
+        "Rum Punch"
+    ],
+    "crown royal": [
+        "Red Snapper",
+        "Royal Flush",
+        "Royal Bitch"
+    ],
+    "splashes grenadine": [
+        "Ruby Tuesday"
+    ],
+    "drop vanilla extract": [
+        "Ramos Gin Fizz"
+    ],
+    "raspberry vodka": [
+        "Raspberry Cooler"
+    ],
+    "splash soda water": [
+        "Spritz"
+    ],
+    "ricard": [
+        "Sazerac"
+    ],
+    "peychaud bitters": [
+        "Sazerac"
+    ],
+    "amaro montenegro": [
+        "Snowday"
+    ],
+    "ruby port": [
+        "Snowday"
+    ],
+    "blood orange": [
+        "Snowday",
+        "Zerstörer"
+    ],
+    "advocaat": [
+        "Snowball"
+    ],
+    "jim beam": [
+        "Shot-gun"
+    ],
+    "allspice": [
+        "Spice 75"
+    ],
+    "godiva liqueur": [
+        "Sweet Tooth"
+    ],
+    "anisette": [
+        "Sol Y Sombra"
+    ],
+    "cans water": [
+        "Shark Attack"
+    ],
+    "bottles red wine": [
+        "Sweet Sangria"
+    ],
+    "wedges orange": [
+        "Sweet Sangria"
+    ],
+    "fresca": [
+        "Sweet Sangria"
+    ],
+    "green ginger wine": [
+        "Thriller",
+        "Whisky Mac"
+    ],
+    "splash pineapple juice": [
+        "Turkeyball"
+    ],
+    "celery salt": [
+        "Tomato Tang"
+    ],
+    "ground coffee": [
+        "Thai Coffee"
+    ],
+    "coriander": [
+        "Thai Coffee"
+    ],
+    "green cardamom": [
+        "Thai Coffee"
+    ],
+    "thai tea": [
+        "Thai Iced Tea"
+    ],
+    "rosso vermouth": [
+        "The Laverstoke"
+    ],
+    "measures tequila": [
+        "Tequila Sunrise"
+    ],
+    "melon liqueur": [
+        "The Philosopher"
+    ],
+    "pods cream": [
+        "Thai Iced Coffee"
+    ],
+    "yukon jack": [
+        "Texas Rattlesnake"
+    ],
+    "maple syrup": [
+        "Van Vleet"
+    ],
+    "limeade": [
+        "Vodka Fizz"
+    ],
+    "agave syrup": [
+        "Winter Paloma"
+    ],
+    "pepper": [
+        "Winter Paloma"
+    ],
+    "cream coconut": [
+        "Whitecap Margarita"
+    ],
+    "wine": [
+        "White Wine Sangria"
+    ],
+    "fruit": [
+        "Yoghurt Cooler"
+    ],
+    "peachtree schnapps": [
+        "Zinger"
+    ],
+    "root beer": [
+        "Zoksel",
+        "Zambeer",
+        "Zenmeister"
+    ],
+    "gold rum": [
+        "Zombie"
+    ],
+    "pernod": [
+        "Zombie"
+    ],
+    "drop angostura bitters": [
+        "Zombie"
+    ],
+    "stoli vodka": [
+        "Zorbatini"
+    ],
+    "ouzo": [
+        "Zorbatini",
+        "Omas offenes Bein"
+    ],
+    "zima": [
+        "Zima Blaster",
+        "Zimadori Zinger"
+    ],
+    "raspberry schnapps": [
+        "Baby Aspirin"
+    ],
+    "peter heering": [
+        "Highfly"
+    ],
+    "angostura": [
+        "Highfly"
+    ],
+    "peach": [
+        "Sputnik"
+    ],
+    "seagram crown whiskey": [
+        "Seven and Seven"
+    ],
+    "green crème de menthe liqueur": [
+        "Irish Flag alkoholisch"
+    ],
+    "irish cream liqueur": [
+        "Irish Flag alkoholisch"
+    ],
+    "grand marnier liqueur": [
+        "Irish Flag alkoholisch"
+    ],
+    "aged tequila": [
+        "Zerstörer"
+    ],
+    "red wine apéritif": [
+        "Zerstörer"
+    ],
+    "blood orange liqueur": [
+        "Zerstörer"
+    ],
+    "mole bitters": [
+        "Zerstörer"
+    ],
+    "speed king": [
+        "Speed King"
+    ],
+    "kirschlikör": [
+        "Omas offenes Bein"
+    ],
+    "gut gekühlter eierlikör": [
+        "Schwanzlstürzer"
+    ],
+    "gekühlter kirschlikör": [
+        "Schwanzlstürzer"
+    ]
+}
