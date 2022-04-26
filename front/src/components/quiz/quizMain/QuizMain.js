@@ -84,15 +84,6 @@ function QuizMain(props) {
       {step <= Object.keys(state.quiestions).length ? (
         <>
           <Question question={state.quiestions[step]} />
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              marginTop: "2rem",
-            }}
-          >
-            <QuestionImg img={state.imgs[step]} />
-          </div>
 
           <Grid container mb="3%">
             {/* <Grid item xs={4} md={4}></Grid> */}
@@ -111,9 +102,8 @@ function QuizMain(props) {
           </Grid>
 
           <Grid container>
-            <Grid item xs={1} md={1}></Grid>
-            <Grid item xs={7} md={7}>
-              <div>
+            <Grid item xs={6} md={6}>
+              <div style={{ marginLeft: "5rem" }}>
                 <Answer
                   answer={state.answers[step]}
                   step={step}
@@ -122,14 +112,19 @@ function QuizMain(props) {
                 />
               </div>
             </Grid>
-            <Grid
-              item
-              xs={4}
-              md={4}
-              display="flex"
-              justifyContent="center"
-              direction="column"
-            ></Grid>
+            <Grid item xs={6} md={6}>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  marginRight: "5rem",
+                  // marginTop: "1rem",
+                  // marginBottom: "1rem",
+                }}
+              >
+                <QuestionImg img={state.imgs[step]} />
+              </div>
+            </Grid>
           </Grid>
         </>
       ) : (
