@@ -93,18 +93,17 @@ function QuizMain(props) {
               display: "flex",
               justifyContent: "center",
               marginTop: "2rem",
-              marginBottom: "2rem",
             }}
           >
             <QuestionImg img={state.imgs[step]} />
           </div>
 
-          <Grid container mb="5%">
-            <Grid item xs={4} md={4}></Grid>
+          <Grid container mb="3%">
+            {/* <Grid item xs={4} md={4}></Grid> */}
             <Grid
               item
-              xs={4}
-              md={4}
+              xs={12}
+              md={12}
               //white bar
               sx={{
                 backgroundColor: "white",
@@ -112,46 +111,50 @@ function QuizMain(props) {
                 borderRadius: "5px",
               }}
             ></Grid>
-            <Grid item xs={4} md={4}></Grid>
+            {/* <Grid item xs={4} md={4}></Grid> */}
           </Grid>
 
-          <div>
-            <Answer
-              answer={state.answers[step]}
-              step={step}
-              checkAnswer={checkAnswer}
-              clickedAnswer={clickedAnswer}
-            />
-          </div>
           <Grid container>
-            <Grid item xs={10} md={10}></Grid>
-            <Grid item xs={2} md={2}>
-              <button
-                className="NextStep"
-                disabled={
-                  clickedAnswer && Object.keys(state.quiestions).length >= step
-                    ? false
-                    : true
-                }
-                onClick={() => nextStep(step)}
-              >
-                ⟶
-              </button>
+            <Grid item xs={1} md={1}></Grid>
+            <Grid item xs={7} md={7}>
+              <div>
+                <Answer
+                  answer={state.answers[step]}
+                  step={step}
+                  checkAnswer={checkAnswer}
+                  clickedAnswer={clickedAnswer}
+                />
+              </div>
+            </Grid>
+            <Grid
+              item
+              xs={4}
+              md={4}
+              display="flex"
+              justifyContent="center"
+              direction="column"
+            >
+              <div>
+                <button
+                  className="NextStep"
+                  disabled={
+                    clickedAnswer &&
+                    Object.keys(state.quiestions).length >= step
+                      ? false
+                      : true
+                  }
+                  onClick={() => nextStep(step)}
+                >
+                  ⟶
+                </button>
+              </div>
             </Grid>
           </Grid>
         </>
       ) : (
         <Grid container>
           <Grid item xs={4} md={4}></Grid>
-          <Grid
-            item
-            xs={4}
-            md={4}
-            // height="500px"
-            // display="flex"
-            // justifyContent="center"
-            // direction="column"
-          >
+          <Grid item xs={4} md={4} mt={2}>
             <div className="finalPage">
               <p>SCORE : {score}</p>
             </div>

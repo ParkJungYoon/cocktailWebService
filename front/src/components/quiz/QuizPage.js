@@ -34,15 +34,7 @@ function Quiz() {
             textAlign: "center",
           }}
         >
-          <Grid
-            item
-            xs={12}
-            md={12}
-            mt={3}
-            mb={3}
-            height="720px"
-            sx={quizGridStyle}
-          >
+          <Grid item xs={12} md={12} mt={13} height="720px" sx={quizGridStyle}>
             <QuizMain></QuizMain>
           </Grid>
         </Grid>
