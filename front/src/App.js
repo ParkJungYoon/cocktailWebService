@@ -72,7 +72,11 @@ function App() {
             <Route path="/dictionary" element={<Dictionary />} />
             <Route path="/mypage" element={<Mypage />} />
             <Route path="/bookmark" element={<Bookmark />} />
+            <Route path="/like" element={<Like />} />
             <Route path="/top10" element={<TopTenSOTB />} />
+            <Route path="/userinfo" element={<UserInfo />} />
+            <Route path="/usertab" element={<UserTab />} />
+            <Route path="/quiz" element={<QuizPage />} />
           </Routes>
         </Router>
       </UserStateContext.Provider>
