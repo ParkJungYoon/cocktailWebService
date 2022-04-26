@@ -10,11 +10,15 @@ class UserModel {
     const updatedUser = await User.findOneAndUpdate(filter, updateData, option);
     return updatedUser;
   };
-  static findByEmail = async({ email }) => {
+  static findByEmail = async ({ email }) => {
     const user = User.findOne({ email });
     return user;
   };
-  static addUser = async newUserData => {
+  static findById = async ({ _id }) => {
+    const user = await User.findOne({ _id });
+    return user;
+  };
+  static addUser = async (newUserData) => {
     const newUser = await User.create(newUserData);
     return newUser;
   };
