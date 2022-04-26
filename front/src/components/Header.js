@@ -1,8 +1,7 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link, Grid, Tab, Tabs, Box } from "@mui/material";
-
-import { UserStateContext, DispatchContext } from "../App";
+import { UserContext } from "./user/reducer/userReducer";
 import "../scss/Header.scss";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
@@ -27,11 +26,7 @@ function LinkTab(props) {
 
 function Header() {
   const navigate = useNavigate();
-
-  // 상태관리
-  const userState = useContext(UserStateContext);
-  const dispatch = useContext(DispatchContext);
-
+  const { userState, userDispatch } = useContext(UserContext);
   // 전역상태에서 user가 null이 아니라면 로그인 성공 상태임.
   const isLogin = !!userState.user;
 
@@ -40,7 +35,7 @@ function Header() {
     // sessionStorage 에 저장했던 JWT 토큰을 삭제함.
     sessionStorage.removeItem("userToken");
     // dispatch 함수를 이용해 로그아웃함.
-    dispatch({ type: "LOGOUT" });
+    userDispatch({ type: "LOGOUT" });
     // 기본 페이지로 돌아감.
     navigate("/");
   };
