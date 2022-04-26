@@ -75,10 +75,6 @@ function QuizMain(props) {
     } else {
       setClickedAnswer(answer);
     }
-  };
-
-  // method to move to the next question
-  const nextStep = (step) => {
     setStep(step + 1);
     setClickedAnswer(0);
   };
@@ -133,22 +129,7 @@ function QuizMain(props) {
               display="flex"
               justifyContent="center"
               direction="column"
-            >
-              <div>
-                <button
-                  className="NextStep"
-                  disabled={
-                    clickedAnswer &&
-                    Object.keys(state.quiestions).length >= step
-                      ? false
-                      : true
-                  }
-                  onClick={() => nextStep(step)}
-                >
-                  ⟶
-                </button>
-              </div>
-            </Grid>
+            ></Grid>
           </Grid>
         </>
       ) : (
