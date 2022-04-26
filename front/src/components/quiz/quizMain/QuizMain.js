@@ -1,3 +1,4 @@
+/* eslint no-restricted-globals: ["off"] */
 import React, { useState } from "react";
 import Question from "../question/Question";
 import Answer from "../answer/Answer";
@@ -131,13 +132,25 @@ function QuizMain(props) {
         <Grid container>
           <Grid item xs={4} md={4}></Grid>
           <Grid item xs={4} md={4} mt={2}>
-            <div className="finalPage">
+            <div
+              className="finalPage"
+              style={{ display: "grid", padding: "1rem" }}
+            >
               <p>SCORE : {score}</p>
+              <div>
+                <div
+                  className="restart"
+                  onClick={() => {
+                    location.reload();
+                  }}
+                >
+                  RESTART
+                </div>
+              </div>
             </div>
           </Grid>
           <Grid item xs={4} md={4}></Grid>
         </Grid>
-        // <Final sc={score}></Final>
       )}
     </div>
   );
