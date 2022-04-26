@@ -12,12 +12,15 @@
 }
 .Answers li:hover{
     cursor: pointer;
-    color:#9d00b9
+    text-decoration: underline;
+    text-underline-position: under;
+    text-decoration-color: #FFFFFF;
 }
 .Answers .selectAnswer,
 .Answers .selectAnswer:hover {
-    background-color: #9d00b9;
-    color: #fff;
+    text-decoration: underline;
+    text-underline-position: under;
+    text-decoration-color: #FFFFFF;
 }
 
 .Answers[disabled] {
