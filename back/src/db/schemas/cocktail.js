@@ -15,6 +15,16 @@ const CocktailSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Rank",
   },
+  taste: {
+    type: [String],
+  },
+  description: {
+    type: String,
+  },
+  userId: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
 });
 
 const Cocktail = model("Cocktail", CocktailSchema);

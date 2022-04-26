@@ -1,4 +1,4 @@
-import { CocktailInfoModel } from "../db";
+import { CocktailModel } from "../db";
 
 class dbService {
   // new Cocktail DB
@@ -6,19 +6,17 @@ class dbService {
     name,
     ingredient,
     imageUrl,
-    flavor,
+    taste,
     description,
-    alcohol,
   }) => {
     const addCocktailData = {
       name,
       ingredient,
       imageUrl,
-      flavor,
+      taste,
       description,
-      alcohol,
     };
-    const addCocktail = await CocktailInfoModel.addCocktail(addCocktailData);
+    const addCocktail = await CocktailModel.addCocktail(addCocktailData);
     return addCocktail;
   };
   // 수정
@@ -27,20 +25,18 @@ class dbService {
     name,
     ingredient,
     imageUrl,
-    flavor,
+    taste,
     description,
-    alcohol,
   }) => {
     const updateCocktailData = {
       name,
       ingredient,
       imageUrl,
-      flavor,
+      taste,
       description,
-      alcohol,
     };
     const filter = { _id: cocktailId };
-    const modifiedCocktail = await CocktailInfoModel.modify(
+    const modifiedCocktail = await CocktailModel.modify(
       filter,
       updateCocktailData
     );
