@@ -64,6 +64,14 @@ function Header() {
         <div className="navbarAccount">
           {isLogin ? (
             <>
+              <Link className="navbarButton">NickName</Link>
+              <span>/</span>
+              <Link onClick={logout} className="account">
+                Log Out
+              </Link>
+            </>
+          ) : (
+            <>
               <Link onClick={handleLoginOpen} className="account">
                 Log In
               </Link>
@@ -72,14 +80,6 @@ function Header() {
                 Sign Up
               </Link>
               )
-            </>
-          ) : (
-            <>
-              <Link className="navbarButton">NickName</Link>
-              <span>/</span>
-              <Link onClick={logout} className="account">
-                Log Out
-              </Link>
             </>
           )}
         </div>
