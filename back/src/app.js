@@ -27,6 +27,8 @@ app.get("/", (req, res) => {
 // swagger
 app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
+
+
 // google
 app.get(
   "/auth/google",

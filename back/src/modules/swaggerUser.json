@@ -1,0 +1,74 @@
+{
+  "paths": {
+    "/": {
+      "get": {
+        "tags": ["Main"],
+        "summary": "Main Page Get",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/register": {
+      "post": {
+        "tags": ["User"],
+        "summary": "register user Post",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "email": "body",
+            "password": "body"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": ["User"],
+        "summary": "login user Post",
+        "parameters": [
+          {
+            "in": "body",
+            "email": "body",
+            "password": "body",
+            "required": true
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "User": {
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
