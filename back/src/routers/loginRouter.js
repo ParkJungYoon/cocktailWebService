@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { LoginService } from "../services/loginService";
 import { verifyToken } from "../middlewares/verifyToken";
+import { verifyRefresh } from "../middlewares/verifyRefresh";
 
 const loginRouter = Router();
 
@@ -52,5 +53,9 @@ loginRouter.get("/verify", verifyToken, (req, res) => {
     userId: req.user,
   });
 });
+
+/* access token을 재발급 하기 위한 router.
+  클라이언트는 access token과 refresh token을 둘 다 헤더에 담아서 요청해야합니다. */
+loginRouter.get("/refresh", verifyRefresh);
 
 export { loginRouter };

@@ -45,6 +45,7 @@ function Introduce() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  const labels = ["서비스 소개", "팀 소개", "Item Three"];
 
   return (
     <>
@@ -57,9 +58,9 @@ function Introduce() {
             aria-label="basic tabs example"
             sx={{ borderRight: 1, borderColor: "divider" }}
           >
-            <Tab label="서비스 소개" {...a11yProps(0)} />
-            <Tab label="팀 소개" {...a11yProps(1)} />
-            <Tab label="Item Three" {...a11yProps(2)} />
+            {labels.map((label, i) => (
+              <Tab label={label} {...a11yProps(i)} />
+            ))}
           </Tabs>
         </Box>
 
