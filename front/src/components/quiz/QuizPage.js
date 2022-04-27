@@ -1,50 +1,53 @@
-import { Grid, Card, CardHeader, CardContent, CardMedia } from "@mui/material";
-import quizHeaderImg from "./quizHeaderImg.jpg";
+import {
+  Grid,
+  Card,
+  CardHeader,
+  CardContent,
+  CardMedia,
+  Container,
+  Box,
+} from "@mui/material";
 import QuizMain from "./quizMain/QuizMain";
+import bgImg from "./bgImg.jpg";
 
 function Quiz() {
   const quizGridStyle = {
-    padding: "2%",
-    border: "3px solid gray",
-    borderRadius: "1rem",
-    marginBottom: "3%",
+    padding: "5% 15% 5% 15%",
+    borderRadius: "2rem",
+    backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url(${bgImg})`,
+    backgroundSize: "cover",
   };
 
   return (
-    <>
-      <Card sx={{ maxWidth: 550, minHeight: 700 }}>
-        <CardContent>
+    <Box
+      sx={{
+        marginLeft: "5%",
+        marginRight: "5%",
+      }}
+    >
+      <CardContent>
+        <Grid
+          container
+          justifyContent="center"
+          sx={{
+            fontSize: "15px",
+            textAlign: "center",
+          }}
+        >
           <Grid
-            container
-            justifyContent="center"
-            sx={{
-              fontSize: "15px",
-              textAlign: "center",
-            }}
+            item
+            xs={12}
+            md={12}
+            mt={3}
+            mb={3}
+            height="720px"
+            sx={quizGridStyle}
           >
-            <Grid sx={{ height: "150px" }}>
-              <CardMedia
-                component="img"
-                image={quizHeaderImg}
-                alt="image"
-                sx={{ width: "100%", height: "100%", borderRadius: "1rem" }}
-              />
-            </Grid>
-            <Grid
-              item
-              xs={12}
-              md={12}
-              mt={3}
-              mb={3}
-              height="500px"
-              sx={quizGridStyle}
-            >
-              <QuizMain></QuizMain>
-            </Grid>
+            <QuizMain></QuizMain>
           </Grid>
-        </CardContent>
-      </Card>
-    </>
+        </Grid>
+      </CardContent>
+    </Box>
   );
 }
 
