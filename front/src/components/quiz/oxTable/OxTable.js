@@ -1,13 +1,13 @@
 import React from "react";
-import "./Split.css";
+import "./OxTable.css";
 
-const Split = (props) => {
+const OxTable = (props) => {
   let splitChar = props.ox.split("");
 
   return (
     <>
       <table>
-        <td className="aaa">
+        <td className="OutlineStyle">
           <tr>
             <td>NO.</td>
             <td>Q1.</td>
@@ -40,4 +40,4 @@ const Split = (props) => {
   );
 };
 
-export default Split;
+export default OxTable;

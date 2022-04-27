@@ -7,7 +7,7 @@ import "./QuizMain.css";
 import QuestionImg from "../questionImg/QuestionImg";
 import StandardShaker from "../questionImg/StandardShaker.jpg";
 import { Container, Box, Grid } from "@mui/material";
-import Split from "./Split";
+import OxTable from "../oxTable/OxTable";
 
 function QuizMain(props) {
   const [score, setScore] = useState(0);
@@ -151,7 +151,7 @@ function QuizMain(props) {
             >
               <p>SCORE : {score}</p>
               {/* <p>MARKING : {marking}</p> */}
-              <Split ox={ox}></Split>
+              <OxTable ox={ox}></OxTable>
               <div>
                 <div
                   className="restart"
