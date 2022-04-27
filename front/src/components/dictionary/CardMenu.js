@@ -6,6 +6,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CardList from "./CardList";
 import CardListTop10 from "./CardListTop10";
 import CardSearch from "./CardSearch";
+import TestDetailCockTail from "../test/TestDetailCocktail";
 const theme = createTheme({
   palette: {
     primary: {
@@ -52,6 +53,10 @@ export default function CardMenu({
   top10Cocktails,
   searchCocktails,
   setSearchCocktails,
+  isDetailOpen,
+  setIsDetailOpen,
+  opendedCocktail,
+  setOpenedCocktail,
 }) {
   const navigate = useNavigate();
   const [value, setValue] = useState(1);
@@ -102,12 +107,26 @@ export default function CardMenu({
         </Grid>
 
         <Grid item xs>
-          <TabPanel value={value} index={1}>
-            <CardList cocktails={cocktails} searchCocktails={searchCocktails} />
-          </TabPanel>
-          <TabPanel value={value} index={2}>
-            <CardListTop10 top10Cocktails={top10Cocktails} />
-          </TabPanel>
+          {isDetailOpen ? (
+            <TestDetailCockTail
+              setIsDetailOpen={setIsDetailOpen}
+              opendedCocktail={opendedCocktail}
+            />
+          ) : (
+            <>
+              <TabPanel value={value} index={1}>
+                <CardList
+                  cocktails={cocktails}
+                  searchCocktails={searchCocktails}
+                  setOpenedCocktail={setOpenedCocktail}
+                  setIsDetailOpen={setIsDetailOpen}
+                />
+              </TabPanel>
+              <TabPanel value={value} index={2}>
+                <CardListTop10 top10Cocktails={top10Cocktails} />
+              </TabPanel>
+            </>
+          )}
         </Grid>
       </Grid>
     </ThemeProvider>

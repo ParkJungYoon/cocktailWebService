@@ -9,7 +9,13 @@ import {
 } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useNavigate } from "react-router-dom";
-export default function ItemCard({ img, name, ingredient }) {
+export default function ItemCard({
+  img,
+  name,
+  ingredient,
+  setOpenedCocktail,
+  setIsDetailOpen,
+}) {
   const navigate = useNavigate();
   const [isFront, setIsFront] = useState(true);
 
@@ -25,6 +31,14 @@ export default function ItemCard({ img, name, ingredient }) {
         sx={buttonStyle}
       >
         뒤집어!!
+      </Button>
+      <Button
+        onClick={() => {
+          setOpenedCocktail({ img, name, ingredient });
+          setIsDetailOpen(true);
+        }}
+      >
+        More...
       </Button>
 
       <div className={` ${isFront ? "cardFront" : "cardBack"}`}>
@@ -54,11 +68,11 @@ export default function ItemCard({ img, name, ingredient }) {
           <CardActionArea>
             <CardContent className="descriptionBox">
               <Typography variant="body1">이름 : {name}</Typography>
-              {ingredient.map((item, i) => (
+              {/* {ingredient.map((item, i) => (
                 <Typography key={i} variant="body2">
                   재료{i + 1} : {item}
                 </Typography>
-              ))}
+              ))} */}
               <Button
                 onClick={() => {
                   navigate("/");

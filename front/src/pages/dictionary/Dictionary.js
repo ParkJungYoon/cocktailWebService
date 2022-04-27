@@ -13,9 +13,19 @@ export default function Dictionary() {
   // 탭 기능
   const [cocktails, setCocktails] = useState([]);
   const [top10Cocktails, setTop10Cocktails] = useState([]);
+
+  // 디테일 기능
+  const [isDetailOpen, setIsDetailOpen] = useState(false);
+  const [opendedCocktail, setOpenedCocktail] = useState("name");
+
+  //state너무 많은데... context + reducer를 쓸까요?
+
   useEffect(async () => {
-    await Api.get("cocktails").then((res) => setCocktails(res.data));
-    await Api.get("rank10".then((res) => setCocktails(res.data)));
+    await Api.get("cocktails").then((res) => {
+      console.log(res.data);
+      setCocktails(res.data);
+    });
+    await Api.get("rank10").then((res) => setTop10Cocktails(res.data));
   }, []);
   return (
     <>
@@ -31,6 +41,10 @@ export default function Dictionary() {
               top10Cocktails={top10Cocktails}
               searchCocktails={searchCocktails}
               setSearchCocktails={setSearchCocktails}
+              isDetailOpen={isDetailOpen}
+              setIsDetailOpen={setIsDetailOpen}
+              opendedCocktail={opendedCocktail}
+              setOpenedCocktail={setOpenedCocktail}
             />
           </Grid>
         </Grid>

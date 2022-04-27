@@ -3,7 +3,12 @@ import { Grid, InputBase } from "@mui/material";
 
 import Card from "./CardItem";
 
-export default function CardList({ cocktails, searchCocktails }) {
+export default function CardList({
+  cocktails,
+  searchCocktails,
+  setOpenedCocktail,
+  setIsDetailOpen,
+}) {
   return (
     <>
       <Grid container spacing={3}>
@@ -24,6 +29,8 @@ export default function CardList({ cocktails, searchCocktails }) {
                   name={cocktail.name}
                   img={cocktail.imageUrl}
                   ingredient={cocktail.ingredient}
+                  setOpenedCocktail={setOpenedCocktail}
+                  setIsDetailOpen={setIsDetailOpen}
                 ></Card>
               </Grid>
             );
