@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Box, Container, Grid, Typography } from "@mui/material";
 
 import "../../scss/Dictionary.scss";
-import CardList from "./CardList";
-import CardMenu from "./CardMenu";
-import TestDetailCocktail from "../test/TestDetailCocktail";
+import CardList from "../dictionary/CardList";
+import CardMenu from "../dictionary/CardMenu";
+import TestDetailCocktail from "./TestDetailCocktail";
 export default function Dictionary() {
   return (
     <>
@@ -18,8 +18,7 @@ export default function Dictionary() {
             <CardMenu></CardMenu>
           </Grid>
           <Grid item xs={8} color="white">
-            {/* ({isOpen ? <TestDetailCocktail /> : <CardList />}) */}
-            <CardList />
+            <TestDetailCocktail />
           </Grid>
           <Grid item xs={1}></Grid>
         </Grid>

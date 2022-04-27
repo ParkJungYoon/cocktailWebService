@@ -2,7 +2,7 @@ import React, { useState, useEffect, useReducer, useContext } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import * as Api from "./api";
-import { loginReducer } from "./reducer";
+
 import {
   UserContext,
   UserProvider,
@@ -22,7 +22,6 @@ import QuizPage from "./components/quiz/QuizPage";
 
 //JY
 import SkeletonFunc from "./components/test/SkeletonFunc";
-import TopTenSOTB from "./components/test/TopTenSOTB";
 
 function App() {
   // const [userState, dispatch] = useReducer(loginReducer, {
@@ -74,7 +73,6 @@ function App() {
         <Route path="/mypage" element={<Mypage />} />
         <Route path="/bookmark" element={<Bookmark />} />
         <Route path="/like" element={<Like />} />
-        <Route path="/top10" element={<TopTenSOTB />} />
         <Route path="/userinfo" element={<UserInfo />} />
         <Route path="/usertab" element={<UserTab />} />
         <Route path="/quiz" element={<QuizPage />} />

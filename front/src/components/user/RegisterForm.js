@@ -57,15 +57,15 @@ function RegisterForm() {
     e.preventDefault();
 
     try {
-      // "user/register" 엔드포인트로 post요청함.
-      await Api.post("user/register", {
+      // "/register" 엔드포인트로 post요청함.
+      await Api.post("/register", {
         email,
         password,
         name,
       });
 
       // 로그인 페이지로 이동함.
-      navigate("/login");
+      // navigate("/login");
     } catch (err) {
       console.log("회원가입에 실패하였습니다.", err);
     }

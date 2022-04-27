@@ -106,7 +106,7 @@ function Header() {
               label="Community"
               value="4"
               onClick={() => {
-                navigate("/community");
+                navigate("/");
               }}
             />
           </Tabs>

@@ -6,11 +6,29 @@ import {
   CardActionArea,
   Typography,
   Button,
+  bottomNavigationClasses,
 } from "@mui/material";
 
-export default function ItemCard({ img, name, ingredient }) {
+export default function ItemCard({
+  img,
+  name,
+  ingredient,
+  rank,
+  setOpendCocktail,
+  setIsOpen,
+}) {
+  const handleButton = () => {
+    console.log(`click!`);
+    setOpendCocktail({ img, name, ingredient, rank });
+    setIsOpen(true);
+  };
   return (
     <div className="card">
+      {rank.includes(name) ? (
+        <button onClick={handleButton}>More...</button>
+      ) : (
+        <></>
+      )}
       <Card sx={{ maxWidth: 270 }} className=" front">
         <CardActionArea>
           <CardMedia height="250" component="img" image={img} loading="lazy" />
