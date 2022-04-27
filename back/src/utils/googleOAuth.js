@@ -24,11 +24,18 @@ module.exports = new GoogleStrategy(
   config,
   async (accessToken, refreshToken, profile, done) => {
     const { name, email } = profile._json;
-    console.log("name, email");
-    console.log(name, email);
     try {
       const user = await findOrCreateUser({ name, email });
-      done(null, user);
+
+      const data = {
+        discoveredUser : {
+          name : user.name,
+          email : user.email,
+        },
+        token : accessToken,
+      }
+
+      done(null, data);
     } catch (e) {
       done(e, null);
     }
