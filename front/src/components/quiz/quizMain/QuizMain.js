@@ -164,8 +164,8 @@ function QuizMain(props) {
                 {/* <Aaa setStep={setStep} setDisable={setDisable}></Aaa> */}
               </div>
             </div>
-            <Grid mt={1} sx={{ display: "flex", justifyContent: "center" }}>
-              <Grid>
+            <Grid mt={1}>
+              <Grid style={{ display: "flex", justifyContent: "center" }}>
                 <div
                   className="problem"
                   onClick={() => {
