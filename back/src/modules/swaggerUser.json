@@ -20,7 +20,10 @@
             "in": "body",
             "name": "body",
             "email": "body",
-            "password": "body"
+            "password": "body",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
           }
         ],
         "responses": {
@@ -39,10 +42,60 @@
         "summary": "login user Post",
         "parameters": [
           {
+            "name": "body",
             "in": "body",
             "email": "body",
             "password": "body",
-            "required": true
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User2"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
+    },
+    "/auth/google": {
+      "get": {
+        "tags": ["User"],
+        "summary": "구글 login",
+        "description": "해당 path로 로그인 후엔 /login로 돌아갑니다.",
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
+    },
+    "/refresh": {
+      "get": {
+        "tags": ["User"],
+        "summary": ["Access Token 재발급"],
+        "description": "access token은 토큰 앞에 'Bearer ' 꼭 붙여서 request 해야합니다.",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "JWT access token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "refresh",
+            "in": "header",
+            "description": "JWT refresh token",
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {
@@ -66,6 +119,16 @@
           "type": "string"
         },
         "name": {
+          "type": "string"
+        }
+      }
+    },
+    "User2": {
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
           "type": "string"
         }
       }
