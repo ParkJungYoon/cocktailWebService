@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 export default function ItemCard({ img, name, ingredient }) {
   const navigate = useNavigate();
   return (
-    <div className="card" onClick={() => navigate("/")}>
+    <div className="card">
       <Card sx={{ maxWidth: 270 }} className=" front">
         <CardActionArea>
           <FavoriteIcon sx={{ position: "absolute", top: 10, right: 10 }} />

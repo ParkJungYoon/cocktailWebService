@@ -18,14 +18,12 @@ export default function Dictionary() {
           <Grid item xs={12}>
             <Typography className="dictionaryTitle">Dictionary</Typography>
           </Grid>
-          <Grid item xs={1}></Grid>
           <Grid item xs={2} color="white">
             <CardMenu></CardMenu>
           </Grid>
-          <Grid item xs={8} color="white">
+          <Grid item xs={10} color="white">
             <CardList cocktails={cocktails}></CardList>
           </Grid>
-          <Grid item xs={1}></Grid>
         </Grid>
       </div>
     </>

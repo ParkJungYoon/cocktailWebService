@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Grid } from "@mui/material";
 
-import Card from "./ItemCard";
+import Card from "./CardItem";
 
 export default function CardList({ cocktails }) {
   const [searchCocktails, setSearchCocktails] = useState([]);

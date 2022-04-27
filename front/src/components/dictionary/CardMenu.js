@@ -6,7 +6,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#ffffff",
+      main: "#ee82ee",
     },
   },
 });
@@ -27,6 +27,7 @@ export default function CardMenu() {
           bgcolor: "rgba(64, 64, 64, 0.9);",
           display: "flex",
           py: 12,
+          ml: 5,
         }}
         width="100px"
       >
