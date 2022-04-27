@@ -11,6 +11,7 @@ import swaggerUi from "swagger-ui-express";
 import * as swaggerDocument from "./modules/swagger.json";
 
 import { passport } from "./passport/googlePassport";
+import { LikeRouter } from "./routers/LikeRouter";
 
 const app = express();
 
@@ -47,6 +48,7 @@ app.use(registerRouter);
 app.use(loginRouter);
 app.use(CocktailRouter);
 app.use(RankRouter);
+app.use(LikeRouter);
 
 // errorMessage yellow
 app.use(errorMiddleware);
