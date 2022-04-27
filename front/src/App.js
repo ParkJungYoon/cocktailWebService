@@ -8,11 +8,11 @@ import {
   UserProvider,
 } from "./components/user/reducer/userReducer";
 import Header from "./components/Header";
-import Fullpage from "./components/Landingpage/Fullpage";
+import Landing from "./pages/landing/Landing";
 import Introduce from "./components/introduce/Introduce";
 import Mypage from "./components/mypage/Mypage";
 import Bookmark from "./components/mypage/Bookmark";
-import Dictionary from "./components/dictionary/Dictionary";
+import Dictionary from "./pages/dictionary/Dictionary";
 import Like from "./components/mypage/Like";
 import UserInfo from "./components/mypage/UserInfo";
 import UserTab from "./components/mypage/UserTab";
@@ -64,7 +64,7 @@ function App() {
     <Router>
       <Header />
       <Routes>
-        <Route path="/" exact element={<Fullpage />} />
+        <Route path="/" exact element={<Landing />} />
         <Route path="/introduce" element={<Introduce />} />
         <Route path="/dictionary" element={<Dictionary />} />
         <Route path="/mypage" element={<Mypage />} />
@@ -73,7 +73,7 @@ function App() {
         <Route path="/top10" element={<TopTenSOTB />} />
         <Route path="/userinfo" element={<UserInfo />} />
         <Route path="/usertab" element={<UserTab />} />
-        <Route path="/clinetest" element={<QuizPage />} />
+        <Route path="/quiz" element={<QuizPage />} />
       </Routes>
     </Router>
   );

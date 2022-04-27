@@ -1,15 +1,23 @@
 import React, { useEffect, useState } from "react";
-import { Grid } from "@mui/material";
+import { Grid, InputBase } from "@mui/material";
 
 import Card from "./CardItem";
 
-export default function CardList({ cocktails }) {
-  const [searchCocktails, setSearchCocktails] = useState([]);
-  const [inputValue, setInputValue] = useState("");
+export default function CardList({ cocktails, searchCocktails }) {
   return (
-    <Grid container spacing={3}>
-      {inputValue === ""
-        ? cocktails.map((cocktail, i) => {
+    <>
+      <Grid container spacing={3}>
+        {cocktails
+          .filter((val) => {
+            if (searchCocktails == "") {
+              return val;
+            } else if (
+              val.name.toLowerCase().includes(searchCocktails.toLowerCase())
+            ) {
+              return val;
+            }
+          })
+          .map((cocktail, i) => {
             return (
               <Grid key={i} item md>
                 <Card
@@ -19,8 +27,8 @@ export default function CardList({ cocktails }) {
                 ></Card>
               </Grid>
             );
-          })
-        : null}
-    </Grid>
+          })}
+      </Grid>
+    </>
   );
 }
