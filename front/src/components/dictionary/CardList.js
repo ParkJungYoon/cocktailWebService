@@ -5,7 +5,7 @@ import Card from "./ItemCard";
 
 export default function CardList({ cocktails }) {
   const [searchCocktails, setSearchCocktails] = useState([]);
-  const [inputValue, setInputValue] = useState([]);
+  const [inputValue, setInputValue] = useState("");
   return (
     <Grid container spacing={3}>
       {inputValue === ""
