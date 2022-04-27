@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Grid } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 
 import "../../scss/Dictionary.scss";
 import CardList from "./CardList";
@@ -11,7 +11,7 @@ export default function Dictionary() {
       <div className="dictionary">
         <Grid container>
           <Grid item xs={12}>
-            <p className="dictionaryTitle">Dictionary</p>
+            <Typography className="dictionaryTitle">Dictionary</Typography>
           </Grid>
           <Grid item xs={1}></Grid>
           <Grid item xs={2} color="white">

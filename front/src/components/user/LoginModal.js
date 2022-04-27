@@ -85,15 +85,16 @@ export default function FormDialog({ open, handleLoginClose }) {
           <CloseIcon />
         </IconButton>
       </DialogTitle>
-      <DialogContent className="ModalContent">
-        <DialogContentText
-          align="center"
-          style={{ color: "white", fontWeight: "bold" }}
-        >
-          저쪽 손님께서
-          <br /> 보내신 겁니다
-        </DialogContentText>
-        <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
+        <DialogContent className="ModalContent">
+          <DialogContentText
+            align="center"
+            style={{ color: "white", fontWeight: "bold" }}
+          >
+            저쪽 손님께서
+            <br /> 보내신 겁니다
+          </DialogContentText>
+
           <TextField
             autoComplete="on"
             required
@@ -130,19 +131,18 @@ export default function FormDialog({ open, handleLoginClose }) {
               비밀번호는 4글자 이상입니다.
             </FormHelperText>
           )}
-        </form>
-      </DialogContent>
-      <DialogActions className="ModalButton" sx={{ pb: 5 }}>
-        <Button
-          className="Button"
-          sx={{ mx: "auto" }}
-          type="submit"
-          onClick={handleSubmit}
-          disabled={!isFormValid}
-        >
-          Login
-        </Button>
-      </DialogActions>
+        </DialogContent>
+        <DialogActions className="ModalButton" sx={{ pb: 5 }}>
+          <Button
+            className="Button"
+            sx={{ mx: "auto" }}
+            type="submit"
+            disabled={!isFormValid}
+          >
+            Login
+          </Button>
+        </DialogActions>
+      </form>
     </Dialog>
   );
 }

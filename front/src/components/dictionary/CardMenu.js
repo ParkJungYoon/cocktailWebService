@@ -30,14 +30,13 @@ export default function CardMenu() {
         width="100px"
       >
         <Tabs
-          textColor="white"
           orientation="vertical"
           value={value}
           onChange={handleChange}
           aria-label="Vertical tabs example"
         >
-          <Tab value={1} label="all" />
-          <Tab value={2} label="top 10" />
+          <Tab sx={{ color: "white" }} value={1} label="all" />
+          <Tab sx={{ color: "white" }} value={2} label="top 10" />
         </Tabs>
       </Box>
     </ThemeProvider>

@@ -29,14 +29,12 @@ export default function ItemCard({ img, name, ingredient }) {
       <Card className=" back">
         <CardActionArea>
           <CardContent className="descriptionBox">
-            <Typography gutterBottom variant="body1">
-              <p>이름 : {name}</p>
-              {ingredient.map((item, i) => (
-                <p key={i}>
-                  재료{i + 1} : {item}
-                </p>
-              ))}
-            </Typography>
+            <Typography variant="body1">이름 : {name}</Typography>
+            {ingredient.map((item, i) => (
+              <Typography key={i} variant="body2">
+                재료{i + 1} : {item}
+              </Typography>
+            ))}
           </CardContent>
         </CardActionArea>
       </Card>

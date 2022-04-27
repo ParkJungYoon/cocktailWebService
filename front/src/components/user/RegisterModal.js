@@ -62,7 +62,7 @@ function RegisterModal({ open, handleRegisterClose }) {
       });
 
       // 로그인 페이지로 이동함.
-      navigate("/login");
+      navigate("/");
     } catch (err) {
       console.log("회원가입에 실패하였습니다.", err);
     }
@@ -85,15 +85,16 @@ function RegisterModal({ open, handleRegisterClose }) {
             <CloseIcon />
           </IconButton>
         </DialogTitle>
-        <DialogContent className="ModalContent">
-          <DialogContentText
-            align="center"
-            style={{ color: "white", fontWeight: "bold" }}
-          >
-            저쪽 손님께서
-            <br /> 보내신 겁니다
-          </DialogContentText>
-          <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
+          <DialogContent className="ModalContent">
+            <DialogContentText
+              align="center"
+              style={{ color: "white", fontWeight: "bold" }}
+            >
+              저쪽 손님께서
+              <br /> 보내신 겁니다
+            </DialogContentText>
+
             <TextField
               autoComplete="on"
               required
@@ -162,6 +163,7 @@ function RegisterModal({ open, handleRegisterClose }) {
               sx={{ mt: 2, bgcolor: "white" }}
               required
               fullWidth
+              label="Nickname"
               variant="filled"
               id="name"
               color="secondary"
@@ -178,18 +180,18 @@ function RegisterModal({ open, handleRegisterClose }) {
                 이름은 2글자 이상으로 설정해 주세요.
               </FormHelperText>
             )}
-          </form>
-        </DialogContent>
-        <DialogActions className="ModalButton" sx={{ pb: 5 }}>
-          <Button
-            className="Button"
-            sx={{ mx: "auto" }}
-            type="submit"
-            disabled={!isFormValid}
-          >
-            회원가입
-          </Button>
-        </DialogActions>
+          </DialogContent>
+          <DialogActions className="ModalButton" sx={{ pb: 5 }}>
+            <Button
+              className="Button"
+              sx={{ mx: "auto" }}
+              type="submit"
+              disabled={!isFormValid}
+            >
+              회원가입
+            </Button>
+          </DialogActions>
+        </form>
       </Dialog>
     </>
   );
