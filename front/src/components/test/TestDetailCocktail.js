@@ -14,17 +14,19 @@ import {
   Stack,
 } from "@mui/material";
 import Chart2 from "./Chart2";
+import * as Api from "../../api";
 import styles from "./detailCocktail.module.scss";
 
 function TestDetailCocktail({ opendCocktail, setIsOpen }) {
   const name = opendCocktail.name;
   const imgUrl = opendCocktail.img;
   const ingredient = opendCocktail.ingredient;
-  // const rank = opendCocktail.rank;
 
-  // useEffect(()=>{
-  //   Api.get('/rank10')
-  // },[])
+  useEffect(() => {
+    Api.get("/rank10").then((res) => {
+      const data = res.data;
+    });
+  }, [opendCocktail]);
 
   const handleButton = () => {
     setIsOpen(false);
