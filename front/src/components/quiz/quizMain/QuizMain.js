@@ -7,13 +7,15 @@ import "./QuizMain.css";
 import QuestionImg from "../questionImg/QuestionImg";
 import StandardShaker from "../questionImg/StandardShaker.jpg";
 import { Container, Box, Grid } from "@mui/material";
+import Split from "./Split";
 
 function QuizMain(props) {
   const [score, setScore] = useState(0);
   const [step, setStep] = useState(1);
   const [clickedAnswer, setClickedAnswer] = useState(0);
-  const [marking, setMarking] = useState(0);
+  const [marking, setMarking] = useState("");
   const [disable, setDisable] = useState(false);
+  const [ox, setOx] = useState("");
   const whiteBarStyle = {
     backgroundColor: "white",
     height: "3px",
@@ -81,15 +83,19 @@ function QuizMain(props) {
     if (answer === state.correctAnswers[step]) {
       setScore(score + 10);
       setClickedAnswer(answer);
+      setOx(ox + "O");
     } else {
       setClickedAnswer(answer);
+      setOx(ox + "X");
     }
-    setMarking(
-      marking + answer * 10 ** (Object.keys(state.quiestions).length - step)
-    );
+    setMarking(marking + answer);
     setStep(step + 1);
     setClickedAnswer(0);
   };
+
+  // const split = (ox) => {
+  //   let stringToArray = ox.split("");
+  // }
 
   return (
     <div className="Content">
@@ -137,14 +143,15 @@ function QuizMain(props) {
         </>
       ) : (
         <Grid container>
-          <Grid item xs={4} md={4}></Grid>
-          <Grid item xs={4} md={4} mt={2}>
+          <Grid item xs={3} md={3}></Grid>
+          <Grid item xs={6} md={6} mt={2}>
             <div
               className="finalPage"
               style={{ display: "grid", padding: "1rem" }}
             >
               <p>SCORE : {score}</p>
-              <p>MARKING : {marking}</p>
+              {/* <p>MARKING : {marking}</p> */}
+              <Split ox={ox}></Split>
               <div>
                 <div
                   className="restart"
@@ -157,9 +164,7 @@ function QuizMain(props) {
                 {/* <Aaa setStep={setStep} setDisable={setDisable}></Aaa> */}
               </div>
             </div>
-          </Grid>
-          <Grid item xs={4} md={4} mt={2} pl={2}>
-            <Grid container>
+            <Grid mt={1} sx={{ display: "flex", justifyContent: "center" }}>
               <Grid>
                 <div
                   className="problem"
@@ -168,7 +173,7 @@ function QuizMain(props) {
                     setDisable(true);
                   }}
                 >
-                  1번 문제
+                  1번
                 </div>
                 <div
                   className="problem"
@@ -177,7 +182,7 @@ function QuizMain(props) {
                     setDisable(true);
                   }}
                 >
-                  2번 문제
+                  2번
                 </div>
                 <div
                   className="problem"
@@ -186,7 +191,7 @@ function QuizMain(props) {
                     setDisable(true);
                   }}
                 >
-                  3번 문제
+                  3번
                 </div>
                 <div
                   className="problem"
@@ -195,7 +200,7 @@ function QuizMain(props) {
                     setDisable(true);
                   }}
                 >
-                  4번 문제
+                  4번
                 </div>
                 <div
                   className="problem"
@@ -204,10 +209,10 @@ function QuizMain(props) {
                     setDisable(true);
                   }}
                 >
-                  5번 문제
+                  5번
                 </div>
-              </Grid>
-              <Grid>
+                {/* </Grid>
+              <Grid> */}
                 <div
                   className="problem"
                   onClick={() => {
@@ -215,7 +220,7 @@ function QuizMain(props) {
                     setDisable(true);
                   }}
                 >
-                  1번 문제
+                  1번
                 </div>
                 <div
                   className="problem"
@@ -224,7 +229,7 @@ function QuizMain(props) {
                     setDisable(true);
                   }}
                 >
-                  2번 문제
+                  2번
                 </div>
                 <div
                   className="problem"
@@ -233,7 +238,7 @@ function QuizMain(props) {
                     setDisable(true);
                   }}
                 >
-                  3번 문제
+                  3번
                 </div>
                 <div
                   className="problem"
@@ -242,7 +247,7 @@ function QuizMain(props) {
                     setDisable(true);
                   }}
                 >
-                  4번 문제
+                  4번
                 </div>
                 <div
                   className="problem"
@@ -251,15 +256,16 @@ function QuizMain(props) {
                     setDisable(true);
                   }}
                 >
-                  5번 문제
+                  5번
                 </div>
               </Grid>
             </Grid>
           </Grid>
+          <Grid item xs={3} md={3} mt={2} pl={2}></Grid>
         </Grid>
       )}
       {disable === true ? (
-        <div style={{ marginTop: "3rem" }}>
+        <div style={{ marginTop: "2rem" }}>
           <Question question={state.quiestions[step]} />
           <Grid container mb="3%">
             <Grid

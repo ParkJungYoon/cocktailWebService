@@ -1,0 +1,20 @@
+table {
+    /* width: 1rem; */
+    border-collapse: collapse;
+    background-color: black;
+}
+tr{
+    /* width: 1rem; */
+    font-size:1.5rem;
+}
+td {
+    /* width: 1rem; */
+    /* padding:0.2rem; */
+    border: 2px solid rgb(255, 255, 255);
+    color: white;
+    font-size: 1.1rem;
+}
+.aaa {
+    border: 2px solid rgb(0, 186, 96);
+    border-style: none;
+}

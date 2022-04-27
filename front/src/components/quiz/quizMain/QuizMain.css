@@ -18,7 +18,7 @@
 .finalPage{
     text-align: center;
     border: 3px solid white;
-    height: 150px;
+    height: 170px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -43,6 +43,7 @@
 .restart {
     /* background-color: black; */
     color: white;
+    margin-top:0.35rem;
     padding: 5px;
     cursor: pointer;
     text-decoration: none;
