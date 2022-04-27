@@ -351,6 +351,20 @@
           }
         }
       }
+    },
+    "/rank10": {
+      "get": {
+        "tags": ["Rank"],
+        "summary": ["칵테일 RANK 10 목록"],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -392,6 +406,22 @@
           "type": "string"
         },
         "name": {
+          "type": "string"
+        }
+      }
+    },
+    "Rank": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "visitors": {
+          "type": "string"
+        },
+        "years": {
+          "type": "string"
+        },
+        "rank": {
           "type": "string"
         }
       }
