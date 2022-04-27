@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Grid, Typography } from "@mui/material";
 
+import * as Api from "../../api";
 import "../../scss/Dictionary.scss";
 import CardList from "./CardList";
 import CardMenu from "./CardMenu";
-import CardSearch from "./CardSearch";
+
 export default function Dictionary() {
+  const [cocktails, setCocktails] = useState([]);
+  useEffect(() => {
+    Api.get("cocktails").then((res) => setCocktails(res.data));
+  }, []);
   return (
     <>
       <div className="dictionary">
@@ -18,7 +23,7 @@ export default function Dictionary() {
             <CardMenu></CardMenu>
           </Grid>
           <Grid item xs={8} color="white">
-            <CardList />
+            <CardList cocktails={cocktails}></CardList>
           </Grid>
           <Grid item xs={1}></Grid>
         </Grid>

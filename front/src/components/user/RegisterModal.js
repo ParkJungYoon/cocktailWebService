@@ -60,9 +60,8 @@ function RegisterModal({ open, handleRegisterClose }) {
         password,
         name,
       });
-
-      // 로그인 페이지로 이동함.
-      navigate("/");
+      handleRegisterClose();
+      navigate("/", { replace: true });
     } catch (err) {
       console.log("회원가입에 실패하였습니다.", err);
     }

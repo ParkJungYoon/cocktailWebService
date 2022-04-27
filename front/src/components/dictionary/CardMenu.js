@@ -22,6 +22,7 @@ export default function CardMenu() {
     <ThemeProvider theme={theme}>
       <Box
         sx={{
+          position: "fixed",
           flexGrow: 1,
           bgcolor: "rgba(64, 64, 64, 0.9);",
           display: "flex",

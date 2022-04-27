@@ -5,13 +5,17 @@ import {
   CardContent,
   CardActionArea,
   Typography,
+  Button,
 } from "@mui/material";
-
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import { useNavigate } from "react-router-dom";
 export default function ItemCard({ img, name, ingredient }) {
+  const navigate = useNavigate();
   return (
-    <div className="card">
+    <div className="card" onClick={() => navigate("/")}>
       <Card sx={{ maxWidth: 270 }} className=" front">
         <CardActionArea>
+          <FavoriteIcon sx={{ position: "absolute", top: 10, right: 10 }} />
           <CardMedia height="250" component="img" image={img} loading="lazy" />
           <CardContent className="cocktailContent">
             <Typography
