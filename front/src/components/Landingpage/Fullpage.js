@@ -10,6 +10,7 @@ const Fullpage = () => {
   return (
     <>
       <ReactFullpage
+        licenseKey="OPEN-SOURCE-GPLV3-LICENSE"
         scrollingSpeed={1000}
         render={({ fullpageApi }) => {
           return (

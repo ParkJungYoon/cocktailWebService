@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Grid } from "@mui/material";
 
 import "../../scss/Dictionary.scss";
 import CardList from "./CardList";
 import CardMenu from "./CardMenu";
+import CardSearch from "./CardSearch";
 export default function Dictionary() {
   return (
     <>

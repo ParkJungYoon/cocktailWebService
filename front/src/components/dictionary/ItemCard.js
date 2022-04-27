@@ -5,7 +5,6 @@ import {
   CardContent,
   CardActionArea,
   Typography,
-  Button,
 } from "@mui/material";
 
 export default function ItemCard({ img, name, ingredient }) {

@@ -1,9 +1,12 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { Link, Grid, Tab, Tabs, Box } from "@mui/material";
+import { Link, Tab, Tabs, Box } from "@mui/material";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+
+import RegisterModal from "./user/RegisterModal";
+import LoginModal from "./user/LoginModal";
 import { UserContext } from "./user/reducer/userReducer";
 import "../scss/Header.scss";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   palette: {
@@ -12,6 +15,7 @@ const theme = createTheme({
     },
   },
 });
+
 function LinkTab(props) {
   return (
     <Tab
@@ -40,29 +44,52 @@ function Header() {
     navigate("/");
   };
   // modal 관리
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const [openLogin, setOpenLogin] = React.useState(false);
+  const handleLoginOpen = () => setOpenLogin(true);
+  const handleLoginClose = () => setOpenLogin(false);
 
+  const [openRegister, setOpenRegister] = React.useState(false);
+  const handleRegisterOpen = () => setOpenRegister(true);
+  const handleRegisterClose = () => setOpenRegister(false);
   // 탭 관리
   const [value, setValue] = React.useState("1");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
   return (
     <ThemeProvider theme={theme}>
       <nav className="navbar">
         <div className="navbarAccount">
-          <Link onClick={() => navigate("/introduce")} className="account">
-            Log In
-          </Link>
-          <span>/</span>
-          <Link className="account">Sign Up</Link>
-          {isLogin && <Link className="navbarButton">NickName</Link>}
+          {isLogin ? (
+            <>
+              <Link onClick={handleLoginOpen} className="account">
+                Log In
+              </Link>
+              <span>/</span>
+              <Link onClick={handleRegisterOpen} className="account">
+                Sign Up
+              </Link>
+              )
+            </>
+          ) : (
+            <>
+              <Link className="navbarButton">NickName</Link>
+              <span>/</span>
+              <Link onClick={logout} className="account">
+                Log Out
+              </Link>
+            </>
+          )}
         </div>
+        <LoginModal handleLoginClose={handleLoginClose} open={openLogin} />
+        <RegisterModal
+          handleRegisterClose={handleRegisterClose}
+          open={openRegister}
+        />
         <div className="navbarLogo">
-          <Link color="white" underline="none" onClick={() => navigate("/")}>
+          <Link color="white" underline="none">
             저쪽 손님께서
             <br />
             보내신 겁니다
@@ -78,33 +105,46 @@ function Header() {
             textColor="inherit"
           >
             <LinkTab
+              sx={{ width: "130px" }}
+              className="navbarButton"
+              label="Home"
+              value="1"
+              onClick={() => {
+                navigate("/");
+              }}
+            />
+            <LinkTab
+              sx={{ width: "130px" }}
               className="navbarButton"
               label="Introduce"
-              value="1"
+              value="2"
               onClick={() => {
                 navigate("/introduce");
               }}
             />
             <LinkTab
+              sx={{ width: "130px" }}
               className="navbarButton"
               label="Dictionary"
-              value="2"
+              value="3"
               onClick={() => {
                 navigate("/dictionary");
               }}
             />
             <LinkTab
+              sx={{ width: "130px" }}
               className="navbarButton"
               label="CLineTest"
-              value="3"
+              value="4"
               onClick={() => {
                 navigate("/clinetest");
               }}
             />
             <LinkTab
+              sx={{ width: "130px" }}
               className="navbarButton"
               label="Community"
-              value="4"
+              value="5"
               onClick={() => {
                 navigate("/community");
               }}
