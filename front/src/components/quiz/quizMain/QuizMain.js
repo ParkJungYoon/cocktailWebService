@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Question from "../question/Question";
 import Answer from "../answer/Answer";
+import Correct from "../correct/Correct";
 import "./QuizMain.css";
 import QuestionImg from "../questionImg/QuestionImg";
 import StandardShaker from "../questionImg/StandardShaker.jpg";
@@ -11,6 +12,13 @@ function QuizMain(props) {
   const [score, setScore] = useState(0);
   const [step, setStep] = useState(1);
   const [clickedAnswer, setClickedAnswer] = useState(0);
+  const [marking, setMarking] = useState(0);
+  const [disable, setDisable] = useState(false);
+  const whiteBarStyle = {
+    backgroundColor: "white",
+    height: "3px",
+    borderRadius: "5px",
+  };
 
   const state = {
     quiestions: {
@@ -76,13 +84,16 @@ function QuizMain(props) {
     } else {
       setClickedAnswer(answer);
     }
+    setMarking(
+      marking + answer * 10 ** (Object.keys(state.quiestions).length - step)
+    );
     setStep(step + 1);
     setClickedAnswer(0);
   };
 
   return (
     <div className="Content">
-      {step <= Object.keys(state.quiestions).length ? (
+      {step <= Object.keys(state.quiestions).length && disable === false ? (
         <>
           <Question question={state.quiestions[step]} />
 
@@ -93,11 +104,7 @@ function QuizMain(props) {
               xs={12}
               md={12}
               //white bar
-              sx={{
-                backgroundColor: "white",
-                height: "3px",
-                borderRadius: "5px",
-              }}
+              sx={whiteBarStyle}
             ></Grid>
             {/* <Grid item xs={4} md={4}></Grid> */}
           </Grid>
@@ -137,6 +144,7 @@ function QuizMain(props) {
               style={{ display: "grid", padding: "1rem" }}
             >
               <p>SCORE : {score}</p>
+              <p>MARKING : {marking}</p>
               <div>
                 <div
                   className="restart"
@@ -146,11 +154,147 @@ function QuizMain(props) {
                 >
                   RESTART
                 </div>
+                {/* <Aaa setStep={setStep} setDisable={setDisable}></Aaa> */}
               </div>
             </div>
           </Grid>
-          <Grid item xs={4} md={4}></Grid>
+          <Grid item xs={4} md={4} mt={2} pl={2}>
+            <Grid container>
+              <Grid>
+                <div
+                  className="problem"
+                  onClick={() => {
+                    setStep(1);
+                    setDisable(true);
+                  }}
+                >
+                  1번 문제
+                </div>
+                <div
+                  className="problem"
+                  onClick={() => {
+                    setStep(2);
+                    setDisable(true);
+                  }}
+                >
+                  2번 문제
+                </div>
+                <div
+                  className="problem"
+                  onClick={() => {
+                    setStep(3);
+                    setDisable(true);
+                  }}
+                >
+                  3번 문제
+                </div>
+                <div
+                  className="problem"
+                  onClick={() => {
+                    setStep(4);
+                    setDisable(true);
+                  }}
+                >
+                  4번 문제
+                </div>
+                <div
+                  className="problem"
+                  onClick={() => {
+                    setStep(5);
+                    setDisable(true);
+                  }}
+                >
+                  5번 문제
+                </div>
+              </Grid>
+              <Grid>
+                <div
+                  className="problem"
+                  onClick={() => {
+                    setStep(1);
+                    setDisable(true);
+                  }}
+                >
+                  1번 문제
+                </div>
+                <div
+                  className="problem"
+                  onClick={() => {
+                    setStep(2);
+                    setDisable(true);
+                  }}
+                >
+                  2번 문제
+                </div>
+                <div
+                  className="problem"
+                  onClick={() => {
+                    setStep(3);
+                    setDisable(true);
+                  }}
+                >
+                  3번 문제
+                </div>
+                <div
+                  className="problem"
+                  onClick={() => {
+                    setStep(4);
+                    setDisable(true);
+                  }}
+                >
+                  4번 문제
+                </div>
+                <div
+                  className="problem"
+                  onClick={() => {
+                    setStep(5);
+                    setDisable(true);
+                  }}
+                >
+                  5번 문제
+                </div>
+              </Grid>
+            </Grid>
+          </Grid>
         </Grid>
+      )}
+      {disable === true ? (
+        <div style={{ marginTop: "3rem" }}>
+          <Question question={state.quiestions[step]} />
+          <Grid container mb="3%">
+            <Grid
+              item
+              xs={12}
+              md={12}
+              //white bar
+              sx={whiteBarStyle}
+            ></Grid>
+          </Grid>
+          <Grid container>
+            <Grid item xs={6} md={6}>
+              <div style={{ marginLeft: "5rem" }}>
+                <Correct
+                  answer={state.answers[step]}
+                  step={step}
+                  correctAnswer={state.correctAnswers[step]}
+                />
+              </div>
+            </Grid>
+            <Grid item xs={6} md={6}>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  marginRight: "5rem",
+                }}
+              >
+                <QuestionImg img={state.imgs[step]} />
+              </div>
+            </Grid>
+          </Grid>
+        </div>
+      ) : (
+        ""
       )}
     </div>
   );

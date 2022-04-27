@@ -1,0 +1,22 @@
+.Correct{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+    font-size: 20px;
+}
+.Correct li{
+    text-align: left;
+    padding: 10px;
+    margin: 0 0 5px;
+}
+.Correct .correct{
+    color: #8b00b9;
+    font-weight: bold;
+    /* text-decoration: underline;
+    text-underline-position: under;
+    text-decoration-color: #FFFFFF; */
+}
+.Correct .incorrect{
+    color: #FFFFFF;
+}
