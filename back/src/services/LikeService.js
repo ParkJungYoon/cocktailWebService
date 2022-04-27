@@ -1,8 +1,13 @@
 import { LikeModel } from "../db";
-
+import { CocktailModel } from "../db";
 class LikeService {
   static addLike = async ({ giveUserId, getCocktailId }) => {
-    const newLike = await LikeModel.addLike({ giveUserId, getCocktailId });
+    const name = await CocktailModel.findById({ getCocktailId });
+    const newLike = await LikeModel.addLike({
+      name: name.name,
+      giveUserId,
+      getCocktailId,
+    });
     return newLike;
   };
   static getLikeList = async () => {
