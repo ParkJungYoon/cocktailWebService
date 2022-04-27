@@ -9,19 +9,16 @@ export default function Thirdpage() {
       <Grid container className="dictionary">
         <Grid item xs className="textWrapper">
           <Typography className="dictionaryText" variant="h4">
-            Or
-          </Typography>
-          <Typography className="dictionaryText" variant="h4">
-            You can search
-          </Typography>
-          <Typography className="dictionaryText" variant="h4">
-            10000 cocktails
-          </Typography>
-          <Typography className="dictionaryText" variant="h4">
-            on Our Cocktail Dictionary
+            Or You can search You can search on Our Cocktail Dictionary
           </Typography>
           <Box className="buttonBox">
-            <Button variant="contained" className="dictionaryButton">
+            <Button
+              variant="contained"
+              className="dictionaryButton"
+              onClick={() => {
+                navigate("/dictionary");
+              }}
+            >
               Explore
             </Button>
           </Box>

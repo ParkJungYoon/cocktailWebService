@@ -28,7 +28,23 @@ $thirdpage: "../img/thirdpage.jpg";
     margin-bottom: 10;
   }
 }
-
+.scrollDown {
+  position: absolute;
+  z-index: 3;
+  bottom: 5%;
+  left: 50%;
+  color: white;
+  animation: bounce 0.5s infinite alternate;
+  transform: translateX(-50%);
+  @keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-15px);
+    }
+  }
+}
 .introTextWrapper {
   position: absolute;
   z-index: 3;

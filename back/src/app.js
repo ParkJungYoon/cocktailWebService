@@ -11,6 +11,7 @@ import swaggerUi from "swagger-ui-express";
 import * as swaggerDocument from "./modules/swagger.json";
 
 import { passport } from "./passport/googlePassport";
+import { LikeRouter } from "./routers/LikeRouter";
 
 const app = express();
 
@@ -26,6 +27,8 @@ app.get("/", (req, res) => {
 // swagger
 app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
+
+
 // google
 app.get(
   "/auth/google",
@@ -34,9 +37,10 @@ app.get(
 
 app.get(
   "/auth/google/callback",
-  passport.authenticate("google", { failureRedirect: "/error" }),
-  function (req, res) {
-    res.redirect("/");
+  passport.authenticate("google", { 
+    failureRedirect: "/login"
+  }), function(req, res) {
+    res.status(200).json(req.user);
   }
 );
 // -----------------------------------------------------------------------------------------------------------
@@ -46,6 +50,7 @@ app.use(registerRouter);
 app.use(loginRouter);
 app.use(CocktailRouter);
 app.use(RankRouter);
+app.use(LikeRouter);
 
 // errorMessage yellow
 app.use(errorMiddleware);

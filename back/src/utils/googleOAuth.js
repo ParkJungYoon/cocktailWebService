@@ -1,5 +1,6 @@
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 import { UserModel } from "../db";
+import { makeRefreshToken } from "./makeToken";
 
 const config = {
   clientID: process.env.GOOGLE_CLIENT_ID,
@@ -24,11 +25,19 @@ module.exports = new GoogleStrategy(
   config,
   async (accessToken, refreshToken, profile, done) => {
     const { name, email } = profile._json;
-    console.log("name, email");
-    console.log(name, email);
     try {
       const user = await findOrCreateUser({ name, email });
-      done(null, user);
+      const refreshToken = makeRefreshToken();
+      const data = {
+        discoveredUser: {
+          name: user.name,
+          email: user.email,
+        },
+        accessToken: accessToken,
+        refreshToken: refreshToken,
+      };
+      console.log(data);
+      done(null, data);
     } catch (e) {
       done(e, null);
     }

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
 import video from "../../video/cocktail.webm";
 
@@ -16,16 +17,22 @@ export default function Firstpage() {
         <Link
           className="introButton"
           underline="none"
-          onClick={() => navigate("/recommend")}
+          onClick={() => navigate("/dictionary")}
         >
           칵테일 한 잔 하러 가기
         </Link>
       </div>
-
+      <div className="scrollDown">
+        <p>Scroll Down</p>
+        <ArrowDownwardIcon />
+        <ArrowDownwardIcon />
+        <ArrowDownwardIcon />
+      </div>
       <div className="video">
         <video
           muted
-          data-autoPlay
+          autoPlay
+          data-keepplaying
           loop
           style={{
             width: "100%",
