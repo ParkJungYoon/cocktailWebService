@@ -10,10 +10,12 @@ class LikeService {
     });
     return newLike;
   };
+
   static getLikeList = async () => {
     const likeList = await LikeModel.getLikeList();
     return likeList;
   };
+
   static deleteLike = async ({ id }) => {
     const deleteCocktail = await LikeModel.deleteLike({ id });
     if (deleteCocktail === null) {
@@ -22,6 +24,7 @@ class LikeService {
     }
     return deleteCocktail;
   };
+
   static getCocktailLike = async ({ id }) => {
     const cocktailLikeList = await LikeModel.getCocktailList({ id });
     return cocktailLikeList;
