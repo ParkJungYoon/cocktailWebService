@@ -51,9 +51,12 @@ function Header({ user }) {
   const [openRegister, setOpenRegister] = React.useState(false);
   const handleRegisterOpen = () => setOpenRegister(true);
   const handleRegisterClose = () => setOpenRegister(false);
+
+  //style
+  const linkTabstyle = { width: "130px" };
+
   // 탭 관리
   const [value, setValue] = React.useState("1");
-
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -105,7 +108,7 @@ function Header({ user }) {
             textColor="inherit"
           >
             <LinkTab
-              sx={{ width: "130px" }}
+              sx={linkTabstyle}
               className="navbarButton"
               label="Home"
               value="1"
@@ -114,7 +117,7 @@ function Header({ user }) {
               }}
             />
             <LinkTab
-              sx={{ width: "130px" }}
+              sx={linkTabstyle}
               className="navbarButton"
               label="Introduce"
               value="2"
@@ -123,7 +126,7 @@ function Header({ user }) {
               }}
             />
             <LinkTab
-              sx={{ width: "130px" }}
+              sx={linkTabstyle}
               className="navbarButton"
               label="Dictionary"
               value="3"
@@ -132,16 +135,16 @@ function Header({ user }) {
               }}
             />
             <LinkTab
-              sx={{ width: "130px" }}
+              sx={linkTabstyle}
               className="navbarButton"
-              label="CLineTest"
+              label="Quiz"
               value="4"
               onClick={() => {
-                navigate("/clinetest");
+                navigate("/quiz");
               }}
             />
             <LinkTab
-              sx={{ width: "130px" }}
+              sx={linkTabstyle}
               className="navbarButton"
               label="Community"
               value="5"

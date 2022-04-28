@@ -29,16 +29,7 @@ export default function Firstpage() {
         <ArrowDownwardIcon />
       </div>
       <div className="video">
-        <video
-          muted
-          autoPlay
-          data-keepplaying
-          loop
-          style={{
-            width: "100%",
-            height: "100%",
-          }}
-        >
+        <video muted autoPlay data-keepplaying loop>
           <source src={video} type="video/webm" />
         </video>
       </div>

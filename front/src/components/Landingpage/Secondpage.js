@@ -2,7 +2,7 @@ import React from "react";
 import { Typography, Grid, Button, Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-import chart from "../../img/top10_chart.png";
+import chart from "../../imgs/top10_chart.png";
 
 export default function Secondpage() {
   const navigate = useNavigate();
