@@ -12,7 +12,7 @@ class CocktailModel {
   };
 
   static getAllCocktail = async () => {
-    const result = await Cocktail.find();
+    const result = await Cocktail.find().populate("rank");
     return result;
   };
 

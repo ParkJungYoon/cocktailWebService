@@ -47,11 +47,24 @@ loginRouter.post("/login", async (req, res, next) => {
   }
 });
 
-loginRouter.get("/verify", verifyToken, (req, res) => {
-  res.status(200).json({
-    status: "succ",
-    userId: req.user,
-  });
+loginRouter.get("/user/current", verifyToken, async (req, res, next) => {
+  try {
+    const userId = req.user;
+    const currentUserInfo = await LoginService.getUserInfo({
+      userId,
+    });
+
+    if (currentUserInfo.errorMessage) {
+      throw new Error(currentUserInfo.errorMessage);
+    }
+
+    res.status(200).json({
+      status: "succ",
+      currentUserInfo,
+    });
+  } catch (error) {
+    next(error);
+  }
 });
 
 /* access token을 재발급 하기 위한 router.

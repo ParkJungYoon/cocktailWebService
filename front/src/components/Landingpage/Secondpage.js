@@ -27,7 +27,13 @@ export default function Secondpage() {
               Top 10 Cocktails
             </Typography>
             <Box className="buttonBox">
-              <Button variant="contained" className="top10Button">
+              <Button
+                variant="contained"
+                className="top10Button"
+                onClick={() => {
+                  navigate("./dictionary/top10");
+                }}
+              >
                 Explore
               </Button>
             </Box>
