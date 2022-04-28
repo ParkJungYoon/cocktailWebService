@@ -6,13 +6,15 @@ import CardMenu from "../components/dictionary/CardMenu";
 
 export default function Dictionary() {
   return (
-    <Grid container className="dictionary">
-      <Grid item xs={12}>
-        <Typography className="dictionaryTitle">Dictionary</Typography>
+    <div className="dictionary">
+      <Grid container>
+        <Grid item xs={12}>
+          <Typography className="dictionaryTitle">Dictionary</Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <CardMenu />
+        </Grid>
       </Grid>
-      <Grid item xs>
-        <CardMenu />
-      </Grid>
-    </Grid>
+    </div>
   );
 }

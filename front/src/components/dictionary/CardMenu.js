@@ -52,21 +52,12 @@ function a11yProps(index) {
 export default function CardMenu() {
   // 탭 기능
   const [cocktails, setCocktails] = useState([]);
-  const [top10Cocktails, setTop10Cocktails] = useState([]);
 
   useEffect(async () => {
     await Api.get("cocktails").then((res) => {
       setCocktails(res.data);
     });
   }, []);
-
-  useEffect(async () => {
-    await Api.get("rank10").then((res) => {
-      setTop10Cocktails(res.data);
-    });
-  }, []);
-  // 디테일 기능
-  const [isDetailOpen, setIsDetailOpen] = useState(false);
 
   // 필터기능
   const [searchCocktails, setSearchCocktails] = useState([]);
@@ -78,18 +69,12 @@ export default function CardMenu() {
     bgcolor: "rgba(64, 64, 64, 0.9);",
     position: "fixed",
     display: "flex",
-    width: "100px",
-    p: 5,
-    pr: 2,
+    py: 2,
+    px: 1,
     ml: 5,
-    mt: 5,
+    mt: 3,
   };
-  const searchBoxStyle = {
-    bgcolor: "rgba(64, 64, 64, 0.9);",
-    position: "fixed",
-    ml: 5,
-    mt: 30,
-  };
+
   const tabStyle = { color: "white" };
 
   // 탭 핸들링
@@ -100,8 +85,8 @@ export default function CardMenu() {
   return (
     <ThemeProvider theme={theme}>
       <Grid container>
-        <Grid item xs={2}>
-          <Box sx={boxStyle} width="100px">
+        <Grid item xs>
+          <Box sx={boxStyle}>
             <Tabs
               orientation="vertical"
               value={value}
@@ -112,26 +97,20 @@ export default function CardMenu() {
               <Tab sx={tabStyle} value={2} label="top 10" />
             </Tabs>
           </Box>
-          <Box sx={searchBoxStyle}>
-            <CardSearch setSearchCocktails={setSearchCocktails} />
-          </Box>
         </Grid>
-        <Grid item xs>
-          <TabPanel value={value} index={1}>
-            <AllCardList
-              cocktails={cocktails}
-              searchCocktails={searchCocktails}
-              isDetailOpen={isDetailOpen}
-              setIsDetailOpen={setIsDetailOpen}
-            />
-          </TabPanel>
+        <Grid item xs={10}>
+          <Grid item xs={12}></Grid>
+          <Grid item xs={12}>
+            <TabPanel value={value} index={1}>
+              <AllCardList
+                cocktails={cocktails}
+                searchCocktails={searchCocktails}
+                setSearchCocktails={setSearchCocktails}
+              />
+            </TabPanel>
+          </Grid>
           <TabPanel value={value} index={2}>
-            <Top10CardList
-              cocktails={cocktails}
-              searchCocktails={searchCocktails}
-              isDetailOpen={isDetailOpen}
-              setIsDetailOpen={setIsDetailOpen}
-            />
+            <Top10CardList cocktails={cocktails} />
           </TabPanel>
         </Grid>
       </Grid>
