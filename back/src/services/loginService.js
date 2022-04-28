@@ -59,7 +59,7 @@ class LoginService {
     }
   };
   static async getUserInfo({ userId }) {
-    const user = await UserModel.findById({ userId });
+    const user = await UserModel.findByUserId({ userId });
 
     // db에서 찾지 못한 경우, 에러 메시지 반환
     if (!user) {
