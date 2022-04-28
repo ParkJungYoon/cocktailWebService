@@ -45,17 +45,23 @@ export default function FormDialog({ open, handleLoginClose }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // "user/login" 엔드포인트로 post요청함.
+      // "/login" 엔드포인트로 post요청함.
       const res = await Api.post("login", {
         email,
         password,
       });
       // 유저 정보는 response의 data임.
       const user = res.data;
-      // JWT 토큰은 유저 정보의 token임.
-      const jwtToken = user.token;
+      // JWT 토큰_access 은 유저 정보의 accessToken임.
+      const jwtToken = user.accessToken;
       // sessionStorage에 "userToken"이라는 키로 JWT 토큰을 저장함.
       sessionStorage.setItem("userToken", jwtToken);
+      //JWT 토큰_refresh 은 유저 정보의 refreshToken임
+      const refreshToken = user.refreshToken;
+      // JWT 토큰_refersh 은 유저 정보의 refreshToken 임.
+      sessionStorage.setItem("refreshToken", refreshToken);
+
+      // sessionStorage.setItem("");
       // dispatch 함수를 이용해 로그인 성공 상태로 만듦.
       userDispatch({
         type: "LOGIN_SUCCESS",

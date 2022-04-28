@@ -45,7 +45,7 @@ function App() {
 
       console.log("%c sessionStorage에 토큰 있음.", "color: #d93d1a;");
     } catch {
-      console.log("%c SessionStorage에 토큰 없음.", "color: #d93d1a;");
+      console.log("%c sessionStorage에 토큰 없음.", "color: #d93d1a;");
     }
     // fetchCurrentUser 과정이 끝났으므로, isFetchCompleted 상태를 true로 바꿔줌
     setIsFetchCompleted(true);
@@ -62,7 +62,7 @@ function App() {
 
   return (
     <Router>
-      <Header />
+      <Header user={userState} />
       <Routes>
         <Route path="/" exact element={<Fullpage />} />
         <Route path="/introduce" element={<Introduce />} />
