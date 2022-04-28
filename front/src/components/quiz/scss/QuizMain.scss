@@ -1,8 +1,10 @@
 .finalPage{
     text-align: center;
     border: 3px solid white;
-    height: 170px;
-    display: flex;
+    height: 180px;
+    // display: flex;
+    display: grid;
+    padding: 1rem;
     align-items: center;
     justify-content: center;
     justify-items: center
@@ -26,7 +28,7 @@
 .restart {
     /* background-color: black; */
     color: white;
-    margin-top:0.35rem;
+    margin-top:0.7rem;
     padding: 5px;
     cursor: pointer;
     text-decoration: none;
