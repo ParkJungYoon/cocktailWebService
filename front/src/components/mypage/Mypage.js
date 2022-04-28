@@ -4,7 +4,7 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Bookmark from "./Bookmark";
 import UserTab from "./UserTab";
-import defaultImage from "../../img/userDefaultImg.jpg";
+import defaultImage from "../../imgs/userDefaultImg.jpg";
 
 function Mypage() {
   const aBoxStyle = {
