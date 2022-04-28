@@ -34,6 +34,20 @@
           }
         }
       },
+      "/cocktailrank": {
+        "get": {
+          "tags": ["Cocktail"],
+          "summary": "랭킹 1 ~ 10 칵테일 정보 전달",
+          "responses": {
+            "201": {
+              "description": "OK"
+            },
+            "404": {
+              "description": "Failed. Bad Request"
+            }
+          }
+        }
+      },
       "/cocktail": {
         "post": {
           "tags": ["Cocktail"],
