@@ -18,6 +18,10 @@ class UserModel {
     const user = await User.findOne({ _id });
     return user;
   };
+  static findByUserId = async ({ userId }) => {
+    const user = await User.findOne({ _id: userId });
+    return user;
+  };
   static addUser = async (newUserData) => {
     const newUser = await User.create(newUserData);
     return newUser;
