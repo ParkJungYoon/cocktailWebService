@@ -3,36 +3,22 @@ import "./scss/OxTable.scss";
 
 const OxTable = (props) => {
   let splitChar = props.ox.split("");
-
+  let lst = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   return (
     <>
       <table>
         <td className="OutlineStyle">
           <tr>
             <td>NO.</td>
-            <td>Q1.</td>
-            <td>Q2.</td>
-            <td>Q3.</td>
-            <td>Q4.</td>
-            <td>Q5.</td>
-            <td>Q6.</td>
-            <td>Q7.</td>
-            <td>Q8.</td>
-            <td>Q9.</td>
-            <td>Q10.</td>
+            {lst.map((i) => (
+              <td>Q.{i + 1}</td>
+            ))}
           </tr>
           <tr>
             <td>O/X</td>
-            <td>{splitChar[0]}</td>
-            <td>{splitChar[1]}</td>
-            <td>{splitChar[2]}</td>
-            <td>{splitChar[3]}</td>
-            <td>{splitChar[4]}</td>
-            <td>{splitChar[5]}</td>
-            <td>{splitChar[6]}</td>
-            <td>{splitChar[7]}</td>
-            <td>{splitChar[8]}</td>
-            <td>{splitChar[9]}</td>
+            {lst.map((i) => (
+              <td>{splitChar[i]}</td>
+            ))}
           </tr>
         </td>
       </table>
