@@ -14,7 +14,11 @@ class UserModel {
     const user = User.findOne({ email });
     return user;
   };
-  static findById = async ({ userId }) => {
+  static findById = async ({ _id }) => {
+    const user = await User.findOne({ _id });
+    return user;
+  };
+  static findByUserId = async ({ userId }) => {
     const user = await User.findOne({ _id: userId });
     return user;
   };
