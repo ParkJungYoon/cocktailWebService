@@ -8,8 +8,8 @@ import {
   Container,
   Box,
 } from "@mui/material";
-import QuizMain from "./quizMain/QuizMain";
-import bgImg from "./bgImg.jpg";
+import QuizMain from "../components/quiz/QuizMain";
+import bgImg from "../components/quiz/img/bgImg.jpg";
 
 function Quiz() {
   const [start, setStart] = useState(0);

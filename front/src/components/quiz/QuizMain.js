@@ -1,13 +1,13 @@
 /* eslint no-restricted-globals: ["off"] */
 import React, { useState } from "react";
-import Question from "../question/Question";
-import Answer from "../answer/Answer";
-import Correct from "../correct/Correct";
-import "./QuizMain.css";
-import QuestionImg from "../questionImg/QuestionImg";
-import StandardShaker from "../questionImg/StandardShaker.jpg";
 import { Container, Box, Grid } from "@mui/material";
-import OxTable from "../oxTable/OxTable";
+import "./scss/QuizMain.scss";
+import Question from "./Question";
+import QuestionImg from "./QuestionImg";
+import Answer from "./Answer";
+import Correct from "./Correct";
+import OxTable from "./OxTable";
+import StandardShaker from "./img/StandardShaker.jpg";
 
 function QuizMain(props) {
   const [score, setScore] = useState(0);
@@ -93,10 +93,6 @@ function QuizMain(props) {
     setClickedAnswer(0);
   };
 
-  // const split = (ox) => {
-  //   let stringToArray = ox.split("");
-  // }
-
   return (
     <div className="Content">
       {step <= Object.keys(state.quiestions).length && disable === false ? (
@@ -161,7 +157,6 @@ function QuizMain(props) {
                 >
                   RESTART
                 </div>
-                {/* <Aaa setStep={setStep} setDisable={setDisable}></Aaa> */}
               </div>
             </div>
             <Grid mt={1}>

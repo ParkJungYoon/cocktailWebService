@@ -16,7 +16,7 @@ import Dictionary from "./components/dictionary/Dictionary";
 import Like from "./components/mypage/Like";
 import UserInfo from "./components/mypage/UserInfo";
 import UserTab from "./components/mypage/UserTab";
-import QuizPage from "./components/quiz/QuizPage";
+import QuizPage from "./pages/QuizPage";
 
 //JY
 import SkeletonFunc from "./components/test/SkeletonFunc";

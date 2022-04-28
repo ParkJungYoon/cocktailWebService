@@ -1,5 +1,4 @@
 import React from "react";
-// import './Question.css';
 import { Card, CardMedia } from "@mui/material";
 
 const QuestionImg = (props) => {
