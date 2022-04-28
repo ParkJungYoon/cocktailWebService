@@ -11,7 +11,7 @@ const OxTable = (props) => {
           <tr>
             <td>NO.</td>
             {lst.map((i) => (
-              <td>Q.{i + 1}</td>
+              <td>Q{i + 1}.</td>
             ))}
           </tr>
           <tr>
