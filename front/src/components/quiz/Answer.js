@@ -1,5 +1,5 @@
 import React from "react";
-import "./scss/Answer.scss";
+import "../../scss/Answer.scss";
 
 const Answer = (props) => {
   let answers = Object.keys(props.answer).map((qAnswer, i) => (

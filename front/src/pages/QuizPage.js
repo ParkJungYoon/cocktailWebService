@@ -9,7 +9,7 @@ import {
   Box,
 } from "@mui/material";
 import QuizMain from "../components/quiz/QuizMain";
-import bgImg from "../components/quiz/img/bgImg.jpg";
+import bgImg from "../imgs/bgImg.jpg";
 
 function Quiz() {
   const [start, setStart] = useState(0);

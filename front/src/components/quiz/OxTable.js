@@ -1,5 +1,5 @@
 import React from "react";
-import "./scss/OxTable.scss";
+import "../../scss/OxTable.scss";
 
 const OxTable = (props) => {
   let splitChar = props.ox.split("");

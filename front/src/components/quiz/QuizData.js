@@ -1,4 +1,4 @@
-import StandardShaker from "./img/StandardShaker.jpg";
+import StandardShaker from "../../imgs/StandardShaker.jpg";
 
 const state = {
   questions: {
