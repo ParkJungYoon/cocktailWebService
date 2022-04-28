@@ -21,9 +21,10 @@ function QuizMain(props) {
     height: "3px",
     borderRadius: "5px",
   };
+  const QuestionNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   const state = {
-    quiestions: {
+    questions: {
       1: "Q1. 술에 술을 섞거나 술에 청량음료나 과즙 음료, 기타 부재료를 이용하여 혼합시킨 것은?",
       2: "Q2. 다음 기구의 이름은?",
       3: "Q3. 다음 설명으로 틀린 것은?",
@@ -95,9 +96,9 @@ function QuizMain(props) {
 
   return (
     <div className="Content">
-      {step <= Object.keys(state.quiestions).length && disable === false ? (
+      {step <= Object.keys(state.questions).length && disable === false ? (
         <>
-          <Question question={state.quiestions[step]} />
+          <Question question={state.questions[step]} />
 
           <Grid container mb="3%">
             {/* <Grid item xs={4} md={4}></Grid> */}
@@ -161,98 +162,18 @@ function QuizMain(props) {
             </div>
             <Grid mt={1}>
               <Grid style={{ display: "flex", justifyContent: "center" }}>
-                <div
-                  className="problem"
-                  onClick={() => {
-                    setStep(1);
-                    setDisable(true);
-                  }}
-                >
-                  1번
-                </div>
-                <div
-                  className="problem"
-                  onClick={() => {
-                    setStep(2);
-                    setDisable(true);
-                  }}
-                >
-                  2번
-                </div>
-                <div
-                  className="problem"
-                  onClick={() => {
-                    setStep(3);
-                    setDisable(true);
-                  }}
-                >
-                  3번
-                </div>
-                <div
-                  className="problem"
-                  onClick={() => {
-                    setStep(4);
-                    setDisable(true);
-                  }}
-                >
-                  4번
-                </div>
-                <div
-                  className="problem"
-                  onClick={() => {
-                    setStep(5);
-                    setDisable(true);
-                  }}
-                >
-                  5번
-                </div>
-                {/* </Grid>
-              <Grid> */}
-                <div
-                  className="problem"
-                  onClick={() => {
-                    setStep(1);
-                    setDisable(true);
-                  }}
-                >
-                  1번
-                </div>
-                <div
-                  className="problem"
-                  onClick={() => {
-                    setStep(2);
-                    setDisable(true);
-                  }}
-                >
-                  2번
-                </div>
-                <div
-                  className="problem"
-                  onClick={() => {
-                    setStep(3);
-                    setDisable(true);
-                  }}
-                >
-                  3번
-                </div>
-                <div
-                  className="problem"
-                  onClick={() => {
-                    setStep(4);
-                    setDisable(true);
-                  }}
-                >
-                  4번
-                </div>
-                <div
-                  className="problem"
-                  onClick={() => {
-                    setStep(5);
-                    setDisable(true);
-                  }}
-                >
-                  5번
-                </div>
+                {QuestionNum.map((i) => (
+                  <Grid
+                    className="QuestionNum"
+                    key={i}
+                    onClick={() => {
+                      setStep(i + 1);
+                      setDisable(true);
+                    }}
+                  >
+                    {i}번
+                  </Grid>
+                ))}
               </Grid>
             </Grid>
           </Grid>
@@ -261,7 +182,7 @@ function QuizMain(props) {
       )}
       {disable === true ? (
         <div style={{ marginTop: "2rem" }}>
-          <Question question={state.quiestions[step]} />
+          <Question question={state.questions[step]} />
           <Grid container mb="3%">
             <Grid
               item
