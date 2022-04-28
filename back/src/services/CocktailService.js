@@ -33,6 +33,30 @@ class CocktailService {
     return result;
   }
 
+  /**
+   * 
+   * @param {// [0 ,0, 0, 0] => [E / I , N / S, T / F, J / P]} mbti 
+   * A / B => 0 보다 크면 A, 작으면 B
+   * @returns mbti 결과
+   */
+
+  static mbtiCheck = async ({ mbti }) => {
+
+    let check = ''
+
+    check += mbti[0] > 0 ? 'E' : 'I'
+    check += mbti[1] > 0 ? 'N' : 'S'
+    check += mbti[2] > 0 ? 'T' : 'F'
+    check += mbti[3] > 0 ? 'J' : 'P'
+    
+    const result = {
+      mbti : check,
+      cocktail : 'mojito'
+    }
+
+    return result;
+  }
+
 }
 
 export { CocktailService };
