@@ -9,6 +9,11 @@ class RankModel {
     const top10List = await Rank.find().where("rank").lte(10).sort("rank");
     return top10List;
   };
+
+  static cocktailRank = async ({ name }) => {
+    const cocktail = await Rank.findOne({ name });
+    return cocktail;
+  };
 }
 
 export { RankModel };
