@@ -134,10 +134,10 @@ function Header() {
             <LinkTab
               sx={{ width: "130px" }}
               className="navbarButton"
-              label="CLineTest"
+              label="Quiz"
               value="4"
               onClick={() => {
-                navigate("/clinetest");
+                navigate("/quiz");
               }}
             />
             <LinkTab
