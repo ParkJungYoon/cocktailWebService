@@ -1,12 +1,12 @@
 import React from "react";
 import ReactFullpage from "@fullpage/react-fullpage";
 
-import "../../scss/Landingpage.scss";
-import Firstpage from "./Firstpage";
-import Secondpage from "./Secondpage";
-import Thirdpage from "./Thirdpage";
+import "../scss/Landingpage.scss";
+import Firstpage from "../components/landingpage/Firstpage";
+import Secondpage from "../components/landingpage/Secondpage";
+import Thirdpage from "../components/landingpage/Thirdpage";
 
-const Fullpage = () => {
+export default function Landing() {
   return (
     <>
       <ReactFullpage
@@ -30,5 +30,4 @@ const Fullpage = () => {
       />
     </>
   );
-};
-export default Fullpage;
+}
