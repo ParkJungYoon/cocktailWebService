@@ -21,28 +21,26 @@ const findOrCreateUser = async ({ name, email }) => {
   return newUser;
 };
 
-// const getKakaoData = (req, token) => {
-//     let user;
-//     try{
-        
-//         user = await axios({
-//             method:'get',
-//             url:'https://kapi.kakao.com/v2/user/me',
-//             headers:{
-//                 Authorization: `Bearer ${token.data.access_token}`
-//             }//헤더에 내용을 보고 보내주겠다.
-//         })
-//     }catch(e){
-//         res.json(e.data);
-//     }
+const getKakaoData = async (req, token) => {
+    try{
+        let user;
+        user = await axios({
+            method:'get',
+            url:'https://kapi.kakao.com/v2/user/me',
+            headers:{
+                Authorization: `Bearer ${token.data.access_token}`
+            }//헤더에 내용을 보고 보내주겠다.
+        })
+
+        req.session.kakao = user.data;
+        //req.session = {['kakao'] : user.data};
+
+        console.log(req.session.kakao);
+        return req;
+    }catch(e){
+        return null;
+    }
+}
 
 
-//     req.session.kakao = user.data;
-//     //req.session = {['kakao'] : user.data};
-
-//     console.log(req.session.kakao);
-//     return req;
-// }
-
-
-module.exports = {config, findOrCreateUser}
+module.exports = {config, findOrCreateUser, getKakaoData}
