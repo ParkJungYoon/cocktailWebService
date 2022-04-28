@@ -167,7 +167,7 @@ function QuizMain(props) {
                     className="QuestionNum"
                     key={i}
                     onClick={() => {
-                      setStep(i + 1);
+                      setStep(i);
                       setDisable(true);
                     }}
                   >
