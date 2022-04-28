@@ -114,12 +114,28 @@ CocktailRouter.post("/cocktail/:name", verifyToken, async (req, res, next) => {
       throw new Error("업데이트 도중 에러가 발생했습니다.");
     }
 
-    res.status(200).json(cocktailList);
+    res.status(200).json(cocktail);
 
   } catch (error) {
     next(error);
   }
 
 });
+
+CocktailRouter.get("/cocktail/rank", async (req, res, next) => {
+  try {
+    const cocktail = await CocktailService.rank10Cocktail();
+
+    if (cocktail == null) {
+      throw new Error("업데이트 도중 에러가 발생했습니다.");
+    }
+
+    res.status(200).json(cocktail);
+
+  } catch (error) {
+    next(error);
+  }
+});
+
 
 export { CocktailRouter };

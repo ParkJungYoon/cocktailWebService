@@ -28,6 +28,11 @@ class CocktailService {
     return deleteResult;
   }
 
+  static rank10Cocktail = async () => {
+    const result = await CocktailModel.rankCocktail()
+    return result;
+  }
+
 }
 
 export { CocktailService };
