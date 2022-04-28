@@ -39,7 +39,7 @@
     "/login": {
       "post": {
         "tags": ["User"],
-        "summary": "login user Post",
+        "summary": "로그인",
         "parameters": [
           {
             "name": "body",
