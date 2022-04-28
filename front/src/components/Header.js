@@ -29,7 +29,6 @@ function LinkTab(props) {
 }
 
 function Header({ user }) {
-  console.log(user);
   const navigate = useNavigate();
   const { userState, userDispatch } = useContext(UserContext);
   // 전역상태에서 user가 null이 아니라면 로그인 성공 상태임.
