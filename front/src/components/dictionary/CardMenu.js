@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Typography, Tabs, Tab, Box, Grid } from "@mui/material";
-import { useNavigate } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import CardList from "./CardList";
-import CardListTop10 from "./CardListTop10";
+
+import * as Api from "../../api";
+import AllCardList from "./AllCardList";
+import Top10CardList from "./Top10CardList";
 import CardSearch from "./CardSearch";
-import TestDetailCockTail from "../test/TestDetailCocktail";
+
 const theme = createTheme({
   palette: {
     primary: {
@@ -17,7 +19,6 @@ const theme = createTheme({
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
-
   return (
     <div
       role="tabpanel"
@@ -48,16 +49,27 @@ function a11yProps(index) {
   };
 }
 
-export default function CardMenu({
-  cocktails,
-  top10Cocktails,
-  searchCocktails,
-  setSearchCocktails,
-  isDetailOpen,
-  setIsDetailOpen,
-  opendedCocktail,
-  setOpenedCocktail,
-}) {
+export default function CardMenu() {
+  // 탭 기능
+  const [cocktails, setCocktails] = useState([]);
+  const [top10Cocktails, setTop10Cocktails] = useState([]);
+
+  useEffect(async () => {
+    await Api.get("cocktails").then((res) => {
+      setCocktails(res.data);
+    });
+  }, []);
+
+  useEffect(async () => {
+    await Api.get("rank10").then((res) => {
+      setTop10Cocktails(res.data);
+    });
+  }, []);
+  // 디테일 기능
+  const [isDetailOpen, setIsDetailOpen] = useState(false);
+
+  // 필터기능
+  const [searchCocktails, setSearchCocktails] = useState([]);
   const navigate = useNavigate();
   const [value, setValue] = useState(1);
 
@@ -72,16 +84,15 @@ export default function CardMenu({
     ml: 5,
     mt: 5,
   };
-
   const searchBoxStyle = {
     bgcolor: "rgba(64, 64, 64, 0.9);",
     position: "fixed",
     ml: 5,
     mt: 30,
   };
-
   const tabStyle = { color: "white" };
 
+  // 탭 핸들링
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -105,28 +116,23 @@ export default function CardMenu({
             <CardSearch setSearchCocktails={setSearchCocktails} />
           </Box>
         </Grid>
-
         <Grid item xs>
-          {isDetailOpen ? (
-            <TestDetailCockTail
+          <TabPanel value={value} index={1}>
+            <AllCardList
+              cocktails={cocktails}
+              searchCocktails={searchCocktails}
+              isDetailOpen={isDetailOpen}
               setIsDetailOpen={setIsDetailOpen}
-              opendedCocktail={opendedCocktail}
             />
-          ) : (
-            <>
-              <TabPanel value={value} index={1}>
-                <CardList
-                  cocktails={cocktails}
-                  searchCocktails={searchCocktails}
-                  setOpenedCocktail={setOpenedCocktail}
-                  setIsDetailOpen={setIsDetailOpen}
-                />
-              </TabPanel>
-              <TabPanel value={value} index={2}>
-                <CardListTop10 top10Cocktails={top10Cocktails} />
-              </TabPanel>
-            </>
-          )}
+          </TabPanel>
+          <TabPanel value={value} index={2}>
+            <Top10CardList
+              cocktails={cocktails}
+              searchCocktails={searchCocktails}
+              isDetailOpen={isDetailOpen}
+              setIsDetailOpen={setIsDetailOpen}
+            />
+          </TabPanel>
         </Grid>
       </Grid>
     </ThemeProvider>

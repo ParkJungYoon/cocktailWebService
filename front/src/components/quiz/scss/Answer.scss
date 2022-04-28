@@ -4,6 +4,12 @@
     padding: 0;
     color: #FFFFFF;
     font-size: 20px;
+    .selectAnswer,
+    .selectAnswer:hover {
+        text-decoration: underline;
+        text-underline-position: under;
+        text-decoration-color: #FFFFFF;
+    }
 }
 .Answers li{
     text-align: left;
@@ -15,15 +21,4 @@
     text-decoration: underline;
     text-underline-position: under;
     text-decoration-color: #FFFFFF;
-}
-.Answers .selectAnswer,
-.Answers .selectAnswer:hover {
-    text-decoration: underline;
-    text-underline-position: under;
-    text-decoration-color: #FFFFFF;
-}
-
-.Answers[disabled] {
-    pointer-events: none;
-    /* opacity: 0.7; */
 }

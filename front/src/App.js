@@ -8,15 +8,15 @@ import {
   UserProvider,
 } from "./components/user/reducer/userReducer";
 import Header from "./components/Header";
-import Landing from "./pages/landing/Landing";
+import Landing from "./pages/Landing";
 import Introduce from "./components/introduce/Introduce";
 import Mypage from "./components/mypage/Mypage";
 import Bookmark from "./components/mypage/Bookmark";
-import Dictionary from "./pages/dictionary/Dictionary";
+import Dictionary from "./pages/Dictionary";
 import Like from "./components/mypage/Like";
 import UserInfo from "./components/mypage/UserInfo";
 import UserTab from "./components/mypage/UserTab";
-import QuizPage from "./components/quiz/QuizPage";
+import QuizPage from "./pages/QuizPage";
 
 //JY
 import SkeletonFunc from "./components/test/SkeletonFunc";

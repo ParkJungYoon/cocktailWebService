@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { Grid, InputBase } from "@mui/material";
+import React from "react";
+import { Grid } from "@mui/material";
 
-import Card from "./CardItem";
+import CardItem from "./CardItem";
 
-export default function CardList({
+export default function top10CardList({
   cocktails,
   searchCocktails,
-  setOpenedCocktail,
   setIsDetailOpen,
 }) {
   return (
@@ -25,13 +24,10 @@ export default function CardList({
           .map((cocktail, i) => {
             return (
               <Grid key={i} item md>
-                <Card
-                  name={cocktail.name}
-                  img={cocktail.imageUrl}
-                  ingredient={cocktail.ingredient}
-                  setOpenedCocktail={setOpenedCocktail}
+                <CardItem
+                  cocktail={cocktail}
                   setIsDetailOpen={setIsDetailOpen}
-                ></Card>
+                />
               </Grid>
             );
           })}
