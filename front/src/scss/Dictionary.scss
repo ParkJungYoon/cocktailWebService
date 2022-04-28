@@ -1,5 +1,5 @@
 $maincolor: #151516;
-$star1: "../img/star1.jpg";
+$star1: "../imgs/star1.jpg";
 
 .dictionary {
   background-image: url($star1);
@@ -20,10 +20,10 @@ $star1: "../img/star1.jpg";
   }
 }
 
-.card {
+.cardFront {
   width: 270px;
   height: 350px;
-  transition: 0.7s;
+  transition: 0.3s;
   transform-style: preserve-3d;
   transform: perspective(500px);
   .cocktailContent {
@@ -49,7 +49,36 @@ $star1: "../img/star1.jpg";
   .back {
     transform: rotateY(180deg);
   }
-  &:hover {
+}
+
+.cardBack {
+  width: 270px;
+  height: 350px;
+  transition: 0.3s;
+  transform-style: preserve-3d;
+  transform: perspective(500px);
+  transform: rotateY(180deg);
+  .cocktailContent {
+    border-top: 2px solid violet;
+    background-color: #404040;
+    .contentText {
+      color: white;
+    }
+    .moreButton {
+      color: white;
+    }
+  }
+  .front,
+  .back {
+    background-color: #404040;
+    color: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    position: absolute;
+    backface-visibility: hidden;
+  }
+  .back {
     transform: rotateY(180deg);
   }
 }

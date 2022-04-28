@@ -12,8 +12,7 @@ const verifyToken = async (req, res, next) => {
       });
     } else {
       const JWT_KEY = process.env.JWT_KEY;
-      const token = req.headers['authorization'].split(" ")[1];
-      console.log(token);
+      const token = req.headers["authorization"].split(" ")[1];
       const decoded = jwt.verify(token, JWT_KEY);
       req.user = decoded.userId;
       next();
