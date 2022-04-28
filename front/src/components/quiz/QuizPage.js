@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   Grid,
   Card,
@@ -11,6 +12,7 @@ import QuizMain from "./quizMain/QuizMain";
 import bgImg from "./bgImg.jpg";
 
 function Quiz() {
+  const [start, setStart] = useState(0);
   const quizGridStyle = {
     padding: "5% 15% 5% 15%",
     borderRadius: "2rem",
@@ -35,7 +37,17 @@ function Quiz() {
           }}
         >
           <Grid item xs={12} md={12} mt={13} height="720px" sx={quizGridStyle}>
-            <QuizMain></QuizMain>
+            {start === 1 ? (
+              <QuizMain></QuizMain>
+            ) : (
+              <button
+                onClick={() => {
+                  setStart(1);
+                }}
+              >
+                테스트 시작하기
+              </button>
+            )}
           </Grid>
         </Grid>
       </CardContent>
