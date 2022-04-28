@@ -1,11 +1,7 @@
 /* eslint no-restricted-globals: ["off"] */
 import React, { useState } from "react";
 import { Container, Box, Grid } from "@mui/material";
-<<<<<<< HEAD
-import "./scss/QuizMain.scss";
-=======
 import "../../scss/QuizMain.scss";
->>>>>>> 6d6d25d949215e5786fbe7b9dc4255de21d3e72b
 import Question from "./Question";
 import QuestionImg from "./QuestionImg";
 import Answer from "./Answer";

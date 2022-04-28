@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import StandardShaker from "./img/StandardShaker.jpg";
-=======
 import StandardShaker from "../../imgs/StandardShaker.jpg";
->>>>>>> 6d6d25d949215e5786fbe7b9dc4255de21d3e72b
 
 const state = {
   questions: {
