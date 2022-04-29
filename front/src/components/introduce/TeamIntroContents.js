@@ -175,56 +175,6 @@ function TeamIntro() {
             </Grid>
           </Grid>
         </Grid>
-        {/* 왼쪽 그림 */}
-        <Grid mb={3}>
-          <Grid container sx={textAlignCenter}>
-            <Grid item xs={6} md={6} sx={imageAlignRight}>
-              <Box>
-                <img
-                  className=""
-                  src={UserDefaultImg}
-                  alt=""
-                  width="70%"
-                  // height="80%"
-                  style={{ borderRadius: "1rem" }}
-                />
-              </Box>
-            </Grid>
-            <Grid className="infro" item xs={6} md={6}>
-              {/* 내용 입력 */}
-              <Grid ml={12}>
-                <Grid mb={1}>name(position)</Grid>
-                <Grid mb={1}>소감</Grid>
-                <Grid mb={1}>Favorite Cocktail : + 해당 칵테일로 Link?</Grid>
-              </Grid>
-            </Grid>
-          </Grid>
-        </Grid>
-        {/* 오른쪽 그림 */}
-        <Grid mb={3}>
-          <Grid container sx={textAlignCenter}>
-            <Grid className="infro" item xs={6} md={6}>
-              {/* 내용 입력 */}
-              <Grid ml={12}>
-                <Grid>name (position)</Grid>
-                <Grid>소감</Grid>
-                <Grid>Favorite Cocktail : + 해당 칵테일로 Link?</Grid>
-              </Grid>
-            </Grid>
-            <Grid item xs={6} md={6} sx={imageAlignLeft}>
-              <Box>
-                <img
-                  className=""
-                  src={UserDefaultImg}
-                  alt=""
-                  width="70%"
-                  // height="80%"
-                  style={{ borderRadius: "1rem" }}
-                />
-              </Box>
-            </Grid>
-          </Grid>
-        </Grid>
       </Box>
     </div>
   );
