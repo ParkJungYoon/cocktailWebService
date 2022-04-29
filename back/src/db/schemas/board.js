@@ -6,8 +6,7 @@ const boardSchema = new Schema({
     ref: "User",
   },
   comment: {
-    type: Schema.Types.ObjectId,
-    ref: "Comment",
+    type: String,
   },
   context: {
     type: String,

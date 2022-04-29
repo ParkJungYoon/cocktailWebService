@@ -1,0 +1,51 @@
+{
+  "paths": {
+    "/addBoard/{id}": {
+      "post": {
+        "tags": ["Board"],
+        "summary": "게시판 추가",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "context": "body"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "JWT access token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Board": {
+      "properties": {
+        "writer": {
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "context": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
