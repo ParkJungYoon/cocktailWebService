@@ -29,4 +29,5 @@ BoardRouter.delete("/board/:id", verifyToken, async (req, res, next) => {
     next(error);
   }
 });
+
 export { BoardRouter };
