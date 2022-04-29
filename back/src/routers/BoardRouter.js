@@ -30,4 +30,21 @@ BoardRouter.delete("/board/:id", verifyToken, async (req, res, next) => {
   }
 });
 
+BoardRouter.put("/board/:id", verifyToken, async (req, res, next) => {
+  try {
+    const writer = req.user;
+    const boardId = req.params.id;
+    const context = req.body.context;
+
+    const modifiedBoard = await BoardService.modify({
+      writer,
+      boardId,
+      context,
+    });
+
+    res.status(200).json(modifiedBoard);
+  } catch (error) {
+    next(error);
+  }
+});
 export { BoardRouter };

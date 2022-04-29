@@ -15,6 +15,16 @@ class BoardModel {
     const deleteBoard = await Board.findByIdAndDelete({ _id: boardId });
     return deleteBoard;
   };
+
+  static modify = async (filter, updateData) => {
+    const option = { returnOriginal: false };
+    const modifiedBoard = await Board.findOneAndUpdate(
+      filter,
+      updateData,
+      option
+    );
+    return modifiedBoard;
+  };
 }
 
 export { BoardModel };
