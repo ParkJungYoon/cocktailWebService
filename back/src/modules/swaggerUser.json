@@ -37,22 +37,24 @@
       }
     },
     "/login/modify": {
-      "post": {
+      "put": {
         "tags": ["User"],
         "summary": "회원 정보 수정",
         "parameters": [
           {
             "name": "authorization",
             "in": "header",
-            "description": "JWT access token",
+            "description": "JWT access token은 앞에 'Bearer ' 꼭 붙여서 request 해야합니다.",
             "required": true,
             "type": "string"
           },
           {
             "name": "body",
             "in": "body",
+            "description": "이메일, 패스워드, 이름 모든 값을 요청하지 않아도 됩니다.",
             "email": "body",
             "password": "body",
+            "name": "body",
             "schema": {
               "$ref": "#/definitions/User"
             }
