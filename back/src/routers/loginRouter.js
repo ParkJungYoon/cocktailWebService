@@ -19,16 +19,16 @@ loginRouter.delete("/login/delete", verifyToken, async (req, res, next) => {
   }
 });
 
-loginRouter.post("/login/modify", verifyToken, async (req, res, next) => {
+loginRouter.put("/login/modify", verifyToken, async (req, res, next) => {
   try {
-    const { email, password, name } = req.body;
     const userId = req.user;
-    const updatedUser = await LoginService.modify({
-      userId,
-      email,
-      password,
-      name,
-    });
+    const email = req.body.email ?? null;
+    const password = req.body.password ?? null;
+    const name = req.body.name ?? null;
+
+    const toUpdate = { email, password, name };
+    const updatedUser = await LoginService.modify({ userId, toUpdate });
+
     if (updatedUser.errorMessage) {
       throw new Error(updatedUser.errorMessage);
     }

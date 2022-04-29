@@ -8,7 +8,7 @@ const verifyToken = async (req, res, next) => {
     if (!req.headers["authorization"]) {
       res.status(401).json({
         status: "fail",
-        mesage: "token이 없습니다",
+        message: "token이 없습니다",
       });
     } else {
       const JWT_KEY = process.env.JWT_KEY;
