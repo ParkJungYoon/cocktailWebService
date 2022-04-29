@@ -9,7 +9,6 @@ import Correct from "./Correct";
 import OxTable from "./OxTable";
 import state from "./QuizData";
 import bgImg from "../../imgs/bgImg.jpg";
-// import userDefaultImg from "../../imgs/userDefaultImg.jpg";
 import quizresult from "../../imgs/quizresult.jpg";
 
 function QuizMain(props) {
