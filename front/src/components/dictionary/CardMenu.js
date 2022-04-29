@@ -31,7 +31,7 @@ export default function CardMenu() {
   // 필터기능
   const [searchCocktails, setSearchCocktails] = useState([]);
   const navigate = useNavigate();
-  const [value, setValue] = useState(1);
+  const [value, setValue] = useState("0");
 
   // 탭 핸들링
   const handleChange = (event, newValue) => {
@@ -56,20 +56,27 @@ export default function CardMenu() {
       <TabContext value={value}>
         <Box sx={boxStyle}>
           <TabList onChange={handleChange}>
-            <Tab sx={tabStyle} value={1} label="dictionary" />
-            <Tab sx={tabStyle} value={3} label="top 10" />
+            <Tab sx={tabStyle} value={"0"} label="dictionary" />
+            <Tab sx={tabStyle} value={"1"} label="top 10" />
+            <Tab sx={tabStyle} value={"2"} label="likes" />
             <CardSearch setSearchCocktails={setSearchCocktails} />
           </TabList>
         </Box>
 
-        <TabPanel value={1}>
+        <TabPanel value={"0"}>
           <AllCardList
             cocktails={cocktails}
             searchCocktails={searchCocktails}
           />
         </TabPanel>
-        <TabPanel value={3}>
-          <Top10CardList cocktails={cocktails} />
+        <TabPanel value={"1"}>
+          <Top10CardList
+            cocktails={cocktails}
+            searchCocktails={searchCocktails}
+          />
+        </TabPanel>
+        <TabPanel value={"2"}>
+          <Box sx={{ color: "white", ml: 20 }}>준비중입니다</Box>
         </TabPanel>
       </TabContext>
     </ThemeProvider>

@@ -31,7 +31,7 @@ export default function Secondpage() {
                 variant="contained"
                 className="top10Button"
                 onClick={() => {
-                  navigate("./dictionary/top10");
+                  navigate("/dictionary");
                 }}
               >
                 Explore

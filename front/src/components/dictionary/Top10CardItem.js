@@ -8,6 +8,7 @@ import {
   CardMedia,
   CardContent,
   Typography,
+  Chip,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import FavoriteIcon from "@mui/icons-material/Favorite";
@@ -33,17 +34,17 @@ export default function Top10CardItem({ cocktail }) {
     setExpanded(!expanded);
   };
   const iconStyle = {
-    color: "pink",
+    color: "plum",
   };
-  console.log(cocktail);
   return (
     <>
       <Card
         sx={{
+          mx: "auto",
           maxWidth: 600,
           backgroundColor: "rgba(64, 64, 64, 0.5)",
           color: "white",
-          minHeight: "800px",
+          minHeight: 900,
         }}
       >
         <IconButton sx={iconStyle}>
@@ -59,6 +60,17 @@ export default function Top10CardItem({ cocktail }) {
         <Typography sx={{ m: 1 }} variant="h4">
           {cocktail.name}
         </Typography>
+        <CardContent>
+          {cocktail.taste.map((t, i) => {
+            return (
+              <Chip
+                key={i}
+                sx={{ color: "white", bgcolor: "plum", mr: 1 }}
+                label={`#${t}`}
+              />
+            );
+          })}
+        </CardContent>
         <CardContent>
           <Typography variant="body1">{cocktail.description}</Typography>
         </CardContent>
