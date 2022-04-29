@@ -36,6 +36,38 @@
         }
       }
     },
+    "/login/modify": {
+      "post": {
+        "tags": ["User"],
+        "summary": "회원 정보 수정",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "JWT access token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "email": "body",
+            "password": "body",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
+    },
     "/login": {
       "post": {
         "tags": ["User"],

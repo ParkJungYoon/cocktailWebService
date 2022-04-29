@@ -2,6 +2,7 @@ import { Router } from "express";
 import { LoginService } from "../services/loginService";
 import { verifyToken } from "../middlewares/verifyToken";
 import { verifyRefresh } from "../middlewares/verifyRefresh";
+import { loginValidation } from "../middlewares/validation";
 
 const loginRouter = Router();
 
@@ -37,10 +38,15 @@ loginRouter.post("/login/modify", verifyToken, async (req, res, next) => {
   }
 });
 
-loginRouter.post("/login", async (req, res, next) => {
+loginRouter.post("/login", loginValidation, async (req, res, next) => {
   try {
     const { email, password } = req.body;
     const discoveredUser = await LoginService.findUser({ email, password });
+
+    if (discoveredUser.errorMessage) {
+      throw new Error(discoveredUser.errorMessage);
+    }
+
     res.status(200).json(discoveredUser);
   } catch (error) {
     next(error);
@@ -50,18 +56,15 @@ loginRouter.post("/login", async (req, res, next) => {
 loginRouter.get("/user/current", verifyToken, async (req, res, next) => {
   try {
     const userId = req.user;
-    const currentUserInfo = await LoginService.getUserInfo({
+    const discoveredUser = await LoginService.getUserInfo({
       userId,
     });
 
-    if (currentUserInfo.errorMessage) {
-      throw new Error(currentUserInfo.errorMessage);
+    if (discoveredUser.errorMessage) {
+      throw new Error(discoveredUser.errorMessage);
     }
 
-    res.status(200).json({
-      status: "succ",
-      currentUserInfo,
-    });
+    res.status(200).json(discoveredUser);
   } catch (error) {
     next(error);
   }

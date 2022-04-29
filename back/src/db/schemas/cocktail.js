@@ -24,7 +24,7 @@ const CocktailSchema = new Schema({
   userId: {
     type: Schema.Types.ObjectId,
     ref: "User",
-  },
+  }
 });
 
 const Cocktail = model("Cocktail", CocktailSchema);

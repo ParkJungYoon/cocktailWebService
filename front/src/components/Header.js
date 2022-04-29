@@ -28,7 +28,7 @@ function LinkTab(props) {
   );
 }
 
-function Header() {
+function Header({ user }) {
   const navigate = useNavigate();
   const { userState, userDispatch } = useContext(UserContext);
   // 전역상태에서 user가 null이 아니라면 로그인 성공 상태임.
@@ -60,6 +60,8 @@ function Header() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  // user nav
+  const handleUserNav = () => {};
 
   return (
     <ThemeProvider theme={theme}>
@@ -67,7 +69,9 @@ function Header() {
         <div className="navbarAccount">
           {isLogin ? (
             <>
-              <Link className="navbarButton">NickName</Link>
+              <Link className="navbarButton" onClick={handleUserNav}>
+                {userState.user.name}
+              </Link>
               <span>/</span>
               <Link onClick={logout} className="account">
                 Log Out
