@@ -86,15 +86,15 @@ export default function Top10CardItem({ cocktail }) {
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            <Typography paragraph>Description:</Typography>
-            <Typography paragraph>{cocktail.description}</Typography>
-            <Typography paragraph>Ingrdient:</Typography>
-            <Typography paragraph>{cocktail.ingredient}</Typography>
-            <Typography paragraph>{cocktail.taste}</Typography>
-            <Typography>
-              Set aside off of the heat to let rest for 10 minutes, and then
-              serve.
-            </Typography>
+            <Typography paragraph>[재료]</Typography>
+            {cocktail.ingredient.map((v, i) => {
+              return (
+                <Typography paragraph key={i}>
+                  {i + 1}. {v}
+                </Typography>
+              );
+            })}
+            <Typography>여기다가 차트 넣어야쥐</Typography>
           </CardContent>
         </Collapse>
       </Card>
