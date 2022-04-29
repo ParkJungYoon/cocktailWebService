@@ -27,30 +27,29 @@ function Quiz() {
         marginRight: "5%",
       }}
     >
-      <CardContent>
-        <Grid
-          container
-          justifyContent="center"
-          sx={{
-            fontSize: "15px",
-            textAlign: "center",
-          }}
-        >
-          <Grid item xs={12} md={12} mt={13} height="720px" sx={quizGridStyle}>
-            {start === 1 ? (
-              <QuizMain></QuizMain>
-            ) : (
-              <button
-                onClick={() => {
-                  setStart(1);
-                }}
-              >
-                테스트 시작하기
-              </button>
-            )}
-          </Grid>
+      <Grid
+        container
+        justifyContent="center"
+        sx={{
+          fontSize: "15px",
+          textAlign: "center",
+        }}
+      >
+        <Grid item xs={12} md={12} mt={22}></Grid>
+        <Grid item xs={12} md={12} height="720px" sx={quizGridStyle}>
+          {start === 1 ? (
+            <QuizMain></QuizMain>
+          ) : (
+            <button
+              onClick={() => {
+                setStart(1);
+              }}
+            >
+              테스트 시작하기
+            </button>
+          )}
         </Grid>
-      </CardContent>
+      </Grid>
     </Box>
   );
 }

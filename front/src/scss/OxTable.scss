@@ -3,14 +3,16 @@ table {
     background-color: black;
 }
 tr{
-    font-size:1.5rem;
     border-style: none;
 }
 td {
     border: 2px solid rgb(255, 255, 255);
     color: white;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 .OutlineStyle {
     border-style: none;
+    .Number:hover {
+        cursor: pointer;
+    }
 }

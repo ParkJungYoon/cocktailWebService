@@ -2,8 +2,11 @@ import React from "react";
 import "../../scss/OxTable.scss";
 
 const OxTable = (props) => {
+  const setStep = props.setStep;
+  const setDisable = props.setDisable;
   let splitChar = props.ox.split("");
   let lst = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
   return (
     <>
       <table>
@@ -11,7 +14,16 @@ const OxTable = (props) => {
           <tr>
             <td>NO.</td>
             {lst.map((i) => (
-              <td>Q{i + 1}.</td>
+              <td
+                className="Number"
+                key={i}
+                onClick={() => {
+                  setStep(i + 1);
+                  setDisable(true);
+                }}
+              >
+                Q{i + 1}.
+              </td>
             ))}
           </tr>
           <tr>

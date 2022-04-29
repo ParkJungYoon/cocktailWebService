@@ -86,7 +86,11 @@ function QuizMain(props) {
             <div className="finalPage">
               <p>SCORE : {score}</p>
               {/* <p>MARKING : {marking}</p> */}
-              <OxTable ox={ox}></OxTable>
+              <OxTable
+                ox={ox}
+                setStep={setStep}
+                setDisable={setDisable}
+              ></OxTable>
               <div
                 className="restart"
                 onClick={() => {
@@ -96,22 +100,6 @@ function QuizMain(props) {
                 RESTART
               </div>
             </div>
-            <Grid mt={1}>
-              <Grid style={{ display: "flex", justifyContent: "center" }}>
-                {QuestionNum.map((i) => (
-                  <Grid
-                    className="QuestionNum"
-                    key={i}
-                    onClick={() => {
-                      setStep(i);
-                      setDisable(true);
-                    }}
-                  >
-                    {i}번
-                  </Grid>
-                ))}
-              </Grid>
-            </Grid>
           </Grid>
           <Grid item xs={3} md={3} mt={2} pl={2}></Grid>
         </Grid>

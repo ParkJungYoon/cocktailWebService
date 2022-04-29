@@ -4,31 +4,21 @@
     height: 180px;
     // display: flex;
     display: grid;
-    padding: 1rem;
+    padding: 1.2rem;
     align-items: center;
     justify-content: center;
     justify-items: center
 }
-.finalPage h1{
-    text-align: center;
-    margin: 15px 0;
-    font-size: 35px;
-    font-family: Arial,sans-serif;
-    font-weight: bold;
-    color: #52088b;
-    text-transform: none;
-    text-shadow: none;
-}
 .finalPage p {
-    font-size: 25px;
+    font-size: 30px;
+    font-family: Arial,sans-serif;
     color: #ffffff;
     font-weight: bold;
-
 }
 .restart {
     /* background-color: black; */
     color: white;
-    margin-top:0.7rem;
+    margin-top:0.3rem;
     padding: 5px;
     cursor: pointer;
     text-decoration: none;
@@ -38,12 +28,4 @@
 }
 .restart:hover {
     background-color: rgba(128, 128, 128, 0.5);
-}
-.QuestionNum {
-    color: rgb(255, 255, 255);
-    padding: 5px;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 1rem;
-    /* font-weight: bold; */
 }
