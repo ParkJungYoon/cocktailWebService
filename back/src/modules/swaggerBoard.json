@@ -1,5 +1,19 @@
 {
   "paths": {
+    "/boardList": {
+      "get": {
+        "tags": ["Board"],
+        "summary": "게시판 전체 불러오기",
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
+    },
     "/board/{id}": {
       "post": {
         "tags": ["Board"],
@@ -36,7 +50,7 @@
       },
       "delete": {
         "tags": ["Board"],
-        "summary": "게시판 추가",
+        "summary": "게시판 삭제",
         "parameters": [
           {
             "name": "Authorization",

@@ -24,6 +24,84 @@
         "responses": { "200": { "description": "OK" } }
       }
     },
+    "/boardList": {
+      "get": {
+        "tags": ["Board"],
+        "summary": "게시판 전체 불러오기",
+        "responses": {
+          "201": { "description": "OK" },
+          "404": { "description": "Failed. Bad Request" }
+        }
+      }
+    },
+    "/board/{id}": {
+      "post": {
+        "tags": ["Board"],
+        "summary": "게시판 추가",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "context": "body",
+            "schema": { "$ref": "#/definitions/Board" }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "JWT access token",
+            "required": true,
+            "type": "string"
+          },
+          { "in": "path", "name": "id" }
+        ],
+        "responses": {
+          "201": { "description": "OK" },
+          "404": { "description": "Failed. Bad Request" }
+        }
+      },
+      "delete": {
+        "tags": ["Board"],
+        "summary": "게시판 삭제",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "JWT access token",
+            "required": true,
+            "type": "string"
+          },
+          { "in": "path", "name": "id" }
+        ],
+        "responses": {
+          "201": { "description": "OK" },
+          "404": { "description": "Failed. Bad Request" }
+        }
+      },
+      "put": {
+        "tags": ["Board"],
+        "summary": "게시판 수정",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "context": "body",
+            "schema": { "$ref": "#/definitions/Board" }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "JWT access token",
+            "required": true,
+            "type": "string"
+          },
+          { "in": "path", "name": "id" }
+        ],
+        "responses": {
+          "201": { "description": "OK" },
+          "404": { "description": "Failed. Bad Request" }
+        }
+      }
+    },
     "/cocktails/{name}": {
       "get": {
         "tags": ["Cocktail"],
@@ -355,98 +433,16 @@
           "404": { "description": "Failed. Bad Request" }
         }
       }
-    },
-    "/addBoard/{id}": {
-      "post": {
-        "tags": ["Board"],
-        "summary": "게시판 추가",
-        "parameters": [
-          { "in": "body", "name": "body", "context": "body" },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "JWT access token",
-            "required": true,
-            "type": "string"
-          },
-          { "in": "path", "name": "id" }
-        ],
-        "responses": {
-          "201": { "description": "OK" },
-          "404": { "description": "Failed. Bad Request" }
-        }
-      }
-    },
-    "/board/{id}": {
-      "post": {
-        "tags": ["Board"],
-        "summary": "게시판 추가",
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "context": "body",
-            "schema": { "$ref": "#/definitions/Board" }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "JWT access token",
-            "required": true,
-            "type": "string"
-          },
-          { "in": "path", "name": "id" }
-        ],
-        "responses": {
-          "201": { "description": "OK" },
-          "404": { "description": "Failed. Bad Request" }
-        }
-      },
-      "delete": {
-        "tags": ["Board"],
-        "summary": "게시판 추가",
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "JWT access token",
-            "required": true,
-            "type": "string"
-          },
-          { "in": "path", "name": "id" }
-        ],
-        "responses": {
-          "201": { "description": "OK" },
-          "404": { "description": "Failed. Bad Request" }
-        }
-      },
-      "put": {
-        "tags": ["Board"],
-        "summary": "게시판 수정",
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "context": "body",
-            "schema": { "$ref": "#/definitions/Board" }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "JWT access token",
-            "required": true,
-            "type": "string"
-          },
-          { "in": "path", "name": "id" }
-        ],
-        "responses": {
-          "201": { "description": "OK" },
-          "404": { "description": "Failed. Bad Request" }
-        }
-      }
     }
   },
   "definitions": {
+    "Board": {
+      "properties": {
+        "writer": { "type": "string" },
+        "comment": { "type": "string" },
+        "context": { "type": "string" }
+      }
+    },
     "Cocktail": {
       "properties": {
         "name": { "type": "string" },
@@ -481,13 +477,6 @@
       "properties": {
         "email": { "type": "string" },
         "password": { "type": "string" }
-      }
-    },
-    "Board": {
-      "properties": {
-        "writer": { "type": "string" },
-        "comment": { "type": "string" },
-        "context": { "type": "string" }
       }
     }
   }

@@ -25,6 +25,11 @@ class BoardModel {
     );
     return modifiedBoard;
   };
+
+  static boardList = async () => {
+    const boardList = await Board.find();
+    return boardList;
+  };
 }
 
 export { BoardModel };

@@ -41,6 +41,11 @@ class BoardService {
 
     return modifiedBoard;
   };
+
+  static boardList = async () => {
+    const boardList = await BoardModel.boardList();
+    return boardList;
+  };
 }
 
 export { BoardService };

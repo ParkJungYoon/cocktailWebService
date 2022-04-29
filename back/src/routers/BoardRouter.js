@@ -47,4 +47,13 @@ BoardRouter.put("/board/:id", verifyToken, async (req, res, next) => {
     next(error);
   }
 });
+
+BoardRouter.get("/boardlist", async (req, res, next) => {
+  try {
+    const boardList = await BoardService.boardList();
+    res.status(200).json(boardList);
+  } catch (error) {
+    next(error);
+  }
+});
 export { BoardRouter };
