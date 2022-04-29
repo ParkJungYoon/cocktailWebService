@@ -2,9 +2,9 @@ import React from "react";
 import ReactFullpage from "@fullpage/react-fullpage";
 
 import "../scss/Landingpage.scss";
-import Firstpage from "../components/Landingpage/Firstpage";
-import Secondpage from "../components/Landingpage/Secondpage";
-import Thirdpage from "../components/Landingpage/Thirdpage";
+import Firstpage from "../components/landing/Firstpage";
+import Secondpage from "../components/landing/Secondpage";
+import Thirdpage from "../components/landing/Thirdpage";
 
 export default function Landing() {
   return (
