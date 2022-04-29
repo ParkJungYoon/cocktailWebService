@@ -1,6 +1,6 @@
 /* eslint no-restricted-globals: ["off"] */
 import React, { useState } from "react";
-import { Container, Box, Grid } from "@mui/material";
+import { Box, Grid, LinearProgress } from "@mui/material";
 import "../../scss/QuizMain.scss";
 import Question from "./Question";
 import QuestionImg from "./QuestionImg";
@@ -8,24 +8,50 @@ import Answer from "./Answer";
 import Correct from "./Correct";
 import OxTable from "./OxTable";
 import state from "./QuizData";
+import bgImg from "../../imgs/bgImg.jpg";
+// import userDefaultImg from "../../imgs/userDefaultImg.jpg";
+import quizresult from "../../imgs/quizresult.jpg";
 
 function QuizMain(props) {
   const [score, setScore] = useState(0);
   const [step, setStep] = useState(1);
   const [clickedAnswer, setClickedAnswer] = useState(0);
-  const [marking, setMarking] = useState("");
   const [disable, setDisable] = useState(false);
   const [ox, setOx] = useState("");
+  // const [marking, setMarking] = useState("");
   const whiteBarStyle = {
     backgroundColor: "white",
     height: "3px",
     borderRadius: "5px",
   };
-  const QuestionNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const QuestionImgStyle = {
     display: "flex",
-    justifyContent: "center",
-    marginRight: "5rem",
+    justifyContent: "left",
+  };
+  const progress = {
+    padding: "5% 15% 5% 15%",
+    borderRadius: "2rem",
+    backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url(${bgImg})`,
+    backgroundSize: "cover",
+  };
+  const result = {
+    padding: "5% 15% 5% 15%",
+    borderRadius: "2rem",
+    backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9) ), url(${quizresult})`,
+    backgroundSize: "cover",
+  };
+  const progressBarAlignCenter = { display: "flex", alignItems: "center" };
+  const progressBarStyle = {
+    height: "3.5px",
+    color: "brown",
+    backgroundColor: "rgba(128, 128, 128, 0.8)",
+  };
+  const percentStyle = {
+    color: "white",
+    textAlign: "left",
+    paddingLeft: "15px",
+    fontWeight: "bold",
+    fontSize: "20px",
   };
 
   // the method that checks the correct answer
@@ -38,105 +64,128 @@ function QuizMain(props) {
       setClickedAnswer(answer);
       setOx(ox + "X");
     }
-    setMarking(marking + answer);
+    // setMarking(marking + answer);
     setStep(step + 1);
     setClickedAnswer(0);
   };
 
   return (
-    <div className="Content">
+    <>
       {step <= Object.keys(state.questions).length && disable === false ? (
         <>
-          <Question question={state.questions[step]} />
-
-          <Grid container mb="3%">
-            {/* <Grid item xs={4} md={4}></Grid> */}
-            <Grid
-              item
-              xs={12}
-              md={12}
-              //white bar
-              sx={whiteBarStyle}
-            ></Grid>
-            {/* <Grid item xs={4} md={4}></Grid> */}
-          </Grid>
-
-          <Grid container>
-            <Grid item xs={6} md={6}>
-              <div style={{ marginLeft: "5rem" }}>
-                <Answer
-                  answer={state.answers[step]}
-                  step={step}
-                  checkAnswer={checkAnswer}
-                  clickedAnswer={clickedAnswer}
-                />
-              </div>
+          <Grid
+            className="Contents"
+            item
+            xs={12}
+            md={12}
+            height="720px"
+            sx={progress}
+          >
+            <Question question={state.questions[step]} />
+            <Grid container mb="3%">
+              {/* progress bar */}
+              <Grid item xs={11} md={11} sx={progressBarAlignCenter}>
+                <Box sx={{ width: "100%" }}>
+                  <LinearProgress
+                    sx={progressBarStyle}
+                    variant="determinate"
+                    value={step * 10}
+                  />
+                </Box>
+              </Grid>
+              <Grid item xs={1} md={1} sx={percentStyle}>
+                {step * 10}%
+              </Grid>
             </Grid>
-            <Grid item xs={6} md={6}>
-              <div style={QuestionImgStyle}>
-                <QuestionImg img={state.imgs[step]} />
-              </div>
+            <Grid container>
+              <Grid item xs={7} md={7}>
+                <div style={{ marginLeft: "5rem" }}>
+                  <Answer
+                    answer={state.answers[step]}
+                    step={step}
+                    checkAnswer={checkAnswer}
+                    clickedAnswer={clickedAnswer}
+                  />
+                </div>
+              </Grid>
+              <Grid item xs={5} md={5}>
+                <div style={QuestionImgStyle}>
+                  <QuestionImg img={state.imgs[step]} />
+                </div>
+              </Grid>
             </Grid>
           </Grid>
         </>
       ) : (
-        <Grid container>
-          <Grid item xs={3} md={3}></Grid>
-          <Grid item xs={6} md={6} mt={2}>
-            <div className="finalPage">
-              <p>SCORE : {score}</p>
-              {/* <p>MARKING : {marking}</p> */}
-              <OxTable
-                ox={ox}
-                setStep={setStep}
-                setDisable={setDisable}
-              ></OxTable>
-              <div
-                className="restart"
-                onClick={() => {
-                  location.reload();
-                }}
-              >
-                RESTART
+        // result part
+        <Grid
+          className="Contents"
+          item
+          xs={12}
+          md={12}
+          height="720px"
+          sx={result}
+        >
+          <Grid container>
+            <Grid item xs={3} md={3}></Grid>
+            <Grid item xs={6} md={6} mt={1} mb={2}>
+              <div className="finalPage">
+                <p>SCORE : {score}</p>
+                {/* <p>MARKING : {marking}</p> */}
+                {/* O/X table */}
+                <OxTable
+                  ox={ox}
+                  setStep={setStep}
+                  setDisable={setDisable}
+                ></OxTable>
+                <div
+                  className="restart"
+                  onClick={() => {
+                    location.reload();
+                  }}
+                >
+                  RESTART
+                </div>
               </div>
-            </div>
+            </Grid>
+            <Grid item xs={3} md={3} mt={2} pl={2}></Grid>
           </Grid>
-          <Grid item xs={3} md={3} mt={2} pl={2}></Grid>
+          {disable === true ? (
+            // 정답지
+            <div className="quizSheet">
+              <Question question={state.questions[step]} />
+              <Grid container mb="2%">
+                <Grid
+                  item
+                  xs={12}
+                  md={12}
+                  //white bar
+                  sx={whiteBarStyle}
+                ></Grid>
+              </Grid>
+              <Grid container>
+                <Grid item xs={7} md={7}>
+                  <div style={{ marginLeft: "5rem" }}>
+                    <Correct
+                      answer={state.answers[step]}
+                      step={step}
+                      correctAnswer={state.correctAnswers[step]}
+                    />
+                  </div>
+                </Grid>
+                <Grid item xs={5} md={5}>
+                  <div style={QuestionImgStyle}>
+                    <QuestionImg img={state.imgs[step]} />
+                  </div>
+                </Grid>
+              </Grid>
+            </div>
+          ) : (
+            ""
+          )}
         </Grid>
       )}
-      {disable === true ? (
-        <div className="quizSheet">
-          <Question question={state.questions[step]} />
-          <Grid container mb="3%">
-            <Grid
-              item
-              xs={12}
-              md={12}
-              //white bar
-              sx={whiteBarStyle}
-            ></Grid>
-          </Grid>
-          <Grid container>
-            <Grid item xs={6} md={6}>
-              <div style={{ marginLeft: "5rem" }}>
-                <Correct
-                  answer={state.answers[step]}
-                  step={step}
-                  correctAnswer={state.correctAnswers[step]}
-                />
-              </div>
-            </Grid>
-            <Grid item xs={6} md={6}>
-              <div style={QuestionImgStyle}>
-                <QuestionImg img={state.imgs[step]} />
-              </div>
-            </Grid>
-          </Grid>
-        </div>
-      ) : (
-        ""
-      )}
-    </div>
+    </>
   );
 }
 export default QuizMain;

@@ -21,7 +21,11 @@ function ProjectIdeaContents() {
         <div className="intro" style={{ marginTop: "5rem" }}>
           프로젝트 소개
           <Box className="alcohol" mt={2}>
-            <p className="title">**칵린이들을 위한 칵테일 추천 서비스**</p>
+            <p className="title">
+              <span className="highlight">
+                **칵린이들을 위한 칵테일 추천 서비스**
+              </span>
+            </p>
 
             <p className="text">
               우리나라의 칵테일 소비 증진을 위한 칵테일 소개 및 레시피 공유,
