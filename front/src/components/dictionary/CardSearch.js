@@ -8,14 +8,13 @@ const Search = styled("div")(({ theme }) => ({
   borderRadius: theme.shape.borderRadius,
   backgroundColor: "#404040",
   color: "white",
-  marginRight: theme.spacing(2),
-  marginLeft: 0,
-  width: "100%",
+  marginLeft: "auto",
+  width: "20%",
 }));
 
 const SearchIconWrapper = styled("div")(({ theme }) => ({
   padding: theme.spacing(0, 2),
-  height: "100%",
+  height: "80%",
   position: "absolute",
   pointerEvents: "none",
   display: "flex",
@@ -30,8 +29,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
     width: "100%",
-    [theme.breakpoints.up("md")]: {
-      width: "80px",
+    [theme.breakpoints.up("sm")]: {
+      width: "150px",
     },
   },
 }));

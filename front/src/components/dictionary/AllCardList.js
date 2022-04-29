@@ -1,16 +1,12 @@
 import React from "react";
-import { Grid } from "@mui/material";
+import { Grid, Box } from "@mui/material";
 
 import CardItem from "./CardItem";
 
-export default function top10CardList({
-  cocktails,
-  searchCocktails,
-  setIsDetailOpen,
-}) {
+export default function top10CardList({ cocktails, searchCocktails }) {
   return (
     <>
-      <Grid container spacing={3}>
+      <Grid container rowSpacing={3} columnSpacing={1} sx={{ px: 15 }}>
         {cocktails
           .filter((val) => {
             if (searchCocktails == "") {
@@ -23,11 +19,8 @@ export default function top10CardList({
           })
           .map((cocktail, i) => {
             return (
-              <Grid key={i} item md>
-                <CardItem
-                  cocktail={cocktail}
-                  setIsDetailOpen={setIsDetailOpen}
-                />
+              <Grid key={i} item xs>
+                <CardItem cocktail={cocktail} />
               </Grid>
             );
           })}

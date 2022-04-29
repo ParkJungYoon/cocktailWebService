@@ -1,27 +1,20 @@
 import React, { useState } from "react";
-import {
-  Card,
-  CardMedia,
-  CardContent,
-  CardActionArea,
-  Typography,
-  Button,
-} from "@mui/material";
+import { Card, CardMedia, CardContent, Button, Box } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useNavigate } from "react-router-dom";
+import CompareArrowsIcon from "@mui/icons-material/CompareArrows";
 
-export default function CardItem({ cocktail, setIsDetailOpen }) {
+export default function CardItem({ cocktail }) {
   const navigate = useNavigate();
   const [isFront, setIsFront] = useState(true);
 
   const buttonStyle = {
+    position: "absolute",
+    bottom: 5,
+    right: 6,
     color: "violet",
-    border: "2px solid violet",
   };
   const iconStyle = {
-    position: "absolute",
-    top: 10,
-    right: 10,
     color: "violet",
   };
   const handleOnClick = () => {
@@ -29,62 +22,37 @@ export default function CardItem({ cocktail, setIsDetailOpen }) {
   };
   return (
     <>
-      <Button onClick={handleOnClick} sx={buttonStyle}>
-        뒤집기
-      </Button>
-      {cocktail.rank != undefined && (
-        <Button onClick={() => setIsDetailOpen(true)} sx={buttonStyle}>
-          More
-        </Button>
-      )}
-      <div className={` ${isFront ? "cardFront" : "cardBack"}`}>
-        <Card className=" front">
-          <CardActionArea>
-            <FavoriteIcon sx={iconStyle} />
-            <CardMedia
-              height="250"
-              component="img"
-              image={cocktail.imageUrl}
-              loading="lazy"
-            />
-            <CardContent className="cocktailContent">
-              <Typography
-                className="contentText"
-                gutterBottom
-                variant="h5"
-                component="div"
-              >
-                {cocktail.name}
-              </Typography>
-            </CardContent>
-          </CardActionArea>
+      <Box className={` ${isFront ? "cardFront" : "cardBack"}`}>
+        <Card className="front">
+          <FavoriteIcon sx={iconStyle} />
+          <CardMedia
+            height="250"
+            component="img"
+            image={cocktail.imageUrl}
+            loading="lazy"
+          />
+          <CardContent className="cocktailContent">{cocktail.name}</CardContent>
+          <CardContent>
+            <Button onClick={handleOnClick} sx={buttonStyle}>
+              <CompareArrowsIcon />
+            </Button>
+          </CardContent>
         </Card>
 
         <Card className=" back">
-          <CardActionArea>
-            <CardContent className="descriptionBox">
-              <Typography variant="body1">[이름]</Typography>
-              <Typography variant="body2">{cocktail.name}</Typography>
-              <br />
-              <Typography variant="body1">[칵테일에 들어가는 재료]</Typography>
-              {cocktail.ingredient.map((item, i) => (
-                <Typography key={i} variant="body2">
-                  재료{i + 1} : {item}
-                </Typography>
-              ))}
-              <br />
-              {cocktail.rank != undefined && (
-                <>
-                  <Typography variant="body1">[랭킹]</Typography>
-                  <Typography variant="body2">
-                    {cocktail.rank.rank}위
-                  </Typography>
-                </>
-              )}
-            </CardContent>
-          </CardActionArea>
+          <CardContent className="descriptionBox" height="250">
+            {cocktail.name}
+            {cocktail.ingredient.map((item, i) => (
+              <li key={i}>
+                재료{i + 1} : {item}
+              </li>
+            ))}
+          </CardContent>
+          <Button onClick={handleOnClick} sx={buttonStyle}>
+            <CompareArrowsIcon />
+          </Button>
         </Card>
-      </div>
+      </Box>
     </>
   );
 }
