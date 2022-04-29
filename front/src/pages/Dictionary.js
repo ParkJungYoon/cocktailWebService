@@ -7,10 +7,7 @@ import CardMenu from "../components/dictionary/CardMenu";
 export default function Dictionary() {
   return (
     <div className="dictionary">
-      <Grid container>
-        <Grid item xs={12}>
-          <Typography className="dictionaryTitle">Dictionary</Typography>
-        </Grid>
+      <Grid container sx={{ mt: 25 }}>
         <Grid item xs={12}>
           <CardMenu />
         </Grid>

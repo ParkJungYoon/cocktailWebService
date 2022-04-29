@@ -2,23 +2,11 @@ import React from "react";
 import { Grid, Box } from "@mui/material";
 
 import CardItem from "./CardItem";
-import CardSearch from "./CardSearch";
-export default function top10CardList({
-  cocktails,
-  searchCocktails,
-  setSearchCocktails,
-}) {
-  const searchBoxStyle = {
-    bgcolor: "rgba(64, 64, 64, 0.9);",
-    width: "200px",
-    mb: 5,
-  };
+
+export default function top10CardList({ cocktails, searchCocktails }) {
   return (
     <>
-      <Box sx={searchBoxStyle}>
-        <CardSearch setSearchCocktails={setSearchCocktails} />
-      </Box>
-      <Grid container spacing={3}>
+      <Grid container rowSpacing={3} columnSpacing={1} sx={{ px: 15 }}>
         {cocktails
           .filter((val) => {
             if (searchCocktails == "") {
@@ -31,7 +19,7 @@ export default function top10CardList({
           })
           .map((cocktail, i) => {
             return (
-              <Grid key={i} item md>
+              <Grid key={i} item xs>
                 <CardItem cocktail={cocktail} />
               </Grid>
             );

@@ -49,7 +49,7 @@ function Introduce() {
 
   return (
     <>
-      <Box sx={{ width: "100%" }}>
+      <Box sx={{ width: "100%", pt: 30, color: "white" }}>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <Tabs
             //   orientation="vertical"
