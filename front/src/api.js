@@ -9,13 +9,22 @@ async function get(endpoint, params = "") {
     `%cGET 요청 ${serverUrl + endpoint + "/" + params}`,
     "color: #a25cd1;"
   );
-
-  return axios.get(serverUrl + endpoint + "/" + params, {
-    // JWT 토큰을 헤더에 담아 백엔드 서버에 보냄.
-    headers: {
-      Authorization: `Bearer ${sessionStorage.getItem("userToken")}`,
-    },
-  });
+  if (endpoint === "refresh") {
+    console.log("refresh 진행");
+    return axios.get(serverUrl + "refresh", {
+      headers: {
+        authorization: `Bearer ${sessionStorage.getItem("userToken")}`,
+        refresh: `${sessionStorage.getItem("refreshToken")}`,
+      },
+    });
+  } else {
+    return axios.get(serverUrl + endpoint + "/" + params, {
+      // JWT 토큰을 헤더에 담아 백엔드 서버에 보냄.
+      headers: {
+        authorization: `Bearer ${sessionStorage.getItem("userToken")}`,
+      },
+    });
+  }
 }
 
 async function post(endpoint, data) {
@@ -28,7 +37,7 @@ async function post(endpoint, data) {
   return axios.post(serverUrl + endpoint, bodyData, {
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${sessionStorage.getItem("userToken")}`,
+      authorization: `Bearer ${sessionStorage.getItem("userToken")}`,
     },
   });
 }
@@ -43,7 +52,7 @@ async function put(endpoint, data) {
   return axios.put(serverUrl + endpoint, bodyData, {
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${sessionStorage.getItem("userToken")}`,
+      authorization: `Bearer ${sessionStorage.getItem("userToken")}`,
     },
   });
 }
@@ -54,7 +63,7 @@ async function del(endpoint, params = "") {
   console.log(`DELETE 요청 ${serverUrl + endpoint + "/" + params}`);
   return axios.delete(serverUrl + endpoint + "/" + params, {
     headers: {
-      Authorization: `Bearer ${sessionStorage.getItem("userToken")}`,
+      authorization: `Bearer ${sessionStorage.getItem("userToken")}`,
     },
   });
 }

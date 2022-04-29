@@ -1,9 +1,10 @@
 import { Router } from "express";
 import { RegisterService } from "../services/registerService";
+import { registerValidation } from "../middlewares/validation";
 
 const registerRouter = Router();
 
-registerRouter.post("/register", async (req, res, next) => {
+registerRouter.post("/register", registerValidation, async (req, res, next) => {
   try {
     const { email, password, name } = req.body;
     const newUser = await RegisterService.addUser({ email, password, name });
