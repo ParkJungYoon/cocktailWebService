@@ -356,6 +356,95 @@
           "404": { "description": "Failed. Bad Request" }
         }
       }
+    },
+    "/board/comment": {
+      "post": {
+        "tags": ["Comment"],
+        "summary": "댓글 작성 API",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "access token은 토큰 앞에 'Bearer ' 꼭 붙여서 request 해야합니다.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "boardId": "body",
+            "content": "body",
+            "schema": { "$ref": "#/definitions/Comment" }
+          }
+        ],
+        "responses": {
+          "201": { "description": "OK" },
+          "404": { "description": "Failed. Bad Request" }
+        }
+      }
+    },
+    "/board/comments/{boardId}": {
+      "get": {
+        "tags": ["Comment"],
+        "summary": "특정 게시판 댓글 목록 조회 API",
+        "parameters": [{ "in": "path", "name": "boardId" }],
+        "responses": {
+          "201": { "description": "OK" },
+          "404": { "description": "Failed. Bad Request" }
+        }
+      }
+    },
+    "/board/comment/{id}": {
+      "put": {
+        "tags": ["Comment"],
+        "summary": "특정 댓글 수정 API",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "댓글 _id를 넣어주세요."
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "access token은 토큰 앞에 'Bearer ' 꼭 붙여서 request 해야합니다.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "content": "body",
+            "schema": { "$ref": "#/definitions/Comment2" }
+          }
+        ],
+        "responses": {
+          "201": { "description": "OK" },
+          "404": { "description": "Failed. Bad Request" }
+        }
+      },
+      "delete": {
+        "tags": ["Comment"],
+        "summary": "특정 댓글 삭제 API",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "댓글 _id를 넣어주세요."
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "access token은 토큰 앞에 'Bearer ' 꼭 붙여서 request 해야합니다.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": { "description": "OK" },
+          "404": { "description": "Failed. Bad Request" }
+        }
+      }
     }
   },
   "definitions": {
@@ -394,6 +483,13 @@
         "email": { "type": "string" },
         "password": { "type": "string" }
       }
-    }
+    },
+    "Comment": {
+      "properties": {
+        "boardId": { "type": "string" },
+        "content": { "type": "string" }
+      }
+    },
+    "Comment2": { "properties": { "content": { "type": "string" } } }
   }
 }
