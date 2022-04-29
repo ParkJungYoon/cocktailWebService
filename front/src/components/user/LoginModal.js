@@ -50,8 +50,9 @@ export default function FormDialog({ open, handleLoginClose }) {
         email,
         password,
       });
+
       // 유저 정보는 response의 data임.
-      const user = res.data;
+      const user = res.data.discoveredUser;
       // JWT 토큰_access 은 유저 정보의 accessToken임.
       const jwtToken = user.accessToken;
       // sessionStorage에 "userToken"이라는 키로 JWT 토큰을 저장함.

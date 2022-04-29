@@ -32,41 +32,46 @@ function App() {
 
   const fetchCurrentUser = async () => {
     try {
-      // 이전에 발급받은 토큰이 있다면, 이를 가지고 유저 정보를 받아옴.
+      // 현재 유저 정보를 받아옴 (세션 유지)
       const res = await Api.get("user/current")
+        // access 토큰 유효
+        .then((res) => {
+          //fetch성공
+          console.log("fetch성공");
+          console.log(
+            "%c sessionStorage에 access토큰 있음.",
+            "color: #d93d1a;"
+          );
+          const currentUser = res.data;
+
+          // dispatch 함수를 통해 로그인 성공 상태로 만듦.
+          userDispatch({
+            type: "LOGIN_SUCCESS",
+            payload: currentUser,
+          });
+          setIsFetchCompleted(true);
+        })
         //access 토큰 만료시
         .catch(async (err) => {
           console.log(err.message + " : accessToken만료");
           //access 토큰 재발급
           const foo = await Api.get("refresh")
-            //refresh토큰도 만료되었을 경우, 다시 로그인 요청
+            //refresh토큰도 만료되었을 경우, 다시 로그인 요청(로그아웃)
             .catch((err) => {
               console.log(err.message + " : refreshToken만료");
               userDispatch({
                 type: "LOGOUT",
               });
-              console.log("logout, 재로그인 요청");
+              setIsFetchCompleted(true);
             });
           //access 재발급 완료
           sessionStorage.setItem("userToken", foo.data.data.accessToken);
           sessionStorage.setItem("refreshToken", foo.data.data.refreshToken);
           fetchCurrentUser();
         });
-      //fetch성공
-      console.log("fetch성공");
-      console.log("%c sessionStorage에 access토큰 있음.", "color: #d93d1a;");
-      const currentUser = res?.data;
-
-      // dispatch 함수를 통해 로그인 성공 상태로 만듦.
-      userDispatch({
-        type: "LOGIN_SUCCESS",
-        payload: currentUser,
-      });
     } catch (err) {
       console.log(`%c err : ${err}`, "color: #d93d1a;");
     }
-    // fetchCurrentUser 과정이 끝났으므로, isFetchCompleted 상태를 true로 바꿔줌
-    setIsFetchCompleted(true);
   };
 
   // useEffect함수를 통해 fetchCurrentUser 함수를 실행함.
