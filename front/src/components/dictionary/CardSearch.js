@@ -37,14 +37,16 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function CardSearch({ setSearchCocktails }) {
   return (
-    <Search>
-      <SearchIconWrapper>
-        <SearchIcon />
-      </SearchIconWrapper>
-      <StyledInputBase
-        placeholder="Search…"
-        onChange={(e) => setSearchCocktails(e.target.value)}
-      />
-    </Search>
+    <>
+      <Search>
+        <SearchIconWrapper>
+          <SearchIcon />
+        </SearchIconWrapper>
+        <StyledInputBase
+          placeholder="Search…"
+          onChange={(e) => setSearchCocktails(e.target.value)}
+        />
+      </Search>
+    </>
   );
 }

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import PropTypes from "prop-types";
-import { Tab, Box, Grid, Container } from "@mui/material";
+import { Tab, Box } from "@mui/material";
 import { TabContext, TabPanel, TabList } from "@mui/lab";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
@@ -21,10 +20,22 @@ const theme = createTheme({
 export default function CardMenu() {
   // 탭 기능
   const [cocktails, setCocktails] = useState([]);
+  const [top10Cocktails, setTop10Cocktails] = useState([]);
 
   useEffect(async () => {
     await Api.get("cocktails").then((res) => {
       setCocktails(res.data);
+      setTop10Cocktails(
+        res.data
+          .filter((data) => data.rank != undefined && data.rank.rank <= 10)
+          .sort((A, B) => {
+            return A.rank.rank < B.rank.rank
+              ? -1
+              : A.rank.rank > B.rank.rank
+              ? 1
+              : 0;
+          })
+      );
     });
   }, []);
 
@@ -66,13 +77,14 @@ export default function CardMenu() {
         <TabPanel value={"0"}>
           <AllCardList
             cocktails={cocktails}
+            setCocktails={setCocktails}
             searchCocktails={searchCocktails}
           />
         </TabPanel>
         <TabPanel value={"1"}>
           <Top10CardList
-            cocktails={cocktails}
-            searchCocktails={searchCocktails}
+            top10Cocktails={top10Cocktails}
+            setTop10Cocktails={setTop10Cocktails}
           />
         </TabPanel>
         <TabPanel value={"2"}>
