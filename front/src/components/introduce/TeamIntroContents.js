@@ -43,7 +43,7 @@ function TeamIntro() {
             <Grid className="infro" item xs={6} md={6}>
               <Grid ml={12}>
                 {/* 내용 입력 */}
-                <Grid mb={1}>name</Grid>
+                <Grid mb={1}>name (position)</Grid>
                 <Grid mb={1}>소감</Grid>
                 <Grid mb={1}>Favorite Cocktail : + 해당 칵테일로 Link?</Grid>
               </Grid>
