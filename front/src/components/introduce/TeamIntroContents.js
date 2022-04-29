@@ -102,7 +102,7 @@ function TeamIntro() {
         </Grid>
         {/* 오른쪽 그림 */}
         <Grid mb={3}>
-          <Grid container sx={imageAlignLeft}>
+          <Grid container sx={textAlignCenter}>
             <Grid className="infro" item xs={6} md={6}>
               {/* 내용 입력 */}
               <Grid ml={12}>
