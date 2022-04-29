@@ -9,7 +9,7 @@ import {
 } from "./components/user/reducer/userReducer";
 import Header from "./components/Header";
 import Landing from "./pages/Landing";
-import Introduce from "./components/introduce/Introduce";
+import Introduce from "./pages/Introduce";
 import Mypage from "./components/mypage/Mypage";
 import Bookmark from "./components/mypage/Bookmark";
 import Dictionary from "./pages/Dictionary";
