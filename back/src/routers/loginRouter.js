@@ -2,6 +2,7 @@ import { Router } from "express";
 import { LoginService } from "../services/loginService";
 import { verifyToken } from "../middlewares/verifyToken";
 import { verifyRefresh } from "../middlewares/verifyRefresh";
+import { loginValidation } from "../middlewares/validation";
 
 const loginRouter = Router();
 
@@ -37,7 +38,7 @@ loginRouter.post("/login/modify", verifyToken, async (req, res, next) => {
   }
 });
 
-loginRouter.post("/login", async (req, res, next) => {
+loginRouter.post("/login", loginValidation, async (req, res, next) => {
   try {
     const { email, password } = req.body;
     const discoveredUser = await LoginService.findUser({ email, password });
