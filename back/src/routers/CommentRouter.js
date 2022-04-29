@@ -7,7 +7,9 @@ const CommentRouter = Router();
 // 댓글 작성 API
 CommentRouter.post("/board/comment", verifyToken, async (req, res, next) => {
   try {
-    const { boardId, userId, content } = req.body;
+    // 토큰에 있는 유저 정보로 userId 저장
+    const userId = req.user;
+    const { boardId, content } = req.body;
     const newComment = await CommentService.addComment({
       boardId,
       userId,
