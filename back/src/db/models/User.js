@@ -5,9 +5,11 @@ class UserModel {
     const deleteUser = await User.findByIdAndDelete({ _id: userId });
     return deleteUser;
   };
-  static modify = async ({ filter, updateData }) => {
+  static modify = async ({ userId, newValues }) => {
+    const filter = { id: userId };
+    const update = { $set: newValues };
     const option = { returnOriginal: false };
-    const updatedUser = await User.findOneAndUpdate(filter, updateData, option);
+    const updatedUser = await User.findOneAndUpdate(filter, update, option);
     return updatedUser;
   };
   static findByEmail = async ({ email }) => {
