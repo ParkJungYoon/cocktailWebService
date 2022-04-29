@@ -33,34 +33,37 @@ function App() {
   const fetchCurrentUser = async () => {
     try {
       // 이전에 발급받은 토큰이 있다면, 이를 가지고 유저 정보를 받아옴.
-      const res = await Api.get("user/current").catch(async (err) => {
+      const res = await Api.get("user/current")
         //access 토큰 만료시
-        console.log(err.message + " : accessToken만료");
-        const foo = await Api.get("refresh")
-          //refresh토큰도 만료되었을 경우, 다시 로그인 요청
-          .catch((err) => {
-            console.log(err.message + " : refreshToken만료");
-            userDispatch({
-              type: "LOGOUT",
+        .catch(async (err) => {
+          console.log(err.message + " : accessToken만료");
+          //access 토큰 재발급
+          const foo = await Api.get("refresh")
+            //refresh토큰도 만료되었을 경우, 다시 로그인 요청
+            .catch((err) => {
+              console.log(err.message + " : refreshToken만료");
+              userDispatch({
+                type: "LOGOUT",
+              });
+              console.log("logout, 재로그인 요청");
             });
-          });
-        //access 재발급
-        sessionStorage.setItem("userToken", foo.data.data.accessToken);
-        sessionStorage.setItem("refreshToken", foo.data.data.refreshToken);
-        fetchCurrentUser();
-      });
+          //access 재발급 완료
+          sessionStorage.setItem("userToken", foo.data.data.accessToken);
+          sessionStorage.setItem("refreshToken", foo.data.data.refreshToken);
+          fetchCurrentUser();
+        });
       //fetch성공
       console.log("fetch성공");
       console.log("%c sessionStorage에 access토큰 있음.", "color: #d93d1a;");
-      const currentUser = res.data;
+      const currentUser = res?.data;
 
       // dispatch 함수를 통해 로그인 성공 상태로 만듦.
       userDispatch({
         type: "LOGIN_SUCCESS",
         payload: currentUser,
       });
-    } catch {
-      console.log("%c 로그아웃상태", "color: #d93d1a;");
+    } catch (err) {
+      console.log(`%c err : ${err}`, "color: #d93d1a;");
     }
     // fetchCurrentUser 과정이 끝났으므로, isFetchCompleted 상태를 true로 바꿔줌
     setIsFetchCompleted(true);
