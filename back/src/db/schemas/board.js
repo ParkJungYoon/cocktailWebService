@@ -14,6 +14,9 @@ const boardSchema = new Schema({
   context: {
     type: String,
   },
+  images: {
+    type: [String],
+  },
 });
 
 const Board = model("Board", boardSchema);

@@ -1,19 +1,29 @@
 import { Router } from "express";
 import { BoardService } from "../services/BoardService";
 import { verifyToken } from "../middlewares/verifyToken";
+import { ImageModel } from "../db";
+import { storage } from "../db/models/Image";
+import multer from "multer";
 
+const upload = multer({ storage: storage });
 const BoardRouter = Router();
 
-BoardRouter.post("/board", verifyToken, async (req, res, next) => {
-  try {
-    const writer = req.user;
-    const context = req.body.context;
-    const newBoard = await BoardService.create({ writer, context });
-    res.status(200).json(newBoard);
-  } catch (error) {
-    next(error);
+BoardRouter.post(
+  "/board",
+  verifyToken,
+  upload.array("img"),
+  async (req, res, next) => {
+    try {
+      const writer = req.user;
+      const context = req.body.context;
+      const images = req.images;
+      const newBoard = await BoardService.create({ writer, context, images });
+      res.status(200).json(newBoard);
+    } catch (error) {
+      next(error);
+    }
   }
-});
+);
 
 BoardRouter.delete("/board/:id", verifyToken, async (req, res, next) => {
   try {

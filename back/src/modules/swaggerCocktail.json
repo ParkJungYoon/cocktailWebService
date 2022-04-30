@@ -1,199 +1,198 @@
 {
-    "paths": {
-      "/cocktails/{name}": {
-        "get": {
-          "tags": ["Cocktail"],
-          "summary": "특정 칵테일 조회",
-          "parameters": [
-            {
-              "in": "path",
-              "name": "name"
-            }
-          ],
-          "responses": {
-            "201": {
-              "description": "OK"
-            },
-            "404": {
-              "description": "Failed. Bad Request"
-            }
+  "paths": {
+    "/cocktails/{name}": {
+      "get": {
+        "tags": ["Cocktail"],
+        "summary": "특정 칵테일 조회",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name"
           }
-        }
-      },
-      "/cocktails": {
-        "get": {
-          "tags": ["Cocktail"],
-          "summary": "칵테일 전체 조회",
-          "responses": {
-            "201": {
-              "description": "OK"
-            },
-            "404": {
-              "description": "Failed. Bad Request"
-            }
-          }
-        }
-      },
-      "/cocktailmbti": {
-        "post": {
-          "tags": ["Cocktail"],
-          "summary": "mbti 결과값 리턴",
-          "parameters": [
-            {
-              "name": "mbti",
-              "in": "body",
-              "description": "[w, x, y, z] => [(w > 0 = E: w < 0 = I), (w > 0 = N: w < 0 = S), (w > 0 = T: w < 0 = F), (w > 0 = J: w < 0 = P),]",
-              "required": true,
-              "mbti": "body",
-              "schema": {
-                "$ref": "#/definitions/mbti"
-              }
-            }
-          ],
-          "responses": {
-            "201": {
-              "description": "OK"
-            },
-            "404": {
-              "description": "Failed. Bad Request"
-            }
-          }
-        }
-      },
-      "/cocktailrank": {
-        "get": {
-          "tags": ["Cocktail"],
-          "summary": "랭킹 1 ~ 10 칵테일 정보 전달",
-          "responses": {
-            "201": {
-              "description": "OK"
-            },
-            "404": {
-              "description": "Failed. Bad Request"
-            }
-          }
-        }
-      },
-      "/cocktail": {
-        "post": {
-          "tags": ["Cocktail"],
-          "summary": "칵테일 정보 입력",
-          "parameters": [
-            {
-              "in": "body",
-              "name": "body",
-              "ingredient": "body",
-              "imageUrl": "body",
-              "taste": "body",
-              "description": "body",
-              "userId": "body"
-            },
-            {
-              "name": "Authorization",
-              "in": "header",
-              "description": "JWT access token",
-              "required": true,
-              "type": "string"
-            }
-          ],
-          "responses": {
-            "201": {
-              "description": "OK"
-            },
-            "404": {
-              "description": "Failed. Bad Request"
-            }
-          }
-        }
-      },
-      "/cocktail/{name}": {
-        "post": {
-          "tags": ["Cocktail"],
-          "summary": "칵테일 정보 수정",
-          "parameters": [
-            {
-              "in": "body",
-              "name": "body",
-              "ingredient": "body",
-              "imageUrl": "body",
-              "taste": "body",
-              "description": "body"
-            },
-            {
-              "in": "path",
-              "name": "name"
-            },
-            {
-              "name": "Authorization",
-              "in": "header",
-              "description": "JWT access token",
-              "required": true,
-              "type": "string"
-            }
-          ],
-          "responses": {
-            "201": {
-              "description": "OK"
-            },
-            "404": {
-              "description": "Failed. Bad Request"
-            }
-          }
-        }
-      },
-      "/cocktail/{name}": {
-        "delete": {
-          "tags": ["Cocktail"],
-          "summary": "칵테일 정보 삭제",
-          "parameters": [
-            {
-              "in": "path",
-              "name": "name"
-            },
-            {
-              "name": "authorization",
-              "in": "header",
-              "description": "JWT access token",
-              "required": true,
-              "type":"string"
-            }
-          ],
-          "responses": {
-            "201": {
-              "description": "OK"
-            },
-            "404": {
-              "description": "Failed. Bad Request"
-            }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
           }
         }
       }
     },
-
-    "definitions": {
-      "Cocktail": {
-        "properties": {
-          "name": {
-            "type": "string"
+    "/cocktails": {
+      "get": {
+        "tags": ["Cocktail"],
+        "summary": "칵테일 전체 조회",
+        "responses": {
+          "201": {
+            "description": "OK"
           },
-          "ingredient": {
-            "type": "[string]"
-          },
-          "imageUrl": {
-            "type": "string"
-          },
-          "rank": {
-            "type": "Schema.Types.ObjectId"
+          "404": {
+            "description": "Failed. Bad Request"
           }
         }
-      },
-      "mbti" : {
-        "properties": {
-          "mbti": {
-            "type": "[integer]"
+      }
+    },
+    "/cocktailmbti": {
+      "post": {
+        "tags": ["Cocktail"],
+        "summary": "mbti 결과값 리턴",
+        "parameters": [
+          {
+            "name": "mbti",
+            "in": "body",
+            "description": "[w, x, y, z] => [(w > 0 = E: w < 0 = I), (w > 0 = N: w < 0 = S), (w > 0 = T: w < 0 = F), (w > 0 = J: w < 0 = P),]",
+            "required": true,
+            "mbti": "body",
+            "schema": {
+              "$ref": "#/definitions/mbti"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
+    },
+    "/cocktails/rank": {
+      "get": {
+        "tags": ["Cocktail"],
+        "summary": "랭킹 1 ~ 10 칵테일 정보 조회",
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
+    },
+    "/cocktail": {
+      "post": {
+        "tags": ["Cocktail"],
+        "summary": "칵테일 정보 입력",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "ingredient": "body",
+            "imageUrl": "body",
+            "taste": "body",
+            "description": "body",
+            "userId": "body"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "JWT access token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
+    },
+    "/cocktail/{name}": {
+      "post": {
+        "tags": ["Cocktail"],
+        "summary": "칵테일 정보 수정",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "ingredient": "body",
+            "imageUrl": "body",
+            "taste": "body",
+            "description": "body"
+          },
+          {
+            "in": "path",
+            "name": "name"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "JWT access token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
+    },
+    "/cocktail/{name}": {
+      "delete": {
+        "tags": ["Cocktail"],
+        "summary": "칵테일 정보 삭제",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "JWT access token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
           }
         }
       }
     }
+  },
+
+  "definitions": {
+    "Cocktail": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "ingredient": {
+          "type": "[string]"
+        },
+        "imageUrl": {
+          "type": "string"
+        },
+        "rank": {
+          "type": "Schema.Types.ObjectId"
+        }
+      }
+    },
+    "mbti": {
+      "properties": {
+        "mbti": {
+          "type": "[integer]"
+        }
+      }
+    }
+  }
 }
-  

@@ -22,7 +22,7 @@ const upload = multer({ storage: storage });
 photoReview.post("/review", verifyToken, upload.array('img'), async (req, res, next) => {
   try {
     // 아래에 API 코드 작성 
-
+    console.log(req.images) // 이미지 파일 이름 => [이름, 이름, ...]
     res.status(200).json({success : "success"});
   } catch (error) {
     next(error);
@@ -35,7 +35,7 @@ photoReview.post("/review", verifyToken, upload.array('img'), async (req, res, n
 photoReview.get("/review", async (req, res, next) => {
   try {
     // 
-    const result = await ImageModel.getImg({ fileNameList : ["1651234836270_3f4ec8d6-615c-4e72-9b19-9e093bbc6eef_photo.jpg"] })
+    const result = await ImageModel.getImg({ fileNameList : ["1651287187623_5dbd8c1d-6d75-45b4-84e9-fadda3765f58_photo.jpg"] })
     if (result.length < 1) {
       throw new Error("image send error");
     }

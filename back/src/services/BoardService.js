@@ -1,8 +1,8 @@
 import { BoardModel } from "../db";
 
 class BoardService {
-  static create = async ({ writer, context }) => {
-    const newBoardData = { writer, context };
+  static create = async ({ writer, context, images }) => {
+    const newBoardData = { writer, context, images };
     const newBoard = await BoardModel.create(newBoardData);
     return newBoard;
   };
