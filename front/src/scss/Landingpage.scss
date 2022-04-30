@@ -1,6 +1,7 @@
 $maincolor: #151516;
 $star1: "../imgs/star1.jpg";
 $secondpage: "../imgs/secondpage.jpg";
+$secondpage2: "../imgs/gatsby.png";
 $thirdpage: "../imgs/thirdpage.jpg";
 #fp-nav ul li:hover a.active span,
 #fp-nav ul li a.active span,
@@ -88,7 +89,7 @@ $thirdpage: "../imgs/thirdpage.jpg";
   background-size: cover;
 }
 .secondpageContainer {
-  background-color: plum;
+  background-color: white; // (testing) plum -> white
   margin-top: 150px;
   width: 80vw;
   height: 70vh;
@@ -104,10 +105,10 @@ $thirdpage: "../imgs/thirdpage.jpg";
       left: 0;
       right: 0;
       bottom: 0;
-      background-image: url($secondpage);
+      background-image: url($secondpage2); //secondpage -> secondpage2
       background-size: cover;
       position: absolute;
-      opacity: 0.6;
+      opacity: 0.3; //(testing) opacity:0.6 ->opacity:0.3;
       border-radius: 20px;
     }
     .top10ChartWrapper {
