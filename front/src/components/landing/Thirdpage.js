@@ -22,12 +22,12 @@ export default function Thirdpage() {
     <div className="thirdpageContainer">
       <Grid container className="dictionary">
         <Grid item xs className="textWrapper">
-          <Typography className="dictionaryText" variant="h4">
+          {/* <Typography className="dictionaryText" variant="h4">
             Or You can search You can search on Our Cocktail Dictionary
-          </Typography>
+          </Typography> */}
           {/* <canvas ref={wordCloudStart}></canvas> */} {/* (test-ing) */}
           <Box className="buttonBox">
-            <Button
+            {/* <Button
               variant="contained"
               className="dictionaryButton"
               onClick={() => {
@@ -35,7 +35,7 @@ export default function Thirdpage() {
               }}
             >
               Explore
-            </Button>
+            </Button> */}
           </Box>
         </Grid>
       </Grid>
