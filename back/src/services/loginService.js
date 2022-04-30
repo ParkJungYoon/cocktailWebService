@@ -14,7 +14,7 @@ class LoginService {
     return deletedUser;
   };
   static modify = async ({ userId, email, password, name }) => {
-    const user = await UserModel.findByEmail(email);
+    const user = await UserModel.findByEmail({ email });
     if (user) {
       const errorMessage = "중복된 이메일 입니다. 다른 이메일을 입력해주세요";
       return { errorMessage };
