@@ -10,7 +10,7 @@ export default function Community() {
     <div className="community">
       <Grid container sx={{ mt: 25 }}>
         <Grid item xs={12}>
-          <Postings />
+          <Post />
         </Grid>
       </Grid>
     </div>

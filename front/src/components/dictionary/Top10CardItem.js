@@ -60,6 +60,10 @@ export default function Top10CardItem({ cocktail }) {
         <Typography sx={{ m: 1 }} variant="h4">
           {cocktail.name}
         </Typography>
+        <Chip
+          sx={{ color: "white", bgcolor: "plum", mr: 1 }}
+          label={`${cocktail.rank.rank}위`}
+        />
         <CardContent>
           {cocktail.taste.map((t, i) => {
             return (
