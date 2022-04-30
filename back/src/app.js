@@ -8,7 +8,8 @@ import { CocktailRouter } from "./routers/CocktailRouter";
 import { RankRouter } from "./routers/RankRouter";
 import { dbRouter } from "./routers/dbRouter";
 import { LikeRouter } from "./routers/LikeRouter";
-
+//todo: 테스트용 지워야 함
+import { photoReview } from "./routers/ImageRouter";
 import swaggerUi from "swagger-ui-express";
 import * as swaggerDocument from "./modules/swagger.json";
 
@@ -87,7 +88,8 @@ app.use(loginRouter);
 app.use(CocktailRouter);
 app.use(RankRouter);
 app.use(LikeRouter);
-
+//todo: 테스트용 지워야함
+app.use(photoReview);
 // errorMessage yellow
 app.use(errorMiddleware);
 
