@@ -89,7 +89,7 @@ $thirdpage: "../imgs/thirdpage.jpg";
   background-size: cover;
 }
 .secondpageContainer {
-  background-color: white; // (testing) plum -> white
+  background-color: white; // (test-ing) plum -> white
   margin-top: 150px;
   width: 80vw;
   height: 70vh;
@@ -108,7 +108,7 @@ $thirdpage: "../imgs/thirdpage.jpg";
       background-image: url($secondpage2); //secondpage -> secondpage2
       background-size: cover;
       position: absolute;
-      opacity: 0.3; //(testing) opacity:0.6 ->opacity:0.3;
+      opacity: 0.3; //(test-ing) opacity:0.6 ->opacity:0.3;
       border-radius: 20px;
     }
     .top10ChartWrapper {
@@ -162,9 +162,10 @@ $thirdpage: "../imgs/thirdpage.jpg";
       left: 0;
       right: 0;
       bottom: 0;
-      background-image: url($thirdpage);
+      // background-image: url($thirdpage);
+      background-color: white; //(test-ing)
       background-size: cover;
-      opacity: 0.7;
+      opacity: 0.4; //(test-int) 0.7 -> 0.4
       position: absolute;
       border-radius: 20px;
     }
