@@ -1335,6 +1335,7 @@ if (!window.clearImmediate) {
       }
     }
   };
+  //modules
   //   // Expose the library as an AMD module
   //   if (typeof define === "function" && define.amd) {
   //     // eslint-disable-line no-undef
