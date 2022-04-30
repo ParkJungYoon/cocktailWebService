@@ -8,6 +8,7 @@ import { TokenModel } from "./models/Token";
 import { CommentModel } from "./models/Comment";
 import { BoardModel } from "./models/Board";
 
+import { ImageModel } from "./models/Image";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -25,4 +26,5 @@ export {
   TokenModel,
   CommentModel,
   BoardModel,
+  ImageModel
 };

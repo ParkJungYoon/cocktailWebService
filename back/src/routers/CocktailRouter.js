@@ -52,9 +52,8 @@ CocktailRouter.get("/cocktailrank", async (req, res, next) => {
   }
 });
 
-CocktailRouter.get("/cocktailmbti", async (req, res, next) => {
+CocktailRouter.post("/cocktailmbti", async (req, res, next) => {
   try {
-    console.log(req)
 
     if (req.body == null) {
       throw new Error("body에 데이터가 없습니다.");
@@ -62,7 +61,7 @@ CocktailRouter.get("/cocktailmbti", async (req, res, next) => {
 
     const { mbti } = req.body;
 
-    if ( typeof mbti !== "object") {
+    if (mbti == null) {
       throw new Error("데이터는 배열이어야 합니다.");
     }
 

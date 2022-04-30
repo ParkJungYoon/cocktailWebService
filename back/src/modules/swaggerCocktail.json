@@ -44,7 +44,10 @@
               "in": "body",
               "description": "[w, x, y, z] => [(w > 0 = E: w < 0 = I), (w > 0 = N: w < 0 = S), (w > 0 = T: w < 0 = F), (w > 0 = J: w < 0 = P),]",
               "required": true,
-              "type": "[integer]"
+              "mbti": "body",
+              "schema": {
+                "$ref": "#/definitions/mbti"
+              }
             }
           ],
           "responses": {
@@ -181,6 +184,13 @@
           },
           "rank": {
             "type": "Schema.Types.ObjectId"
+          }
+        }
+      },
+      "mbti" : {
+        "properties": {
+          "mbti": {
+            "type": "[integer]"
           }
         }
       }

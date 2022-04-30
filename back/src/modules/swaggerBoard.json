@@ -14,7 +14,7 @@
         }
       }
     },
-    "/board/{id}": {
+    "/board": {
       "post": {
         "tags": ["Board"],
         "summary": "게시판 추가",
@@ -33,10 +33,6 @@
             "description": "JWT access token",
             "required": true,
             "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "id"
           }
         ],
         "responses": {
@@ -47,7 +43,9 @@
             "description": "Failed. Bad Request"
           }
         }
-      },
+      }
+    },
+    "/board/{id}": {
       "delete": {
         "tags": ["Board"],
         "summary": "게시판 삭제",

@@ -3,6 +3,7 @@ node_modules
 **/.env
 **/.DS_Store
 back/yarn-error.log
+back/images
 ecosystem.config.js
 **/.env.production
 front/build/
