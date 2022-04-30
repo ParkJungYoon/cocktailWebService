@@ -20,6 +20,7 @@ import UserInfo from "./components/mypage/UserInfo";
 import UserTab from "./components/mypage/UserTab";
 import QuizPage from "./pages/QuizPage";
 import Community from "./pages/Community";
+import Mbti from "./pages/Mbti";
 
 //JY
 import SkeletonFunc from "./components/test/SkeletonFunc";
@@ -74,6 +75,7 @@ function App() {
         <Route path="/usertab" element={<UserTab />} />
         <Route path="/quiz" element={<QuizPage />} />
         <Route path="/community" element={<Community />} />
+        <Route path="/mbti" element={<Mbti />} />
       </Routes>
     </Router>
   );

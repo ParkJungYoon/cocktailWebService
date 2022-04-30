@@ -1,25 +1,22 @@
 import React from "react";
-import { Card, CardMedia } from "@mui/material";
+import { Box } from "@mui/material";
 
 const QuestionImg = (props) => {
   return (
     <>
       <div>
-        <Card
-          sx={{
-            width: "100%",
-            height: "100%",
-            justifyContent: "center",
-          }}
-          backgroundColor="transparent"
-        >
-          <CardMedia
-            component="img"
-            image={props.img}
-            // alt="image"
-            sx={{ width: "100%" }}
+        <Box>
+          <img
+            className=""
+            src={props.img}
+            alt=""
+            width="250px"
+            style={{
+              borderRadius: "1rem",
+              justifyContent: "center",
+            }}
           />
-        </Card>
+        </Box>
       </div>
     </>
   );
