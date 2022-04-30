@@ -9,6 +9,7 @@ import { RankRouter } from "./routers/RankRouter";
 import { dbRouter } from "./routers/dbRouter";
 import { LikeRouter } from "./routers/LikeRouter";
 import { CommentRouter } from "./routers/CommentRouter";
+import { BoardRouter } from "./routers/BoardRouter";
 
 import swaggerUi from "swagger-ui-express";
 import * as swaggerDocument from "./modules/swagger.json";
@@ -91,6 +92,7 @@ app.use(CocktailRouter);
 app.use(RankRouter);
 app.use(LikeRouter);
 app.use(CommentRouter);
+app.use(BoardRouter);
 
 // errorMessage yellow
 app.use(errorMiddleware);
