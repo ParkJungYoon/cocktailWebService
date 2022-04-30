@@ -10,7 +10,7 @@ const QuestionImg = (props) => {
             className=""
             src={props.img}
             alt=""
-            width="100%"
+            width="250px"
             style={{
               borderRadius: "1rem",
               justifyContent: "center",
