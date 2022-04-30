@@ -1335,7 +1335,10 @@ if (!window.clearImmediate) {
       }
     }
   };
-  //   // Expose the library as an AMD module
+
+  //Module export 방식 여러가지.... => ES6 export function ()
+
+  // Expose the library as an AMD module
   //   if (typeof define === "function" && define.amd) {
   //     // eslint-disable-line no-undef
   //     global.WordCloud = WordCloud;
