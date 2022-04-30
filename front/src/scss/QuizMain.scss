@@ -10,15 +10,23 @@
     justify-items: center
 }
 .finalPage p {
+    margin: 25px;
     font-size: 30px;
     font-family: Arial,sans-serif;
     color: #ffffff;
     font-weight: bold;
+    p:hover{
+        color: #a300d9;
+    }
+}
+.finalPage p:hover {
+    color: #a300d9;
+    cursor:default;
 }
 .restart {
     /* background-color: black; */
     color: white;
-    margin-top:0.3rem;
+    margin-top: 0.7rem;
     padding: 5px;
     cursor: pointer;
     text-decoration: none;
@@ -34,4 +42,11 @@
 }
 .MuiLinearProgress-bar {
     background-color: white !important;
+}
+.confirmGuide {
+    margin: 30px;
+    font-size: 20px;
+    font-family: Arial,sans-serif;
+    color: #ffffff;
+    font-weight: bold;
 }

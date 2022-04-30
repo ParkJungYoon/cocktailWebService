@@ -180,7 +180,9 @@ function QuizMain(props) {
               </Grid>
             </div>
           ) : (
-            ""
+            <p className="confirmGuide">
+              문제 번호를 눌려 정답을 확인해보세요.
+            </p>
           )}
         </Grid>
       )}
