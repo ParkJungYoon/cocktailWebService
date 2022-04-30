@@ -6,6 +6,15 @@ import fs from "fs";
 
 const imagePath = () => { return path.resolve(__dirname, '../', '../', '../', 'images') }
 
+const imageNamePush = (req, filename) => {
+  if (req.images == undefined) {
+    req.images = []
+  }
+
+  req.images.push(filename)
+  return req;
+}
+
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, imagePath());
@@ -21,7 +30,7 @@ const storage = multer.diskStorage({
       }
 
       ImageModel.uploadOne({ image });
-
+      req = imageNamePush(req, fileName)
       cb(null, fileName);
     },
 });
