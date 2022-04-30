@@ -9,13 +9,15 @@ import { RankRouter } from "./routers/RankRouter";
 import { dbRouter } from "./routers/dbRouter";
 import { LikeRouter } from "./routers/LikeRouter";
 import { CommentRouter } from "./routers/CommentRouter";
+import { BoardRouter } from "./routers/BoardRouter";
 
+//todo: 테스트용 지워야 함
+import { photoReview } from "./routers/ImageRouter";
 import swaggerUi from "swagger-ui-express";
 import * as swaggerDocument from "./modules/swagger.json";
 
 import { passport } from "./passport/googlePassport";
 import { config, findOrCreateUser, getKakaoData } from "./utils/kakaoOAuth";
-import { Cocktail } from "./db/schemas/cocktail";
 
 const app = express();
 
@@ -33,15 +35,16 @@ app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // kakao
 app.get("/auth/kakao", (req, res) => {
-  const kakaoAuthURL = `https://kauth.kakao.com/oauth/authorize?client_id=${process.env.KAKAO_REST_API}&redirect_uri=${process.env.KAKAO_REDIRECT_URI}&response_type=code&scope=profile_nickname,account_email`;
+  const kakaoAuthURL = `https://kauth.kakao.com/oauth/authorize?client_id=${process.env.KAKAO_REST_API}&redirect_uri=${process.env.KAKAO_REDIRECT_URI}&response_type=code&scope=profile_nickname`;
   res.redirect(kakaoAuthURL);
 });
 
 app.get("/auth/kakao/callback", async (req, res) => {
   //axios>>promise object
   try {
+    console.log("ASdasd")
     //access토큰을 받기 위한 코드
-    token = await axios({
+    const token = await axios({
       //token
       method: "POST",
       url: "https://kauth.kakao.com/oauth/token",
@@ -56,7 +59,7 @@ app.get("/auth/kakao/callback", async (req, res) => {
         code: req.query.code, //결과값을 반환했다. 안됐다.
       }), //객체를 string 으로 변환
     });
-
+    console.log("sadasdasd")
     req = getKakaoData(req, token);
     console.log(req);
     //findOrCreateUser()
@@ -91,7 +94,10 @@ app.use(CocktailRouter);
 app.use(RankRouter);
 app.use(LikeRouter);
 app.use(CommentRouter);
+app.use(BoardRouter);
 
+//todo: 테스트용 지워야함
+app.use(photoReview);
 // errorMessage yellow
 app.use(errorMiddleware);
 
