@@ -9,7 +9,7 @@ import words from "./words";
 import * as Api from "../../api";
 
 const options = {
-  colors: ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b"],
+  colors: ["#ffffff"],
   enableTooltip: true,
   deterministic: false,
   fontFamily: "impact",
