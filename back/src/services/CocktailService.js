@@ -32,11 +32,6 @@ class CocktailService {
     return deleteResult;
   };
 
-  static rank10Cocktail = async () => {
-    const result = await CocktailModel.rankCocktail();
-    return result;
-  };
-
   /**
    *
    * @param {// [0 ,0, 0, 0] => [E / I , N / S, T / F, J / P]} mbti

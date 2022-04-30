@@ -14,7 +14,7 @@ CocktailRouter.get("/cocktails", async (req, res, next) => {
   }
 });
 
-CocktailRouter.get("/cocktails/rank10", async (req, res, next) => {
+CocktailRouter.get("/cocktails/rank", async (req, res, next) => {
   try {
     const cocktailList = await CocktailService.getCocktailRank10List();
     res.status(200).json(cocktailList);
@@ -35,20 +35,6 @@ CocktailRouter.get("/cocktails/:name", async (req, res, next) => {
 
     if (cocktail == null) {
       throw new Error("칵테일 이름과 일치하는 데이터가 없습니다. - search");
-    }
-
-    res.status(200).json(cocktail);
-  } catch (error) {
-    next(error);
-  }
-});
-
-CocktailRouter.get("/cocktailrank", async (req, res, next) => {
-  try {
-    const cocktail = await CocktailService.rank10Cocktail();
-
-    if (cocktail == null) {
-      throw new Error("데이터를 불러오는 데 실패했습니다.");
     }
 
     res.status(200).json(cocktail);
