@@ -56,7 +56,7 @@ function Header({ user }) {
   const linkTabstyle = { width: "130px" };
 
   // 탭 관리
-  const [value, setValue] = React.useState("1");
+  const [value, setValue] = React.useState(false);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -65,7 +65,7 @@ function Header({ user }) {
 
   return (
     <ThemeProvider theme={theme}>
-      <nav className="navbar">
+      <div className="navbar">
         <div className="navbarAccount">
           {isLogin ? (
             <>
@@ -86,7 +86,6 @@ function Header({ user }) {
               <Link onClick={handleRegisterOpen} className="account">
                 Sign Up
               </Link>
-              )
             </>
           )}
         </div>
@@ -96,7 +95,14 @@ function Header({ user }) {
           open={openRegister}
         />
         <div className="navbarLogo">
-          <Link color="white" underline="none">
+          <Link
+            color="white"
+            underline="none"
+            onClick={() => {
+              navigate("/");
+              setValue(false);
+            }}
+          >
             저쪽 손님께서
             <br />
             보내신 겁니다
@@ -114,51 +120,42 @@ function Header({ user }) {
             <LinkTab
               sx={linkTabstyle}
               className="navbarButton"
-              label="Home"
+              label="Cocktail Bar"
               value="1"
               onClick={() => {
-                navigate("/");
+                navigate("/cocktailBar");
               }}
             />
             <LinkTab
               sx={linkTabstyle}
               className="navbarButton"
-              label="Introduce"
+              label="Cocktail Test"
               value="2"
               onClick={() => {
-                navigate("/introduce");
+                navigate("/cocktailTest");
               }}
             />
             <LinkTab
               sx={linkTabstyle}
               className="navbarButton"
-              label="Dictionary"
+              label="Lounge"
               value="3"
               onClick={() => {
-                navigate("/dictionary");
+                navigate("/lounge");
               }}
             />
             <LinkTab
               sx={linkTabstyle}
               className="navbarButton"
-              label="Quiz"
+              label="Introduction"
               value="4"
               onClick={() => {
-                navigate("/quiz");
-              }}
-            />
-            <LinkTab
-              sx={linkTabstyle}
-              className="navbarButton"
-              label="Community"
-              value="5"
-              onClick={() => {
-                navigate("/community");
+                navigate("/introduction");
               }}
             />
           </Tabs>
         </Box>
-      </nav>
+      </div>
     </ThemeProvider>
   );
 }
