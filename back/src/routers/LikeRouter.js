@@ -7,6 +7,13 @@ LikeRouter.post("/like/:id", verifyToken, async (req, res, next) => {
   try {
     const giveUserId = req.user;
     const getCocktailId = req.params.id;
+    const userLike = await LikeService.findUserCocktailLike({
+      giveUserId,
+      getCocktailId,
+    });
+    if (userLike) {
+      throw new Error("이미 좋아요를 누른 칵테일입니다.");
+    }
     const newLike = await LikeService.addLike({ giveUserId, getCocktailId });
     res.status(200).json(newLike);
   } catch (error) {
@@ -16,8 +23,12 @@ LikeRouter.post("/like/:id", verifyToken, async (req, res, next) => {
 
 LikeRouter.delete("/like/:id", verifyToken, async (req, res, next) => {
   try {
-    const id = req.params.id;
-    const deleteLike = await LikeService.deleteLike({ id });
+    const giveUserId = req.user;
+    const getCocktailId = req.params.id;
+    const deleteLike = await LikeService.deleteLike({
+      giveUserId,
+      getCocktailId,
+    });
     if (deleteLike.errorMessage) {
       throw new Error(deleteLike.errorMessage);
     }

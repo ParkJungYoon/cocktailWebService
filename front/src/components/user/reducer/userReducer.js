@@ -18,8 +18,12 @@ const loginReducer = (userState, action) => {
         ...userState,
         user: null,
       };
-    default:
-      return userState;
+    case "Edit":
+      console.log("%c유저정보수정!", "color: #d93d1a;");
+      return {
+        ...userState,
+        user: action.payload,
+      };
   }
 };
 

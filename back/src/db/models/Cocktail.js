@@ -57,6 +57,30 @@ class CocktailModel {
     );
     return cocktail;
   };
+
+  static likeCocktail = async ({ getCocktailId }) => {
+    const updateC = await Cocktail.findOneAndUpdate(
+      { _id : getCocktailId },
+      { $inc : { likes : 1 }  }
+    );
+
+    if (updateC !== null) {
+      return true
+    }
+    return false
+  }
+
+  static unLikeCocktail = async ({ getCocktailId }) => {
+    const updateC = await Cocktail.findOneAndUpdate(
+      { _id : getCocktailId },
+      { $inc : { likes : -1 }  }
+    );
+
+    if (updateC !== null) {
+      return true
+    }
+    return false
+  }
 }
 
 export { CocktailModel };

@@ -31,13 +31,22 @@ function EditForm({ props }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await Api.post("login/modify", {
+      const res = await Api.put("login/modify", {
         email: form.email,
-        password: form.password,
+        // password: form.password,
         name: form.name,
-      }); //setUser
+      });
+      //setUser
+      alert("변경완료");
+      const updatedUser = res.data;
+      userDispatch({
+        type: "Edit",
+        payload: updatedUser,
+      });
+      setIsEdit(false);
     } catch (err) {
       console.log(err);
+      alert("실패, 이미 있는 이메일  or 이미 있는 닉네임 ");
     }
   };
 
@@ -58,7 +67,7 @@ function EditForm({ props }) {
           color: "white",
         }}
       >
-        <p>EditForm</p>
+        <p>Edit</p>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -80,7 +89,6 @@ function EditForm({ props }) {
         </form>
         <button
           onClick={() => {
-            console.log("editbutton");
             setIsEdit(false);
           }}
         >

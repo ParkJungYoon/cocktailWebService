@@ -2,6 +2,7 @@ import React, { useState, useEffect, useReducer, useContext } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import * as Api from "./api";
+import "./scss/index.scss";
 import axios from "axios";
 
 import { loginReducer } from "./reducer";
@@ -22,10 +23,11 @@ import CocktailTest from "./pages/CocktailTest";
 import Lounge from "./pages/Lounge";
 import Mbti from "./components/mbti/Mbti";
 import Quiz from "./components/quiz/Quiz";
+import CellarPage from "./pages/CellarPage";
 
 //JY
 import SkeletonFunc from "./components/test/SkeletonFunc";
-import TopTenSOTB from "./components/test/TopTenSOTB";
+import AccountPage from "./pages/AccountPage";
 
 function App() {
   const { userState, userDispatch } = useContext(UserContext);
@@ -37,6 +39,7 @@ function App() {
     try {
       // 이전에 발급받은 토큰이 있다면, 이를 가지고 유저 정보를 받아옴.
       const res = await Api.get("user/current");
+      console.log(res);
       const currentUser = res.data;
 
       // dispatch 함수를 통해 로그인 성공 상태로 만듦.
@@ -48,6 +51,9 @@ function App() {
       console.log("%c sessionStorage에 토큰 있음.", "color: #d93d1a;");
     } catch {
       console.log("%c SessionStorage에 토큰 없음.", "color: #d93d1a;");
+      userDispatch({
+        type: "LOGOUT",
+      });
     }
     // fetchCurrentUser 과정이 끝났으므로, isFetchCompleted 상태를 true로 바꿔줌
     setIsFetchCompleted(true);
@@ -57,6 +63,7 @@ function App() {
   useEffect(() => {
     fetchCurrentUser();
   }, []);
+
   if (!isFetchCompleted) {
     return <SkeletonFunc />;
   }
@@ -71,13 +78,14 @@ function App() {
         <Route path="/mypage" element={<Mypage />} />
         <Route path="/bookmark" element={<Bookmark />} />
         <Route path="/like" element={<Like />} />
-        <Route path="/top10" element={<TopTenSOTB />} />
         <Route path="/userinfo" element={<UserInfo />} />
         <Route path="/usertab" element={<UserTab />} />
         <Route path="/cocktailTest" element={<CocktailTest />} />
         <Route path="/lounge" element={<Lounge />} />
         <Route path="/cocktailTest/mbti" element={<Mbti />} />
         <Route path="/cocktailTest/quiz" element={<Quiz />} />
+        <Route path="/account" element={<AccountPage />} />
+        <Route path="/cellar" element={<CellarPage />} />
       </Routes>
     </Router>
   );
