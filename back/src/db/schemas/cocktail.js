@@ -24,6 +24,9 @@ const CocktailSchema = new Schema({
   userId: {
     type: Schema.Types.ObjectId,
     ref: "User",
+  },
+  likes : {
+    type : Number,
   }
 });
 

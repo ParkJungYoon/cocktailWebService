@@ -11,15 +11,15 @@ import {
 } from "./components/user/reducer/userReducer";
 import Header from "./components/Header";
 import Landing from "./pages/Landing";
-import Introduce from "./pages/Introduce";
+import Introduction from "./pages/Introduction";
 import Mypage from "./components/mypage/Mypage";
 import Bookmark from "./components/mypage/Bookmark";
-import Dictionary from "./pages/Dictionary";
+import CocktailBar from "./pages/CocktailBar";
 import Like from "./components/mypage/Like";
 import UserInfo from "./components/mypage/UserInfo";
 import UserTab from "./components/mypage/UserTab";
-import QuizPage from "./pages/QuizPage";
-import Community from "./pages/Community";
+import CocktailTest from "./pages/CocktailTest";
+import Lounge from "./pages/Lounge";
 import Mbti from "./pages/Mbti";
 
 //JY
@@ -70,15 +70,15 @@ function App() {
       <Header user={userState} />
       <Routes>
         <Route path="/" exact element={<Landing />} />
-        <Route path="/introduce" element={<Introduce />} />
-        <Route path="/dictionary" element={<Dictionary />} />
+        <Route path="/introduction" element={<Introduction />} />
+        <Route path="/cocktailBar" element={<CocktailBar />} />
         <Route path="/mypage" element={<Mypage />} />
         <Route path="/bookmark" element={<Bookmark />} />
         <Route path="/like" element={<Like />} />
         <Route path="/userinfo" element={<UserInfo />} />
         <Route path="/usertab" element={<UserTab />} />
-        <Route path="/quiz" element={<QuizPage />} />
-        <Route path="/community" element={<Community />} />
+        <Route path="/cocktailTest" element={<CocktailTest />} />
+        <Route path="/lounge" element={<Lounge />} />
         <Route path="/mbti" element={<Mbti />} />
         <Route path="/account" element={<AccountPage />} />
       </Routes>

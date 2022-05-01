@@ -11,8 +11,13 @@ class LikeModel {
     return likeList;
   };
 
-  static deleteLike = async ({ id }) => {
-    const deleteLike = await Like.findByIdAndRemove({ _id: id });
+  static getLike = async ({ giveUserId, getCocktailId }) => {
+    const like = await Like.findOne({ giveUserId, getCocktailId });
+    return like;
+  };
+
+  static deleteLike = async ({ giveUserId, getCocktailId }) => {
+    const deleteLike = await Like.findOneAndRemove({ giveUserId, getCocktailId });
     return deleteLike;
   };
 

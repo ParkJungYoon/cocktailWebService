@@ -14,10 +14,16 @@ BoardRouter.post(
   upload.array("img"),
   async (req, res, next) => {
     try {
-      const writer = req.user;
+      const title = req.body.title;
+      const writer = req.user.writer;
       const context = req.body.context;
       const images = req.images;
-      const newBoard = await BoardService.create({ writer, context, images });
+      const newBoard = await BoardService.create({
+        title,
+        writer,
+        context,
+        images,
+      });
       res.status(200).json(newBoard);
     } catch (error) {
       next(error);
@@ -27,7 +33,7 @@ BoardRouter.post(
 
 BoardRouter.delete("/board/:id", verifyToken, async (req, res, next) => {
   try {
-    const writer = req.user;
+    const writer = req.user.wrter;
     const boardId = req.params.id;
     const deleteBoard = await BoardService.delete({ writer, boardId });
     if (deleteBoard.errorMessage) {
@@ -41,11 +47,13 @@ BoardRouter.delete("/board/:id", verifyToken, async (req, res, next) => {
 
 BoardRouter.put("/board/:id", verifyToken, async (req, res, next) => {
   try {
-    const writer = req.user;
+    const title = req.body.title;
+    const writer = req.user.writer;
     const boardId = req.params.id;
     const context = req.body.context;
 
     const modifiedBoard = await BoardService.modify({
+      title,
       writer,
       boardId,
       context,
