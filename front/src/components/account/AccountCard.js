@@ -19,22 +19,8 @@ function AccountCard(props) {
   const [isNameEdit, setIsNameEdit] = useState(false);
 
   return (
-    <Stack
-      sx={{
-        backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ))`,
-        width: "50%",
-        alignItems: "center",
-        alignContent: "center",
-      }}
-    >
-      <div
-        style={{
-          paddingTop: "100px",
-          width: "500px",
-          height: "500px",
-          color: "white",
-        }}
-      >
+    <Stack>
+      <div>
         <p>AccountCard</p>
         {isNameEdit ? (
           <Edit setIsEdit={setIsNameEdit} formName={"name"} />

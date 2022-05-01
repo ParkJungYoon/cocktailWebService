@@ -10,26 +10,17 @@ import {
   Box,
   Stack,
 } from "@mui/material";
-import bgImg from "../../imgs/thirdpage.jpg";
 import { UserContext } from "../user/reducer/userReducer";
 import AccountCard from "./AccountCard";
 import EditForm from "./EditForm";
 
 function Account() {
-  //style
-  const quizGridStyle = {
-    padding: "5% 15% 5% 15%",
-    borderRadius: "2rem",
-    backgroundImage: `url(${bgImg})`,
-    backgroundSize: "cover",
-  };
-  //code
   const navigate = useNavigate();
   const { userState, userDispatch } = useContext(UserContext);
   console.log(userState.user);
   const isLogin = !!userState.user;
   if (isLogin === false)
-    // navigate("/");
+    // navigate("/"); 왜안되지..?
     window.location.replace("/");
   const { name, email, password } = userState.user;
 
@@ -39,9 +30,10 @@ function Account() {
         marginLeft: "5%",
         marginRight: "5%",
       }}
+      // clssName={style.bo}
     >
       <Stack className="AccountContent">
-        <Grid item xs={12} md={12} mt={13} height="720px" sx={quizGridStyle}>
+        <Grid item xs={12} md={12} mt={13}>
           <AccountCard props={{ name, email, password }} />
         </Grid>
       </Stack>
