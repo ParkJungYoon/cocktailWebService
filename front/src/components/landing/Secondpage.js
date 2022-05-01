@@ -12,7 +12,10 @@ export default function Secondpage() {
       <div className="secondpageContainer">
         <Grid container className="top10">
           <Grid item xs={8} className="top10ChartWrapper">
-            <Top10Chart />
+            <Box className="top10Chart">
+              <Top10Chart />
+            </Box>
+            {/* {Hovering effect does not work} */}
             {/* <img
               className="top10Chart"
               src={chart}

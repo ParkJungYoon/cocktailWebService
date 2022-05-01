@@ -4,9 +4,8 @@ import { Tab, Box } from "@mui/material";
 import { TabContext, TabPanel, TabList } from "@mui/lab";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
-import * as Api from "../../api";
-import AllCardList from "./AllCardList";
-import Top10CardList from "./Top10CardList";
+import AllCard from "./AllCard";
+import Top10Card from "./Top10Card";
 import CardSearch from "./CardSearch";
 
 const theme = createTheme({
@@ -18,27 +17,6 @@ const theme = createTheme({
 });
 
 export default function CardMenu() {
-  // 탭 기능
-  const [cocktails, setCocktails] = useState([]);
-  const [top10Cocktails, setTop10Cocktails] = useState([]);
-
-  useEffect(async () => {
-    await Api.get("cocktails").then((res) => {
-      setCocktails(res.data);
-      setTop10Cocktails(
-        res.data
-          .filter((data) => data.rank != undefined && data.rank.rank <= 10)
-          .sort((A, B) => {
-            return A.rank.rank < B.rank.rank
-              ? -1
-              : A.rank.rank > B.rank.rank
-              ? 1
-              : 0;
-          })
-      );
-    });
-  }, []);
-
   // 필터기능
   const [searchCocktails, setSearchCocktails] = useState([]);
   const navigate = useNavigate();
@@ -69,26 +47,20 @@ export default function CardMenu() {
           <TabList onChange={handleChange}>
             <Tab sx={tabStyle} value={"0"} label="dictionary" />
             <Tab sx={tabStyle} value={"1"} label="top 10" />
-            <Tab sx={tabStyle} value={"2"} label="likes" />
-            <CardSearch setSearchCocktails={setSearchCocktails} />
+            <Tab sx={tabStyle} value={"2"} label="Search" />
           </TabList>
         </Box>
-
         <TabPanel value={"0"}>
-          <AllCardList
-            cocktails={cocktails}
-            setCocktails={setCocktails}
-            searchCocktails={searchCocktails}
-          />
+          <AllCard />
         </TabPanel>
         <TabPanel value={"1"}>
-          <Top10CardList
-            top10Cocktails={top10Cocktails}
-            setTop10Cocktails={setTop10Cocktails}
-          />
+          <Top10Card />
         </TabPanel>
         <TabPanel value={"2"}>
-          <Box sx={{ color: "white", ml: 20 }}>준비중입니다</Box>
+          <CardSearch
+            searchCocktails={searchCocktails}
+            setSearchCocktails={setSearchCocktails}
+          />
         </TabPanel>
       </TabContext>
     </ThemeProvider>

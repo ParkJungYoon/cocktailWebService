@@ -118,24 +118,24 @@ $thirdpage: "../imgs/thirdpage.jpg";
         position: relative;
       }
     }
-  }
-  .top10TextWrapper {
-    margin-top: auto;
-    margin-bottom: auto;
-    text-align: center;
-    .top10Text {
-      position: relative;
-      color: white;
-    }
-    .buttonBox {
+    .top10TextWrapper {
+      margin-top: auto;
+      margin-bottom: auto;
       text-align: center;
-      .top10Button {
-        background: linear-gradient(to right, lightpink, rgb(211, 98, 211));
+      .top10Text {
+        position: relative;
         color: white;
-        font-size: 1vw;
-        font-weight: bold;
-        margin-top: 50px;
-        cursor: pointer;
+      }
+      .buttonBox {
+        text-align: center;
+        .top10Button {
+          background: linear-gradient(to right, lightpink, rgb(211, 98, 211));
+          color: white;
+          font-size: 1vw;
+          font-weight: bold;
+          margin-top: 50px;
+          cursor: pointer;
+        }
       }
     }
   }
