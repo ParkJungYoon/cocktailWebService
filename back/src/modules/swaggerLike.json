@@ -93,17 +93,13 @@
         }
       }
     },
-    "/userLike/{id}": {
+    "/userLike": {
       "get": {
         "tags": ["Like"],
         "summary": "유저가 좋아요한 리스트 목록",
         "parameters": [
           {
-            "in": "path",
-            "name": "id"
-          },
-          {
-            "name": "Authorization",
+            "name": "authorization",
             "in": "header",
             "description": "JWT access token",
             "required": true,
