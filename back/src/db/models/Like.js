@@ -17,7 +17,10 @@ class LikeModel {
   };
 
   static deleteLike = async ({ giveUserId, getCocktailId }) => {
-    const deleteLike = await Like.findOneAndRemove({ giveUserId, getCocktailId });
+    const deleteLike = await Like.findOneAndRemove({
+      giveUserId,
+      getCocktailId,
+    });
     return deleteLike;
   };
 
@@ -28,8 +31,8 @@ class LikeModel {
     return cocktailLikeList;
   };
 
-  static getUserLike = async ({ id }) => {
-    const userLikeList = await Like.find().where("giveUserId").equals(id);
+  static getUserLike = async ({ userId }) => {
+    const userLikeList = await Like.find().where("giveUserId").equals(userId);
     return userLikeList;
   };
 }
