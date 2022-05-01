@@ -8,8 +8,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { Line, Bar } from "react-chartjs-2";
-import SOTB from "../test/SOTB.json";
+import { Line } from "react-chartjs-2";
 import "chart.js/auto";
 
 ChartJS.register(
@@ -22,11 +21,6 @@ ChartJS.register(
 );
 
 const Top10CardChart = ({ cocktail }) => {
-  //   const rankData = SOTB.years;
-  //   const labels = Object.keys(rankData);
-  //   const dataArr = Object.values(rankData).map((v) => v + 1);
-
-  //   const cocktailData = JSON.stringfiy(cocktail);
   const rankData = cocktail.years;
   const labels = Object.keys(rankData).map((v) => String(v));
   const dataArr = Object.values(rankData).map((v) => v + 1);
@@ -95,9 +89,7 @@ const Top10CardChart = ({ cocktail }) => {
       },
     },
   };
-  useEffect(() => {
-    console.log(dataArr);
-  }, []);
+
   return (
     <div style={{ width: 300 }}>
       <Line animation={animation} options={options} data={data} />

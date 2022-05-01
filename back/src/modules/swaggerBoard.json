@@ -23,6 +23,7 @@
             "in": "body",
             "name": "body",
             "context": "body",
+            "title": "body",
             "schema": {
               "$ref": "#/definitions/Board"
             }
@@ -79,6 +80,7 @@
             "in": "body",
             "name": "body",
             "context": "body",
+            "title": "body",
             "schema": {
               "$ref": "#/definitions/Board"
             }
@@ -109,6 +111,9 @@
   "definitions": {
     "Board": {
       "properties": {
+        "title": {
+          "type": "string"
+        },
         "writer": {
           "type": "string"
         },
