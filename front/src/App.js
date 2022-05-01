@@ -76,8 +76,8 @@ function App() {
         <Route path="/usertab" element={<UserTab />} />
         <Route path="/cocktailTest" element={<CocktailTest />} />
         <Route path="/lounge" element={<Lounge />} />
-        <Route path="/mbti" element={<Mbti />} />
-        <Route path="/quiz" element={<Quiz />} />
+        <Route path="/cocktailTest/mbti" element={<Mbti />} />
+        <Route path="/cocktailTest/quiz" element={<Quiz />} />
       </Routes>
     </Router>
   );

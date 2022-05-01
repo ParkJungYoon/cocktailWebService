@@ -60,14 +60,14 @@ function CocktailTest() {
             <Container
               className="startBtn"
               sx={quizStartBtn}
-              onClick={() => navigate("/quiz")}
+              onClick={() => navigate("/cocktailTest/quiz")}
             >
               QUIZ START
             </Container>
             <Container
               className="startBtn"
               sx={mbtiStartBtn}
-              onClick={() => navigate("/mbti")}
+              onClick={() => navigate("/cocktailTest/mbti")}
             >
               MBTI START
             </Container>
