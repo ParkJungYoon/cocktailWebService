@@ -5,9 +5,11 @@ import * as Api from "../../api";
 import Loader from "./Loader";
 import Top10SortButton from "./Top10SortButton";
 import Top10Posts from "./Top10Posts";
+
 export default function Top10Card() {
   const [top10Cocktails, setTop10Cocktails] = useState([]);
   const [load, setLoad] = useState(false);
+
   useEffect(async () => {
     setLoad(true);
     await Api.get("cocktails/rank").then((res) => {
@@ -18,11 +20,12 @@ export default function Top10Card() {
 
   return (
     <>
-      <Grid container xs={12} color="white">
+      <Grid container color="white">
         <Box
           sx={{
-            ml: "80%",
-            mb: 3,
+            ml: "auto",
+            mr: 20,
+            mb: 4,
           }}
         >
           <Top10SortButton

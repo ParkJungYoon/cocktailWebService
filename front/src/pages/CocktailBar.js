@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Typography } from "@mui/material";
 
-import "../scss/Dictionary.scss";
+import "../scss/CocktailBar.scss";
 import CardMenu from "../components/cocktailBar/CardMenu";
 
 export default function Dictionary() {

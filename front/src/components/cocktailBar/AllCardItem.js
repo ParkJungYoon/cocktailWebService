@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { Card, CardMedia, CardContent, Button, Box } from "@mui/material";
+import {
+  Card,
+  CardMedia,
+  CardContent,
+  Button,
+  Box,
+  IconButton,
+  Typography,
+} from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useNavigate } from "react-router-dom";
 import CompareArrowsIcon from "@mui/icons-material/CompareArrows";
@@ -24,14 +32,19 @@ export default function AllCardItem({ cocktail }) {
     <>
       <Box className={` ${isFront ? "cardFront" : "cardBack"}`}>
         <Card className="front">
-          <FavoriteIcon sx={iconStyle} />
+          <IconButton onClick={() => {}}>
+            <FavoriteIcon sx={iconStyle} />
+          </IconButton>
+          {cocktail.likes}
           <CardMedia
             height="250"
             component="img"
             image={cocktail.imageUrl}
             loading="lazy"
           />
-          <CardContent className="cocktailContent">{cocktail.name}</CardContent>
+          <CardContent className="cocktailContent">
+            <Typography variant="h6">{cocktail.name}</Typography>
+          </CardContent>
           <CardContent>
             <Button onClick={handleOnClick} sx={buttonStyle}>
               <CompareArrowsIcon />
@@ -41,11 +54,17 @@ export default function AllCardItem({ cocktail }) {
 
         <Card className=" back">
           <CardContent className="descriptionBox" height="250">
-            {cocktail.name}
+            <Typography
+              variant="h5"
+              align="center"
+              sx={{ py: 2, mb: 5, borderBottom: "2px solid plum" }}
+            >
+              {cocktail.name}
+            </Typography>
             {cocktail.ingredient.map((item, i) => (
-              <li key={i}>
+              <Typography key={i} variant="body1">
                 재료{i + 1} : {item}
-              </li>
+              </Typography>
             ))}
           </CardContent>
           <Button onClick={handleOnClick} sx={buttonStyle}>

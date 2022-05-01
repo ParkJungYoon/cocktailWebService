@@ -17,7 +17,7 @@ export default function Firstpage() {
         <Link
           className="introButton"
           underline="none"
-          onClick={() => navigate("/dictionary")}
+          onClick={() => navigate("/cocktailBar")}
         >
           칵테일 한 잔 하러 가기
         </Link>
