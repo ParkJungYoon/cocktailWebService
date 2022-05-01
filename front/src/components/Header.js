@@ -21,7 +21,6 @@ import RegisterModal from "./user/RegisterModal";
 import LoginModal from "./user/LoginModal";
 import { UserContext } from "./user/reducer/userReducer";
 import "../scss/Header.scss";
-import logo from "../imgs/logo.png";
 
 const theme = createTheme({
   palette: {
@@ -189,15 +188,9 @@ function Header({ user }) {
               setValue(false);
             }}
           >
-            <Box className="">
-              <img
-                className=""
-                src={logo}
-                alt=""
-                width="10%"
-                // height="80%"
-              />
-            </Box>
+            저쪽 손님께서
+            <br />
+            보내신 겁니다
           </Link>
         </div>
 
