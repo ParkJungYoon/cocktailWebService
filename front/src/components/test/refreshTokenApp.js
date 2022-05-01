@@ -1,73 +1,115 @@
+import React, { useState, useEffect, useReducer, useContext } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import * as Api from "./api";
 import axios from "axios";
 
-const backendPortNumber = "5000";
-const serverUrl =
-  "http://" + window.location.hostname + ":" + backendPortNumber + "/";
+import { loginReducer } from "./reducer";
+import {
+  UserContext,
+  UserProvider,
+} from "./components/user/reducer/userReducer";
+import Header from "./components/Header";
+import Landing from "./pages/Landing";
+import Introduce from "./components/introduce/Introduce";
+import Mypage from "./components/mypage/Mypage";
+import Bookmark from "./components/mypage/Bookmark";
+import Dictionary from "./pages/Dictionary";
+import Like from "./components/mypage/Like";
+import UserInfo from "./components/mypage/UserInfo";
+import UserTab from "./components/mypage/UserTab";
+import QuizPage from "./pages/QuizPage";
 
-async function get(endpoint, params = "") {
-  console.log(
-    `%cGET 요청 ${serverUrl + endpoint + "/" + params}`,
-    "color: #a25cd1;"
-  );
-  if (endpoint === "refresh") {
-    console.log("refresh 진행");
-    return axios.get(serverUrl + "refresh", {
-      headers: {
-        authorization: `Bearer ${sessionStorage.getItem("userToken")}`,
-        refresh: `${sessionStorage.getItem("refreshToken")}`,
-      },
-    });
-  } else {
-    return axios.get(serverUrl + endpoint + "/" + params, {
-      // JWT 토큰을 헤더에 담아 백엔드 서버에 보냄.
-      headers: {
-        authorization: `Bearer ${sessionStorage.getItem("userToken")}`,
-      },
-    });
+//JY
+import SkeletonFunc from "./components/test/SkeletonFunc";
+import TopTenSOTB from "./components/test/TopTenSOTB";
+
+function App() {
+  const { userState, userDispatch } = useContext(UserContext);
+  // 아래의 fetchCurrentUser 함수가 실행된 다음에 컴포넌트가 구현되도록 함.
+  // 아래 코드를 보면 isFetchCompleted 가 true여야 컴포넌트가 구현됨.
+  const [isFetchCompleted, setIsFetchCompleted] = useState(false);
+
+  /* 1. access Token O, refresh Token O
+      2. access Token X, refresh Token O
+      3. access Token X, refresh Token X  ( 1_한번도 로그인 하지 않은 유저, 2_두 개의 토큰 기한이 만료된 유저)
+      */
+  const fetchCurrentUser = async () => {
+    try {
+      // 현재 유저 정보를 받아옴 (세션 유지)
+      await Api.get("user/current")
+        /*            1. access Token O, refresh Token O            */
+        .then((res) => {
+          console.log(
+            "%c sessionStorage에 access토큰 있음.",
+            "color: #d93d1a;"
+          );
+          const currentUser = res.data;
+
+          // 로그인 성공 상태
+          userDispatch({
+            type: "LOGIN_SUCCESS",
+            payload: currentUser,
+          });
+          // 유저 패치 성공 상태 (로그인)
+          setIsFetchCompleted(true);
+        })
+        /*                        2/3. access Token X                     */
+        .catch(async (err) => {
+          console.log(err.message + " : accessToken만료");
+          /*                          refresh 시도                              */
+          await Api.get("refresh")
+            /*            2. access Token X, refresh Token O         */
+            .then((res) => {
+              sessionStorage.setItem("userToken", res.data.data.accessToken);
+              sessionStorage.setItem(
+                "refreshToken",
+                res.data.data.refreshToken
+              );
+              fetchCurrentUser(); //재발급받은 토큰으로 다시 fetch
+            })
+            /*            3. access Token X, refresh Token X  ( 1_한번도 로그인 하지 않은 유저, 2_두 개의 토큰 기한이 만료된 유저)          */
+            .catch((err) => {
+              console.log(err.message + " : refreshToken만료");
+              //로그아웃 상태
+              userDispatch({
+                type: "LOGOUT",
+              });
+              // 유저 패치 성공 상태 (로그아웃)
+              setIsFetchCompleted(true);
+            });
+        });
+    } catch (err) {
+      console.log(`%c err : ${err}`, "color: #d93d1a;");
+    }
+  };
+
+  // useEffect함수를 통해 fetchCurrentUser 함수를 실행함.
+  useEffect(() => {
+    fetchCurrentUser();
+  }, []);
+
+  if (!isFetchCompleted) {
+    return <SkeletonFunc />;
   }
+
+  return (
+    <Router>
+      <Header user={userState} />
+      <Routes>
+        <Route path="/" exact element={<Landing />} />
+        <Route path="/introduce" element={<Introduce />} />
+        <Route path="/dictionary" element={<Dictionary />} />
+        <Route path="/mypage" element={<Mypage />} />
+        <Route path="/bookmark" element={<Bookmark />} />
+        <Route path="/like" element={<Like />} />
+        <Route path="/top10" element={<TopTenSOTB />} />
+        <Route path="/userinfo" element={<UserInfo />} />
+        <Route path="/usertab" element={<UserTab />} />
+        <Route path="/quiz" element={<QuizPage />} />
+      </Routes>
+    </Router>
+  );
 }
 
-async function post(endpoint, data) {
-  // JSON.stringify 함수: Javascript 객체를 JSON 형태로 변환함.
-  // 예시: {name: "Kim"} => {"name": "Kim"}
-  const bodyData = JSON.stringify(data);
-  console.log(`%cPOST 요청: ${serverUrl + endpoint}`, "color: #296aba;");
-  console.log(`%cPOST 요청 데이터: ${bodyData}`, "color: #296aba;");
-
-  return axios.post(serverUrl + endpoint, bodyData, {
-    headers: {
-      "Content-Type": "application/json",
-      authorization: `Bearer ${sessionStorage.getItem("userToken")}`,
-    },
-  });
-}
-
-async function put(endpoint, data) {
-  // JSON.stringify 함수: Javascript 객체를 JSON 형태로 변환함.
-  // 예시: {name: "Kim"} => {"name": "Kim"}
-  const bodyData = JSON.stringify(data);
-  console.log(`%cPUT 요청: ${serverUrl + endpoint}`, "color: #059c4b;");
-  console.log(`%cPUT 요청 데이터: ${bodyData}`, "color: #059c4b;");
-
-  return axios.put(serverUrl + endpoint, bodyData, {
-    headers: {
-      "Content-Type": "application/json",
-      authorization: `Bearer ${sessionStorage.getItem("userToken")}`,
-    },
-  });
-}
-
-// 아래 함수명에 관해, delete 단어는 자바스크립트의 reserved 단어이기에,
-// 여기서는 우선 delete 대신 del로 쓰고 아래 export 시에 delete로 alias 함.
-async function del(endpoint, params = "") {
-  console.log(`DELETE 요청 ${serverUrl + endpoint + "/" + params}`);
-  return axios.delete(serverUrl + endpoint + "/" + params, {
-    headers: {
-      authorization: `Bearer ${sessionStorage.getItem("userToken")}`,
-    },
-  });
-}
-
-// 아래처럼 export한 후, import * as A 방식으로 가져오면,
-// A.get, A.post 로 쓸 수 있음.
-export { get, post, put, del as delete };
+export default App;
