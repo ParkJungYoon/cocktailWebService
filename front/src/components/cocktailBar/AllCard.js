@@ -39,13 +39,13 @@ function AllCard() {
     //글 불러오기
     setLoad(true); //로딩 시작
     // ---- Get Data Code ---
-    const res = await Api.get("cocktails");
+    const res = await Api.get(`cocktails/page/${page}`);
     if (res.data) {
       if (res.data.end) {
         //마지막 페이지일 경우
         endRef.current = true;
       }
-      setCocktails((prev) => [...prev, ...res.data.slice(0, 50)]); //리스트 배열에 추가
+      setCocktails((prev) => [...prev, ...res.data]); //리스트 배열에 추가
       preventRef.current = true;
     } else {
       console.log(res);
@@ -67,8 +67,9 @@ function AllCard() {
         </Box>
       </Grid>
       <Grid container spacing={1} sx={{ px: 15 }}>
-        <AllPosts cocktails={cocktails} />
-        {load ? <Loader /> : <div ref={obsRef}>옵저버 Element</div>}
+        {cocktails && <> {<AllPosts cocktails={cocktails} />}</>}
+        {load && <Loader />}
+        <div ref={obsRef}></div>
       </Grid>
     </>
   );
