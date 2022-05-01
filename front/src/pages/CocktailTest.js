@@ -61,14 +61,14 @@ function CocktailTest() {
               sx={quizStartBtn}
               onClick={() => navigate("/cocktailTest/quiz")}
             >
-              QUIZ START
+              QUIZ
             </Container>
             <Container
               className="startBtn"
               sx={mbtiStartBtn}
               onClick={() => navigate("/cocktailTest/mbti")}
             >
-              MBTI START
+              MBTI
             </Container>
           </Grid>
         </Grid>
