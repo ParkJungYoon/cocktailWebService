@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Box, Grid } from "@mui/material";
-import "../scss/Introduce.scss";
-import MbtiMain from "../components/mbti/MbtiMain";
+import MbtiMain from "./MbtiMain";
 
 function Mbti() {
   return (

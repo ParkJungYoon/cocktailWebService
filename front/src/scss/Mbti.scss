@@ -1,0 +1,15 @@
+$star1: "../imgs/star1.jpg";
+
+.mbti {
+  background-image: url($star1);
+  background-size: cover;
+  background-color: rgba(64, 64, 64, 0.7);
+  height: 100vh;
+  overflow: auto;
+}
+.btn {
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: rgba(128, 128, 128, 0.5);
+}

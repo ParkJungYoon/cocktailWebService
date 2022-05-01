@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Grid, Container } from "@mui/material";
-import "../../scss/ProjectIdeaContents.scss";
+import "../../scss/Introduction.scss";
 import What from "../../imgs/what.jpg";
 import dylc from "../../imgs/doyoulikecocktail.jpg";
 import alcohol from "../../imgs/alcohol.png";

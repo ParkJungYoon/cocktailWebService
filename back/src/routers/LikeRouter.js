@@ -57,10 +57,10 @@ LikeRouter.get("/cocktailLike/:id", verifyToken, async (req, res, next) => {
   }
 });
 
-LikeRouter.get("/userLike/:id", verifyToken, async (req, res, next) => {
+LikeRouter.get("/userLike", verifyToken, async (req, res, next) => {
   try {
-    const id = req.params.id;
-    const userLikeList = await LikeService.getUserLike({ id });
+    const userId = req.user;
+    const userLikeList = await LikeService.getUserLike({ userId });
     res.status(200).json(userLikeList);
   } catch (error) {
     next(error);
