@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { Grid } from "@mui/material";
-import "../scss/Introduce.scss";
-import IntroduceMenu from "../components/introduce/IntroduceMenu";
+import "../scss/Introduction.scss";
+import IntroductionMenu from "../components/introduction/IntroductionMenu";
 
-function IntroducePage() {
+function Introduction() {
   return (
-    <div className="introduce">
+    <div className="Introduction">
       <Grid container sx={{ mt: 25 }}>
         <Grid item xs={12}>
-          <IntroduceMenu />
+          <IntroductionMenu />
         </Grid>
       </Grid>
     </div>
   );
 }
 
-export default IntroducePage;
+export default Introduction;
