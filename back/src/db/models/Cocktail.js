@@ -6,6 +6,20 @@ class CocktailModel {
     return findCocktail;
   };
 
+  static getRank10Cocktail = async () => {
+    const cocktails = await Cocktail.find({ rank: { $ne: null } }).populate({
+      path: "rank",
+      match: { rank: { $lte: 10 } },
+    });
+    const rankCocktail = cocktails.filter((v, i) => {
+      return v.rank != null;
+    });
+    const sortCocktail = rankCocktail.sort((A, B) => {
+      return A.rank.rank - B.rank.rank;
+    });
+    return sortCocktail;
+  };
+
   static addCocktail = async (cocktail) => {
     const addCocktail = await Cocktail.create(cocktail);
     return addCocktail;
@@ -43,22 +57,6 @@ class CocktailModel {
     );
     return cocktail;
   };
-
-  static rankCocktail = async() => { 
-    const cocktail = await Cocktail.find()
-                              .where('rank').exists(true)
-                              .populate({ 
-                                path: 'rank',
-                                match: { rank: { $lte: 10 } },
-                              })
-
-    const cocktails = cocktail.filter((v, i) => {
-        return v.rank != null
-      })
-
-    return cocktails;
-  }
-
 }
 
 export { CocktailModel };

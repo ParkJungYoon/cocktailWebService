@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -9,8 +9,6 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
-import * as Api from "../../api";
-import SOTB from "../test/SOTB.json";
 import "chart.js/auto";
 
 ChartJS.register(
@@ -22,15 +20,9 @@ ChartJS.register(
   Legend
 );
 
-const Top10CardChart = async ({ name }) => {
-  const params = name ? name : null;
-  if (params) {
-    const res = await Api.get("rank", name);
-    console.log(res);
-  }
-  //   const rankData = res.data.years;
-  const rankData = SOTB.years;
-  const labels = Object.keys(rankData);
+const Top10CardChart = ({ cocktail }) => {
+  const rankData = cocktail.years;
+  const labels = Object.keys(rankData).map((v) => String(v));
   const dataArr = Object.values(rankData).map((v) => v + 1);
 
   const data = {
@@ -44,6 +36,7 @@ const Top10CardChart = async ({ name }) => {
       },
     ],
   };
+
   const totalDuration = 10000;
   const delayBetweenPoints = totalDuration / data.length;
   const previousY = (ctx) =>
@@ -86,7 +79,7 @@ const Top10CardChart = async ({ name }) => {
     plugins: {
       title: {
         display: true,
-        text: SOTB.name,
+        text: "name",
       },
     },
     scales: {
@@ -96,8 +89,9 @@ const Top10CardChart = async ({ name }) => {
       },
     },
   };
+
   return (
-    <div style={{ width: 600 }}>
+    <div style={{ width: 300 }}>
       <Line animation={animation} options={options} data={data} />
     </div>
   );

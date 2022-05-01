@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/addLike/{id}": {
+    "/like/{id}": {
       "post": {
         "tags": ["Like"],
         "summary": "좋아요 추가",
@@ -25,9 +25,7 @@
             "description": "Failed. Bad Request"
           }
         }
-      }
-    },
-    "/deleteLike/{id}": {
+      },
       "delete": {
         "tags": ["Like"],
         "summary": "좋아요 삭제",

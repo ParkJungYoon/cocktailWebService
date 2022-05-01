@@ -13,6 +13,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Top10CardChart from "./Top10CardChart";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -28,6 +29,7 @@ const ExpandMore = styled((props) => {
 
 export default function Top10CardItem({ cocktail }) {
   const navigate = useNavigate();
+  console.log(cocktail);
 
   const [expanded, setExpanded] = React.useState(false);
   const handleExpandClick = () => {
@@ -98,7 +100,8 @@ export default function Top10CardItem({ cocktail }) {
                 </Typography>
               );
             })}
-            <Typography>여기다가 차트 넣어야쥐</Typography>
+            <Top10CardChart cocktail={cocktail.rank} />
+            {/* <Typography>여기다가 차트 넣어야쥐</Typography> */}
           </CardContent>
         </Collapse>
       </Card>

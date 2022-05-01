@@ -19,19 +19,23 @@
     {
       "name": "Cocktail",
       "description": "칵테일 조회 API"
-    },
-    {
-      "name": "User Cocktail",
-      "description": "유저 칵테일 CRUD API"
     }
   ],
-  "schemes": ["HTTP"],
-  "consumes": ["application/json"],
-  "produces": ["application/json"],
+  "schemes": [
+    "HTTP"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
   "paths": {
     "/": {
       "get": {
-        "tags": ["Main"],
+        "tags": [
+          "Main"
+        ],
         "summary": "Main Page Get",
         "responses": {
           "200": {
@@ -41,6 +45,5 @@
       }
     }
   },
-  "definitions": {
-  }
+  "definitions": {}
 }

@@ -3,7 +3,7 @@ import { Typography, Grid, Button, Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 import Top10Chart from "./Top10Chart";
-// import chart from "../../imgs/top10_chart.png";
+import chart from "../../imgs/top10_chart.png";
 
 export default function Secondpage() {
   const navigate = useNavigate();
@@ -12,7 +12,10 @@ export default function Secondpage() {
       <div className="secondpageContainer">
         <Grid container className="top10">
           <Grid item xs={8} className="top10ChartWrapper">
-            <Top10Chart /> {/* {Hovering effect does not work} */}
+            <Box className="top10Chart">
+              <Top10Chart />
+            </Box>
+            {/* {Hovering effect does not work} */}
             {/* <img
               className="top10Chart"
               src={chart}

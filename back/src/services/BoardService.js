@@ -1,8 +1,8 @@
 import { BoardModel } from "../db";
 
 class BoardService {
-  static create = async ({ writer, context }) => {
-    const newBoardData = { writer, context };
+  static create = async ({ title, writer, context, images }) => {
+    const newBoardData = { title, writer, context, images };
     const newBoard = await BoardModel.create(newBoardData);
     return newBoard;
   };
@@ -22,7 +22,7 @@ class BoardService {
     return deleteBoard;
   };
 
-  static modify = async ({ writer, boardId, context }) => {
+  static modify = async ({ title, writer, boardId, context }) => {
     const board = await BoardModel.findById(boardId);
 
     if (!board) {
@@ -36,7 +36,7 @@ class BoardService {
     }
 
     const filter = { _id: boardId };
-    const updateData = { context };
+    const updateData = { title, context };
     const modifiedBoard = await BoardModel.modify(filter, updateData);
 
     return modifiedBoard;
