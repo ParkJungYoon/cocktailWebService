@@ -86,7 +86,8 @@
             "imageUrl": "body",
             "taste": "body",
             "description": "body",
-            "userId": "body"
+            "userId": "body",
+            "method": "body"
           },
           {
             "name": "Authorization",
@@ -106,7 +107,7 @@
         }
       }
     },
-    "/cocktail/{name}": {
+    "/cocktail/modify": {
       "post": {
         "tags": ["Cocktail"],
         "summary": "칵테일 정보 수정",
@@ -114,14 +115,12 @@
           {
             "in": "body",
             "name": "body",
+            "originName" : "body",
             "ingredient": "body",
             "imageUrl": "body",
             "taste": "body",
-            "description": "body"
-          },
-          {
-            "in": "path",
-            "name": "name"
+            "description": "body",
+            "method": "body"
           },
           {
             "name": "Authorization",

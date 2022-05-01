@@ -104,6 +104,7 @@ CocktailRouter.post("/cocktail", verifyToken, async (req, res, next) => {
       taste: req.body.taste,
       description: req.body.description,
       userId: req.user,
+      method: req.body.method
     };
 
     const cocktail = await CocktailService.addCocktail(addData);
@@ -118,9 +119,9 @@ CocktailRouter.post("/cocktail", verifyToken, async (req, res, next) => {
   }
 });
 
-CocktailRouter.post("/cocktail/:name", verifyToken, async (req, res, next) => {
+CocktailRouter.post("/cocktail/modify", async (req, res, next) => {
   try {
-    if (req.params.name == null) {
+    if (req.body.originName == null) {
       throw new Error("칵테일 이름을 입력하세요.");
     }
 
@@ -128,7 +129,7 @@ CocktailRouter.post("/cocktail/:name", verifyToken, async (req, res, next) => {
       throw new Error("수정할 칵테일 데이터가 없습니다.");
     }
 
-    const originName = req.params;
+    const originName = req.body.originName;
     const user = req.user;
 
     const updateData = {
@@ -137,6 +138,7 @@ CocktailRouter.post("/cocktail/:name", verifyToken, async (req, res, next) => {
       imageUrl: req.body.imageUrl,
       taste: req.body.taste,
       description: req.body.description,
+      method: req.body.method,
     };
 
     const cocktail = await CocktailService.updateCocktail(

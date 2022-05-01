@@ -34,7 +34,7 @@ class CocktailModel {
     const { originName, user } = filter;
 
     const option = { returnOriginal: false };
-    const modifiedCocktail = await Cocktail.findByIdAndUpdate(
+    const modifiedCocktail = await Cocktail.findOneAndUpdate(
       {
         name: originName,
         userId: user,

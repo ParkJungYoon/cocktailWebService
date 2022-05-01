@@ -27,7 +27,10 @@ const CocktailSchema = new Schema({
   },
   likes : {
     type : Number,
-  }
+  },
+  method : {
+    type : [String]
+  },
 });
 
 const Cocktail = model("Cocktail", CocktailSchema);
