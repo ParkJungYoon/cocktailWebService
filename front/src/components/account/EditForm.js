@@ -35,13 +35,18 @@ function EditForm({ props }) {
         email: form.email,
         // password: form.password,
         name: form.name,
-      }); //setUser
-      alert("변경완료!");
+      });
+      //setUser
+      alert("변경완료");
       const updatedUser = res.data;
-      console.log(updatedUser);
+      userDispatch({
+        type: "Edit",
+        payload: updatedUser,
+      });
+      setIsEdit(false);
     } catch (err) {
-      console.log(err.message);
-      alert("이미 있는 이메일 입니다");
+      console.log(err);
+      alert("실패, 이미 있는 이메일  or 이미 있는 닉네임 ");
     }
   };
 
@@ -62,7 +67,7 @@ function EditForm({ props }) {
           color: "white",
         }}
       >
-        <p>EditForm</p>
+        <p>Edit</p>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -84,7 +89,6 @@ function EditForm({ props }) {
         </form>
         <button
           onClick={() => {
-            console.log("editbutton");
             setIsEdit(false);
           }}
         >

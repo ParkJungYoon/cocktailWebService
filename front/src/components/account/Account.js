@@ -28,7 +28,6 @@ function Account() {
   const { userState, userDispatch } = useContext(UserContext);
   const isLogin = !!userState.user;
   if (isLogin === false) window.location.replace("/");
-
   const { name, email, password } = userState.user;
   const [isEdit, setIsEdit] = useState(false);
 

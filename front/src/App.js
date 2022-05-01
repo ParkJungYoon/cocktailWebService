@@ -2,6 +2,7 @@ import React, { useState, useEffect, useReducer, useContext } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import * as Api from "./api";
+import "./scss/index.scss";
 import axios from "axios";
 
 import { loginReducer } from "./reducer";
@@ -21,6 +22,7 @@ import UserTab from "./components/mypage/UserTab";
 import CocktailTest from "./pages/CocktailTest";
 import Lounge from "./pages/Lounge";
 import Mbti from "./pages/Mbti";
+import CellarPage from "./pages/CellarPage";
 
 //JY
 import SkeletonFunc from "./components/test/SkeletonFunc";
@@ -81,6 +83,7 @@ function App() {
         <Route path="/lounge" element={<Lounge />} />
         <Route path="/mbti" element={<Mbti />} />
         <Route path="/account" element={<AccountPage />} />
+        <Route path="/cellar" element={<CellarPage />} />
       </Routes>
     </Router>
   );
