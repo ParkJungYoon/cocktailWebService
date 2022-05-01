@@ -7,11 +7,55 @@ $star1: "../imgs/star1.jpg";
   height: 100vh;
   overflow: auto;
 }
-.IntroductionTabs {
-    margin: 180px auto 50px auto;
-    width: 80vw;
-    color: rgba(255, 255, 255, 0.8);
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
-    padding: 10px 0 10px 10px;
+
+.bold {
+  font-weight: bold;
+}
+
+.highlight {
+  background-color: rgb(122, 10, 183);
+}
+
+.ProjectIdeaContents {
+  color: white;
+
+  h1 {
+    font-size: 55px;
   }
+  .intro {
+    .alcohol {
+      .title {
+        font-size: 30px;
+      }
+  
+      .text {
+        font-size: 20px;
+        text-align: left;
+      }
+  
+      .chart {
+        font-size: 15px;
+      }
+    }
+  }
+  .goal {
+    .dylc {
+      .title {
+        font-size: 30px;
+      }
+  
+      .text {
+        font-size: 20px;
+        text-align: left;
+      }
+    }
+  }
+}
+
+.teamIntro {
+  color: white;
+  .infro {
+    font-size: 20px;
+  }
+}
+
