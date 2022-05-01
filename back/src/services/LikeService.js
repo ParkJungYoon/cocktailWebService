@@ -62,8 +62,8 @@ class LikeService {
     return cocktailLikeList;
   };
 
-  static getUserLike = async ({ id }) => {
-    const userLikeList = await LikeModel.getUserLike({ id });
+  static getUserLike = async ({ userId }) => {
+    const userLikeList = await LikeModel.getUserLike({ userId });
     return userLikeList;
   };
   static findUserCocktailLike = async ({ giveUserId, getCocktailId }) => {
