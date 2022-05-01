@@ -3,7 +3,7 @@ import { LikeService } from "../services/LikeService";
 import { verifyToken } from "../middlewares/verifyToken";
 const LikeRouter = Router();
 
-LikeRouter.post("/addLike/:id", verifyToken, async (req, res, next) => {
+LikeRouter.post("/like/:id", verifyToken, async (req, res, next) => {
   try {
     const giveUserId = req.user;
     const getCocktailId = req.params.id;
@@ -14,7 +14,7 @@ LikeRouter.post("/addLike/:id", verifyToken, async (req, res, next) => {
   }
 });
 
-LikeRouter.delete("/deleteLike/:id", verifyToken, async (req, res, next) => {
+LikeRouter.delete("/like/:id", verifyToken, async (req, res, next) => {
   try {
     const id = req.params.id;
     const deleteLike = await LikeService.deleteLike({ id });
