@@ -1,0 +1,40 @@
+import React, { useState, useEffect } from "react";
+import { Box, Grid } from "@mui/material";
+import * as Api from "../../api";
+
+import Loader from "./Loader";
+import Top10SortButton from "./Top10SortButton";
+import Top10Posts from "./Top10Posts";
+export default function Top10Card() {
+  const [top10Cocktails, setTop10Cocktails] = useState([]);
+  const [load, setLoad] = useState(false);
+  useEffect(async () => {
+    setLoad(true);
+    await Api.get("cocktails/rank").then((res) => {
+      setTop10Cocktails(res.data);
+      setLoad(false);
+    });
+  }, []);
+
+  return (
+    <>
+      <Grid container xs={12} color="white">
+        <Box
+          sx={{
+            ml: "80%",
+            mb: 3,
+          }}
+        >
+          <Top10SortButton
+            top10Cocktails={top10Cocktails}
+            setTop10Cocktails={setTop10Cocktails}
+          />
+        </Box>
+      </Grid>
+      <Grid container spacing={3} sx={{ px: 10 }}>
+        <Top10Posts top10Cocktails={top10Cocktails} />
+        {load && <Loader />}
+      </Grid>
+    </>
+  );
+}

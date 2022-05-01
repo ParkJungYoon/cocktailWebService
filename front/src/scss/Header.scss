@@ -37,6 +37,7 @@ $star1: "../imgs/star1.jpg";
     }
   }
   .navbarLogo {
+    cursor: pointer;
     position: relative;
     text-align: center;
     font-size: 20px;
@@ -47,9 +48,9 @@ $star1: "../imgs/star1.jpg";
     background-color: black;
     opacity: 0.7;
     border-top: 0.5px solid white;
-    border-bottom: 0.5px solid white;
 
     .navbarButton {
+      width: 180px;
       border-left: 0.5px solid white;
       border-right: 0.5px solid white;
       padding: 0 15px;

@@ -4,7 +4,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useNavigate } from "react-router-dom";
 import CompareArrowsIcon from "@mui/icons-material/CompareArrows";
 
-export default function CardItem({ cocktail }) {
+export default function AllCardItem({ cocktail }) {
   const navigate = useNavigate();
   const [isFront, setIsFront] = useState(true);
 
