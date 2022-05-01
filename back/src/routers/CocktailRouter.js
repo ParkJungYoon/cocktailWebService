@@ -119,7 +119,7 @@ CocktailRouter.post("/cocktail", verifyToken, async (req, res, next) => {
   }
 });
 
-CocktailRouter.post("/cocktail/modify", async (req, res, next) => {
+CocktailRouter.post("/cocktail/modify", verifyToken, async (req, res, next) => {
   try {
     if (req.body.originName == null) {
       throw new Error("칵테일 이름을 입력하세요.");
