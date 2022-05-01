@@ -27,9 +27,8 @@ function Account() {
   const navigate = useNavigate();
   const { userState, userDispatch } = useContext(UserContext);
   const isLogin = !!userState.user;
-  if (!isLogin) {
-    navigate("/");
-  }
+  if (isLogin === false) window.location.replace("/");
+
   const { name, email, password } = userState.user;
   const [isEdit, setIsEdit] = useState(false);
 

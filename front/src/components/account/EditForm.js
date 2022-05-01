@@ -31,13 +31,16 @@ function EditForm({ props }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await Api.post("login/modify", {
+      const res = await Api.put("login/modify", {
         email: form.email,
-        password: form.password,
+        // password: form.password,
         name: form.name,
       }); //setUser
+      alert("변경완료!");
+      const updatedUser = res.data;
     } catch (err) {
-      console.log(err);
+      console.log(err.message);
+      alert("이미 있는 이메일 입니다");
     }
   };
 
