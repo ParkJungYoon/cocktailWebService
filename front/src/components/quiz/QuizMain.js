@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Box, Grid, LinearProgress } from "@mui/material";
 import "../../scss/Quiz.scss";
+
 import Question from "./Question";
 import QuestionImg from "./QuestionImg";
 import Answer from "./Answer";

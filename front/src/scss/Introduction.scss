@@ -28,11 +28,14 @@ $star1: "../imgs/star1.jpg";
         font-size: 30px;
       }
   
-      .text {
+      .textCenter {
+        font-size: 20px;
+        text-align: center;
+      }
+      .textLeft {
         font-size: 20px;
         text-align: left;
       }
-  
       .chart {
         font-size: 15px;
       }
