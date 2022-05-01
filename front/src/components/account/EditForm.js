@@ -38,6 +38,7 @@ function EditForm({ props }) {
       }); //setUser
       alert("변경완료!");
       const updatedUser = res.data;
+      console.log(updatedUser);
     } catch (err) {
       console.log(err.message);
       alert("이미 있는 이메일 입니다");
