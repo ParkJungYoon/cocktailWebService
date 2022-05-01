@@ -1,7 +1,6 @@
 $maincolor: #151516;
 $star1: "../imgs/star1.jpg";
-$secondpage: "../imgs/secondpage.jpg";
-$secondpage2: "../imgs/gatsby.png";
+$secondpage: "../imgs/gatsby.png";
 $thirdpage: "../imgs/thirdpage.jpg";
 #fp-nav ul li:hover a.active span,
 #fp-nav ul li a.active span,
@@ -10,13 +9,12 @@ $thirdpage: "../imgs/thirdpage.jpg";
   background-color: white;
 }
 .firstPage {
-  background-color: $maincolor;
   .video {
     width: 100%;
     height: 100%;
     display: block;
     position: relative;
-
+    margin-top: 150px;
     &::before {
       content: "";
       top: 0;
@@ -70,7 +68,7 @@ $thirdpage: "../imgs/thirdpage.jpg";
   }
   .introButton {
     position: absolute;
-    bottom: -20%;
+    bottom: -50%;
     right: 1.5vw;
     font-size: 1vw;
     color: #f1f7ed;
@@ -85,56 +83,54 @@ $thirdpage: "../imgs/thirdpage.jpg";
 
 // secondpage
 .secondPage {
-  background-image: url($star1);
-  background-size: cover;
-}
-.secondpageContainer {
-  background-color: white; // (test-ing) plum -> white
-  margin-top: 150px;
-  width: 80vw;
-  height: 70vh;
-  margin: 150px auto auto auto;
-  border-radius: 20px;
-  .top10 {
-    position: relative;
+  .secondpageContainer {
+    margin-top: 150px;
     width: 100%;
     height: 100%;
-    &::before {
-      content: "";
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: url($secondpage2); //secondpage -> secondpage2
-      background-size: cover;
-      position: absolute;
-      opacity: 0.3; //(test-ing) opacity:0.6 ->opacity:0.3;
-      border-radius: 20px;
-    }
-    .top10ChartWrapper {
-      margin-top: auto;
-      margin-bottom: auto;
-      .top10Chart {
-        position: relative;
+    background-color: $maincolor;
+    .top10 {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      &::before {
+        content: "";
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url($secondpage);
+        background-size: cover;
+        position: absolute;
+        opacity: 0.5;
       }
-    }
-    .top10TextWrapper {
-      margin-top: auto;
-      margin-bottom: auto;
-      text-align: center;
-      .top10Text {
-        position: relative;
-        color: white;
+      .top10ChartWrapper {
+        margin: auto;
+        padding: 0 100px;
+        .top10Chart {
+          position: relative;
+        }
       }
-      .buttonBox {
-        text-align: center;
-        .top10Button {
-          background: linear-gradient(to right, lightpink, rgb(211, 98, 211));
+      .top10TextWrapper {
+        margin-top: auto;
+        margin-bottom: auto;
+        .top10Text {
+          position: relative;
           color: white;
-          font-size: 1vw;
-          font-weight: bold;
-          margin-top: 50px;
-          cursor: pointer;
+          font-size: 40px;
+        }
+        .buttonBox {
+          text-align: center;
+          .top10Button {
+            background: linear-gradient(to right, lightpink, rgb(211, 98, 211));
+            color: white;
+            font-size: 1vw;
+            font-weight: bold;
+            margin-top: 50px;
+            cursor: pointer;
+            &:hover {
+              box-shadow: 0 0 15px rgb(0, 0, 0 /15%);
+            }
+          }
         }
       }
     }
@@ -185,6 +181,9 @@ $thirdpage: "../imgs/thirdpage.jpg";
         font-weight: bold;
         margin-top: 50px;
         cursor: pointer;
+        &:hover {
+          box-shadow: 0 0 15px rgb(0, 0, 0 /15%);
+        }
       }
     }
   }

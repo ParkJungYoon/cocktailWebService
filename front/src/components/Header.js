@@ -17,6 +17,7 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import Logout from "@mui/icons-material/Logout";
 import { pink } from "@mui/material/colors";
 
+import logo from "../imgs/logo.png";
 import RegisterModal from "./user/RegisterModal";
 import LoginModal from "./user/LoginModal";
 import { UserContext } from "./user/reducer/userReducer";
@@ -68,7 +69,32 @@ function Header({ user }) {
 
   //style
   const linkTabstyle = { width: "130px" };
-
+  const paperPropsStyle = {
+    elevation: 0,
+    sx: {
+      overflow: "visible",
+      filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
+      mt: 1.5,
+      "& .MuiAvatar-root": {
+        width: 32,
+        height: 32,
+        ml: -0.5,
+        mr: 1,
+      },
+      "&:before": {
+        content: '""',
+        display: "block",
+        position: "absolute",
+        top: 0,
+        right: 14,
+        width: 10,
+        height: 10,
+        bgcolor: "background.paper",
+        transform: "translateY(-50%) rotate(45deg)",
+        zIndex: 0,
+      },
+    },
+  };
   // 탭 관리
   const [value, setValue] = React.useState(false);
   const handleChange = (event, newValue) => {
@@ -108,32 +134,7 @@ function Header({ user }) {
                     open={isMenuOpen}
                     // onClose={handleClose}
                     // onClick={handleClose}
-                    PaperProps={{
-                      elevation: 0,
-                      sx: {
-                        overflow: "visible",
-                        filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
-                        mt: 1.5,
-                        "& .MuiAvatar-root": {
-                          width: 32,
-                          height: 32,
-                          ml: -0.5,
-                          mr: 1,
-                        },
-                        "&:before": {
-                          content: '""',
-                          display: "block",
-                          position: "absolute",
-                          top: 0,
-                          right: 14,
-                          width: 10,
-                          height: 10,
-                          bgcolor: "background.paper",
-                          transform: "translateY(-50%) rotate(45deg)",
-                          zIndex: 0,
-                        },
-                      },
-                    }}
+                    PaperProps={paperPropsStyle}
                     transformOrigin={{ horizontal: "right", vertical: "top" }}
                     anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
                   >
@@ -188,9 +189,7 @@ function Header({ user }) {
               setValue(false);
             }}
           >
-            저쪽 손님께서
-            <br />
-            보내신 겁니다
+            <img src={logo} alt="logo" width={"150px"} />
           </Link>
         </div>
 

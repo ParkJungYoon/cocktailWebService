@@ -91,7 +91,13 @@ const Top10CardChart = ({ cocktail }) => {
   };
 
   return (
-    <div style={{ width: 300 }}>
+    <div
+      style={{
+        width: "80%",
+        margin: "0 auto",
+        height: "250px",
+      }}
+    >
       <Line animation={animation} options={options} data={data} />
     </div>
   );
