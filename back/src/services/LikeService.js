@@ -2,7 +2,6 @@ import { LikeModel, CocktailModel, db } from "../db";
 
 class LikeService {
   static addLike = async ({ giveUserId, getCocktailId }) => {
-
     const session = await db.startSession();
 
     session.startTransaction();
@@ -16,7 +15,7 @@ class LikeService {
     });
 
     await CocktailModel.likeCocktail({ getCocktailId });
-    
+
     await session.commitTransaction();
     session.endSession();
 
@@ -29,11 +28,11 @@ class LikeService {
   };
 
   static deleteLike = async ({ giveUserId, getCocktailId }) => {
-
     const checkLike = await LikeModel.getLike({ giveUserId, getCocktailId });
 
     if (checkLike == null) {
-      const errorMessage = "좋아요를 하지 않았습니다. 먼저 졸아요를 눌러주세요.";
+      const errorMessage =
+        "좋아요를 하지 않았습니다. 먼저 졸아요를 눌러주세요.";
       return { errorMessage };
     }
 
@@ -41,14 +40,17 @@ class LikeService {
 
     session.startTransaction();
 
-    const deleteCocktail = await LikeModel.deleteLike({ giveUserId, getCocktailId });
+    const deleteCocktail = await LikeModel.deleteLike({
+      giveUserId,
+      getCocktailId,
+    });
     if (deleteCocktail === null) {
       const errorMessage = "해당 id의 좋아요가 없습니다.";
       return { errorMessage };
     }
 
     await CocktailModel.unLikeCocktail({ getCocktailId });
-    
+
     await session.commitTransaction();
     session.endSession();
 
@@ -62,6 +64,13 @@ class LikeService {
 
   static getUserLike = async ({ id }) => {
     const userLikeList = await LikeModel.getUserLike({ id });
+    return userLikeList;
+  };
+  static findUserCocktailLike = async ({ giveUserId, getCocktailId }) => {
+    const userLikeList = await LikeModel.getLike({
+      giveUserId,
+      getCocktailId,
+    });
     return userLikeList;
   };
 }
