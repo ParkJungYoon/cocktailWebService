@@ -29,7 +29,6 @@ const ExpandMore = styled((props) => {
 
 export default function Top10CardItem({ cocktail }) {
   const navigate = useNavigate();
-  console.log(cocktail);
 
   const [expanded, setExpanded] = React.useState(false);
   const handleExpandClick = () => {
@@ -106,7 +105,11 @@ export default function Top10CardItem({ cocktail }) {
               })}
             </Box>
 
-            {/* <Typography variant="h5" sx={{ mx: 5, mb: 3 }}>
+            <Typography
+              variant="h5"
+              align="center"
+              sx={{ pb: 3, mb: 3, borderBottom: "2px solid plum" }}
+            >
               칵테일에 제조법
             </Typography>
             {cocktail.method.map((v, i) => {
@@ -115,7 +118,7 @@ export default function Top10CardItem({ cocktail }) {
                   {i + 1}단계. {v}
                 </Typography>
               );
-            })} */}
+            })}
 
             <Top10CardChart cocktail={cocktail.rank} />
           </CardContent>
