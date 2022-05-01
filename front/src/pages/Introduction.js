@@ -5,7 +5,7 @@ import IntroduceMenu from "../components/introduce/IntroduceMenu";
 
 function IntroducePage() {
   return (
-    <div className="dictionary">
+    <div className="introduce">
       <Grid container sx={{ mt: 25 }}>
         <Grid item xs={12}>
           <IntroduceMenu />

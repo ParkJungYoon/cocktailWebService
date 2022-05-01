@@ -6,6 +6,11 @@ import "../scss/QuizMain.scss";
 
 function Quiz() {
   const [start, setStart] = useState(0);
+  const topBlank = {
+    marginTop: "1.45rem",
+    marginLeft: "5%",
+    marginRight: "5%",
+  };
   const quizGridStyle = {
     padding: "5% 15% 5% 15%",
     borderRadius: "2rem",
@@ -26,38 +31,35 @@ function Quiz() {
   };
 
   return (
-    <Box
-      sx={{
-        marginLeft: "5%",
-        marginRight: "5%",
-      }}
-    >
-      <Grid
-        container
-        justifyContent="center"
-        sx={{
-          fontSize: "15px",
-          textAlign: "center",
-        }}
-      >
-        <Grid item xs={12} md={12} mt={22}></Grid>
-        {start === 1 ? (
-          <QuizMain></QuizMain>
-        ) : (
-          <Grid item xs={12} md={12} height="720px" sx={quizGridStyle}>
-            <Container
-              className="startBtn"
-              sx={startBtn}
-              onClick={() => {
-                setStart(1);
-              }}
-            >
-              START
-            </Container>
-          </Grid>
-        )}
-      </Grid>
-    </Box>
+    <div className="quiz">
+      <Box sx={topBlank}>
+        <Grid
+          container
+          justifyContent="center"
+          sx={{
+            fontSize: "15px",
+            textAlign: "center",
+          }}
+        >
+          <Grid item xs={12} md={12} mt={22}></Grid>
+          {start === 1 ? (
+            <QuizMain></QuizMain>
+          ) : (
+            <Grid item xs={12} md={12} height="720px" sx={quizGridStyle}>
+              <Container
+                className="startBtn"
+                sx={startBtn}
+                onClick={() => {
+                  setStart(1);
+                }}
+              >
+                START
+              </Container>
+            </Grid>
+          )}
+        </Grid>
+      </Box>
+    </div>
   );
 }
 
