@@ -9,9 +9,9 @@ import {
   CardContent,
   Typography,
   Chip,
+  Box,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import FavoriteIcon from "@mui/icons-material/Favorite";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Top10CardChart from "./Top10CardChart";
 
@@ -46,12 +46,13 @@ export default function Top10CardItem({ cocktail }) {
           maxWidth: 600,
           backgroundColor: "rgba(64, 64, 64, 0.5)",
           color: "white",
-          minHeight: 900,
+          minHeight: 850,
         }}
       >
-        <IconButton sx={iconStyle}>
-          <FavoriteIcon />
-        </IconButton>
+        <Chip
+          sx={{ color: "white", bgcolor: "plum", m: 1 }}
+          label={`${cocktail.rank.rank}위`}
+        />
         <CardMedia
           component="img"
           height="500px"
@@ -62,10 +63,6 @@ export default function Top10CardItem({ cocktail }) {
         <Typography sx={{ m: 1 }} variant="h4">
           {cocktail.name}
         </Typography>
-        <Chip
-          sx={{ color: "white", bgcolor: "plum", mr: 1 }}
-          label={`${cocktail.rank.rank}위`}
-        />
         <CardContent>
           {cocktail.taste.map((t, i) => {
             return (
@@ -92,16 +89,35 @@ export default function Top10CardItem({ cocktail }) {
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            <Typography paragraph>[재료]</Typography>
-            {cocktail.ingredient.map((v, i) => {
+            <Typography
+              variant="h5"
+              align="center"
+              sx={{ pb: 3, mb: 3, borderBottom: "2px solid plum" }}
+            >
+              칵테일에 들어가는 재료
+            </Typography>
+            <Box sx={{ mb: 5 }}>
+              {cocktail.ingredient.map((v, i) => {
+                return (
+                  <Typography sx={{ mx: 5 }} variant="body1" key={i}>
+                    {i + 1}. {v}
+                  </Typography>
+                );
+              })}
+            </Box>
+
+            {/* <Typography variant="h5" sx={{ mx: 5, mb: 3 }}>
+              칵테일에 제조법
+            </Typography>
+            {cocktail.method.map((v, i) => {
               return (
-                <Typography paragraph key={i}>
-                  {i + 1}. {v}
+                <Typography sx={{ mx: 5 }} variant="body1" key={i}>
+                  {i + 1}단계. {v}
                 </Typography>
               );
-            })}
+            })} */}
+
             <Top10CardChart cocktail={cocktail.rank} />
-            {/* <Typography>여기다가 차트 넣어야쥐</Typography> */}
           </CardContent>
         </Collapse>
       </Card>

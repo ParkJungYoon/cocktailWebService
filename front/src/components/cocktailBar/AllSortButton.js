@@ -39,9 +39,7 @@ export default function Top10SortButton({ cocktails, setCocktails }) {
           inputProps={{ "aria-label": "Without label" }}
           sx={{ color: "white" }}
         >
-          <MenuItem value="">
-            <em>정렬기준</em>
-          </MenuItem>
+          <MenuItem value="">정렬기준</MenuItem>
           <MenuItem value={10} onClick={handleOnClickAscCocktails}>
             이름 오름차순
           </MenuItem>

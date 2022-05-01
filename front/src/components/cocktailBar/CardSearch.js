@@ -12,7 +12,7 @@ const Search = styled("div")(({ theme }) => ({
   backgroundColor: "#404040",
   color: "white",
   marginLeft: "auto",
-  width: "30%",
+  width: "250px",
 }));
 
 const SearchIconWrapper = styled("div")(({ theme }) => ({
@@ -27,14 +27,12 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
+  width: "100%",
   "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
     width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      width: "150px",
-    },
   },
 }));
 
@@ -56,13 +54,13 @@ export default function CardSearch({ searchCocktails, setSearchCocktails }) {
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-              placeholder="Search…"
+              placeholder="칵테일을 검색하세요."
               onChange={(e) => setSearchCocktails(e.target.value)}
             />
           </Search>
         </Grid>
       </Grid>
-      <Grid container xs={12} spacing={1} sx={{ px: 15 }}>
+      <Grid container spacing={1} sx={{ px: 15 }}>
         <AllPosts
           cocktails={cocktails.filter((val) => {
             if (searchCocktails == "") {
