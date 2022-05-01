@@ -26,10 +26,12 @@ function Account() {
   //code
   const navigate = useNavigate();
   const { userState, userDispatch } = useContext(UserContext);
+  console.log(userState.user);
   const isLogin = !!userState.user;
-  if (isLogin === false) window.location.replace("/");
+  if (isLogin === false)
+    // navigate("/");
+    window.location.replace("/");
   const { name, email, password } = userState.user;
-  const [isEdit, setIsEdit] = useState(false);
 
   return (
     <Box
@@ -40,11 +42,7 @@ function Account() {
     >
       <Stack className="AccountContent">
         <Grid item xs={12} md={12} mt={13} height="720px" sx={quizGridStyle}>
-          {isEdit ? (
-            <EditForm props={{ setIsEdit, name, email, password }} />
-          ) : (
-            <AccountCard props={{ setIsEdit, name, email, password }} />
-          )}
+          <AccountCard props={{ name, email, password }} />
         </Grid>
       </Stack>
     </Box>
