@@ -20,7 +20,6 @@ $star1: "../imgs/star1.jpg";
         justify-content: center;
         justify-items: center
     }
-
     .finalPage p {
         margin: 25px;
         font-size: 35px;
@@ -32,12 +31,10 @@ $star1: "../imgs/star1.jpg";
             color: #a300d9;
         }
     }
-
     .finalPage p:hover {
         color: #a300d9;
         cursor: default;
     }
-
     .restart {
         /* background-color: black; */
         color: white;
@@ -49,7 +46,6 @@ $star1: "../imgs/star1.jpg";
         width: 4.5rem;
         font-weight: bold;
     }
-
     .restart:hover {
         background-color: rgba(128, 128, 128, 0.5);
     }

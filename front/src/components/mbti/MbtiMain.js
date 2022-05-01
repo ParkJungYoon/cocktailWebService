@@ -1,7 +1,7 @@
 /* eslint no-restricted-globals: ["off"] */
 import React, { useState } from "react";
 import { Box, Grid, LinearProgress } from "@mui/material";
-import "../../scss/MbtiMain.scss";
+import "../../scss/Mbti.scss";
 import mbtiImg from "../../imgs/mbtiImg.jpg";
 // import * as Api from "../../api";
 

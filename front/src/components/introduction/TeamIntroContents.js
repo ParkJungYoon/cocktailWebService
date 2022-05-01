@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Grid, Card, CardMedia, Container } from "@mui/material";
-import "../../scss/TeamIntroContents.scss";
+import "../../scss/Introduction.scss";
 import UserDefaultImg from "../../imgs/userDefaultImg.jpg";
 import JackPot from "../../imgs/JackPot.gif";
 
