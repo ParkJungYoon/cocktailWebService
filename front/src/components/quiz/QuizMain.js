@@ -1,13 +1,14 @@
 /* eslint no-restricted-globals: ["off"] */
 import React, { useState } from "react";
 import { Box, Grid, LinearProgress } from "@mui/material";
-import "../../scss/QuizMain.scss";
+import "../../scss/Quiz.scss";
 import Question from "./Question";
 import QuestionImg from "./QuestionImg";
 import Answer from "./Answer";
 import Correct from "./Correct";
 import OxTable from "./OxTable";
 import state from "./QuizData";
+
 import bgImg from "../../imgs/bgImg.jpg";
 import quizresult from "../../imgs/quizresult.jpg";
 
@@ -73,14 +74,16 @@ function QuizMain(props) {
       {step <= Object.keys(state.questions).length && disable === false ? (
         <>
           <Grid
-            className="Contents"
+            className="QuizMain"
             item
             xs={12}
             md={12}
             height="720px"
             sx={progress}
           >
-            <Question question={state.questions[step]} />
+            <div className="Question">
+              <Question question={state.questions[step]} />
+            </div>
             <Grid container mb="3%">
               {/* progress bar */}
               <Grid item xs={11} md={11} sx={progressBarAlignCenter}>
@@ -118,7 +121,7 @@ function QuizMain(props) {
       ) : (
         // result part
         <Grid
-          className="Contents"
+          className="QuizMain"
           item
           xs={12}
           md={12}
@@ -151,8 +154,10 @@ function QuizMain(props) {
           </Grid>
           {disable === true ? (
             // 정답지
-            <div className="quizSheet">
-              <Question question={state.questions[step]} />
+            <div>
+              <div className="Question">
+                <Question question={state.questions[step]} />
+              </div>
               <Grid container mb="2%">
                 <Grid
                   item

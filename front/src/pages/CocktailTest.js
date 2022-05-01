@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Grid, Box, Container } from "@mui/material";
-// import QuizMain from "../components/quiz/QuizMain";
+import "../scss/CocktailTest.scss";
 import bgImg from "../imgs/bgImg.jpg";
-import "../scss/QuizMain.scss";
 
 function CocktailTest() {
   const navigate = useNavigate();

@@ -1,8 +1,8 @@
 import React from "react";
-import "../../scss/Question.scss";
+import "../../scss/Quiz.scss";
 
 const Question = (props) => {
-  return <h1>{props.question}</h1>;
+  return <p>{props.question}</p>;
 };
 
 export default Question;

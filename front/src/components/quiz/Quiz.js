@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Box } from "@mui/material";
 import QuizMain from "./QuizMain";
-import "../../scss/QuizMain.scss";
+import "../../scss/Quiz.scss";
 
 function Quiz() {
   const topBlank = {
