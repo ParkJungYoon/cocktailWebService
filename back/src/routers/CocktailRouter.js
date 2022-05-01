@@ -5,9 +5,11 @@ import { type } from "express/lib/response";
 
 const CocktailRouter = Router();
 
-CocktailRouter.get("/cocktails", async (req, res, next) => {
+CocktailRouter.get("/cocktails/page/:offset", async (req, res, next) => {
   try {
-    const cocktailList = await CocktailService.getCocktailList();
+    const offset = req.params.offset == null ? 0 : req.params.offset;
+
+    const cocktailList = await CocktailService.getCocktailList({ offset });
     res.status(200).json(cocktailList);
   } catch (error) {
     next(error);

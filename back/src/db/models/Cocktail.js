@@ -25,8 +25,10 @@ class CocktailModel {
     return addCocktail;
   };
 
-  static getAllCocktail = async () => {
-    const result = await Cocktail.find().populate("rank");
+  static getAllCocktail = async ({ offset, limit = 20 }) => {
+    const result = await Cocktail.find().populate("rank")
+                              .skip( offset > 0 ? ((offset - 1) * limit) : 0)
+                              .limit(limit)
     return result;
   };
 
