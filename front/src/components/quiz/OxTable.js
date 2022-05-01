@@ -1,5 +1,5 @@
 import React from "react";
-import "../../scss/OxTable.scss";
+import "../../scss/Quiz.scss";
 
 const OxTable = (props) => {
   const setStep = props.setStep;
@@ -8,7 +8,7 @@ const OxTable = (props) => {
   let lst = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   return (
-    <>
+    <div className="OxTable">
       <table>
         <td className="OutlineStyle">
           <tr>
@@ -34,7 +34,7 @@ const OxTable = (props) => {
           </tr>
         </td>
       </table>
-    </>
+    </div>
   );
 };
 

@@ -3,9 +3,9 @@ import { Box, Tab, ThemeProvider, createTheme } from "@mui/material";
 import { TabContext, TabPanel, TabList } from "@mui/lab";
 import ProjectIdea from "./ProjectIdea";
 import TeamIntro from "./TeamIntro";
-import "../../scss/Introduce.scss";
+import "../../scss/Introduction.scss";
 
-function IntroduceMenu() {
+function IntroductionMenu() {
   const [value, setValue] = React.useState("0");
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -50,4 +50,4 @@ function IntroduceMenu() {
     </>
   );
 }
-export default IntroduceMenu;
+export default IntroductionMenu;

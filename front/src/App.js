@@ -21,7 +21,8 @@ import UserInfo from "./components/mypage/UserInfo";
 import UserTab from "./components/mypage/UserTab";
 import CocktailTest from "./pages/CocktailTest";
 import Lounge from "./pages/Lounge";
-import Mbti from "./pages/Mbti";
+import Mbti from "./components/mbti/Mbti";
+import Quiz from "./components/quiz/Quiz";
 import CellarPage from "./pages/CellarPage";
 
 //JY
@@ -81,7 +82,8 @@ function App() {
         <Route path="/usertab" element={<UserTab />} />
         <Route path="/cocktailTest" element={<CocktailTest />} />
         <Route path="/lounge" element={<Lounge />} />
-        <Route path="/mbti" element={<Mbti />} />
+        <Route path="/cocktailTest/mbti" element={<Mbti />} />
+        <Route path="/cocktailTest/quiz" element={<Quiz />} />
         <Route path="/account" element={<AccountPage />} />
         <Route path="/cellar" element={<CellarPage />} />
       </Routes>
