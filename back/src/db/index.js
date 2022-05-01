@@ -18,7 +18,10 @@ mongoose
   .then(() => console.log(`${MONGO_URL}에 연결 성공!`))
   .catch(() => console.log("몽고DB 연결 실패..."));
 
+const db = mongoose.connection;
+
 export {
+  db,
   UserModel,
   CocktailModel,
   RankModel,

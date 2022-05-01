@@ -16,8 +16,9 @@ LikeRouter.post("/like/:id", verifyToken, async (req, res, next) => {
 
 LikeRouter.delete("/like/:id", verifyToken, async (req, res, next) => {
   try {
-    const id = req.params.id;
-    const deleteLike = await LikeService.deleteLike({ id });
+    const giveUserId = req.user;
+    const getCocktailId = req.params.id;
+    const deleteLike = await LikeService.deleteLike({ giveUserId, getCocktailId });
     if (deleteLike.errorMessage) {
       throw new Error(deleteLike.errorMessage);
     }
