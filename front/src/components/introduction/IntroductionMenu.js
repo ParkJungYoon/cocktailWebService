@@ -23,6 +23,7 @@ function IntroductionMenu() {
     mx: "auto",
     py: 1,
     px: 2,
+    mt: 5,
     width: "80%",
     borderTop: "1px solid white",
     borderBottom: "1px solid white",

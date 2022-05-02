@@ -36,11 +36,12 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function CardSearch({ searchCocktails, setSearchCocktails }) {
+export default function CardSearch() {
   const [cocktails, setCocktails] = useState([]);
+  const [searchCocktails, setSearchCocktails] = useState([]);
 
   useEffect(async () => {
-    await Api.get("cocktails").then((res) => {
+    await Api.get("cocktails/page/1").then((res) => {
       setCocktails(res.data);
     });
   }, []);
