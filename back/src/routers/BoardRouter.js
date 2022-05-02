@@ -16,8 +16,7 @@ BoardRouter.post(
   async (req, res, next) => {
     try {
       const writer = req.user;
-      const title = req.body.title;
-      const content = req.body.content;
+      const { title, content } = req.body;
       const images = req.images;
       const newBoard = await BoardService.create({
         writer,
