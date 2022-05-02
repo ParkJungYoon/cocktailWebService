@@ -1,25 +1,29 @@
 /* eslint no-restricted-globals: ["off"] */
 import React, { useState } from "react";
 import { Box, Grid, LinearProgress } from "@mui/material";
+import * as Api from "../../api";
 import "../../scss/Mbti.scss";
 
 import MbtiQuestion from "./MbtiQuestion";
 import MbtiAnswer from "./MbtiAnswer";
 import state from "./MbtiData";
-import MbtiResult from "./MbtiResult";
+
+import checkState from "./TypeData";
+import TypeCheck from "./TypeCheck";
 
 import mbtiImg from "../../imgs/mbtiImg.jpg";
 
 function MbtiMain() {
   const [step, setStep] = useState(1);
-  const [score, setScore] = useState(0);
   const [clickedAnswer, setClickedAnswer] = useState(0);
+
   const [countEI, setCountEI] = useState(0);
   const [countSN, setCountSN] = useState(0);
   const [countTF, setCountTF] = useState(0);
   const [countJP, setCountJP] = useState(0);
-  const [co, setCo] = useState("");
+
   const [ox, setOx] = useState("");
+  const [mbtiStep, setMbtiStep] = useState("");
 
   const questionStyle = {
     height: "300px",
@@ -59,22 +63,19 @@ function MbtiMain() {
     setClickedAnswer(0);
   };
 
-  const MbtiResult = ({ countEI, countSN, countTF, countJP }) => {
-    if (countEI > 2) {
-      setCo(co + "E");
-    } else setCo(co + "I");
+  const onClickButton = () => {
+    const data = mbtiCheck();
+    const mbti = `${data.countEI}${data.countSN}${data.countTF}${data.countJP}`;
+    setMbtiStep(mbti);
+  };
 
-    if (countSN > 2) {
-      setCo(co + "S");
-    } else setCo(co + "N");
-
-    if (countTF > 2) {
-      setCo(co + "T");
-    } else setCo(co + "F");
-
-    if (countJP > 2) {
-      setCo(co + "J");
-    } else setCo(co + "P");
+  const mbtiCheck = () => {
+    return {
+      countEI: countEI > 2 ? "E" : "I",
+      countSN: countSN > 2 ? "S" : "N",
+      countTF: countTF > 2 ? "T" : "F",
+      countJP: countJP > 2 ? "J" : "P",
+    };
   };
 
   return (
@@ -83,16 +84,16 @@ function MbtiMain() {
         <>
           <Box mt={3} height="700px" sx={mbtiImgStyle}>
             <Grid container>
-              <Grid item xs={2} md={2}></Grid>
-              <Grid item xs={8} md={8} mt={4} sx={questionStyle}>
+              <Grid item xs={2}></Grid>
+              <Grid item xs={8} mt={4} sx={questionStyle}>
                 <div className="Question">
                   <MbtiQuestion question={state.questions[step]} />
                 </div>
               </Grid>
-              <Grid item xs={2} md={2}></Grid>
+              <Grid item xs={2}></Grid>
 
               {/* btn */}
-              <Grid item xs={12} md={12}>
+              <Grid item xs={12}>
                 <div
                   style={{
                     display: "flex",
@@ -113,30 +114,41 @@ function MbtiMain() {
         </>
       ) : (
         // result part
-        <Grid item xs={12} md={12} height="720px">
+        <Grid item xs={12} height="720px">
           <Grid container>
-            <Grid item xs={3} md={3}></Grid>
-            <Grid item xs={6} md={6} mt={1} mb={2}>
+            <Grid item xs={3}></Grid>
+            <Grid item xs={6} mt={1} mb={2}>
               <div style={{ color: "White", fontSize: "30px" }}>
                 <p>countEI : {countEI}</p>
                 <p>countSN : {countSN}</p>
                 <p>countTF : {countTF}</p>
                 <p>countJP : {countJP}</p>
-                {/* <p>co : {MbtiResult(countEI, countSN, countTF, countJP)}</p> */}
-                {MbtiResult(countEI, countSN, countTF, countJP)}
-                <p>coco:{co}</p>
                 <p>OX : {ox}</p>
-                {/* <div>
-                  <MbtiResult
-                    countEI={countEI}
-                    countSN={countSN}
-                    countTF={countTF}
-                    countJP={countJP}
-                  ></MbtiResult>
-                </div> */}
+                <p>
+                  result : {countEI > 2 ? "E" : "I"}
+                  {countSN > 2 ? "S" : "N"}
+                  {countTF > 2 ? "T" : "F"}
+                  {countJP > 2 ? "J" : "P"}
+                </p>
+                <button onClick={onClickButton}>결과보기</button>
+                <button
+                  className="restart"
+                  onClick={() => {
+                    location.reload();
+                  }}
+                >
+                  다시하기
+                </button>
+                <div>
+                  <TypeCheck
+                    type={checkState.types[mbtiStep]}
+                    typeImg={checkState.typeImgs[mbtiStep]}
+                    onClickButton={onClickButton}
+                  ></TypeCheck>
+                </div>
               </div>
             </Grid>
-            <Grid item xs={3} md={3} mt={2} pl={2}></Grid>
+            <Grid item xs={3} mt={2} pl={2}></Grid>
           </Grid>
         </Grid>
       )}
