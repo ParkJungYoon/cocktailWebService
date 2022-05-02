@@ -6,12 +6,7 @@ class BoardModel {
     return newBoard;
   };
 
-  static findById = async (boardId) => {
-    const board = await Board.findById({ _id: boardId });
-    return board;
-  };
-
-  static delete = async (boardId) => {
+  static delete = async ({ boardId }) => {
     const deleteBoard = await Board.findByIdAndDelete({ _id: boardId });
     return deleteBoard;
   };
@@ -26,6 +21,11 @@ class BoardModel {
     return modifiedBoard;
   };
 
+  static findById = async (boardId) => {
+    const board = await Board.findById({ _id: boardId });
+    return board;
+  };
+  // board 전체 조회
   static boardList = async () => {
     const boardList = await Board.find();
     return boardList;
