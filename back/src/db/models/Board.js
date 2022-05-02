@@ -12,7 +12,7 @@ class BoardModel {
   };
 
   static findBoard = async ({ boardId }) => {
-    const board = await Board.findOne({ _id: boardId });
+    const board = await Board.findOne({ _id: boardId }).populate("comment");
     return board;
   };
 
