@@ -1,6 +1,8 @@
 import { Router } from "express";
 import { LoginService } from "../services/loginService";
 import { verifyToken } from "../middlewares/verifyToken";
+import { verifyRefresh } from "../middlewares/verifyRefresh";
+import { loginValidation } from "../middlewares/validation";
 
 const loginRouter = Router();
 
@@ -17,16 +19,16 @@ loginRouter.delete("/login/delete", verifyToken, async (req, res, next) => {
   }
 });
 
-loginRouter.post("/login/modify", verifyToken, async (req, res, next) => {
+loginRouter.put("/login/modify", verifyToken, async (req, res, next) => {
   try {
-    const { email, password, name } = req.body;
     const userId = req.user;
-    const updatedUser = await LoginService.modify({
-      userId,
-      email,
-      password,
-      name,
-    });
+    const email = req.body.email ?? null;
+    const password = req.body.password ?? null;
+    const name = req.body.name ?? null;
+
+    const toUpdate = { email, password, name };
+    const updatedUser = await LoginService.modify({ userId, toUpdate });
+
     if (updatedUser.errorMessage) {
       throw new Error(updatedUser.errorMessage);
     }
@@ -36,21 +38,40 @@ loginRouter.post("/login/modify", verifyToken, async (req, res, next) => {
   }
 });
 
-loginRouter.post("/login", async (req, res, next) => {
+loginRouter.post("/login", loginValidation, async (req, res, next) => {
   try {
     const { email, password } = req.body;
     const discoveredUser = await LoginService.findUser({ email, password });
+
+    if (discoveredUser.errorMessage) {
+      throw new Error(discoveredUser.errorMessage);
+    }
+
     res.status(200).json(discoveredUser);
   } catch (error) {
     next(error);
   }
 });
 
-loginRouter.get("/verify", verifyToken, (req, res) => {
-  res.status(200).json({
-    status: "succ",
-    userId: req.user,
-  });
+loginRouter.get("/user/current", verifyToken, async (req, res, next) => {
+  try {
+    const userId = req.user;
+    const discoveredUser = await LoginService.getUserInfo({
+      userId,
+    });
+
+    if (discoveredUser.errorMessage) {
+      throw new Error(discoveredUser.errorMessage);
+    }
+
+    res.status(200).json(discoveredUser);
+  } catch (error) {
+    next(error);
+  }
 });
+
+/* access token을 재발급 하기 위한 router.
+  클라이언트는 access token과 refresh token을 둘 다 헤더에 담아서 요청해야합니다. */
+loginRouter.get("/refresh", verifyRefresh);
 
 export { loginRouter };

@@ -1,0 +1,274 @@
+{
+    "Long Island Iced Tea": {
+        "favor": [
+            "Sweet"
+        ],
+        "ingre": [
+            " 1/2 part  DeKuyper® Triple Sec Liqueur",
+            " 1/2 partPinnacle® Original Vodka",
+            " 1/2 partCruzan® Aged Dark Rum",
+            " 1/2 part Gin",
+            " 3 partsSour Mix",
+            " 3 partsCola"
+        ]
+    },
+    "pina colada": {
+        "favor": [
+            "Sweet"
+        ],
+        "ingre": [
+            " 1 part DeKuyper® Amaretto Liqueur",
+            " 1 part Cruzan® Aged Light Rum",
+            " 1 1/2 partsCoconut Milk",
+            " 1 1/2 partsPineapple Juice"
+        ]
+    },
+    "Mai Tai": {
+        "favor": [
+            "Refreshing"
+        ],
+        "ingre": [
+            " 2 partsCruzan® Aged Dark Rum",
+            " 1/2 partDeKuyper® Triple Sec Liqueur",
+            " 1 part Freshly SqueezedLime Juice",
+            " 3/4 partOrgeat Syrup",
+            " Optional 1/2 partCruzan® Black Strap Rum",
+            " Garnish: Mint Sprig,Lime Wedge"
+        ]
+    },
+    "Zombie": {
+        "favor": [
+            "Fruity"
+        ],
+        "ingre": [
+            " 1 partCruzan® Aged Light Rum",
+            " 1 partCruzan® Aged Dark Rum",
+            " 1 partCruzan® 151 Rum",
+            " 1 partApricot Liqueur",
+            " 3 partsOrange Juice",
+            " 1 dashLime Bitters",
+            " Orange Peel",
+            " Cherries"
+        ]
+    },
+    "sex on the beach": {
+        "favor": [
+            "Fruity",
+            "Sweet"
+        ],
+        "ingre": [
+            " 1 partDeKuyper® Peachtree® Schnapps Liqueur",
+            " 1 partPinnacle® Original Vodka",
+            " 1 partCranberry Juice",
+            " 1 partPineapple Juice"
+        ]
+    },
+    "mojito": {
+        "favor": [
+            "Sweet"
+        ],
+        "ingre": [
+            " 1 &#189; partsCruzan® Aged Light Rum",
+            " 1 partSimple Syrup",
+            " 2Lime Wedges",
+            " 10- 15Fresh Mint Leaves",
+            " Splash ofSoda Water",
+            " Garnish: Mint Sprig, Lime Wheel"
+        ]
+    },
+    "Daiquiri": {
+        "favor": [
+            "Sweet"
+        ],
+        "ingre": [
+            " 1 partMidori® Melon Liqueur",
+            " 1 partCruzan® Aged Light Rum",
+            " Juice of 1Lime",
+            " Melon Wedge"
+        ]
+    },
+    "Manhattan": {
+        "favor": [
+            "Sweet"
+        ],
+        "ingre": [
+            " 4 partsJim Beam® Original",
+            " 1/2 partsJDK & Sons™ O3 Premium Orange Liqueur",
+            " 1/2 partsDeKuyper® Pucker® Cherry Schnapps",
+            " 1 dashBitters"
+        ]
+    },
+    "mimosa": {
+        "favor": [
+            "Fruity",
+            "Sweet"
+        ],
+        "ingre": [
+            " 1 partEFFEN® Blood Orange Vodka",
+            " 1 partOrange Juice",
+            " 3 partsWine, Sparkling"
+        ]
+    },
+    "irish coffee": {
+        "favor": [
+            "Hot"
+        ],
+        "ingre": [
+            " 1 &#189; partsKilbeggan® Single Grain Irish Whiskey",
+            " 3 partsCoffee",
+            " 1 tbspBrown Sugar Syrup*",
+            " Garnish: Whipped heavy cream,Grated Nutmeg"
+        ]
+    },
+    "tequila sunrise": {
+        "favor": [
+            "Sweet"
+        ],
+        "ingre": [
+            " 2 partsSauza® Blue Silver 100% Agave Tequila",
+            " 1 partLime Juice",
+            " 1 partOrange Juice",
+            " 3 partsCranberry Juice",
+            " Orange Wedges",
+            " Lemon Wedges"
+        ]
+    },
+    "moscow mule": {
+        "favor": [
+            "Sweet"
+        ],
+        "ingre": [
+            " 2 partsPinnacle® Original Vodka",
+            " 1 partLime Juice",
+            " 4 partsGinger Beer",
+            " Lime Wedges"
+        ]
+    },
+    "cuba libre": {
+        "favor": [
+            "Sweet"
+        ],
+        "ingre": [
+            " 1 1/2 partsCruzan® Aged Light Rum",
+            " 1/2 partLime Juice",
+            " 1 partCola",
+            " Lime Wedges"
+        ]
+    },
+    "bellini": {
+        "favor": [
+            "Fruity"
+        ],
+        "ingre": [
+            " 1 part DeKuyper® Peachtree® Schnapps Liqueur",
+            " 3 partsWine, Sparkling"
+        ]
+    },
+    "black russian": {
+        "favor": [
+            "Sweet"
+        ],
+        "ingre": [
+            " 2 partsPinnacle® Original Vodka",
+            " 1 partKamora® Coffee Liqueur"
+        ]
+    },
+    "old fashioned": {
+        "favor": [
+            "Sweet"
+        ],
+        "ingre": [
+            " 1 1/2 partsMaker's Mark® Bourbon",
+            " SplashWater",
+            " 2 dashesBitters",
+            " 1 tspSugar",
+            " Garnish: Orange Slice,Cherry"
+        ]
+    },
+    "whiskey sour": {
+        "favor": [
+            "Sour"
+        ],
+        "ingre": [
+            " 1 1/2 parts Jim Beam® Original",
+            " 1 partDeKuyper® Peachtree® Schnapps Liqueur",
+            " 1 part FreshLemon Juice",
+            " 1 1/2 partSimple Syrup",
+            " Garnish:Peach Slice"
+        ]
+    },
+    "penicillin": {
+        "favor": [
+            "Sour",
+            "Spicy"
+        ],
+        "ingre": [
+            " 2 partsAuchentoshan® American Oak Single Malt Scotch Whisky",
+            " orKilbeggan® Single Grain Irish Whiskey",
+            " &#190; part Fresh SqueezedLemon Juice",
+            " &#190; partHoney-Ginger Syrup*",
+            " &#188; partLaphroaig® Select",
+            " Garnish:Candied Ginger"
+        ]
+    },
+    "spritz": {
+        "favor": [
+            "Sweet"
+        ],
+        "ingre": [
+            " 1 partMaker's Mark® Bourbon",
+            " 1 partAperol® Aperitif",
+            " &#190; partLemon Juice",
+            " Splash ofSimple Syrup",
+            " Splash ofProsecco",
+            " Garnish:Orange Peel"
+        ]
+    },
+    "gimlet": {
+        "favor": [
+            "Sour"
+        ],
+        "ingre": [
+            " 2 partsSipsmith® London Dry Gin",
+            " 1 partLime Juice",
+            " 1 part Simple Syrup",
+            " 1 1/2 partsDeKuyper® Sloe Gin",
+            " 1 1/2 partsGin",
+            " 1 partLemon Juice",
+            " 3 partsSoda Water"
+        ]
+    },
+    "gin fizz": {
+        "favor": [
+            "Sweet"
+        ],
+        "ingre": [
+            " 1 1/2 partsDeKuyper® Sloe Gin",
+            " 1 1/2 partsGin",
+            " 1 partLemon Juice",
+            " 3 partsSoda Water"
+        ]
+    },
+    "Sazerac": {
+        "favor": [
+            "Sweet"
+        ],
+        "ingre": [
+            " 1 1/2 partsDeKuyper® Sloe Gin",
+            " 1 1/2 partsGin",
+            " 1 partLemon Juice",
+            " 3 partsSoda Water"
+        ]
+    },
+    "french 75": {
+        "favor": [
+            "Refreshing"
+        ],
+        "ingre": [
+            " 1 1/2 partsDeKuyper® Sloe Gin",
+            " 1 1/2 partsGin",
+            " 1 partLemon Juice",
+            " 3 partsSoda Water"
+        ]
+    }
+}

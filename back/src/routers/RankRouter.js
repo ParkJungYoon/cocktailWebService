@@ -1,9 +1,6 @@
 import { Router } from "express";
-import { verifyToken } from "../middlewares/verifyToken";
 import { RankService } from "../services/RankService";
 const RankRouter = Router();
-
-RankRouter.use(verifyToken);
 
 RankRouter.get("/rank10", async (req, res, next) => {
   try {
@@ -14,4 +11,13 @@ RankRouter.get("/rank10", async (req, res, next) => {
   }
 });
 
+RankRouter.get("/rank/:name", async (req, res, next) => {
+  try {
+    const name = req.params.name;
+    const cocktail = await RankService.cocktailRank({ name });
+    res.status(200).json(cocktail);
+  } catch (error) {
+    next(error);
+  }
+});
 export { RankRouter };

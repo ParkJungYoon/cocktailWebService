@@ -1,28 +1,54 @@
+$maincolor: #151516;
+$star1: "../imgs/star1.jpg";
+$secondpage: "../imgs/gatsby.png";
+$thirdpage: "../imgs/thirdpage.jpg";
+#fp-nav ul li:hover a.active span,
+#fp-nav ul li a.active span,
+.fp-slidesNav ul li:hover a.active span,
+.fp-slidesNav ul li a.active span {
+  background-color: white;
+}
 .firstPage {
-  background-color: #f1f7ed;
+  .video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    margin-top: 150px;
+    &::before {
+      content: "";
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $maincolor;
+      opacity: 0.6;
+      position: absolute;
+    }
+  }
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    margin-bottom: 10;
+  }
 }
-.firstPage .video {
-  /* border: 2px solid red; */
-  width: 100%;
-  height: 100%;
-  display: block;
-  position: relative;
-}
-.firstPage .video video {
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
-  margin-bottom: 10;
-}
-.firstPage .video::before {
-  content: "";
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #000;
-  opacity: 0.3;
+.scrollDown {
   position: absolute;
+  z-index: 3;
+  bottom: 5%;
+  left: 50%;
+  color: white;
+  animation: bounce 0.5s infinite alternate;
+  transform: translateX(-50%);
+  @keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-15px);
+    }
+  }
 }
 .introTextWrapper {
   position: absolute;
@@ -32,111 +58,133 @@
   top: 30%;
   right: 5vw;
   text-align: right;
-}
-.introTextWrapper P {
-  padding: 0.5vw;
-  color: rgb(224, 224, 224);
-}
-.introTextWrapper .introText1 {
-  font-size: 2.5vw;
-  font-weight: bold;
-}
-
-.introTextWrapper .introText2 {
-  font-size: 1.5vw;
-}
-
-.firstPage .introButton {
-  position: absolute;
-  bottom: -20%;
-  right: 1.5vw;
-  font-size: 1.5vw;
-  color: rgb(224, 224, 224);
-  border: 2px solid white;
-  padding: 10px 20px;
-  &:hover {
-    cursor: pointer;
-    border: 2px solid black;
-    transition: 0.5s;
-    color: black;
+  p {
+    padding: 0.5vw;
+    color: #f1f7ed;
   }
-}
-// secondpage
-.chartTextWrapper {
-  .chartTextTitle {
+  .introText1 {
     font-size: 2vw;
     font-weight: bold;
-    padding: 0.5vw;
-    .bold {
-      color: lightcoral;
+  }
+  .introButton {
+    position: absolute;
+    bottom: -50%;
+    right: 1.5vw;
+    font-size: 1vw;
+    color: #f1f7ed;
+    border: 2px solid #f1f7ed;
+    padding: 10px 20px;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0 0 15px rgb(0, 0, 0 /15%);
     }
   }
-  img {
+}
+
+// secondpage
+.secondPage {
+  .secondpageContainer {
+    margin-top: 150px;
     width: 100%;
-    height: 80%;
-    background-color: #f1f7ed;
-    border-radius: 30px;
-  }
-  .chartText1 {
-    font-size: 1.5vw;
+    height: 100%;
+    background-color: $maincolor;
+    .top10 {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      &::before {
+        content: "";
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url($secondpage);
+        background-size: cover;
+        position: absolute;
+        opacity: 0.5;
+      }
+      .top10ChartWrapper {
+        margin: auto;
+        padding: 0 100px;
+        .top10Chart {
+          position: relative;
+        }
+      }
+      .top10TextWrapper {
+        margin-top: auto;
+        margin-bottom: auto;
+        .top10Text {
+          position: relative;
+          color: white;
+          font-size: 40px;
+        }
+        .buttonBox {
+          text-align: center;
+          .top10Button {
+            background: linear-gradient(to right, lightpink, rgb(211, 98, 211));
+            color: white;
+            font-size: 1vw;
+            font-weight: bold;
+            margin-top: 50px;
+            cursor: pointer;
+            &:hover {
+              box-shadow: 0 0 15px rgb(0, 0, 0 /15%);
+            }
+          }
+        }
+      }
+    }
   }
 }
 
-.gotoTop10 {
-  color: black;
-  font-size: 1vw;
-  font-weight: bold;
-  border: 2px solid black;
-  padding: 10px 20px;
-  margin-top: 10px;
-  cursor: pointer;
-  &:hover {
-    color: lightcoral;
-    transition: 0.5s;
-    border: 2px solid lightcoral;
-  }
-}
 // thirdpage
-.cocktailsWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  .cocktails {
-    transform: translateX(-50%);
-    animation: bounce 0.8s infinite alternate;
-
-    @keyframes bounce {
-      from {
-        transform: translateY(0px);
-      }
-      to {
-        transform: translateY(-15px);
-      }
-    }
-  }
-  .cocktailsText {
-    p {
-      font-size: 2vw;
-      font-weight: bold;
-    }
-    .bold {
-      color: lightcoral;
-    }
-  }
+.thirdPage {
+  background-image: url($star1);
+  background-size: cover;
 }
-
-.gotoRecommend {
-  color: black;
-  font-size: 1vw;
-  font-weight: bold;
-  border: 2px solid black;
-  padding: 10px 20px;
-  margin-top: 40px;
-  cursor: pointer;
-  &:hover {
-    color: lightcoral;
-    transition: 0.5s;
-    border: 2px solid lightcoral;
+.thirdpageContainer {
+  // background-color: black;
+  width: 80vw;
+  height: 70vh;
+  margin: 150px auto auto auto;
+  border-radius: 20px;
+  .dictionary {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    &::before {
+      content: "";
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      // background-image: url($thirdpage);
+      background-color: white; //(test-ing)
+      background-size: cover;
+      opacity: 0.4; //(test-int) 0.7 -> 0.4
+      position: absolute;
+      border-radius: 20px;
+    }
+    .textWrapper {
+      margin: auto 25vw;
+      .dictionaryText {
+        position: relative;
+        color: white;
+      }
+    }
+    .buttonBox {
+      text-align: center;
+      .dictionaryButton {
+        background: linear-gradient(to right, lightpink, rgb(211, 98, 211));
+        color: white;
+        font-size: 1vw;
+        font-weight: bold;
+        margin-top: 50px;
+        cursor: pointer;
+        &:hover {
+          box-shadow: 0 0 15px rgb(0, 0, 0 /15%);
+        }
+      }
+    }
   }
 }

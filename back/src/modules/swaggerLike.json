@@ -1,0 +1,135 @@
+{
+  "paths": {
+    "/like/{id}": {
+      "post": {
+        "tags": ["Like"],
+        "summary": "좋아요 추가",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "JWT access token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Like"],
+        "summary": "좋아요 삭제",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "JWT access token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
+    },
+    "/likeList": {
+      "get": {
+        "tags": ["Like"],
+        "summary": "좋아요 전체 리스트",
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
+    },
+    "/cocktailLike/{id}": {
+      "get": {
+        "tags": ["Like"],
+        "summary": "칵테일이 받은 좋아요 리스트",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "JWT access token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
+    },
+    "/userLike": {
+      "get": {
+        "tags": ["Like"],
+        "summary": "유저가 좋아요한 리스트 목록",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "JWT access token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Like": {
+      "properties": {
+        "giveUserId": {
+          "type": "string"
+        },
+        "getCocktailId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
