@@ -6,27 +6,22 @@ import Select from "@mui/material/Select";
 
 export default function Top10SortButton({ cocktails, setCocktails }) {
   const [order, setOrder] = React.useState("");
+  const isAsc = true;
 
-  const handleOnClickAscCocktails = () => {
-    setOrder("이름 오름차순");
-    const ascCocktails = [...cocktails];
-    ascCocktails.sort((A, B) => {
-      return A.name < B.name ? -1 : A.name > B.name ? 1 : 0;
-    });
-    setCocktails([...ascCocktails]);
-  };
-
-  const handleOnClickDescCocktails = () => {
-    setOrder("이름 내림차순");
-    const descCocktails = [...cocktails];
-    descCocktails.sort((A, B) => {
-      return A.name < B.name ? 1 : A.name > B.name ? -1 : 0;
-    });
-    setCocktails([...descCocktails]);
-  };
-
-  const handleChange = (event) => {
-    setOrder(event.target.value);
+  const sortCocktails = (isAsc) => {
+    if (isAsc) {
+      setOrder("이름 오름차순");
+      cocktails.sort((A, B) => {
+        return A.name < B.name ? -1 : A.name > B.name ? 1 : 0;
+      });
+      setCocktails([...cocktails]);
+    } else {
+      setOrder("이름 내림차순");
+      cocktails.sort((A, B) => {
+        return A.name < B.name ? 1 : A.name > B.name ? -1 : 0;
+      });
+      setCocktails([...cocktails]);
+    }
   };
 
   return (
@@ -34,16 +29,25 @@ export default function Top10SortButton({ cocktails, setCocktails }) {
       <FormControl fullWidth>
         <Select
           value={order}
-          onChange={handleChange}
           displayEmpty
           inputProps={{ "aria-label": "Without label" }}
           sx={{ color: "white" }}
         >
           <MenuItem value="">정렬기준</MenuItem>
-          <MenuItem value={10} onClick={handleOnClickAscCocktails}>
+          <MenuItem
+            value={"이름 오름차순"}
+            onClick={() => {
+              sortCocktails(isAsc);
+            }}
+          >
             이름 오름차순
           </MenuItem>
-          <MenuItem value={20} onClick={handleOnClickDescCocktails}>
+          <MenuItem
+            value={"이름 내림차순"}
+            onClick={() => {
+              sortCocktails(!isAsc);
+            }}
+          >
             이름 내림차순
           </MenuItem>
         </Select>
