@@ -1,25 +1,30 @@
 import React, { useState } from "react";
 import "../../scss/Mbti.scss";
 
-const MbtiResult = ({ countEI, countSN, countTF, countJP }) => {
-  // const [aaa, setaaa] = useState("");
-  //     if (countEI > 2) {
-  //       setCo(co + "E");
-  //     } else setCo(co + "I");
+const MbtiResult = (props) => {
+  const [co, setCo] = useState("");
+  const countEI = props.countEI;
+  const countSN = props.countSN;
+  const countTF = props.countTF;
+  const countJP = props.countJP;
 
-  //     if (countSN > 2) {
-  //       setCo(co + "S");
-  //     } else setCo(co + "N");
+  if (countEI > 2) {
+    setCo(co + "E");
+  } else setCo(co + "I");
 
-  //     if (countTF > 2) {
-  //       setCo(co + "T");
-  //     } else setCo(co + "F");
+  if (countSN > 2) {
+    setCo(co + "S");
+  } else setCo(co + "N");
 
-  //     if (countJP > 2) {
-  //       setCo(co + "J");
-  //     } else setCo(co + "P");
+  if (countTF > 2) {
+    setCo(co + "T");
+  } else setCo(co + "F");
+
+  if (countJP > 2) {
+    setCo(co + "J");
+  } else setCo(co + "P");
   //   <p {...MbtiResult(countEI, countSN, countTF, countJP)}></p>;
-  return <p>{MbtiResult}</p>;
+  return <p>{co}</p>;
 };
 
 export default MbtiResult;

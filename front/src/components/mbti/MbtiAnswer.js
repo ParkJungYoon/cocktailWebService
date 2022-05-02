@@ -24,31 +24,8 @@ const MbtiAnswer = (props) => {
       onClick={() => props.checkAnswer(qAnswer)}
       key={qAnswer}
     >
-      <Grid
-        container
-        className="btn"
-        item
-        xs={12}
-        md={12}
-        mt={1}
-        sx={btnStyle}
-        // onClick={() => {
-        //   setSelect(1);
-        // }}
-      >
-        {/* <div
-          style={{
-            width: "100%",
-            height: "100%",
-            textAlign: "center",
-            // display: "contents",
-          }}
-          className={props.clickedAnswer === qAnswer ? "selectAnswer" : " "}
-          onClick={() => props.checkAnswer(qAnswer)}
-          key={qAnswer}
-        > */}
+      <Grid container className="btn" item xs={12} md={12} mt={1} sx={btnStyle}>
         {props.answer[qAnswer]}
-        {/* </div> */}
       </Grid>
     </div>
   ));

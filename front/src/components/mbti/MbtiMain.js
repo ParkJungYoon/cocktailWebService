@@ -6,7 +6,7 @@ import "../../scss/Mbti.scss";
 import MbtiQuestion from "./MbtiQuestion";
 import MbtiAnswer from "./MbtiAnswer";
 import state from "./MbtiData";
-// import MbtiResult from "./MbtiResult";
+import MbtiResult from "./MbtiResult";
 
 import mbtiImg from "../../imgs/mbtiImg.jpg";
 
@@ -19,6 +19,7 @@ function MbtiMain() {
   const [countTF, setCountTF] = useState(0);
   const [countJP, setCountJP] = useState(0);
   const [co, setCo] = useState("");
+  const [ox, setOx] = useState("");
 
   const questionStyle = {
     height: "300px",
@@ -49,31 +50,32 @@ function MbtiMain() {
         setCountJP(countJP + 1);
       }
       setClickedAnswer(answer);
+      setOx(ox + "O");
     } else {
       setClickedAnswer(answer);
+      setOx(ox + "X");
     }
-    // setMarking(marking + answer);
     setStep(step + 1);
     setClickedAnswer(0);
   };
 
-  // const MbtiResult = ({ countEI, countSN, countTF, countJP }) => {
-  //   if (countEI > 2) {
-  //     setCo(co + "E");
-  //   } else setCo(co + "I");
+  const MbtiResult = ({ countEI, countSN, countTF, countJP }) => {
+    if (countEI > 2) {
+      setCo(co + "E");
+    } else setCo(co + "I");
 
-  //   if (countSN > 2) {
-  //     setCo(co + "S");
-  //   } else setCo(co + "N");
+    if (countSN > 2) {
+      setCo(co + "S");
+    } else setCo(co + "N");
 
-  //   if (countTF > 2) {
-  //     setCo(co + "T");
-  //   } else setCo(co + "F");
+    if (countTF > 2) {
+      setCo(co + "T");
+    } else setCo(co + "F");
 
-  //   if (countJP > 2) {
-  //     setCo(co + "J");
-  //   } else setCo(co + "P");
-  // };
+    if (countJP > 2) {
+      setCo(co + "J");
+    } else setCo(co + "P");
+  };
 
   return (
     <>
@@ -121,8 +123,17 @@ function MbtiMain() {
                 <p>countTF : {countTF}</p>
                 <p>countJP : {countJP}</p>
                 {/* <p>co : {MbtiResult(countEI, countSN, countTF, countJP)}</p> */}
-                {/* {MbtiResult(countEI, countSN, countTF, countJP)} */}
+                {MbtiResult(countEI, countSN, countTF, countJP)}
                 <p>coco:{co}</p>
+                <p>OX : {ox}</p>
+                {/* <div>
+                  <MbtiResult
+                    countEI={countEI}
+                    countSN={countSN}
+                    countTF={countTF}
+                    countJP={countJP}
+                  ></MbtiResult>
+                </div> */}
               </div>
             </Grid>
             <Grid item xs={3} md={3} mt={2} pl={2}></Grid>
