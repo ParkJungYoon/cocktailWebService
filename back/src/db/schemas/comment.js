@@ -6,7 +6,7 @@ const CommentSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "Board",
     },
-    userId: {
+    writer: {
       type: Schema.Types.ObjectId,
       ref: "User",
     },
