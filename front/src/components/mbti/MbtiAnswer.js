@@ -1,5 +1,4 @@
 import React from "react";
-import "../../scss/Mbti.scss";
 import { Box, Grid, LinearProgress } from "@mui/material";
 
 const MbtiAnswer = (props) => {
@@ -19,12 +18,11 @@ const MbtiAnswer = (props) => {
         width: "100%",
         height: "100%",
         textAlign: "center",
-        // display: "contents",
       }}
       onClick={() => props.checkAnswer(qAnswer)}
       key={qAnswer}
     >
-      <Grid container className="btn" item xs={12} md={12} mt={1} sx={btnStyle}>
+      <Grid container className="btn" item xs={12} mt={3} sx={btnStyle}>
         {props.answer[qAnswer]}
       </Grid>
     </div>

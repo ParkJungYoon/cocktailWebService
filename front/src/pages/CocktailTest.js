@@ -17,31 +17,6 @@ function CocktailTest() {
     backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url(${bgImg})`,
     backgroundSize: "cover",
   };
-  const quizStartBtn = {
-    width: "200px",
-    height: "100px",
-    color: "white",
-    fontSize: "30px",
-    backgroundColor: "rgba(128, 128, 128, 0.5)",
-    borderRadius: "1rem",
-    cursor: "pointer",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  };
-  const mbtiStartBtn = {
-    marginTop: "5rem",
-    width: "200px",
-    height: "100px",
-    color: "white",
-    fontSize: "30px",
-    backgroundColor: "rgba(128, 128, 128, 0.5)",
-    borderRadius: "1rem",
-    cursor: "pointer",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  };
 
   return (
     <div className="quiz">
@@ -58,14 +33,12 @@ function CocktailTest() {
           <Grid item xs={12} md={12} height="720px" sx={quizGridStyle}>
             <Container
               className="startBtn"
-              sx={quizStartBtn}
               onClick={() => navigate("/cocktailTest/quiz")}
             >
               QUIZ
             </Container>
             <Container
               className="startBtn"
-              sx={mbtiStartBtn}
               onClick={() => navigate("/cocktailTest/mbti")}
             >
               MBTI

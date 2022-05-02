@@ -137,7 +137,7 @@ function QuizMain(props) {
                 </div>
               </div>
             </Grid>
-            <Grid item xs={3} md={3} mt={2} pl={2}></Grid>
+            <Grid item xs={3} mt={2} pl={2}></Grid>
           </Grid>
           {disable === true ? (
             // 정답지
