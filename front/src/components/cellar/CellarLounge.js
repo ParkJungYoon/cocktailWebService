@@ -14,7 +14,7 @@ import styles from "../../scss/Cellar.module.scss";
 import * as Api from "../../api";
 import useUserHook from "../commons/useUserHook";
 
-function CellarLike(props) {
+function CellarLounge(props) {
   const userState = useUserHook();
   if (userState === false)
     // navigate("/"); 왜안될까..?
@@ -26,9 +26,9 @@ function CellarLike(props) {
   }, []);
   return (
     <div className={styles["cellar-card"]}>
-      <p>CellarLike</p>
+      <p>Lounge</p>
     </div>
   );
 }
 
-export default CellarLike;
+export default CellarLounge;

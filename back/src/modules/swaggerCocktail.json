@@ -20,10 +20,17 @@
         }
       }
     },
-    "/cocktails": {
+    "/cocktails/page/{offset}": {
       "get": {
         "tags": ["Cocktail"],
         "summary": "칵테일 전체 조회",
+        "parameters": [
+          {
+            "name": "offset",
+            "in": "path",
+            "type" : "integer"
+          }
+        ],
         "responses": {
           "201": {
             "description": "OK"

@@ -20,7 +20,7 @@ function Account() {
   // console.log(userState.user);
   const isLogin = !!userState.user;
   if (isLogin === false)
-    // navigate("/"); 왜안되지..?
+    // navigate("/"); 왜안되지..? //임시...
     window.location.replace("/");
   const { name, email, password } = userState.user;
 
