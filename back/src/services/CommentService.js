@@ -1,13 +1,18 @@
 import { CommentModel } from "../db";
+import { BoardModel } from "../db";
 
 class CommentService {
   static async addComment({ boardId, writer, content }) {
+    const board = await BoardModel.findBoard({ boardId });
+    if (!board) {
+      const errorMessage = "해당 게시글이 없습니다. 다시 한 번 확인해 주세요.";
+      return { errorMessage };
+    }
     const newComment = { boardId, writer, content };
     const createdNewComment = await CommentModel.createComment({ newComment });
     return createdNewComment;
   }
 
-  // 수정
   static async setComment({ commentId, writer, content }) {
     let comment = await CommentModel.findComment({ commentId });
     if (!comment) {
