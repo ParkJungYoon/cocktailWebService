@@ -1,16 +1,18 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "../user/reducer/userReducer";
 import {
+  Button,
+  TextField,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  FormHelperText,
   Grid,
-  Card,
-  CardHeader,
-  CardContent,
-  CardMedia,
-  Container,
-  Box,
-  Stack,
 } from "@mui/material";
 import * as Api from "../../api";
+import styles from "../../scss/Account.module.scss";
 
 function Edit({ setIsEdit, formName }) {
   const { userState, userDispatch } = useContext(UserContext);
@@ -59,24 +61,47 @@ function Edit({ setIsEdit, formName }) {
       }}
     >
       <form onSubmit={handleSubmit}>
-        <input
+        {/* <input
           type="text"
           placeholder={formName}
           value={form.formName}
           onChange={(e) => {
             handleFormValue([formName], e.target.value);
           }}
-        ></input>
-
-        <button type="submit">Submit</button>
+        /> */}
+        <Grid contrainer>
+          <Grid item>
+            <TextField
+              autoComplete="on"
+              required
+              margin="dense"
+              label={form.formName}
+              variant="filled"
+              type="text"
+              fullWidth
+              color="secondary"
+              value={form.formName}
+              onChange={(e) => {
+                handleFormValue([formName], e.target.value);
+              }}
+              className={styles["account - input"]}
+            />
+          </Grid>
+          <Grid item>
+            <Button type="submit" className={styles["account-button"]}>
+              Submit
+            </Button>
+          </Grid>
+        </Grid>
       </form>
-      <button
+      <Button
         onClick={() => {
           setIsEdit(false);
         }}
+        className={styles["account-button"]}
       >
-        withDraw
-      </button>
+        WithDraw
+      </Button>
     </div>
   );
 }

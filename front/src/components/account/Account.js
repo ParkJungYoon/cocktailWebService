@@ -34,7 +34,13 @@ function Account() {
     >
       <Stack className="AccountContent">
         <Grid item xs={12} md={12} mt={13}>
-          <AccountCard props={{ name, email, password }} />
+          <Grid container>
+            <Grid item xs={4} md={3}></Grid>
+            <Grid item xs={4} md={6}>
+              <AccountCard props={{ name, email, password }} />
+            </Grid>
+            <Grid item xs={4} md={3}></Grid>
+          </Grid>
         </Grid>
       </Stack>
     </Box>
