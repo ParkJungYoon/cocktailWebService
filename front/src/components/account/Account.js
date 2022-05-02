@@ -1,53 +1,25 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  Grid,
-  Card,
-  CardHeader,
-  CardContent,
-  CardMedia,
-  Container,
-  Box,
-  Stack,
-} from "@mui/material";
-import bgImg from "../../imgs/thirdpage.jpg";
+import { Container } from "@mui/material";
+
 import { UserContext } from "../user/reducer/userReducer";
 import AccountCard from "./AccountCard";
 import EditForm from "./EditForm";
-
+import styles from "../../scss/Account.module.scss";
 function Account() {
-  //style
-  const quizGridStyle = {
-    padding: "5% 15% 5% 15%",
-    borderRadius: "2rem",
-    backgroundImage: `url(${bgImg})`,
-    backgroundSize: "cover",
-  };
-  //code
   const navigate = useNavigate();
   const { userState, userDispatch } = useContext(UserContext);
+  // console.log(userState.user);
   const isLogin = !!userState.user;
-  if (isLogin === false) window.location.replace("/");
+  if (isLogin === false)
+    // navigate("/"); 왜안되지..? //임시...
+    window.location.replace("/");
   const { name, email, password } = userState.user;
-  const [isEdit, setIsEdit] = useState(false);
 
   return (
-    <Box
-      sx={{
-        marginLeft: "5%",
-        marginRight: "5%",
-      }}
-    >
-      <Stack className="AccountContent">
-        <Grid item xs={12} md={12} mt={13} height="720px" sx={quizGridStyle}>
-          {isEdit ? (
-            <EditForm props={{ setIsEdit, name, email, password }} />
-          ) : (
-            <AccountCard props={{ setIsEdit, name, email, password }} />
-          )}
-        </Grid>
-      </Stack>
-    </Box>
+    <Container>
+      <AccountCard props={{ name, email, password }} />
+    </Container>
   );
 }
 

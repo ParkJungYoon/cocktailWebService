@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Card,
   CardMedia,
@@ -12,9 +12,14 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useNavigate } from "react-router-dom";
 import CompareArrowsIcon from "@mui/icons-material/CompareArrows";
 
-export default function AllCardItem({ cocktail }) {
+import * as Api from "../../api";
+
+export default function AllCardItem({ cocktail, liked }) {
   const navigate = useNavigate();
   const [isFront, setIsFront] = useState(true);
+  const [isLike, setIsLike] = useState(liked[cocktail.name]);
+  const [color, setColor] = useState(isLike ? "plum" : "white");
+  const [likeNum, setLikeNum] = useState(cocktail.likes);
 
   const buttonStyle = {
     position: "absolute",
@@ -22,9 +27,22 @@ export default function AllCardItem({ cocktail }) {
     right: 6,
     color: "violet",
   };
-  const iconStyle = {
-    color: "violet",
+
+  const handleOnClickLike = async () => {
+    if (!isLike) {
+      await Api.post(`like/${cocktail._id}`);
+      setLikeNum((prev) => prev + 1);
+      setIsLike(true);
+      setColor("plum");
+    } else {
+      await Api.delete(`like/${cocktail._id}`);
+      setLikeNum((prev) => prev - 1);
+      setIsLike(false);
+      setColor("white");
+    }
   };
+
+  // Card flip
   const handleOnClick = () => {
     isFront ? setIsFront(false) : setIsFront(true);
   };
@@ -32,10 +50,14 @@ export default function AllCardItem({ cocktail }) {
     <>
       <Box className={` ${isFront ? "cardFront" : "cardBack"}`}>
         <Card className="front">
-          <IconButton onClick={() => {}}>
-            <FavoriteIcon sx={iconStyle} />
+          <IconButton onClick={handleOnClickLike}>
+            {liked[cocktail.name] ? (
+              <FavoriteIcon sx={{ color: { color } }} />
+            ) : (
+              <FavoriteIcon sx={{ color: { color } }} />
+            )}
           </IconButton>
-          {cocktail.likes}
+          {likeNum}
           <CardMedia
             height="250"
             component="img"

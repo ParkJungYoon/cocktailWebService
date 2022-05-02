@@ -100,6 +100,7 @@ $thirdpage: "../imgs/thirdpage.jpg";
         bottom: 0;
         background-image: url($secondpage);
         background-size: cover;
+        background-position: center;
         position: absolute;
         opacity: 0.5;
       }
@@ -143,7 +144,7 @@ $thirdpage: "../imgs/thirdpage.jpg";
   background-size: cover;
 }
 .thirdpageContainer {
-  background-color: black;
+  // background-color: black;
   width: 80vw;
   height: 70vh;
   margin: 150px auto auto auto;

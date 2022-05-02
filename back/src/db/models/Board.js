@@ -1,4 +1,5 @@
 import { Board } from "../schemas/board";
+import { Comment } from "../schemas/comment";
 
 class BoardModel {
   static create = async (newBoardData) => {
@@ -6,29 +7,28 @@ class BoardModel {
     return newBoard;
   };
 
-  static findById = async (boardId) => {
-    const board = await Board.findById({ _id: boardId });
-    return board;
-  };
-
-  static delete = async (boardId) => {
-    const deleteBoard = await Board.findByIdAndDelete({ _id: boardId });
-    return deleteBoard;
-  };
-
-  static modify = async (filter, updateData) => {
-    const option = { returnOriginal: false };
-    const modifiedBoard = await Board.findOneAndUpdate(
-      filter,
-      updateData,
-      option
-    );
-    return modifiedBoard;
-  };
-
   static boardList = async () => {
     const boardList = await Board.find();
     return boardList;
+  };
+
+  static findBoard = async ({ boardId }) => {
+    const board = await Board.findOne({ _id: boardId }).populate("comment");
+    return board;
+  };
+
+  static modify = async ({ boardId, newValues }) => {
+    const filter = { _id: boardId };
+    const update = { $set: newValues };
+    const option = { returnOriginal: false };
+    const modifiedBoard = await Board.findOneAndUpdate(filter, update, option);
+    return modifiedBoard;
+  };
+
+  static delete = async ({ boardId }) => {
+    const deleteBoard = await Board.findByIdAndDelete({ _id: boardId });
+    await Comment.deleteMany({ boardId });
+    return deleteBoard;
   };
 }
 

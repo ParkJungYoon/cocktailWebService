@@ -31,6 +31,7 @@ const Top10CardChart = ({ cocktail }) => {
       {
         label: "Rank",
         data: dataArr,
+        fill: false,
         borderColor: "#ea32f7",
         backgroundColor: "#ea32f7",
       },
@@ -79,13 +80,32 @@ const Top10CardChart = ({ cocktail }) => {
     plugins: {
       title: {
         display: true,
-        text: "name",
       },
     },
     scales: {
+      x: {
+        grid: {
+          display: false,
+          drawTicks: true,
+        },
+        axis: "x",
+        title: {
+          color: "#ffffff",
+        },
+        ticks: { color: "white" },
+      },
       y: {
-        position: "left",
+        grid: {
+          display: false,
+          drawTicks: true,
+        },
         reverse: true,
+
+        axis: "y",
+        title: {
+          color: "#ffffff",
+        },
+        ticks: { color: "white" },
       },
     },
   };
