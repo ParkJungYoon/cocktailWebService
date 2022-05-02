@@ -11,19 +11,9 @@ class CommentModel {
     return createdNewComment;
   }
 
-  static async findById({ commentId }) {
+  static async findComment({ commentId }) {
     const comment = await Comment.findOne({ _id: commentId });
     return comment;
-  }
-
-  static async findByUserId({ user_id }) {
-    const comments = await Comment.find({ user_id });
-    return comments;
-  }
-
-  static async findByBoardId({ boardId }) {
-    const comments = await Comment.find({ boardId });
-    return comments;
   }
 
   static modify = async (filter, updateData) => {
@@ -36,8 +26,12 @@ class CommentModel {
     return modifiedComment;
   };
 
-  static async delete({ commentId }) {
+  static async delete({ commentId, boardId }) {
     const deletedComment = await Comment.deleteOne({ _id: commentId });
+    const pull = await Board.findOneAndUpdate(
+      { _id: boardId },
+      { $pull: { comment: commentId } }
+    );
     return deletedComment;
   }
 }
