@@ -10,26 +10,19 @@ import {
   Box,
   Stack,
 } from "@mui/material";
-import bgImg from "../../imgs/thirdpage.jpg";
 import { UserContext } from "../user/reducer/userReducer";
 import AccountCard from "./AccountCard";
 import EditForm from "./EditForm";
 
 function Account() {
-  //style
-  const quizGridStyle = {
-    padding: "5% 15% 5% 15%",
-    borderRadius: "2rem",
-    backgroundImage: `url(${bgImg})`,
-    backgroundSize: "cover",
-  };
-  //code
   const navigate = useNavigate();
   const { userState, userDispatch } = useContext(UserContext);
+  // console.log(userState.user);
   const isLogin = !!userState.user;
-  if (isLogin === false) window.location.replace("/");
+  if (isLogin === false)
+    // navigate("/"); 왜안되지..? //임시...
+    window.location.replace("/");
   const { name, email, password } = userState.user;
-  const [isEdit, setIsEdit] = useState(false);
 
   return (
     <Box
@@ -37,14 +30,17 @@ function Account() {
         marginLeft: "5%",
         marginRight: "5%",
       }}
+      // clssName={style.bo}
     >
       <Stack className="AccountContent">
-        <Grid item xs={12} md={12} mt={13} height="720px" sx={quizGridStyle}>
-          {isEdit ? (
-            <EditForm props={{ setIsEdit, name, email, password }} />
-          ) : (
-            <AccountCard props={{ setIsEdit, name, email, password }} />
-          )}
+        <Grid item xs={12} md={12} mt={13}>
+          <Grid container>
+            <Grid item xs={4} md={3}></Grid>
+            <Grid item xs={4} md={6}>
+              <AccountCard props={{ name, email, password }} />
+            </Grid>
+            <Grid item xs={4} md={3}></Grid>
+          </Grid>
         </Grid>
       </Stack>
     </Box>

@@ -8,17 +8,20 @@ class BoardService {
   };
 
   static delete = async ({ writer, boardId }) => {
-    const board = await BoardModel.findById(boardId);
-    if (!board) {
+    const boardList = await BoardModel.boardList();
+    const board = boardList.filter((v) => {
+      return String(v._id) === boardId;
+    });
+    if (board.length === 0) {
       const errorMessage = "삭제할 게시판이 없습니다.";
       return { errorMessage };
     }
-    if (String(board.writer) !== writer) {
+    if (String(board[0].writer) !== writer) {
       const errorMessage = "작성자가 아닙니다. 삭제 할 수 없습니다.";
       return { errorMessage };
     }
 
-    const deleteBoard = await BoardModel.delete(boardId);
+    const deleteBoard = await BoardModel.delete({ boardId });
     return deleteBoard;
   };
 
@@ -40,6 +43,18 @@ class BoardService {
     const modifiedBoard = await BoardModel.modify(filter, updateData);
 
     return modifiedBoard;
+  };
+
+  static getBoardInfo = async ({ boardId }) => {
+    const boardList = await BoardModel.boardList();
+    const board = boardList.filter((v) => {
+      return String(v._id) === boardId;
+    });
+    if (!board) {
+      const errorMessage = "해당 게시글이 없습니다. 다시 한 번 확인해 주세요.";
+      return { errorMessage };
+    }
+    return board;
   };
 
   static boardList = async () => {

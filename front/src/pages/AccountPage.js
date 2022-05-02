@@ -7,8 +7,8 @@ import Account from "../components/account/Account";
 export default function AccountPage() {
   return (
     <div className={styles.account}>
-      <Grid container sx={{ mt: 25 }}>
-        <Grid item xs={12}>
+      <Grid container>
+        <Grid item xs={12} className={styles["account-background"]}>
           <Account />
         </Grid>
       </Grid>

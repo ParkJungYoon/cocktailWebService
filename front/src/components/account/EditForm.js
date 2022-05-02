@@ -46,7 +46,9 @@ function EditForm({ props }) {
       setIsEdit(false);
     } catch (err) {
       console.log(err);
-      alert("실패, 이미 있는 이메일  or 이미 있는 닉네임 ");
+      if (err.response) {
+        alert(err.response.data);
+      }
     }
   };
 
