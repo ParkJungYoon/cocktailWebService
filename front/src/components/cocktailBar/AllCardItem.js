@@ -29,11 +29,13 @@ export default function AllCardItem({ cocktail }) {
   const handleOnClick = () => {
     isFront ? setIsFront(false) : setIsFront(true);
   };
-  const handleOnClickLike = () => {
-    if (isLike) {
-      setIsLike(false);
-    } else {
+  const handleOnClickLike = async () => {
+    if (!isLike) {
+      await Api.post(`like/${cocktail._id}`);
       setIsLike(true);
+    } else {
+      await Api.delete(`like/${cocktail._id}`);
+      setIsLike(false);
     }
   };
 
