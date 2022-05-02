@@ -115,7 +115,7 @@
           {
             "in": "body",
             "name": "body",
-            "originName" : "body",
+            "originName": "body",
             "ingredient": "body",
             "imageUrl": "body",
             "taste": "body",
@@ -166,9 +166,22 @@
           }
         }
       }
+    },
+    "/cocktails/like": {
+      "get": {
+        "tags": ["Cocktail"],
+        "summary": "칵테일 이름 + 좋아요 수 조회",
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
     }
   },
-
   "definitions": {
     "Cocktail": {
       "properties": {
