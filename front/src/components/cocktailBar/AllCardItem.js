@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Card,
   CardMedia,
@@ -12,9 +12,12 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useNavigate } from "react-router-dom";
 import CompareArrowsIcon from "@mui/icons-material/CompareArrows";
 
+import * as Api from "../../api";
+
 export default function AllCardItem({ cocktail }) {
   const navigate = useNavigate();
   const [isFront, setIsFront] = useState(true);
+  const [isLike, setIsLike] = useState(false);
 
   const buttonStyle = {
     position: "absolute",
@@ -22,20 +25,30 @@ export default function AllCardItem({ cocktail }) {
     right: 6,
     color: "violet",
   };
-  const iconStyle = {
-    color: "violet",
-  };
+
   const handleOnClick = () => {
     isFront ? setIsFront(false) : setIsFront(true);
   };
+  const handleOnClickLike = () => {
+    if (isLike) {
+      setIsLike(false);
+    } else {
+      setIsLike(true);
+    }
+  };
+
   return (
     <>
       <Box className={` ${isFront ? "cardFront" : "cardBack"}`}>
         <Card className="front">
-          <IconButton onClick={() => {}}>
-            <FavoriteIcon sx={iconStyle} />
+          <IconButton onClick={handleOnClickLike}>
+            {isLike ? (
+              <FavoriteIcon sx={{ color: "plum" }} />
+            ) : (
+              <FavoriteIcon sx={{ color: "white" }} />
+            )}
           </IconButton>
-          {cocktail.likes}
+          {isLike ? cocktail.likes + 1 : cocktail.likes}
           <CardMedia
             height="250"
             component="img"
