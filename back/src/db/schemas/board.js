@@ -6,21 +6,21 @@ const boardSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "User",
     },
+    title: {
+      type: String,
+    },
+    content: {
+      type: String,
+    },
+    images: {
+      type: [String],
+    },
     comment: [
       {
         type: Schema.Types.ObjectId,
         ref: "Comment",
       },
     ],
-    context: {
-      type: String,
-    },
-    images: {
-      type: [String],
-    },
-    title: {
-      type: String,
-    },
   },
   { timestamps: true }
 );
