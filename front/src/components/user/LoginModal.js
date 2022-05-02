@@ -14,6 +14,7 @@ import {
 import "../../scss/Modal.scss";
 import CloseIcon from "@mui/icons-material/Close";
 import { UserContext } from "../user/reducer/userReducer";
+import GoogleLoginBtn from "./GoogleLoginBtn";
 import * as Api from "../../api";
 
 export default function FormDialog({ open, handleLoginClose }) {
@@ -149,6 +150,7 @@ export default function FormDialog({ open, handleLoginClose }) {
           >
             Login
           </Button>
+          <GoogleLoginBtn />
         </DialogActions>
       </form>
     </Dialog>
