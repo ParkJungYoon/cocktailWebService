@@ -26,7 +26,7 @@ const options = {
 
 function WordCloud() {
   useEffect(async () => {
-    const res = await Api.get("likeList");
+    const res = await Api.get("userLike");
     console.log(res.data);
   }, []);
   return (

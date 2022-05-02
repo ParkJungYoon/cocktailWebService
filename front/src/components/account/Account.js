@@ -17,7 +17,7 @@ import EditForm from "./EditForm";
 function Account() {
   const navigate = useNavigate();
   const { userState, userDispatch } = useContext(UserContext);
-  console.log(userState.user);
+  // console.log(userState.user);
   const isLogin = !!userState.user;
   if (isLogin === false)
     // navigate("/"); 왜안되지..?

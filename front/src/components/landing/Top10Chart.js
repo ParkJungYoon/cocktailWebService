@@ -37,12 +37,36 @@ export const Top10Chart = ({}) => {
   }, []);
   const options = {
     responsive: true,
+    scales: {
+      x: {
+        grid: {
+          display: false,
+          drawTicks: true,
+        },
+        axis: "x",
+        title: {
+          color: "#ffffff",
+        },
+        ticks: { color: "white" },
+      },
+      y: {
+        grid: {
+          display: false,
+          drawTicks: true,
+        },
+        axis: "y",
+        title: {
+          color: "#ffffff",
+        },
+        ticks: { color: "white" },
+      },
+    },
     plugins: {
       legend: {
         position: "top",
       },
       title: {
-        display: true,
+        display: false,
         text: "Top10",
       },
     },
