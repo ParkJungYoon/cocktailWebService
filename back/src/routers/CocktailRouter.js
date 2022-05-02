@@ -16,6 +16,16 @@ CocktailRouter.get("/cocktails/page/:offset", async (req, res, next) => {
   }
 });
 
+// 칵테일 전체 좋아요 수 조회
+CocktailRouter.get("/cocktails/like", async (req, res, next) => {
+  try {
+    const cocktailLike = await CocktailService.getCocktailLike();
+    res.status(200).json(cocktailLike);
+  } catch (error) {
+    next(error);
+  }
+});
+
 CocktailRouter.get("/cocktails/rank", async (req, res, next) => {
   try {
     const cocktailList = await CocktailService.getCocktailRank10List();
@@ -106,7 +116,7 @@ CocktailRouter.post("/cocktail", verifyToken, async (req, res, next) => {
       taste: req.body.taste,
       description: req.body.description,
       userId: req.user,
-      method: req.body.method
+      method: req.body.method,
     };
 
     const cocktail = await CocktailService.addCocktail(addData);
