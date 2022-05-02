@@ -74,20 +74,13 @@ function QuizMain(props) {
     <>
       {step <= Object.keys(state.questions).length && disable === false ? (
         <>
-          <Grid
-            className="QuizMain"
-            item
-            xs={12}
-            md={12}
-            height="720px"
-            sx={progress}
-          >
+          <Grid className="QuizMain" item xs={12} height="720px" sx={progress}>
             <div className="Question">
               <Question question={state.questions[step]} />
             </div>
             <Grid container mb="3%">
               {/* progress bar */}
-              <Grid item xs={11} md={11} sx={progressBarAlignCenter}>
+              <Grid item xs={11} sx={progressBarAlignCenter}>
                 <Box sx={{ width: "100%" }}>
                   <LinearProgress
                     sx={progressBarStyle}
@@ -96,12 +89,12 @@ function QuizMain(props) {
                   />
                 </Box>
               </Grid>
-              <Grid item xs={1} md={1} sx={percentStyle}>
+              <Grid item xs={1} sx={percentStyle}>
                 {step * 10}%
               </Grid>
             </Grid>
             <Grid container>
-              <Grid item xs={7} md={7}>
+              <Grid item xs={7}>
                 <div style={{ marginLeft: "5rem" }}>
                   <Answer
                     answer={state.answers[step]}
@@ -111,7 +104,7 @@ function QuizMain(props) {
                   />
                 </div>
               </Grid>
-              <Grid item xs={5} md={5}>
+              <Grid item xs={5}>
                 <div style={QuestionImgStyle}>
                   <QuestionImg img={state.imgs[step]} />
                 </div>
@@ -121,17 +114,10 @@ function QuizMain(props) {
         </>
       ) : (
         // result part
-        <Grid
-          className="QuizMain"
-          item
-          xs={12}
-          md={12}
-          height="720px"
-          sx={result}
-        >
+        <Grid className="QuizMain" item xs={12} height="720px" sx={result}>
           <Grid container>
-            <Grid item xs={3} md={3}></Grid>
-            <Grid item xs={6} md={6} mt={1} mb={2}>
+            <Grid item xs={3}></Grid>
+            <Grid item xs={6} mt={1} mb={2}>
               <div className="finalPage">
                 <p>SCORE : {score}</p>
                 {/* <p>MARKING : {marking}</p> */}
@@ -163,13 +149,12 @@ function QuizMain(props) {
                 <Grid
                   item
                   xs={12}
-                  md={12}
                   //white bar
                   sx={whiteBarStyle}
                 ></Grid>
               </Grid>
               <Grid container>
-                <Grid item xs={7} md={7}>
+                <Grid item xs={7}>
                   <div style={{ marginLeft: "5rem" }}>
                     <Correct
                       answer={state.answers[step]}
@@ -178,7 +163,7 @@ function QuizMain(props) {
                     />
                   </div>
                 </Grid>
-                <Grid item xs={5} md={5}>
+                <Grid item xs={5}>
                   <div style={QuestionImgStyle}>
                     <QuestionImg img={state.imgs[step]} />
                   </div>

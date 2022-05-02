@@ -18,22 +18,18 @@ $star1: "../imgs/star1.jpg";
         padding: 1.2rem;
         align-items: center;
         justify-content: center;
-        justify-items: center
-    }
-    .finalPage p {
-        margin: 25px;
-        font-size: 35px;
-        font-family: Arial, sans-serif;
-        color: #ffffff;
-        font-weight: bold;
-
+        justify-items: center;
+        p {
+            margin: 25px;
+            font-size: 35px;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            font-weight: bold;
+        }
         p:hover {
             color: #a300d9;
+            cursor: default;
         }
-    }
-    .finalPage p:hover {
-        color: #a300d9;
-        cursor: default;
     }
     .restart {
         /* background-color: black; */
