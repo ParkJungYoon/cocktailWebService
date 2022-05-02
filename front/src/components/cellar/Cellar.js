@@ -10,19 +10,11 @@ import {
   Box,
   Stack,
 } from "@mui/material";
-import { UserContext } from "../user/reducer/userReducer";
 import CellarLike from "./CellarLike";
-import CellarRounge from "./CellarRounge";
+import CellarLounge from "./CellarLounge";
+import useUserHook from "../commons/useUserHook";
 
 function Cellar() {
-  const navigate = useNavigate();
-  const { userState, userDispatch } = useContext(UserContext);
-  // console.log(userState.user);
-  const isLogin = !!userState.user;
-  if (isLogin === false)
-    // navigate("/"); 왜안되지..?
-    window.location.replace("/");
-
   return (
     <Box
       sx={{
@@ -36,7 +28,7 @@ function Cellar() {
             <Grid item xs={3} md={2}></Grid>
             <Grid item xs={8} md={8}>
               <CellarLike />
-              <CellarRounge />
+              <CellarLounge />
             </Grid>
             <Grid item xs={3} md={2}></Grid>
           </Grid>
