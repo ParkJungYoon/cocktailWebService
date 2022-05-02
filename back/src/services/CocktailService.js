@@ -7,6 +7,11 @@ class CocktailService {
     return cocktailList;
   };
 
+  static getCocktailLike = async () => {
+    const cocktailLike = await CocktailModel.getCocktailLike();
+    return cocktailLike;
+  };
+
   static getCocktailRank10List = async () => {
     const cocktailList = await CocktailModel.getRank10Cocktail();
     return cocktailList;

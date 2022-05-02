@@ -20,15 +20,24 @@ class CocktailModel {
     return sortCocktail;
   };
 
+  static getCocktailLike = async () => {
+    const cocktailLiked = await Cocktail.find(
+      {},
+      { name: true, likes: true, _id: false }
+    );
+    return cocktailLiked;
+  };
+
   static addCocktail = async (cocktail) => {
     const addCocktail = await Cocktail.create(cocktail);
     return addCocktail;
   };
 
   static getAllCocktail = async ({ offset, limit = 20 }) => {
-    const result = await Cocktail.find().populate("rank")
-                              .skip( offset > 0 ? ((offset - 1) * limit) : 0)
-                              .limit(limit)
+    const result = await Cocktail.find()
+      .populate("rank")
+      .skip(offset > 0 ? (offset - 1) * limit : 0)
+      .limit(limit);
     return result;
   };
 
@@ -49,7 +58,6 @@ class CocktailModel {
 
   static deleteCocktail = async ({ name }) => {
     const result = await Cocktail.findOneAndDelete({ name });
-    console.log(result);
     return result;
   };
 
@@ -62,27 +70,27 @@ class CocktailModel {
 
   static likeCocktail = async ({ getCocktailId }) => {
     const updateC = await Cocktail.findOneAndUpdate(
-      { _id : getCocktailId },
-      { $inc : { likes : 1 }  }
+      { _id: getCocktailId },
+      { $inc: { likes: 1 } }
     );
 
     if (updateC !== null) {
-      return true
+      return true;
     }
-    return false
-  }
+    return false;
+  };
 
   static unLikeCocktail = async ({ getCocktailId }) => {
     const updateC = await Cocktail.findOneAndUpdate(
-      { _id : getCocktailId },
-      { $inc : { likes : -1 }  }
+      { _id: getCocktailId },
+      { $inc: { likes: -1 } }
     );
 
     if (updateC !== null) {
-      return true
+      return true;
     }
-    return false
-  }
+    return false;
+  };
 }
 
 export { CocktailModel };
