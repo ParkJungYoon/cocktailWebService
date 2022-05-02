@@ -20,16 +20,22 @@ function Lounge() {
       <div className={styles["lounge-rank-background"]}>
         <LoungeRank />
       </div>
-      {userState ? (
-        <>
-          {isForm ? (
-            <LoungeForm props={{ setIsForm }} />
-          ) : (
-            <LoungeList props={(userState, setIsForm)} />
-          )}
-        </>
+      {isForm ? (
+        <LoungeForm props={{ setIsForm }} />
       ) : (
-        <LoungeList />
+        <>
+          <LoungeList props={{}} />
+          <button
+            onClick={() => {
+              if (userState === false) alert("로그인 하세요...");
+              else {
+                setIsForm(true);
+              }
+            }}
+          >
+            create
+          </button>
+        </>
       )}
     </>
   );
