@@ -20,7 +20,7 @@ import Like from "./components/mypage/Like";
 import UserInfo from "./components/mypage/UserInfo";
 import UserTab from "./components/mypage/UserTab";
 import CocktailTest from "./pages/CocktailTest";
-import Lounge from "./pages/Lounge";
+import LoungePage from "./pages/LoungePage";
 import Mbti from "./components/mbti/Mbti";
 import Quiz from "./components/quiz/Quiz";
 import CellarPage from "./pages/CellarPage";
@@ -81,7 +81,7 @@ function App() {
         <Route path="/userinfo" element={<UserInfo />} />
         <Route path="/usertab" element={<UserTab />} />
         <Route path="/cocktailTest" element={<CocktailTest />} />
-        <Route path="/lounge" element={<Lounge />} />
+        <Route path="/lounge" element={<LoungePage />} />
         <Route path="/cocktailTest/mbti" element={<Mbti />} />
         <Route path="/cocktailTest/quiz" element={<Quiz />} />
         <Route path="/account" element={<AccountPage />} />
