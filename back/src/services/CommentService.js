@@ -1,8 +1,8 @@
 import { CommentModel } from "../db";
 
 class CommentService {
-  static async addComment({ boardId, userId, content }) {
-    const newComment = { boardId, userId, content };
+  static async addComment({ boardId, writer, content }) {
+    const newComment = { boardId, writer, content };
     const createdNewComment = await CommentModel.createComment({ newComment });
     return createdNewComment;
   }

@@ -1,8 +1,13 @@
 import { Comment } from "../schemas/comment";
+import { Board } from "../schemas/board";
 
 class CommentModel {
   static async createComment({ newComment }) {
     const createdNewComment = await Comment.create(newComment);
+    const push = await Board.findOneAndUpdate(
+      { _id: newComment.boardId },
+      { $push: { comment: createdNewComment._id } }
+    );
     return createdNewComment;
   }
 

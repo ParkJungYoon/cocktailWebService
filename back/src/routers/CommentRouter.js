@@ -4,18 +4,16 @@ import { verifyToken } from "../middlewares/verifyToken";
 
 const CommentRouter = Router();
 
-// 댓글 작성 API
+// 댓글 생성
 CommentRouter.post("/board/comment", verifyToken, async (req, res, next) => {
   try {
-    // 토큰에 있는 유저 정보로 userId 저장
-    const userId = req.user;
+    const writer = req.user;
     const { boardId, content } = req.body;
     const newComment = await CommentService.addComment({
       boardId,
-      userId,
+      writer,
       content,
     });
-
     if (newComment.errorMessage) {
       throw new Error(newComment.errorMessage);
     }
