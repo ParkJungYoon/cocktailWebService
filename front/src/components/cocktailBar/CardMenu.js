@@ -7,7 +7,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import AllCard from "./AllCard";
 import Top10Card from "./Top10Card";
 import CardSearch from "./CardSearch";
-
+import * as Api from "../../api";
 const theme = createTheme({
   palette: {
     primary: {

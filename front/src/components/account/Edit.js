@@ -1,18 +1,7 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "../user/reducer/userReducer";
-import {
-  Button,
-  TextField,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
-  FormHelperText,
-  Grid,
-} from "@mui/material";
+import { Button, TextField, Box, Container } from "@mui/material";
 import * as Api from "../../api";
-import styles from "../../scss/Account.module.scss";
 
 function Edit({ setIsEdit, formName }) {
   const { userState, userDispatch } = useContext(UserContext);
@@ -52,14 +41,7 @@ function Edit({ setIsEdit, formName }) {
   };
 
   return (
-    <div
-      style={{
-        paddingTop: "5px",
-        width: "100px",
-        height: "100px",
-        color: "white",
-      }}
-    >
+    <Box>
       <form onSubmit={handleSubmit}>
         {/* <input
           type="text"
@@ -69,40 +51,36 @@ function Edit({ setIsEdit, formName }) {
             handleFormValue([formName], e.target.value);
           }}
         /> */}
-        <Grid contrainer>
-          <Grid item>
-            <TextField
-              autoComplete="on"
-              required
-              margin="dense"
-              label={form.formName}
-              variant="filled"
-              type="text"
-              fullWidth
-              color="secondary"
-              value={form.formName}
-              onChange={(e) => {
-                handleFormValue([formName], e.target.value);
-              }}
-              className={styles["account - input"]}
-            />
-          </Grid>
-          <Grid item>
-            <Button type="submit" className={styles["account-button"]}>
-              Submit
-            </Button>
-          </Grid>
-        </Grid>
+        <TextField
+          required
+          sx={{
+            bgcolor: "white",
+            color: "white",
+          }}
+          label={formName}
+          variant="filled"
+          color="secondary"
+          value={form.formName}
+          fullWidth
+          onChange={(e) => {
+            handleFormValue([formName], e.target.value);
+          }}
+        />
+        <Box textAlign={"right"}>
+          <Button type="submit" sx={{ ml: "auto", color: "white" }}>
+            Submit
+          </Button>
+          <Button
+            onClick={() => {
+              setIsEdit(false);
+            }}
+            sx={{ color: "white" }}
+          >
+            WithDraw
+          </Button>
+        </Box>
       </form>
-      <Button
-        onClick={() => {
-          setIsEdit(false);
-        }}
-        className={styles["account-button"]}
-      >
-        WithDraw
-      </Button>
-    </div>
+    </Box>
   );
 }
 

@@ -14,10 +14,12 @@ import CompareArrowsIcon from "@mui/icons-material/CompareArrows";
 
 import * as Api from "../../api";
 
-export default function AllCardItem({ cocktail }) {
+export default function AllCardItem({ cocktail, liked }) {
   const navigate = useNavigate();
   const [isFront, setIsFront] = useState(true);
-  const [isLike, setIsLike] = useState(false);
+  const [isLike, setIsLike] = useState(liked[cocktail.name]);
+  const [color, setColor] = useState(isLike ? "plum" : "white");
+  const [likeNum, setLikeNum] = useState(cocktail.likes);
 
   const buttonStyle = {
     position: "absolute",
@@ -26,31 +28,36 @@ export default function AllCardItem({ cocktail }) {
     color: "violet",
   };
 
-  const handleOnClick = () => {
-    isFront ? setIsFront(false) : setIsFront(true);
-  };
   const handleOnClickLike = async () => {
     if (!isLike) {
       await Api.post(`like/${cocktail._id}`);
+      setLikeNum((prev) => prev + 1);
       setIsLike(true);
+      setColor("plum");
     } else {
       await Api.delete(`like/${cocktail._id}`);
+      setLikeNum((prev) => prev - 1);
       setIsLike(false);
+      setColor("white");
     }
   };
 
+  // Card flip
+  const handleOnClick = () => {
+    isFront ? setIsFront(false) : setIsFront(true);
+  };
   return (
     <>
       <Box className={` ${isFront ? "cardFront" : "cardBack"}`}>
         <Card className="front">
           <IconButton onClick={handleOnClickLike}>
-            {isLike ? (
-              <FavoriteIcon sx={{ color: "plum" }} />
+            {liked[cocktail.name] ? (
+              <FavoriteIcon sx={{ color: { color } }} />
             ) : (
-              <FavoriteIcon sx={{ color: "white" }} />
+              <FavoriteIcon sx={{ color: { color } }} />
             )}
           </IconButton>
-          {isLike ? cocktail.likes + 1 : cocktail.likes}
+          {likeNum}
           <CardMedia
             height="250"
             component="img"
