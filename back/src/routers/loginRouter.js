@@ -2,11 +2,24 @@ import { Router } from "express";
 import { LoginService } from "../services/loginService";
 import { verifyToken } from "../middlewares/verifyToken";
 import { verifyRefresh } from "../middlewares/verifyRefresh";
-import { loginValidation } from "../middlewares/validation";
+import { loginValidation, registerValidation } from "../middlewares/validation";
 
 const loginRouter = Router();
 
-loginRouter.delete("/login/delete", verifyToken, async (req, res, next) => {
+loginRouter.post("/register", registerValidation, async (req, res, next) => {
+  try {
+    const { email, password, name } = req.body;
+    const newUser = await LoginService.addUser({ email, password, name });
+    if (newUser.errorMessage) {
+      throw new Error(newUser.errorMessage);
+    }
+    res.status(200).json(newUser);
+  } catch (error) {
+    next(error);
+  }
+});
+
+loginRouter.delete("/withdrawal", verifyToken, async (req, res, next) => {
   try {
     const userId = req.user;
     const deletedUser = await LoginService.delete({ userId });
