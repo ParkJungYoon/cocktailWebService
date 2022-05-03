@@ -13,7 +13,7 @@ const Correct = (props) => {
 
   return (
     <>
-      <ul className="Correct">{answers}</ul>
+      <ul className="correct">{answers}</ul>
     </>
   );
 };

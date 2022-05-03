@@ -8,7 +8,7 @@ $star1: "../imgs/star1.jpg";
     overflow: auto;
 }
 
-.QuizMain {
+.quizMain {
     .finalPage {
         text-align: center;
         border: 3px solid white;
@@ -60,7 +60,7 @@ $star1: "../imgs/star1.jpg";
     }
 }
 
-.Question p {
+.question p {
     padding-left: 15px;
     margin: 15px 0;
     font-size: 25px;
@@ -72,7 +72,7 @@ $star1: "../imgs/star1.jpg";
     text-align: left;
 }
 
-.Answers {
+.answers {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -97,7 +97,7 @@ $star1: "../imgs/star1.jpg";
     }
 }
 
-.Correct {
+.correct {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -117,7 +117,7 @@ $star1: "../imgs/star1.jpg";
     }
 }
 
-.OxTable {
+.oxTable {
     table {
         border-collapse: collapse;
         background-color: black;
@@ -130,7 +130,7 @@ $star1: "../imgs/star1.jpg";
         color: white;
         font-size: 1.2rem;
     }
-    .OutlineStyle {
+    .outlineStyle {
         border-style: none;
 
         .Number:hover {

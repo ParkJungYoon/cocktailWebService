@@ -8,9 +8,9 @@ const OxTable = (props) => {
   let lst = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   return (
-    <div className="OxTable">
+    <div className="oxTable">
       <table>
-        <td className="OutlineStyle">
+        <td className="outlineStyle">
           <tr>
             <td>NO.</td>
             {lst.map((i) => (

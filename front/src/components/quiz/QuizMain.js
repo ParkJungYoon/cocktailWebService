@@ -74,8 +74,8 @@ function QuizMain(props) {
     <>
       {step <= Object.keys(state.questions).length && disable === false ? (
         <>
-          <Grid className="QuizMain" item xs={12} height="720px" sx={progress}>
-            <div className="Question">
+          <Grid className="quizMain" item xs={12} height="720px" sx={progress}>
+            <div className="question">
               <Question question={state.questions[step]} />
             </div>
             <Grid container mb="3%">
@@ -114,7 +114,7 @@ function QuizMain(props) {
         </>
       ) : (
         // result part
-        <Grid className="QuizMain" item xs={12} height="720px" sx={result}>
+        <Grid className="quizMain" item xs={12} height="720px" sx={result}>
           <Grid container>
             <Grid item xs={3}></Grid>
             <Grid item xs={6} mt={1} mb={2}>
@@ -142,7 +142,7 @@ function QuizMain(props) {
           {disable === true ? (
             // 정답지
             <div>
-              <div className="Question">
+              <div className="question">
                 <Question question={state.questions[step]} />
               </div>
               <Grid container mb="2%">
