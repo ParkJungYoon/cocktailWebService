@@ -23,8 +23,12 @@ const TypeCheck = (props) => {
               />
             </div>
             <p>블라블라</p>
-
-            <p>궁합이 좋은 MBTI 칵테일</p>
+          </div>
+        </Grid>
+        <Grid item xs={2}></Grid>
+        <Grid container>
+          <Grid item xs={5.95}>
+            <p style={{ margin: "5px" }}>궁합이 좋은 MBTI 칵테일</p>
             <div style={{ textAlign: "center" }}>
               <img
                 className=""
@@ -37,9 +41,25 @@ const TypeCheck = (props) => {
                 }}
               />
             </div>
-          </div>
+          </Grid>
+          <Grid item xs={0.1} sx={{ backgroundColor: "gray" }}></Grid>
+          <Grid item xs={5.95}>
+            <p style={{ margin: "5px" }}>궁합이 별로인 MBTI 칵테일</p>
+            <div style={{ textAlign: "center" }}>
+              <img
+                className=""
+                src={props.typeImg}
+                alt=""
+                width="150px"
+                style={{
+                  borderRadius: "1rem",
+                  justifyContent: "center",
+                }}
+              />
+            </div>
+          </Grid>
         </Grid>
-        <Grid item xs={2}></Grid>
+        <Grid item xs={12} sx={{ height: "20px" }}></Grid>
       </Grid>
     </>
   );
