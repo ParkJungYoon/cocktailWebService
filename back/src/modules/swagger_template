@@ -1,0 +1,49 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Swagger for Cocktail API",
+    "description": "Open API docs with Swagger",
+    "license": {
+      "name": "MIT",
+      "url": "http://localhost:5000"
+    }
+  },
+  "host": "localhost:5000",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "User",
+      "description": "User 로그인, 회원가입 API"
+    },
+    {
+      "name": "Cocktail",
+      "description": "칵테일 조회 API"
+    }
+  ],
+  "schemes": [
+    "HTTP"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "tags": [
+          "Main"
+        ],
+        "summary": "Main Page Get",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {}
+}

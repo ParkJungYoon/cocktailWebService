@@ -1,0 +1,145 @@
+{
+  "paths": {
+    "/boardList": {
+      "get": {
+        "tags": ["Board"],
+        "summary": "게시판 전체 조회",
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
+    },
+    "/board": {
+      "post": {
+        "tags": ["Board"],
+        "summary": "게시판 생성",
+        "description": "이미지는 formData로, key=img",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "title": "body",
+            "content": "body",
+            "schema": {
+              "$ref": "#/definitions/Board"
+            }
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "JWT access token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
+    },
+    "/board/{id}": {
+      "get": {
+        "tags": ["Board"],
+        "summary": "특정 게시글 조회",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "게시글 oid"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Board"],
+        "summary": "게시글 삭제",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "JWT access token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "게시글 oid"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Board"],
+        "summary": "게시판 수정",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "content": "body",
+            "title": "body",
+            "schema": {
+              "$ref": "#/definitions/Board"
+            }
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "JWT access token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "description": "게시글 oid"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Board": {
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
