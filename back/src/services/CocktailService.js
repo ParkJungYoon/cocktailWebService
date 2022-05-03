@@ -9,18 +9,18 @@ class CocktailService {
 
   static getUserCocktailList = async ({ offset, userId }) => {
     const cocktailUserList = await CocktailModel.getAllCocktail({ offset });
-    return await cocktailUserList.map(async (v) => {
-      const t = v.name;
-      const result = await LikeModel.getLikeOne({ userId, t });
-      console.log(result);
-      if (result !== null) {
-        v.isLiked = true;
-      } else {
-        v.isLiked = false;
-      }
-      console.log(v);
-      return v;
-    });
+    return Promise.all(
+      cocktailUserList.map(async (v, i) => {
+        const cocktailName = v.name
+        const result = await LikeModel.getLikeOne({ userId, t : cocktailName  });
+        
+        if (result !== null) {
+          return { ...v, isLiked: true};
+        } else {
+          return { ...v, isLiked: false};;
+        }
+      })
+    );
   };
 
   static getCocktailLike = async () => {
