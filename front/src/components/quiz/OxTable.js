@@ -26,6 +26,7 @@ const OxTable = (props) => {
               </td>
             ))}
           </tr>
+
           <tr>
             <td>O/X</td>
             {lst.map((i) => (

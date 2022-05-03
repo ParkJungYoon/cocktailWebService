@@ -2,22 +2,15 @@ import React, { useState } from "react";
 import * as Api from "../../api";
 
 function LoungeForm({ userState, board }) {
-  //   const { name, __id } = userState;
-  //   const { title, context, schema } = board;
-  //   const [form, setForm] = useState({
-  //     title: [title] ? [title] : "",
-  //     context: [context] ? [context] : "",
-  //     schema: [schema] ? [schema] : "", //filename-file //schema{%ref:dasdaafas}
-  //   });
   const [form, setForm] = useState({
     title: "",
-    context: "",
-    schema: "",
+    content: "",
+    img: "",
   });
 
   const handleFormSubmit = async (e) => {
-    e.preverntDefault();
-    console.log(form);
+    e.preventDefault();
+
     const data = makeForm();
     await Api.postForm("board", data)
       //확인용...
@@ -29,8 +22,7 @@ function LoungeForm({ userState, board }) {
       });
   };
   const handleFileChange = (e) => {
-    const obj = { $ref: e.target.files[0] };
-    setForm({ ...form, schema: obj });
+    setForm({ ...form, img: e.target.files[0] });
   };
   const handleFormChange = (e) => {
     setForm({
@@ -42,14 +34,14 @@ function LoungeForm({ userState, board }) {
   const makeForm = () => {
     const formData = new FormData();
     formData.append("title", form.title);
-    formData.append("context", form.context);
-    formData.append("schema", form.schema);
+    formData.append("content", form.content);
+    formData.append("img", form.img);
     return formData;
   };
 
   return (
     <div>
-      <form onSubmit={handleFormSubmit}>
+      <form onSubmit={handleFormSubmit} enctype="multipart/form-data">
         Title :{" "}
         <input
           type="text"
@@ -57,19 +49,18 @@ function LoungeForm({ userState, board }) {
           value={form.title}
           onChange={handleFormChange}
         />
-        Context :{" "}
+        Content :{" "}
         <input
           type="text"
-          name="context"
-          value={form.context}
+          name="content"
+          value={form.content}
           onChange={handleFormChange}
         />
         File :{" "}
         <input
           type="file"
-          name="schema"
-          file={form.schema}
-          value={form.schema["$ref"]}
+          name="img"
+          file={form.img}
           onChange={handleFileChange}
         />
         <button type="submit">Submit</button>
