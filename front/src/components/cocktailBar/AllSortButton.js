@@ -1,13 +1,12 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
+import { Box, MenuItem, FormControl, Select } from "@mui/material";
 
 export default function Top10SortButton({ cocktails, setCocktails }) {
+  // state
   const [order, setOrder] = React.useState("");
   const isAsc = true;
 
+  // 정렬기준 함수
   const sortCocktails = (isAsc) => {
     if (isAsc) {
       setOrder("이름 오름차순");
@@ -28,8 +27,7 @@ export default function Top10SortButton({ cocktails, setCocktails }) {
     <Box
       sx={{
         height: 50,
-        minWidth: 150,
-        width: 150,
+        width: 200,
         bgcolor: "rgba(64, 64, 64, 0.7)",
       }}
     >

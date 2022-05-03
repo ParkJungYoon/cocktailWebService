@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   Card,
   CardMedia,
@@ -8,19 +8,22 @@ import {
   IconButton,
   Typography,
 } from "@mui/material";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import { useNavigate } from "react-router-dom";
-import CompareArrowsIcon from "@mui/icons-material/CompareArrows";
 
 import * as Api from "../../api";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import CompareArrowsIcon from "@mui/icons-material/CompareArrows";
+import { useNavigate } from "react-router-dom";
 
 export default function AllCardItem({ cocktail, liked }) {
   const navigate = useNavigate();
+
+  // state
   const [isFront, setIsFront] = useState(true);
   const [isLike, setIsLike] = useState(liked[cocktail.name]);
   const [color, setColor] = useState(isLike ? "plum" : "white");
   const [likeNum, setLikeNum] = useState(cocktail.likes);
 
+  // style
   const buttonStyle = {
     position: "absolute",
     bottom: 5,
@@ -28,6 +31,12 @@ export default function AllCardItem({ cocktail, liked }) {
     color: "violet",
   };
 
+  // Card flip event
+  const handleOnClick = () => {
+    isFront ? setIsFront(false) : setIsFront(true);
+  };
+
+  // Like click event
   const handleOnClickLike = async () => {
     if (!isLike) {
       try {
@@ -50,10 +59,6 @@ export default function AllCardItem({ cocktail, liked }) {
     }
   };
 
-  // Card flip
-  const handleOnClick = () => {
-    isFront ? setIsFront(false) : setIsFront(true);
-  };
   return (
     <>
       <Box className={` ${isFront ? "cardFront" : "cardBack"}`}>

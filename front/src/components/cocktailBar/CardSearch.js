@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { styled } from "@mui/material/styles";
 import SearchIcon from "@mui/icons-material/Search";
-import { InputBase, Grid } from "@mui/material";
+import { InputBase } from "@mui/material";
 
 import * as Api from "../../api";
 
+// style
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -37,8 +38,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function CardSearch({ cocktails, setCocktails }) {
+export default function CardSearch({ setCocktails }) {
+  // state
   const [search, setSearch] = useState("");
+
+  // search에 입력된 값이 바뀔때마다 param으로 post 요청
   useEffect(async () => {
     await Api.post(`cocktails/${search}`).then((res) => {
       setCocktails(res.data);
