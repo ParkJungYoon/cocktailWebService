@@ -5,16 +5,13 @@ import {
   Tab,
   Tabs,
   Box,
-  Tooltip,
   IconButton,
   Menu,
   MenuItem,
   Divider,
-  ListItemIcon,
 } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import Logout from "@mui/icons-material/Logout";
 import { pink } from "@mui/material/colors";
 
 import logo from "../imgs/logo.png";
@@ -57,6 +54,7 @@ function Header({ user }) {
     userDispatch({ type: "LOGOUT" });
     // 기본 페이지로 돌아감.
     navigate("/");
+    window.location.reload();
   };
   // modal 관리
   const [openLogin, setOpenLogin] = React.useState(false);

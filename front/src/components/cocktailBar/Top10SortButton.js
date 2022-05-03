@@ -1,12 +1,14 @@
-import * as React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
 export default function Top10SortButton({ top10Cocktails, setTop10Cocktails }) {
-  const [order, setOrder] = React.useState("");
+  // state
+  const [order, setOrder] = useState("");
 
+  // sort 함수
   const sortCocktails = (isAsc, key) => {
     if (isAsc && key === "name") {
       setOrder("이름 오름차순");

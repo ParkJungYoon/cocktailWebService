@@ -1,6 +1,5 @@
-import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Box, Button, Grid, Typography, Container } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import WordCloud from "../test/WordCloud";
 
 export default function Thirdpage() {

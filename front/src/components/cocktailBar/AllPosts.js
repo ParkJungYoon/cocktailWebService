@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { Grid } from "@mui/material";
 
-import AllCardItem from "./AllCardItem";
 import * as Api from "../../api";
+import AllCardItem from "./AllCardItem";
 
 export default function AllPosts({ cocktails }) {
+  // state
   const [like, setLike] = useState([]);
   const liked = {};
+
+  // user가 like한 칵테일 목록 불러오기
   useEffect(async () => {
     await Api.get("userLike").then((res) => {
       setLike(res.data);
     });
   }, []);
 
+  // 불러온 칵테일 목록을 dictionary 형태로 변환
   like.map((v) => (liked[v.name] = true));
 
   return (

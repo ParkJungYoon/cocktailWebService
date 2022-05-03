@@ -11,10 +11,11 @@ import {
   IconButton,
   FormHelperText,
 } from "@mui/material";
-import "../../scss/Modal.scss";
 import CloseIcon from "@mui/icons-material/Close";
-import { UserContext } from "../user/reducer/userReducer";
+
 import * as Api from "../../api";
+import "../../scss/Modal.scss";
+import { UserContext } from "../user/reducer/userReducer";
 
 export default function FormDialog({ open, handleLoginClose }) {
   const navigate = useNavigate();
@@ -104,7 +105,6 @@ export default function FormDialog({ open, handleLoginClose }) {
           </DialogContentText>
 
           <TextField
-            autoComplete="on"
             required
             sx={{ mt: 5, bgcolor: "white" }}
             margin="dense"
@@ -122,7 +122,6 @@ export default function FormDialog({ open, handleLoginClose }) {
             </FormHelperText>
           )}
           <TextField
-            autoComplete="on"
             required
             sx={{ mt: 2, bgcolor: "white" }}
             margin="dense"
