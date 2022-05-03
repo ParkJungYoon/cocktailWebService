@@ -1,4 +1,4 @@
-import { UserModel, TokenModel, BoardModel, commentModel } from "../db";
+import { UserModel, TokenModel, BoardModel, CommentModel } from "../db";
 
 import { hashPassword } from "../utils/hashPassword";
 import { makeToken, makeRefreshToken } from "../utils/makeToken";
@@ -25,7 +25,7 @@ class userService {
     }
     // 탈퇴 시 게시글, 댓글 writer null값으로 변경
     await BoardModel.updateUserBoard({ userId });
-    await commentModel.updateUserComment({ userId });
+    await CommentModel.updateUserComment({ userId });
 
     return deletedUser;
   };
