@@ -1,10 +1,26 @@
-import { CocktailModel } from "../db";
+import { CocktailModel, LikeModel } from "../db";
 
 class CocktailService {
   // 칵테일 조회(cocktail DB에서)
   static getCocktailList = async ({ offset }) => {
     const cocktailList = await CocktailModel.getAllCocktail({ offset });
     return cocktailList;
+  };
+
+  static getUserCocktailList = async ({ offset, userId }) => {
+    const cocktailUserList = await CocktailModel.getAllCocktail({ offset });
+    return await cocktailUserList.map(async (v) => {
+      const t = v.name;
+      const result = await LikeModel.getLikeOne({ userId, t });
+      console.log(result);
+      if (result !== null) {
+        v.isLiked = true;
+      } else {
+        v.isLiked = false;
+      }
+      console.log(v);
+      return v;
+    });
   };
 
   static getCocktailLike = async () => {
