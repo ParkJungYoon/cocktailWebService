@@ -5,6 +5,7 @@ import { type } from "express/lib/response";
 
 const CocktailRouter = Router();
 
+// 로그인 전
 CocktailRouter.get("/cocktails/page/:offset", async (req, res, next) => {
   try {
     const offset = req.params.offset == null ? 0 : req.params.offset;
@@ -15,6 +16,36 @@ CocktailRouter.get("/cocktails/page/:offset", async (req, res, next) => {
   }
 });
 
+// 로그인 후
+CocktailRouter.get(
+  "/cocktails/user/:offset",
+  verifyToken,
+  async (req, res, next) => {
+    try {
+      const offset = req.params.offset == null ? 0 : req.params.offset;
+      const userId = req.user;
+      const cocktailList = await CocktailService.getUserCocktailList({
+        offset,
+        userId,
+      });
+      res.status(200).json(cocktailList);
+    } catch (error) {
+      next(error);
+    }
+  }
+);
+
+CocktailRouter.post("/cocktails/:word", async (req, res, next) => {
+  try {
+    const word = req.params.word.toLowerCase();
+    const includedCocktail = await CocktailService.getIncludedCocktail({
+      word,
+    });
+    res.status(200).json(includedCocktail);
+  } catch (error) {
+    next(error);
+  }
+});
 // 칵테일 전체 좋아요 수 조회
 CocktailRouter.get("/cocktails/like", async (req, res, next) => {
   try {

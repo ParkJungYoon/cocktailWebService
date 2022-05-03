@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Box, Grid } from "@mui/material";
-import * as Api from "../../api";
 
+import * as Api from "../../api";
 import Loader from "./Loader";
 import Top10SortButton from "./Top10SortButton";
 import Top10Posts from "./Top10Posts";
 
 export default function Top10Card() {
+  // state
   const [top10Cocktails, setTop10Cocktails] = useState([]);
   const [load, setLoad] = useState(false);
 
+  // top10 cocktail 불러오기
   useEffect(async () => {
     setLoad(true);
     await Api.get("cocktails/rank").then((res) => {
@@ -24,7 +26,7 @@ export default function Top10Card() {
         <Box
           sx={{
             ml: "auto",
-            mr: 20,
+            px: 15,
             mb: 4,
           }}
         >

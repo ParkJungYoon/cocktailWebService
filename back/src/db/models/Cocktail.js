@@ -34,16 +34,23 @@ class CocktailModel {
   };
 
   static getAllCocktail = async ({ offset, limit = 20 }) => {
-
     const count = await Cocktail.countDocuments();
 
     const result = await Cocktail.find()
       .populate("rank")
       .skip(offset > 0 ? (offset - 1) * limit : 0)
-      .limit(limit);
-    
-    result['total'] = count;
+      .limit(limit)
+      .lean();
+
+    result["total"] = count;
     return result;
+  };
+
+  static getIncludedCocktail = async (query) => {
+    const cocktailList = await Cocktail.find({
+      name: { $regex: query },
+    });
+    return cocktailList;
   };
 
   static modify = async (filter, cocktail) => {

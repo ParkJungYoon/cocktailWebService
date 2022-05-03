@@ -1,9 +1,21 @@
-import { UserModel, TokenModel } from "../db";
+import { UserModel, TokenModel, BoardModel, commentModel } from "../db";
 
 import { hashPassword } from "../utils/hashPassword";
 import { makeToken, makeRefreshToken } from "../utils/makeToken";
 
-class LoginService {
+class userService {
+  static addUser = async ({ email, password, name }) => {
+    const user = await UserModel.findByEmail({ email });
+    if (user) {
+      const errorMessage = "중복된 이메일입니다. 다른 이메일을 입력해주세요";
+      return { errorMessage };
+    }
+    const hashedPassword = hashPassword(password);
+    const newUserData = { email, password: hashedPassword, name };
+    const newUser = await UserModel.addUser(newUserData);
+    return newUser;
+  };
+
   static delete = async ({ userId }) => {
     const deletedUser = await UserModel.delete({ userId });
     if (!deletedUser) {
@@ -11,8 +23,13 @@ class LoginService {
         "해당 이메일로 가입된 내역이 없습니다. 다시 한 번 확인해주세요";
       return { errorMessage };
     }
+    // 탈퇴 시 게시글, 댓글 writer null값으로 변경
+    await BoardModel.updateUserBoard({ userId });
+    await commentModel.updateUserComment({ userId });
+
     return deletedUser;
   };
+
   static modify = async ({ userId, toUpdate }) => {
     const user = await UserModel.findByUserId({ userId });
     if (!user) {
@@ -86,18 +103,17 @@ class LoginService {
       return { errorMessage };
     }
   };
+
   static async getUserInfo({ userId }) {
     const user = await UserModel.findByUserId({ userId });
-
     // db에서 찾지 못한 경우, 에러 메시지 반환
     if (!user) {
       const errorMessage =
         "해당 유저는 가입 내역이 없습니다. 다시 한 번 확인해 주세요.";
       return { errorMessage };
     }
-
     return user;
   }
 }
 
-export { LoginService };
+export { userService };

@@ -106,27 +106,36 @@ $thirdpage: "../imgs/thirdpage.jpg";
       }
       .top10ChartWrapper {
         margin: auto;
-        padding: 0 100px;
+        padding-right: 10%;
         .top10Chart {
           position: relative;
         }
       }
       .top10TextWrapper {
-        margin-top: auto;
-        margin-bottom: auto;
+        position: absolute;
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        top: 40%;
+        right: 5vw;
+        text-align: right;
         .top10Text {
           position: relative;
           color: white;
-          font-size: 40px;
+          font-size: 3vw;
+          font-weight: bold;
         }
         .buttonBox {
           text-align: center;
+          margin-top: 50px;
           .top10Button {
-            background: linear-gradient(to right, lightpink, rgb(211, 98, 211));
-            color: white;
+            position: absolute;
+            bottom: -50%;
+            right: 1.5vw;
             font-size: 1vw;
-            font-weight: bold;
-            margin-top: 50px;
+            color: #f1f7ed;
+            border: 2px solid #f1f7ed;
+            padding: 10px 20px;
             cursor: pointer;
             &:hover {
               box-shadow: 0 0 15px rgb(0, 0, 0 /15%);
