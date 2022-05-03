@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as Api from "../../api";
 
-function LoungeForm({ userState, board }) {
+function LoungeForm({ userState, board, setIsForm }) {
   const [form, setForm] = useState({
     title: "",
     content: "",
@@ -65,6 +65,13 @@ function LoungeForm({ userState, board }) {
         />
         <button type="submit">Submit</button>
       </form>
+      <button
+        onClick={() => {
+          setIsForm(false);
+        }}
+      >
+        withdraw
+      </button>
     </div>
   );
 }

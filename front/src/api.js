@@ -45,26 +45,12 @@ async function post(endpoint, data) {
 async function postForm(endpoint, data) {
   console.log(`%cPOST 요청: ${serverUrl + endpoint}`, "color: #296aba;");
   console.log(`%cPOST 요청 데이터: ${data}`, "color: #296aba;");
-  console.log(data);
-  console.log(data.get("img"));
-  console.log(data.get("content"));
-  console.log(data.get("title"));
-
   return axios.post(serverUrl + endpoint, data, {
     headers: {
       "Content-Type": "multipart/form-data",
       authorization: `Bearer ${sessionStorage.getItem("userToken")}`,
     },
   });
-  // return axios({
-  //   url: serverUrl + endpoint,
-  //   headers: {
-  //     "Content-Type": "multipart/form-data",
-  //     authorization: `Bearer ${sessionStorage.getItem("userToken")}`,
-  //   },
-  //   method: "post",
-  //   data: data,
-  // });
 }
 
 async function put(endpoint, data) {

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import LoungeLists from "./LoungeLists";
+import LoungeList from "./LoungeList";
 import LoungeRank from "./LoungeRank";
 import useUserHook from "../commons/useUserHook";
-import LoungeForm from "./LoungeForm";
 import * as Api from "../../api";
 
 //style
@@ -21,7 +20,7 @@ function Lounge() {
         <LoungeRank />
       </div>
       <div>
-        <LoungeLists props={{ userState }} />
+        <LoungeList props={{ userState }} />
       </div>
     </>
   );

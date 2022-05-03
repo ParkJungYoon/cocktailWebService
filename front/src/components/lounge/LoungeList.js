@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from "react";
 import LoungeRank from "./LoungeRank";
 import LoungeForm from "./LoungeForm";
-import LoungeListItem from "./";
+import sytles from "../../scss/Lounge.module.scss";
+import LoungeTable from "./LoungeTable";
 import * as Api from "../../api";
 
 function LoungeLists({ userState }) {
   const [isForm, setIsForm] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   if (userState) {
     const [name, email] = userState;
   }
-  useEffect(async () => {
-    await Api.get("boardList");
-  }, []);
+
   return (
     <>
       {isForm ? (
-        <LoungeForm />
+        <LoungeForm setIsForm={setIsForm} />
       ) : (
         <>
           <button
@@ -26,14 +26,9 @@ function LoungeLists({ userState }) {
           >
             Create
           </button>
-          <LoungeListItem />
+          <LoungeTable />
         </>
       )}
-      <button
-        onClick={() => {
-          setIsForm(true);
-        }}
-      ></button>
     </>
   );
 }
