@@ -19,7 +19,6 @@ BoardRouter.post(
       const { title, content } = req.body;
       const images = req.images;
       const getImage = await ImageModel.getImg({ fileNameList: images });
-      console.log(getImage);
       const newBoard = await BoardService.create({
         writer,
         title,
@@ -41,7 +40,10 @@ BoardRouter.get("/board/:id", async (req, res, next) => {
     if (currentBoardInfo.errorMessage) {
       throw new Error(currentBoardInfo.errorMessage);
     }
-    res.status(200).json(currentBoardInfo);
+    const getImage = await ImageModel.getImg({
+      fileNameList: currentBoardInfo.images,
+    });
+    res.status(200).json({ currentBoardInfo, getImage });
   } catch (error) {
     next(error);
   }
