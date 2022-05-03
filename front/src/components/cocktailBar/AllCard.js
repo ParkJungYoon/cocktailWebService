@@ -1,20 +1,22 @@
 import { memo, useRef, useEffect, useState, useCallback } from "react";
-import { Grid, Box, Container } from "@mui/material";
+import { Grid } from "@mui/material";
 
-import CardSearch from "./CardSearch";
 import * as Api from "../../api";
+import CardSearch from "./CardSearch";
 import AllPosts from "./AllPosts";
 import AllSortButton from "./AllSortButton";
 import Loader from "./Loader";
 
 function AllCard() {
+  // state
   const [cocktails, setCocktails] = useState([]);
   const [page, setPage] = useState(0);
   const [load, setLoad] = useState(false);
   const [preventRef, setPreventRef] = useState(true); //중복 실행 방지
-  const obsRef = useRef(null); //observer Element
   const [endRef, setEndRef] = useState(false); //모든 글 로드 확인
+  const obsRef = useRef(null); //observer Element
 
+  // Infinite Scroll
   useEffect(() => {
     const observer = new IntersectionObserver(obsHandler, {
       threshold: 0.5,
@@ -59,9 +61,9 @@ function AllCard() {
 
   return (
     <>
-      <Grid container sx={{ pl: "auto", mb: 5 }} spacing={3}>
+      <Grid container sx={{ ml: "auto", pr: 15, mb: 4 }} spacing={3}>
         <Grid item xs>
-          <CardSearch cocktails={cocktails} setCocktails={setCocktails} />
+          <CardSearch setCocktails={setCocktails} />
         </Grid>
         <Grid item xs={3}>
           <AllSortButton cocktails={cocktails} setCocktails={setCocktails} />

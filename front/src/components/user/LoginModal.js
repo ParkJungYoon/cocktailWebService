@@ -11,10 +11,11 @@ import {
   IconButton,
   FormHelperText,
 } from "@mui/material";
-import "../../scss/Modal.scss";
 import CloseIcon from "@mui/icons-material/Close";
-import { UserContext } from "../user/reducer/userReducer";
+
 import * as Api from "../../api";
+import "../../scss/Modal.scss";
+import { UserContext } from "../user/reducer/userReducer";
 
 export default function FormDialog({ open, handleLoginClose }) {
   const navigate = useNavigate();
