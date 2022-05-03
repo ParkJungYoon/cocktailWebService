@@ -33,6 +33,7 @@ function LoungeTable({}) {
                 <TableCell>No</TableCell>
                 <TableCell align="right">Name</TableCell>
                 <TableCell align="right">Title</TableCell>
+                <TableCell align="right">Comment</TableCell>
                 <TableCell align="right">Date</TableCell>
               </TableRow>
             </TableHead>
@@ -48,6 +49,7 @@ function LoungeTable({}) {
                   <TableCell>{i + 1}</TableCell>
                   <TableCell align="right">{item.title}</TableCell>
                   <TableCell align="right">{item.content}</TableCell>
+                  <TableCell align="right">{item.comment.len}</TableCell>
                   <TableCell align="right">{item.createdAt}</TableCell>
                 </TableRow>
               ))}

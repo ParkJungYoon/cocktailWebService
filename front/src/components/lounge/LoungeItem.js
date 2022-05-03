@@ -13,9 +13,18 @@ function LoungeItem({ setIsOpen, item }) {
   //   let link = URL.createObjectURL(imgData);
 
   return (
-    <Paper>
-      <img />
-    </Paper>
+    <>
+      <button
+        onClick={() => {
+          setIsOpen(false);
+        }}
+      >
+        goBack
+      </button>
+      <Paper>
+        <img />
+      </Paper>
+    </>
   );
 }
 

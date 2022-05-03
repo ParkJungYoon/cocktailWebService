@@ -12,14 +12,11 @@ function LoungeForm({ userState, board, setIsForm }) {
     e.preventDefault();
 
     const data = makeForm();
-    await Api.postForm("board", data)
-      //확인용...
-      .then((res) => {
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    await Api.postForm("board", data).catch((err) => {
+      console.log(err);
+    });
+
+    setIsForm(false);
   };
   const handleFileChange = (e) => {
     setForm({ ...form, img: e.target.files[0] });
