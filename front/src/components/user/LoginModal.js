@@ -104,7 +104,6 @@ export default function FormDialog({ open, handleLoginClose }) {
           </DialogContentText>
 
           <TextField
-            autoComplete="on"
             required
             sx={{ mt: 5, bgcolor: "white" }}
             margin="dense"
@@ -122,7 +121,6 @@ export default function FormDialog({ open, handleLoginClose }) {
             </FormHelperText>
           )}
           <TextField
-            autoComplete="on"
             required
             sx={{ mt: 2, bgcolor: "white" }}
             margin="dense"
