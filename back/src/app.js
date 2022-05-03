@@ -2,7 +2,7 @@ import cors from "cors";
 import express from "express";
 import axios from "axios";
 import { errorMiddleware } from "./middlewares/errorMiddleware";
-import { loginRouter } from "./routers/loginRouter";
+import { userRouter } from "./routers/userRouter";
 import { CocktailRouter } from "./routers/CocktailRouter";
 import { RankRouter } from "./routers/RankRouter";
 import { dbRouter } from "./routers/dbRouter";
@@ -87,7 +87,7 @@ app.get(
 // -----------------------------------------------------------------------------------------------------------
 // MVP router
 app.use(dbRouter);
-app.use(loginRouter);
+app.use(userRouter);
 app.use(CocktailRouter);
 app.use(RankRouter);
 app.use(LikeRouter);

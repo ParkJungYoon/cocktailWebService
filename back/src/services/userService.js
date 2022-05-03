@@ -3,7 +3,7 @@ import { UserModel, TokenModel, BoardModel, commentModel } from "../db";
 import { hashPassword } from "../utils/hashPassword";
 import { makeToken, makeRefreshToken } from "../utils/makeToken";
 
-class LoginService {
+class userService {
   static addUser = async ({ email, password, name }) => {
     const user = await UserModel.findByEmail({ email });
     if (user) {
@@ -116,4 +116,4 @@ class LoginService {
   }
 }
 
-export { LoginService };
+export { userService };
