@@ -57,6 +57,7 @@ function Header({ user }) {
     userDispatch({ type: "LOGOUT" });
     // 기본 페이지로 돌아감.
     navigate("/");
+    window.location.reload();
   };
   // modal 관리
   const [openLogin, setOpenLogin] = React.useState(false);

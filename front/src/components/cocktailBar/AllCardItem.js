@@ -30,15 +30,23 @@ export default function AllCardItem({ cocktail, liked }) {
 
   const handleOnClickLike = async () => {
     if (!isLike) {
-      await Api.post(`like/${cocktail._id}`);
-      setLikeNum((prev) => prev + 1);
-      setIsLike(true);
-      setColor("plum");
+      try {
+        await Api.post(`like/${cocktail._id}`);
+        setLikeNum((prev) => prev + 1);
+        setIsLike(true);
+        setColor("plum");
+      } catch (e) {
+        alert("로그인 해주세요.");
+      }
     } else {
-      await Api.delete(`like/${cocktail._id}`);
-      setLikeNum((prev) => prev - 1);
-      setIsLike(false);
-      setColor("white");
+      try {
+        await Api.delete(`like/${cocktail._id}`);
+        setLikeNum((prev) => prev - 1);
+        setIsLike(false);
+        setColor("white");
+      } catch (e) {
+        console.log(e);
+      }
     }
   };
 

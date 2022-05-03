@@ -3,21 +3,21 @@ import { styled } from "@mui/material/styles";
 import SearchIcon from "@mui/icons-material/Search";
 import { InputBase, Grid } from "@mui/material";
 
-import AllPosts from "./AllPosts";
 import * as Api from "../../api";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
-  backgroundColor: "#404040",
+  backgroundColor: "rgba(64, 64, 64, 0.7)",
   color: "white",
   marginLeft: "auto",
   width: "250px",
+  height: "50px",
 }));
 
 const SearchIconWrapper = styled("div")(({ theme }) => ({
   padding: theme.spacing(0, 2),
-  height: "80%",
+  height: "50px",
   position: "absolute",
   pointerEvents: "none",
   display: "flex",
@@ -28,6 +28,7 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
   width: "100%",
+  height: "100%",
   "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
@@ -36,44 +37,25 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function CardSearch() {
-  const [cocktails, setCocktails] = useState([]);
-  const [searchCocktails, setSearchCocktails] = useState([]);
-
+export default function CardSearch({ cocktails, setCocktails }) {
+  const [search, setSearch] = useState("");
   useEffect(async () => {
-    await Api.get("cocktails/page/1").then((res) => {
+    await Api.post(`cocktails/${search}`).then((res) => {
       setCocktails(res.data);
     });
-  }, []);
+  }, [search]);
 
   return (
     <>
-      <Grid container spacing={1} sx={{ px: 15, mb: 5 }}>
-        <Grid item xs={12}>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="칵테일을 검색하세요."
-              onChange={(e) => setSearchCocktails(e.target.value)}
-            />
-          </Search>
-        </Grid>
-      </Grid>
-      <Grid container spacing={1} sx={{ px: 15 }}>
-        <AllPosts
-          cocktails={cocktails.filter((val) => {
-            if (searchCocktails == "") {
-              return "";
-            } else if (
-              val.name.toLowerCase().includes(searchCocktails.toLowerCase())
-            ) {
-              return val;
-            }
-          })}
+      <Search>
+        <SearchIconWrapper>
+          <SearchIcon />
+        </SearchIconWrapper>
+        <StyledInputBase
+          placeholder="칵테일을 검색하세요."
+          onChange={(e) => setSearch(e.target.value)}
         />
-      </Grid>
+      </Search>
     </>
   );
 }

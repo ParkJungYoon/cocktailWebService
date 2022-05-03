@@ -47,17 +47,14 @@ export default function CardMenu() {
           <TabList onChange={handleChange}>
             <Tab sx={tabStyle} value={"0"} label="dictionary" />
             <Tab sx={tabStyle} value={"1"} label="top 10" />
-            <Tab sx={tabStyle} value={"2"} label="Search" />
           </TabList>
         </Box>
         <TabPanel value={"0"}>
           <AllCard />
+          {/* <CardSearch /> */}
         </TabPanel>
         <TabPanel value={"1"}>
           <Top10Card />
-        </TabPanel>
-        <TabPanel value={"2"}>
-          <CardSearch />
         </TabPanel>
       </TabContext>
     </ThemeProvider>

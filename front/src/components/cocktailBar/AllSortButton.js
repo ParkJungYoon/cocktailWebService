@@ -25,7 +25,14 @@ export default function Top10SortButton({ cocktails, setCocktails }) {
   };
 
   return (
-    <Box sx={{ minWidth: 120, bgcolor: "rgba(64, 64, 64, 0.7)" }}>
+    <Box
+      sx={{
+        height: 50,
+        minWidth: 150,
+        width: 150,
+        bgcolor: "rgba(64, 64, 64, 0.7)",
+      }}
+    >
       <FormControl fullWidth>
         <Select
           value={order}

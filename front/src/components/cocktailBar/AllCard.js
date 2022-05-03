@@ -1,6 +1,7 @@
 import { memo, useRef, useEffect, useState, useCallback } from "react";
-import { Grid, Box } from "@mui/material";
+import { Grid, Box, Container } from "@mui/material";
 
+import CardSearch from "./CardSearch";
 import * as Api from "../../api";
 import AllPosts from "./AllPosts";
 import AllSortButton from "./AllSortButton";
@@ -8,7 +9,7 @@ import Loader from "./Loader";
 
 function AllCard() {
   const [cocktails, setCocktails] = useState([]);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(0);
   const [load, setLoad] = useState(false);
   const [preventRef, setPreventRef] = useState(true); //중복 실행 방지
   const obsRef = useRef(null); //observer Element
@@ -58,17 +59,15 @@ function AllCard() {
 
   return (
     <>
-      <Grid container color="white">
-        <Box
-          sx={{
-            ml: "auto",
-            mr: 20,
-            mb: 4,
-          }}
-        >
+      <Grid container sx={{ pl: "auto", mb: 5 }} spacing={3}>
+        <Grid item xs>
+          <CardSearch cocktails={cocktails} setCocktails={setCocktails} />
+        </Grid>
+        <Grid item xs={3}>
           <AllSortButton cocktails={cocktails} setCocktails={setCocktails} />
-        </Box>
+        </Grid>
       </Grid>
+
       <Grid container spacing={1} sx={{ px: 15 }}>
         {cocktails && <> {<AllPosts cocktails={cocktails} />}</>}
         {load && <Loader />}
