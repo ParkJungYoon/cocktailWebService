@@ -20,6 +20,26 @@
         }
       }
     },
+    "/cocktails/{word}": {
+      "post": {
+        "tags": ["Cocktail"],
+        "summary": "특정 단어 포함 칵테일 조회",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "word"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
+    },
     "/cocktails/page/{offset}": {
       "get": {
         "tags": ["Cocktail"],
@@ -28,7 +48,7 @@
           {
             "name": "offset",
             "in": "path",
-            "type" : "integer"
+            "type": "integer"
           }
         ],
         "responses": {
