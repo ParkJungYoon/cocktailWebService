@@ -22,6 +22,12 @@ const storage = multer.diskStorage({
     cb(null, imagePath());
   },
   filename: function (req, file, cb) {
+    var ext = path.extname(file.originalname).replace('.', '');
+    
+    if(!['png', 'jpg', 'jpeg', 'gif'].includes(ext)) {
+      return cb(new Error('Only images are allowed'))
+    }
+
     const fileName =
       new Date().valueOf() + "_" + uuidv4() + "_" + file.originalname;
 
