@@ -2,8 +2,7 @@ import cors from "cors";
 import express from "express";
 import axios from "axios";
 import { errorMiddleware } from "./middlewares/errorMiddleware";
-import { registerRouter } from "./routers/registerRouter";
-import { loginRouter } from "./routers/loginRouter";
+import { userRouter } from "./routers/userRouter";
 import { CocktailRouter } from "./routers/CocktailRouter";
 import { RankRouter } from "./routers/RankRouter";
 import { dbRouter } from "./routers/dbRouter";
@@ -42,7 +41,7 @@ app.get("/auth/kakao", (req, res) => {
 app.get("/auth/kakao/callback", async (req, res) => {
   //axios>>promise object
   try {
-    console.log("ASdasd")
+    console.log("ASdasd");
     //access토큰을 받기 위한 코드
     const token = await axios({
       //token
@@ -59,7 +58,7 @@ app.get("/auth/kakao/callback", async (req, res) => {
         code: req.query.code, //결과값을 반환했다. 안됐다.
       }), //객체를 string 으로 변환
     });
-    console.log("sadasdasd")
+    console.log("sadasdasd");
     req = getKakaoData(req, token);
     console.log(req);
     //findOrCreateUser()
@@ -88,8 +87,7 @@ app.get(
 // -----------------------------------------------------------------------------------------------------------
 // MVP router
 app.use(dbRouter);
-app.use(registerRouter);
-app.use(loginRouter);
+app.use(userRouter);
 app.use(CocktailRouter);
 app.use(RankRouter);
 app.use(LikeRouter);

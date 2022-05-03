@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Tab, Box } from "@mui/material";
 import { TabContext, TabPanel, TabList } from "@mui/lab";
@@ -6,8 +6,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 import AllCard from "./AllCard";
 import Top10Card from "./Top10Card";
-import CardSearch from "./CardSearch";
-import * as Api from "../../api";
+
 const theme = createTheme({
   palette: {
     primary: {
@@ -19,9 +18,11 @@ const theme = createTheme({
 export default function CardMenu() {
   // 필터기능
   const navigate = useNavigate();
+
+  // state
   const [value, setValue] = useState("0");
 
-  // 탭 핸들링
+  // tab handling
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -37,7 +38,6 @@ export default function CardMenu() {
     borderTop: "1px solid white",
     borderBottom: "1px solid white",
   };
-
   const tabStyle = { color: "white" };
 
   return (
@@ -47,7 +47,6 @@ export default function CardMenu() {
           <TabList onChange={handleChange}>
             <Tab sx={tabStyle} value={"0"} label="dictionary" />
             <Tab sx={tabStyle} value={"1"} label="top 10" />
-            <Tab sx={tabStyle} value={"2"} label="Search" />
           </TabList>
         </Box>
         <TabPanel value={"0"}>
@@ -55,9 +54,6 @@ export default function CardMenu() {
         </TabPanel>
         <TabPanel value={"1"}>
           <Top10Card />
-        </TabPanel>
-        <TabPanel value={"2"}>
-          <CardSearch />
         </TabPanel>
       </TabContext>
     </ThemeProvider>

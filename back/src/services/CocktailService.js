@@ -37,6 +37,19 @@ class CocktailService {
     return deleteResult;
   };
 
+  static getIncludedCocktail = async ({ word }) => {
+    word = word.split("");
+
+    let query = word.reduce(function (prev, current) {
+      //(?=.*a)(?=.*a)
+      return prev + `(?=.*` + current + `)`;
+    }, "");
+    query = new RegExp(query);
+    console.log(query);
+    const includedCocktail = await CocktailModel.getIncludedCocktail(query);
+    return includedCocktail;
+  };
+
   /**
    *
    * @param {// [0 ,0, 0, 0] => [E / I , N / S, T / F, J / P]} mbti

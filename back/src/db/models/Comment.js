@@ -34,6 +34,14 @@ class CommentModel {
     );
     return deletedComment;
   }
+
+  static updateUserComment = async ({ userId }) => {
+    const comment = await Comment.updateMany(
+      { writer: userId },
+      { $set: { writer: null } }
+    );
+    return comment;
+  };
 }
 
 export { CommentModel };
