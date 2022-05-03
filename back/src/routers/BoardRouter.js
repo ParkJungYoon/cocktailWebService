@@ -18,13 +18,15 @@ BoardRouter.post(
       const writer = req.user;
       const { title, content } = req.body;
       const images = req.images;
+      const getImage = await ImageModel.getImg({ fileNameList: images });
+      console.log(getImage);
       const newBoard = await BoardService.create({
         writer,
         title,
         content,
         images,
       });
-      res.status(200).json(newBoard);
+      res.status(200).json({ newBoard, getImage });
     } catch (error) {
       next(error);
     }
