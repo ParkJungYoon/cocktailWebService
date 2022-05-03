@@ -35,6 +35,11 @@ class LikeModel {
     const userLikeList = await Like.find().where("giveUserId").equals(userId);
     return userLikeList;
   };
+
+  static getLikeOne = async ({ userId, t }) => {
+    const userLikeList = await Like.findOne({ giveUserId: userId, name: t });
+    return userLikeList;
+  };
 }
 
 export { LikeModel };
