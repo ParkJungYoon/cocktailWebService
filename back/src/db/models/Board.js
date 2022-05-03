@@ -1,4 +1,5 @@
 import { Board } from "../schemas/board";
+import { Comment } from "../schemas/comment";
 
 class BoardModel {
   static create = async (newBoardData) => {
@@ -26,6 +27,7 @@ class BoardModel {
 
   static delete = async ({ boardId }) => {
     const deleteBoard = await Board.findByIdAndDelete({ _id: boardId });
+    await Comment.deleteMany({ boardId });
     return deleteBoard;
   };
 }
