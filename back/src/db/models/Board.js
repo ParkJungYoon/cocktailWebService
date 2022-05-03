@@ -13,7 +13,17 @@ class BoardModel {
   };
 
   static findBoard = async ({ boardId }) => {
-    const board = await Board.findOne({ _id: boardId }).populate("comment");
+    const board = await Board.findOne({ _id: boardId })
+      .populate("comment")
+      .populate("writer");
+    return board;
+  };
+
+  static updateUserBoard = async ({ userId }) => {
+    const board = await Board.updateMany(
+      { writer: userId },
+      { $set: { writer: null } }
+    );
     return board;
   };
 
