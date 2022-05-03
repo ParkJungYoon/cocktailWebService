@@ -16,6 +16,7 @@ import mbtiImg from "../../imgs/mbtiImg.jpg";
 function MbtiMain() {
   const [step, setStep] = useState(1);
   const [clickedAnswer, setClickedAnswer] = useState(0);
+  const [disable, setDisable] = useState(false);
 
   const [countEI, setCountEI] = useState(0);
   const [countSN, setCountSN] = useState(0);
@@ -67,6 +68,7 @@ function MbtiMain() {
     const data = mbtiCheck();
     const mbti = `${data.countEI}${data.countSN}${data.countTF}${data.countJP}`;
     setMbtiStep(mbti);
+    setDisable(true);
   };
 
   const mbtiCheck = () => {
@@ -78,9 +80,15 @@ function MbtiMain() {
     };
   };
 
+  const resultRestartBtn = {
+    display: "inline",
+    padding: "5px",
+    border: "1px solid white",
+  };
+
   return (
     <>
-      {step <= Object.keys(state.questions).length ? (
+      {step <= Object.keys(state.questions).length && disable === false ? (
         <>
           <Box mt={3} height="700px" sx={mbtiImgStyle}>
             <Grid container>
@@ -117,38 +125,52 @@ function MbtiMain() {
         <Grid item xs={12} height="720px">
           <Grid container>
             <Grid item xs={3}></Grid>
-            <Grid item xs={6} mt={1} mb={2}>
-              <div style={{ color: "White", fontSize: "30px" }}>
-                <p>countEI : {countEI}</p>
-                <p>countSN : {countSN}</p>
-                <p>countTF : {countTF}</p>
-                <p>countJP : {countJP}</p>
-                <p>OX : {ox}</p>
-                <p>
-                  result : {countEI > 2 ? "E" : "I"}
-                  {countSN > 2 ? "S" : "N"}
-                  {countTF > 2 ? "T" : "F"}
-                  {countJP > 2 ? "J" : "P"}
-                </p>
-                <button onClick={onClickButton}>결과보기</button>
-                <button
-                  className="restart"
-                  onClick={() => {
-                    location.reload();
-                  }}
-                >
-                  다시하기
-                </button>
-                <div>
-                  <TypeCheck
-                    type={checkState.types[mbtiStep]}
-                    typeImg={checkState.typeImgs[mbtiStep]}
-                    onClickButton={onClickButton}
-                  ></TypeCheck>
-                </div>
+            <Grid item xs={6} mt={5}>
+              <div
+                style={{
+                  color: "White",
+                  fontSize: "30px",
+                  textAlign: "center",
+                }}
+              >
+                {/* 결과 출력 */}
+                {disable === true ? (
+                  <>
+                    <div>
+                      <TypeCheck
+                        mbtiStep={mbtiStep}
+                        type={checkState.types[mbtiStep]}
+                        typeImg={checkState.typeImgs[mbtiStep]}
+                        onClickButton={onClickButton}
+                      ></TypeCheck>
+                    </div>
+                    <div
+                      className="btn"
+                      style={resultRestartBtn}
+                      onClick={() => {
+                        location.reload();
+                      }}
+                    >
+                      다시하기
+                    </div>
+                    <Grid mb={10}></Grid>
+                  </>
+                ) : (
+                  <div>
+                    <p>테스트 문항을 완료하셨습니다.</p>
+                    <p>버튼을 눌러 결과를 확인하세요.</p>
+                    <div
+                      className="btn"
+                      style={resultRestartBtn}
+                      onClick={onClickButton}
+                    >
+                      결과보기
+                    </div>
+                  </div>
+                )}
               </div>
             </Grid>
-            <Grid item xs={3} mt={2} pl={2}></Grid>
+            <Grid item xs={3}></Grid>
           </Grid>
         </Grid>
       )}
