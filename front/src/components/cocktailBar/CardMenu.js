@@ -7,7 +7,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import AllCard from "./AllCard";
 import Top10Card from "./Top10Card";
 import CardSearch from "./CardSearch";
-
+import * as Api from "../../api";
 const theme = createTheme({
   palette: {
     primary: {
@@ -18,7 +18,6 @@ const theme = createTheme({
 
 export default function CardMenu() {
   // 필터기능
-  const [searchCocktails, setSearchCocktails] = useState([]);
   const navigate = useNavigate();
   const [value, setValue] = useState("0");
 
@@ -31,6 +30,7 @@ export default function CardMenu() {
   const boxStyle = {
     backgroundColor: "rgba(64, 64, 64, 0.5)",
     mx: "auto",
+    mt: 5,
     py: 1,
     px: 2,
     width: "80%",
@@ -57,10 +57,7 @@ export default function CardMenu() {
           <Top10Card />
         </TabPanel>
         <TabPanel value={"2"}>
-          <CardSearch
-            searchCocktails={searchCocktails}
-            setSearchCocktails={setSearchCocktails}
-          />
+          <CardSearch />
         </TabPanel>
       </TabContext>
     </ThemeProvider>

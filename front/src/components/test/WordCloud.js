@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import ReactWordcloud from "react-wordcloud";
+import { Resizable } from "re-resizable";
 
 import "tippy.js/dist/tippy.css";
 import "tippy.js/animations/scale.css";
@@ -24,132 +25,48 @@ const options = {
   transitionDuration: 1000,
 };
 
+const resizeStyle = {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  border: "none",
+  background: "transparent",
+  marginTop: "10rem",
+};
+const renameKeys = (mapping, objArr) => {
+  const renamedObjArr = [];
+  for (let obj of objArr) {
+    const renamedObj = {};
+    for (let [before, after] of Object.entries(mapping)) {
+      if (obj[before]) {
+        renamedObj[after] = obj[before];
+      }
+    }
+    renamedObjArr.push(renamedObj);
+  }
+  return renamedObjArr;
+};
+
 function WordCloud() {
+  const [Obj, setObj] = useState([]);
   useEffect(async () => {
     const res = await Api.get("cocktails/like");
-    console.log(res.data);
+    setObj(renameKeys({ name: "text", likes: "value" }, res.data));
   }, []);
 
-  const words = [
-    {
-      name: "told",
-      likes: 64,
-    },
-    {
-      text: "mistake",
-      value: 11,
-    },
-    {
-      text: "thought",
-      value: 16,
-    },
-    {},
-    {
-      text: "best",
-      value: 54,
-    },
-    {
-      text: "mouth",
-      value: 20,
-    },
-    {
-      name: "staff",
-      value: 64,
-    },
-    {
-      text: "gum",
-      value: 10,
-    },
-    {
-      text: "chair",
-      value: 12,
-    },
-    {
-      text: "ray",
-      value: 22,
-    },
-    {
-      text: "dentistry",
-      value: 11,
-    },
-    {
-      text: "canal",
-      value: 13,
-    },
-    {
-      text: "procedure",
-      value: 32,
-    },
-    {
-      text: "filling",
-      value: 26,
-    },
-    {
-      text: "gentle",
-      value: 19,
-    },
-    {
-      text: "cavity",
-      value: 17,
-    },
-    {
-      text: "crown",
-      value: 14,
-    },
-    {
-      text: "cleaning",
-      value: 38,
-    },
-    {
-      text: "hygienist",
-      value: 24,
-    },
-    {
-      text: "dental",
-      value: 59,
-    },
-    {
-      text: "charge",
-      value: 24,
-    },
-    {
-      text: "cost",
-      value: 29,
-    },
-    {
-      text: "charged",
-      value: 13,
-    },
-    {
-      text: "spent",
-      value: 17,
-    },
-    {
-      text: "paying",
-      value: 14,
-    },
-    {
-      text: "pocket",
-      value: 12,
-    },
-    {
-      text: "dollar",
-      value: 11,
-    },
-    {
-      text: "business",
-      value: 32,
-    },
-    {
-      text: "refund",
-      value: 10,
-    },
-  ];
   return (
     <div>
-      <div style={{ height: 400, width: 600 }}>
-        <ReactWordcloud options={options} words={words} />
-      </div>
+      <Resizable
+        defaultSize={{
+          width: 600,
+          height: 300,
+        }}
+        style={resizeStyle}
+      >
+        <div style={{ width: "100%", height: "100%" }}>
+          <ReactWordcloud options={options} words={Obj} />
+        </div>
+      </Resizable>
     </div>
   );
 }

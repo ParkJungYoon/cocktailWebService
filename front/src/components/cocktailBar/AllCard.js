@@ -10,12 +10,15 @@ function AllCard() {
   const [cocktails, setCocktails] = useState([]);
   const [page, setPage] = useState(1);
   const [load, setLoad] = useState(false);
-  const preventRef = useRef(true); //중복 실행 방지
+  const [preventRef, setPreventRef] = useState(true); //중복 실행 방지
   const obsRef = useRef(null); //observer Element
-  const endRef = useRef(false); //모든 글 로드 확인
+  const [endRef, setEndRef] = useState(false); //모든 글 로드 확인
 
   useEffect(() => {
-    const observer = new IntersectionObserver(obsHandler, { threshold: 0.5 });
+    const observer = new IntersectionObserver(obsHandler, {
+      threshold: 0.5,
+      rootMargin: "15%",
+    });
     if (obsRef.current) observer.observe(obsRef.current);
     return () => {
       observer.disconnect();
@@ -24,9 +27,9 @@ function AllCard() {
 
   const obsHandler = (entries) => {
     const target = entries[0];
-    if (!endRef.current && target.isIntersecting && preventRef.current) {
+    if (!endRef && target.isIntersecting && preventRef) {
       //옵저버 중복 실행 방지
-      preventRef.current = false; //옵저버 중복 실행 방지
+      setPreventRef(false); //옵저버 중복 실행 방지
       setPage((prev) => prev + 1); //페이지 값 증가
     }
   };
@@ -43,10 +46,10 @@ function AllCard() {
     if (res.data) {
       if (res.data.end) {
         //마지막 페이지일 경우
-        endRef.current = true;
+        setEndRef(true);
       }
       setCocktails((prev) => [...prev, ...res.data]); //리스트 배열에 추가
-      preventRef.current = true;
+      setPreventRef(true);
     } else {
       console.log(res);
     }
