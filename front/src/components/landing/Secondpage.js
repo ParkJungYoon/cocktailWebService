@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Grid, Button, Box } from "@mui/material";
+import { Typography, Grid, Link, Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 import Top10Chart from "./Top10Chart";
@@ -23,15 +23,15 @@ export default function Secondpage() {
               Top 10 Cocktails
             </Typography>
             <Box className="buttonBox">
-              <Button
-                variant="contained"
+              <Link
                 className="top10Button"
+                underline="none"
                 onClick={() => {
                   navigate("/cocktailBar");
                 }}
               >
                 Explore
-              </Button>
+              </Link>
             </Box>
           </Grid>
         </Grid>

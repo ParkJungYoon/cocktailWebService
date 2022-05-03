@@ -15,6 +15,17 @@ CocktailRouter.get("/cocktails/page/:offset", async (req, res, next) => {
   }
 });
 
+CocktailRouter.post("/cocktails/:word", async (req, res, next) => {
+  try {
+    const word = req.params.word.toLowerCase();
+    const includedCocktail = await CocktailService.getIncludedCocktail({
+      word,
+    });
+    res.status(200).json(includedCocktail);
+  } catch (error) {
+    next(error);
+  }
+});
 // 칵테일 전체 좋아요 수 조회
 CocktailRouter.get("/cocktails/like", async (req, res, next) => {
   try {

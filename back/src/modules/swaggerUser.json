@@ -165,6 +165,30 @@
           }
         }
       }
+    },
+    "/withdrawal": {
+      "delete": {
+        "tags": ["User"],
+        "summary": "회원탈퇴",
+        "description": "탈퇴 시 유저가 작성한 게시글, 댓글은 writer 필드값 => null. 좋아요는 유지",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "JWT access token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
     }
   },
   "definitions": {

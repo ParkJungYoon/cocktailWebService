@@ -13,8 +13,10 @@ import {
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+
 import Top10CardChart from "./Top10CardChart";
 
+// 더보기
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
@@ -30,24 +32,25 @@ const ExpandMore = styled((props) => {
 export default function Top10CardItem({ cocktail }) {
   const navigate = useNavigate();
 
-  const [expanded, setExpanded] = React.useState(false);
+  // state
+  const [expanded, setExpanded] = useState(false);
+
+  // Expand Button Click Event
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-  const iconStyle = {
-    color: "plum",
+
+  // style
+  const cardStyle = {
+    mx: "auto",
+    maxWidth: 600,
+    backgroundColor: "rgba(64, 64, 64, 0.5)",
+    color: "white",
+    minHeight: 850,
   };
   return (
     <>
-      <Card
-        sx={{
-          mx: "auto",
-          maxWidth: 600,
-          backgroundColor: "rgba(64, 64, 64, 0.5)",
-          color: "white",
-          minHeight: 850,
-        }}
-      >
+      <Card sx={cardStyle}>
         <Chip
           sx={{ color: "white", bgcolor: "plum", m: 1 }}
           label={`${cocktail.rank.rank}위`}
