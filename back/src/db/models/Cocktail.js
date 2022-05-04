@@ -6,6 +6,11 @@ class CocktailModel {
     return findCocktail;
   };
 
+  static findAllCocktail = async () => {
+    const findAllCocktail = await Cocktail.find().lean();
+    return findAllCocktail;
+  };
+
   static getRank10Cocktail = async () => {
     const cocktails = await Cocktail.find({ rank: { $ne: null } }).populate({
       path: "rank",
