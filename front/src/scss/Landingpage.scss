@@ -14,7 +14,6 @@ $thirdpage: "../imgs/thirdpage.jpg";
     height: 100%;
     display: block;
     position: relative;
-
     &::before {
       content: "";
       top: 0;
@@ -30,7 +29,6 @@ $thirdpage: "../imgs/thirdpage.jpg";
     width: 100%;
     height: 100%;
     object-fit: fill;
-    margin-bottom: 15;
   }
 }
 .scrollDown {
@@ -69,7 +67,7 @@ $thirdpage: "../imgs/thirdpage.jpg";
   .introButton {
     position: absolute;
     bottom: -50%;
-    right: 1.5vw;
+    right: 10%;
     font-size: 1vw;
     color: #f1f7ed;
     border: 2px solid #f1f7ed;

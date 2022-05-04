@@ -67,7 +67,7 @@ function AllCard() {
           setEndRef(true);
         }
         setCocktails((prev) => [...prev, ...res.data]); //리스트 배열에 추가
-
+        console.log(cocktails);
         setPreventRef(true);
       } else {
         console.log(res);

@@ -2,9 +2,9 @@ import { LikeModel, CocktailModel, db } from "../db";
 
 class LikeService {
   static addLike = async ({ giveUserId, getCocktailId }) => {
-    try {
-      const session = await db.startSession();
+    const session = await db.startSession();
 
+    try {
       session.startTransaction();
 
       const name = await CocktailModel.findById({ getCocktailId });
@@ -39,14 +39,15 @@ class LikeService {
 
     if (checkLike == null) {
       const errorMessage =
-        "좋아요를 하지 않았습니다. 먼저 졸아요를 눌러주세요.";
+        "좋아요를 하지 않았습니다. 먼저 좋아요를 눌러주세요.";
       return { errorMessage };
     }
 
     const session = await db.startSession();
-    session.startTransaction();
 
     try {
+      session.startTransaction();
+
       const deleteCocktail = await LikeModel.deleteLike({
         giveUserId,
         getCocktailId,
