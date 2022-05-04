@@ -7,21 +7,37 @@ class CocktailService {
     return cocktailList;
   };
 
-  static getUserCocktailList = async ({ offset, userId }) => {
-    const cocktailUserList = await CocktailModel.getAllCocktail({ offset });
+  static getUserCocktailList = async ({ offset, userId, search, sort }) => {
+    const cocktailUserList = await CocktailModel.getAllCocktail({
+      offset,
+      search,
+      sort,
+    });
     return Promise.all(
       cocktailUserList.map(async (v, i) => {
-        const cocktailName = v.name
-        const result = await LikeModel.getLikeOne({ userId, t : cocktailName  });
-        
+        const cocktailName = v.name;
+        const result = await LikeModel.getLikeOne({ userId, t: cocktailName });
+
         if (result !== null) {
-          return { ...v, isLiked: true};
+          return { ...v, isLiked: true };
         } else {
-          return { ...v, isLiked: false};;
+          return { ...v, isLiked: false };
         }
       })
     );
   };
+
+  // static getIncludedCocktail = async ({ word }) => {
+  //   word = word.split("");
+
+  //   let query = word.reduce(function (prev, current) {
+  //     //(?=.*a)(?=.*a)
+  //     return prev + `(?=.*` + current + `)`;
+  //   }, "");
+  //   query = new RegExp(query);
+  //   const includedCocktail = await CocktailModel.getIncludedCocktail(query);
+  //   return includedCocktail;
+  // };
 
   static getCocktailLike = async () => {
     const cocktailLike = await CocktailModel.getCocktailLike();
@@ -51,19 +67,6 @@ class CocktailService {
   static deleteCocktail = async ({ name }) => {
     const deleteResult = await CocktailModel.deleteCocktail({ name });
     return deleteResult;
-  };
-
-  static getIncludedCocktail = async ({ word }) => {
-    word = word.split("");
-
-    let query = word.reduce(function (prev, current) {
-      //(?=.*a)(?=.*a)
-      return prev + `(?=.*` + current + `)`;
-    }, "");
-    query = new RegExp(query);
-    console.log(query);
-    const includedCocktail = await CocktailModel.getIncludedCocktail(query);
-    return includedCocktail;
   };
 
   /**
