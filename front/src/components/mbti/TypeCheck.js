@@ -1,9 +1,15 @@
 import React from "react";
-import { Box, Grid, Container } from "@mui/material";
+import { Box, Grid, Container, Link } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const TypeCheck = (props) => {
+  const navigate = useNavigate();
   return (
     <div>
+      <p>결과보기 누르기 후 : {props.mbtiStep}</p>
+      <Link onClick={() => navigate(`/cocktailTest/mbti/${props.mbtiStep}`)}>
+        이건 뭘까??
+      </Link>
       <Grid container mb={2} sx={{ border: "3px solid gray" }}>
         <Grid item xs={2}></Grid>
         <Grid item xs={8}>

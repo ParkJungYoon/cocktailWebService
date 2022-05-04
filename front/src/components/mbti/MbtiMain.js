@@ -86,6 +86,9 @@ function MbtiMain() {
     }
     setStep(step + 1);
     setClickedAnswer(0);
+    // const data = mbtiCheck();
+    // const mbti = `${data.countEI}${data.countSN}${data.countTF}${data.countJP}`;
+    // setMbtiStep(mbti);
   };
 
   const onClickButton = () => {
@@ -281,6 +284,7 @@ function MbtiMain() {
                   <div>
                     <p>테스트 문항을 완료하셨습니다.</p>
                     <p>버튼을 눌러 결과를 확인하세요.</p>
+                    {/* <p>결과보기 누르기 전 : {mbtiStep}</p> */}
                     <div
                       className="btn"
                       style={resultRestartBtn}
