@@ -293,6 +293,20 @@
         }
       }
     },
+<<<<<<< HEAD
+    "/board/comments/{boardId}": {
+      "get": {
+        "tags": ["Comment"],
+        "summary": "특정 게시판 댓글 목록 조회 API",
+        "parameters": [{ "in": "path", "name": "boardId" }],
+        "responses": {
+          "201": { "description": "OK" },
+          "404": { "description": "Failed. Bad Request" }
+        }
+      }
+    },
+=======
+>>>>>>> e134470e439430e79c97bb6816117621591f06b8
     "/board/comment/{id}": {
       "put": {
         "tags": ["Comment"],
@@ -607,6 +621,40 @@
           "404": { "description": "Failed. Bad Request" }
         }
       }
+<<<<<<< HEAD
+    },
+    "/cocktails/user": {
+      "get": {
+        "tags": ["Cocktail"],
+        "summary": "특정 칵테일 조회",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "offset",
+            "schema": { "type": "integer" },
+            "description": "offset"
+          },
+          {
+            "in": "query",
+            "name": "search",
+            "schema": { "type": "string" },
+            "description": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "JWT access token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": { "description": "OK" },
+          "404": { "description": "Failed. Bad Request" }
+        }
+      }
+=======
+>>>>>>> e134470e439430e79c97bb6816117621591f06b8
     }
   },
   "definitions": {

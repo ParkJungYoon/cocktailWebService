@@ -1,21 +1,21 @@
 import { memo, useRef, useEffect, useState, useCallback } from "react";
 import { Grid } from "@mui/material";
 
-import * as Api from "../../api";
-import CardSearch from "./CardSearch";
-import AllSortButton from "./AllSortButton";
-import Loader from "./Loader";
+import AllCardItem from "./AllCardItem";
 
 function FilteredCard({ filteredCocktails }) {
   // state
 
   return (
     <>
-      <Grid container spacing={1} sx={{ px: 15 }}>
-        {/* <AllPosts cocktails={filteredCocktails}></AllPosts> */}
-        {/* {cocktails && <AllPosts cocktails={cocktails} />}
-        {load && <Loader />}
-        <div ref={obsRef}></div> */}
+      <Grid container spacing={3} sx={{ px: 15 }}>
+        {filteredCocktails.map((cocktail, i) => {
+          return (
+            <Grid key={i} item xs>
+              <AllCardItem cocktail={cocktail} />
+            </Grid>
+          );
+        })}
       </Grid>
     </>
   );

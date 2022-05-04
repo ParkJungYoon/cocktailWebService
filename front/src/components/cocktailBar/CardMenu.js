@@ -9,6 +9,7 @@ import Top10Card from "./Top10Card";
 import FilteredCard from "./FilteredCard";
 import CardSearch from "./CardSearch";
 import Test from "./Test";
+import Likes from "./Likes";
 const theme = createTheme({
   palette: {
     primary: {
@@ -57,6 +58,7 @@ export default function CardMenu() {
             />
             <Tab sx={tabStyle} value={"1"} label="top 10" />
             <Tab sx={tabStyle} value={"2"} label="test" />
+            <Tab sx={tabStyle} value={"3"} label="likes" />
           </TabList>
         </Box>
         <TabPanel value={"0"}>
@@ -69,13 +71,20 @@ export default function CardMenu() {
               />
             </Grid>
           </Grid>
-          <AllCard />
+          {!search ? (
+            <Test />
+          ) : (
+            <FilteredCard filteredCocktails={filteredCocktails} />
+          )}
         </TabPanel>
         <TabPanel value={"1"}>
           <Top10Card />
         </TabPanel>
         <TabPanel value={"2"}>
           <Test />
+        </TabPanel>
+        <TabPanel value={"3"}>
+          <Likes />
         </TabPanel>
       </TabContext>
     </ThemeProvider>
