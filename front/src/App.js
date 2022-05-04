@@ -27,6 +27,8 @@ import CellarPage from "./pages/CellarPage";
 
 import ResultESFJ from "./components/mbti/ResultESFJ";
 import ResultESFP from "./components/mbti/ResultESFP";
+import ResultISFP from "./components/mbti/ResultISFP";
+import ResultISTJ from "./components/mbti/ResultISTJ";
 
 //JY
 import SkeletonFunc from "./components/test/SkeletonFunc";
@@ -90,6 +92,8 @@ function App() {
         <Route path="/cellar" element={<CellarPage />} />
         <Route path="/cocktailTest/mbti/ESFJ" element={<ResultESFJ />} />
         <Route path="/cocktailTest/mbti/ESFP" element={<ResultESFP />} />
+        <Route path="/cocktailTest/mbti/ISFP" element={<ResultISFP />} />
+        <Route path="/cocktailTest/mbti/ISTJ" element={<ResultISTJ />} />
       </Routes>
     </Router>
   );
