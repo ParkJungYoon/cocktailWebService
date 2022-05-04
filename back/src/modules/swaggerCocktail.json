@@ -226,6 +226,29 @@
           }
         }
       }
+    },
+    "/cocktails/likeList": {
+      "get": {
+        "tags": ["Cocktail"],
+        "summary": "유저가 좋아요한 칵테일 리스트 조회",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "JWT access token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
     }
   },
   "definitions": {

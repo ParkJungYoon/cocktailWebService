@@ -33,6 +33,21 @@ CocktailRouter.get("/cocktails/user", verifyToken, async (req, res, next) => {
   }
 });
 
+CocktailRouter.get(
+  "/cocktails/likeList",
+  verifyToken,
+  async (req, res, next) => {
+    try {
+      const userId = req.user;
+      const cocktailList = await CocktailService.getLikeList({ userId });
+      const likeList = cocktailList.filter((v) => v !== undefined);
+      res.status(200).json(likeList);
+    } catch (error) {
+      next(error);
+    }
+  }
+);
+
 // CocktailRouter.post("/cocktails/:word", async (req, res, next) => {
 //   try {
 //     const word = req.params.word.toLowerCase();
