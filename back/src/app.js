@@ -10,8 +10,7 @@ import { LikeRouter } from "./routers/LikeRouter";
 import { CommentRouter } from "./routers/CommentRouter";
 import { BoardRouter } from "./routers/BoardRouter";
 
-//todo: 테스트용 지워야 함
-import { photoReview } from "./routers/ImageRouter";
+import { ImageRouter } from "./routers/ImageRouter";
 import swaggerUi from "swagger-ui-express";
 import * as swaggerDocument from "./modules/swagger.json";
 
@@ -94,8 +93,7 @@ app.use(LikeRouter);
 app.use(CommentRouter);
 app.use(BoardRouter);
 
-//todo: 테스트용 지워야함
-app.use(photoReview);
+app.use(ImageRouter);
 // errorMessage yellow
 app.use(errorMiddleware);
 

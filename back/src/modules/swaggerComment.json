@@ -32,26 +32,6 @@
         }
       }
     },
-    "/board/comments/{boardId}": {
-      "get": {
-        "tags": ["Comment"],
-        "summary": "특정 게시판 댓글 목록 조회 API",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "boardId"
-          }
-        ],
-        "responses": {
-          "201": {
-            "description": "OK"
-          },
-          "404": {
-            "description": "Failed. Bad Request"
-          }
-        }
-      }
-    },
     "/board/comment/{id}": {
       "put": {
         "tags": ["Comment"],
