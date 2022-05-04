@@ -19,9 +19,9 @@ CocktailRouter.get("/cocktails/page/:offset", async (req, res, next) => {
 // 로그인 후
 CocktailRouter.get("/cocktails/user", verifyToken, async (req, res, next) => {
   try {
-    const offset = req.query.offset == null ? 0 : req.query.offset;
-    const search = req.query.search.toLocaleLowerCase();
-    const sort = req.query.sort;
+    const offset = req.query?.offset == null ? 0 : req.query.offset;
+    const search = req.query?.search?.toLocaleLowerCase();
+    const sort = req.query?.sort;
     const userId = req.user;
     const cocktailList = await CocktailService.getUserCocktailList({
       offset,
