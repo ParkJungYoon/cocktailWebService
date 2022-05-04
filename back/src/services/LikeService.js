@@ -4,6 +4,8 @@ class LikeService {
   static addLike = async ({ giveUserId, getCocktailId }) => {
     const session = await db.startSession();
 
+    const session = await db.startSession();
+    
     try {
       session.startTransaction();
 
@@ -46,6 +48,8 @@ class LikeService {
     const session = await db.startSession();
 
     try {
+      session.startTransaction();
+
       session.startTransaction();
 
       const deleteCocktail = await LikeModel.deleteLike({

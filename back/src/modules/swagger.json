@@ -293,6 +293,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "/board/comments/{boardId}": {
       "get": {
         "tags": ["Comment"],
@@ -304,6 +305,8 @@
         }
       }
     },
+=======
+>>>>>>> e134470e439430e79c97bb6816117621591f06b8
     "/board/comment/{id}": {
       "put": {
         "tags": ["Comment"],
@@ -618,6 +621,7 @@
           "404": { "description": "Failed. Bad Request" }
         }
       }
+<<<<<<< HEAD
     },
     "/cocktails/user": {
       "get": {
@@ -649,6 +653,8 @@
           "404": { "description": "Failed. Bad Request" }
         }
       }
+=======
+>>>>>>> e134470e439430e79c97bb6816117621591f06b8
     }
   },
   "definitions": {
