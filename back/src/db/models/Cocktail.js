@@ -36,23 +36,35 @@ class CocktailModel {
   static getAllCocktail = async ({ offset, search, sort, limit = 20 }) => {
     const count = await Cocktail.countDocuments();
 
-    const result = await Cocktail.find({ $text: { $search: search } }).lean();
-    if (result.length === 1) {
-      return result;
-    } else {
-      search = search.split("").join(".*");
-      search = ".*" + search + ".*";
-      const re = new RegExp(search);
-      const cocktailList = await Cocktail.find({
-        name: { $regex: re },
-      })
-        .populate("rank")
-        .skip(offset > 0 ? (offset - 1) * limit : 0)
-        .limit(limit)
-        .lean()
-        .sort({ name: 1 });
-      return cocktailList;
+    let result;
+
+    if (search == null) {
+      result = await Cocktail.find({ $text: { $search: search } }).lean();  
+      if (result.length === 1) {
+        return result;
+      } else {
+        search = search.split("").join(".*");
+        search = ".*" + search + ".*";
+        const re = new RegExp(search);
+        const cocktailList = await Cocktail.find({
+          name: { $regex: re },
+        }).populate("rank")
+          .skip(offset > 0 ? (offset - 1) * limit : 0)
+          .limit(limit)
+          .lean()
+          .sort({ name: 1 });
+        return cocktailList;
+      }
     }
+    else {
+      result = await Cocktail.find().populate("rank")
+      .skip(offset > 0 ? (offset - 1) * limit : 0)
+      .limit(limit)
+      .lean()
+      .sort({ name: 1 });;
+    }
+
+    return result;
   };
 
   static getIncludedCocktail = async (query) => {
