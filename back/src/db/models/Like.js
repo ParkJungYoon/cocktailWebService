@@ -1,4 +1,4 @@
-import { Like } from "../schemas/Like";
+import { Like } from "../schemas/like";
 
 class LikeModel {
   static addLike = async ({ name, giveUserId, getCocktailId }) => {
