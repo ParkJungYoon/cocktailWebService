@@ -6,9 +6,9 @@ import "../../scss/Mbti.scss";
 
 import checkState from "./TypeData";
 
-function ResultESFJ() {
+function ResultISFP() {
   const navigate = useNavigate();
-  const typeName = "ESFJ";
+  const typeName = "ISFP";
   return (
     <div className="mbtiResultPage">
       <Box sx={{ mt: 25, mb: 10 }}>
@@ -17,7 +17,6 @@ function ResultESFJ() {
           <Grid item xs={6} mt={5}>
             <Grid
               container
-              pb={3}
               mb={2}
               sx={{
                 border: "3px solid gray",
@@ -25,7 +24,7 @@ function ResultESFJ() {
               }}
             >
               <Grid item xs={1.5}></Grid>
-              <Grid item xs={9} mb={3}>
+              <Grid item xs={9}>
                 <div
                   style={{
                     textAlign: "center",
@@ -33,21 +32,13 @@ function ResultESFJ() {
                     color: "white",
                   }}
                 >
-                  <p className="resultTitle" style={{ textAlign: "center" }}>
-                    당신은 {typeName}
-                  </p>
-                  <p
-                    className="resultRecommend"
-                    style={{ fontSize: "35px", textAlign: "center" }}
-                  >
-                    추천 칵테일은{" "}
-                    <span style={{ color: "#a300d9" }}>
-                      {checkState.types[typeName]}
-                    </span>
+                  <p style={{ textAlign: "center" }}>당신은 {typeName}</p>
+                  <p style={{ textAlign: "center" }}>
+                    추천 칵테일은 {checkState.types[typeName]}
                   </p>
                   <div style={{ textAlign: "center" }}>
                     <img
-                      className="resultImg"
+                      className=""
                       src={checkState.typeImgs[typeName]}
                       alt=""
                       width="350px"
@@ -57,27 +48,21 @@ function ResultESFJ() {
                       }}
                     />
                   </div>
-                  <p
-                    className="resultText"
-                    style={{
-                      marginTop: "20px",
-                      fontSize: "30px",
-                      textAlign: "center",
-                    }}
-                  >
-                    {checkState.typeInfos[typeName]}
-                  </p>
+                  <div style={{ margin: "30px 0 30px 0" }}>
+                    <p style={{ margin: "5px", textAlign: "center" }}>
+                      {checkState.typeInfos[typeName]}
+                    </p>
+                  </div>
                 </div>
               </Grid>
               <Grid item xs={1.5}></Grid>
               <Grid container>
                 <Grid item xs={5.95}>
                   <p
-                    className="resultGood"
                     style={{
-                      margin: "5px 0 10px 0",
+                      margin: "5px",
                       textAlign: "center",
-                      fontSize: "25px",
+                      fontSize: "30px",
                       color: "white",
                     }}
                   >
@@ -85,7 +70,7 @@ function ResultESFJ() {
                   </p>
                   <div style={{ textAlign: "center" }}>
                     <img
-                      className="resultGoodImg"
+                      className=""
                       src={checkState.typeImgs[typeName]}
                       alt=""
                       width="150px"
@@ -99,11 +84,10 @@ function ResultESFJ() {
                 <Grid item xs={0.1} sx={{ backgroundColor: "gray" }}></Grid>
                 <Grid item xs={5.95}>
                   <p
-                    className="resultBad"
                     style={{
-                      margin: "5px 0 10px 0",
+                      margin: "5px",
                       textAlign: "center",
-                      fontSize: "25px",
+                      fontSize: "30px",
                       color: "white",
                     }}
                   >
@@ -111,7 +95,7 @@ function ResultESFJ() {
                   </p>
                   <div style={{ textAlign: "center" }}>
                     <img
-                      className="resultBadImg"
+                      className=""
                       src={checkState.typeImgs[typeName]}
                       alt=""
                       width="150px"
@@ -140,4 +124,4 @@ function ResultESFJ() {
     </div>
   );
 }
-export default ResultESFJ;
+export default ResultISFP;
