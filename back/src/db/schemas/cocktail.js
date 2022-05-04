@@ -29,6 +29,7 @@ const CocktailSchema = new Schema({
   },
   likes: {
     type: Number,
+    index: true,
   },
   method: {
     type: [String],
