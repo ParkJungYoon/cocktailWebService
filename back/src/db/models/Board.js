@@ -8,7 +8,7 @@ class BoardModel {
   };
 
   static boardList = async () => {
-    const boardList = await Board.find();
+    const boardList = await Board.find().populate("writer");
     return boardList;
   };
 
