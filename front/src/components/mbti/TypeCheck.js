@@ -3,7 +3,7 @@ import { Box, Grid, Container } from "@mui/material";
 
 const TypeCheck = (props) => {
   return (
-    <>
+    <div>
       <Grid container mb={2} sx={{ border: "3px solid gray" }}>
         <Grid item xs={2}></Grid>
         <Grid item xs={8}>
@@ -22,11 +22,11 @@ const TypeCheck = (props) => {
                 }}
               />
             </div>
-            <p>블라블라</p>
+            <div>{props.typeInfo}</div>
           </div>
         </Grid>
         <Grid item xs={2}></Grid>
-        <Grid container>
+        <Grid container mt={3}>
           <Grid item xs={5.95}>
             <p style={{ margin: "5px" }}>궁합이 좋은 MBTI 칵테일</p>
             <div style={{ textAlign: "center" }}>
@@ -61,7 +61,7 @@ const TypeCheck = (props) => {
         </Grid>
         <Grid item xs={12} sx={{ height: "20px" }}></Grid>
       </Grid>
-    </>
+    </div>
   );
 };
 

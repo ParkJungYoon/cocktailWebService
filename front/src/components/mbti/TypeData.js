@@ -38,5 +38,23 @@ const checkState = {
     ENFJ: Mojito,
     ENFP: Mojito,
   },
+  typeInfos: {
+    ISTJ: "MojitoMojito",
+    ISTP: "MojitoMojito",
+    ISFJ: "MojitoMojito",
+    ISFP: "MojitoMojito",
+    INTJ: "MojitoMojito",
+    INTP: "MojitoMojito",
+    INFJ: "MojitoMojito",
+    INFP: "MojitoMojito",
+    ESTJ: ["Mojito", <br />, "Mojito"],
+    ESTP: "MojitoMojito",
+    ESFJ: "MojitoMojito",
+    ESFP: "MojitoMojito",
+    ENTJ: "MojitoMojito",
+    ENTP: "MojitoMojito",
+    ENFJ: "MojitoMojito",
+    ENFP: "MojitoMojito",
+  },
 };
 export default checkState;

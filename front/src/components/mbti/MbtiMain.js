@@ -1,6 +1,7 @@
 /* eslint no-restricted-globals: ["off"] */
 import React, { useState } from "react";
-import { Box, Grid, LinearProgress } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import { Box, Grid, LinearProgress, Link } from "@mui/material";
 import * as Api from "../../api";
 import "../../scss/Mbti.scss";
 
@@ -14,6 +15,8 @@ import TypeCheck from "./TypeCheck";
 import mbtiImg from "../../imgs/mbtiImg.jpg";
 
 function MbtiMain() {
+  const navigate = useNavigate();
+
   const [step, setStep] = useState(1);
   const [clickedAnswer, setClickedAnswer] = useState(0);
   const [disable, setDisable] = useState(false);
@@ -44,6 +47,8 @@ function MbtiMain() {
 
   // the method that checks the correct answer
   const checkAnswer = (answer) => {
+    const data = mbtiCheck();
+    const mbti = `${data.countEI}${data.countSN}${data.countTF}${data.countJP}`;
     if (answer === state.correctAnswers[step]) {
       if (step < 6) {
         setCountEI(countEI + 1);
@@ -62,13 +67,15 @@ function MbtiMain() {
     }
     setStep(step + 1);
     setClickedAnswer(0);
+    if (step === 20) {
+      setMbtiStep(mbti);
+    }
   };
 
   const onClickButton = () => {
     const data = mbtiCheck();
     const mbti = `${data.countEI}${data.countSN}${data.countTF}${data.countJP}`;
     setMbtiStep(mbti);
-    setDisable(true);
   };
 
   const mbtiCheck = () => {
@@ -134,40 +141,25 @@ function MbtiMain() {
                 }}
               >
                 {/* 결과 출력 */}
-                {disable === true ? (
-                  <>
-                    <div>
-                      <TypeCheck
-                        mbtiStep={mbtiStep}
-                        type={checkState.types[mbtiStep]}
-                        typeImg={checkState.typeImgs[mbtiStep]}
-                        onClickButton={onClickButton}
-                      ></TypeCheck>
-                    </div>
-                    <div
-                      className="btn"
-                      style={resultRestartBtn}
-                      onClick={() => {
-                        location.reload();
-                      }}
-                    >
-                      다시하기
-                    </div>
-                    <Grid mb={10}></Grid>
-                  </>
-                ) : (
-                  <div>
-                    <p>테스트 문항을 완료하셨습니다.</p>
-                    <p>버튼을 눌러 결과를 확인하세요.</p>
-                    <div
-                      className="btn"
-                      style={resultRestartBtn}
-                      onClick={onClickButton}
-                    >
-                      결과보기
-                    </div>
-                  </div>
-                )}
+                <div>
+                  <TypeCheck
+                    mbtiStep={mbtiStep}
+                    type={checkState.types[mbtiStep]}
+                    typeImg={checkState.typeImgs[mbtiStep]}
+                    typeInfo={checkState.typeInfos[mbtiStep]}
+                    onClickButton={onClickButton}
+                  ></TypeCheck>
+                </div>
+                <div
+                  className="btn"
+                  style={resultRestartBtn}
+                  onClick={() => {
+                    location.reload();
+                  }}
+                >
+                  다시하기
+                </div>
+                <Grid mb={10}></Grid>
               </div>
             </Grid>
             <Grid item xs={3}></Grid>
