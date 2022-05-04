@@ -54,7 +54,6 @@
             "description": "이메일, 패스워드, 이름 모든 값을 요청하지 않아도 됩니다.",
             "email": "body",
             "password": "body",
-            "name": "body",
             "schema": {
               "$ref": "#/definitions/User"
             }
