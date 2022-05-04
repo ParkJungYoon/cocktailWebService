@@ -42,6 +42,14 @@
             "description": "string"
           },
           {
+            "in": "query",
+            "name": "sort",
+            "schema": {
+              "type": "string"
+            },
+            "description": "string"
+          },
+          {
             "name": "Authorization",
             "in": "header",
             "description": "JWT access token",
