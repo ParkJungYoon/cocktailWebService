@@ -142,6 +142,30 @@
         }
       }
     },
+    "/user/count": {
+      "get": {
+        "tags": ["User"],
+        "summary": ["유저의 활동사항 개수 전달"],
+        "description": "access token은 토큰 앞에 'Bearer ' 꼭 붙여서 request 해야합니다. 토큰 속 user 정보를 반환합니다.",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "JWT access token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
+    },
     "/user/current": {
       "get": {
         "tags": ["User"],

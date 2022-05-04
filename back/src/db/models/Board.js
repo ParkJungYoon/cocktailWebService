@@ -12,6 +12,11 @@ class BoardModel {
     return boardList;
   };
 
+  static boardCount = async ({ userId }) => {
+    const count = await Board.find({ writer: userId }).countDocuments();
+    return count;
+  };
+
   static findBoard = async ({ boardId }) => {
     const board = await Board.findOne({ _id: boardId })
       .populate({
@@ -56,6 +61,7 @@ class BoardModel {
     await Comment.deleteMany({ boardId });
     return deleteBoard;
   };
+
 }
 
 export { BoardModel };

@@ -11,6 +11,11 @@ class CommentModel {
     return createdNewComment;
   }
 
+  static commentCount = async ({ userId }) => {
+    const count = await Comment.find({ writer: userId }).countDocuments();
+    return count;
+  };
+
   static async findComment({ commentId }) {
     const comment = await Comment.findOne({ _id: commentId });
     return comment;

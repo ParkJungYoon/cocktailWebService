@@ -19,6 +19,19 @@ userRouter.post("/register", registerValidation, async (req, res, next) => {
   }
 });
 
+userRouter.get("/user/count", verifyToken, async (req, res, next) => {
+  try {
+    const userId = req.user;
+    const newUser = await userService.userCount({ userId });
+    if (newUser.errorMessage) {
+      throw new Error(newUser.errorMessage);
+    }
+    res.status(200).json(newUser);
+  } catch (error) {
+    next(error);
+  }
+});
+
 userRouter.delete("/withdrawal", verifyToken, async (req, res, next) => {
   try {
     const userId = req.user;

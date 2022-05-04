@@ -11,6 +11,11 @@ class LikeModel {
     return likeList;
   };
 
+  static likeCount = async ({ userId }) => {
+    const count = await Like.find({ giveUserId: userId }).countDocuments();
+    return count;
+  };
+
   static getLike = async ({ giveUserId, getCocktailId }) => {
     const like = await Like.findOne({ giveUserId, getCocktailId });
     return like;
