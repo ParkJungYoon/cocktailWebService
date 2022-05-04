@@ -34,13 +34,22 @@ class CommentModel {
     );
     return deletedComment;
   }
-
+  static userCommentList = async ({ userId }) => {
+    const CommentList = await Comment.find({ writer: userId });
+    return CommentList;
+  };
   static updateUserComment = async ({ userId }) => {
-    const comment = await Comment.updateMany(
-      { writer: userId },
-      { $set: { writer: null } }
-    );
-    return comment;
+    let comment = await this.userCommentList({ userId });
+    console.log(comment);
+    if (comment) {
+      comment = await Comment.updateMany(
+        { writer: userId },
+        { $set: { writer: null } }
+      );
+      return comment;
+    } else {
+      return;
+    }
   };
 }
 
