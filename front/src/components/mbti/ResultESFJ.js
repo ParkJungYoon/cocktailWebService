@@ -2,24 +2,27 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Box, Container, Grid, LinearProgress, Link } from "@mui/material";
-import "../../scss/MbtiResultPage.scss";
+import "../../scss/Mbti.scss";
 
 import checkState from "./TypeData";
 
 function ResultESFJ() {
   const navigate = useNavigate();
   const typeName = "ESFJ";
-  const resultRestartBtn = {
-    color: "white",
-    textAlign: "center",
-  };
   return (
     <div className="mbtiResultPage">
       <Box sx={{ mt: 25, mb: 10 }}>
         <Grid container>
           <Grid item xs={3} height="720px"></Grid>
-          <Grid item xs={6} sx={{ backgroundColor: "blue" }}>
-            <Grid container mb={2} sx={{ border: "3px solid gray" }}>
+          <Grid item xs={6} mt={5}>
+            <Grid
+              container
+              mb={2}
+              sx={{
+                border: "3px solid gray",
+                backgroundColor: "rgba(64, 64, 64, 0.7)",
+              }}
+            >
               <Grid item xs={2}></Grid>
               <Grid item xs={8}>
                 <div
@@ -104,9 +107,12 @@ function ResultESFJ() {
               </Grid>
               <Grid item xs={12} sx={{ height: "20px" }}></Grid>
             </Grid>
-            <Container style={resultRestartBtn}>
-              <Link onClick={() => navigate(`/cocktailTest/mbti`)}>
-                다시하기
+            <Container>
+              <Link
+                onClick={() => navigate(`/cocktailTest/mbti`)}
+                sx={{ textDecoration: "none" }}
+              >
+                <p className="mbtiRestartBtn">다시하기</p>
               </Link>
             </Container>
           </Grid>
