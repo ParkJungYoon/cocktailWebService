@@ -9,30 +9,22 @@ export default function Secondpage() {
   return (
     <>
       <div className="secondpageContainer">
-        <Grid container className="top10">
-          <Grid item xs={8} className="top10ChartWrapper">
-            <Box className="top10Chart">
-              <Top10Chart />
-            </Box>
+        <Grid container>
+          <Grid item xs sx={{ zIndex: 1 }}>
+            <Top10Chart />
           </Grid>
-          <Grid item xs={4} className="top10TextWrapper">
-            <Typography className="top10Text" variant="h4">
-              Starts with
-            </Typography>
-            <Typography className="top10Text" variant="h4">
-              Top 10 Cocktails
-            </Typography>
-            <Box className="buttonBox">
-              <Link
-                className="top10Button"
-                underline="none"
-                onClick={() => {
-                  navigate("/cocktailBar");
-                }}
-              >
-                Explore
-              </Link>
-            </Box>
+          <Grid item xs sx={{ zIndex: 1 }}>
+            <Typography variant="h4">Starts with</Typography>
+            <Typography variant="h4">Top 10 Cocktails</Typography>
+            <Link
+              className="top10Button"
+              underline="none"
+              onClick={() => {
+                navigate("/cocktailBar");
+              }}
+            >
+              Explore
+            </Link>
           </Grid>
         </Grid>
       </div>

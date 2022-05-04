@@ -57,6 +57,7 @@ class CocktailModel {
           .populate("rank")
           .skip(offset > 0 ? (offset - 1) * limit : 0)
           .limit(20)
+          .sort(sortDic[sort])
           .lean();
         return cocktailList;
       }

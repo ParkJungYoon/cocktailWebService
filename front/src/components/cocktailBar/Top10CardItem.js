@@ -43,10 +43,10 @@ export default function Top10CardItem({ cocktail }) {
   // style
   const cardStyle = {
     mx: "auto",
-    maxWidth: 600,
+    maxWidth: 400,
     backgroundColor: "rgba(64, 64, 64, 0.5)",
     color: "white",
-    minHeight: 850,
+    minHeight: 720,
   };
   return (
     <>
@@ -57,8 +57,8 @@ export default function Top10CardItem({ cocktail }) {
         />
         <CardMedia
           component="img"
-          height="500px"
-          width="400px"
+          height="300px"
+          width="300px"
           image={cocktail.imageUrl}
           alt={cocktail.name}
         />
@@ -77,7 +77,7 @@ export default function Top10CardItem({ cocktail }) {
           })}
         </CardContent>
         <CardContent>
-          <Typography variant="body1">{cocktail.description}</Typography>
+          <Typography paragraph>{cocktail.description}</Typography>
         </CardContent>
         <CardActions disableSpacing>
           <ExpandMore
@@ -122,7 +122,6 @@ export default function Top10CardItem({ cocktail }) {
                 </Typography>
               );
             })}
-
             <Top10CardChart cocktail={cocktail.rank} />
           </CardContent>
         </Collapse>
