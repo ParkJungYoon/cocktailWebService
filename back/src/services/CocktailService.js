@@ -7,9 +7,8 @@ class CocktailService {
     return cocktailList;
   };
 
-  static getUserCocktailList = async ({ offset, userId, search, sort }) => {
+  static getUserCocktailList = async ({ userId, search, sort }) => {
     const cocktailUserList = await CocktailModel.getAllCocktail({
-      offset,
       search,
       sort,
     });

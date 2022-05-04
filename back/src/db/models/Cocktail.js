@@ -33,7 +33,7 @@ class CocktailModel {
     return addCocktail;
   };
 
-  static getAllCocktail = async ({ offset, search, sort, limit = 20 }) => {
+  static getAllCocktail = async ({ search, sort, limit = 20 }) => {
     const sortDic = {
       nameAsc: { name: 1 },
       nameDesc: { name: -1 },
@@ -44,17 +44,20 @@ class CocktailModel {
 
     if (search !== undefined) {
       result = await Cocktail.find({ $text: { $search: search } }).lean();
+      result = result.map((item) => {
+        item = item.toLowerCase();
+      });
       if (result.length === 1) {
         return result;
       } else {
         search = search.split("").join(".*");
         search = ".*" + search + ".*";
-        const re = new RegExp(search);
+        const re = new RegExp(search, "i");
+
         const cocktailList = await Cocktail.find({
           name: { $regex: re },
         })
           .populate("rank")
-          .skip(offset > 0 ? (offset - 1) * limit : 0)
           .limit(limit)
           .lean()
           .sort(sortDic[sort]);

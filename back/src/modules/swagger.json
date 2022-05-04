@@ -626,12 +626,6 @@
         "parameters": [
           {
             "in": "query",
-            "name": "offset",
-            "schema": { "type": "integer" },
-            "description": "offset"
-          },
-          {
-            "in": "query",
             "name": "search",
             "schema": { "type": "string" },
             "description": "string"
