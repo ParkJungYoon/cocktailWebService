@@ -19,12 +19,10 @@ CocktailRouter.get("/cocktails/page/:offset", async (req, res, next) => {
 // 로그인 후
 CocktailRouter.get("/cocktails/user", verifyToken, async (req, res, next) => {
   try {
-    const offset = req.query?.offset == null ? 0 : req.query.offset;
     const search = req.query?.search?.toLocaleLowerCase();
     const sort = req.query?.sort;
     const userId = req.user;
     const cocktailList = await CocktailService.getUserCocktailList({
-      offset,
       userId,
       search,
       sort,
@@ -34,6 +32,21 @@ CocktailRouter.get("/cocktails/user", verifyToken, async (req, res, next) => {
     next(error);
   }
 });
+
+CocktailRouter.get(
+  "/cocktails/likeList",
+  verifyToken,
+  async (req, res, next) => {
+    try {
+      const userId = req.user;
+      const cocktailList = await CocktailService.getLikeList({ userId });
+      const likeList = cocktailList.filter((v) => v !== undefined);
+      res.status(200).json(likeList);
+    } catch (error) {
+      next(error);
+    }
+  }
+);
 
 // CocktailRouter.post("/cocktails/:word", async (req, res, next) => {
 //   try {

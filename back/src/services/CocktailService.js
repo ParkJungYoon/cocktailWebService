@@ -7,9 +7,8 @@ class CocktailService {
     return cocktailList;
   };
 
-  static getUserCocktailList = async ({ offset, userId, search, sort }) => {
+  static getUserCocktailList = async ({ userId, search, sort }) => {
     const cocktailUserList = await CocktailModel.getAllCocktail({
-      offset,
       search,
       sort,
     });
@@ -42,6 +41,21 @@ class CocktailService {
   static getCocktailLike = async () => {
     const cocktailLike = await CocktailModel.getCocktailLike();
     return cocktailLike;
+  };
+
+  // 유저가 좋아요 누른 전체 칵테일 정보 조회
+  static getLikeList = async ({ userId }) => {
+    const findAllCocktail = await CocktailModel.findAllCocktail();
+
+    return Promise.all(
+      findAllCocktail.map(async (v) => {
+        const cocktailName = v.name;
+        const result = await LikeModel.getLikeOne({ userId, t: cocktailName });
+        if (result !== null) {
+          return { ...v, isLiked: true };
+        }
+      })
+    );
   };
 
   static getCocktailRank10List = async () => {

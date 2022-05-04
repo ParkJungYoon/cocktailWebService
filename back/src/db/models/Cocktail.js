@@ -33,35 +33,39 @@ class CocktailModel {
     return addCocktail;
   };
 
-  static getAllCocktail = async ({ offset, search, sort, limit = 20 }) => {
-    const count = await Cocktail.countDocuments();
-    console.log(search)
+  static getAllCocktail = async ({ search, sort }) => {
+    const sortDic = {
+      nameAsc: { name: 1 },
+      nameDesc: { name: -1 },
+      likeAsc: { likes: 1 },
+      likeDesc: { likes: -1 },
+    };
     let result;
 
     if (search !== undefined) {
-      result = await Cocktail.find({ $text: { $search: search } }).lean();  
+      result = await Cocktail.find({ $text: { $search: search } }).lean();
       if (result.length === 1) {
         return result;
       } else {
         search = search.split("").join(".*");
         search = ".*" + search + ".*";
-        const re = new RegExp(search);
+        const re = new RegExp(search, "i");
+
         const cocktailList = await Cocktail.find({
           name: { $regex: re },
-        }).populate("rank")
-          .skip(offset > 0 ? (offset - 1) * limit : 0)
-          .limit(limit)
+        })
+          .populate("rank")
           .lean()
-          .sort({ name: 1 });
+          .sort(sortDic[sort]);
         return cocktailList;
       }
-    }
-    else {
-      result = await Cocktail.find().populate("rank")
-      .skip(offset > 0 ? (offset - 1) * limit : 0)
-      .limit(limit)
-      .lean()
-      .sort({ name: 1 });;
+    } else {
+      result = await Cocktail.find()
+        .populate("rank")
+        .skip(offset > 0 ? (offset - 1) * limit : 0)
+        .limit(limit)
+        .lean()
+        .sort(sortDic[sort]);
     }
 
     return result;
