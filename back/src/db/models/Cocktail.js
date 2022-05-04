@@ -33,13 +33,19 @@ class CocktailModel {
     return addCocktail;
   };
 
+  // 페이지네이션 없이 전체 칵테일 조회
+  static findAllCocktail = async () => {
+    const findAllCocktail = await Cocktail.find().lean();
+    return findAllCocktail;
+  };
+
   static getAllCocktail = async ({ offset, search, sort, limit = 20 }) => {
     const count = await Cocktail.countDocuments();
 
     let result;
 
     if (search == null) {
-      result = await Cocktail.find({ $text: { $search: search } }).lean();  
+      result = await Cocktail.find({ $text: { $search: search } }).lean();
       if (result.length === 1) {
         return result;
       } else {
@@ -48,20 +54,21 @@ class CocktailModel {
         const re = new RegExp(search);
         const cocktailList = await Cocktail.find({
           name: { $regex: re },
-        }).populate("rank")
+        })
+          .populate("rank")
           .skip(offset > 0 ? (offset - 1) * limit : 0)
           .limit(limit)
           .lean()
           .sort({ name: 1 });
         return cocktailList;
       }
-    }
-    else {
-      result = await Cocktail.find().populate("rank")
-      .skip(offset > 0 ? (offset - 1) * limit : 0)
-      .limit(limit)
-      .lean()
-      .sort({ name: 1 });;
+    } else {
+      result = await Cocktail.find()
+        .populate("rank")
+        .skip(offset > 0 ? (offset - 1) * limit : 0)
+        .limit(limit)
+        .lean()
+        .sort({ name: 1 });
     }
 
     return result;
