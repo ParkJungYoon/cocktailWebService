@@ -21,8 +21,11 @@ CocktailRouter.get("/cocktails/user", verifyToken, async (req, res, next) => {
   try {
     const search = req.query?.search?.toLocaleLowerCase();
     const sort = req.query?.sort;
+    const offset = req.query?.offset;
+
     const userId = req.user;
     const cocktailList = await CocktailService.getUserCocktailList({
+      offset,
       userId,
       search,
       sort,
