@@ -47,17 +47,23 @@ function MbtiMain() {
 
   // the method that checks the correct answer
   const checkAnswer = (answer) => {
-    const data = mbtiCheck();
-    const mbti = `${data.countEI}${data.countSN}${data.countTF}${data.countJP}`;
     if (answer === state.correctAnswers[step]) {
-      if (step < 6) {
-        setCountEI(countEI + 1);
-      } else if (step < 11) {
-        setCountSN(countSN + 1);
+      if (step < 5) {
+        if (step === 1) {
+          setCountEI(countEI + 2);
+        } else setCountEI(countEI + 1);
+      } else if (step < 9) {
+        if (step === 5) {
+          setCountSN(countSN + 2);
+        } else setCountSN(countSN + 1);
+      } else if (step < 12) {
+        if (step === 9) {
+          setCountTF(countTF + 1);
+        } else setCountTF(countTF + 2);
       } else if (step < 16) {
-        setCountTF(countTF + 1);
-      } else if (step < 21) {
-        setCountJP(countJP + 1);
+        if (step === 15) {
+          setCountJP(countJP + 2);
+        } else setCountJP(countJP + 1);
       }
       setClickedAnswer(answer);
       setOx(ox + "O");
@@ -67,15 +73,13 @@ function MbtiMain() {
     }
     setStep(step + 1);
     setClickedAnswer(0);
-    if (step === 20) {
-      setMbtiStep(mbti);
-    }
   };
 
   const onClickButton = () => {
     const data = mbtiCheck();
     const mbti = `${data.countEI}${data.countSN}${data.countTF}${data.countJP}`;
     setMbtiStep(mbti);
+    setDisable(true);
   };
 
   const mbtiCheck = () => {
@@ -141,25 +145,54 @@ function MbtiMain() {
                 }}
               >
                 {/* 결과 출력 */}
-                <div>
-                  <TypeCheck
-                    mbtiStep={mbtiStep}
-                    type={checkState.types[mbtiStep]}
-                    typeImg={checkState.typeImgs[mbtiStep]}
-                    typeInfo={checkState.typeInfos[mbtiStep]}
-                    onClickButton={onClickButton}
-                  ></TypeCheck>
-                </div>
-                <div
-                  className="btn"
-                  style={resultRestartBtn}
-                  onClick={() => {
-                    location.reload();
-                  }}
-                >
-                  다시하기
-                </div>
-                <Grid mb={10}></Grid>
+                {disable === true ? (
+                  <>
+                    <div>
+                      <TypeCheck
+                        mbtiStep={mbtiStep}
+                        type={checkState.types[mbtiStep]}
+                        typeImg={checkState.typeImgs[mbtiStep]}
+                        typeInfo={checkState.typeInfos[mbtiStep]}
+                        onClickButton={onClickButton}
+                      ></TypeCheck>
+                    </div>
+                    <div
+                      className="btn"
+                      style={resultRestartBtn}
+                      onClick={() => {
+                        location.reload();
+                      }}
+                    >
+                      다시하기
+                    </div>
+                    <p>{ox}</p>
+                    <p>countEI: {countEI}</p>
+                    <p>countSN: {countSN}</p>
+                    <p>countTF: {countTF}</p>
+                    <p>countJP: {countJP}</p>
+
+                    <p>
+                      coco:{countEI > 2 ? "E" : "I"}
+                      {countSN > 2 ? "S" : "N"}
+                      {countTF > 2 ? "T" : "F"}
+                      {countJP > 2 ? "J" : "P"}
+                    </p>
+
+                    <Grid mb={10}></Grid>
+                  </>
+                ) : (
+                  <div>
+                    <p>테스트 문항을 완료하셨습니다.</p>
+                    <p>버튼을 눌러 결과를 확인하세요.</p>
+                    <div
+                      className="btn"
+                      style={resultRestartBtn}
+                      onClick={onClickButton}
+                    >
+                      결과보기
+                    </div>
+                  </div>
+                )}
               </div>
             </Grid>
             <Grid item xs={3}></Grid>
