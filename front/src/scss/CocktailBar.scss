@@ -9,7 +9,7 @@ $star1: "../imgs/star1.jpg";
 
 .cardFront {
   width: 270px;
-  height: 350px;
+  height: 400px;
   transition: 0.3s;
   transform-style: preserve-3d;
   transform: perspective(500px);
@@ -39,7 +39,7 @@ $star1: "../imgs/star1.jpg";
 
 .cardBack {
   width: 270px;
-  height: 350px;
+  height: 400px;
   transition: 0.3s;
   transform-style: preserve-3d;
   transform: perspective(500px);

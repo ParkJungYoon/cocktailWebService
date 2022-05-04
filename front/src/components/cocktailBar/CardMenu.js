@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Tab, Box } from "@mui/material";
+import { Tab, Box, Grid } from "@mui/material";
 import { TabContext, TabPanel, TabList } from "@mui/lab";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 import AllCard from "./AllCard";
 import Top10Card from "./Top10Card";
-
+import FilteredCard from "./FilteredCard";
+import CardSearch from "./CardSearch";
+import Test from "./Test";
 const theme = createTheme({
   palette: {
     primary: {
@@ -21,6 +23,8 @@ export default function CardMenu() {
 
   // state
   const [value, setValue] = useState("0");
+  const [search, setSearch] = useState(false);
+  const [filteredCocktails, setFilteredCocktails] = useState([]);
 
   // tab handling
   const handleChange = (event, newValue) => {
@@ -45,15 +49,40 @@ export default function CardMenu() {
       <TabContext value={value}>
         <Box sx={boxStyle}>
           <TabList onChange={handleChange}>
-            <Tab sx={tabStyle} value={"0"} label="dictionary" />
+            <Tab
+              sx={tabStyle}
+              value={"0"}
+              label="all"
+              onClick={() => setSearch(false)}
+            />
             <Tab sx={tabStyle} value={"1"} label="top 10" />
+            <Tab sx={tabStyle} value={"2"} label="test" />
           </TabList>
         </Box>
         <TabPanel value={"0"}>
-          <AllCard />
+          <Grid container sx={{ px: 15, mb: 3 }}>
+            <Grid item xs={12}>
+              <CardSearch
+                search={search}
+                setSearch={setSearch}
+                setFilteredCocktails={setFilteredCocktails}
+              />
+            </Grid>
+          </Grid>
+          {!search ? (
+            <AllCard />
+          ) : (
+            <FilteredCard
+              filteredCocktails={filteredCocktails}
+              setFilteredCocktails={setFilteredCocktails}
+            />
+          )}
         </TabPanel>
         <TabPanel value={"1"}>
           <Top10Card />
+        </TabPanel>
+        <TabPanel value={"2"}>
+          <Test />
         </TabPanel>
       </TabContext>
     </ThemeProvider>

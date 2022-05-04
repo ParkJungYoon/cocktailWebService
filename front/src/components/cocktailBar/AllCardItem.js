@@ -64,11 +64,7 @@ export default function AllCardItem({ cocktail, liked }) {
       <Box className={` ${isFront ? "cardFront" : "cardBack"}`}>
         <Card className="front">
           <IconButton onClick={handleOnClickLike}>
-            {liked[cocktail.name] ? (
-              <FavoriteIcon sx={{ color: { color } }} />
-            ) : (
-              <FavoriteIcon sx={{ color: { color } }} />
-            )}
+            <FavoriteIcon sx={{ color: { color } }} />
           </IconButton>
           {likeNum}
           <CardMedia

@@ -1,12 +1,10 @@
 import { memo, useRef, useEffect, useState, useCallback } from "react";
-import { Grid } from "@mui/material";
+import { Grid, Box } from "@mui/material";
 
 import * as Api from "../../api";
-import CardSearch from "./CardSearch";
 import AllPosts from "./AllPosts";
-import AllSortButton from "./AllSortButton";
 import Loader from "./Loader";
-
+import AllSortButton from "./AllSortButton";
 function AllCard() {
   // state
   const [cocktails, setCocktails] = useState([]);
@@ -52,26 +50,31 @@ function AllCard() {
         setEndRef(true);
       }
       setCocktails((prev) => [...prev, ...res.data]); //리스트 배열에 추가
+
       setPreventRef(true);
     } else {
       console.log(res);
     }
     setLoad(false); //로딩 종료
   }, [page]);
-
   return (
     <>
-      <Grid container sx={{ ml: "auto", pr: 15, mb: 4 }} spacing={3}>
-        <Grid item xs>
-          <CardSearch setCocktails={setCocktails} />
-        </Grid>
-        <Grid item xs={3}>
-          <AllSortButton cocktails={cocktails} setCocktails={setCocktails} />
-        </Grid>
+      <Grid container>
+        <Box
+          sx={{
+            ml: "auto",
+            px: 15,
+            mb: 4,
+          }}
+        >
+          <AllSortButton
+            cocktails={cocktails}
+            setCocktails={setCocktails}
+          ></AllSortButton>
+        </Box>
       </Grid>
-
-      <Grid container spacing={1} sx={{ px: 15 }}>
-        {cocktails && <> {<AllPosts cocktails={cocktails} />}</>}
+      <Grid container spacing={3} sx={{ px: 15 }}>
+        {cocktails && <AllPosts cocktails={cocktails} />}
         {load && <Loader />}
         <div ref={obsRef}></div>
       </Grid>

@@ -11,8 +11,9 @@ export default function AllPosts({ cocktails }) {
 
   // user가 like한 칵테일 목록 불러오기
   useEffect(async () => {
-    await Api.get("userLike").then((res) => {
+    await Api.get("cocktails/user/0").then((res) => {
       setLike(res.data);
+      console.log(like);
     });
   }, []);
 

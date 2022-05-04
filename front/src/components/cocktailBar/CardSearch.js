@@ -12,7 +12,17 @@ const Search = styled("div")(({ theme }) => ({
   backgroundColor: "rgba(64, 64, 64, 0.7)",
   color: "white",
   marginLeft: "auto",
+  marginRight: "50px",
   width: "250px",
+  height: "50px",
+}));
+
+const SearchButton = styled("button")(({ theme }) => ({
+  position: "absolute",
+  borderRadius: theme.shape.borderRadius,
+  backgroundColor: "rgba(64, 64, 64, 0.7)",
+  color: "white",
+  width: "50px",
   height: "50px",
 }));
 
@@ -38,28 +48,31 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function CardSearch({ setCocktails }) {
-  // state
-  const [search, setSearch] = useState("");
+export default function CardSearch({
+  search,
+  setSearch,
+  setFilteredCocktails,
+}) {
+  const [word, setWord] = useState("");
 
   // search에 입력된 값이 바뀔때마다 param으로 post 요청
-  useEffect(async () => {
-    await Api.post(`cocktails/${search}`).then((res) => {
-      setCocktails(res.data);
+  const handleOnClick = async () => {
+    await Api.post(`cocktails/${word}`).then((res) => {
+      setFilteredCocktails(res.data);
     });
-  }, [search]);
+    setSearch(true);
+  };
 
   return (
-    <>
-      <Search>
-        <SearchIconWrapper>
-          <SearchIcon />
-        </SearchIconWrapper>
-        <StyledInputBase
-          placeholder="칵테일을 검색하세요."
-          onChange={(e) => setSearch(e.target.value)}
-        />
-      </Search>
-    </>
+    <Search>
+      <SearchIconWrapper>
+        <SearchIcon />
+      </SearchIconWrapper>
+      <StyledInputBase
+        placeholder="칵테일을 검색하세요."
+        onChange={(e) => setWord(e.target.value)}
+      />
+      <SearchButton onClick={handleOnClick}>검색</SearchButton>
+    </Search>
   );
 }
