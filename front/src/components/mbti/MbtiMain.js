@@ -12,7 +12,10 @@ import state from "./MbtiData";
 import checkState from "./TypeData";
 import TypeCheck from "./TypeCheck";
 
-import mbtiImg from "../../imgs/mbtiImg.jpg";
+import mbtiImg1 from "../../imgs/mbtiImg1.jpg";
+import mbtiImg2 from "../../imgs/mbtiImg2.jpg";
+import mbtiImg3 from "../../imgs/mbtiImg3.jpg";
+import mbtiImg4 from "../../imgs/mbtiImg4.jpg";
 
 function MbtiMain() {
   const navigate = useNavigate();
@@ -39,12 +42,22 @@ function MbtiMain() {
     backgroundColor: "rgba(0, 0, 0, 0.7)",
   };
 
-  const mbtiImgStyle = {
-    // borderRadius: "2rem",
-    backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(${mbtiImg})`,
+  const mbtiImgOne = {
+    backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(${mbtiImg1})`,
     backgroundSize: "cover",
   };
-
+  const mbtiImgTwo = {
+    backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(${mbtiImg2})`,
+    backgroundSize: "cover",
+  };
+  const mbtiImgThree = {
+    backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(${mbtiImg3})`,
+    backgroundSize: "cover",
+  };
+  const mbtiImgFour = {
+    backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(${mbtiImg4})`,
+    backgroundSize: "cover",
+  };
   // the method that checks the correct answer
   const checkAnswer = (answer) => {
     if (answer === state.correctAnswers[step]) {
@@ -101,35 +114,132 @@ function MbtiMain() {
     <>
       {step <= Object.keys(state.questions).length && disable === false ? (
         <>
-          <Box mt={3} height="700px" sx={mbtiImgStyle}>
-            <Grid container>
-              <Grid item xs={2}></Grid>
-              <Grid item xs={8} mt={4} sx={questionStyle}>
-                <div className="Question">
-                  <MbtiQuestion question={state.questions[step]} />
-                </div>
-              </Grid>
-              <Grid item xs={2}></Grid>
+          {step <= 4 ? (
+            <Box mt={3} height="700px" sx={mbtiImgOne}>
+              <Grid container>
+                <Grid item xs={2}></Grid>
+                <Grid item xs={8} mt={4} sx={questionStyle}>
+                  <div className="Question">
+                    <MbtiQuestion question={state.questions[step]} />
+                  </div>
+                </Grid>
+                <Grid item xs={2}></Grid>
 
-              {/* btn */}
-              <Grid item xs={12}>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <MbtiAnswer
-                    answer={state.answers[step]}
-                    step={step}
-                    checkAnswer={checkAnswer}
-                    clickedAnswer={clickedAnswer}
-                  />
-                </div>
+                {/* btn */}
+                <Grid item xs={12}>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <MbtiAnswer
+                      answer={state.answers[step]}
+                      step={step}
+                      checkAnswer={checkAnswer}
+                      clickedAnswer={clickedAnswer}
+                    />
+                  </div>
+                </Grid>
               </Grid>
-            </Grid>
-          </Box>
+            </Box>
+          ) : (
+            <>
+              {step >= 5 && step <= 8 ? (
+                <Box mt={3} height="700px" sx={mbtiImgTwo}>
+                  <Grid container>
+                    <Grid item xs={2}></Grid>
+                    <Grid item xs={8} mt={4} sx={questionStyle}>
+                      <div className="Question">
+                        <MbtiQuestion question={state.questions[step]} />
+                      </div>
+                    </Grid>
+                    <Grid item xs={2}></Grid>
+                    {/* btn */}
+                    <Grid item xs={12}>
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <MbtiAnswer
+                          answer={state.answers[step]}
+                          step={step}
+                          checkAnswer={checkAnswer}
+                          clickedAnswer={clickedAnswer}
+                        />
+                      </div>
+                    </Grid>
+                  </Grid>
+                </Box>
+              ) : (
+                <>
+                  {step >= 9 && step <= 11 ? (
+                    <Box mt={3} height="700px" sx={mbtiImgThree}>
+                      <Grid container>
+                        <Grid item xs={2}></Grid>
+                        <Grid item xs={8} mt={4} sx={questionStyle}>
+                          <div className="Question">
+                            <MbtiQuestion question={state.questions[step]} />
+                          </div>
+                        </Grid>
+                        <Grid item xs={2}></Grid>
+                        {/* btn */}
+                        <Grid item xs={12}>
+                          <div
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                            }}
+                          >
+                            <MbtiAnswer
+                              answer={state.answers[step]}
+                              step={step}
+                              checkAnswer={checkAnswer}
+                              clickedAnswer={clickedAnswer}
+                            />
+                          </div>
+                        </Grid>
+                      </Grid>
+                    </Box>
+                  ) : (
+                    <Box mt={3} height="700px" sx={mbtiImgFour}>
+                      <Grid container>
+                        <Grid item xs={2}></Grid>
+                        <Grid item xs={8} mt={4} sx={questionStyle}>
+                          <div className="Question">
+                            <MbtiQuestion question={state.questions[step]} />
+                          </div>
+                        </Grid>
+                        <Grid item xs={2}></Grid>
+                        {/* btn */}
+                        <Grid item xs={12}>
+                          <div
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                            }}
+                          >
+                            <MbtiAnswer
+                              answer={state.answers[step]}
+                              step={step}
+                              checkAnswer={checkAnswer}
+                              clickedAnswer={clickedAnswer}
+                            />
+                          </div>
+                        </Grid>
+                      </Grid>
+                    </Box>
+                  )}
+                </>
+              )}
+            </>
+          )}
         </>
       ) : (
         // result part
@@ -165,19 +275,6 @@ function MbtiMain() {
                     >
                       다시하기
                     </div>
-                    <p>{ox}</p>
-                    <p>countEI: {countEI}</p>
-                    <p>countSN: {countSN}</p>
-                    <p>countTF: {countTF}</p>
-                    <p>countJP: {countJP}</p>
-
-                    <p>
-                      coco:{countEI > 2 ? "E" : "I"}
-                      {countSN > 2 ? "S" : "N"}
-                      {countTF > 2 ? "T" : "F"}
-                      {countJP > 2 ? "J" : "P"}
-                    </p>
-
                     <Grid mb={10}></Grid>
                   </>
                 ) : (
