@@ -40,11 +40,15 @@ class CocktailModel {
   };
 
   static getAllCocktail = async ({ offset, search, sort, limit = 20 }) => {
-    const count = await Cocktail.countDocuments();
-
+    const sortDic = {
+      nameAsc: { name: 1 },
+      nameDesc: { name: -1 },
+      likeAsc: { likes: 1 },
+      likeDesc: { likes: -1 },
+    };
     let result;
 
-    if (search == null) {
+    if (search !== undefined) {
       result = await Cocktail.find({ $text: { $search: search } }).lean();
       if (result.length === 1) {
         return result;
@@ -59,7 +63,7 @@ class CocktailModel {
           .skip(offset > 0 ? (offset - 1) * limit : 0)
           .limit(limit)
           .lean()
-          .sort({ name: 1 });
+          .sort(sortDic[sort]);
         return cocktailList;
       }
     } else {
