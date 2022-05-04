@@ -5,7 +5,7 @@ import sytles from "../../scss/Lounge.module.scss";
 import LoungeTable from "./LoungeTable";
 import * as Api from "../../api";
 
-function LoungeLists({ userState }) {
+function LoungeList({ userState }) {
   const [isForm, setIsForm] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   if (userState) {
@@ -33,4 +33,4 @@ function LoungeLists({ userState }) {
   );
 }
 
-export default LoungeLists;
+export default LoungeList;

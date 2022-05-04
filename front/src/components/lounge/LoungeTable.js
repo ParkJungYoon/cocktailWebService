@@ -47,8 +47,10 @@ function LoungeTable({}) {
                   }}
                 >
                   <TableCell>{i + 1}</TableCell>
+                  <TableCell align="right">
+                    {item.writer ? item.writer.name : "X"}
+                  </TableCell>
                   <TableCell align="right">{item.title}</TableCell>
-                  <TableCell align="right">{item.content}</TableCell>
                   <TableCell align="right">{item.comment.len}</TableCell>
                   <TableCell align="right">{item.createdAt}</TableCell>
                 </TableRow>
