@@ -33,7 +33,7 @@ class CocktailModel {
     return addCocktail;
   };
 
-  static getAllCocktail = async ({ search, sort, limit = 20 }) => {
+  static getAllCocktail = async ({ offset, search, sort, limit = 20 }) => {
     const sortDic = {
       nameAsc: { name: 1 },
       nameDesc: { name: -1 },
