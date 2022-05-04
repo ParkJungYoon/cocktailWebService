@@ -29,5 +29,5 @@ export {
   TokenModel,
   CommentModel,
   BoardModel,
-  ImageModel
+  ImageModel,
 };
