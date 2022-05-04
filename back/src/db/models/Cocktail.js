@@ -33,7 +33,7 @@ class CocktailModel {
     return addCocktail;
   };
 
-  static getAllCocktail = async ({ search, sort }) => {
+  static getAllCocktail = async ({ search, sort, limit = 20 }) => {
     const sortDic = {
       nameAsc: { name: 1 },
       nameDesc: { name: -1 },
@@ -55,8 +55,9 @@ class CocktailModel {
           name: { $regex: re },
         })
           .populate("rank")
-          .lean()
-          .sort(sortDic[sort]);
+          .skip(offset > 0 ? (offset - 1) * limit : 0)
+          .limit(20)
+          .lean();
         return cocktailList;
       }
     } else {
