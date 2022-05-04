@@ -98,7 +98,6 @@ function MbtiMain() {
                   </div>
                 </Grid>
                 <Grid item xs={2}></Grid>
-
                 {/* btn */}
                 <Grid item xs={12}>
                   <div
