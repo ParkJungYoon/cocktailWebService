@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import {
   Paper,
   Table,
@@ -22,66 +22,76 @@ import useUserHook from "../commons/useUserHook";
 //   return true;
 // };
 
-function LoungeItem({ setIsOpen, item }) {
-  // const userState = useUserHook();
-  // const [IsWriter, setIsWriter] = useState();
-
-  //listItem
+function LoungeItem({ handleOpen, item, user }) {
+  /* Item */
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [createdAt, setCreatedAt] = useState("");
   const [link, setLink] = useState();
   // const [img, setImg] = useState();
 
-  //comment
+  /* comment */
   const [comments, setComments] = useState(null);
   const [isAdd, setIsAdd] = useState(false);
-  // const [isEdit, setIsEdit] = useState(false);
+  const [isEdit, setIsEdit] = useState(false);
+
+  const handleEdit = useCallback(() => {
+    setIsEdit((prev) => !prev);
+  }, [isEdit]);
+
+  useEffect(async () => {
+    await Api.get(`board/${item._id}`)
+      .then((res) => {
+        setTitle(res.data.currentBoardInfo.title);
+        setContent(res.data.currentBoardInfo.content);
+        setCreatedAt(res.data.currentBoardInfo.createdAt);
+
+        //fetch image
+        // await Api.get("images", boardInfo.images[0]).then((res) => {
+        //   let reader = new FileReader();
+        //   let file = res.data;
+        //   reader.onloadend = () => {
+        //     setImg({ file: file, previewURL: reader.result });
+        //   };
+        //   reader.readAsDataURL(file);
+        // });
+        // let Buffer = require("buffer/").Buffer;
+        // let binary = Buffer.from(res.data.getImage[0].data); //or Buffer.from(data, 'binary')
+        // let imgData = new Blob(binary, { type: "application/octet-binary" });
+        // setLink(window.URL.createObjectURL(imgData));
+        // console.log(link);
+      })
+      .catch((err) => {
+        console.log(err.response);
+      });
+  }, []);
 
   useEffect(async () => {
     //fetch board Item
-    const res = await Api.get(`board/${item._id}`).catch((err) => {
-      console.log(err.response);
-    });
-    const boardInfo = res.data.currentBoardInfo;
-    setTitle(boardInfo.title);
-    setContent(boardInfo.content);
-    setCreatedAt(boardInfo.createdAt);
-
-    //comment
-    setComments(res.data.currentBoardInfo.comment);
-
-    //fetch image
-    // await Api.get("images", boardInfo.images[0]).then((res) => {
-    //   let reader = new FileReader();
-    //   let file = res.data;
-    //   reader.onloadend = () => {
-    //     setImg({ file: file, previewURL: reader.result });
-    //   };
-    //   reader.readAsDataURL(file);
-    // });
-    // let Buffer = require("buffer/").Buffer;
-    // let binary = Buffer.from(res.data.getImage[0].data); //or Buffer.from(data, 'binary')
-    // let imgData = new Blob(binary, { type: "application/octet-binary" });
-    // setLink(window.URL.createObjectURL(imgData));
-    // console.log(link);
-  }, [item]);
+    await Api.get(`board/${item._id}`)
+      .then((res) => {
+        // fetch comment
+        setComments(res.data.currentBoardInfo.comment);
+      })
+      .catch((err) => {
+        console.log(err.response);
+      });
+  }, [isAdd]);
   //mock data
-  const mockComments = [
-    { name: "something", content: "somethingsomething" },
-    { name: "something", content: "somethingsomething" },
-    { name: "something", content: "somethingsomething" },
-    { name: "something", content: "somethingsomething" },
-    { name: "something", content: "somethingsomething" },
-  ];
-
+  // const mockComments = [
+  //   { writer: { name: "name1" }, content: "somethingsomething1" },
+  //   { writer: { name: "name2" }, content: "somethingsomething2" },
+  //   { writer: { name: "name3" }, content: "somethingsomething3" },
+  //   { writer: { name: "name4" }, content: "somethingsomething4" },
+  //   { writer: { name: "name5" }, content: "somethingsomething5" },
+  // ];
   console.log(comments);
 
   return (
     <>
       <button
         onClick={() => {
-          setIsOpen(false);
+          handleOpen();
         }}
       >
         goBack
@@ -100,23 +110,47 @@ function LoungeItem({ setIsOpen, item }) {
               <TableCell>No</TableCell>
               <TableCell align="right">Comment</TableCell>
               <TableCell align="right">Name</TableCell>
-              <TableCell align="right"></TableCell>
+              <TableCell align="right">edit check</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {mockComments.map((comment, i) => {
-              // setIsWriter(writerCheck());
+            {comments?.map((comment, i) => {
               return (
                 <TableRow key={i}>
                   <TableCell>{i + 1}</TableCell>
                   <TableCell align="right"> {comment.content}</TableCell>
-                  {/* <TableCell align="right">{comment.writer.name}</TableCell> */}
+                  <TableCell align="right">{comment.writer.name}</TableCell>
                   <TableCell align="right">
-                    {/* {isEdit ? (
-                      <Edit setIsEdit={setIsEdit} />
+                    {!(comment.writer?._id === user?._id) ? (
+                      <></>
+                    ) : isEdit ? (
+                      <Edit setIsEdit={handleEdit} />
                     ) : (
-                      <button></button>
-                    )} */}
+                      <>
+                        <button
+                          onClick={() => {
+                            handleEdit();
+                          }}
+                        >
+                          Edit
+                        </button>
+                        <button
+                          onClick={async () => {
+                            await Api.delete(
+                              "board/comment",
+                              comment._id
+                            ).catch((err) => {
+                              console.log(err.response);
+                            });
+                            await Api.get(`board/${item._id}`).then((res) => {
+                              setComments(res.data.currentBoardInfo.comment);
+                            });
+                          }}
+                        >
+                          delete
+                        </button>
+                      </>
+                    )}
                   </TableCell>
                 </TableRow>
               );
@@ -128,7 +162,11 @@ function LoungeItem({ setIsOpen, item }) {
         ) : (
           <button
             onClick={() => {
-              setIsAdd(true);
+              if (!user) {
+                alert("로그인 필요");
+              } else {
+                setIsAdd((prev) => !prev);
+              }
             }}
           >
             댓글 작성

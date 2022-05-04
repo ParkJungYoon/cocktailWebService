@@ -10,6 +10,8 @@ import { style } from "@mui/material/node_modules/@mui/system";
 
 function Lounge() {
   const userState = useUserHook();
+  const user = userState.user;
+  console.log(user);
 
   return (
     <>
@@ -17,7 +19,7 @@ function Lounge() {
         <LoungeRank />
       </div>
       <div>
-        <LoungeList props={{ userState }} />
+        <LoungeList user={user} />
       </div>
     </>
   );
