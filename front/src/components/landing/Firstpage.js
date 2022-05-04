@@ -3,7 +3,8 @@ import { Link } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
-import video from "../../video/cocktail.webm";
+// import video from "../../video/cocktail.webm";
+import video from "../../video/cocktail2.webm";
 
 export default function Firstpage() {
   const navigate = useNavigate();

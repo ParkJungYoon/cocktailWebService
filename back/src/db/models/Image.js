@@ -22,6 +22,12 @@ const storage = multer.diskStorage({
     cb(null, imagePath());
   },
   filename: function (req, file, cb) {
+    var ext = path.extname(file.originalname).replace('.', '');
+    
+    if(!['png', 'jpg', 'jpeg', 'gif'].includes(ext)) {
+      return cb(new Error('Only images are allowed'))
+    }
+
     const fileName =
       new Date().valueOf() + "_" + uuidv4() + "_" + file.originalname;
 
@@ -94,6 +100,21 @@ class ImageModel {
     fileJson["type"] = image.type;
 
     return fileJson;
+  };
+
+  /**
+   * @param {이미지 파일 이름} fileName
+   * @param {프론트 => Response} res
+   * @return image => {type:.jpg, data:~~~~}
+   */
+   static getImgFileOne = async ({ fileName }) => {
+    const image = await Image.findOne({ fileName });
+
+    if (image == null) {
+      return null;
+    }
+
+    return image;
   };
 
   /**

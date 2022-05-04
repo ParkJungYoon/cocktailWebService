@@ -2,24 +2,31 @@ import { LikeModel, CocktailModel, db } from "../db";
 
 class LikeService {
   static addLike = async ({ giveUserId, getCocktailId }) => {
-    const session = await db.startSession();
+    try {
+      const session = await db.startSession();
 
-    session.startTransaction();
+      session.startTransaction();
 
-    const name = await CocktailModel.findById({ getCocktailId });
+      const name = await CocktailModel.findById({ getCocktailId });
 
-    const newLike = await LikeModel.addLike({
-      name: name.name,
-      giveUserId,
-      getCocktailId,
-    });
+      const newLike = await LikeModel.addLike({
+        name: name.name,
+        giveUserId,
+        getCocktailId,
+      });
 
-    await CocktailModel.likeCocktail({ getCocktailId });
+      await CocktailModel.likeCocktail({ getCocktailId });
 
-    await session.commitTransaction();
-    session.endSession();
+      await session.commitTransaction();
+      return newLike;
+    } catch (e) {
+      await session.abortTransaction();
 
-    return newLike;
+      const errorMessage = "좋아요를 생성하는 데 실패했습니다.";
+      return { errorMessage };
+    } finally {
+      session.endSession();
+    }
   };
 
   static getLikeList = async () => {
@@ -37,24 +44,31 @@ class LikeService {
     }
 
     const session = await db.startSession();
-
     session.startTransaction();
 
-    const deleteCocktail = await LikeModel.deleteLike({
-      giveUserId,
-      getCocktailId,
-    });
-    if (deleteCocktail === null) {
-      const errorMessage = "해당 id의 좋아요가 없습니다.";
+    try {
+      const deleteCocktail = await LikeModel.deleteLike({
+        giveUserId,
+        getCocktailId,
+      });
+      if (deleteCocktail === null) {
+        const errorMessage = "해당 id의 좋아요가 없습니다.";
+        return { errorMessage };
+      }
+
+      await CocktailModel.unLikeCocktail({ getCocktailId });
+
+      await session.commitTransaction();
+
+      return deleteCocktail;
+    } catch (e) {
+      await session.abortTransaction();
+
+      const errorMessage = "좋아요를 삭제하는 데 실패했습니다.";
       return { errorMessage };
+    } finally {
+      session.endSession();
     }
-
-    await CocktailModel.unLikeCocktail({ getCocktailId });
-
-    await session.commitTransaction();
-    session.endSession();
-
-    return deleteCocktail;
   };
 
   static getCocktailLike = async ({ id }) => {

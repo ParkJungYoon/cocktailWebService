@@ -2,7 +2,6 @@ import { memo, useRef, useEffect, useState, useCallback } from "react";
 import { Grid, Box } from "@mui/material";
 
 import * as Api from "../../api";
-import AllPosts from "./AllPosts";
 import Loader from "./Loader";
 import AllSortButton from "./AllSortButton";
 function AllCard() {
@@ -74,7 +73,6 @@ function AllCard() {
         </Box>
       </Grid>
       <Grid container spacing={3} sx={{ px: 15 }}>
-        {cocktails && <AllPosts cocktails={cocktails} />}
         {load && <Loader />}
         <div ref={obsRef}></div>
       </Grid>

@@ -69,14 +69,7 @@ export default function CardMenu() {
               />
             </Grid>
           </Grid>
-          {!search ? (
-            <AllCard />
-          ) : (
-            <FilteredCard
-              filteredCocktails={filteredCocktails}
-              setFilteredCocktails={setFilteredCocktails}
-            />
-          )}
+          <AllCard />
         </TabPanel>
         <TabPanel value={"1"}>
           <Top10Card />

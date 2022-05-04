@@ -1,0 +1,27 @@
+{
+    "paths": {
+      "/images/{fileName}": {
+        "get": {
+          "tags": ["Iamge"],
+          "summary": "이미지 가져오기",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "fileName"
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "OK"
+            },
+            "404": {
+              "description": "Failed. Bad Request"
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+    }
+}
+  

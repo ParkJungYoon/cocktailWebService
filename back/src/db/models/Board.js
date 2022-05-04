@@ -8,7 +8,7 @@ class BoardModel {
   };
 
   static boardList = async () => {
-    const boardList = await Board.find();
+    const boardList = await Board.find().populate("writer");
     return boardList;
   };
 
@@ -19,12 +19,22 @@ class BoardModel {
     return board;
   };
 
+  static userBordList = async ({ userId }) => {
+    const boardList = await Board.find({ writer: userId });
+    return boardList;
+  };
+
   static updateUserBoard = async ({ userId }) => {
-    const board = await Board.updateMany(
-      { writer: userId },
-      { $set: { writer: null } }
-    );
-    return board;
+    let board = await this.userBordList({ userId });
+    if (board) {
+      board = await Board.updateMany(
+        { writer: userId },
+        { $set: { writer: null } }
+      );
+      return board;
+    } else {
+      return;
+    }
   };
 
   static modify = async ({ boardId, newValues }) => {

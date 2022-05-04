@@ -7,7 +7,7 @@ import CardMenu from "../components/cocktailBar/CardMenu";
 export default function Dictionary() {
   return (
     <div className="dictionary">
-      <Grid container sx={{ mt: 25 }}>
+      <Grid container sx={{ mt: 17 }}>
         <Grid item xs={12}>
           <CardMenu />
         </Grid>

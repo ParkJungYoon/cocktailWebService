@@ -14,15 +14,15 @@ $thirdpage: "../imgs/thirdpage.jpg";
     height: 100%;
     display: block;
     position: relative;
-    margin-top: 150px;
+
     &::before {
       content: "";
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: $maincolor;
-      opacity: 0.3;
+      background-color: black;
+      opacity: 0.4;
       position: absolute;
     }
   }
@@ -30,7 +30,7 @@ $thirdpage: "../imgs/thirdpage.jpg";
     width: 100%;
     height: 100%;
     object-fit: fill;
-    margin-bottom: 10;
+    margin-bottom: 15;
   }
 }
 .scrollDown {
@@ -80,14 +80,11 @@ $thirdpage: "../imgs/thirdpage.jpg";
     }
   }
 }
-
 // secondpage
 .secondPage {
   .secondpageContainer {
-    margin-top: 150px;
     width: 100%;
     height: 100%;
-    background-color: $maincolor;
     .top10 {
       position: relative;
       width: 100%;
@@ -102,11 +99,14 @@ $thirdpage: "../imgs/thirdpage.jpg";
         background-size: cover;
         background-position: center;
         position: absolute;
-        opacity: 0.5;
       }
       .top10ChartWrapper {
-        margin: auto;
-        padding-right: 10%;
+        position: absolute;
+        z-index: 3;
+        top: 30%;
+        left: 5vw;
+        width: 100%;
+        height: 100%;
         .top10Chart {
           position: relative;
         }

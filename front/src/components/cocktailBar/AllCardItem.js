@@ -14,12 +14,12 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import CompareArrowsIcon from "@mui/icons-material/CompareArrows";
 import { useNavigate } from "react-router-dom";
 
-export default function AllCardItem({ cocktail, liked }) {
+export default function AllCardItem({ cocktail }) {
   const navigate = useNavigate();
 
   // state
   const [isFront, setIsFront] = useState(true);
-  const [isLike, setIsLike] = useState(liked[cocktail.name]);
+  const [isLike, setIsLike] = useState(cocktail.isLiked);
   const [color, setColor] = useState(isLike ? "plum" : "white");
   const [likeNum, setLikeNum] = useState(cocktail.likes);
 
@@ -45,7 +45,9 @@ export default function AllCardItem({ cocktail, liked }) {
         setIsLike(true);
         setColor("plum");
       } catch (e) {
-        alert("로그인 해주세요.");
+        if (e.message === "Request failed with status code 401") {
+          alert("로그인이 필요한 서비스입니다.");
+        }
       }
     } else {
       try {
@@ -64,7 +66,7 @@ export default function AllCardItem({ cocktail, liked }) {
       <Box className={` ${isFront ? "cardFront" : "cardBack"}`}>
         <Card className="front">
           <IconButton onClick={handleOnClickLike}>
-            <FavoriteIcon sx={{ color: { color } }} />
+            <FavoriteIcon sx={{ color: color }} />
           </IconButton>
           {likeNum}
           <CardMedia
