@@ -3,6 +3,7 @@ import path from "path";
 import multer from "multer";
 import { v4 as uuidv4 } from "uuid";
 import fs from "fs";
+import { db } from "..";
 
 const imagePath = () => {
   return path.resolve(__dirname, "../", "../", "../", "images");
@@ -22,25 +23,30 @@ const storage = multer.diskStorage({
     cb(null, imagePath());
   },
   filename: function (req, file, cb) {
-    var ext = path.extname(file.originalname).replace('.', '');
+    if (file.originalname !== null) {
+      var ext = path.extname(file.originalname).replace('.', '');
     
-    if(!['png', 'jpg', 'jpeg', 'gif'].includes(ext)) {
-      return cb(new Error('Only images are allowed'))
+      if(!['png', 'jpg', 'jpeg', 'gif'].includes(ext)) {
+        return cb(new Error('Only images are allowed'))
+      }
+  
+      const fileName =
+        new Date().valueOf() + "_" + uuidv4() + "_" + file.originalname;
+  
+      const image = {
+        fileName: fileName,
+        imageUrl: path.join(imagePath(), fileName),
+        owner: req.user,
+        type: path.extname(file.originalname),
+      };
+  
+      ImageModel.uploadOne({ image });
+      req = imageNamePush(req, fileName);
+      cb(null, fileName);
     }
-
-    const fileName =
-      new Date().valueOf() + "_" + uuidv4() + "_" + file.originalname;
-
-    const image = {
-      fileName: fileName,
-      imageUrl: path.join(imagePath(), fileName),
-      owner: req.user,
-      type: path.extname(file.originalname),
-    };
-
-    ImageModel.uploadOne({ image });
-    req = imageNamePush(req, fileName);
-    cb(null, fileName);
+    else {
+      return;
+    }
   },
 });
 

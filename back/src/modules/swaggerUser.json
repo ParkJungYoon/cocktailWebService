@@ -54,7 +54,6 @@
             "description": "이메일, 패스워드, 이름 모든 값을 요청하지 않아도 됩니다.",
             "email": "body",
             "password": "body",
-            "name": "body",
             "schema": {
               "$ref": "#/definitions/User"
             }
@@ -128,6 +127,30 @@
             "name": "refresh",
             "in": "header",
             "description": "JWT refresh token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
+    },
+    "/user/count": {
+      "get": {
+        "tags": ["User"],
+        "summary": ["유저의 활동사항 개수 전달"],
+        "description": "access token은 토큰 앞에 'Bearer ' 꼭 붙여서 request 해야합니다. 토큰 속 user 정보를 반환합니다.",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "JWT access token",
             "required": true,
             "type": "string"
           }

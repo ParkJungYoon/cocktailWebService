@@ -12,10 +12,21 @@ class BoardModel {
     return boardList;
   };
 
+  static boardCount = async ({ userId }) => {
+    const count = await Board.find({ writer: userId }).countDocuments();
+    return count;
+  };
+
   static findBoard = async ({ boardId }) => {
     const board = await Board.findOne({ _id: boardId })
-      .populate("comment")
-      .populate("writer");
+      .populate({
+        path: "comment",
+        populate: {
+          path: "writer",
+        },
+      })
+      .populate("writer")
+      .lean();
     return board;
   };
 
@@ -50,6 +61,7 @@ class BoardModel {
     await Comment.deleteMany({ boardId });
     return deleteBoard;
   };
+
 }
 
 export { BoardModel };

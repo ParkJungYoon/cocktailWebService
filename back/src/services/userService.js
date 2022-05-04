@@ -1,4 +1,4 @@
-import { UserModel, TokenModel, BoardModel, CommentModel } from "../db";
+import { UserModel, TokenModel, BoardModel, CommentModel, LikeModel } from "../db";
 
 import { hashPassword } from "../utils/hashPassword";
 import { makeToken, makeRefreshToken } from "../utils/makeToken";
@@ -103,6 +103,35 @@ class userService {
       return { errorMessage };
     }
   };
+
+  static userCount = async ({ userId }) => {
+
+    const boardCount = await BoardModel.boardCount({ userId });
+    if (boardCount == null) {
+      const errorMessage = "유저를 다시 확인해주세요. - board";
+      return { errorMessage };
+    }
+
+    const commentCount = await CommentModel.commentCount({ userId });
+    if (boardCount == null) {
+      const errorMessage = "유저를 다시 확인해주세요. - comment";
+      return { errorMessage };
+    }
+
+    const likeCount = await LikeModel.likeCount({ userId });
+    if (boardCount == null) {
+      const errorMessage = "유저를 다시 확인해주세요. - like";
+      return { errorMessage };
+    }
+
+    const result = {
+      boardCount,
+      commentCount,
+      likeCount
+    }
+
+    return result
+  }
 
   static async getUserInfo({ userId }) {
     const user = await UserModel.findByUserId({ userId });

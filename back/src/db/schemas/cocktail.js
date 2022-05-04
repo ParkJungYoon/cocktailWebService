@@ -4,6 +4,8 @@ const CocktailSchema = new Schema({
   name: {
     type: String,
     required: true,
+    index: true,
+    text: true,
   },
   ingredient: {
     type: [String],
@@ -25,11 +27,11 @@ const CocktailSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "User",
   },
-  likes : {
-    type : Number,
+  likes: {
+    type: Number,
   },
-  method : {
-    type : [String]
+  method: {
+    type: [String],
   },
 });
 
