@@ -103,6 +103,21 @@ class ImageModel {
   };
 
   /**
+   * @param {이미지 파일 이름} fileName
+   * @param {프론트 => Response} res
+   * @return image => {type:.jpg, data:~~~~}
+   */
+   static getImgFileOne = async ({ fileName }) => {
+    const image = await Image.findOne({ fileName });
+
+    if (image == null) {
+      return null;
+    }
+
+    return image;
+  };
+
+  /**
    * @param {이미지 파일 이름 리스트} fileNameList
    * @param {프론트 => Response} res
    * @return images => [ {type:.jpg, data:~~~~}, {...} ]
