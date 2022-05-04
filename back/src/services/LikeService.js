@@ -3,11 +3,11 @@ import { LikeModel, CocktailModel, db } from "../db";
 class LikeService {
   static addLike = async ({ giveUserId, getCocktailId }) => {
 
+    const session = await db.startSession();
+    
     try {
-      const session = await db.startSession();
-
       session.startTransaction();
-  
+
       const name = await CocktailModel.findById({ getCocktailId });
   
       const newLike = await LikeModel.addLike({
@@ -43,14 +43,15 @@ class LikeService {
 
     if (checkLike == null) {
       const errorMessage =
-        "좋아요를 하지 않았습니다. 먼저 졸아요를 눌러주세요.";
+        "좋아요를 하지 않았습니다. 먼저 좋아요를 눌러주세요.";
       return { errorMessage };
     }
 
     const session = await db.startSession();
-    session.startTransaction();
 
     try {
+
+      session.startTransaction();
 
       const deleteCocktail = await LikeModel.deleteLike({
         giveUserId,

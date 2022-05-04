@@ -37,10 +37,10 @@ class CocktailModel {
     const count = await Cocktail.countDocuments();
 
     const result = await Cocktail.find()
-      .populate("rank")
-      .skip(offset > 0 ? (offset - 1) * limit : 0)
-      .limit(limit)
-      .lean();
+        .populate("rank")
+        .skip(offset > 0 ? (offset - 1) * limit : 0)
+        .limit(limit)
+        .lean();
 
     result["total"] = count;
     return result;
