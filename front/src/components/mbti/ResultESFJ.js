@@ -1,17 +1,21 @@
 /* eslint no-restricted-globals: ["off"] */
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Box, Grid, LinearProgress, Link } from "@mui/material";
-import * as Api from "../../api";
-import "../../scss/Mbti.scss";
+import { Box, Container, Grid, LinearProgress, Link } from "@mui/material";
+import "../../scss/MbtiResultPage.scss";
 
 import checkState from "./TypeData";
 
 function ResultESFJ() {
+  const navigate = useNavigate();
   const typeName = "ESFJ";
+  const resultRestartBtn = {
+    color: "white",
+    textAlign: "center",
+  };
   return (
-    <div className="introduction">
-      <Box sx={{ mt: 25 }}>
+    <div className="mbtiResultPage">
+      <Box sx={{ mt: 25, mb: 10 }}>
         <Grid container>
           <Grid item xs={3} height="720px"></Grid>
           <Grid item xs={6} sx={{ backgroundColor: "blue" }}>
@@ -100,6 +104,11 @@ function ResultESFJ() {
               </Grid>
               <Grid item xs={12} sx={{ height: "20px" }}></Grid>
             </Grid>
+            <Container style={resultRestartBtn}>
+              <Link onClick={() => navigate(`/cocktailTest/mbti`)}>
+                다시하기
+              </Link>
+            </Container>
           </Grid>
           <Grid item xs={3}></Grid>
         </Grid>

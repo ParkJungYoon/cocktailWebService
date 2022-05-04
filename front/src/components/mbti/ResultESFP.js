@@ -2,18 +2,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Box, Container, Grid, LinearProgress, Link } from "@mui/material";
-// import * as Api from "../../api";
 import "../../scss/MbtiResultPage.scss";
 
 import checkState from "./TypeData";
 
-function ResultESFJ() {
+function ResultESFP() {
   const navigate = useNavigate();
   const typeName = "ESFP";
   const resultRestartBtn = {
-    // display: "flex",
-    // padding: "5px",
-    // justifyContent: "center",
     color: "white",
     textAlign: "center",
   };
@@ -120,4 +116,4 @@ function ResultESFJ() {
     </div>
   );
 }
-export default ResultESFJ;
+export default ResultESFP;
