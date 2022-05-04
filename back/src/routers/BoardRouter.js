@@ -18,17 +18,17 @@ BoardRouter.post(
       const writer = req.user;
       const { title, content } = req.body;
       const images = req.images;
-      if (images.length > 2) {
-        throw new Error("이미지 업로드 개수를 초과했습니다.");
-      }
-      const getImage = await ImageModel.getImg({ fileNameList: images });
+      // if (images.length > 2) {
+      //   throw new Error("이미지 업로드 개수를 초과했습니다.");
+      // }
+      // const getImage = await ImageModel.getImg({ fileNameList: images });
       const newBoard = await BoardService.create({
         writer,
         title,
         content,
         images,
       });
-      res.status(200).json({ newBoard, getImage });
+      res.status(200).json({ newBoard });
     } catch (error) {
       next(error);
     }
