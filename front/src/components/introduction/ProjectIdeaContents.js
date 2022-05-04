@@ -111,7 +111,6 @@ function ProjectIdeaContents() {
           </Box>
         </div>
       </Container>
-      <Box sx={{ backgroundColor: "white" }}>asd</Box>
     </div>
   );
 }

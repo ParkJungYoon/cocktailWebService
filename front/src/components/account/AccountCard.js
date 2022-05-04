@@ -34,8 +34,8 @@ function AccountCard(props) {
   };
   return (
     <Container className={styles["accountPageContainer"]}>
-      <Grid container rowSpacing={3} sx={{ p: 15, pt: 3 }}>
-        <Grid item xs={12} sx={{ mb: 5 }}>
+      <Grid container rowSpacing={3} sx={{ p: 10, pt: 3 }}>
+        <Grid item xs={12} sx={{ mb: 3 }}>
           <Typography variant="h4" align="center">
             Account
           </Typography>

@@ -66,7 +66,7 @@ function Header({ user }) {
   const handleRegisterClose = () => setOpenRegister(false);
 
   //style
-  const linkTabstyle = { width: "130px" };
+  const linkTabstyle = { width: "120px" };
   const paperPropsStyle = {
     elevation: 0,
     sx: {
@@ -187,11 +187,11 @@ function Header({ user }) {
               setValue(false);
             }}
           >
-            <img src={logo} alt="logo" width={"150px"} />
+            <img src={logo} alt="logo" width={"120px"} />
           </Link>
         </div>
 
-        <Box sx={{ width: "100%", typography: "body1" }} className="navbarMenu">
+        <Box sx={{ width: "100%" }} className="navbarMenu">
           <Tabs
             value={value}
             onChange={handleChange}
