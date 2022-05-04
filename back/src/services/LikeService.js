@@ -3,8 +3,6 @@ import { LikeModel, CocktailModel, db } from "../db";
 class LikeService {
   static addLike = async ({ giveUserId, getCocktailId }) => {
     const session = await db.startSession();
-
-    const session = await db.startSession();
     
     try {
       session.startTransaction();

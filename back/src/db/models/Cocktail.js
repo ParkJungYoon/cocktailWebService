@@ -36,7 +36,6 @@ class CocktailModel {
   static getAllCocktail = async ({ offset, search, sort, limit = 20 }) => {
     const count = await Cocktail.countDocuments();
 
-<<<<<<< HEAD
     const result = await Cocktail.find({ $text: { $search: search } }).lean();
     if (result.length === 1) {
       return result;
@@ -54,16 +53,6 @@ class CocktailModel {
         .sort({ name: 1 });
       return cocktailList;
     }
-=======
-    const result = await Cocktail.find()
-        .populate("rank")
-        .skip(offset > 0 ? (offset - 1) * limit : 0)
-        .limit(limit)
-        .lean();
-
-    result["total"] = count;
-    return result;
->>>>>>> e134470e439430e79c97bb6816117621591f06b8
   };
 
   static getIncludedCocktail = async (query) => {
