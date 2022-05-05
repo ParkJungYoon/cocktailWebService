@@ -3,12 +3,11 @@ import { UserContext } from "../user/reducer/userReducer";
 import { Button, TextField, Box, Container } from "@mui/material";
 import * as Api from "../../api";
 
-function Edit({ setIsEdit, boardId, prevComment, type }) {
+function Edit({ setIsEdit, boardId, commentId, prevComment, type }) {
   const { userState, userDispatch } = useContext(UserContext);
 
   const [form, setForm] = useState({
     content: [prevComment] ? [prevComment] : "",
-    boardId: [boardId],
   });
 
   const handleFormValue = (name, value) => {
@@ -22,11 +21,12 @@ function Edit({ setIsEdit, boardId, prevComment, type }) {
     e.preventDefault();
     try {
       if (type === "add") {
+        setForm({ ...form, boardId: [boardId] });
         const res = await Api.post("board/comment", {
           ...form,
         });
       } else {
-        const res = await Api.put(`board/comment/${boardId}`, {
+        const res = await Api.put(`board/comment/${commentId}`, {
           ...form,
         });
       }

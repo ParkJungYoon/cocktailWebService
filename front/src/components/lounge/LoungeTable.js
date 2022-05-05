@@ -8,9 +8,13 @@ import {
   TableHead,
   TableRow,
   Paper,
-  Checkbox,
+  Button,
+  Snackbar,
 } from "@mui/material";
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
 import LoungeItem from "./LoungeItem";
+import LoungeTestItem from "./LoungeTestItem";
 
 function LoungeTable({ user, setIsForm }) {
   const [list, setList] = useState([]);
@@ -21,6 +25,7 @@ function LoungeTable({ user, setIsForm }) {
   useEffect(async () => {
     const res = await Api.get("boardList");
     setList(res.data);
+    console.log(res.data);
   }, []);
 
   const handleListEdit = useCallback(() => {
@@ -31,14 +36,13 @@ function LoungeTable({ user, setIsForm }) {
     setIsOpen((prev) => !prev);
   }, [isOpen]);
 
-  const handleClick = () => {
+  const handleClickCreate = () => {
     if (!user) {
       alert("로그인 필요");
     } else {
       setIsForm((prev) => !prev);
     }
   };
-  console.log(list);
 
   return (
     <TableContainer component={Paper}>
@@ -48,7 +52,7 @@ function LoungeTable({ user, setIsForm }) {
         ) : (
           <>
             <TableHead>
-              <button onClick={() => handleClick()}>Create</button>
+              <button onClick={() => handleClickCreate()}>Create</button>
               <TableRow>
                 <TableCell>No</TableCell>
                 <TableCell align="right">Name</TableCell>

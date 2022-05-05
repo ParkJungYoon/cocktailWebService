@@ -42,12 +42,19 @@ function LoungeItem({ handleOpen, item, user }) {
   useEffect(async () => {
     await Api.get(`board/${item._id}`)
       .then((res) => {
-        setTitle(res.data.currentBoardInfo.title);
-        setContent(res.data.currentBoardInfo.content);
-        setCreatedAt(res.data.currentBoardInfo.createdAt);
+        setTitle(res.data.title);
+        setContent(res.data.content);
+        setCreatedAt(res.data.createdAt);
+        console.log(res.data);
 
-        //fetch image
-        // await Api.get("images", boardInfo.images[0]).then((res) => {
+        //fetch image binary data
+        let Buffer = require("buffer/").Buffer;
+        let binary = Buffer.from(res.data.data[0].data); //or Buffer.from(data, 'binary')
+        let imgData = new Blob(binary, { type: "application/octet-binary" });
+        setLink(window.URL.createObjectURL(imgData));
+
+        //fetch image files
+        // await Api.get("images", res.data.images[0]).then((res) => {
         //   let reader = new FileReader();
         //   let file = res.data;
         //   reader.onloadend = () => {
@@ -62,7 +69,7 @@ function LoungeItem({ handleOpen, item, user }) {
         // console.log(link);
       })
       .catch((err) => {
-        console.log(err.response);
+        console.log(err);
       });
   }, []);
 
@@ -71,12 +78,12 @@ function LoungeItem({ handleOpen, item, user }) {
     await Api.get(`board/${item._id}`)
       .then((res) => {
         // fetch comment
-        setComments(res.data.currentBoardInfo.comment);
+        setComments(res.data.comment);
       })
       .catch((err) => {
-        console.log(err.response);
+        console.log(err);
       });
-  }, [isAdd]);
+  }, [isAdd, isEdit]);
   //mock data
   // const mockComments = [
   //   { writer: { name: "name1" }, content: "somethingsomething1" },
@@ -85,7 +92,6 @@ function LoungeItem({ handleOpen, item, user }) {
   //   { writer: { name: "name4" }, content: "somethingsomething4" },
   //   { writer: { name: "name5" }, content: "somethingsomething5" },
   // ];
-  console.log(comments);
 
   return (
     <>
@@ -113,9 +119,10 @@ function LoungeItem({ handleOpen, item, user }) {
         </>
       )}
       <Paper>
-        {/* <img src={link} alt="이미지" /> */}
         <p>Title : {title}</p>
-        {/* <p>IMG : <img src={img.previewURL} /></p> */}
+        <p>
+          IMG : <img src={link} />
+        </p>
         <p>Content : {content}</p>
         <p>CreatedAt : {createdAt}</p>
       </Paper>
@@ -135,14 +142,14 @@ function LoungeItem({ handleOpen, item, user }) {
                 <TableRow key={i}>
                   <TableCell>{i + 1}</TableCell>
                   <TableCell align="right"> {comment.content}</TableCell>
-                  <TableCell align="right">{comment.writer.name}</TableCell>
+                  <TableCell align="right">{comment.writer?.name}</TableCell>
                   <TableCell align="right">
                     {!(comment.writer?._id === user?._id) ? (
                       <></>
                     ) : isEdit ? (
                       <Edit
                         setIsEdit={handleEdit}
-                        boardId={item._id}
+                        commentId={comment._id}
                         type={"edit"}
                       />
                     ) : (
