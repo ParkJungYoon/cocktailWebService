@@ -22,7 +22,7 @@ const TypeCheck = ({ countEI, countSN, countTF, countJP }) => {
     <>
       <Grid container>
         <Grid item xs={12}>
-          <div className="mbtiResultText">
+          <div className="mbtiResultInfoText">
             <p>테스트 문항을 완료하셨습니다.</p>
             <p>버튼을 눌러 결과를 확인하세요.</p>
 
@@ -30,7 +30,7 @@ const TypeCheck = ({ countEI, countSN, countTF, countJP }) => {
               onClick={() => navigate(`/cocktailTest/mbti/${onClickButton()}`)}
               sx={{ textDecoration: "none" }}
             >
-              <p className="mbtiResultBtn">결과보기</p>
+              <p className="mbtiResultInfoBtn">결과보기</p>
             </Link>
           </div>
         </Grid>

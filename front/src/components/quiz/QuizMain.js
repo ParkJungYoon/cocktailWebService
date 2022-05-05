@@ -38,7 +38,7 @@ function QuizMain(props) {
   const result = {
     padding: "5% 15% 5% 15%",
     borderRadius: "2rem",
-    backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9) ), url(${quizresult})`,
+    backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url(${quizresult})`,
     backgroundSize: "cover",
   };
   const progressBarAlignCenter = { display: "flex", alignItems: "center" };

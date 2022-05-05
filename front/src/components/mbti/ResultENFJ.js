@@ -38,45 +38,25 @@ function ResultENFJ() {
             >
               <Grid item xs={1.5}></Grid>
               <Grid item xs={9} mb={3}>
-                <div
-                  style={{
-                    textAlign: "center",
-                    fontSize: "30px",
-                    color: "white",
-                  }}
-                >
-                  <p className="resultTitle" style={{ textAlign: "center" }}>
-                    당신은 {typeName}
-                  </p>
-                  <p
-                    className="resultRecommend"
-                    style={{ fontSize: "35px", textAlign: "center" }}
-                  >
-                    추천 칵테일은{" "}
+                <div>
+                  {/* <p className="mbtiResultTitle">당신은 {typeName}</p> */}
+                  <br />
+                  <p className="mbtiResultRecommend">
+                    당신과 어울리는 칵테일은...
+                    <br />
+                    <br />
                     <span style={{ color: "#a300d9" }}>
                       {checkState.types[typeName]}
                     </span>
                   </p>
-                  <div style={{ textAlign: "center" }}>
+                  <div className="mbtiResultImgAlingn">
                     <img
-                      className="resultImg"
+                      className="mbtiResultImg"
                       src={checkState.typeImgs[typeName]}
                       alt=""
-                      width="350px"
-                      style={{
-                        borderRadius: "1rem",
-                        justifyContent: "center",
-                      }}
                     />
                   </div>
-                  <p
-                    className="resultText"
-                    style={{
-                      marginTop: "20px",
-                      fontSize: "30px",
-                      textAlign: "center",
-                    }}
-                  >
+                  <p className="mbtiResultText">
                     {checkState.typeInfos[typeName]}
                   </p>
                 </div>
@@ -84,53 +64,30 @@ function ResultENFJ() {
               <Grid item xs={1.5}></Grid>
               <Grid container>
                 <Grid item xs={5.95}>
-                  <p
-                    className="resultGood"
-                    style={{
-                      margin: "5px 0 10px 0",
-                      textAlign: "center",
-                      fontSize: "25px",
-                      color: "white",
-                    }}
-                  >
+                  <p className="mbtiResultGood">
                     궁합이 좋은 MBTI 칵테일
+                    <br />
+                    {checkState.good[typeName]}
                   </p>
-                  <div style={{ textAlign: "center" }}>
+                  <div className="mbtiResultImgAlingn">
                     <img
-                      className="resultGoodImg"
-                      src={checkState.typeImgs[typeName]}
+                      className="mbtiResultGoodImg"
+                      src={checkState.goodImgs[typeName]}
                       alt=""
-                      width="150px"
-                      style={{
-                        borderRadius: "1rem",
-                        justifyContent: "center",
-                      }}
                     />
                   </div>
                 </Grid>
                 <Grid item xs={0.1} sx={{ backgroundColor: "gray" }}></Grid>
                 <Grid item xs={5.95}>
-                  <p
-                    className="resultBad"
-                    style={{
-                      margin: "5px 0 10px 0",
-                      textAlign: "center",
-                      fontSize: "25px",
-                      color: "white",
-                    }}
-                  >
-                    궁합이 별로인 MBTI 칵테일
+                  <p className="mbtiResultBad">
+                    궁합이 별로인 MBTI 칵테일 <br />
+                    {checkState.bad[typeName]}
                   </p>
-                  <div style={{ textAlign: "center" }}>
+                  <div className="mbtiResultImgAlingn">
                     <img
-                      className="resultBadImg"
-                      src={checkState.typeImgs[typeName]}
+                      className="mbtiResultBadImg"
+                      src={checkState.badImgs[typeName]}
                       alt=""
-                      width="150px"
-                      style={{
-                        borderRadius: "1rem",
-                        justifyContent: "center",
-                      }}
                     />
                   </div>
                 </Grid>
@@ -142,18 +99,13 @@ function ResultENFJ() {
                 <Grid item xs={4}></Grid>
                 <Grid item xs={4} container>
                   <Grid item xs={6}>
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "center",
-                      }}
-                    >
+                    <div className="mbtiResultBottonBtns">
                       <div
-                        className="mbtiLinkShareBtn"
+                        className="mbtiResultLinkShareBtn"
                         onClick={() => CopyUrlToClipboard()}
                       >
                         <img
-                          className="resultImg"
+                          className="mbtiResultLinkShareImg"
                           src={linkIcon}
                           alt=""
                           width="40px"
@@ -167,12 +119,7 @@ function ResultENFJ() {
                         onClick={() => navigate(`/cocktailTest/mbti`)}
                         sx={{ textDecoration: "none" }}
                       >
-                        <div
-                          className="mbtiRestartBtn"
-                          style={{ padding: "1px" }}
-                        >
-                          다시하기
-                        </div>
+                        <div className="mbtiRestartBtn">다시하기</div>
                       </Link>
                     </div>
                   </Grid>
