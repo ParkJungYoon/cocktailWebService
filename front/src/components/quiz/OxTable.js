@@ -1,16 +1,14 @@
 import React from "react";
 import "../../scss/Quiz.scss";
 
-const OxTable = (props) => {
-  const setStep = props.setStep;
-  const setDisable = props.setDisable;
-  let splitChar = props.ox.split("");
+const OxTable = ({ setStep, setDisable, ox }) => {
+  let splitChar = ox.split("");
   let lst = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   return (
-    <div className="OxTable">
+    <div className="oxTable">
       <table>
-        <td className="OutlineStyle">
+        <td className="outlineStyle">
           <tr>
             <td>NO.</td>
             {lst.map((i) => (

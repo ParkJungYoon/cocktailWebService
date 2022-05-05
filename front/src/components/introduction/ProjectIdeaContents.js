@@ -7,7 +7,7 @@ import alcohol from "../../imgs/alcohol.png";
 
 function ProjectIdeaContents() {
   return (
-    <div className="ProjectIdeaContents">
+    <div className="projectIdeaContents">
       <Container sx={{ textAlign: "center", fontSize: "50px" }}>
         <h1>🍸저쪽 손님께서 보내신 겁니다.</h1>
         <img
