@@ -3,8 +3,21 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Box, Container, Grid, LinearProgress, Link } from "@mui/material";
 import "../../scss/Mbti.scss";
+import linkIcon from "../../imgs/icon-link.png";
 
 import checkState from "./TypeData";
+
+function CopyUrlToClipboard() {
+  var dummy = document.createElement("input");
+  var text = location.href;
+
+  document.body.appendChild(dummy);
+  dummy.value = text;
+  dummy.select();
+  document.execCommand("copy");
+  document.body.removeChild(dummy);
+  alert("결과 주소가 복사되었습니다. \n주소를 공유해 보세요!");
+}
 
 function ResultESFJ() {
   const navigate = useNavigate();
@@ -126,12 +139,47 @@ function ResultESFJ() {
               <Grid item xs={12} sx={{ height: "20px" }}></Grid>
             </Grid>
             <Container>
-              <Link
-                onClick={() => navigate(`/cocktailTest/mbti`)}
-                sx={{ textDecoration: "none" }}
-              >
-                <p className="mbtiRestartBtn">다시하기</p>
-              </Link>
+              <Grid container>
+                <Grid item xs={4}></Grid>
+                <Grid item xs={4} container>
+                  <Grid item xs={6}>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <div
+                        className="mbtiRestartBtn"
+                        onClick={() => CopyUrlToClipboard()}
+                      >
+                        <img
+                          className="resultImg"
+                          src={linkIcon}
+                          alt=""
+                          width="40px"
+                        />
+                      </div>
+                    </div>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <div>
+                      <Link
+                        onClick={() => navigate(`/cocktailTest/mbti`)}
+                        sx={{ textDecoration: "none" }}
+                      >
+                        <div
+                          className="mbtiRestartBtn"
+                          style={{ padding: "1px" }}
+                        >
+                          다시하기
+                        </div>
+                      </Link>
+                    </div>
+                  </Grid>
+                </Grid>
+                <Grid item xs={4}></Grid>
+              </Grid>
             </Container>
           </Grid>
           <Grid item xs={3}></Grid>
