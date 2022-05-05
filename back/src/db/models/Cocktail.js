@@ -48,7 +48,13 @@ class CocktailModel {
     let result;
 
     if (search !== undefined) {
-      result = await Cocktail.find({ $text: { $search: search } }).lean();
+      result = await Cocktail.find({ $text: { $search: search } })
+                              .lean()
+                              .skip(offset > 0 ? (offset - 1) * limit : 0)
+                              .limit(20)
+                              .sort(sortDic[sort])
+                              .lean();
+                              
       if (result.length === 1) {
         return result;
       } else {

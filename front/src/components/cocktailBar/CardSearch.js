@@ -51,7 +51,7 @@ export default function CardSearch({ setWord, setCocktails, setPage }) {
   const [search, setSearch] = useState("");
   const handleOnClick = () => {
     setCocktails([]);
-    setPage(0);
+    setPage(1);
     setWord(search);
   };
 

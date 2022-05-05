@@ -11,7 +11,7 @@ function AllCard() {
   // state
   const [word, setWord] = useState("");
   const [cocktails, setCocktails] = useState([]);
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(1);
   const [load, setLoad] = useState(false);
   const [preventRef, setPreventRef] = useState(true); //중복 실행 방지
   const [endRef, setEndRef] = useState(false); //모든 글 로드 확인
@@ -42,7 +42,9 @@ function AllCard() {
   };
 
   useEffect(() => {
-    if (page !== 0) getPost();
+    if (page >= 0) {
+      getPost();
+    } 
   }, [page, word, sort]);
 
   const getPost = useCallback(async () => {
