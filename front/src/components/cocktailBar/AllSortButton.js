@@ -12,7 +12,7 @@ export default function AllSortButton({ setSort, setPage, setCocktails }) {
       sx={{
         height: 50,
         width: 150,
-        bgcolor: "rgba(64, 64, 64, 0.7)",
+        bgcolor: "rgba(64, 64, 64, 0.4)",
       }}
     >
       <FormControl fullWidth>

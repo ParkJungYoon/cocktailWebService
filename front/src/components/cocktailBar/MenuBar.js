@@ -30,7 +30,7 @@ export default function CardMenu() {
 
   //stlye
   const boxStyle = {
-    backgroundColor: "rgba(64, 64, 64, 0.5)",
+    backgroundColor: "rgba(50,50,50,0.6)",
     mx: "auto",
     mt: 5,
     py: 1,
@@ -45,10 +45,14 @@ export default function CardMenu() {
     <ThemeProvider theme={theme}>
       <TabContext value={value}>
         <Box sx={boxStyle}>
-          <TabList onChange={handleChange}>
+          <TabList onChange={handleChange} indicatorColor="transparent">
             <Tab sx={tabStyle} value={"1"} label="all" />
             <Tab sx={tabStyle} value={"2"} label="top 10" />
-            <Tab sx={tabStyle} value={"3"} label="my likes" />
+            <Tab
+              sx={{ color: "white", ml: "auto" }}
+              value={"3"}
+              label="my likes"
+            />
           </TabList>
         </Box>
         <TabPanel value={"1"}>

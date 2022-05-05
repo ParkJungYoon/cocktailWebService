@@ -44,7 +44,7 @@ function AllCard() {
   useEffect(() => {
     if (page >= 0) {
       getPost();
-    } 
+    }
   }, [page, word, sort]);
 
   const getPost = useCallback(async () => {

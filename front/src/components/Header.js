@@ -203,7 +203,7 @@ function Header({ user }) {
             value={value}
             onChange={handleChange}
             centered
-            indicatorColor="primary"
+            indicatorColor="transparent"
             textColor="inherit"
           >
             <LinkTab

@@ -32,8 +32,8 @@ const Top10CardChart = ({ cocktail }) => {
         label: "Rank",
         data: dataArr,
         fill: false,
-        borderColor: "#ea32f7",
-        backgroundColor: "#ea32f7",
+        borderColor: "#ff3897",
+        backgroundColor: "#ff3897",
       },
     ],
   };

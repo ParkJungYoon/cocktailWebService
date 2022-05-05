@@ -8,9 +8,9 @@ export default function Secondpage() {
   const navigate = useNavigate();
   return (
     <>
-      <Grid container>
+      <Grid container sx={{ pt: 5 }}>
         <Grid item xs sx={{ ml: 10 }}>
-          <Box sx={{ minWidth: "400px", maxWidth: "800px" }}>
+          <Box sx={{ minWidth: "400px", maxWidth: "600px" }}>
             <Top10Chart />
           </Box>
         </Grid>
