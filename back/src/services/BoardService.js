@@ -38,9 +38,13 @@ class BoardService {
     if (!toUpdate.content) {
       toUpdate.content = board.content;
     }
+    if (!toUpdate.images) {
+      toUpdate.images = board.images;
+    }
     const newValues = {
       title: toUpdate.title,
       content: toUpdate.content,
+      images: toUpdate.images,
     };
     const modifiedBoard = await BoardModel.modify({
       boardId,
