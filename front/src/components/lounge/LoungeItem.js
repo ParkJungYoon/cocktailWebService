@@ -111,6 +111,7 @@ function LoungeItem({ handleOpen, item, user }) {
             onClick={async () => {
               await Api.delete(`board/${item._id}`).catch((err) => {
                 console.log(err.response);
+                handleOpen();
               });
             }}
           >
