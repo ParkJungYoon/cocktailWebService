@@ -1,28 +1,26 @@
 import * as React from "react";
 import { Box, MenuItem, FormControl, Select } from "@mui/material";
 
-export default function AllSortButton({ cocktails, setCocktails }) {
+export default function LikeSortButton({ cocktails, setCocktails }) {
   // state
   const [order, setOrder] = React.useState("");
 
   // 정렬기준 함수
-  const sortCocktails = (isAsc, key) => {
-    if (isAsc && key === "name") {
+  const sortCocktails = (isAsc) => {
+    if (isAsc) {
       setOrder("이름 오름차순");
-      cocktails.sort((A, B) => {
-        return A.name < B.name ? -1 : A.name > B.name ? 1 : 0;
+      cocktails.sort((a, b) => {
+        const A = a.name.toString().toLowerCase();
+        const B = b.name.toString().toLowerCase();
+        return A < B ? -1 : A > B ? 1 : 0;
       });
       setCocktails([...cocktails]);
-    } else if (!isAsc && key === "name") {
+    } else if (!isAsc) {
       setOrder("이름 내림차순");
-      cocktails.sort((A, B) => {
-        return A.name < B.name ? 1 : A.name > B.name ? -1 : 0;
-      });
-      setCocktails([...cocktails]);
-    } else if (!isAsc && key === "like") {
-      setOrder("좋아요순");
-      cocktails.sort((A, B) => {
-        return A.likes < B.likes ? -1 : A.likes > B.likes ? 1 : 0;
+      cocktails.sort((a, b) => {
+        const A = a.name.toString().toLowerCase();
+        const B = b.name.toString().toLowerCase();
+        return A < B ? 1 : A > B ? -1 : 0;
       });
       setCocktails([...cocktails]);
     }
@@ -33,7 +31,7 @@ export default function AllSortButton({ cocktails, setCocktails }) {
       sx={{
         height: 50,
         width: 150,
-        bgcolor: "rgba(64, 64, 64, 0.7)",
+        bgcolor: "rgba(64, 64, 64, 0.4)",
       }}
     >
       <FormControl fullWidth>
@@ -47,7 +45,7 @@ export default function AllSortButton({ cocktails, setCocktails }) {
           <MenuItem
             value={"이름 오름차순"}
             onClick={() => {
-              sortCocktails(true, "name");
+              sortCocktails(true);
             }}
           >
             이름 오름차순
@@ -55,18 +53,10 @@ export default function AllSortButton({ cocktails, setCocktails }) {
           <MenuItem
             value={"이름 내림차순"}
             onClick={() => {
-              sortCocktails(false, "name");
+              sortCocktails(false);
             }}
           >
             이름 내림차순
-          </MenuItem>
-          <MenuItem
-            value={"좋아요순"}
-            onClick={() => {
-              sortCocktails(false, "like");
-            }}
-          >
-            좋아요순
           </MenuItem>
         </Select>
       </FormControl>

@@ -41,8 +41,21 @@ class LikeModel {
     return userLikeList;
   };
 
+  static getPopLike = async ({ userId, offset, limit=20 }) => {
+    const userLikeList = await Like.find({
+                              giveUserId : userId
+                            })
+                            .populate("getCocktailId")
+                            .skip(offset > 0 ? (offset - 1) * limit : 0)
+                            .limit(20);
+    return userLikeList;
+  };
+
   static getLikeOne = async ({ userId, t }) => {
-    const userLikeList = await Like.findOne({ giveUserId: userId, name: t });
+    const userLikeList = await Like.findOne({
+      giveUserId: userId,
+      getCocktailId: t,
+    });
     return userLikeList;
   };
 }

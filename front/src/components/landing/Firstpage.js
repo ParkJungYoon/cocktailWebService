@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
@@ -10,30 +10,33 @@ export default function Firstpage() {
   const navigate = useNavigate();
   return (
     <>
-      <div className="introTextWrapper">
-        <div className="introText1">
-          <p>칵테일 좋아하세요?</p>
-          <p>저쪽 손님께서 보내신 겁니다</p>
-        </div>
-        <Link
-          className="introButton"
-          underline="none"
-          onClick={() => navigate("/cocktailBar")}
-        >
-          칵테일 한 잔 하러 가기
-        </Link>
-      </div>
-      <div className="scrollDown">
-        <p>Scroll Down</p>
+      <Box
+        sx={{
+          color: "white",
+          position: "absolute",
+          zIndex: 3,
+          right: "5%",
+          top: "40%",
+        }}
+      >
+        <Typography align="right" variant="h6">
+          칵테일 좋아하세요?
+        </Typography>
+        <Typography align="right" variant="h6">
+          저쪽 손님께서 보내신 겁니다
+        </Typography>
+      </Box>
+      <Box className="scrollDown">
+        <Typography align="center">Scroll Down</Typography>
         <ArrowDownwardIcon />
         <ArrowDownwardIcon />
         <ArrowDownwardIcon />
-      </div>
-      <div className="video">
-        <video muted autoPlay data-keepplaying loop>
-          <source src={video} type="video/webm" />
-        </video>
-      </div>
+      </Box>
+      <Box className="video">
+        <Box component="video" muted autoPlay data-keepplaying loop>
+          <Box component="source" src={video} type="video/webm" />
+        </Box>
+      </Box>
     </>
   );
 }

@@ -35,7 +35,7 @@ class CommentModel {
     const deletedComment = await Comment.deleteOne({ _id: commentId });
     const pull = await Board.findOneAndUpdate(
       { _id: boardId },
-      { $pull: { comment: { _id: commentId } } }
+      { $pull: { comment: commentId } }
     );
     return deletedComment;
   }

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Link,
@@ -42,6 +42,7 @@ function LinkTab(props) {
 
 function Header({ user }) {
   const navigate = useNavigate();
+
   const { userState, userDispatch } = useContext(UserContext);
   // 전역상태에서 user가 null이 아니라면 로그인 성공 상태임.
   const isLogin = !!userState.user;
@@ -66,7 +67,7 @@ function Header({ user }) {
   const handleRegisterClose = () => setOpenRegister(false);
 
   //style
-  const linkTabstyle = { width: "120px" };
+  const linkTabstyle = { width: "130px" };
   const paperPropsStyle = {
     elevation: 0,
     sx: {
@@ -187,7 +188,13 @@ function Header({ user }) {
               setValue(false);
             }}
           >
-            <img src={logo} alt="logo" width={"120px"} />
+            <Box
+              component="img"
+              src={logo}
+              alt="logo"
+              width={"120px"}
+              sx={{ cursor: "pointer" }}
+            />
           </Link>
         </div>
 
@@ -196,7 +203,7 @@ function Header({ user }) {
             value={value}
             onChange={handleChange}
             centered
-            indicatorColor="primary"
+            indicatorColor="transparent"
             textColor="inherit"
           >
             <LinkTab

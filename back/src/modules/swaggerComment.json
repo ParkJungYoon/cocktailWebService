@@ -67,7 +67,7 @@
           }
         }
       },
-      "delete": {
+      "post": {
         "tags": ["Comment"],
         "summary": "특정 댓글 삭제 API",
         "parameters": [
@@ -82,6 +82,12 @@
             "description": "access token은 토큰 앞에 'Bearer ' 꼭 붙여서 request 해야합니다.",
             "required": true,
             "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "게시글 _id (boardId)를 넣어주세요.",
+            "boardId": "body"
           }
         ],
         "responses": {

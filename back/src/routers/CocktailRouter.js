@@ -5,6 +5,8 @@ import { type } from "express/lib/response";
 
 const CocktailRouter = Router();
 
+let globalReq = 
+
 // 로그인 전
 CocktailRouter.get("/cocktails/page/:offset", async (req, res, next) => {
   try {
@@ -41,8 +43,11 @@ CocktailRouter.get(
   verifyToken,
   async (req, res, next) => {
     try {
+
+      const offset = req.query?.offset ? req.query.offset : 0;
+
       const userId = req.user;
-      const cocktailList = await CocktailService.getLikeList({ userId });
+      const cocktailList = await CocktailService.getLikeList({ userId, offset });
       const likeList = cocktailList.filter((v) => v !== undefined);
       res.status(200).json(likeList);
     } catch (error) {

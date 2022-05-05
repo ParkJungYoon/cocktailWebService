@@ -94,10 +94,10 @@ class ImageModel {
    * @return true or false
    */
   static deleteOne = async ({ fileName }) => {
-    if (fs.existsSync(imagePath() + fileName)) {
+    if (fs.existsSync(path.join(imagePath(), fileName))) {
       // 파일이 존재한다면 true 그렇지 않은 경우 false 반환
       try {
-        fs.unlinkSync(imagePath() + fileName);
+        fs.unlinkSync(path.join(imagePath(), fileName));
       } catch (error) {
         console.log(error);
       }

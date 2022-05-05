@@ -1,39 +1,18 @@
 import * as React from "react";
 import { Box, MenuItem, FormControl, Select } from "@mui/material";
+import useUserHook from "../commons/useUserHook";
 
-export default function AllSortButton({ cocktails, setCocktails }) {
+export default function AllSortButton({ setSort, setPage, setCocktails }) {
   // state
   const [order, setOrder] = React.useState("");
-
-  // 정렬기준 함수
-  const sortCocktails = (isAsc, key) => {
-    if (isAsc && key === "name") {
-      setOrder("이름 오름차순");
-      cocktails.sort((A, B) => {
-        return A.name < B.name ? -1 : A.name > B.name ? 1 : 0;
-      });
-      setCocktails([...cocktails]);
-    } else if (!isAsc && key === "name") {
-      setOrder("이름 내림차순");
-      cocktails.sort((A, B) => {
-        return A.name < B.name ? 1 : A.name > B.name ? -1 : 0;
-      });
-      setCocktails([...cocktails]);
-    } else if (!isAsc && key === "like") {
-      setOrder("좋아요순");
-      cocktails.sort((A, B) => {
-        return A.likes < B.likes ? -1 : A.likes > B.likes ? 1 : 0;
-      });
-      setCocktails([...cocktails]);
-    }
-  };
+  const userState = useUserHook();
 
   return (
     <Box
       sx={{
         height: 50,
         width: 150,
-        bgcolor: "rgba(64, 64, 64, 0.7)",
+        bgcolor: "rgba(64, 64, 64, 0.4)",
       }}
     >
       <FormControl fullWidth>
@@ -47,7 +26,13 @@ export default function AllSortButton({ cocktails, setCocktails }) {
           <MenuItem
             value={"이름 오름차순"}
             onClick={() => {
-              sortCocktails(true, "name");
+              {
+                !userState.user && alert("로그인 후 이용해주세요.");
+              }
+              setCocktails([]);
+              setPage(0);
+              setSort("nameAsc");
+              setOrder("이름 오름차순");
             }}
           >
             이름 오름차순
@@ -55,7 +40,13 @@ export default function AllSortButton({ cocktails, setCocktails }) {
           <MenuItem
             value={"이름 내림차순"}
             onClick={() => {
-              sortCocktails(false, "name");
+              {
+                !userState.user && alert("로그인 후 이용해주세요.");
+              }
+              setCocktails([]);
+              setPage(0);
+              setSort("nameDesc");
+              setOrder("이름 내림차순");
             }}
           >
             이름 내림차순
@@ -63,7 +54,13 @@ export default function AllSortButton({ cocktails, setCocktails }) {
           <MenuItem
             value={"좋아요순"}
             onClick={() => {
-              sortCocktails(false, "like");
+              {
+                !userState.user && alert("로그인 후 이용해주세요.");
+              }
+              setCocktails([]);
+              setPage(0);
+              setSort("likeDesc");
+              setOrder("좋아요순");
             }}
           >
             좋아요순

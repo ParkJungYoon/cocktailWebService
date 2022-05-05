@@ -1,22 +1,23 @@
 import { memo, useRef, useEffect, useState, useCallback } from "react";
-import { Grid } from "@mui/material";
+import { Grid, Box, Container, Typography } from "@mui/material";
 
-import useUserHook from "../commons/useUserHook";
 import * as Api from "../../api";
-import AllCardItem from "./AllCardItem";
 import Loader from "./Loader";
+import LikeSortButton from "./LikeSortButton";
+import useUserHook from "../commons/useUserHook";
+import LikeCardItem from "./LikeCardItem";
 
 function Likes() {
   // state
   const [cocktails, setCocktails] = useState([]);
   const [page, setPage] = useState(0);
   const [load, setLoad] = useState(false);
+  const userState = useUserHook();
+
   const [preventRef, setPreventRef] = useState(true); //중복 실행 방지
   const [endRef, setEndRef] = useState(false); //모든 글 로드 확인
 
-  const userState = useUserHook();
   const obsRef = useRef(null); //observer Element
-
   // Infinite Scroll
   useEffect(() => {
     const observer = new IntersectionObserver(obsHandler, {
@@ -39,44 +40,52 @@ function Likes() {
   };
 
   useEffect(() => {
-    if (page !== 1) getPost();
+    if (page !== 0) getPost();
   }, [page]);
 
   const getPost = useCallback(async () => {
     //글 불러오기
     setLoad(true); //로딩 시작
     // ---- Get Data Code ---
-    if (userState.user) {
-      const res = await Api.get(`cocktails/likeList`);
-      if (res.data) {
-        if (res.data.end) {
-          //마지막 페이지일 경우
-          setEndRef(true);
-        }
-        setCocktails((prev) => [...prev, ...res.data]); //리스트 배열에 추가
-        setPreventRef(true);
-      } else {
-        console.log(res);
+    const res = await Api.getSearch(`cocktails/likeList?offset=${page}`);
+    if (res.data) {
+      if (res.data.end) {
+        //마지막 페이지일 경우
+        setEndRef(true);
       }
+      setCocktails((prev) => [...prev, ...res.data]);
+
+      setPreventRef(true);
+    } else {
+      console.log(res);
     }
 
     setLoad(false); //로딩 종료
   }, [page]);
+
   return (
     <>
-      <Grid container spacing={2} sx={{ px: 15 }}>
+      <Box sx={{ px: 15, pb: 3 }}>
+        <LikeSortButton cocktails={cocktails} setCocktails={setCocktails} />
+      </Box>
+      <Grid container spacing={1} sx={{ px: 15, mx: "auto" }}>
         {cocktails.map((cocktail, i) => {
           return (
-            cocktail.isLiked && (
-              <Grid key={i} item xs>
-                <AllCardItem cocktail={cocktail} />
-              </Grid>
-            )
+            <Grid key={i} item xs>
+              <LikeCardItem cocktail={cocktail} />
+            </Grid>
           );
         })}
         {load && <Loader />}
-        <div ref={obsRef}></div>
+        {!userState.user && load && (
+          <Container>
+            <Typography align="center" sx={{ color: "white", mt: 5 }}>
+              로그인이 필요한 서비스입니다.
+            </Typography>
+          </Container>
+        )}
       </Grid>
+      <div ref={obsRef}></div>
     </>
   );
 }

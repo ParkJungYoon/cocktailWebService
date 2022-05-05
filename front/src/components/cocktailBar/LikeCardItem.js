@@ -13,12 +13,12 @@ import * as Api from "../../api";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import CompareArrowsIcon from "@mui/icons-material/CompareArrows";
 
-export default function AllCardItem({ cocktail }) {
+export default function LikeCardItem({ cocktail }) {
   // state
   const [isFront, setIsFront] = useState(true);
   const [isLike, setIsLike] = useState(cocktail.isLiked);
   const [color, setColor] = useState(isLike ? "#ff3897" : "white");
-  const [likeNum, setLikeNum] = useState(cocktail.likes);
+  const [likeNum, setLikeNum] = useState(cocktail.getCocktailId.likes);
 
   // style
   const buttonStyle = {
@@ -37,7 +37,7 @@ export default function AllCardItem({ cocktail }) {
   const handleOnClickLike = async () => {
     if (!isLike) {
       try {
-        await Api.post(`like/${cocktail._id}`);
+        await Api.post(`like/${cocktail.getCocktailId._id}`);
         setLikeNum((prev) => prev + 1);
         setIsLike(true);
         setColor("#ff3897");
@@ -48,7 +48,7 @@ export default function AllCardItem({ cocktail }) {
       }
     } else {
       try {
-        await Api.delete(`like/${cocktail._id}`);
+        await Api.delete(`like/${cocktail.getCocktailId._id}`);
         setLikeNum((prev) => prev - 1);
         setIsLike(false);
         setColor("white");
@@ -63,17 +63,14 @@ export default function AllCardItem({ cocktail }) {
       <Box className={` ${isFront ? "cardFront" : "cardBack"}`}>
         <Card className="front">
           <IconButton onClick={handleOnClickLike}>
-            <FavoriteIcon
-              sx={{
-                color: color,
-              }}
-            />
+            <FavoriteIcon sx={{ color: color }} />
           </IconButton>
           {likeNum}
+
           <CardMedia
             height="180"
             component="img"
-            image={cocktail.imageUrl}
+            image={cocktail.getCocktailId.imageUrl}
             loading="lazy"
           />
           <CardContent className="cocktailContent">
@@ -95,7 +92,7 @@ export default function AllCardItem({ cocktail }) {
             >
               {cocktail.name}
             </Typography>
-            {cocktail.ingredient.map((item, i) => (
+            {cocktail.getCocktailId.ingredient.map((item, i) => (
               <Typography key={i} sx={{ fontSize: "12px" }}>
                 재료{i + 1} : {item}
               </Typography>
