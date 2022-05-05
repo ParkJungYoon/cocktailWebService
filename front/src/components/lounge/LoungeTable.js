@@ -26,7 +26,7 @@ function LoungeTable({ user, setIsForm }) {
     const res = await Api.get("boardList");
     setList(res.data);
     console.log(res.data);
-  }, []);
+  }, [isOpen]);
 
   const handleListEdit = useCallback(() => {
     setIsListEdit((prev) => !prev);

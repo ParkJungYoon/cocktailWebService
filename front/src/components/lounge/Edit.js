@@ -21,9 +21,9 @@ function Edit({ setIsEdit, boardId, commentId, prevComment, type }) {
     e.preventDefault();
     try {
       if (type === "add") {
-        setForm({ ...form, boardId: [boardId] });
         const res = await Api.post("board/comment", {
           ...form,
+          boardId: [boardId],
         });
       } else {
         const res = await Api.put(`board/comment/${commentId}`, {

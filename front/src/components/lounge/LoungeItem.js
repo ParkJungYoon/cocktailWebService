@@ -163,14 +163,14 @@ function LoungeItem({ handleOpen, item, user }) {
                         </button>
                         <button
                           onClick={async () => {
-                            await Api.delete(
-                              "board/comment",
-                              comment._id
+                            await Api.delComment(
+                              `board/comment/${comment._id}`,
+                              item._id
                             ).catch((err) => {
                               console.log(err.response);
                             });
                             await Api.get(`board/${item._id}`).then((res) => {
-                              setComments(res.data.currentBoardInfo.comment);
+                              setComments(res.data.comment);
                             });
                           }}
                         >
