@@ -8,16 +8,16 @@ export default function Secondpage() {
   const navigate = useNavigate();
   return (
     <>
-      <Grid container spacing={3}>
-        <Grid item xs sx={{ ml: 5 }}>
-          <Box sx={{ minWidth: "500px", maxWidth: "800px" }}>
+      <Grid container>
+        <Grid item xs sx={{ ml: 10 }}>
+          <Box sx={{ minWidth: "400px", maxWidth: "800px" }}>
             <Top10Chart />
           </Box>
         </Grid>
-        <Grid item xs sx={{ color: "white", ml: 5 }}>
-          <Box textAlign={"left"}>
-            <Typography variant="h4">Starts with</Typography>
-            <Typography variant="h4" sx={{ mb: 3 }}>
+        <Grid item xs sx={{ color: "white", textAlign: "right", mx: 10 }}>
+          <Box>
+            <Typography variant="h5">Starts with</Typography>
+            <Typography variant="h5" sx={{ mb: 3 }}>
               Top 10 Cocktails
             </Typography>
           </Box>
