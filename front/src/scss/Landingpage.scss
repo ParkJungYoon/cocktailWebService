@@ -1,6 +1,6 @@
 $maincolor: #151516;
 $star1: "../imgs/star1.jpg";
-$secondpage: "../imgs/gatsby.png";
+$secondpage: "../imgs/gatsby.jpg";
 $thirdpage: "../imgs/thirdpage.jpg";
 #fp-nav ul li:hover a.active span,
 #fp-nav ul li a.active span,
@@ -96,49 +96,15 @@ $thirdpage: "../imgs/thirdpage.jpg";
     background-size: cover;
     background-position: center;
     position: absolute;
+    opacity: 0.9;
   }
-  .secondpageContainer {
-    height: 100%;
-    .top10 {
-      .top10ChartWrapper {
-        margin-top: 400px;
-        margin-left: 10%;
-        .top10Chart {
-          position: relative;
-          width: 70%;
-        }
-      }
-      .top10TextWrapper {
-        position: absolute;
-        z-index: 3;
-        display: flex;
-        flex-direction: column;
-        top: 30%;
-        right: 5vw;
-        text-align: right;
-        .top10Text {
-          color: white;
-          font-size: 30px;
-          font-weight: bold;
-        }
-        .buttonBox {
-          text-align: center;
-          margin-top: 30px;
-          .top10Button {
-            position: absolute;
-            bottom: -50%;
-            right: 1.5vw;
-            font-size: 2vw;
-            color: #f1f7ed;
-            border: 2px solid #f1f7ed;
-            padding: 10px 20px;
-            cursor: pointer;
-            &:hover {
-              box-shadow: 0 0 15px rgb(0, 0, 0 /15%);
-            }
-          }
-        }
-      }
+  .top10Button {
+    color: #f1f7ed;
+    border: 2px solid #f1f7ed;
+    padding: 10px 20px;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0 0 15px rgb(0, 0, 0 /15%);
     }
   }
 }
@@ -148,49 +114,8 @@ $thirdpage: "../imgs/thirdpage.jpg";
   background-image: url($star1);
   background-size: cover;
 }
-.thirdpageContainer {
-  // background-color: black;
-  width: 80vw;
-  height: 70vh;
-  margin: 150px auto auto auto;
-  border-radius: 20px;
-  .dictionary {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    &::before {
-      content: "";
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      // background-image: url($thirdpage);
-      background-color: white; //(test-ing)
-      background-size: cover;
-      opacity: 0.4; //(test-int) 0.7 -> 0.4
-      position: absolute;
-      border-radius: 20px;
-    }
-    .textWrapper {
-      margin: auto 25vw;
-      .dictionaryText {
-        position: relative;
-        color: white;
-      }
-    }
-    .buttonBox {
-      text-align: center;
-      .dictionaryButton {
-        background: linear-gradient(to right, lightpink, rgb(211, 98, 211));
-        color: white;
-        font-size: 1vw;
-        font-weight: bold;
-        margin-top: 50px;
-        cursor: pointer;
-        &:hover {
-          box-shadow: 0 0 15px rgb(0, 0, 0 /15%);
-        }
-      }
-    }
-  }
+// fourthpage
+.fourthPage {
+  background-image: url($star1);
+  background-size: cover;
 }

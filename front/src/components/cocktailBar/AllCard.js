@@ -3,17 +3,20 @@ import { Grid, Box } from "@mui/material";
 
 import useUserHook from "../commons/useUserHook";
 import * as Api from "../../api";
+import CardSearch from "./CardSearch";
 import AllCardItem from "./AllCardItem";
 import Loader from "./Loader";
-
+import AllSortButton from "./AllSortButton";
 function AllCard() {
   // state
+  const [word, setWord] = useState("");
   const [cocktails, setCocktails] = useState([]);
   const [page, setPage] = useState(0);
   const [load, setLoad] = useState(false);
   const [preventRef, setPreventRef] = useState(true); //중복 실행 방지
   const [endRef, setEndRef] = useState(false); //모든 글 로드 확인
 
+  const [sort, setSort] = useState("nameAsc");
   const obsRef = useRef(null); //observer Element
   const userState = useUserHook();
 
@@ -40,7 +43,7 @@ function AllCard() {
 
   useEffect(() => {
     if (page !== 0) getPost();
-  }, [page]);
+  }, [page, word, sort]);
 
   const getPost = useCallback(async () => {
     //글 불러오기
@@ -63,7 +66,7 @@ function AllCard() {
     } else {
       // 로그인 했을 때
       const res = await Api.getSearch(
-        `cocktails/user?offset=${page}&search&sort=nameDesc`
+        `cocktails/user?offset=${page}&search=${word}&sort=${sort}`
       );
       if (res.data) {
         if (res.data.end) {
@@ -78,11 +81,27 @@ function AllCard() {
       }
     }
     setLoad(false); //로딩 종료
-  }, [page]);
+  }, [page, word, sort]);
 
   return (
     <>
-      <Grid container spacing={1} sx={{ pt: 3 }}>
+      <Grid container sx={{ px: 15 }}>
+        <Grid item xs>
+          <AllSortButton
+            setSort={setSort}
+            setPage={setPage}
+            setCocktails={setCocktails}
+          />
+        </Grid>
+        <Grid item xs>
+          <CardSearch
+            setWord={setWord}
+            setCocktails={setCocktails}
+            setPage={setPage}
+          />
+        </Grid>
+      </Grid>
+      <Grid container spacing={1} sx={{ pt: 3, px: 15, mx: "auto" }}>
         {cocktails.map((cocktail, i) => {
           return (
             <Grid key={i} item xs>

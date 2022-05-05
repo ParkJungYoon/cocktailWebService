@@ -5,7 +5,7 @@ import "../scss/Landingpage.scss";
 import Firstpage from "../components/landing/Firstpage";
 import Secondpage from "../components/landing/Secondpage";
 import Thirdpage from "../components/landing/Thirdpage";
-
+import Fourthpage from "../components/landing/Fourthpage";
 export default function Landing() {
   return (
     <>
@@ -25,6 +25,9 @@ export default function Landing() {
               </div>
               <div className="section thirdPage">
                 <Thirdpage />
+              </div>
+              <div className="section fourthPage">
+                <Fourthpage />
               </div>
             </ReactFullpage.Wrapper>
           );

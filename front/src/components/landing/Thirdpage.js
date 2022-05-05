@@ -1,22 +1,105 @@
+import React from "react";
+import { Typography, Grid, Link, Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { Box, Grid } from "@mui/material";
-import WordCloud from "../test/WordCloud";
 
-export default function Thirdpage() {
+import left from "../../imgs/left.png";
+import right from "../../imgs/right.png";
+
+export default function Secondpage() {
   const navigate = useNavigate();
+
+  // style
+  const containerStyle = {
+    bgcolor: "rgba(64,64,64,0.6)",
+    width: "80%",
+
+    height: "60%",
+    mx: "auto",
+    mt: "10%",
+    px: 3,
+    borderRadius: "15px",
+    alignItems: "center",
+  };
+  const buttonStyle = {
+    position: "relative",
+    color: "white",
+    border: "2px solid white",
+    py: 1,
+    px: 3,
+    cursor: "pointer",
+    zIndex: 10,
+    "&:hover": { boxShadow: "0 0 15px rgb(0, 0, 0)" },
+  };
   return (
-    <div className="thirdpageContainer">
-      <Grid
-        container
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItem: "center",
-        }}
-      >
-        <WordCloud sx={{ marginTop: "60" }} />
-        <Box className="buttonBox"></Box>
+    <>
+      <Grid container sx={containerStyle}>
+        <Grid
+          item
+          xs={12}
+          sx={{
+            color: "white",
+            ml: 10,
+            mt: 2,
+          }}
+        >
+          <Typography variant="h4">Test your cocktail</Typography>
+
+          <Typography variant="h4" sx={{ mb: 3 }}>
+            knowledge
+          </Typography>
+          <Link
+            underline="none"
+            className="top10Button"
+            onClick={() => {
+              navigate("/cocktailTest/quiz");
+            }}
+            sx={buttonStyle}
+          >
+            Explore
+          </Link>
+        </Grid>
+        <Box
+          component="img"
+          src={left}
+          alt="left"
+          sx={{
+            position: "absolute",
+            width: "50vw",
+            height: "700px",
+            right: 0,
+            top: 60,
+          }}
+        />
+        <Grid item xs={12} sx={{ color: "white", textAlign: "right", mr: 10 }}>
+          <Box
+            component="img"
+            src={right}
+            alt="right"
+            sx={{
+              position: "absolute",
+              width: "50vw",
+              height: "700px",
+              left: 0,
+              bottom: -130,
+            }}
+          />
+          <Typography variant="h4">How about</Typography>
+          <Typography variant="h4">MBTI Cocktail</Typography>
+          <Typography variant="h4" sx={{ mb: 3 }}>
+            Test
+          </Typography>
+          <Link
+            underline="none"
+            className="top10Button"
+            onClick={() => {
+              navigate("/cocktailTest/mbti");
+            }}
+            sx={buttonStyle}
+          >
+            Explore
+          </Link>
+        </Grid>
       </Grid>
-    </div>
+    </>
   );
 }

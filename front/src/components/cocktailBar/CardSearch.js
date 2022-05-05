@@ -11,7 +11,7 @@ const Search = styled("div")(({ theme }) => ({
   color: "white",
   marginLeft: "auto",
   marginRight: "50px",
-  width: "250px",
+  width: "200px",
   height: "50px",
 }));
 
@@ -19,6 +19,7 @@ const SearchButton = styled("button")(({ theme }) => ({
   position: "absolute",
   borderRadius: theme.shape.borderRadius,
   backgroundColor: "rgba(64, 64, 64, 0.7)",
+  marginLeft: "5px",
   color: "white",
   width: "50px",
   height: "50px",
@@ -46,15 +47,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function CardSearch({
-  word,
-  setWord,
-  searchMode,
-  setSearchMode,
-}) {
+export default function CardSearch({ setWord, setCocktails, setPage }) {
   const [search, setSearch] = useState("");
   const handleOnClick = () => {
-    setSearchMode(true);
+    setCocktails([]);
+    setPage(0);
     setWord(search);
   };
 
