@@ -16,11 +16,16 @@ function LoungeTable({ user, setIsForm }) {
   const [list, setList] = useState([]);
   const [openItem, setOpenItem] = useState();
   const [isOpen, setIsOpen] = useState(false);
+  const [isListEdit, setIsListEdit] = useState(false);
 
   useEffect(async () => {
     const res = await Api.get("boardList");
     setList(res.data);
   }, []);
+
+  const handleListEdit = useCallback(() => {
+    setIsListEdit((prev) => !prev);
+  }, [isListEdit]);
 
   const handleOpen = useCallback(() => {
     setIsOpen((prev) => !prev);
@@ -50,7 +55,6 @@ function LoungeTable({ user, setIsForm }) {
                 <TableCell align="right">Title</TableCell>
                 <TableCell align="right">Comment</TableCell>
                 <TableCell align="right">Date</TableCell>
-                <TableCell align="right">EditCheck</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -69,7 +73,6 @@ function LoungeTable({ user, setIsForm }) {
                   <TableCell align="right">{item.title}</TableCell>
                   <TableCell align="right">{item.comment.length}</TableCell>
                   <TableCell align="right">{item.createdAt}</TableCell>
-                  <TableCell align="right">{}</TableCell>
                 </TableRow>
               ))}
             </TableBody>

@@ -96,6 +96,22 @@ function LoungeItem({ handleOpen, item, user }) {
       >
         goBack
       </button>
+      {!(item.writer?._id === user?._id) ? (
+        <></>
+      ) : (
+        <>
+          {/* <button onClick={}>edit</button> */}
+          <button
+            onClick={async () => {
+              await Api.delete(`board/${item._id}`).catch((err) => {
+                console.log(err.response);
+              });
+            }}
+          >
+            delete
+          </button>
+        </>
+      )}
       <Paper>
         {/* <img src={link} alt="이미지" /> */}
         <p>Title : {title}</p>
@@ -124,7 +140,11 @@ function LoungeItem({ handleOpen, item, user }) {
                     {!(comment.writer?._id === user?._id) ? (
                       <></>
                     ) : isEdit ? (
-                      <Edit setIsEdit={handleEdit} />
+                      <Edit
+                        setIsEdit={handleEdit}
+                        boardId={item._id}
+                        type={"edit"}
+                      />
                     ) : (
                       <>
                         <button
@@ -158,7 +178,7 @@ function LoungeItem({ handleOpen, item, user }) {
           </TableBody>
         </Table>
         {isAdd ? (
-          <Edit boardId={item._id} setIsEdit={setIsAdd} />
+          <Edit boardId={item._id} setIsEdit={setIsAdd} type={"add"} />
         ) : (
           <button
             onClick={() => {
