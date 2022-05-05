@@ -6,7 +6,7 @@ import IntroductionMenu from "../components/introduction/IntroductionMenu";
 function Introduction() {
   return (
     <div className="Introduction">
-      <Grid container sx={{ mt: 25 }}>
+      <Grid container sx={{ mt: 17 }}>
         <Grid item xs={12}>
           <IntroductionMenu />
         </Grid>

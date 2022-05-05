@@ -8,7 +8,7 @@ class BoardModel {
   };
 
   static boardList = async () => {
-    const boardList = await Board.find().populate("writer");
+    const boardList = await Board.find().populate("writer").lean();
     return boardList;
   };
 
@@ -18,6 +18,7 @@ class BoardModel {
   };
 
   static findBoard = async ({ boardId }) => {
+
     const board = await Board.findOne({ _id: boardId })
       .populate({
         path: "comment",
@@ -31,17 +32,17 @@ class BoardModel {
   };
 
   static userBordList = async ({ userId }) => {
-    const boardList = await Board.find({ writer: userId });
+    const boardList = await Board.find({ writer: userId }).lean();
     return boardList;
   };
 
   static updateUserBoard = async ({ userId }) => {
-    let board = await this.userBordList({ userId });
+    let board = await this.userBordList({ userId }).lean();
     if (board) {
       board = await Board.updateMany(
         { writer: userId },
         { $set: { writer: null } }
-      );
+      ).lean();
       return board;
     } else {
       return;
@@ -52,12 +53,12 @@ class BoardModel {
     const filter = { _id: boardId };
     const update = { $set: newValues };
     const option = { returnOriginal: false };
-    const modifiedBoard = await Board.findOneAndUpdate(filter, update, option);
+    const modifiedBoard = await Board.findOneAndUpdate(filter, update, option).lean();
     return modifiedBoard;
   };
 
   static delete = async ({ boardId }) => {
-    const deleteBoard = await Board.findByIdAndDelete({ _id: boardId });
+    const deleteBoard = await Board.findByIdAndDelete({ _id: boardId }).lean();
     await Comment.deleteMany({ boardId });
     return deleteBoard;
   };

@@ -15,6 +15,12 @@ const verifyToken = async (req, res, next) => {
       const token = req.headers["authorization"].split(" ")[1];
       const decoded = jwt.verify(token, JWT_KEY);
       req.user = decoded.userId;
+      
+      let route = req.route.path;
+      if (route.split("/")[1] == 'board') {
+        req.boardId = req.params?.id;
+      }
+      
       next();
     }
   } catch (error) {

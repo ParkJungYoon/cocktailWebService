@@ -3,7 +3,8 @@ import path from "path";
 import multer from "multer";
 import { v4 as uuidv4 } from "uuid";
 import fs from "fs";
-import { db } from "..";
+import { db, BoardModel } from "../index";
+
 
 const imagePath = () => {
   return path.resolve(__dirname, "../", "../", "../", "images");
@@ -22,8 +23,23 @@ const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, imagePath());
   },
-  filename: function (req, file, cb) {
+  filename: async function (req, file, cb) {
     if (file.originalname !== null) {
+
+      try {
+        if (req.boardId !== undefined && req.boardId !== null) {
+          const boardId = String(req.boardId);
+          
+          const board = await BoardModel.findBoard({ boardId });
+          
+          if (String(board.writer._id) !== req.user || board == null) {
+            return cb(new Error('작성자가 아닙니다. 수정 할 수 없습니다.'))
+          }
+        }
+      } catch {
+        return cb(new Error('게시판 아이디가 올바르지 않습니다.'))
+      }
+      
       var ext = path.extname(file.originalname).replace('.', '');
     
       if(!['png', 'jpg', 'jpeg', 'gif'].includes(ext)) {
@@ -39,13 +55,13 @@ const storage = multer.diskStorage({
         owner: req.user,
         type: path.extname(file.originalname),
       };
-  
+
       ImageModel.uploadOne({ image });
       req = imageNamePush(req, fileName);
       cb(null, fileName);
     }
     else {
-      return;
+      return cb(new Error('파일 이름이 없습니다.'))
     }
   },
 });

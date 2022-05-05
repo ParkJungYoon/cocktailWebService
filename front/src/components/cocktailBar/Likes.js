@@ -1,12 +1,12 @@
 import { memo, useRef, useEffect, useState, useCallback } from "react";
-import { Grid, Box } from "@mui/material";
+import { Grid } from "@mui/material";
 
 import useUserHook from "../commons/useUserHook";
 import * as Api from "../../api";
 import AllCardItem from "./AllCardItem";
 import Loader from "./Loader";
 
-function AllCard() {
+function Likes() {
   // state
   const [cocktails, setCocktails] = useState([]);
   const [page, setPage] = useState(0);
@@ -14,8 +14,8 @@ function AllCard() {
   const [preventRef, setPreventRef] = useState(true); //중복 실행 방지
   const [endRef, setEndRef] = useState(false); //모든 글 로드 확인
 
-  const obsRef = useRef(null); //observer Element
   const userState = useUserHook();
+  const obsRef = useRef(null); //observer Element
 
   // Infinite Scroll
   useEffect(() => {
@@ -39,55 +39,39 @@ function AllCard() {
   };
 
   useEffect(() => {
-    if (page !== 0) getPost();
+    if (page !== 1) getPost();
   }, [page]);
 
   const getPost = useCallback(async () => {
     //글 불러오기
     setLoad(true); //로딩 시작
     // ---- Get Data Code ---
-    if (!userState.user) {
-      // 로그인 안 했을 때
-      const res = await Api.get(`cocktails/page/${page}`);
+    if (userState.user) {
+      const res = await Api.get(`cocktails/likeList`);
       if (res.data) {
         if (res.data.end) {
           //마지막 페이지일 경우
           setEndRef(true);
         }
         setCocktails((prev) => [...prev, ...res.data]); //리스트 배열에 추가
-
-        setPreventRef(true);
-      } else {
-        console.log(res);
-      }
-    } else {
-      // 로그인 했을 때
-      const res = await Api.getSearch(
-        `cocktails/user?offset=${page}&search&sort=nameDesc`
-      );
-      if (res.data) {
-        if (res.data.end) {
-          //마지막 페이지일 경우
-          setEndRef(true);
-        }
-        setCocktails((prev) => [...prev, ...res.data]);
-
         setPreventRef(true);
       } else {
         console.log(res);
       }
     }
+
     setLoad(false); //로딩 종료
   }, [page]);
-
   return (
     <>
-      <Grid container spacing={1} sx={{ pt: 3 }}>
+      <Grid container spacing={2} sx={{ px: 15 }}>
         {cocktails.map((cocktail, i) => {
           return (
-            <Grid key={i} item xs>
-              <AllCardItem cocktail={cocktail} />
-            </Grid>
+            cocktail.isLiked && (
+              <Grid key={i} item xs>
+                <AllCardItem cocktail={cocktail} />
+              </Grid>
+            )
           );
         })}
         {load && <Loader />}
@@ -97,4 +81,4 @@ function AllCard() {
   );
 }
 
-export default memo(AllCard);
+export default memo(Likes);

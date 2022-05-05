@@ -8,9 +8,9 @@ $star1: "../imgs/star1.jpg";
 }
 
 .cardFront {
-  width: 270px;
-  height: 350px;
-  transition: 0.3s;
+  width: 240px;
+  height: 300px;
+  transition: 0.5s;
   transform-style: preserve-3d;
   transform: perspective(500px);
   .cocktailContent {
@@ -38,9 +38,9 @@ $star1: "../imgs/star1.jpg";
 }
 
 .cardBack {
-  width: 270px;
-  height: 350px;
-  transition: 0.3s;
+  width: 240px;
+  height: 300px;
+  transition: 0.5s;
   transform-style: preserve-3d;
   transform: perspective(500px);
   transform: rotateY(180deg);
