@@ -56,7 +56,7 @@ export default function CardSearch({ setWord, setCocktails, setPage }) {
       !userState.user && alert("로그인 후 이용해주세요.");
     }
     setCocktails([]);
-    setPage(0);
+    setPage(1);
     setWord(search);
   };
 
