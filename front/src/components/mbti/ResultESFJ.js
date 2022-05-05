@@ -33,8 +33,7 @@ function ResultESFJ() {
               pb={3}
               mb={2}
               sx={{
-                border: "3px solid gray",
-                backgroundColor: "rgba(64, 64, 64, 0.7)",
+                backgroundColor: "rgba(31, 31, 31, 0.7)",
               }}
             >
               <Grid item xs={1.5}></Grid>
