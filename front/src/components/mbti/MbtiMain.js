@@ -1,7 +1,7 @@
 /* eslint no-restricted-globals: ["off"] */
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Box, Grid, LinearProgress, Link } from "@mui/material";
+import { Box, Container, Grid, LinearProgress, Link } from "@mui/material";
 import * as Api from "../../api";
 import "../../scss/Mbti.scss";
 
@@ -28,30 +28,45 @@ function MbtiMain() {
   const [ox, setOx] = useState("");
 
   const questionStyle = {
-    height: "300px",
-    display: "center",
+    display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    mt: 3,
+    mx: 10,
+    px: 5,
     color: "white",
-    fontSize: "30px",
-    backgroundColor: "rgba(0, 0, 0, 0.7)",
+    fontSize: "3vw",
+    backgroundColor: "rgba(0, 0, 0, 0.6)",
+    height: "40%",
   };
 
   const mbtiImgOne = {
     backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(${mbtiImg1})`,
     backgroundSize: "cover",
+    backgroundPosition: "center",
+    mt: 3,
+    height: "60vh",
   };
   const mbtiImgTwo = {
     backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(${mbtiImg2})`,
     backgroundSize: "cover",
+    backgroundPosition: "center",
+    mt: 3,
+    height: "60vh",
   };
   const mbtiImgThree = {
     backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(${mbtiImg3})`,
     backgroundSize: "cover",
+    backgroundPosition: "center",
+    mt: 3,
+    height: "60vh",
   };
   const mbtiImgFour = {
     backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(${mbtiImg4})`,
     backgroundSize: "cover",
+    backgroundPosition: "center",
+    mt: 3,
+    height: "60vh",
   };
 
   // the method that checks the correct answer
@@ -89,128 +104,68 @@ function MbtiMain() {
       {step <= Object.keys(state.questions).length ? (
         <>
           {step <= 4 ? (
-            <Box mt={3} height="700px" sx={mbtiImgOne}>
-              <Grid container>
-                <Grid item xs={2}></Grid>
-                <Grid item xs={8} mt={4} sx={questionStyle}>
-                  <div className="Question">
+            <Grid container sx={mbtiImgOne}>
+              <Grid item xs={12} sx={questionStyle}>
+                <MbtiQuestion question={state.questions[step]} />
+              </Grid>
+              <Grid item xs sx={{ mx: "auto" }}>
+                <MbtiAnswer
+                  answer={state.answers[step]}
+                  step={step}
+                  checkAnswer={checkAnswer}
+                  clickedAnswer={clickedAnswer}
+                />
+              </Grid>
+            </Grid>
+          ) : (
+            <>
+              {/* 5~8 step background image change */}
+              {step >= 5 && step <= 8 ? (
+                <Grid container sx={mbtiImgTwo}>
+                  <Grid item xs={12} sx={questionStyle}>
                     <MbtiQuestion question={state.questions[step]} />
-                  </div>
-                </Grid>
-                <Grid item xs={2}></Grid>
-                {/* btn */}
-                <Grid item xs={12}>
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
+                  </Grid>
+                  <Grid item xs sx={{ mx: "auto" }}>
                     <MbtiAnswer
                       answer={state.answers[step]}
                       step={step}
                       checkAnswer={checkAnswer}
                       clickedAnswer={clickedAnswer}
                     />
-                  </div>
+                  </Grid>
                 </Grid>
-              </Grid>
-            </Box>
-          ) : (
-            <>
-              {/* 5~8 step background image change */}
-              {step >= 5 && step <= 8 ? (
-                <Box mt={3} height="700px" sx={mbtiImgTwo}>
-                  <Grid container>
-                    <Grid item xs={2}></Grid>
-                    <Grid item xs={8} mt={4} sx={questionStyle}>
-                      <div className="Question">
+              ) : (
+                <>
+                  {/* 9~11 step background image change */}
+                  {step >= 9 && step <= 11 ? (
+                    <Grid container sx={mbtiImgThree}>
+                      <Grid item xs={12} sx={questionStyle}>
                         <MbtiQuestion question={state.questions[step]} />
-                      </div>
-                    </Grid>
-                    <Grid item xs={2}></Grid>
-                    {/* btn */}
-                    <Grid item xs={12}>
-                      <div
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                        }}
-                      >
+                      </Grid>
+                      <Grid item xs sx={{ mx: "auto" }}>
                         <MbtiAnswer
                           answer={state.answers[step]}
                           step={step}
                           checkAnswer={checkAnswer}
                           clickedAnswer={clickedAnswer}
                         />
-                      </div>
-                    </Grid>
-                  </Grid>
-                </Box>
-              ) : (
-                <>
-                  {/* 9~11 step background image change */}
-                  {step >= 9 && step <= 11 ? (
-                    <Box mt={3} height="700px" sx={mbtiImgThree}>
-                      <Grid container>
-                        <Grid item xs={2}></Grid>
-                        <Grid item xs={8} mt={4} sx={questionStyle}>
-                          <div className="Question">
-                            <MbtiQuestion question={state.questions[step]} />
-                          </div>
-                        </Grid>
-                        <Grid item xs={2}></Grid>
-                        {/* btn */}
-                        <Grid item xs={12}>
-                          <div
-                            style={{
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                            }}
-                          >
-                            <MbtiAnswer
-                              answer={state.answers[step]}
-                              step={step}
-                              checkAnswer={checkAnswer}
-                              clickedAnswer={clickedAnswer}
-                            />
-                          </div>
-                        </Grid>
                       </Grid>
-                    </Box>
+                    </Grid>
                   ) : (
                     // {/* 12~15 step background image change */}
-                    <Box mt={3} height="700px" sx={mbtiImgFour}>
-                      <Grid container>
-                        <Grid item xs={2}></Grid>
-                        <Grid item xs={8} mt={4} sx={questionStyle}>
-                          <div className="Question">
-                            <MbtiQuestion question={state.questions[step]} />
-                          </div>
-                        </Grid>
-                        <Grid item xs={2}></Grid>
-                        {/* btn */}
-                        <Grid item xs={12}>
-                          <div
-                            style={{
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                            }}
-                          >
-                            <MbtiAnswer
-                              answer={state.answers[step]}
-                              step={step}
-                              checkAnswer={checkAnswer}
-                              clickedAnswer={clickedAnswer}
-                            />
-                          </div>
-                        </Grid>
+                    <Grid container sx={mbtiImgFour}>
+                      <Grid item xs={12} sx={questionStyle}>
+                        <MbtiQuestion question={state.questions[step]} />
                       </Grid>
-                    </Box>
+                      <Grid item xs sx={{ mx: "auto" }}>
+                        <MbtiAnswer
+                          answer={state.answers[step]}
+                          step={step}
+                          checkAnswer={checkAnswer}
+                          clickedAnswer={clickedAnswer}
+                        />
+                      </Grid>
+                    </Grid>
                   )}
                 </>
               )}
@@ -219,24 +174,15 @@ function MbtiMain() {
         </>
       ) : (
         // result part
-        <Grid item xs={12} height="720px">
-          <Grid container>
-            <Grid item xs={3}></Grid>
-            <Grid item xs={6} mt={5}>
-              {/* 결과 출력 */}
-              <div>
-                <TypeCheck
-                  countEI={countEI}
-                  countSN={countSN}
-                  countTF={countTF}
-                  countJP={countJP}
-                ></TypeCheck>
-              </div>
-              <Grid mb={10}></Grid>
-            </Grid>
-            <Grid item xs={3}></Grid>
-          </Grid>
-        </Grid>
+        <>
+          {/* 결과 출력 */}
+          <TypeCheck
+            countEI={countEI}
+            countSN={countSN}
+            countTF={countTF}
+            countJP={countJP}
+          />
+        </>
       )}
     </>
   );

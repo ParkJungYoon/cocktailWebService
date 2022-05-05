@@ -92,16 +92,16 @@ const state = {
     10: "3",
   },
   imgs: {
-    1: " ",
+    1: "",
     2: StandardShaker,
-    3: " ",
-    4: " ",
+    3: "",
+    4: "",
     5: martini,
     6: jigger,
-    7: " ",
+    7: "",
     8: mojito,
-    9: " ",
-    10: " ",
+    9: "",
+    10: "",
   },
 };
 export default state;

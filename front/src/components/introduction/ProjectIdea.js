@@ -5,12 +5,10 @@ import PrologueContents from "./ProjectIdeaContents";
 function ProjectIdea() {
   return (
     <>
-      <Grid container>
-        <Grid item xs={2} md={2}></Grid>
+      <Grid container sx={{ width: "70vw", mx: "auto" }}>
         <Grid
           item
-          xs={8}
-          md={8}
+          xs
           sx={{
             backgroundColor: "rgba(128, 128, 128, 0.2)",
             padding: "2rem",
@@ -19,7 +17,6 @@ function ProjectIdea() {
         >
           <PrologueContents></PrologueContents>
         </Grid>
-        <Grid item xs={2} md={2}></Grid>
       </Grid>
     </>
   );

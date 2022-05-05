@@ -3,22 +3,20 @@ $star1: "../imgs/star1.jpg";
 .mbti {
   background-image: url($star1);
   background-size: cover;
-  background-color: rgba(64, 64, 64, 0.7);
+  background-position: center;
   height: 100vh;
   overflow: auto;
 }
-.btn {
-  cursor: pointer;
-}
+
 .btn:hover {
   background-color: rgba(128, 128, 128, 0.5);
 }
 
 .mbtiResultInfoText {
-    text-align: center;
-    color: white;
-    font-size: 30px;
-  .mbtiResultInfoBtn{
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  .mbtiResultInfoBtn {
     text-align: center;
     color: white;
     font-size: 30px;
@@ -73,7 +71,7 @@ $star1: "../imgs/star1.jpg";
     text-align: center;
     color: white;
     font-size: 30px;
-    margin-Top: 20px;
+    margin-top: 20px;
     line-height: 1.8;
   }
 
@@ -108,10 +106,9 @@ $star1: "../imgs/star1.jpg";
     font-size: 30px;
     padding: 1px;
   }
-  
+
   .mbtiRestartBtn:hover {
     cursor: pointer;
-    color: #a300d9;
+    color: #ff3897;
   }
-
 }
