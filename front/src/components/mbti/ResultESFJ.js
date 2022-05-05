@@ -27,7 +27,7 @@ function ResultESFJ() {
       <Box sx={{ mt: 25, mb: 10 }}>
         <Grid container>
           <Grid item xs={3} height="720px"></Grid>
-          <Grid item xs={6} mt={5}>
+          <Grid item xs={6} mt={2}>
             <Grid
               container
               pb={3}
@@ -149,7 +149,7 @@ function ResultESFJ() {
                       }}
                     >
                       <div
-                        className="mbtiRestartBtn"
+                        className="mbtiLinkShareBtn"
                         onClick={() => CopyUrlToClipboard()}
                       >
                         <img

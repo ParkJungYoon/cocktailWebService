@@ -19,9 +19,9 @@ function CopyUrlToClipboard() {
   alert("결과 주소가 복사되었습니다. \n주소를 공유해 보세요!");
 }
 
-function ResultISTJ() {
+function ResultENTJ() {
   const navigate = useNavigate();
-  const typeName = "ISTJ";
+  const typeName = "ENTJ";
   return (
     <div className="mbtiResultPage">
       <Box sx={{ mt: 25, mb: 10 }}>
@@ -187,4 +187,4 @@ function ResultISTJ() {
     </div>
   );
 }
-export default ResultISTJ;
+export default ResultENTJ;
