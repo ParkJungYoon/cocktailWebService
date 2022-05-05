@@ -67,7 +67,7 @@ function Header({ user }) {
   const handleRegisterClose = () => setOpenRegister(false);
 
   //style
-  const linkTabstyle = { width: "120px" };
+  const linkTabstyle = { width: "130px" };
   const paperPropsStyle = {
     elevation: 0,
     sx: {
@@ -188,7 +188,13 @@ function Header({ user }) {
               setValue(false);
             }}
           >
-            <img src={logo} alt="logo" width={"120px"} />
+            <Box
+              component="img"
+              src={logo}
+              alt="logo"
+              width={"120px"}
+              sx={{ cursor: "pointer" }}
+            />
           </Link>
         </div>
 

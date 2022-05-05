@@ -2,20 +2,16 @@ import React from "react";
 import { Typography, Grid, Link, Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-export default function Secondpage() {
+import bar from "../../imgs/bar.jpg";
+import test from "../../imgs/test.jpg";
+
+export default function Thirdpage() {
   const navigate = useNavigate();
 
   // style
   const containerStyle = {
-    bgcolor: "rgba(64,64,64,0.6)",
-    width: "80%",
-
-    height: "60%",
-    mx: "auto",
-    mt: "10%",
-    px: 3,
-    borderRadius: "15px",
-    alignItems: "center",
+    width: "100vw",
+    height: "100vh",
   };
   const buttonStyle = {
     position: "relative",
@@ -32,17 +28,20 @@ export default function Secondpage() {
       <Grid container sx={containerStyle}>
         <Grid
           item
-          xs={12}
+          xs={6}
           sx={{
+            height: "100vh",
             color: "white",
-            ml: 10,
-            mt: 2,
+            backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(${test})`,
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            pt: "40%",
+            textAlign: "center",
           }}
         >
-          <Typography variant="h4">Test your cocktail</Typography>
-
+          <Typography variant="h4">MBTI TEST</Typography>
           <Typography variant="h4" sx={{ mb: 3 }}>
-            knowledge
+            Quiz 해보실..?
           </Typography>
           <Link
             underline="none"
@@ -56,12 +55,25 @@ export default function Secondpage() {
           </Link>
         </Grid>
 
-        <Grid item xs={12} sx={{ color: "white", textAlign: "right", mr: 10 }}>
-          <Typography variant="h4">How about</Typography>
-          <Typography variant="h4">MBTI Cocktail</Typography>
+        <Grid
+          item
+          xs={6}
+          sx={{
+            height: "100vh",
+            color: "white",
+
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            pt: "40%",
+            textAlign: "center",
+            backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(${bar})`,
+          }}
+        >
+          <Typography variant="h4">바에서 직접 다른 손님에게</Typography>
           <Typography variant="h4" sx={{ mb: 3 }}>
-            Test
+            칵테일을 주세요 ^^
           </Typography>
+
           <Link
             underline="none"
             className="top10Button"

@@ -35,8 +35,8 @@ $thirdpage: "../imgs/thirdpage.jpg";
 .scrollDown {
   position: absolute;
   z-index: 3;
-  bottom: 5%;
-  left: 50%;
+  right: 7%;
+  top: 55%;
   color: white;
   animation: bounce 0.5s infinite alternate;
   transform: translateX(-50%);
@@ -46,36 +46,6 @@ $thirdpage: "../imgs/thirdpage.jpg";
     }
     to {
       transform: translateY(-15px);
-    }
-  }
-}
-.introTextWrapper {
-  position: absolute;
-  z-index: 3;
-  display: flex;
-  flex-direction: column;
-  top: 30%;
-  right: 5vw;
-  text-align: right;
-  p {
-    padding: 0.5vw;
-    color: #f1f7ed;
-  }
-  .introText1 {
-    font-size: 20px;
-    font-weight: bold;
-  }
-  .introButton {
-    position: absolute;
-    bottom: -50%;
-    right: 1.5vw;
-    font-size: 1vw;
-    color: #f1f7ed;
-    border: 2px solid #f1f7ed;
-    padding: 10px 20px;
-    cursor: pointer;
-    &:hover {
-      box-shadow: 0 0 15px rgb(0, 0, 0 /15%);
     }
   }
 }
@@ -97,8 +67,7 @@ $thirdpage: "../imgs/thirdpage.jpg";
 
 // thirdpage
 .thirdPage {
-  background-image: url($star1);
-  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 // fourthpage
 .fourthPage {
