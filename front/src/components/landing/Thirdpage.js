@@ -2,9 +2,6 @@ import React from "react";
 import { Typography, Grid, Link, Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-import left from "../../imgs/left.png";
-import right from "../../imgs/right.png";
-
 export default function Secondpage() {
   const navigate = useNavigate();
 
@@ -58,31 +55,8 @@ export default function Secondpage() {
             Explore
           </Link>
         </Grid>
-        <Box
-          component="img"
-          src={left}
-          alt="left"
-          sx={{
-            position: "absolute",
-            width: "50vw",
-            height: "700px",
-            right: 0,
-            top: 60,
-          }}
-        />
+
         <Grid item xs={12} sx={{ color: "white", textAlign: "right", mr: 10 }}>
-          <Box
-            component="img"
-            src={right}
-            alt="right"
-            sx={{
-              position: "absolute",
-              width: "50vw",
-              height: "700px",
-              left: 0,
-              bottom: -130,
-            }}
-          />
           <Typography variant="h4">How about</Typography>
           <Typography variant="h4">MBTI Cocktail</Typography>
           <Typography variant="h4" sx={{ mb: 3 }}>

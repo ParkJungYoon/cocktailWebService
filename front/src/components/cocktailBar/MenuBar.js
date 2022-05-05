@@ -48,7 +48,7 @@ export default function CardMenu() {
           <TabList onChange={handleChange}>
             <Tab sx={tabStyle} value={"1"} label="all" />
             <Tab sx={tabStyle} value={"2"} label="top 10" />
-            <Tab sx={tabStyle} value={"3"} label="likes" />
+            <Tab sx={tabStyle} value={"3"} label="my likes" />
           </TabList>
         </Box>
         <TabPanel value={"1"}>

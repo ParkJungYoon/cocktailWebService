@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { styled } from "@mui/material/styles";
 import SearchIcon from "@mui/icons-material/Search";
 import { InputBase } from "@mui/material";
+import useUserHook from "../commons/useUserHook";
 
 // style
 const Search = styled("div")(({ theme }) => ({
@@ -49,7 +50,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function CardSearch({ setWord, setCocktails, setPage }) {
   const [search, setSearch] = useState("");
+  const userState = useUserHook();
   const handleOnClick = () => {
+    {
+      !userState.user && alert("로그인 후 이용해주세요.");
+    }
     setCocktails([]);
     setPage(0);
     setWord(search);

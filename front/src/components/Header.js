@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Link,
@@ -42,6 +42,7 @@ function LinkTab(props) {
 
 function Header({ user }) {
   const navigate = useNavigate();
+
   const { userState, userDispatch } = useContext(UserContext);
   // 전역상태에서 user가 null이 아니라면 로그인 성공 상태임.
   const isLogin = !!userState.user;
