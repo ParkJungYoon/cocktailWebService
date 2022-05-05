@@ -67,7 +67,7 @@
           }
         }
       },
-      "delete": {
+      "post": {
         "tags": ["Comment"],
         "summary": "특정 댓글 삭제 API",
         "parameters": [

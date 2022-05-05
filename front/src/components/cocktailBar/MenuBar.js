@@ -5,10 +5,8 @@ import { TabContext, TabPanel, TabList } from "@mui/lab";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 import Top10Card from "./Top10Card";
-import Search from "./Search";
 import AllCard from "./AllCard";
 import Likes from "./Likes";
-import CardSearch from "./CardSearch";
 
 const theme = createTheme({
   palette: {
@@ -19,8 +17,6 @@ const theme = createTheme({
 });
 
 export default function CardMenu() {
-  const [searchMode, setSearchMode] = useState(false);
-  const [word, setWord] = useState("");
   // 필터기능
   const navigate = useNavigate();
 
@@ -50,31 +46,17 @@ export default function CardMenu() {
       <TabContext value={value}>
         <Box sx={boxStyle}>
           <TabList onChange={handleChange}>
-            <Tab
-              onClick={() => setSearchMode(false)}
-              sx={tabStyle}
-              value={"1"}
-              label="all"
-            />
+            <Tab sx={tabStyle} value={"1"} label="all" />
             <Tab sx={tabStyle} value={"2"} label="top 10" />
             <Tab sx={tabStyle} value={"3"} label="likes" />
           </TabList>
         </Box>
-
         <TabPanel value={"1"}>
-          <CardSearch
-            word={word}
-            setWord={setWord}
-            searchMode={searchMode}
-            setSearchMode={setSearchMode}
-          />
-          {searchMode ? <Search word={word} /> : <AllCard />}
+          <AllCard />
         </TabPanel>
-
         <TabPanel value={"2"}>
           <Top10Card />
         </TabPanel>
-
         <TabPanel value={"3"}>
           <Likes />
         </TabPanel>

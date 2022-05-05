@@ -16,7 +16,7 @@ class CocktailService {
     });
     return Promise.all(
       cocktailUserList.map(async (v, i) => {
-        const cocktailName = v.name;
+        const cocktailName = v._id;
         const result = await LikeModel.getLikeOne({ userId, t: cocktailName });
 
         if (result !== null) {
@@ -51,7 +51,7 @@ class CocktailService {
 
     return Promise.all(
       findAllCocktail.map(async (v) => {
-        const cocktailName = v.name;
+        const cocktailName = v._id;
         const result = await LikeModel.getLikeOne({ userId, t: cocktailName });
         if (result !== null) {
           return { ...v, isLiked: true };

@@ -1,32 +1,9 @@
 import * as React from "react";
 import { Box, MenuItem, FormControl, Select } from "@mui/material";
 
-export default function AllSortButton({ cocktails, setCocktails }) {
+export default function AllSortButton({ setSort, setPage, setCocktails }) {
   // state
   const [order, setOrder] = React.useState("");
-
-  // 정렬기준 함수
-  const sortCocktails = (isAsc, key) => {
-    if (isAsc && key === "name") {
-      setOrder("이름 오름차순");
-      cocktails.sort((A, B) => {
-        return A.name < B.name ? -1 : A.name > B.name ? 1 : 0;
-      });
-      setCocktails([...cocktails]);
-    } else if (!isAsc && key === "name") {
-      setOrder("이름 내림차순");
-      cocktails.sort((A, B) => {
-        return A.name < B.name ? 1 : A.name > B.name ? -1 : 0;
-      });
-      setCocktails([...cocktails]);
-    } else if (!isAsc && key === "like") {
-      setOrder("좋아요순");
-      cocktails.sort((A, B) => {
-        return A.likes < B.likes ? -1 : A.likes > B.likes ? 1 : 0;
-      });
-      setCocktails([...cocktails]);
-    }
-  };
 
   return (
     <Box
@@ -47,7 +24,10 @@ export default function AllSortButton({ cocktails, setCocktails }) {
           <MenuItem
             value={"이름 오름차순"}
             onClick={() => {
-              sortCocktails(true, "name");
+              setCocktails([]);
+              setPage(0);
+              setSort("nameAsc");
+              setOrder("이름 오름차순");
             }}
           >
             이름 오름차순
@@ -55,7 +35,10 @@ export default function AllSortButton({ cocktails, setCocktails }) {
           <MenuItem
             value={"이름 내림차순"}
             onClick={() => {
-              sortCocktails(false, "name");
+              setCocktails([]);
+              setPage(0);
+              setSort("nameDesc");
+              setOrder("이름 내림차순");
             }}
           >
             이름 내림차순
@@ -63,7 +46,10 @@ export default function AllSortButton({ cocktails, setCocktails }) {
           <MenuItem
             value={"좋아요순"}
             onClick={() => {
-              sortCocktails(false, "like");
+              setCocktails([]);
+              setPage(0);
+              setSort("likeDesc");
+              setOrder("좋아요순");
             }}
           >
             좋아요순

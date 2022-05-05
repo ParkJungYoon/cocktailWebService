@@ -42,7 +42,10 @@ class LikeModel {
   };
 
   static getLikeOne = async ({ userId, t }) => {
-    const userLikeList = await Like.findOne({ giveUserId: userId, name: t });
+    const userLikeList = await Like.findOne({
+      giveUserId: userId,
+      getCocktailId: t,
+    });
     return userLikeList;
   };
 }

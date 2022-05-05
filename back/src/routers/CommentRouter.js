@@ -45,7 +45,7 @@ CommentRouter.put("/board/comment/:id", verifyToken, async (req, res, next) => {
 });
 
 // 댓글 삭제
-CommentRouter.delete(
+CommentRouter.post(
   "/board/comment/:id",
   verifyToken,
   async (req, res, next) => {

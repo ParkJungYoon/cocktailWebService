@@ -25,9 +25,8 @@ export default function Top10Card() {
       <Grid container color="white">
         <Box
           sx={{
-            ml: "auto",
             px: 15,
-            mb: 4,
+            pb: 3,
           }}
         >
           <Top10SortButton

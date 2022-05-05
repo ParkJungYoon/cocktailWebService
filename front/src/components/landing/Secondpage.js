@@ -8,26 +8,35 @@ export default function Secondpage() {
   const navigate = useNavigate();
   return (
     <>
-      <div className="secondpageContainer">
-        <Grid container>
-          <Grid item xs sx={{ zIndex: 1 }}>
-            <Top10Chart />
-          </Grid>
-          <Grid item xs sx={{ zIndex: 1 }}>
+      <Grid container sx={{ bgcolor: "rgb(64,64,64,0.7)" }}>
+        <Grid item xs={12} sx={{ zIndex: 1, color: "white", mt: 30, mr: 5 }}>
+          <Box textAlign={"right"}>
             <Typography variant="h4">Starts with</Typography>
-            <Typography variant="h4">Top 10 Cocktails</Typography>
+            <Typography variant="h4" sx={{ mb: 5 }}>
+              Top 10 Cocktails
+            </Typography>
             <Link
-              className="top10Button"
               underline="none"
+              className="top10Button"
               onClick={() => {
                 navigate("/cocktailBar");
               }}
             >
               Explore
             </Link>
-          </Grid>
+          </Box>
         </Grid>
-      </div>
+        <Grid item xs sx={{ zIndex: 1, mt: 8 }}>
+          <Box
+            sx={{
+              maxWidth: "700px",
+              mx: "auto",
+            }}
+          >
+            <Top10Chart />
+          </Box>
+        </Grid>
+      </Grid>
     </>
   );
 }
