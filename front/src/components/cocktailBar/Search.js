@@ -6,7 +6,7 @@ import * as Api from "../../api";
 import AllCardItem from "./AllCardItem";
 import Loader from "./Loader";
 
-function AllCard() {
+function Search({ word }) {
   // state
   const [cocktails, setCocktails] = useState([]);
   const [page, setPage] = useState(0);
@@ -40,7 +40,7 @@ function AllCard() {
 
   useEffect(() => {
     if (page !== 0) getPost();
-  }, [page]);
+  }, [page, word]);
 
   const getPost = useCallback(async () => {
     //글 불러오기
@@ -63,14 +63,15 @@ function AllCard() {
     } else {
       // 로그인 했을 때
       const res = await Api.getSearch(
-        `cocktails/user?offset=${page}&search&sort=nameDesc`
+        `cocktails/user?offset=${page}&search=${word}`
       );
       if (res.data) {
         if (res.data.end) {
           //마지막 페이지일 경우
           setEndRef(true);
         }
-        setCocktails((prev) => [...prev, ...res.data]);
+
+        setCocktails(res.data);
 
         setPreventRef(true);
       } else {
@@ -78,7 +79,7 @@ function AllCard() {
       }
     }
     setLoad(false); //로딩 종료
-  }, [page]);
+  }, [page, word]);
 
   return (
     <>
@@ -97,4 +98,4 @@ function AllCard() {
   );
 }
 
-export default memo(AllCard);
+export default memo(Search);

@@ -5,32 +5,21 @@ import sytles from "../../scss/Lounge.module.scss";
 import LoungeTable from "./LoungeTable";
 import * as Api from "../../api";
 
-function LoungeLists({ userState }) {
+function LoungeList({ user }) {
   const [isForm, setIsForm] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-  if (userState) {
-    const [name, email] = userState;
-  }
+  // if (user) {
+  //   const [name, email] = user;
+  // }
 
   return (
     <>
       {isForm ? (
         <LoungeForm setIsForm={setIsForm} />
       ) : (
-        <>
-          <button
-            onClick={() => {
-              if (userState === false) alert("로그인 필요");
-              else setIsForm(true);
-            }}
-          >
-            Create
-          </button>
-          <LoungeTable />
-        </>
+        <LoungeTable user={user} setIsForm={setIsForm} />
       )}
     </>
   );
 }
 
-export default LoungeLists;
+export default LoungeList;

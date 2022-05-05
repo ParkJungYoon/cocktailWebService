@@ -27,15 +27,23 @@
         "parameters": [
           {
             "in": "query",
-            "name": "offset",
+            "name": "search",
             "schema": {
-              "type": "integer"
+              "type": "string"
             },
-            "description": "offset"
+            "description": "string"
           },
           {
             "in": "query",
-            "name": "search",
+            "name": "sort",
+            "schema": {
+              "type": "string"
+            },
+            "description": "string"
+          },
+          {
+            "in": "query",
+            "name": "offset",
             "schema": {
               "type": "string"
             },
@@ -217,6 +225,29 @@
       "get": {
         "tags": ["Cocktail"],
         "summary": "칵테일 이름 + 좋아요 수 조회",
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Bad Request"
+          }
+        }
+      }
+    },
+    "/cocktails/likeList": {
+      "get": {
+        "tags": ["Cocktail"],
+        "summary": "유저가 좋아요한 칵테일 리스트 조회",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "JWT access token",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "responses": {
           "201": {
             "description": "OK"

@@ -12,25 +12,22 @@ const BoardRouter = Router();
 BoardRouter.post(
   "/board",
   verifyToken,
-  upload.array("img"),
+  upload.array("img", 2),
   async (req, res, next) => {
     try {
       const writer = req.user;
       const { title, content } = req.body;
-      const images = req.images;
-      if (images) {
-        if (images.length > 2) {
-          throw new Error("이미지 업로드 개수를 초과했습니다.");
-        }
-      }
-      // const getImage = await ImageModel.getImg({ fileNameList: images });
+      const images = req?.images;
+
+      const getImage = await ImageModel.getImg({ fileNameList: images });
+
       const newBoard = await BoardService.create({
         writer,
         title,
         content,
         images,
       });
-      res.status(200).json({ newBoard });
+      res.status(200).json({ ...newBoard._doc, data: getImage });
     } catch (error) {
       next(error);
     }
@@ -48,7 +45,7 @@ BoardRouter.get("/board/:id", async (req, res, next) => {
     const getImage = await ImageModel.getImg({
       fileNameList: currentBoardInfo.images,
     });
-    res.status(200).json({ currentBoardInfo, getImage });
+    res.status(200).json({ ...currentBoardInfo, data: getImage });
   } catch (error) {
     next(error);
   }
@@ -65,24 +62,35 @@ BoardRouter.get("/boardList", async (req, res, next) => {
 });
 
 // 게시글 수정 (image 수정 구현 전)
-BoardRouter.put("/board/:id", verifyToken, async (req, res, next) => {
-  try {
-    const writer = req.user;
-    const title = req.body.title ?? null;
-    const boardId = req.params.id;
-    const content = req.body.content ?? null;
-    const toUpdate = { title, content };
+BoardRouter.put(
+  "/board/:id",
+  verifyToken,
+  upload.array("img", 2),
+  async (req, res, next) => {
+    try {
+      const writer = req.user;
+      const title = req.body.title ?? null;
+      const boardId = req.params.id;
+      const content = req.body.content ?? null;
 
-    const modifiedBoard = await BoardService.modify({
-      writer,
-      boardId,
-      toUpdate,
-    });
-    res.status(200).json(modifiedBoard);
-  } catch (error) {
-    next(error);
+      const images = req?.images;
+
+      const toUpdate = { title, content, images };
+
+      const modifiedBoard = await BoardService.modify({
+        writer,
+        boardId,
+        toUpdate,
+      });
+
+      const getImage = await ImageModel.getImg({ fileNameList: images });
+
+      res.status(200).json({ ...modifiedBoard, data: getImage });
+    } catch (error) {
+      next(error);
+    }
   }
-});
+);
 
 // 게시글 삭제
 BoardRouter.delete("/board/:id", verifyToken, async (req, res, next) => {
