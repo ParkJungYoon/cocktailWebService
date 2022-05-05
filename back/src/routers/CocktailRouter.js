@@ -42,9 +42,12 @@ CocktailRouter.get(
   async (req, res, next) => {
     try {
       const userId = req.user;
+      // const offset = req.params.offset == null ? 0 : req.params.offset;
       const cocktailList = await CocktailService.getLikeList({ userId });
-      const likeList = cocktailList.filter((v) => v !== undefined);
-      res.status(200).json(likeList);
+      // const likeList = cocktailList.filter((v) => v !== undefined);
+      const likeList = cocktailList.map((v) => (v.isliked = true));
+
+      res.status(200).json(cocktailList);
     } catch (error) {
       next(error);
     }
