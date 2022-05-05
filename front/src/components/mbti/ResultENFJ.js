@@ -19,9 +19,9 @@ function CopyUrlToClipboard() {
   alert("결과 주소가 복사되었습니다. \n주소를 공유해 보세요!");
 }
 
-function ResultISFP() {
+function ResultENFJ() {
   const navigate = useNavigate();
-  const typeName = "ISFP";
+  const typeName = "ENFJ";
   return (
     <div className="mbtiResultPage">
       <Box sx={{ mt: 25, mb: 10 }}>
@@ -39,9 +39,12 @@ function ResultISFP() {
               <Grid item xs={1.5}></Grid>
               <Grid item xs={9} mb={3}>
                 <div>
-                  <p className="mbtiResultTitle">당신은 {typeName}</p>
+                  {/* <p className="mbtiResultTitle">당신은 {typeName}</p> */}
+                  <br />
                   <p className="mbtiResultRecommend">
-                    추천 칵테일은{" "}
+                    당신과 어울리는 칵테일은...
+                    <br />
+                    <br />
                     <span style={{ color: "#a300d9" }}>
                       {checkState.types[typeName]}
                     </span>
@@ -131,4 +134,4 @@ function ResultISFP() {
     </div>
   );
 }
-export default ResultISFP;
+export default ResultENFJ;
