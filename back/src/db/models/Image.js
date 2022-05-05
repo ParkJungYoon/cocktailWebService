@@ -5,7 +5,6 @@ import { v4 as uuidv4 } from "uuid";
 import fs from "fs";
 import { db, BoardModel } from "../index";
 
-
 const imagePath = () => {
   return path.resolve(__dirname, "../", "../", "../", "images");
 };
@@ -25,30 +24,29 @@ const storage = multer.diskStorage({
   },
   filename: async function (req, file, cb) {
     if (file.originalname !== null) {
-
       try {
         if (req.boardId !== undefined && req.boardId !== null) {
           const boardId = String(req.boardId);
-          
+
           const board = await BoardModel.findBoard({ boardId });
-          
+
           if (String(board.writer._id) !== req.user || board == null) {
-            return cb(new Error('작성자가 아닙니다. 수정 할 수 없습니다.'))
+            return cb(new Error("작성자가 아닙니다. 수정 할 수 없습니다."));
           }
         }
       } catch {
-        return cb(new Error('게시판 아이디가 올바르지 않습니다.'))
+        return cb(new Error("게시판 아이디가 올바르지 않습니다."));
       }
-      
-      var ext = path.extname(file.originalname).replace('.', '');
-    
-      if(!['png', 'jpg', 'jpeg', 'gif'].includes(ext)) {
-        return cb(new Error('Only images are allowed'))
+
+      var ext = path.extname(file.originalname).replace(".", "");
+
+      if (!["png", "jpg", "jpeg", "gif"].includes(ext)) {
+        return cb(new Error("이미지 형식이 올바르지 않습니다."));
       }
-  
+
       const fileName =
         new Date().valueOf() + "_" + uuidv4() + "_" + file.originalname;
-  
+
       const image = {
         fileName: fileName,
         imageUrl: path.join(imagePath(), fileName),
@@ -56,12 +54,12 @@ const storage = multer.diskStorage({
         type: path.extname(file.originalname),
       };
 
-      ImageModel.uploadOne({ image });
       req = imageNamePush(req, fileName);
+      ImageModel.uploadOne({ image });
+
       cb(null, fileName);
-    }
-    else {
-      return cb(new Error('파일 이름이 없습니다.'))
+    } else {
+      return cb(new Error("파일 이름이 없습니다."));
     }
   },
 });
@@ -96,12 +94,33 @@ class ImageModel {
    * @return true or false
    */
   static deleteOne = async ({ fileName }) => {
-    const result = Image.deleteOne({ fileName: fileName });
+    if (fs.existsSync(path.join(imagePath(), fileName))) {
+      // 파일이 존재한다면 true 그렇지 않은 경우 false 반환
+      try {
+        fs.unlinkSync(path.join(imagePath(), fileName));
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    const result = await Image.deleteOne({ fileName: fileName });
 
     if (result.deletedCount > 0) {
       return true;
     }
     return false; //삭제된 이미지가 없으면
+  };
+
+  static deleteArray = async ({ fileNameList }) => {
+    if (!fileNameList) {
+      return false;
+    }
+
+    for (let i = 0; i < fileNameList.length; i++) {
+      await this.deleteOne({ fileName: fileNameList[i] });
+    }
+
+    return true;
   };
 
   /**
@@ -129,7 +148,7 @@ class ImageModel {
    * @param {프론트 => Response} res
    * @return image => {type:.jpg, data:~~~~}
    */
-   static getImgFileOne = async ({ fileName }) => {
+  static getImgFileOne = async ({ fileName }) => {
     const image = await Image.findOne({ fileName });
 
     if (image == null) {
@@ -145,6 +164,10 @@ class ImageModel {
    * @return images => [ {type:.jpg, data:~~~~}, {...} ]
    */
   static getImg = async ({ fileNameList }) => {
+    if (fileNameList == undefined || fileNameList == null) {
+      return [];
+    }
+
     let imgList = [];
 
     for (let i = 0; i < fileNameList.length; i++) {

@@ -1,4 +1,4 @@
-import { BoardModel } from "../db";
+import { BoardModel, ImageModel } from "../db";
 
 class BoardService {
   static create = async ({ writer, title, content, images }) => {
@@ -38,9 +38,16 @@ class BoardService {
     if (!toUpdate.content) {
       toUpdate.content = board.content;
     }
+    const images = board.images;
+    if (!toUpdate.images) {
+      toUpdate.images = images;
+    } else {
+      await ImageModel.deleteArray({ fileNameList: images });
+    }
     const newValues = {
       title: toUpdate.title,
       content: toUpdate.content,
+      images: toUpdate.images,
     };
     const modifiedBoard = await BoardModel.modify({
       boardId,
@@ -52,7 +59,6 @@ class BoardService {
 
   static delete = async ({ writer, boardId }) => {
     const board = await BoardModel.findBoard({ boardId });
-    console.log(board);
     if (!board) {
       const errorMessage = "삭제할 게시판이 없습니다.";
       return { errorMessage };
@@ -62,6 +68,8 @@ class BoardService {
       return { errorMessage };
     }
     const deletedBoard = await BoardModel.delete({ boardId });
+    const images = board.images;
+    await ImageModel.deleteArray({ fileNameList: images });
     return deletedBoard;
   };
 }
