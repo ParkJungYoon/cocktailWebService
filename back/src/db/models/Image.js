@@ -24,6 +24,7 @@ const storage = multer.diskStorage({
     cb(null, imagePath());
   },
   filename: async function (req, file, cb) {
+    
     if (file.originalname !== null) {
 
       try {
@@ -43,7 +44,7 @@ const storage = multer.diskStorage({
       var ext = path.extname(file.originalname).replace('.', '');
     
       if(!['png', 'jpg', 'jpeg', 'gif'].includes(ext)) {
-        return cb(new Error('Only images are allowed'))
+        return cb(new Error('이미지 형식이 올바르지 않습니다.'))
       }
   
       const fileName =
@@ -56,13 +57,15 @@ const storage = multer.diskStorage({
         type: path.extname(file.originalname),
       };
 
-      ImageModel.uploadOne({ image });
       req = imageNamePush(req, fileName);
+      ImageModel.uploadOne({ image });
+
       cb(null, fileName);
     }
     else {
       return cb(new Error('파일 이름이 없습니다.'))
     }
+    
   },
 });
 
@@ -145,6 +148,11 @@ class ImageModel {
    * @return images => [ {type:.jpg, data:~~~~}, {...} ]
    */
   static getImg = async ({ fileNameList }) => {
+
+    if (fileNameList == undefined || fileNameList == null) {
+      return []
+    }
+    
     let imgList = [];
 
     for (let i = 0; i < fileNameList.length; i++) {

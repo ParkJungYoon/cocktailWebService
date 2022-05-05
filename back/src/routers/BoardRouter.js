@@ -12,17 +12,13 @@ const BoardRouter = Router();
 BoardRouter.post(
   "/board",
   verifyToken,
-  upload.array("img"),
+  upload.array("img", 2),
   async (req, res, next) => {
     try {
       const writer = req.user;
       const { title, content } = req.body;
       const images = req?.images;
-      if (images) {
-        if (images.length > 2) {
-          throw new Error("이미지 업로드 개수를 초과했습니다.");
-        }
-      }
+
       const getImage = await ImageModel.getImg({ fileNameList: images });
 
       const newBoard = await BoardService.create({
@@ -66,7 +62,7 @@ BoardRouter.get("/boardList", async (req, res, next) => {
 });
 
 // 게시글 수정 (image 수정 구현 전)
-BoardRouter.put("/board/:id", verifyToken, upload.array("img"), async (req, res, next) => {
+BoardRouter.put("/board/:id", verifyToken, upload.array("img", 2), async (req, res, next) => {
   try {
     const writer = req.user;
     const title = req.body.title ?? null;
