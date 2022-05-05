@@ -1,6 +1,6 @@
 $star1: "../imgs/star1.jpg";
 
-.Introduction {
+.introduction {
   background-image: url($star1);
   background-size: cover;
   background-color: rgba(64, 64, 64, 0.7);
@@ -16,7 +16,7 @@ $star1: "../imgs/star1.jpg";
   background-color: rgb(122, 10, 183);
 }
 
-.ProjectIdeaContents {
+.projectIdeaContents {
   color: white;
 
   h1 {
@@ -28,11 +28,14 @@ $star1: "../imgs/star1.jpg";
         font-size: 30px;
       }
   
-      .text {
+      .textCenter {
+        font-size: 20px;
+        text-align: center;
+      }
+      .textLeft {
         font-size: 20px;
         text-align: left;
       }
-  
       .chart {
         font-size: 15px;
       }

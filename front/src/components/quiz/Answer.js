@@ -14,7 +14,7 @@ const Answer = (props) => {
 
   return (
     <>
-      <ul className="Answers">{answers}</ul>
+      <ul className="answers">{answers}</ul>
     </>
   );
 };

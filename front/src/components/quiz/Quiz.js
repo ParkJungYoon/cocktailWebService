@@ -21,7 +21,7 @@ function Quiz() {
             textAlign: "center",
           }}
         >
-          <Grid item xs={12} md={12} mt={22}></Grid>
+          <Grid item xs={12} mt={22}></Grid>
           <QuizMain></QuizMain>
         </Grid>
       </Box>
