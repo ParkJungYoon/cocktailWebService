@@ -61,8 +61,8 @@ class CocktailService {
     //     }
     //   })
     // );
-  };
-
+  }
+  
   static getCocktailRank10List = async () => {
     const cocktailList = await CocktailModel.getRank10Cocktail();
     return cocktailList;
