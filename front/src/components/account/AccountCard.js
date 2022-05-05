@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Grid, Typography, Button, Container } from "@mui/material";
 import Edit from "./Edit";
@@ -14,10 +14,26 @@ function AccountCard(props) {
   const [isNameEdit, setIsNameEdit] = useState(false);
   const navigate = useNavigate();
   const { userDispatch } = useContext(UserContext);
+  const [boardCount, setBoardCount] = useState();
+  const [commentCount, setCommentCount] = useState();
+  const [likeCount, setLikeCount] = useState();
+
+  useEffect(async () => {
+    await Api.get("user/count")
+      .then((res) => {
+        setBoardCount(res.data.boardCount);
+        setCommentCount(res.data.commentCount);
+        setLikeCount(res.data.likeCount);
+      })
+      .catch((err) => {
+        console.log(err.response);
+      });
+  });
 
   const buttonStyle = {
     color: "white",
   };
+  console.log(likeCount, boardCount, commentCount);
 
   const userDelete = async (e) => {
     if (window.confirm("Are you sure?")) {
@@ -106,6 +122,25 @@ function AccountCard(props) {
             </Grid>
           </>
         )}
+        <Grid item xs={12} sx={{ borderBottom: "2px solid white" }}></Grid>
+        <>
+          <Grid item xs sx={{ mb: 2, tesxAlign: "center" }}>
+            <Typography variant="h5" style={{ textAlign: "center" }}>
+              Like
+            </Typography>
+            <p style={{ textAlign: "center" }}>{likeCount}</p>
+          </Grid>
+          <Grid item xs sx={{ textAlign: "center" }}>
+            <Typography variant="h5">Lounge Board</Typography>
+            <p style={{ textAlign: "center" }}>{boardCount}</p>
+          </Grid>
+          <Grid item xs sx={{ textAlign: "right" }}>
+            <Typography variant="h5" style={{ textAlign: "center" }}>
+              Comments
+            </Typography>
+            <p style={{ textAlign: "center" }}>{commentCount}</p>
+          </Grid>
+        </>
         <Grid item xs={12} sx={{ borderBottom: "2px solid white" }}></Grid>
         <Button
           sx={buttonStyle}
