@@ -23,7 +23,7 @@ import "../scss/Header.scss";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#ffffff",
+      main: "rgba(0,0,0,0)",
     },
   },
 });
@@ -203,7 +203,7 @@ function Header({ user }) {
             value={value}
             onChange={handleChange}
             centered
-            indicatorColor="transparent"
+            indicatorColor="primary"
             textColor="inherit"
           >
             <LinkTab

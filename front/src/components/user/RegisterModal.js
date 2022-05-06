@@ -94,7 +94,7 @@ function RegisterModal({ open, handleRegisterClose }) {
               <br /> 보내신 겁니다
             </DialogContentText>
             <DialogContentText align="center" sx={{ color: "#6EC860" }}>
-              처음이신가요?
+              처음이신가요? 이쪽으로 안내해드릴게요.
             </DialogContentText>
             <TextField
               required
