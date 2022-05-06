@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Button, Grid, Container, Link, Typography } from "@mui/material";
+import { Button, Grid, Container, Box, Link, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import mbitResultSetPage from "../../imgs/mbitResultSetPage.jpg";
 
 const TypeCheck = ({ countEI, countSN, countTF, countJP }) => {
   const navigate = useNavigate();
@@ -18,37 +19,54 @@ const TypeCheck = ({ countEI, countSN, countTF, countJP }) => {
     return mbti;
   };
 
+  const mbitResultSetPageImg = {
+    backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(${mbitResultSetPage})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    // mt: 3,
+    height: "100%",
+  };
+
   return (
     <>
-      <Grid
-        container
-        sx={{
-          bgcolor: "rgba(64,64,64,0.6)",
-          width: "100vw",
-          height: "60%",
-          alignItems: "center",
-        }}
-      >
-        <Grid item xs={12} sx={{ color: "white", textAlign: "center" }}>
-          <Typography variant="h4">테스트 문항을 완료하셨습니다.</Typography>
-          <Typography variant="h4">버튼을 눌러 결과를 확인하세요.</Typography>
-
-          <Link
-            onClick={() => navigate(`/cocktailTest/mbti/${onClickButton()}`)}
-            sx={{ textDecoration: "none" }}
+      <Grid container sx={mbitResultSetPageImg}>
+        <Container
+          container
+          sx={{
+            bgcolor: "rgba(64,64,64,0.6)",
+            width: "80%",
+            height: "100vh",
+            alignItems: "center",
+          }}
+        >
+          <Grid
+            item
+            xs={12}
+            // pt={50}
+            sx={{ paddingTop: "40vh", color: "white", textAlign: "center" }}
           >
-            <Button
-              sx={{
-                color: "white",
-                mt: 3,
-                fontSize: "2vw",
-                "&:hover": { color: "#ff3897" },
-              }}
+            {/* <Box pt={4} pb={4} sx={{}}> */}
+            <Link
+              onClick={() => navigate(`/cocktailTest/mbti/${onClickButton()}`)}
+              sx={{ textDecoration: "none" }}
             >
-              결과보기
-            </Button>
-          </Link>
-        </Grid>
+              <Button
+                sx={{
+                  margin: "auto",
+                  height: "15vh",
+                  width: "25vw",
+                  border: "3px solid white",
+                  color: "white",
+                  fontSize: "1.5vw",
+                  "&:hover": { color: "#ff3897" },
+                }}
+              >
+                테스트 결과 확인
+              </Button>
+            </Link>
+            {/* </Box> */}
+          </Grid>
+        </Container>
       </Grid>
     </>
   );

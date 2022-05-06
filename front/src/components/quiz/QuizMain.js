@@ -33,15 +33,8 @@ function QuizMain(props) {
     borderRadius: "5px",
   };
   const progress = {
-    // py: 5,
     px: "7%",
-    // mx: 5,
-    // // mb: 5,
     mt: 15,
-    // borderRadius: "1rem",
-    // backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${bgImg})`,
-    // backgroundSize: "cover",
-    // backgroundPosition: "center",
   };
   const result = {
     px: 5,
@@ -59,9 +52,8 @@ function QuizMain(props) {
   };
   const percentStyle = {
     color: "white",
-    textAlign: "center",
-    paddingLeft: "5px",
-    paddingRight: "5px",
+    textAlign: "left",
+    paddingLeft: "15px",
     fontWeight: "bold",
     fontSize: "20px",
   };
