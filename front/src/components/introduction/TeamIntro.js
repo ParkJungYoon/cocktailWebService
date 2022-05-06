@@ -6,43 +6,30 @@ import JackPot from "../../imgs/JackPot.gif";
 
 const TeamCard = ({ data }) => {
   return (
-    <Grid container sx={{ px: 5 }}>
-      {data.isLeft && (
-        <Grid item xs>
-          <Box
-            component="img"
-            src={UserDefaultImg}
-            alt=""
-            width="80%"
-            // height="80%"
-          />
-        </Grid>
-      )}
+    <Grid container sx={{ px: 5, mb: 3 }} spacing={2}>
+      <Grid item xs sx={{ my: "auto" }}>
+        <Box
+          component="img"
+          src={data.image}
+          alt=""
+          width="25vw"
+          minWidth="250px"
+        />
+      </Grid>
       <Grid
         item
         xs
-        sx={{ my: "auto", bgcolor: "rgba(0,0,0,0.5)", p: 3, textAlign: "left" }}
+        sx={{ m: "auto", bgcolor: "rgba(0,0,0,0.5)", p: 3, textAlign: "left" }}
       >
         <Box sx={{ color: "white" }}>
-          <Typography variant="h5">이름 : {data.name}</Typography>
-          <Typography variant="h5">
+          <Typography variant="h6">이름 : {data.name}</Typography>
+          <Typography variant="h6">
             좋아하는 칵테일 : {data.cocktail}
           </Typography>
-          <Typography variant="h5">소감 :</Typography>
+          <Typography variant="h6">소감 :</Typography>
           <Typography variant="body1">{data.impression}</Typography>
         </Box>
       </Grid>
-      {!data.isLeft && (
-        <Grid item xs>
-          <Box
-            component="img"
-            src={UserDefaultImg}
-            alt=""
-            width="80%"
-            // height="80%"
-          />
-        </Grid>
-      )}
     </Grid>
   );
 };
@@ -52,37 +39,37 @@ const team7 = [
     name: "김동현",
     impression: "소감~~~~~~~",
     cocktail: "Martini",
-    isLeft: true,
+    image: UserDefaultImg,
   },
   {
     name: "김상민",
     impression: "소감~~~~~~~",
     cocktail: "Martini",
-    isLeft: false,
+    image: UserDefaultImg,
   },
   {
     name: "김승주",
     impression: "소감~~~~~~~",
     cocktail: "Martini",
-    isLeft: true,
+    image: UserDefaultImg,
   },
   {
     name: "박정윤",
     impression: "소감~~~~~~~",
-    isLeft: false,
     cocktail: "Martini",
+    image: UserDefaultImg,
   },
   {
     name: "백진영",
     impression: "소감~~~~~~~",
     cocktail: "Martini",
-    isLeft: true,
+    image: UserDefaultImg,
   },
   {
     name: "송연석",
     impression: "소감~~~~~~~",
-    isLeft: false,
     cocktail: "Martini",
+    image: UserDefaultImg,
   },
 ];
 

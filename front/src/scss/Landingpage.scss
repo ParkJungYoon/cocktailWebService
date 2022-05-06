@@ -54,6 +54,7 @@ $thirdpage: "../imgs/thirdpage.jpg";
 .secondPage {
   background-image: url($star1);
   background-size: cover;
+  background-position: center;
   .top10Button {
     color: #f1f7ed;
     border: 2px solid #f1f7ed;

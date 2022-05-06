@@ -18,7 +18,7 @@ export default function ProjectIdea() {
     >
       <Box sx={{ px: 5 }}>
         <Typography
-          variant="h3"
+          variant="h4"
           sx={{ backgroundColor: "rgba(0,0,0,0.5)", p: 2, my: 3 }}
         >
           🍸저쪽 손님께서 보내신 겁니다.
@@ -27,14 +27,14 @@ export default function ProjectIdea() {
       </Box>
       <Box sx={{ px: 5 }}>
         <Typography
-          variant="h4"
+          variant="h5"
           sx={{ backgroundColor: "rgba(0,0,0,0.5)", p: 2, my: 3 }}
         >
           프로젝트 소개
         </Typography>
         <Typography
           component="span"
-          variant="h4"
+          variant="h5"
           sx={{ backgroundColor: "#ff3897" }}
         >
           **칵린이들을 위한 칵테일 추천 서비스**
@@ -67,7 +67,7 @@ export default function ProjectIdea() {
       <Box sx={{ px: 5 }}>
         <Typography
           sx={{ backgroundColor: "rgba(0,0,0,0.5)", p: 2, my: 3 }}
-          variant="h4"
+          variant="h5"
         >
           프로젝트 목적
         </Typography>
@@ -119,7 +119,7 @@ export default function ProjectIdea() {
         <Typography
           align="center"
           sx={{ backgroundColor: "rgba(0,0,0,0.5)", p: 2, my: 3 }}
-          variant="h4"
+          variant="h5"
         >
           칵테일이란 ?
         </Typography>

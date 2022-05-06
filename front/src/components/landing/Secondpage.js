@@ -8,19 +8,13 @@ export default function Secondpage() {
   const navigate = useNavigate();
   return (
     <>
-      <Grid container sx={{ pt: 5 }}>
+      <Grid container sx={{ pt: 15 }}>
         <Grid item xs sx={{ ml: 10 }}>
           <Box sx={{ minWidth: "400px", maxWidth: "600px" }}>
             <Top10Chart />
           </Box>
         </Grid>
         <Grid item xs sx={{ color: "white", textAlign: "right", mx: 10 }}>
-          <Box>
-            <Typography variant="h5">Starts with</Typography>
-            <Typography variant="h5" sx={{ mb: 3 }}>
-              Top 10 Cocktails
-            </Typography>
-          </Box>
           <Box sx={{ my: 5 }}>
             <Typography variant="h6">방문자 수를 통계로</Typography>
             <Typography variant="h6">

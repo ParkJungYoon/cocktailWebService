@@ -30,6 +30,7 @@ export default function Thirdpage() {
             color: "#25E75C",
             "&:hover": { border: "1px solid #25E75C" },
           }}
+          onClick={() => navigate("/cocktailBar")}
         >
           칵테일 바 가기
         </Button>
