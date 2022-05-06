@@ -31,7 +31,7 @@ function MbtiMain() {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    mt: 3,
+    // mt: 27,
     mx: 10,
     px: 5,
     color: "white",
@@ -40,33 +40,39 @@ function MbtiMain() {
     height: "40%",
   };
 
+  const progressBarStyle = {
+    backgroundColor: "rgba(128, 128, 128, 0.8)",
+    height: "10px",
+    // borderRadius: "0.3rem",
+  };
+
   const mbtiImgOne = {
     backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(${mbtiImg1})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
-    mt: 3,
-    height: "60vh",
+    // mt: 3,
+    height: "100%",
   };
   const mbtiImgTwo = {
     backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(${mbtiImg2})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
-    mt: 3,
-    height: "60vh",
+    // mt: 3,
+    height: "100%",
   };
   const mbtiImgThree = {
     backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(${mbtiImg3})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
-    mt: 3,
-    height: "60vh",
+    // mt: 3,
+    height: "100%",
   };
   const mbtiImgFour = {
     backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(${mbtiImg4})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
-    mt: 3,
-    height: "60vh",
+    // mt: 3,
+    height: "100%",
   };
 
   // the method that checks the correct answer
@@ -105,6 +111,14 @@ function MbtiMain() {
         <>
           {step <= 4 ? (
             <Grid container sx={mbtiImgOne}>
+              {/* progress bar */}
+              <Box mt={25} sx={{ px: 10, height: 0, width: "100%" }}>
+                <LinearProgress
+                  sx={progressBarStyle}
+                  variant="determinate"
+                  value={(step / 15) * 100}
+                />
+              </Box>
               <Grid item xs={12} sx={questionStyle}>
                 <MbtiQuestion question={state.questions[step]} />
               </Grid>
@@ -122,6 +136,14 @@ function MbtiMain() {
               {/* 5~8 step background image change */}
               {step >= 5 && step <= 8 ? (
                 <Grid container sx={mbtiImgTwo}>
+                  {/* progress bar */}
+                  <Box mt={25} sx={{ px: 10, width: "100%" }}>
+                    <LinearProgress
+                      sx={progressBarStyle}
+                      variant="determinate"
+                      value={(step / 15) * 100}
+                    />
+                  </Box>
                   <Grid item xs={12} sx={questionStyle}>
                     <MbtiQuestion question={state.questions[step]} />
                   </Grid>
@@ -139,6 +161,14 @@ function MbtiMain() {
                   {/* 9~11 step background image change */}
                   {step >= 9 && step <= 11 ? (
                     <Grid container sx={mbtiImgThree}>
+                      {/* progress bar */}
+                      <Box mt={25} sx={{ px: 10, width: "100%" }}>
+                        <LinearProgress
+                          sx={progressBarStyle}
+                          variant="determinate"
+                          value={(step / 15) * 100}
+                        />
+                      </Box>
                       <Grid item xs={12} sx={questionStyle}>
                         <MbtiQuestion question={state.questions[step]} />
                       </Grid>
@@ -154,6 +184,14 @@ function MbtiMain() {
                   ) : (
                     // {/* 12~15 step background image change */}
                     <Grid container sx={mbtiImgFour}>
+                      {/* progress bar */}
+                      <Box mt={25} sx={{ px: 10, width: "100%" }}>
+                        <LinearProgress
+                          sx={progressBarStyle}
+                          variant="determinate"
+                          value={(step / 15) * 100}
+                        />
+                      </Box>
                       <Grid item xs={12} sx={questionStyle}>
                         <MbtiQuestion question={state.questions[step]} />
                       </Grid>
