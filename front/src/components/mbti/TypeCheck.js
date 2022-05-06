@@ -20,7 +20,7 @@ const TypeCheck = ({ countEI, countSN, countTF, countJP }) => {
   };
 
   const mbitResultSetPageImg = {
-    backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(${mbitResultSetPage})`,
+    backgroundImage: `url(${mbitResultSetPage})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     // mt: 3,
@@ -33,7 +33,7 @@ const TypeCheck = ({ countEI, countSN, countTF, countJP }) => {
         <Container
           container
           sx={{
-            bgcolor: "rgba(64,64,64,0.6)",
+            bgcolor: "rgba(0,0,0,0.6)",
             width: "80%",
             height: "100vh",
             alignItems: "center",
@@ -43,7 +43,7 @@ const TypeCheck = ({ countEI, countSN, countTF, countJP }) => {
             item
             xs={12}
             // pt={50}
-            sx={{ paddingTop: "40vh", color: "white", textAlign: "center" }}
+            sx={{ paddingTop: "40vh", textAlign: "center" }}
           >
             {/* <Box pt={4} pb={4} sx={{}}> */}
             <Link

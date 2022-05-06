@@ -1,7 +1,7 @@
 /* eslint no-restricted-globals: ["off"] */
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Box, Container, Grid, LinearProgress, Link } from "@mui/material";
+import { Box, Button, Container, Grid, Link } from "@mui/material";
 import "../../scss/Mbti.scss";
 import linkIcon from "../../imgs/icon-link.png";
 
@@ -24,109 +24,113 @@ function ResultISTP() {
   const typeName = "ISTP";
   return (
     <div className="mbtiResultPage">
-      <Box sx={{ mt: 25, mb: 10 }}>
-        <Grid container>
-          <Grid item xs={3} height="720px"></Grid>
-          <Grid item xs={6} mt={2}>
-            <Grid
-              container
-              pb={3}
-              mb={2}
-              sx={{
-                backgroundColor: "rgba(31, 31, 31, 0.7)",
-              }}
-            >
-              <Grid item xs={1.5}></Grid>
-              <Grid item xs={9} mb={3}>
-                <div>
-                  <p className="mbtiResultTitle">당신은 {typeName}</p>
-                  <p className="mbtiResultRecommend">
-                    추천 칵테일은{" "}
-                    <span style={{ color: "#a300d9" }}>
-                      {checkState.types[typeName]}
-                    </span>
-                  </p>
-                  <div className="mbtiResultImgAlingn">
-                    <img
-                      className="mbtiResultImg"
-                      src={checkState.typeImgs[typeName]}
-                      alt=""
-                    />
-                  </div>
-                  <p className="mbtiResultText">
-                    {checkState.typeInfos[typeName]}
-                  </p>
+      <Box sx={{ mt: 18, height: "100vh" }}>
+        <Container height="100vh" mt={2}>
+          <Grid
+            container
+            pb={8}
+            mb={2}
+            sx={{
+              backgroundColor: "rgba(0, 0, 0, 0.7)",
+            }}
+          >
+            <Grid item xs>
+              <div>
+                <p
+                  style={{
+                    margin: "4rem 0 1.4rem 0",
+                    color: "white",
+                    textAlign: "center",
+                  }}
+                >
+                  <span style={{ fontSize: "1.8rem" }}>당신은...</span>
+                </p>
+                <p
+                  style={{
+                    marginBottom: "3rem",
+                    color: "white",
+                    textAlign: "center",
+                    lineHeight: 1.4,
+                  }}
+                >
+                  <span style={{ fontSize: "2rem" }}>
+                    {checkState.text[typeName]}
+                  </span>
+                  <br />
+                  <span style={{ color: "#f43c39", fontSize: "3rem" }}>
+                    {checkState.types[typeName]}
+                  </span>
+                </p>
+                <div className="mbtiResultImgAlingn">
+                  <img
+                    className="mbtiResultImg"
+                    src={checkState.typeImgs[typeName]}
+                    alt=""
+                  />
+                </div>
+                <p className="mbtiResultText">
+                  {checkState.typeInfos[typeName]}
+                </p>
+              </div>
+            </Grid>
+            <Grid container mt={4}>
+              <Grid item xs>
+                <p className="mbtiResultGood">
+                  너 내 동료가 되라!
+                  <br />
+                  <span style={{ color: "#00ffe5" }}>
+                    {checkState.good[typeName]}
+                  </span>
+                </p>
+                <div className="mbtiResultImgAlingn">
+                  <img
+                    className="mbtiResultGoodImg"
+                    src={checkState.goodImgs[typeName]}
+                    alt=""
+                  />
                 </div>
               </Grid>
-              <Grid item xs={1.5}></Grid>
-              <Grid container>
-                <Grid item xs={5.95}>
-                  <p className="mbtiResultGood">
-                    궁합이 좋은 MBTI 칵테일
-                    <br />
-                    {checkState.good[typeName]}
-                  </p>
-                  <div className="mbtiResultImgAlingn">
-                    <img
-                      className="mbtiResultGoodImg"
-                      src={checkState.goodImgs[typeName]}
-                      alt=""
-                    />
-                  </div>
-                </Grid>
-                <Grid item xs={0.1} sx={{ backgroundColor: "gray" }}></Grid>
-                <Grid item xs={5.95}>
-                  <p className="mbtiResultBad">
-                    궁합이 별로인 MBTI 칵테일 <br />
+              <Grid item xs sx={{ borderLeft: "3px solid  gray" }}>
+                <p className="mbtiResultBad">
+                  네? 저요?? 아... <br />
+                  <span style={{ color: "#c40000" }}>
                     {checkState.bad[typeName]}
-                  </p>
-                  <div className="mbtiResultImgAlingn">
-                    <img
-                      className="mbtiResultBadImg"
-                      src={checkState.badImgs[typeName]}
-                      alt=""
-                    />
-                  </div>
-                </Grid>
+                  </span>
+                </p>
+                <div className="mbtiResultImgAlingn">
+                  <img
+                    className="mbtiResultBadImg"
+                    src={checkState.badImgs[typeName]}
+                    alt=""
+                  />
+                </div>
               </Grid>
-              <Grid item xs={12} sx={{ height: "20px" }}></Grid>
             </Grid>
-            <Container>
-              <Grid container>
-                <Grid item xs={4}></Grid>
-                <Grid item xs={4} container>
-                  <Grid item xs={6}>
-                    <div className="mbtiResultBottonBtns">
-                      <div
-                        className="mbtiResultLinkShareBtn"
-                        onClick={() => CopyUrlToClipboard()}
-                      >
-                        <img
-                          className="mbtiResultLinkShareImg"
-                          src={linkIcon}
-                          alt=""
-                          width="40px"
-                        />
-                      </div>
-                    </div>
-                  </Grid>
-                  <Grid item xs={6}>
-                    <div>
-                      <Link
-                        onClick={() => navigate(`/cocktailTest/mbti`)}
-                        sx={{ textDecoration: "none" }}
-                      >
-                        <div className="mbtiRestartBtn">다시하기</div>
-                      </Link>
-                    </div>
-                  </Grid>
-                </Grid>
-                <Grid item xs={4}></Grid>
-              </Grid>
-            </Container>
+
+            {/* Link btn & Restart */}
+            <Grid item xs mt={3} sx={{ textAlign: "center" }}>
+              {/* Link btn */}
+              <Button
+                className="mbtiResultLinkShareBtn"
+                onClick={() => CopyUrlToClipboard()}
+              >
+                <img
+                  className="mbtiResultLinkShareImg"
+                  src={linkIcon}
+                  alt=""
+                  width="40px"
+                />
+              </Button>
+              {/* restart */}
+              <Link
+                onClick={() => navigate(`/cocktailTest/mbti`)}
+                sx={{ textDecoration: "none" }}
+              >
+                <Button className="mbtiRestartBtn">다시하기</Button>
+              </Link>
+            </Grid>
           </Grid>
-          <Grid item xs={3}></Grid>
-        </Grid>
+        </Container>
       </Box>
     </div>
   );
