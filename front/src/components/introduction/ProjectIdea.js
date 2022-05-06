@@ -3,6 +3,7 @@ import { Box, Grid, Container, Typography } from "@mui/material";
 import What from "../../imgs/what.jpg";
 import dylc from "../../imgs/doyoulikecocktail.jpg";
 import alcohol from "../../imgs/alcohol.png";
+import Chart from "./SpiritChart.js";
 
 export default function ProjectIdea() {
   return (
@@ -60,7 +61,8 @@ export default function ProjectIdea() {
             칵테일의 진입장벽을 낮추고자 한다.
           </Typography>
         </Box>
-        <Box component="img" src={alcohol} alt="" width="70%" sx={{ mt: 3 }} />
+        <Box width="40%" sx={{ mt: 3 }} />
+        <Chart stlye={{ width: "300px" }} />
         <Typography> ↪ 다른 나라와의 칵테일 소비량 및 인지도 차이</Typography>
       </Box>
 

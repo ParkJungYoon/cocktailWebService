@@ -1,0 +1,50 @@
+{
+  "Australia": {
+    "prop_beer": 78,
+    "prop_spirit": 21
+  },
+  "China": {
+    "prop_beer": 30,
+    "prop_spirit": 70
+  },
+  "France": {
+    "prop_beer": 45,
+    "prop_spirit": 55
+  },
+  "Germany": {
+    "prop_beer": 75,
+    "prop_spirit": 25
+  },
+  "India": {
+    "prop_beer": 8,
+    "prop_spirit": 92
+  },
+  "Italy": {
+    "prop_beer": 66,
+    "prop_spirit": 33
+  },
+  "South Korea": {
+    "prop_beer": 90,
+    "prop_spirit": 10
+  },
+  "Russian Federation": {
+    "prop_beer": 43,
+    "prop_spirit": 57
+  },
+  "South Africa": {
+    "prop_beer": 75,
+    "prop_spirit": 25
+  },
+  "United Kingdom": {
+    "prop_beer": 64,
+    "prop_spirit": 36
+  },
+  "USA": {
+    "prop_beer": 61,
+    "prop_spirit": 38
+  },
+  "World": {
+    "prop_beer": 56,
+    "prop_spirit": 43
+  }
+}

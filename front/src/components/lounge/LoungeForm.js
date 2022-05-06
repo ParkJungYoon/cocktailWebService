@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Paper } from "@mui/material";
+import { Paper, Box, TextField, Button } from "@mui/material";
 import * as Api from "../../api";
+import styles from "../../scss/Lounge.module.scss";
 
 function LoungeForm({ userState, item, setIsForm, type }) {
   const [form, setForm] = useState({
@@ -45,40 +46,48 @@ function LoungeForm({ userState, item, setIsForm, type }) {
     formData.append("img", form.img);
     return formData;
   };
-
+  //enctype="multipart/form-data"
   return (
-    <Paper>
-      <form onSubmit={handleFormSubmit} enctype="multipart/form-data">
+    <Paper className={styles["lounge-rank-form"]}>
+      <Box
+        component="form"
+        onSubmit={handleFormSubmit}
+        enctype="multipart/form-data"
+      >
         Title :{" "}
-        <input
+        <TextField
           type="text"
           name="title"
+          label="title"
           value={form.title}
           onChange={handleFormChange}
         />
         Content :{" "}
-        <input
+        <TextField
           type="text"
           name="content"
           value={form.content}
           onChange={handleFormChange}
         />
         File :{" "}
-        <input
+        <TextField
           type="file"
           name="img"
           file={form.img}
           onChange={handleFileChange}
         />
-        <button type="submit">Submit</button>
-      </form>
-      <button
+        <Button type="submit" sx={{ color: "white" }}>
+          Submit
+        </Button>
+      </Box>
+      <Button
         onClick={() => {
           setIsForm(false);
         }}
+        sx={{ color: "white" }}
       >
         withdraw
-      </button>
+      </Button>
     </Paper>
   );
 }

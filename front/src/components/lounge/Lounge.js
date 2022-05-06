@@ -26,7 +26,7 @@ function Lounge() {
       <div className={styles["lounge-rank-background"]}>
         <LoungeRank />
       </div>
-      <div>
+      <div st={{}}>
         <LoungeList user={user} setRankList={setRankList} />
       </div>
     </>

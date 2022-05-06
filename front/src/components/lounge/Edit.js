@@ -63,7 +63,7 @@ function Edit({
             handleFormValue("content", e.target.value);
           }}
         />
-        <Button type="submit" sx={{ ml: "auto", color: "Black" }}>
+        <Button type="submit" sx={{ ml: "auto", color: "white" }}>
           Submit
         </Button>
         <Button
@@ -71,7 +71,7 @@ function Edit({
             if (type === "edit") setTargetId(null);
             setIsEdit(false);
           }}
-          sx={{ color: "Black" }}
+          sx={{ color: "white" }}
         >
           WithDraw
         </Button>

@@ -8,6 +8,10 @@ $bg1: "../imgs/loungeRankBgImg.jpg";
   height: 100vh;
   overflow: auto;
 
+  .lounge-container {
+    margin: 0 10%;
+  }
+
   .lounge-rank-background {
     background-image: url($bg1);
     background-size: cover;
@@ -15,6 +19,34 @@ $bg1: "../imgs/loungeRankBgImg.jpg";
     margin-top: 20%;
   }
   .white {
+    color: white !important;
+  }
+
+  .table {
+    background-color: black;
     color: white;
   }
+  .table th {
+    background-color: black;
+    color: white;
+  }
+
+  .table td {
+    background-color: black;
+    color: white;
+  }
+
+  .item-table {
+    background-color: black;
+    color: white;
+  }
+
+  .item-table th {
+    background-color: black;
+    color: white;
+  }
+}
+
+.lounge-rank-form {
+  background-color: black;
 }
