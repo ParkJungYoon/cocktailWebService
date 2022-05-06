@@ -65,10 +65,12 @@ function Likes() {
 
   return (
     <>
-      <Box sx={{ px: 15, pb: 3 }}>
-        <LikeSortButton cocktails={cocktails} setCocktails={setCocktails} />
-      </Box>
-      <Grid container spacing={1} sx={{ px: 15, mx: "auto" }}>
+      <Grid container sx={{ px: 20, mx: "auto" }}>
+        <Grid item xs>
+          <LikeSortButton cocktails={cocktails} setCocktails={setCocktails} />
+        </Grid>
+      </Grid>
+      <Grid container spacing={1} sx={{ pt: 3, px: 20, mx: "auto" }}>
         {cocktails.map((cocktail, i) => {
           return (
             <Grid key={i} item xs>

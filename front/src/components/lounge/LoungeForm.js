@@ -1,26 +1,36 @@
 import React, { useState } from "react";
+import { Paper } from "@mui/material";
 import * as Api from "../../api";
 
-function LoungeForm({ userState, board, setIsForm }) {
+function LoungeForm({ userState, item, setIsForm, type }) {
   const [form, setForm] = useState({
-    title: "",
-    content: "",
+    title: [item?.title] ? [item?.title] : "",
+    content: [item?.content] ? [item?.content] : "",
     img: "",
   });
 
+  //submit
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
     const data = makeForm();
-    await Api.postForm("board", data).catch((err) => {
-      console.log(err);
-    });
-
-    setIsForm(false);
+    if (type === "add") {
+      await Api.postForm("board", data).catch((err) => {
+        console.log(err);
+      });
+      setIsForm(false);
+    } else {
+      await Api.putForm(`board/${item._id}`, data).catch((err) => {
+        console.log(err.response);
+      });
+      setIsForm();
+    }
   };
+  //file change
   const handleFileChange = (e) => {
     setForm({ ...form, img: e.target.files[0] });
   };
+  //form change
   const handleFormChange = (e) => {
     setForm({
       ...form,
@@ -37,7 +47,7 @@ function LoungeForm({ userState, board, setIsForm }) {
   };
 
   return (
-    <div>
+    <Paper>
       <form onSubmit={handleFormSubmit} enctype="multipart/form-data">
         Title :{" "}
         <input
@@ -69,7 +79,7 @@ function LoungeForm({ userState, board, setIsForm }) {
       >
         withdraw
       </button>
-    </div>
+    </Paper>
   );
 }
 

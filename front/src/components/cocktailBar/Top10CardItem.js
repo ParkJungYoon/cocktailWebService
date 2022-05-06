@@ -46,7 +46,7 @@ export default function Top10CardItem({ cocktail }) {
     maxWidth: 400,
     backgroundColor: "rgba(64, 64, 64, 0.5)",
     color: "white",
-    minHeight: 700,
+    minHeight: 720,
   };
   return (
     <>
