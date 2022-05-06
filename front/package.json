@@ -21,6 +21,7 @@
     "korean-regexp": "^1.0.9",
     "lodash": "^4.17.21",
     "node-sass": "^7.0.1",
+    "notistack": "^2.0.4",
     "re-resizable": "^6.9.9",
     "react": "^17.0.2",
     "react-chartjs-2": "^4.1.0",
