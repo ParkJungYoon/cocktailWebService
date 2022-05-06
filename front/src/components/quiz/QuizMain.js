@@ -33,7 +33,7 @@ function QuizMain(props) {
     borderRadius: "5px",
   };
   const progress = {
-    px: "7%",
+    px: "20%",
     mt: 15,
   };
   const result = {
@@ -116,7 +116,7 @@ function QuizMain(props) {
             sx={{
               backgroundColor: "rgba(0, 0, 0, 0.7)",
               height: "100vh",
-              width: "80%",
+              width: "100%",
             }}
           >
             <Grid container pt={7}>
@@ -180,15 +180,17 @@ function QuizMain(props) {
                   ></Grid>
                 </Grid>
                 <Grid container spacing={3}>
-                  <Grid item xs sx={{ ml: "5%" }}>
+                  {state.imgs[step] && (
+                    <Grid item xs sx={{ mx: "auto" }}>
+                      <QuestionImg img={state.imgs[step]} />
+                    </Grid>
+                  )}
+                  <Grid item xs sx={{ ml: 10 }}>
                     <Correct
                       answer={state.answers[step]}
                       step={step}
                       correctAnswer={state.correctAnswers[step]}
                     />
-                  </Grid>
-                  <Grid item xs sx={{ mx: "auto" }}>
-                    <QuestionImg img={state.imgs[step]} />
                   </Grid>
                 </Grid>
               </Box>

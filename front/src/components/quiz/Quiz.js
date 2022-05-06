@@ -11,7 +11,6 @@ function Quiz() {
         justifyContent="center"
         pt={18}
         sx={{
-          fontSize: "15px",
           textAlign: "center",
         }}
       >
