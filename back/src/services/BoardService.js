@@ -20,8 +20,6 @@ class BoardService {
     if (!userId) {
       const view = await BoardModel.views({ boardId });
     } else if (viewObj[boardId].indexOf(userId) === -1) {
-      console.log(viewObj[boardId].indexOf(userId));
-      //username이 없다면 배열에 추가하고 조회수 증가
       viewObj[boardId].push(userId);
       await BoardModel.views({ boardId });
       //24시간이 지나면 배열에서 삭제
@@ -29,7 +27,6 @@ class BoardService {
         viewObj[boardId].splice(viewObj[boardId].indexOf(userId), 1);
       }, 864000);
       for (let i in viewObj) {
-        //공간 절약을 위해 username이 하나도 없으면 해당 오브젝트 삭제
         if (i.length == 0) {
           delete viewObj.i;
         }
