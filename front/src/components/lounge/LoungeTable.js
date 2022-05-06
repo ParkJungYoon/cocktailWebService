@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
+import { makeStyles } from "@material-ui/core/styles";
 import * as Api from "../../api";
 import {
   Table,
@@ -15,8 +16,18 @@ import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import LoungeItem from "./LoungeItem";
 import LoungeForm from "./LoungeForm";
+//style
+import styles from "../../scss/Lounge.module.scss";
+
+const useStyles = makeStyles({
+  root: {
+    color: "white",
+    backgroundColor: "black",
+  },
+});
 
 function LoungeTable({ user, setIsForm, setRankList }) {
+  const classes = useStyles();
   const [list, setList] = useState([]);
   const [openItem, setOpenItem] = useState();
   const [isOpen, setIsOpen] = useState(false);
@@ -53,16 +64,21 @@ function LoungeTable({ user, setIsForm, setRankList }) {
   };
 
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} className={styles["table"]}>
       <Table size="small">
         {!isOpen ? (
           <>
             <TableHead>
-              <button onClick={() => handleClickCreate()}>Create</button>
-              <TableRow>
+              <Button
+                onClick={() => handleClickCreate()}
+                sx={{ color: "white" }}
+              >
+                Create
+              </Button>
+              <TableRow className={styles["table-row"]}>
                 <TableCell>No</TableCell>
-                <TableCell align="right">Name</TableCell>
                 <TableCell align="right">Title</TableCell>
+                <TableCell align="right">Name</TableCell>
                 <TableCell align="right">Comment</TableCell>
                 <TableCell align="right">Date</TableCell>
               </TableRow>
@@ -80,10 +96,10 @@ function LoungeTable({ user, setIsForm, setRankList }) {
                     }}
                   >
                     <TableCell>{i + 1}</TableCell>
+                    <TableCell align="right">{item.title}</TableCell>
                     <TableCell align="right">
                       {item.writer ? item.writer.name : "X"}
                     </TableCell>
-                    <TableCell align="right">{item.title}</TableCell>
                     <TableCell align="right">{item.comment.length}</TableCell>
                     <TableCell align="right">{item.createdAt}</TableCell>
                   </TableRow>

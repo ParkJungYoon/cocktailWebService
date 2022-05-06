@@ -3,6 +3,7 @@ import { styled } from "@mui/material/styles";
 import SearchIcon from "@mui/icons-material/Search";
 import { InputBase } from "@mui/material";
 import useUserHook from "../commons/useUserHook";
+import { makeStyles } from "@material-ui/core/styles";
 
 // style
 const Search = styled("div")(({ theme }) => ({

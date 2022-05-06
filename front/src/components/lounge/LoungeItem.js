@@ -7,6 +7,7 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  Button,
 } from "@mui/material";
 
 import { colorChannel } from "@mui/material/node_modules/@mui/system";
@@ -14,6 +15,9 @@ import { colorChannel } from "@mui/material/node_modules/@mui/system";
 import * as Api from "../../api";
 import Edit from "./Edit";
 import useUserHook from "../commons/useUserHook";
+
+//style
+import styles from "../../scss/Lounge.module.scss";
 
 //로그 아웃 상태 : userState===false
 //로그 인 상태 :  //userState.email,userState.name,userState.__id로 사용 가능합니다
@@ -94,34 +98,37 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
 
   return (
     <>
-      <button
+      <Button
         onClick={() => {
           handleOpen();
         }}
+        sx={{ color: "white" }}
       >
         goBack
-      </button>
+      </Button>
       {!(item.writer?._id === user?._id) ? (
         <></>
       ) : (
         <>
-          <button
+          <Button
             onClick={() => {
               handleListEdit();
             }}
+            sx={{ color: "white" }}
           >
             Edit
-          </button>
-          <button
+          </Button>
+          <Button
             onClick={async () => {
               await Api.delete(`board/${item._id}`).catch((err) => {
                 console.log(err.response);
                 handleOpen();
               });
             }}
+            sx={{ color: "white" }}
           >
             delete
-          </button>
+          </Button>
         </>
       )}
       <Paper>
@@ -132,7 +139,7 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
         <p>Content : {content}</p>
         <p>CreatedAt : {createdAt}</p>
       </Paper>
-      <TableContainer component={Paper}>
+      <TableContainer component={Paper} className={styles["item-table"]}>
         <Table size="small">
           <TableHead>
             <TableRow>
@@ -166,14 +173,15 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
                       />
                     ) : (
                       <>
-                        <button
+                        <Button
                           onClick={(e) => {
                             handleEdit();
                           }}
+                          sx={{ color: "white" }}
                         >
                           Edit
-                        </button>
-                        <button
+                        </Button>
+                        <Button
                           onClick={async () => {
                             await Api.delComment(
                               `board/comment/${comment._id}`,
@@ -185,9 +193,10 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
                               setComments(res.data.comment);
                             });
                           }}
+                          sx={{ color: "white" }}
                         >
                           delete
-                        </button>
+                        </Button>
                       </>
                     )}
                   </TableCell>
@@ -199,7 +208,7 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
         {isAdd ? (
           <Edit boardId={item._id} setIsEdit={setIsAdd} type={"add"} />
         ) : (
-          <button
+          <Button
             onClick={() => {
               if (!user) {
                 alert("로그인 필요");
@@ -209,7 +218,7 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
             }}
           >
             댓글 작성
-          </button>
+          </Button>
         )}
       </TableContainer>
     </>
