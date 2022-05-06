@@ -3,7 +3,6 @@ import { Typography, Grid, Container, Box } from "@mui/material";
 import LocalBarIcon from "@mui/icons-material/LocalBar";
 import * as Api from "../../api.js";
 
-import styles from "../../scss/Lounge.module.scss";
 import { makeStyles } from "@material-ui/core/styles";
 
 function LoungeRank({ setIsOpen }) {

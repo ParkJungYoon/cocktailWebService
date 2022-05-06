@@ -16,7 +16,6 @@ import CloseIcon from "@mui/icons-material/Close";
 import LoungeItem from "./LoungeItem";
 import LoungeForm from "./LoungeForm";
 //style
-import styles from "../../scss/Lounge.module.scss";
 
 const useStyles = makeStyles({
   root: {

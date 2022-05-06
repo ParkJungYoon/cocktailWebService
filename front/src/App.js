@@ -13,12 +13,7 @@ import {
 import Header from "./components/Header";
 import Landing from "./pages/Landing";
 import Introduction from "./pages/Introduction";
-import Mypage from "./components/mypage/Mypage";
-import Bookmark from "./components/mypage/Bookmark";
 import CocktailBar from "./pages/CocktailBar";
-import Like from "./components/mypage/Like";
-import UserInfo from "./components/mypage/UserInfo";
-import UserTab from "./components/mypage/UserTab";
 import CocktailTest from "./pages/CocktailTest";
 import LoungePage from "./pages/LoungePage";
 import Mbti from "./components/mbti/Mbti";
@@ -80,11 +75,6 @@ function App() {
         <Route path="/" exact element={<Landing />} />
         <Route path="/introduction" element={<Introduction />} />
         <Route path="/cocktailBar" element={<CocktailBar />} />
-        <Route path="/mypage" element={<Mypage />} />
-        <Route path="/bookmark" element={<Bookmark />} />
-        <Route path="/like" element={<Like />} />
-        <Route path="/userinfo" element={<UserInfo />} />
-        <Route path="/usertab" element={<UserTab />} />
         <Route path="/cocktailTest" element={<CocktailTest />} />
         <Route path="/lounge" element={<LoungePage />} />
         <Route path="/cocktailTest/mbti" element={<Mbti />} />

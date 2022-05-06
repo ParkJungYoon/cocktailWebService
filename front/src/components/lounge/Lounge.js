@@ -5,8 +5,6 @@ import useUserHook from "../commons/useUserHook";
 import * as Api from "../../api";
 
 //style
-import styles from "../../scss/Lounge.module.scss";
-import { style } from "@mui/material/node_modules/@mui/system";
 import { Box, Typography } from "@material-ui/core";
 import bg1 from "../../imgs/loungeRankBgImg.jpg";
 function Lounge() {

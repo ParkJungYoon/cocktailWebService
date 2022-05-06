@@ -12,14 +12,11 @@ import {
   Box,
 } from "@mui/material";
 
-import { colorChannel } from "@mui/material/node_modules/@mui/system";
-
 import * as Api from "../../api";
 import Edit from "./Edit";
 import useUserHook from "../commons/useUserHook";
 
 //style
-import styles from "../../scss/Lounge.module.scss";
 import { Typography } from "@material-ui/core";
 
 //로그 아웃 상태 : userState===false

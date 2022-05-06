@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import LoungeRank from "./LoungeRank";
 import LoungeForm from "./LoungeForm";
-import sytles from "../../scss/Lounge.module.scss";
+
 import LoungeTable from "./LoungeTable";
 import * as Api from "../../api";
 
