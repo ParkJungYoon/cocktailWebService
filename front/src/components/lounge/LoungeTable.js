@@ -8,9 +8,8 @@ import {
   TableContainer,
   TableHead,
   TableRow,
-  Paper,
   Button,
-  Snackbar,
+  Box,
 } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
@@ -64,23 +63,55 @@ function LoungeTable({ user, setIsForm, setRankList }) {
   };
 
   return (
-    <TableContainer component={Paper} className={styles["table"]}>
+    <TableContainer
+      sx={{
+        color: "white",
+        bgcolor: "rgba(64,64,64,0.5)",
+        width: "70vw",
+        mx: "auto",
+        mb: 30,
+        p: 5,
+      }}
+    >
       <Table size="small">
         {!isOpen ? (
           <>
             <TableHead>
-              <Button
-                onClick={() => handleClickCreate()}
-                sx={{ color: "white" }}
+              <Box sx={{ mb: 5 }}>
+                <Button
+                  onClick={() => handleClickCreate()}
+                  sx={{
+                    color: "white",
+                    border: "2px solid white",
+                    "&:hover": {
+                      color: "black",
+                      bgcolor: "white",
+                      border: "2px solid black",
+                    },
+                  }}
+                >
+                  Create
+                </Button>
+              </Box>
+              <TableRow
+                sx={{
+                  borderBottom: "2px solid white",
+                  borderTop: "2px solid white",
+                }}
               >
-                Create
-              </Button>
-              <TableRow className={styles["table-row"]}>
-                <TableCell>No</TableCell>
-                <TableCell align="right">Title</TableCell>
-                <TableCell align="right">Name</TableCell>
-                <TableCell align="right">Comment</TableCell>
-                <TableCell align="right">Date</TableCell>
+                <TableCell sx={{ color: "white" }}>No.</TableCell>
+                <TableCell sx={{ color: "white" }} align="center">
+                  Title
+                </TableCell>
+                <TableCell sx={{ color: "white" }} align="center">
+                  Name
+                </TableCell>
+                <TableCell sx={{ color: "white" }} align="center">
+                  Comment
+                </TableCell>
+                <TableCell sx={{ color: "white" }} align="center">
+                  Date
+                </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -95,13 +126,19 @@ function LoungeTable({ user, setIsForm, setRankList }) {
                       handleOpen();
                     }}
                   >
-                    <TableCell>{i + 1}</TableCell>
-                    <TableCell align="right">{item.title}</TableCell>
-                    <TableCell align="right">
+                    <TableCell sx={{ color: "white" }}>{i + 1}</TableCell>
+                    <TableCell sx={{ color: "white" }} align="center">
+                      {item.title}
+                    </TableCell>
+                    <TableCell sx={{ color: "white" }} align="center">
                       {item.writer ? item.writer.name : "X"}
                     </TableCell>
-                    <TableCell align="right">{item.comment.length}</TableCell>
-                    <TableCell align="right">{item.createdAt}</TableCell>
+                    <TableCell sx={{ color: "white" }} align="center">
+                      {item.comment.length}
+                    </TableCell>
+                    <TableCell sx={{ color: "white" }} align="center">
+                      {item.createdAt}
+                    </TableCell>
                   </TableRow>
                 ))}
             </TableBody>

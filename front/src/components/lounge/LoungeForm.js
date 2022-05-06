@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Paper, Box, TextField, Button } from "@mui/material";
+import { Container, Box, TextField, Button, Typography } from "@mui/material";
 import * as Api from "../../api";
 import styles from "../../scss/Lounge.module.scss";
 
@@ -48,47 +48,76 @@ function LoungeForm({ userState, item, setIsForm, type }) {
   };
   //enctype="multipart/form-data"
   return (
-    <Paper className={styles["lounge-rank-form"]}>
+    <Container
+      sx={{
+        color: "white",
+        bgcolor: "rgba(64,64,64,0.5)",
+        width: "70vw",
+
+        mx: "auto",
+        mb: 30,
+        p: 5,
+      }}
+    >
       <Box
         component="form"
         onSubmit={handleFormSubmit}
         enctype="multipart/form-data"
       >
-        Title :{" "}
+        <Typography variant="h5" sx={{ my: "auto" }} component="span">
+          Title :
+        </Typography>
         <TextField
+          fullWidth
           type="text"
           name="title"
           label="title"
           value={form.title}
           onChange={handleFormChange}
+          sx={{ bgcolor: "rgba(255,255,255,0.2)", mb: 3 }}
         />
-        Content :{" "}
+        <Typography variant="h5" sx={{ my: "auto" }} component="span">
+          Content :
+        </Typography>
         <TextField
+          fullWidth
           type="text"
           name="content"
+          label="content"
           value={form.content}
           onChange={handleFormChange}
+          sx={{ bgcolor: "rgba(255,255,255,0.2)", mb: 3 }}
         />
-        File :{" "}
+        <Typography variant="h5" sx={{ my: "auto" }} component="span">
+          File :
+        </Typography>
         <TextField
+          fullWidth
           type="file"
           name="img"
           file={form.img}
           onChange={handleFileChange}
+          sx={{ bgcolor: "rgba(255,255,255,0.2)", mb: 3 }}
         />
-        <Button type="submit" sx={{ color: "white" }}>
-          Submit
-        </Button>
+        <Box textAlign="right" sx={{ mt: 3 }}>
+          <Button
+            type="submit"
+            sx={{ color: "white", border: "2px solid white", mr: 3 }}
+          >
+            Submit
+          </Button>
+
+          <Button
+            onClick={() => {
+              setIsForm(false);
+            }}
+            sx={{ color: "white", border: "2px solid white" }}
+          >
+            withdraw
+          </Button>
+        </Box>
       </Box>
-      <Button
-        onClick={() => {
-          setIsForm(false);
-        }}
-        sx={{ color: "white" }}
-      >
-        withdraw
-      </Button>
-    </Paper>
+    </Container>
   );
 }
 

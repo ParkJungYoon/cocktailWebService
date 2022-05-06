@@ -143,7 +143,7 @@ export default function FormDialog({ open, handleLoginClose }) {
         </DialogContent>
         <DialogActions sx={{ pb: 5, bgcolor: "#212121" }}>
           <Button
-            sx={{ mx: "auto", bgcolor: "#615f5f" }}
+            sx={{ mx: "auto", bgcolor: "#615f5f", color: "white" }}
             type="submit"
             disabled={!isFormValid}
           >

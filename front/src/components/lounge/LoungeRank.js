@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Typography, Grid, Link, Box } from "@mui/material";
+import { Typography, Grid, Container, Box } from "@mui/material";
 import LocalBarIcon from "@mui/icons-material/LocalBar";
 import * as Api from "../../api.js";
 
@@ -24,40 +24,46 @@ function LoungeRank({ setIsOpen }) {
 
   if (rankList) {
     return (
-      <div className={styles["lounge-rank-background"]}>
-        <Grid container>
-          <Grid item>
-            <Typography className={styles["white"]}>
-              {rankList[0].title}
-            </Typography>
-            <LocalBarIcon className={styles["white"]} />
-          </Grid>
-          <Grid item>
-            <Typography className={styles["white"]}>
-              {rankList[1].title}
-            </Typography>
-            <LocalBarIcon className={styles["white"]} />
-          </Grid>
-          <Grid item>
-            <Typography className={styles["white"]}>
-              {rankList[2].title}
-            </Typography>
-            <LocalBarIcon className={styles["white"]} />
-          </Grid>
-          <Grid item>
-            <Typography className={styles["white"]}>
-              {rankList[3].title}
-            </Typography>
-            <LocalBarIcon className={styles["white"]} />
-          </Grid>
-          <Grid item>
-            <Typography className={styles["white"]}>
-              {rankList[4].title}
-            </Typography>
-            <LocalBarIcon className={styles["white"]} />
-          </Grid>
-        </Grid>
-      </div>
+      <Container
+        sx={{
+          display: "flex",
+          justifyContent: "space-around",
+          alignItems: "flex-end",
+          height: "100%",
+          pb: 3,
+        }}
+      >
+        <Box textAlign="center">
+          <Typography variant="h5" sx={{ color: "white" }}>
+            {rankList[0].title}
+          </Typography>
+          <LocalBarIcon sx={{ color: "white" }} fontSize="large" />
+        </Box>
+        <Box textAlign="center">
+          <Typography variant="h5" sx={{ color: "white" }}>
+            {rankList[1].title}
+          </Typography>
+          <LocalBarIcon sx={{ color: "white" }} fontSize="large" />
+        </Box>
+        <Box textAlign="center">
+          <Typography variant="h5" sx={{ color: "white" }}>
+            {rankList[2].title}
+          </Typography>
+          <LocalBarIcon sx={{ color: "white" }} fontSize="large" />
+        </Box>
+        <Box textAlign="center">
+          <Typography variant="h5" sx={{ color: "white" }}>
+            {rankList[3].title}
+          </Typography>
+          <LocalBarIcon sx={{ color: "white" }} fontSize="large" />
+        </Box>
+        <Box textAlign="center">
+          <Typography variant="h5" sx={{ color: "white" }}>
+            {rankList[4].title}
+          </Typography>
+          <LocalBarIcon sx={{ color: "white" }} fontSize="large" />
+        </Box>
+      </Container>
     );
   } else {
     return null;

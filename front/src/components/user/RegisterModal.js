@@ -180,7 +180,7 @@ function RegisterModal({ open, handleRegisterClose }) {
           </DialogContent>
           <DialogActions sx={{ bgcolor: "#212121", pb: 5 }}>
             <Button
-              sx={{ bgcolor: "#615f5f", mx: "auto" }}
+              sx={{ bgcolor: "#615f5f", mx: "auto", color: "white" }}
               type="submit"
               disabled={!isFormValid}
             >

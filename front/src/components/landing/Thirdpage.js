@@ -15,7 +15,15 @@ export default function Thirdpage() {
       }}
     >
       <Grid item xs={12}>
-        <Typography align="center" variant="h5" sx={{ color: "#25E75C" }}>
+        <Typography
+          align="center"
+          variant="h5"
+          sx={{
+            color: "white",
+            textShadow:
+              "0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa",
+          }}
+        >
           좋아요를 많이 받은 칵테일일수록 글자가 크게 보입니다.
         </Typography>
       </Grid>
@@ -25,10 +33,11 @@ export default function Thirdpage() {
       <Grid item xs={12} sx={{ textAlign: "center" }}>
         <Button
           align="center"
-          variant="h5"
           sx={{
-            color: "#25E75C",
-            "&:hover": { border: "1px solid #25E75C" },
+            fontSize: "20px",
+            color: "white",
+            textShadow:
+              "0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa",
           }}
           onClick={() => navigate("/cocktailBar")}
         >

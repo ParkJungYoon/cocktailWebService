@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { Tab, Box, Grid } from "@mui/material";
 import { TabContext, TabPanel, TabList } from "@mui/lab";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-
 import Top10Card from "./Top10Card";
 import AllCard from "./AllCard";
 import Likes from "./Likes";

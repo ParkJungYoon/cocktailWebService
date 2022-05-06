@@ -2,16 +2,6 @@ $star1: "../imgs/star1.jpg";
 $bg1: "../imgs/loungeRankBgImg.jpg";
 
 .lounge {
-  background-image: url($star1);
-  background-size: cover;
-  background-color: rgba(64, 64, 64, 0.7);
-  height: 100vh;
-  overflow: auto;
-
-  .lounge-container {
-    margin: 0 10%;
-  }
-
   .lounge-rank-background {
     background-image: url($bg1);
     background-size: cover;

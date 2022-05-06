@@ -7,7 +7,8 @@ import * as Api from "../../api";
 //style
 import styles from "../../scss/Lounge.module.scss";
 import { style } from "@mui/material/node_modules/@mui/system";
-
+import { Box, Typography } from "@material-ui/core";
+import bg1 from "../../imgs/loungeRankBgImg.jpg";
 function Lounge() {
   const userState = useUserHook();
   const user = userState.user;
@@ -23,12 +24,37 @@ function Lounge() {
 
   return (
     <>
-      <div className={styles["lounge-rank-background"]}>
+      <Box
+        sx={{
+          backgroundColor: "rgba(64, 64, 64, 0.4)",
+          mx: "auto",
+          py: 1,
+          px: 2,
+          mt: 22,
+          width: "70%",
+          borderTop: "1px solid white",
+          borderBottom: "1px solid white",
+          color: "white",
+        }}
+      >
+        <Typography variant="h5" align="center">
+          Lounge
+        </Typography>
+      </Box>
+      <Box
+        sx={{
+          backgroundImage: `url(${bg1})`,
+          backgroundSize: "cover",
+          height: "50vh",
+          mt: 5,
+          mx: 10,
+        }}
+      >
         <LoungeRank />
-      </div>
-      <div st={{}}>
+      </Box>
+      <Box sx={{ mt: 10 }}>
         <LoungeList user={user} setRankList={setRankList} />
-      </div>
+      </Box>
     </>
   );
 }

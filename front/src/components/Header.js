@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { styled } from "@mui/material/styles";
 import {
   Link,
   Tab,
@@ -27,7 +28,26 @@ const theme = createTheme({
     },
   },
 });
-
+const StyledTabs = styled((props) => (
+  <Tabs
+    {...props}
+    TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" /> }}
+  />
+))({
+  "& .MuiTabs-indicator": {
+    display: "flex",
+    justifyContent: "center",
+    backgroundColor: "transparent",
+  },
+  "& .MuiTabs-indicatorSpan": {
+    maxWidth: 80,
+    width: "100%",
+    height: "8px",
+    backgroundColor: "#fff",
+    boxShadow:
+      "0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa",
+  },
+});
 function LinkTab(props) {
   return (
     <Tab
@@ -199,11 +219,10 @@ function Header({ user }) {
         </div>
 
         <Box sx={{ width: "100%" }} className="navbarMenu">
-          <Tabs
+          <StyledTabs
             value={value}
             onChange={handleChange}
             centered
-            indicatorColor="primary"
             textColor="inherit"
           >
             <LinkTab
@@ -242,7 +261,7 @@ function Header({ user }) {
                 navigate("/introduction");
               }}
             />
-          </Tabs>
+          </StyledTabs>
         </Box>
       </div>
     </ThemeProvider>

@@ -17,7 +17,14 @@ export default function Secondpage() {
         <Grid item xs sx={{ color: "white", textAlign: "right", mx: 10 }}>
           <Box sx={{ my: 5 }}>
             <Typography variant="h6">방문자 수를 통계로</Typography>
-            <Typography variant="h6">
+            <Typography
+              variant="h6"
+              sx={{
+                color: "white",
+                textShadow:
+                  "0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa",
+              }}
+            >
               Top10 칵테일을 미리 골라두었습니다.
             </Typography>
             <Typography variant="h6">

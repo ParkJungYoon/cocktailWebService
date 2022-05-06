@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Tab, ThemeProvider, createTheme } from "@mui/material";
+import { Box, Tab, ThemeProvider, createTheme, styled } from "@mui/material";
 import { TabContext, TabPanel, TabList } from "@mui/lab";
 import ProjectIdea from "./ProjectIdea";
 import TeamIntro from "./TeamIntro";
@@ -12,7 +12,7 @@ function IntroductionMenu() {
   const theme = createTheme({
     palette: {
       primary: {
-        main: "#FFFFFF",
+        main: "rgba(0,0,0,0)",
       },
     },
   });
@@ -33,7 +33,11 @@ function IntroductionMenu() {
       <ThemeProvider theme={theme}>
         <TabContext value={value}>
           <Box sx={boxStyle}>
-            <TabList onChange={handleChange}>
+            <TabList
+              onChange={handleChange}
+              indicatorColor="primary"
+              textColor="inherit"
+            >
               <Tab sx={{ color: "white" }} value={"0"} label="기획의도" />
               <Tab sx={{ color: "white" }} value={"1"} label="Team7" />
             </TabList>

@@ -47,35 +47,53 @@ function Edit({
 
   return (
     <Box>
-      <form onSubmit={handleSubmit}>
+      <Box component="form" onSubmit={handleSubmit}>
         <TextField
           required
-          sx={{
-            bgcolor: "white",
-            color: "white",
-          }}
+          sx={{ bgcolor: "rgba(255,255,255,0.2)", my: 3 }}
           label={"comment"}
           variant="filled"
-          color="secondary"
           value={form.content}
           fullWidth
           onChange={(e) => {
             handleFormValue("content", e.target.value);
           }}
         />
-        <Button type="submit" sx={{ ml: "auto", color: "white" }}>
-          Submit
-        </Button>
-        <Button
-          onClick={() => {
-            if (type === "edit") setTargetId(null);
-            setIsEdit(false);
-          }}
-          sx={{ color: "white" }}
-        >
-          WithDraw
-        </Button>
-      </form>
+        <Box sx={{ textAlign: "right" }}>
+          <Button
+            type="submit"
+            sx={{
+              mr: 1,
+              color: "white",
+              border: "2px solid white",
+              "&:hover": {
+                color: "black",
+                bgcolor: "white",
+                border: "2px solid black",
+              },
+            }}
+          >
+            Submit
+          </Button>
+          <Button
+            onClick={() => {
+              if (type === "edit") setTargetId(null);
+              setIsEdit(false);
+            }}
+            sx={{
+              color: "white",
+              border: "2px solid white",
+              "&:hover": {
+                color: "black",
+                bgcolor: "white",
+                border: "2px solid black",
+              },
+            }}
+          >
+            WithDraw
+          </Button>
+        </Box>
+      </Box>
     </Box>
   );
 }

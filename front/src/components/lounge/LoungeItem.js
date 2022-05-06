@@ -8,6 +8,8 @@ import {
   TableHead,
   TableRow,
   Button,
+  Grid,
+  Box,
 } from "@mui/material";
 
 import { colorChannel } from "@mui/material/node_modules/@mui/system";
@@ -18,6 +20,7 @@ import useUserHook from "../commons/useUserHook";
 
 //style
 import styles from "../../scss/Lounge.module.scss";
+import { Typography } from "@material-ui/core";
 
 //로그 아웃 상태 : userState===false
 //로그 인 상태 :  //userState.email,userState.name,userState.__id로 사용 가능합니다
@@ -98,48 +101,96 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
 
   return (
     <>
-      <Button
-        onClick={() => {
-          handleOpen();
-        }}
-        sx={{ color: "white" }}
-      >
-        goBack
-      </Button>
-      {!(item.writer?._id === user?._id) ? (
-        <></>
-      ) : (
-        <>
+      <Grid container sx={{ mb: 3 }}>
+        <Grid item xs>
           <Button
             onClick={() => {
-              handleListEdit();
+              handleOpen();
             }}
-            sx={{ color: "white" }}
-          >
-            Edit
-          </Button>
-          <Button
-            onClick={async () => {
-              await Api.delete(`board/${item._id}`).catch((err) => {
-                console.log(err.response);
-                handleOpen();
-              });
+            sx={{
+              color: "white",
+              border: "2px solid white",
+              "&:hover": {
+                color: "black",
+                bgcolor: "white",
+                border: "2px solid black",
+              },
             }}
-            sx={{ color: "white" }}
           >
-            delete
+            Back
           </Button>
-        </>
-      )}
-      <Paper>
-        <p>Title : {title}</p>
-        <p>
-          IMG : <img src={link} />
-        </p>
-        <p>Content : {content}</p>
-        <p>CreatedAt : {createdAt}</p>
+        </Grid>
+        {!(item.writer?._id === user?._id) ? (
+          <></>
+        ) : (
+          <Grid item xs sx={{ textAlign: "right" }}>
+            <Button
+              onClick={() => {
+                handleListEdit();
+              }}
+              sx={{
+                mr: 1,
+                color: "white",
+                border: "2px solid white",
+                "&:hover": {
+                  color: "black",
+                  bgcolor: "white",
+                  border: "2px solid black",
+                },
+              }}
+            >
+              Edit
+            </Button>
+            <Button
+              onClick={async () => {
+                await Api.delete(`board/${item._id}`).catch((err) => {
+                  console.log(err.response);
+                  handleOpen();
+                });
+              }}
+              sx={{
+                color: "white",
+                border: "2px solid white",
+                "&:hover": {
+                  color: "black",
+                  bgcolor: "white",
+                  border: "2px solid black",
+                },
+              }}
+            >
+              delete
+            </Button>
+          </Grid>
+        )}
+      </Grid>
+      <Paper
+        sx={{
+          mb: 2,
+          color: "white",
+          bgcolor: "rgba(64,64,64,0.7)",
+          p: 5,
+          mx: "auto",
+          width: "90%",
+        }}
+      >
+        <Typography variant="h5">Title : {title}</Typography>
+        <Typography variant="h5">
+          IMG : <Box component="img" src={link} />
+        </Typography>
+        <Typography variant="h5">Content : {content}</Typography>
+        <Typography variant="h5">CreatedAt : {createdAt}</Typography>
       </Paper>
-      <TableContainer component={Paper} className={styles["item-table"]}>
+      <TableContainer
+        component={Paper}
+        sx={{
+          mb: 2,
+          color: "white",
+          bgcolor: "rgba(64,64,64,0.7)",
+          p: 5,
+          mx: "auto",
+          width: "90%",
+        }}
+      >
         <Table size="small">
           <TableHead>
             <TableRow>
@@ -208,17 +259,29 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
         {isAdd ? (
           <Edit boardId={item._id} setIsEdit={setIsAdd} type={"add"} />
         ) : (
-          <Button
-            onClick={() => {
-              if (!user) {
-                alert("로그인 필요");
-              } else {
-                setIsAdd((prev) => !prev);
-              }
-            }}
-          >
-            댓글 작성
-          </Button>
+          <Box sx={{ textAlign: "right" }}>
+            <Button
+              onClick={() => {
+                if (!user) {
+                  alert("로그인 필요");
+                } else {
+                  setIsAdd((prev) => !prev);
+                }
+              }}
+              sx={{
+                mt: 2,
+                color: "white",
+                border: "2px solid white",
+                "&:hover": {
+                  color: "black",
+                  bgcolor: "white",
+                  border: "2px solid black",
+                },
+              }}
+            >
+              댓글 작성
+            </Button>
+          </Box>
         )}
       </TableContainer>
     </>
