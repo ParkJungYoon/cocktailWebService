@@ -11,7 +11,7 @@ import Likes from "./Likes";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#ffffff",
+      main: "rgba(0,0,0,0)",
     },
   },
 });
@@ -44,7 +44,11 @@ export default function CardMenu() {
     <ThemeProvider theme={theme}>
       <TabContext value={value}>
         <Box sx={boxStyle}>
-          <TabList onChange={handleChange} indicatorColor="transparent">
+          <TabList
+            onChange={handleChange}
+            indicatorColor="primary"
+            textColor="inherit"
+          >
             <Tab sx={{ color: "white" }} value={"1"} label="all" />
             <Tab sx={{ color: "white" }} value={"2"} label="top 10" />
             <Tab
