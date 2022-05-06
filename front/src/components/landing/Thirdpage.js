@@ -15,7 +15,7 @@ export default function Thirdpage() {
       }}
     >
       <Grid item xs={12} sx={{ mb: 5 }}>
-        <Typography align="center" variant="h5" sx={{ color: "#6EC860" }}>
+        <Typography align="center" variant="h5" sx={{ color: "#25E75C" }}>
           좋아요를 많이 받은 칵테일일수록 글자가 크게 보입니다.
         </Typography>
       </Grid>
@@ -27,8 +27,8 @@ export default function Thirdpage() {
           align="center"
           variant="h5"
           sx={{
-            color: "#6EC860",
-            "&:hover": { border: "1px solid #6EC860" },
+            color: "#25E75C",
+            "&:hover": { border: "1px solid #25E75C" },
           }}
         >
           칵테일 바 가기
