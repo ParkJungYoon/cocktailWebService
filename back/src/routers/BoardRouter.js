@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { BoardService } from "../services/BoardService";
-import { verifyToken } from "../middlewares/verifyToken";
+import { verifyToken, verify } from "../middlewares/verifyToken";
 import { ImageModel } from "../db";
 import { storage } from "../db/models/Image";
 import multer from "multer";
@@ -34,11 +34,18 @@ BoardRouter.post(
   }
 );
 
+const viewObj = new Object();
 // 특정 게시글 조회
-BoardRouter.get("/board/:id", async (req, res, next) => {
+BoardRouter.get("/board/:id", verify, async (req, res, next) => {
   try {
     const boardId = req.params.id;
-    const currentBoardInfo = await BoardService.getBoardInfo({ boardId });
+    // token이 없는 경우에는 userId == null
+    const userId = req.user;
+    const currentBoardInfo = await BoardService.getBoardInfo({
+      viewObj,
+      userId,
+      boardId,
+    });
     if (currentBoardInfo.errorMessage) {
       throw new Error(currentBoardInfo.errorMessage);
     }
