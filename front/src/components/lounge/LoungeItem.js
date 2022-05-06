@@ -22,7 +22,7 @@ import useUserHook from "../commons/useUserHook";
 //   return true;
 // };
 
-function LoungeItem({ handleOpen, item, user }) {
+function LoungeItem({ handleOpen, item, user, handleListEdit }) {
   /* Item */
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -34,6 +34,7 @@ function LoungeItem({ handleOpen, item, user }) {
   const [comments, setComments] = useState(null);
   const [isAdd, setIsAdd] = useState(false);
   const [isEdit, setIsEdit] = useState(false);
+  const [targetId, setTargetId] = useState(null);
 
   const handleEdit = useCallback(() => {
     setIsEdit((prev) => !prev);
@@ -45,13 +46,11 @@ function LoungeItem({ handleOpen, item, user }) {
         setTitle(res.data.title);
         setContent(res.data.content);
         setCreatedAt(res.data.createdAt);
-        console.log(res.data);
-
         //fetch image binary data
-        let Buffer = require("buffer/").Buffer;
-        let binary = Buffer.from(res.data.data[0].data); //or Buffer.from(data, 'binary')
-        let imgData = new Blob(binary, { type: "application/octet-binary" });
-        setLink(window.URL.createObjectURL(imgData));
+        // let Buffer = require("buffer/").Buffer;
+        // let binary = Buffer.from(res.data.data[0].data); //or Buffer.from(data, 'binary')
+        // let imgData = new Blob(binary, { type: "application/octet-binary" });
+        // setLink(window.URL.createObjectURL(imgData));
 
         //fetch image files
         // await Api.get("images", res.data.images[0]).then((res) => {
@@ -106,7 +105,13 @@ function LoungeItem({ handleOpen, item, user }) {
         <></>
       ) : (
         <>
-          {/* <button onClick={}>edit</button> */}
+          <button
+            onClick={() => {
+              handleListEdit();
+            }}
+          >
+            Edit
+          </button>
           <button
             onClick={async () => {
               await Api.delete(`board/${item._id}`).catch((err) => {
@@ -140,23 +145,29 @@ function LoungeItem({ handleOpen, item, user }) {
           <TableBody>
             {comments?.map((comment, i) => {
               return (
-                <TableRow key={i}>
+                <TableRow
+                  key={i}
+                  onClick={() => {
+                    setTargetId(comment._id);
+                  }}
+                >
                   <TableCell>{i + 1}</TableCell>
                   <TableCell align="right"> {comment.content}</TableCell>
                   <TableCell align="right">{comment.writer?.name}</TableCell>
                   <TableCell align="right">
                     {!(comment.writer?._id === user?._id) ? (
                       <></>
-                    ) : isEdit ? (
+                    ) : isEdit && comment._id === targetId ? (
                       <Edit
                         setIsEdit={handleEdit}
                         commentId={comment._id}
                         type={"edit"}
+                        setTargetId={setTargetId}
                       />
                     ) : (
                       <>
                         <button
-                          onClick={() => {
+                          onClick={(e) => {
                             handleEdit();
                           }}
                         >

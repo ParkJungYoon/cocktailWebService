@@ -5,8 +5,10 @@ import sytles from "../../scss/Lounge.module.scss";
 import LoungeTable from "./LoungeTable";
 import * as Api from "../../api";
 
-function LoungeList({ user }) {
+function LoungeList({ user, setRankList }) {
   const [isForm, setIsForm] = useState(false);
+  const [openItem, setOpenItem] = useState();
+  const [isOpen, setIsOpen] = useState(false);
   // if (user) {
   //   const [name, email] = user;
   // }
@@ -14,9 +16,17 @@ function LoungeList({ user }) {
   return (
     <>
       {isForm ? (
-        <LoungeForm setIsForm={setIsForm} />
+        <LoungeForm setIsForm={setIsForm} type={"add"} />
       ) : (
-        <LoungeTable user={user} setIsForm={setIsForm} />
+        <LoungeTable
+          user={user}
+          setIsForm={setIsForm}
+          setRankList={setRankList}
+          openItem={openItem}
+          setOpenItem={setOpenItem}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+        />
       )}
     </>
   );

@@ -51,7 +51,6 @@ export default function FormDialog({ open, handleLoginClose }) {
         email,
         password,
       });
-      console.log(res);
 
       // 유저 정보는 response의 data임.
       const user = res.data.discoveredUser;

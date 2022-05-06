@@ -3,7 +3,14 @@ import { UserContext } from "../user/reducer/userReducer";
 import { Button, TextField, Box, Container } from "@mui/material";
 import * as Api from "../../api";
 
-function Edit({ setIsEdit, boardId, commentId, prevComment, type }) {
+function Edit({
+  setIsEdit,
+  boardId,
+  commentId,
+  prevComment,
+  type,
+  setTargetId,
+}) {
   const { userState, userDispatch } = useContext(UserContext);
 
   const [form, setForm] = useState({
@@ -31,6 +38,7 @@ function Edit({ setIsEdit, boardId, commentId, prevComment, type }) {
         });
       }
       //setUser
+      if (type === "edit") setTargetId(null);
       setIsEdit(false);
     } catch (err) {
       console.log(err.response);
@@ -60,6 +68,7 @@ function Edit({ setIsEdit, boardId, commentId, prevComment, type }) {
         </Button>
         <Button
           onClick={() => {
+            if (type === "edit") setTargetId(null);
             setIsEdit(false);
           }}
           sx={{ color: "Black" }}
