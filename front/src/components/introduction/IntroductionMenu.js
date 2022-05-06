@@ -3,7 +3,6 @@ import { Box, Tab, ThemeProvider, createTheme } from "@mui/material";
 import { TabContext, TabPanel, TabList } from "@mui/lab";
 import ProjectIdea from "./ProjectIdea";
 import TeamIntro from "./TeamIntro";
-import "../../scss/Introduction.scss";
 
 function IntroductionMenu() {
   const [value, setValue] = React.useState("0");
@@ -19,16 +18,15 @@ function IntroductionMenu() {
   });
   //stlye
   const boxStyle = {
-    backgroundColor: "rgba(64, 64, 64, 0.5)",
+    backgroundColor: "rgba(64, 64, 64, 0.4)",
     mx: "auto",
     py: 1,
     px: 2,
-    mt: 5,
-    width: "80%",
+    mt: 22,
+    width: "70%",
     borderTop: "1px solid white",
     borderBottom: "1px solid white",
   };
-  const tabStyle = { color: "white" };
 
   return (
     <>
@@ -36,15 +34,15 @@ function IntroductionMenu() {
         <TabContext value={value}>
           <Box sx={boxStyle}>
             <TabList onChange={handleChange}>
-              <Tab sx={tabStyle} value={"0"} label="기획의도" />
-              <Tab sx={tabStyle} value={"1"} label="Team7" />
+              <Tab sx={{ color: "white" }} value={"0"} label="기획의도" />
+              <Tab sx={{ color: "white" }} value={"1"} label="Team7" />
             </TabList>
           </Box>
           <TabPanel value={"0"}>
-            <ProjectIdea></ProjectIdea>
+            <ProjectIdea />
           </TabPanel>
           <TabPanel value={"1"}>
-            <TeamIntro></TeamIntro>
+            <TeamIntro />
           </TabPanel>
         </TabContext>
       </ThemeProvider>

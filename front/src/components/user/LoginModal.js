@@ -10,11 +10,11 @@ import {
   DialogTitle,
   IconButton,
   FormHelperText,
+  Box,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
 import * as Api from "../../api";
-import "../../scss/Modal.scss";
 import { UserContext } from "../user/reducer/userReducer";
 
 export default function FormDialog({ open, handleLoginClose }) {
@@ -51,7 +51,6 @@ export default function FormDialog({ open, handleLoginClose }) {
         email,
         password,
       });
-      console.log(res);
 
       // 유저 정보는 response의 data임.
       const user = res.data.discoveredUser;
@@ -80,7 +79,7 @@ export default function FormDialog({ open, handleLoginClose }) {
 
   return (
     <Dialog open={open} onClose={handleLoginClose}>
-      <DialogTitle className="ModalTitle" width="552px" sx={{ pt: 5 }}>
+      <DialogTitle width="552px" sx={{ pt: 5, bgcolor: "#212121" }}>
         <IconButton
           aria-label="close"
           onClick={handleLoginClose}
@@ -94,14 +93,17 @@ export default function FormDialog({ open, handleLoginClose }) {
           <CloseIcon />
         </IconButton>
       </DialogTitle>
-      <form onSubmit={handleSubmit}>
-        <DialogContent className="ModalContent">
+      <Box component="form" onSubmit={handleSubmit}>
+        <DialogContent sx={{ bgcolor: "#212121" }}>
           <DialogContentText
             align="center"
-            style={{ color: "white", fontWeight: "bold" }}
+            sx={{ color: "white", fontWeight: "bold", mb: 3 }}
           >
             저쪽 손님께서
             <br /> 보내신 겁니다
+          </DialogContentText>
+          <DialogContentText align="center" sx={{ color: "#6EC860" }}>
+            어서 오세요. 저희 서비스와 함께 다양한 칵테일을 알아보러 가볼까요?
           </DialogContentText>
 
           <TextField
@@ -113,7 +115,7 @@ export default function FormDialog({ open, handleLoginClose }) {
             fullWidth
             variant="filled"
             value={email}
-            color="secondary"
+            color="success"
             onChange={(e) => setEmail(e.target.value)}
           />
           {!isEmailValid && (
@@ -129,7 +131,7 @@ export default function FormDialog({ open, handleLoginClose }) {
             type="password"
             fullWidth
             variant="filled"
-            color="secondary"
+            color="success"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -139,17 +141,16 @@ export default function FormDialog({ open, handleLoginClose }) {
             </FormHelperText>
           )}
         </DialogContent>
-        <DialogActions className="ModalButton" sx={{ pb: 5 }}>
+        <DialogActions sx={{ pb: 5, bgcolor: "#212121" }}>
           <Button
-            className="Button"
-            sx={{ mx: "auto" }}
+            sx={{ mx: "auto", bgcolor: "#615f5f" }}
             type="submit"
             disabled={!isFormValid}
           >
             Login
           </Button>
         </DialogActions>
-      </form>
+      </Box>
     </Dialog>
   );
 }

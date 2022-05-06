@@ -11,15 +11,15 @@ export default function Thirdpage() {
         display: "flex",
         justifyContent: "center",
         alignItem: "center",
-        mt: "10%",
+        pt: "12%",
       }}
     >
-      <Grid item xs={12} sx={{ mb: 5 }}>
-        <Typography align="center" variant="h5" sx={{ color: "#6EC860" }}>
+      <Grid item xs={12}>
+        <Typography align="center" variant="h5" sx={{ color: "#25E75C" }}>
           좋아요를 많이 받은 칵테일일수록 글자가 크게 보입니다.
         </Typography>
       </Grid>
-      <Grid item sx={{ mb: 10 }}>
+      <Grid item sx={{ my: 3 }}>
         <WordCloud />
       </Grid>
       <Grid item xs={12} sx={{ textAlign: "center" }}>
@@ -27,9 +27,10 @@ export default function Thirdpage() {
           align="center"
           variant="h5"
           sx={{
-            color: "#6EC860",
-            "&:hover": { border: "1px solid #6EC860" },
+            color: "#25E75C",
+            "&:hover": { border: "1px solid #25E75C" },
           }}
+          onClick={() => navigate("/cocktailBar")}
         >
           칵테일 바 가기
         </Button>
