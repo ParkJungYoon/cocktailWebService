@@ -1,16 +1,18 @@
 import * as React from "react";
 import { Box, MenuItem, FormControl, Select } from "@mui/material";
+import useUserHook from "../commons/useUserHook";
 
 export default function AllSortButton({ setSort, setPage, setCocktails }) {
   // state
   const [order, setOrder] = React.useState("");
+  const userState = useUserHook();
 
   return (
     <Box
       sx={{
         height: 50,
         width: 150,
-        bgcolor: "rgba(64, 64, 64, 0.7)",
+        bgcolor: "rgba(64, 64, 64, 0.4)",
       }}
     >
       <FormControl fullWidth>
@@ -24,6 +26,9 @@ export default function AllSortButton({ setSort, setPage, setCocktails }) {
           <MenuItem
             value={"이름 오름차순"}
             onClick={() => {
+              {
+                !userState.user && alert("로그인 후 이용해주세요.");
+              }
               setCocktails([]);
               setPage(0);
               setSort("nameAsc");
@@ -35,6 +40,9 @@ export default function AllSortButton({ setSort, setPage, setCocktails }) {
           <MenuItem
             value={"이름 내림차순"}
             onClick={() => {
+              {
+                !userState.user && alert("로그인 후 이용해주세요.");
+              }
               setCocktails([]);
               setPage(0);
               setSort("nameDesc");
@@ -46,6 +54,9 @@ export default function AllSortButton({ setSort, setPage, setCocktails }) {
           <MenuItem
             value={"좋아요순"}
             onClick={() => {
+              {
+                !userState.user && alert("로그인 후 이용해주세요.");
+              }
               setCocktails([]);
               setPage(0);
               setSort("likeDesc");

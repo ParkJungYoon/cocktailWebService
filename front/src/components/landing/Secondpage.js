@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Grid, Link, Box } from "@mui/material";
+import { Typography, Grid, Link, Box, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 import Top10Chart from "./Top10Chart";
@@ -8,32 +8,39 @@ export default function Secondpage() {
   const navigate = useNavigate();
   return (
     <>
-      <Grid container sx={{ bgcolor: "rgb(64,64,64,0.7)" }}>
-        <Grid item xs={12} sx={{ zIndex: 1, color: "white", mt: 30, mr: 5 }}>
-          <Box textAlign={"right"}>
-            <Typography variant="h4">Starts with</Typography>
-            <Typography variant="h4" sx={{ mb: 5 }}>
+      <Grid container sx={{ pt: 5 }}>
+        <Grid item xs sx={{ ml: 10 }}>
+          <Box sx={{ minWidth: "400px", maxWidth: "600px" }}>
+            <Top10Chart />
+          </Box>
+        </Grid>
+        <Grid item xs sx={{ color: "white", textAlign: "right", mx: 10 }}>
+          <Box>
+            <Typography variant="h5">Starts with</Typography>
+            <Typography variant="h5" sx={{ mb: 3 }}>
               Top 10 Cocktails
             </Typography>
+          </Box>
+          <Box sx={{ my: 5 }}>
+            <Typography variant="h6">방문자 수를 통계로</Typography>
+            <Typography variant="h6">
+              Top10 칵테일을 미리 골라두었습니다.
+            </Typography>
+            <Typography variant="h6">
+              인기가 많은 칵테일을 만나보세요
+            </Typography>
+          </Box>
+          <Box sx={{ ml: 10 }}>
             <Link
               underline="none"
               className="top10Button"
               onClick={() => {
                 navigate("/cocktailBar");
               }}
+              sx={{ mt: 5 }}
             >
               Explore
             </Link>
-          </Box>
-        </Grid>
-        <Grid item xs sx={{ zIndex: 1, mt: 8 }}>
-          <Box
-            sx={{
-              maxWidth: "700px",
-              mx: "auto",
-            }}
-          >
-            <Top10Chart />
           </Box>
         </Grid>
       </Grid>

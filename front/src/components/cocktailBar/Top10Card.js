@@ -22,20 +22,15 @@ export default function Top10Card() {
 
   return (
     <>
-      <Grid container color="white">
-        <Box
-          sx={{
-            px: 15,
-            pb: 3,
-          }}
-        >
+      <Grid container sx={{ px: 20, mx: "auto" }}>
+        <Grid item xs>
           <Top10SortButton
             top10Cocktails={top10Cocktails}
             setTop10Cocktails={setTop10Cocktails}
           />
-        </Box>
+        </Grid>
       </Grid>
-      <Grid container spacing={3} sx={{ px: 10 }}>
+      <Grid container spacing={2} sx={{ pt: 3, px: 20, mx: "auto" }}>
         {top10Cocktails.map((cocktail, i) => {
           return (
             <Grid key={i} item xs={12} md={6}>

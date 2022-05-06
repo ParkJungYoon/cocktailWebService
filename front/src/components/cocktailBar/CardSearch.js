@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import { styled } from "@mui/material/styles";
 import SearchIcon from "@mui/icons-material/Search";
 import { InputBase } from "@mui/material";
+import useUserHook from "../commons/useUserHook";
 
 // style
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
-  backgroundColor: "rgba(64, 64, 64, 0.7)",
+  backgroundColor: "rgba(64, 64, 64, 0.4)",
   color: "white",
   marginLeft: "auto",
   marginRight: "50px",
@@ -18,7 +19,7 @@ const Search = styled("div")(({ theme }) => ({
 const SearchButton = styled("button")(({ theme }) => ({
   position: "absolute",
   borderRadius: theme.shape.borderRadius,
-  backgroundColor: "rgba(64, 64, 64, 0.7)",
+  backgroundColor: "rgba(64, 64, 64, 0.4)",
   marginLeft: "5px",
   color: "white",
   width: "50px",
@@ -49,9 +50,13 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function CardSearch({ setWord, setCocktails, setPage }) {
   const [search, setSearch] = useState("");
+  const userState = useUserHook();
   const handleOnClick = () => {
+    {
+      !userState.user && alert("로그인 후 이용해주세요.");
+    }
     setCocktails([]);
-    setPage(0);
+    setPage(1);
     setWord(search);
   };
 

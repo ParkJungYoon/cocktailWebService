@@ -11,7 +11,7 @@ function AllCard() {
   // state
   const [word, setWord] = useState("");
   const [cocktails, setCocktails] = useState([]);
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(1);
   const [load, setLoad] = useState(false);
   const [preventRef, setPreventRef] = useState(true); //중복 실행 방지
   const [endRef, setEndRef] = useState(false); //모든 글 로드 확인
@@ -42,7 +42,9 @@ function AllCard() {
   };
 
   useEffect(() => {
-    if (page !== 0) getPost();
+    if (page >= 0) {
+      getPost();
+    }
   }, [page, word, sort]);
 
   const getPost = useCallback(async () => {
@@ -85,7 +87,7 @@ function AllCard() {
 
   return (
     <>
-      <Grid container sx={{ px: 15 }}>
+      <Grid container sx={{ px: 20, mx: "auto" }}>
         <Grid item xs>
           <AllSortButton
             setSort={setSort}
@@ -101,7 +103,7 @@ function AllCard() {
           />
         </Grid>
       </Grid>
-      <Grid container spacing={1} sx={{ pt: 3, px: 15, mx: "auto" }}>
+      <Grid container spacing={1} sx={{ pt: 3, px: 20, mx: "auto" }}>
         {cocktails.map((cocktail, i) => {
           return (
             <Grid key={i} item xs>

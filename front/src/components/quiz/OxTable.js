@@ -1,13 +1,13 @@
 import React from "react";
 import "../../scss/Quiz.scss";
-
+import { Box } from "@mui/material";
 const OxTable = ({ setStep, setDisable, ox }) => {
   let splitChar = ox.split("");
   let lst = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   return (
     <div className="oxTable">
-      <table>
+      <Box component="table">
         <td className="outlineStyle">
           <tr>
             <td>NO.</td>
@@ -32,7 +32,7 @@ const OxTable = ({ setStep, setDisable, ox }) => {
             ))}
           </tr>
         </td>
-      </table>
+      </Box>
     </div>
   );
 };

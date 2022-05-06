@@ -11,8 +11,15 @@ const likeSchema = new Schema({
   },
   name: {
     type: String,
-  },
+  }
 });
+
+likeSchema.virtual("isLiked").get(() => {
+  return true;
+})
+
+likeSchema.set('toObject', { virtuals: true })
+likeSchema.set('toJSON', { virtuals: true })
 
 const Like = model("Like", likeSchema);
 

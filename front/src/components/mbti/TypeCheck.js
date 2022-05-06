@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Box, Grid, Container, Link } from "@mui/material";
+import { Button, Grid, Container, Link, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 const TypeCheck = ({ countEI, countSN, countTF, countJP }) => {
@@ -20,19 +20,34 @@ const TypeCheck = ({ countEI, countSN, countTF, countJP }) => {
 
   return (
     <>
-      <Grid container>
-        <Grid item xs={12}>
-          <div className="mbtiResultText">
-            <p>테스트 문항을 완료하셨습니다.</p>
-            <p>버튼을 눌러 결과를 확인하세요.</p>
+      <Grid
+        container
+        sx={{
+          bgcolor: "rgba(64,64,64,0.6)",
+          width: "100vw",
+          height: "60%",
+          alignItems: "center",
+        }}
+      >
+        <Grid item xs={12} sx={{ color: "white", textAlign: "center" }}>
+          <Typography variant="h4">테스트 문항을 완료하셨습니다.</Typography>
+          <Typography variant="h4">버튼을 눌러 결과를 확인하세요.</Typography>
 
-            <Link
-              onClick={() => navigate(`/cocktailTest/mbti/${onClickButton()}`)}
-              sx={{ textDecoration: "none" }}
+          <Link
+            onClick={() => navigate(`/cocktailTest/mbti/${onClickButton()}`)}
+            sx={{ textDecoration: "none" }}
+          >
+            <Button
+              sx={{
+                color: "white",
+                mt: 3,
+                fontSize: "2vw",
+                "&:hover": { color: "#ff3897" },
+              }}
             >
-              <p className="mbtiResultBtn">결과보기</p>
-            </Link>
-          </div>
+              결과보기
+            </Button>
+          </Link>
         </Grid>
       </Grid>
     </>

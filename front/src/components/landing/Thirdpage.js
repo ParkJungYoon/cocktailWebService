@@ -1,105 +1,39 @@
-import React from "react";
-import { Typography, Grid, Link, Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { Box, Button, Grid, Typography } from "@mui/material";
+import WordCloud from "../test/WordCloud";
 
-import left from "../../imgs/left.png";
-import right from "../../imgs/right.png";
-
-export default function Secondpage() {
+export default function Thirdpage() {
   const navigate = useNavigate();
-
-  // style
-  const containerStyle = {
-    bgcolor: "rgba(64,64,64,0.6)",
-    width: "80%",
-
-    height: "60%",
-    mx: "auto",
-    mt: "10%",
-    px: 3,
-    borderRadius: "15px",
-    alignItems: "center",
-  };
-  const buttonStyle = {
-    position: "relative",
-    color: "white",
-    border: "2px solid white",
-    py: 1,
-    px: 3,
-    cursor: "pointer",
-    zIndex: 10,
-    "&:hover": { boxShadow: "0 0 15px rgb(0, 0, 0)" },
-  };
   return (
-    <>
-      <Grid container sx={containerStyle}>
-        <Grid
-          item
-          xs={12}
+    <Grid
+      container
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItem: "center",
+        mt: "10%",
+      }}
+    >
+      <Grid item xs={12} sx={{ mb: 5 }}>
+        <Typography align="center" variant="h5" sx={{ color: "#25E75C" }}>
+          좋아요를 많이 받은 칵테일일수록 글자가 크게 보입니다.
+        </Typography>
+      </Grid>
+      <Grid item sx={{ mb: 10 }}>
+        <WordCloud />
+      </Grid>
+      <Grid item xs={12} sx={{ textAlign: "center" }}>
+        <Button
+          align="center"
+          variant="h5"
           sx={{
-            color: "white",
-            ml: 10,
-            mt: 2,
+            color: "#25E75C",
+            "&:hover": { border: "1px solid #25E75C" },
           }}
         >
-          <Typography variant="h4">Test your cocktail</Typography>
-
-          <Typography variant="h4" sx={{ mb: 3 }}>
-            knowledge
-          </Typography>
-          <Link
-            underline="none"
-            className="top10Button"
-            onClick={() => {
-              navigate("/cocktailTest/quiz");
-            }}
-            sx={buttonStyle}
-          >
-            Explore
-          </Link>
-        </Grid>
-        <Box
-          component="img"
-          src={left}
-          alt="left"
-          sx={{
-            position: "absolute",
-            width: "50vw",
-            height: "700px",
-            right: 0,
-            top: 60,
-          }}
-        />
-        <Grid item xs={12} sx={{ color: "white", textAlign: "right", mr: 10 }}>
-          <Box
-            component="img"
-            src={right}
-            alt="right"
-            sx={{
-              position: "absolute",
-              width: "50vw",
-              height: "700px",
-              left: 0,
-              bottom: -130,
-            }}
-          />
-          <Typography variant="h4">How about</Typography>
-          <Typography variant="h4">MBTI Cocktail</Typography>
-          <Typography variant="h4" sx={{ mb: 3 }}>
-            Test
-          </Typography>
-          <Link
-            underline="none"
-            className="top10Button"
-            onClick={() => {
-              navigate("/cocktailTest/mbti");
-            }}
-            sx={buttonStyle}
-          >
-            Explore
-          </Link>
-        </Grid>
+          칵테일 바 가기
+        </Button>
       </Grid>
-    </>
+    </Grid>
   );
 }
