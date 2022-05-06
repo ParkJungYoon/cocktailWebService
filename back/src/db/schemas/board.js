@@ -21,6 +21,11 @@ const boardSchema = new Schema(
         ref: "Comment",
       },
     ],
+    visited: {
+      type: Number,
+      required: false,
+      default: 0,
+    },
   },
   { timestamps: true }
 );
