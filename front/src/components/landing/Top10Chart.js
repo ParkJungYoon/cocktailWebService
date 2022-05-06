@@ -9,7 +9,7 @@ import {
   Legend,
 } from "chart.js";
 import * as Api from "../../api";
-import { Bar } from "react-chartjs-2";
+import { Radar } from "react-chartjs-2";
 
 ChartJS.register(
   CategoryScale,
@@ -82,6 +82,6 @@ export const Top10Chart = ({}) => {
     ],
   };
 
-  return <Bar options={options} data={data} />;
+  return <Radar options={options} data={data} />;
 };
 export default Top10Chart;
