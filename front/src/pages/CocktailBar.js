@@ -5,18 +5,16 @@ import star1 from "../imgs/star1.jpg";
 import "../scss/CocktailBar.scss";
 import MenuBar from "../components/cocktailBar/MenuBar";
 
-export default function Dictionary() {
+export default function CocktailBar() {
+  const boxStyle = {
+    backgroundImage: `url(${star1})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    height: "100vh",
+    overflow: "auto",
+  };
   return (
-    <Box
-      container
-      sx={{
-        backgroundImage: `url(${star1})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        height: "100vh",
-        overflow: "auto",
-      }}
-    >
+    <Box container sx={boxStyle}>
       <MenuBar />
     </Box>
   );

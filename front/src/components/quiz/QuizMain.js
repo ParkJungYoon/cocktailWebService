@@ -1,6 +1,13 @@
 /* eslint no-restricted-globals: ["off"] */
 import React, { useState } from "react";
-import { Box, Grid, LinearProgress, Button, Typography } from "@mui/material";
+import {
+  Box,
+  Grid,
+  LinearProgress,
+  Button,
+  Typography,
+  Container,
+} from "@mui/material";
 import "../../scss/Quiz.scss";
 
 import Question from "./Question";
@@ -26,22 +33,17 @@ function QuizMain(props) {
     borderRadius: "5px",
   };
   const progress = {
-    py: 5,
-    px: 5,
-    mx: 5,
-    mb: 5,
-    borderRadius: "1rem",
-    backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${bgImg})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
+    px: "20%",
+    mt: 15,
   };
   const result = {
-    py: 10,
     px: 5,
-    mb: 10,
-    borderRadius: "1rem",
-    backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url(${quizresult})`,
+    // borderRadius: "1rem",
+    height: "100vh",
+    backgroundImage: `url(${quizresult})`,
     backgroundSize: "cover",
+    backgroundPosition: "center",
+    // mt: 3,
   };
   const progressBarAlignCenter = { display: "flex", alignItems: "center" };
 
@@ -78,7 +80,7 @@ function QuizMain(props) {
           <Question question={state.questions[step]} />
           <Grid container sx={{ mb: 3 }}>
             {/* progress bar */}
-            <Grid item xs={11} sx={progressBarAlignCenter}>
+            <Grid item xs={11.4} sx={progressBarAlignCenter}>
               <Box sx={{ width: "100%" }}>
                 <LinearProgress
                   sx={progressBarStyle}
@@ -87,7 +89,7 @@ function QuizMain(props) {
                 />
               </Box>
             </Grid>
-            <Grid item xs={1} sx={percentStyle}>
+            <Grid item xs={0.6} sx={percentStyle}>
               {step * 10}%
             </Grid>
           </Grid>
@@ -110,79 +112,94 @@ function QuizMain(props) {
       ) : (
         // result part
         <Grid item xs={12} sx={result}>
-          <Grid container>
-            <Box
-              sx={{
-                border: "3px solid white",
-                pt: 5,
-                pb: 1,
-                px: 5,
-                mx: "auto",
-                maxWidth: "500px",
-              }}
-            >
-              <Typography
-                variant="h5"
+          <Container
+            sx={{
+              backgroundColor: "rgba(0, 0, 0, 0.7)",
+              height: "100vh",
+              width: "100%",
+            }}
+          >
+            <Grid container pt={7}>
+              <Box
                 sx={{
-                  color: "white",
-                  "&:hover": { color: "#ff3897", cursor: "default" },
+                  border: "3px solid white",
+                  pt: 5,
+                  pb: 1,
+                  px: 5,
+                  mx: "auto",
+                  maxWidth: "500px",
                 }}
               >
-                SCORE : {score}
-              </Typography>
-              {/* <p>MARKING : {marking}</p> */}
-              {/* O/X table */}
-              <OxTable
-                ox={ox}
-                setStep={setStep}
-                setDisable={setDisable}
-              ></OxTable>
-              <Button
-                sx={{
-                  color: "white",
-                  mt: 1,
-                  cursor: "pointer",
-                  "&:hover": { backgroundColor: "rgba(128, 128, 128, 0.5)" },
-                }}
-                onClick={() => {
-                  location.reload();
-                }}
-              >
-                RESTART
-              </Button>
-            </Box>
-          </Grid>
+                <Typography
+                  variant="h4"
+                  sx={{
+                    color: "white",
+                    "&:hover": { color: "#ff3897", cursor: "default" },
+                  }}
+                >
+                  SCORE : {score}
+                </Typography>
+                {/* <p>MARKING : {marking}</p> */}
+                {/* O/X table */}
+                <OxTable
+                  ox={ox}
+                  setStep={setStep}
+                  setDisable={setDisable}
+                ></OxTable>
+                <Button
+                  sx={{
+                    color: "white",
+                    mt: 1,
+                    cursor: "pointer",
+                    "&:hover": { backgroundColor: "rgba(128, 128, 128, 0.5)" },
+                  }}
+                  onClick={() => {
+                    location.reload();
+                  }}
+                >
+                  RESTART
+                </Button>
+              </Box>
+            </Grid>
 
-          {disable === true ? (
-            // 정답지
-            <>
-              <Question question={state.questions[step]} />
-              <Grid container sx={{ mb: 3 }}>
-                <Grid
-                  item
-                  xs={12}
-                  //white bar
-                  sx={whiteBarStyle}
-                ></Grid>
-              </Grid>
-              <Grid container spacing={3}>
-                <Grid item xs sx={{ ml: 10 }}>
-                  <Correct
-                    answer={state.answers[step]}
-                    step={step}
-                    correctAnswer={state.correctAnswers[step]}
-                  />
+            {disable === true ? (
+              // 정답지
+              <Box
+                sx={{
+                  pt: 5,
+                  px: 5,
+                }}
+              >
+                <Question question={state.questions[step]} />
+                <Grid container sx={{ mb: 3 }}>
+                  <Grid
+                    item
+                    xs={12}
+                    //white bar
+                    sx={whiteBarStyle}
+                  ></Grid>
                 </Grid>
-                <Grid item xs sx={{ mx: "auto" }}>
-                  <QuestionImg img={state.imgs[step]} />
+                <Grid container spacing={3}>
+                  {state.imgs[step] && (
+                    <Grid item xs sx={{ mx: "auto" }}>
+                      <QuestionImg img={state.imgs[step]} />
+                    </Grid>
+                  )}
+                  <Grid item xs sx={{ ml: 10 }}>
+                    <Correct
+                      answer={state.answers[step]}
+                      step={step}
+                      correctAnswer={state.correctAnswers[step]}
+                    />
+                  </Grid>
                 </Grid>
-              </Grid>
-            </>
-          ) : (
-            <Typography variant="body1" sx={{ color: "white", mt: 3 }}>
-              문제 번호를 눌려 정답을 확인해보세요.
-            </Typography>
-          )}
+              </Box>
+            ) : (
+              <Typography variant="body1" sx={{ color: "white", mt: 3 }}>
+                문제 번호를 눌려 정답을 확인해보세요.
+              </Typography>
+            )}
+          </Container>
         </Grid>
       )}
     </>

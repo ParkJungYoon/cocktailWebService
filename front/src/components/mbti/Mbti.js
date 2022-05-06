@@ -5,7 +5,7 @@ import MbtiMain from "./MbtiMain";
 function Mbti() {
   return (
     <Grid container className="mbti">
-      <Grid item xs={12} sx={{ mt: "20vh" }}>
+      <Grid item xs={12}>
         <MbtiMain></MbtiMain>
       </Grid>
     </Grid>

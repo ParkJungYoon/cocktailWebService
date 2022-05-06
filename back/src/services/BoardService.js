@@ -7,12 +7,32 @@ class BoardService {
     return newBoard;
   };
 
-  static getBoardInfo = async ({ boardId }) => {
-    const board = await BoardModel.findBoard({ boardId });
+  static getBoardInfo = async ({ viewObj, userId, boardId }) => {
+    let board = await BoardModel.findBoard({ boardId });
     if (!board) {
       const errorMessage = "해당 게시글이 없습니다. 다시 한 번 확인해 주세요.";
       return { errorMessage };
     }
+    // 조회수
+    if (!viewObj[boardId]) {
+      viewObj[boardId] = [];
+    }
+    if (!userId) {
+      const view = await BoardModel.views({ boardId });
+    } else if (viewObj[boardId].indexOf(userId) === -1) {
+      viewObj[boardId].push(userId);
+      await BoardModel.views({ boardId });
+      //24시간이 지나면 배열에서 삭제
+      setTimeout(() => {
+        viewObj[boardId].splice(viewObj[boardId].indexOf(userId), 1);
+      }, 864000);
+      for (let i in viewObj) {
+        if (i.length == 0) {
+          delete viewObj.i;
+        }
+      }
+    }
+    board = await BoardModel.findBoard({ boardId });
     return board;
   };
 

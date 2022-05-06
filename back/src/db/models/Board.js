@@ -17,8 +17,19 @@ class BoardModel {
     return count;
   };
 
-  static findBoard = async ({ boardId }) => {
+  static views = async ({ boardId }) => {
+    const update = await Board.findOneAndUpdate(
+      { _id: boardId },
+      { $inc: { visited: 1 } }
+    );
 
+    if (update !== null) {
+      return true;
+    }
+    return false;
+  };
+
+  static findBoard = async ({ boardId }) => {
     const board = await Board.findOne({ _id: boardId })
       .populate({
         path: "comment",
@@ -53,7 +64,11 @@ class BoardModel {
     const filter = { _id: boardId };
     const update = { $set: newValues };
     const option = { returnOriginal: false };
-    const modifiedBoard = await Board.findOneAndUpdate(filter, update, option).lean();
+    const modifiedBoard = await Board.findOneAndUpdate(
+      filter,
+      update,
+      option
+    ).lean();
     return modifiedBoard;
   };
 
@@ -62,7 +77,6 @@ class BoardModel {
     await Comment.deleteMany({ boardId });
     return deleteBoard;
   };
-
 }
 
 export { BoardModel };
