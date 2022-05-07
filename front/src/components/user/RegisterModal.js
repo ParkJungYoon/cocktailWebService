@@ -13,10 +13,12 @@ import {
   Box,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-// import imgSrc from "./test.png";
+
+import { useSnackbar } from "notistack";
 import * as Api from "../../api";
 
 function RegisterModal({ open, handleRegisterClose }) {
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   const navigate = useNavigate();
 
   //useState로 email 상태를 생성함.
@@ -63,7 +65,7 @@ function RegisterModal({ open, handleRegisterClose }) {
       handleRegisterClose();
       navigate("/", { replace: true });
     } catch (err) {
-      console.log("회원가입에 실패하였습니다.", err);
+      enqueueSnackbar(`다른 이메일을 입력해주세요`);
     }
   };
 
