@@ -52,7 +52,7 @@ function LoungeForm({ userState, item, setIsForm, type }) {
         color: "white",
         bgcolor: "rgba(64,64,64,0.5)",
         width: "70vw",
-
+        mt: 10,
         mx: "auto",
         mb: 30,
         p: 5,

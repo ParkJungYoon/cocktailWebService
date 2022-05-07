@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState, useRef } from "react";
 import {
-  Paper,
+  IconContainerProps,
   Table,
   TableBody,
   TableCell,
@@ -10,6 +10,7 @@ import {
   Button,
   Grid,
   Box,
+  Container,
 } from "@mui/material";
 
 import * as Api from "../../api";
@@ -44,7 +45,11 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
       .then((res) => {
         setTitle(res.data.title);
         setContent(res.data.content);
-        setCreatedAt(res.data.createdAt);
+        setCreatedAt(
+          res.data.createdAt.split("T")[0] +
+            " " +
+            res.data.createdAt.split("T")[1].slice(0, 8)
+        );
         //fetch image binary data
         if (res.data.data[0].data) {
           let Buffer = require("buffer/").Buffer;
@@ -134,36 +139,59 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
           </Grid>
         )}
       </Grid>
-      <Paper
+      <Box
         sx={{
           mb: 2,
           color: "white",
           bgcolor: "rgba(64,64,64,0.7)",
-          p: 5,
           mx: "auto",
           width: "90%",
         }}
       >
-        <Typography variant="h5">Title : {title}</Typography>
-        <Typography variant="h5">
-          IMG : <Box component="img" id="img" src={link} />
-        </Typography>
-        <Typography variant="h5">Content : {content}</Typography>
+        <Grid
+          container
+          sx={{ borderBottom: "2px solid white", p: 2, alignItems: "center" }}
+        >
+          <Grid item xs>
+            <Typography variant="h5">Title</Typography>
+          </Grid>
+          <Grid item xs>
+            <Typography align="center" variant="h5">
+              {title}
+            </Typography>
+          </Grid>
+          <Grid item xs>
+            <Typography align="right" variant="body1">
+              {createdAt}
+            </Typography>
+          </Grid>
+        </Grid>
+        <Box>
+          <Typography variant="h5">
+            IMG : <Box component="img" id="img" src={link} />
+          </Typography>
+        </Box>
+        <Box>
+          <Typography variant="h5">Content : {content}</Typography>
+        </Box>
         <Typography variant="h5">CreatedAt : {createdAt}</Typography>
-      </Paper>
+      </Box>
       <TableContainer
-        component={Paper}
         sx={{
           mb: 2,
           color: "white",
           bgcolor: "rgba(64,64,64,0.7)",
-          p: 5,
+
           mx: "auto",
           width: "90%",
         }}
       >
         <Table size="small">
-          <TableHead>Comments</TableHead>
+          <TableHead>
+            <TableRow>
+              <TableCell sx={{ color: "white" }}>Comment</TableCell>
+            </TableRow>
+          </TableHead>
           <TableBody>
             {comments?.map((comment, i) => {
               return (

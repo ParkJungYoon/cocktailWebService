@@ -6,41 +6,35 @@ import Top10Chart from "./Top10Chart";
 
 export default function Secondpage() {
   const navigate = useNavigate();
+
+  // style
+  const chartStyle = {
+    mt: 15,
+    width: "600px",
+    ml: "10vw",
+  };
+  const textStyle = {
+    position: "relative",
+    color: "white",
+    textAlign: "right",
+    my: "auto",
+    mr: "15vw",
+  };
+  const textShadowStyle = {
+    color: "white",
+    textShadow:
+      "0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa",
+  };
   return (
     <>
       <Grid container>
-        <Grid
-          item
-          xs
-          sx={{
-            mt: 15,
-            width: "600px",
-            ml: "10vw",
-          }}
-        >
+        <Grid item xs sx={chartStyle}>
           <Top10Chart />
         </Grid>
-        <Grid
-          item
-          xs
-          sx={{
-            position: "relative",
-            color: "white",
-            textAlign: "right",
-            my: "auto",
-            mr: "15vw",
-          }}
-        >
+        <Grid item xs sx={textStyle}>
           <Box sx={{ mt: 10 }}>
             <Typography variant="h6">방문자 수를 통계로</Typography>
-            <Typography
-              variant="h6"
-              sx={{
-                color: "white",
-                textShadow:
-                  "0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa",
-              }}
-            >
+            <Typography variant="h6" sx={textShadowStyle}>
               Top10 칵테일을 미리 골라두었습니다.
             </Typography>
             <Typography variant="h6">

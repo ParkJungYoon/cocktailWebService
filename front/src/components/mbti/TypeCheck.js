@@ -31,7 +31,6 @@ const TypeCheck = ({ countEI, countSN, countTF, countJP }) => {
     <>
       <Grid container sx={mbitResultSetPageImg}>
         <Container
-          container
           sx={{
             bgcolor: "rgba(0,0,0,0.6)",
             width: "80%",
