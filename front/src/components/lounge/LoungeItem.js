@@ -173,12 +173,7 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
           </Grid>
         </Grid>
         <Grid item xs={12} textAlign="center" sx={{ my: 3 }}>
-          <Box
-            component="img"
-            id="img"
-            src="https://images-ext-1.discordapp.net/external/u6wy73BhNTO4sl6lY-Dj2WM8se7qbT-G5EveXRyZE68/https/www.thecocktaildb.com/images/media/drink/qcgz0t1643821443.jpg"
-            sx={{ width: "50%" }}
-          />
+          <Box component="img" id="img" src={link} sx={{ width: "50%" }} />
         </Grid>
         <Grid item xs={12}>
           <Box
