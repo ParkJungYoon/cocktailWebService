@@ -34,8 +34,11 @@ function LoungeTable({ user, setIsForm, setRankList }) {
   const [isListEdit, setIsListEdit] = useState(false);
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
+  //pagination
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
+  const emptyRows =
+    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - list?.length) : 0;
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
