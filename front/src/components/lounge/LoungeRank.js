@@ -10,6 +10,7 @@ import cocktail5 from "../../imgs/cocktail5.png";
 import { makeStyles } from "@material-ui/core/styles";
 
 function LoungeRank({ setIsOpen }) {
+  let cocktails = [cocktail1, cocktail2, cocktail3, cocktail4, cocktail5];
   const [rankList, setRankList] = useState();
   useEffect(async () => {
     await Api.get("boardList")
@@ -43,7 +44,7 @@ function LoungeRank({ setIsOpen }) {
               >
                 {v.title}
               </Typography>
-              <Box component="img" src={i} width="10vw" />
+              <Box component="img" src={cocktails[i]} width="12vw" />
             </Box>
           );
         })}

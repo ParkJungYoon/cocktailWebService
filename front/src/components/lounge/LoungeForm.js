@@ -64,7 +64,7 @@ function LoungeForm({ userState, item, setIsForm, type }) {
         enctype="multipart/form-data"
       >
         <Typography variant="h5" sx={{ my: "auto" }} component="span">
-          Title :
+          Cocktail :
         </Typography>
         <TextField
           fullWidth

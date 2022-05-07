@@ -48,7 +48,7 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
         setCreatedAt(
           res.data.createdAt.split("T")[0] +
             " " +
-            res.data.createdAt.split("T")[1].slice(0, 8)
+            res.data.createdAt.split("T")[1].slice(0, 5)
         );
         //fetch image binary data
         if (res.data.data[0].data) {
@@ -159,7 +159,7 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
           }}
         >
           <Grid item xs>
-            <Typography variant="h5">Title</Typography>
+            <Typography variant="h5">Cocktail</Typography>
           </Grid>
           <Grid item xs>
             <Typography align="center" variant="h5">
@@ -176,7 +176,8 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
           <Box
             component="img"
             id="img"
-            src="https://images-ext-1.discordapp.net/external/u6wy73BhNTO4sl6lY-Dj2WM8se7qbT-G5EveXRyZE68/https/www.thecocktaildb.com/images/media/drink/qcgz0t1643821443.jpg"
+            src={link}
+            alt="img"
             sx={{ width: "50%" }}
           />
         </Grid>
@@ -195,7 +196,6 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
           mb: 2,
           color: "white",
           bgcolor: "rgba(64,64,64,0.7)",
-
           mx: "auto",
           width: "90%",
         }}
@@ -214,6 +214,7 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
                   onClick={() => {
                     setTargetId(comment._id);
                   }}
+                  sx={{ borderTop: "1px solid white" }}
                 >
                   <TableCell align="right" sx={{ color: "white" }}>
                     {" "}
@@ -279,7 +280,7 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
                 }
               }}
               sx={{
-                mt: 2,
+                m: 4,
                 color: "white",
                 border: "2px solid white",
                 "&:hover": {

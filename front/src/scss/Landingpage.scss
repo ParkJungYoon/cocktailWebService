@@ -65,13 +65,13 @@ $thirdpage: "../imgs/thirdpage.jpg";
     }
   }
 }
-
-// fourthpage
+// thirdpage
 .thirdPage {
   background-image: url($star1);
   background-size: cover;
+  background-position: center;
 }
-// thirdpage
+// fourthpage
 .fourthPage {
   background-color: rgba(0, 0, 0, 0.5);
 }

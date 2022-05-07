@@ -143,7 +143,7 @@ function LoungeTable({ user, setIsForm, setRankList }) {
                 >
                   <TableCell sx={tablecellStyle}>No.</TableCell>
                   <TableCell sx={tablecellStyle} align="center">
-                    Title
+                    Cocktail
                   </TableCell>
                   <TableCell sx={tablecellStyle} align="center">
                     Name
@@ -180,7 +180,9 @@ function LoungeTable({ user, setIsForm, setRankList }) {
                         {item.comment.length}
                       </TableCell>
                       <TableCell sx={{ color: "white" }} align="center">
-                        {item.createdAt}
+                        {item.createdAt.split("T")[0] +
+                          " " +
+                          item.createdAt.split("T")[1].slice(0, 5)}
                       </TableCell>
                     </TableRow>
                   ))}

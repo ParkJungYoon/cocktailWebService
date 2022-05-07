@@ -13,7 +13,7 @@ function Likes() {
   const [page, setPage] = useState(0);
   const [load, setLoad] = useState(false);
   const userState = useUserHook();
-
+  console.log(userState);
   const [preventRef, setPreventRef] = useState(true); //중복 실행 방지
   const [endRef, setEndRef] = useState(false); //모든 글 로드 확인
 
@@ -70,15 +70,32 @@ function Likes() {
           <LikeSortButton cocktails={cocktails} setCocktails={setCocktails} />
         </Grid>
       </Grid>
+
       <Grid container spacing={1} sx={{ pt: 3, px: 20, mx: "auto" }}>
-        {cocktails.map((cocktail, i) => {
-          return (
-            <Grid key={i} item xs>
-              <LikeCardItem cocktail={cocktail} />
-            </Grid>
-          );
-        })}
-        {load && <Loader />}
+        {load ? (
+          <Loader />
+        ) : cocktails.length === 0 ? (
+          <Container
+            sx={{
+              mt: 5,
+              bgcolor: "rgba(64,64,64,0.5)",
+              width: "20vw",
+              py: 5,
+            }}
+          >
+            <Typography align="center" sx={{ color: "white" }}>
+              좋아요한 칵테일이 없습니다.
+            </Typography>
+          </Container>
+        ) : (
+          cocktails.map((cocktail, i) => {
+            return (
+              <Grid key={i} item xs>
+                <LikeCardItem cocktail={cocktail} />
+              </Grid>
+            );
+          })
+        )}
         {!userState.user && load && (
           <Container>
             <Typography align="center" sx={{ color: "white", mt: 5 }}>
