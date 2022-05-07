@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import useUserHook from "../components/commons/useUserHook";
+import { useSnackbar } from "notistack";
 import { useNavigate } from "react-router-dom";
 import { Grid, Typography, Button } from "@mui/material";
 
 function CocktailTest() {
   const navigate = useNavigate();
-
+  const userState = useUserHook();
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   // style
   const buttonStyle = {
     color: "white",
@@ -13,6 +16,13 @@ function CocktailTest() {
     bgcolor: "rgba(128, 128, 128, 0.1)",
     border: "1px solid white",
     "&:hover": { bgcolor: "rgba(128, 128, 128, 0.4)" },
+  };
+  const handleMbtiBtn = () => {
+    if (!userState.user) {
+      enqueueSnackbar("Login Required!");
+    } else {
+      navigate("/cocktailTest/mbti");
+    }
   };
 
   return (
@@ -41,7 +51,9 @@ function CocktailTest() {
           </Typography>
           <Button
             sx={buttonStyle}
-            onClick={() => navigate("/cocktailTest/mbti")}
+            onClick={() => {
+              handleMbtiBtn();
+            }}
           >
             MBTI
           </Button>
