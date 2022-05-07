@@ -13,6 +13,7 @@ import {
   Box,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+import { useSnackbar } from "notistack";
 
 import * as Api from "../../api";
 import { UserContext } from "../user/reducer/userReducer";
@@ -20,6 +21,7 @@ import { UserContext } from "../user/reducer/userReducer";
 export default function FormDialog({ open, handleLoginClose }) {
   const navigate = useNavigate();
   const { userState, userDispatch } = useContext(UserContext);
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
   //useState로 email 상태를 생성함.
   const [email, setEmail] = useState("");
@@ -73,7 +75,7 @@ export default function FormDialog({ open, handleLoginClose }) {
       // 기본 페이지로 이동함.
       navigate("/", { replace: true });
     } catch (err) {
-      console.log(err);
+      enqueueSnackbar("Login Failed");
     }
   };
 
