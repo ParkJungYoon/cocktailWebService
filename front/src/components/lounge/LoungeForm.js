@@ -1,7 +1,30 @@
 import React, { useState } from "react";
-import { Container, Box, TextField, Button, Typography } from "@mui/material";
+import {
+  Container,
+  Box,
+  TextField,
+  Button,
+  Typography,
+  styled,
+} from "@mui/material";
 import * as Api from "../../api";
 
+const CssTextField = styled(TextField)({
+  "& label.Mui-focused": {
+    color: "white",
+  },
+  "& .MuiInput-underline:after": {
+    borderBottomColor: "white",
+  },
+  "& .MuiOutlinedInput-root": {
+    "&:hover fieldset": {
+      borderColor: "white",
+    },
+    "&.Mui-focused fieldset": {
+      borderColor: "white",
+    },
+  },
+});
 function LoungeForm({ userState, item, setIsForm, type }) {
   const [form, setForm] = useState({
     title: [item?.title] ? [item?.title] : "",
@@ -66,7 +89,7 @@ function LoungeForm({ userState, item, setIsForm, type }) {
         <Typography variant="h5" sx={{ my: "auto" }} component="span">
           Cocktail :
         </Typography>
-        <TextField
+        <CssTextField
           fullWidth
           type="text"
           name="title"
@@ -78,7 +101,7 @@ function LoungeForm({ userState, item, setIsForm, type }) {
         <Typography variant="h5" sx={{ my: "auto" }} component="span">
           Content :
         </Typography>
-        <TextField
+        <CssTextField
           multiline
           fullWidth
           type="text"
@@ -92,7 +115,7 @@ function LoungeForm({ userState, item, setIsForm, type }) {
         <Typography variant="h5" sx={{ my: "auto" }} component="span">
           File :
         </Typography>
-        <TextField
+        <CssTextField
           fullWidth
           type="file"
           name="img"

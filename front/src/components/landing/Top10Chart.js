@@ -83,7 +83,7 @@ export const Top10Chart = ({}) => {
       {
         label: "Visitor",
         data: visitors,
-        backgroundColor: ["rgb(1, 139, 101)"],
+        backgroundColor: ["rgb(10, 169, 101)"],
       },
     ],
   };

@@ -57,7 +57,7 @@ const TypeCheck = ({ countEI, countSN, countTF, countJP }) => {
                   border: "3px solid white",
                   color: "white",
                   fontSize: "1.5vw",
-                  "&:hover": { color: "#ff3897" },
+                  "&:hover": { boxShadow: "0 0 15px rgb(10, 20, 30)" },
                 }}
               >
                 테스트 결과 확인

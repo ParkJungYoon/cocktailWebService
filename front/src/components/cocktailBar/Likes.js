@@ -6,6 +6,7 @@ import Loader from "./Loader";
 import LikeSortButton from "./LikeSortButton";
 import useUserHook from "../commons/useUserHook";
 import LikeCardItem from "./LikeCardItem";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 function Likes() {
   // state
@@ -13,7 +14,7 @@ function Likes() {
   const [page, setPage] = useState(0);
   const [load, setLoad] = useState(false);
   const userState = useUserHook();
-  console.log(userState);
+
   const [preventRef, setPreventRef] = useState(true); //중복 실행 방지
   const [endRef, setEndRef] = useState(false); //모든 글 로드 확인
 
@@ -78,13 +79,14 @@ function Likes() {
           <Container
             sx={{
               mt: 5,
-              bgcolor: "rgba(64,64,64,0.5)",
-              width: "20vw",
               py: 5,
             }}
           >
-            <Typography align="center" sx={{ color: "white" }}>
-              좋아요한 칵테일이 없습니다.
+            <Typography variant="h4" align="center" sx={{ color: "darkgray" }}>
+              칵테일에 <FavoriteIcon sx={{ color: "#ff3897" }} />를
+            </Typography>
+            <Typography variant="h4" align="center" sx={{ color: "darkgray" }}>
+              눌러주세요
             </Typography>
           </Container>
         ) : (
