@@ -150,7 +150,13 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
       >
         <Grid
           container
-          sx={{ borderBottom: "2px solid white", p: 2, alignItems: "center" }}
+          sx={{
+            borderTop: "2px solid white",
+            borderBottom: "2px solid white",
+            px: 3,
+            py: 1,
+            alignItems: "center",
+          }}
         >
           <Grid item xs>
             <Typography variant="h5">Title</Typography>
@@ -166,15 +172,23 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
             </Typography>
           </Grid>
         </Grid>
-        <Box>
-          <Typography variant="h5">
-            IMG : <Box component="img" id="img" src={link} />
-          </Typography>
+        <Grid item xs={12} textAlign="center" sx={{ my: 3 }}>
+          <Box
+            component="img"
+            id="img"
+            src="https://images-ext-1.discordapp.net/external/u6wy73BhNTO4sl6lY-Dj2WM8se7qbT-G5EveXRyZE68/https/www.thecocktaildb.com/images/media/drink/qcgz0t1643821443.jpg"
+            sx={{ width: "50%" }}
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <Box
+            sx={{ bgcolor: "white", height: "0.5px", width: "80%", mx: "auto" }}
+          ></Box>
+        </Grid>
+
+        <Box sx={{ height: "30vh", mt: 3, px: 15 }}>
+          <Typography paragraph>{content}</Typography>
         </Box>
-        <Box>
-          <Typography variant="h5">Content : {content}</Typography>
-        </Box>
-        <Typography variant="h5">CreatedAt : {createdAt}</Typography>
       </Box>
       <TableContainer
         sx={{

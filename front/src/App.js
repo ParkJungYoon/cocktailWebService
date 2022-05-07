@@ -18,7 +18,6 @@ import CocktailTest from "./pages/CocktailTest";
 import LoungePage from "./pages/LoungePage";
 import Mbti from "./components/mbti/Mbti";
 import Quiz from "./components/quiz/Quiz";
-import CellarPage from "./pages/CellarPage";
 import mbtiRoutes from "./mbtiRoutesList";
 
 //JY
@@ -80,7 +79,6 @@ function App() {
         <Route path="/cocktailTest/mbti" element={<Mbti />} />
         <Route path="/cocktailTest/quiz" element={<Quiz />} />
         <Route path="/account" element={<AccountPage />} />
-        <Route path="/cellar" element={<CellarPage />} />
         {mbtiRouteComponents}
       </Routes>
     </Router>

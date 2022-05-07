@@ -6,7 +6,7 @@ import * as Api from "../../api";
 
 //style
 import { Box, Typography } from "@material-ui/core";
-import bg1 from "../../imgs/loungeRankBgImg.jpg";
+import bg1 from "../../imgs/loungeRankBgImg.png";
 function Lounge() {
   const userState = useUserHook();
   const user = userState.user;

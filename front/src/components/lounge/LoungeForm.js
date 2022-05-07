@@ -79,12 +79,14 @@ function LoungeForm({ userState, item, setIsForm, type }) {
           Content :
         </Typography>
         <TextField
+          multiline
           fullWidth
           type="text"
           name="content"
           label="content"
           value={form.content}
           onChange={handleFormChange}
+          rows={10}
           sx={{ bgcolor: "rgba(255,255,255,0.2)", mb: 3 }}
         />
         <Typography variant="h5" sx={{ my: "auto" }} component="span">
