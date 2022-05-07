@@ -1,4 +1,5 @@
 import { Schema, model } from "mongoose";
+import { krTime } from "../../utils/time";
 
 const boardSchema = new Schema(
   {
@@ -26,8 +27,17 @@ const boardSchema = new Schema(
       required: false,
       default: 0,
     },
-  },
-  { timestamps: true }
+    createdAt : {
+      type : Date,
+      required : true,
+      default : krTime()
+    },
+    updatedAt : {
+      type : Date,
+      required : true,
+      default : krTime()
+    }
+  }
 );
 
 const Board = model("Board", boardSchema);
