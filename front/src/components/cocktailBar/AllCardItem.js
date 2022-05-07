@@ -8,6 +8,7 @@ import {
   IconButton,
   Typography,
 } from "@mui/material";
+import { useSnackbar } from "notistack";
 
 import * as Api from "../../api";
 import FavoriteIcon from "@mui/icons-material/Favorite";
@@ -19,6 +20,7 @@ export default function AllCardItem({ cocktail }) {
   const [isLike, setIsLike] = useState(cocktail.isLiked);
   const [color, setColor] = useState(isLike ? "#ff3897" : "white");
   const [likeNum, setLikeNum] = useState(cocktail.likes);
+  const { enqueueSnackbar } = useSnackbar();
 
   // style
   const buttonStyle = {
@@ -43,7 +45,7 @@ export default function AllCardItem({ cocktail }) {
         setColor("#ff3897");
       } catch (e) {
         if (e.message === "Request failed with status code 401") {
-          alert("로그인이 필요한 서비스입니다.");
+          enqueueSnackbar("Login required");
         }
       }
     } else {
