@@ -51,11 +51,13 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
             res.data.createdAt.split("T")[1].slice(0, 5)
         );
         //fetch image binary data
-        if (res.data.data[0].data) {
+        if (res.data.data[0]?.data) {
           let Buffer = require("buffer/").Buffer;
           const type = res.data.data[0].type;
           let binary = Buffer.from(res.data.data[0].data);
           setLink(`data:${type};base64,${binary.toString("base64")}`);
+        } else {
+          setLink("noImg");
         }
       })
       .catch((err) => {
@@ -173,13 +175,19 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
           </Grid>
         </Grid>
         <Grid item xs={12} textAlign="center" sx={{ my: 3 }}>
-          <Box
-            component="img"
-            id="img"
-            src={link}
-            alt="img"
-            sx={{ width: "50%" }}
-          />
+          {link === "noImg" ? (
+            <Box sx={{ width: "50%" }} textAlign="center">
+              no Image
+            </Box>
+          ) : (
+            <Box
+              component="img"
+              id="img"
+              src={link}
+              alt="img"
+              sx={{ width: "50%" }}
+            />
+          )}
         </Grid>
         <Grid item xs={12}>
           <Box

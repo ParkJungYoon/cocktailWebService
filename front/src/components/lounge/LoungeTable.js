@@ -36,7 +36,7 @@ function LoungeTable({ user, setIsForm, setRankList }) {
 
   //pagination
   const [page, setPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(5);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
 
   const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - list?.length) : 0;
@@ -73,8 +73,7 @@ function LoungeTable({ user, setIsForm, setRankList }) {
   useEffect(async () => {
     await Api.get("boardList")
       .then((res) => {
-        setList(res.data);
-        console.log(list);
+        setList(res.data.slice(0).reverse());
         return list;
       })
       .then((res) => {
@@ -163,14 +162,11 @@ function LoungeTable({ user, setIsForm, setRankList }) {
               </TableHead>
               <TableBody>
                 {(rowsPerPage > 0
-                  ? list
-                      .slice(0)
-                      .reverse()
-                      .slice(
-                        page * rowsPerPage,
-                        page * rowsPerPage + rowsPerPage
-                      )
-                  : list.slice(0).reverse()
+                  ? list.slice(
+                      page * rowsPerPage,
+                      page * rowsPerPage + rowsPerPage
+                    )
+                  : list
                 ).map((item, i) => (
                   <TableRow
                     key={i}
@@ -206,10 +202,7 @@ function LoungeTable({ user, setIsForm, setRankList }) {
               <TableFooter sx={{ color: "white" }}>
                 <TableRow sx={{ color: "white" }}>
                   <TablePagination
-                    rowsPerPageOptions={[
-                      5, 10, 25,
-                      // { label: "All", value: -1 },
-                    ]}
+                    rowsPerPageOptions={[10, 15, 25]}
                     count={list.length}
                     rowsPerPage={rowsPerPage}
                     page={page}
