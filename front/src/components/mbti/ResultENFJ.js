@@ -1,35 +1,30 @@
 /* eslint no-restricted-globals: ["off"] */
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Box, Button, Container, Grid, Link } from "@mui/material";
 import "../../scss/Mbti.scss";
 import linkIcon from "../../imgs/icon-link.png";
-
 import checkState from "./TypeData";
-
-/*                              Alert                                   */
 import useUserHook from "../commons/useUserHook";
 import { useSnackbar } from "notistack";
 
-function CopyUrlToClipboard() {
-  var dummy = document.createElement("input");
-  var text = location.href;
-
-  document.body.appendChild(dummy);
-  dummy.value = text;
-  dummy.select();
-  document.execCommand("copy");
-  document.body.removeChild(dummy);
-  alert("결과 주소가 복사되었습니다. \n주소를 공유해 보세요!");
-}
-
 function ResultENFJ() {
-  const navigate = useNavigate();
   const typeName = "ENFJ";
-
-  /*                              Alert                                   */
+  const navigate = useNavigate();
   const userState = useUserHook();
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+
+  function CopyUrlToClipboard() {
+    const dummy = document.createElement("input");
+    const text = location.href;
+
+    document.body.appendChild(dummy);
+    dummy.value = text;
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
+    enqueueSnackbar("결과 주소가 복사되었습니다. 주소를 공유해 보세요!");
+  }
 
   const handleRestart = () => {
     if (!userState.user) {
@@ -38,7 +33,6 @@ function ResultENFJ() {
       navigate("/cocktailTest/mbti");
     }
   };
-  /*                                              */
 
   return (
     <div className="mbtiResultPage">
@@ -48,12 +42,14 @@ function ResultENFJ() {
             container
             pb={8}
             mb={2}
+            // 텍스트와 배경 이미지 구분하는 파트
             sx={{
               backgroundColor: "rgba(0, 0, 0, 0.7)",
             }}
           >
             <Grid item xs>
               <div>
+                {/* 첫번째 줄 (=당신은...) */}
                 <p
                   style={{
                     margin: "4rem 0 1.4rem 0",
@@ -63,6 +59,7 @@ function ResultENFJ() {
                 >
                   <span style={{ fontSize: "1.8rem" }}>당신은...</span>
                 </p>
+                {/* 두세번째 줄 (= 칵테일)*/}
                 <p
                   style={{
                     marginBottom: "3rem",
@@ -79,6 +76,7 @@ function ResultENFJ() {
                     {checkState.types[typeName]}
                   </span>
                 </p>
+                {/* 칵테일 이미지 */}
                 <div className="mbtiResultImgAlingn">
                   <img
                     className="mbtiResultImg"
@@ -86,12 +84,16 @@ function ResultENFJ() {
                     alt=""
                   />
                 </div>
+                {/* 텍스트 */}
                 <p className="mbtiResultText">
                   {checkState.typeInfos[typeName]}
                 </p>
               </div>
             </Grid>
+
+            {/* 궁합 */}
             <Grid container mt={4}>
+              {/* Good */}
               <Grid item xs>
                 <p className="mbtiResultGood">
                   너 내 동료가 되라!
@@ -108,6 +110,7 @@ function ResultENFJ() {
                   />
                 </div>
               </Grid>
+              {/* Bad */}
               <Grid item xs sx={{ borderLeft: "3px solid  gray" }}>
                 <p className="mbtiResultBad">
                   네? 저요?? 아... <br />

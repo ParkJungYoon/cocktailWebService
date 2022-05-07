@@ -1,27 +1,39 @@
 /* eslint no-restricted-globals: ["off"] */
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Box, Button, Container, Grid, Link } from "@mui/material";
 import "../../scss/Mbti.scss";
 import linkIcon from "../../imgs/icon-link.png";
-
 import checkState from "./TypeData";
-
-function CopyUrlToClipboard() {
-  var dummy = document.createElement("input");
-  var text = location.href;
-
-  document.body.appendChild(dummy);
-  dummy.value = text;
-  dummy.select();
-  document.execCommand("copy");
-  document.body.removeChild(dummy);
-  alert("결과 주소가 복사되었습니다. \n주소를 공유해 보세요!");
-}
+import useUserHook from "../commons/useUserHook";
+import { useSnackbar } from "notistack";
 
 function ResultENTP() {
-  const navigate = useNavigate();
   const typeName = "ENTP";
+  const navigate = useNavigate();
+  const userState = useUserHook();
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+
+  function CopyUrlToClipboard() {
+    const dummy = document.createElement("input");
+    const text = location.href;
+
+    document.body.appendChild(dummy);
+    dummy.value = text;
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
+    enqueueSnackbar("결과 주소가 복사되었습니다. 주소를 공유해 보세요!");
+  }
+
+  const handleRestart = () => {
+    if (!userState.user) {
+      enqueueSnackbar("Login Required!");
+    } else {
+      navigate("/cocktailTest/mbti");
+    }
+  };
+
   return (
     <div className="mbtiResultPage">
       <Box sx={{ mt: 18, height: "100vh" }}>
@@ -30,12 +42,14 @@ function ResultENTP() {
             container
             pb={8}
             mb={2}
+            // 텍스트와 배경 이미지 구분하는 파트
             sx={{
               backgroundColor: "rgba(0, 0, 0, 0.7)",
             }}
           >
             <Grid item xs>
               <div>
+                {/* 첫번째 줄 (=당신은...) */}
                 <p
                   style={{
                     margin: "4rem 0 1.4rem 0",
@@ -45,6 +59,7 @@ function ResultENTP() {
                 >
                   <span style={{ fontSize: "1.8rem" }}>당신은...</span>
                 </p>
+                {/* 두세번째 줄 (= 칵테일)*/}
                 <p
                   style={{
                     marginBottom: "3rem",
@@ -57,10 +72,11 @@ function ResultENTP() {
                     {checkState.text[typeName]}
                   </span>
                   <br />
-                  <span style={{ color: "#f9a602", fontSize: "3rem" }}>
+                  <span style={{ color: "#c74811", fontSize: "3rem" }}>
                     {checkState.types[typeName]}
                   </span>
                 </p>
+                {/* 칵테일 이미지 */}
                 <div className="mbtiResultImgAlingn">
                   <img
                     className="mbtiResultImg"
@@ -68,12 +84,16 @@ function ResultENTP() {
                     alt=""
                   />
                 </div>
+                {/* 텍스트 */}
                 <p className="mbtiResultText">
                   {checkState.typeInfos[typeName]}
                 </p>
               </div>
             </Grid>
+
+            {/* 궁합 */}
             <Grid container mt={4}>
+              {/* Good */}
               <Grid item xs>
                 <p className="mbtiResultGood">
                   너 내 동료가 되라!
@@ -90,6 +110,7 @@ function ResultENTP() {
                   />
                 </div>
               </Grid>
+              {/* Bad */}
               <Grid item xs sx={{ borderLeft: "3px solid  gray" }}>
                 <p className="mbtiResultBad">
                   네? 저요?? 아... <br />
@@ -123,7 +144,9 @@ function ResultENTP() {
               </Button>
               {/* restart */}
               <Link
-                onClick={() => navigate(`/cocktailTest/mbti`)}
+                onClick={() => {
+                  handleRestart();
+                }}
                 sx={{ textDecoration: "none" }}
               >
                 <Button className="mbtiRestartBtn">다시하기</Button>

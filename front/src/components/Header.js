@@ -14,7 +14,7 @@ import {
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
-import logo from "../imgs/logo.png";
+import logo from "../imgs/logo2.jpg";
 import RegisterModal from "./user/RegisterModal";
 import LoginModal from "./user/LoginModal";
 import { UserContext } from "./user/reducer/userReducer";

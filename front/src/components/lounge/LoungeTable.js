@@ -96,88 +96,122 @@ function LoungeTable({ user, setIsForm, setRankList }) {
       setIsForm((prev) => !prev);
     }
   };
-
+  // style
+  const tablecellStyle = {
+    color: "white",
+    borderRight: " 1px solid white",
+  };
   return (
-    <TableContainer
-      sx={{
-        color: "white",
-        bgcolor: "rgba(64,64,64,0.5)",
-        width: "70vw",
-        mx: "auto",
-        mb: 30,
-        p: 5,
-      }}
-    >
-      <Table size="small">
+    <>
+      <TableContainer
+        sx={{
+          color: "white",
+          bgcolor: "rgba(64,64,64,0.5)",
+          width: "70vw",
+          mx: "auto",
+          mt: 10,
+          mb: 30,
+          p: 5,
+        }}
+      >
         {!isOpen ? (
           <>
-            <TableHead>
-              <Box sx={{ mb: 5 }}>
-                <Button
-                  onClick={() => handleClickCreate()}
-                  sx={{
-                    color: "white",
-                    border: "2px solid white",
-                    "&:hover": {
-                      color: "black",
-                      bgcolor: "white",
-                      border: "2px solid black",
-                    },
-                  }}
-                >
-                  Create
-                </Button>
-              </Box>
-              <TableRow
+            <Box sx={{ textAlign: "right" }}>
+              <Button
+                onClick={() => handleClickCreate()}
                 sx={{
-                  borderBottom: "2px solid white",
-                  borderTop: "2px solid white",
+                  mb: 3,
+                  color: "white",
+                  border: "2px solid white",
+                  "&:hover": {
+                    color: "black",
+                    bgcolor: "white",
+                    border: "2px solid black",
+                  },
                 }}
               >
-                <TableCell sx={{ color: "white" }}>No.</TableCell>
-                <TableCell sx={{ color: "white" }} align="center">
-                  Title
-                </TableCell>
-                <TableCell sx={{ color: "white" }} align="center">
-                  Name
-                </TableCell>
-                <TableCell sx={{ color: "white" }} align="center">
-                  Comment
-                </TableCell>
-                <TableCell sx={{ color: "white" }} align="center">
-                  Date
-                </TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {list
-                .slice(0)
-                .reverse()
-                .map((item, i) => (
-                  <TableRow
-                    key={i}
-                    onClick={() => {
-                      setOpenItem(item);
-                      handleOpen();
+                Create
+              </Button>
+            </Box>
+            <Table size="small">
+              <TableHead>
+                <TableRow
+                  sx={{
+                    borderBottom: "2px solid white",
+                    borderTop: "2px solid white",
+                  }}
+                >
+                  <TableCell sx={tablecellStyle}>No.</TableCell>
+                  <TableCell sx={tablecellStyle} align="center">
+                    Title
+                  </TableCell>
+                  <TableCell sx={tablecellStyle} align="center">
+                    Name
+                  </TableCell>
+                  <TableCell sx={tablecellStyle} align="center">
+                    Comment
+                  </TableCell>
+                  <TableCell sx={{ color: "white" }} align="center">
+                    Date
+                  </TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {list
+                  .slice(0)
+                  .reverse()
+                  .map((item, i) => (
+                    <TableRow
+                      key={i}
+                      onClick={() => {
+                        setOpenItem(item);
+                        handleOpen();
+                      }}
+                      hover
+                    >
+                      <TableCell sx={tablecellStyle}>{i + 1}</TableCell>
+                      <TableCell sx={tablecellStyle} align="center">
+                        {item.title}
+                      </TableCell>
+                      <TableCell sx={tablecellStyle} align="center">
+                        {item.writer ? item.writer.name : "X"}
+                      </TableCell>
+                      <TableCell sx={tablecellStyle} align="center">
+                        {item.comment.length}
+                      </TableCell>
+                      <TableCell sx={{ color: "white" }} align="center">
+                        {item.createdAt}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+              </TableBody>
+              <TableFooter sx={{ color: "white" }}>
+                <TableRow sx={{ color: "white" }}>
+                  <TablePagination
+                    rowsPerPageOptions={[
+                      5,
+                      10,
+                      25,
+                      { label: "All", value: -1 },
+                    ]}
+                    colSpan={3}
+                    count={list.length}
+                    rowsPerPage={rowsPerPage}
+                    page={page}
+                    SelectProps={{
+                      inputProps: {
+                        "aria-label": "rows per page",
+                      },
+                      native: true,
                     }}
-                    hover
-                  >
-                    <TableCell sx={{ color: "white" }}>{i + 1}</TableCell>
-                    <TableCell sx={{ color: "white" }} align="center">
-                      {item.title}
-                    </TableCell>
-                    <TableCell sx={{ color: "white" }} align="center">
-                      {item.writer ? item.writer.name : "X"}
-                    </TableCell>
-                    <TableCell sx={{ color: "white" }} align="center">
-                      {item.comment.length}
-                    </TableCell>
-                    <TableCell sx={{ color: "white" }} align="center">
-                      {item.createdAt}
-                    </TableCell>
-                  </TableRow>
-                ))}
-            </TableBody>
+                    onPageChange={handleChangePage}
+                    onRowsPerPageChange={handleChangeRowsPerPage}
+                    ActionsComponent={TablePaginationActions}
+                    sx={{ color: "white" }}
+                  />
+                </TableRow>
+              </TableFooter>
+            </Table>
           </>
         ) : isListEdit ? (
           <LoungeForm item={openItem} setIsForm={handleListEdit}></LoungeForm>
@@ -189,29 +223,8 @@ function LoungeTable({ user, setIsForm, setRankList }) {
             handleListEdit={handleListEdit}
           />
         )}
-        <TableFooter sx={{ color: "white" }}>
-          <TableRow sx={{ color: "white" }}>
-            <TablePagination
-              rowsPerPageOptions={[5, 10, 25, { label: "All", value: -1 }]}
-              colSpan={3}
-              count={list.length}
-              rowsPerPage={rowsPerPage}
-              page={page}
-              SelectProps={{
-                inputProps: {
-                  "aria-label": "rows per page",
-                },
-                native: true,
-              }}
-              onPageChange={handleChangePage}
-              onRowsPerPageChange={handleChangeRowsPerPage}
-              ActionsComponent={TablePaginationActions}
-              sx={{ color: "white" }}
-            />
-          </TableRow>
-        </TableFooter>
-      </Table>
-    </TableContainer>
+      </TableContainer>
+    </>
   );
 }
 

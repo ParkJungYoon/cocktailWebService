@@ -1,39 +1,67 @@
 import React from "react";
 import "../../scss/Quiz.scss";
-import { Box } from "@mui/material";
+import {
+  Box,
+  TableContainer,
+  Table,
+  TableHead,
+  TableBody,
+  TableRow,
+  TableCell,
+} from "@mui/material";
 const OxTable = ({ setStep, setDisable, ox }) => {
   let splitChar = ox.split("");
   let lst = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   return (
-    <div className="oxTable">
-      <Box component="table">
-        <td className="outlineStyle">
-          <tr>
-            <td>NO.</td>
+    <TableContainer sx={{ mt: 3, width: "100%" }}>
+      <Table>
+        <TableHead>
+          <TableRow>
+            <TableCell
+              component="th"
+              sx={{ color: "white", border: "2px solid white" }}
+            >
+              NO.
+            </TableCell>
             {lst.map((i) => (
-              <td
-                className="Number"
+              <TableCell
+                component="th"
+                sx={{
+                  color: "white",
+                  border: "2px solid white",
+                  cursor: "pointer",
+                  "&:hover": { color: "#ff3897" },
+                }}
                 key={i}
                 onClick={() => {
                   setStep(i + 1);
                   setDisable(true);
                 }}
+                align="center"
               >
-                Q{i + 1}.
-              </td>
+                Q{i + 1}
+              </TableCell>
             ))}
-          </tr>
+          </TableRow>
 
-          <tr>
-            <td>O/X</td>
+          <TableRow sx={{ color: "white" }}>
+            <TableCell sx={{ color: "white", border: "2px solid white" }}>
+              O/X
+            </TableCell>
             {lst.map((i) => (
-              <td>{splitChar[i]}</td>
+              <TableCell
+                key={i}
+                sx={{ color: "white", border: "2px solid white" }}
+                align="center"
+              >
+                {splitChar[i]}
+              </TableCell>
             ))}
-          </tr>
-        </td>
-      </Box>
-    </div>
+          </TableRow>
+        </TableHead>
+      </Table>
+    </TableContainer>
   );
 };
 

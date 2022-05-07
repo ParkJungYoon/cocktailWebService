@@ -47,19 +47,23 @@ $mbitResultSetPage: "../imgs/mbitResultSetPage.jpg";
       margin-bottom: 2.7vw;
       border-radius: 1rem;
       justify-content: center;
-      width: 23vw;
-      max-width: 400px;
-      min-width: 150px;
+      width: 21vw;
+      max-width: 420px;
+      min-width: 210px;
     }
     .mbtiResultGoodImg {
       border-radius: 1rem;
       justify-content: center;
-      width: 150px;
+      width: 12vw;
+      min-width: 150px;
+      max-width: 230px;
     }
     .mbtiResultBadImg {
       border-radius: 1rem;
       justify-content: center;
-      width: 150px;
+      width: 12vw;
+      min-width: 150px;
+      max-width: 230px;
     }
   }
   .mbtiResultText {

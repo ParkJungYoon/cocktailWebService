@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState, useRef } from "react";
 import {
-  Paper,
+  IconContainerProps,
   Table,
   TableBody,
   TableCell,
@@ -10,6 +10,7 @@ import {
   Button,
   Grid,
   Box,
+  Container,
 } from "@mui/material";
 
 import * as Api from "../../api";
@@ -44,7 +45,11 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
       .then((res) => {
         setTitle(res.data.title);
         setContent(res.data.content);
-        setCreatedAt(res.data.createdAt);
+        setCreatedAt(
+          res.data.createdAt.split("T")[0] +
+            " " +
+            res.data.createdAt.split("T")[1].slice(0, 8)
+        );
         //fetch image binary data
         if (res.data.data[0].data) {
           let Buffer = require("buffer/").Buffer;
@@ -134,36 +139,73 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
           </Grid>
         )}
       </Grid>
-      <Paper
+      <Box
         sx={{
           mb: 2,
           color: "white",
           bgcolor: "rgba(64,64,64,0.7)",
-          p: 5,
           mx: "auto",
           width: "90%",
         }}
       >
-        <Typography variant="h5">Title : {title}</Typography>
-        <Typography variant="h5">
-          IMG : <Box component="img" id="img" src={link} />
-        </Typography>
-        <Typography variant="h5">Content : {content}</Typography>
-        <Typography variant="h5">CreatedAt : {createdAt}</Typography>
-      </Paper>
+        <Grid
+          container
+          sx={{
+            borderTop: "2px solid white",
+            borderBottom: "2px solid white",
+            px: 3,
+            py: 1,
+            alignItems: "center",
+          }}
+        >
+          <Grid item xs>
+            <Typography variant="h5">Title</Typography>
+          </Grid>
+          <Grid item xs>
+            <Typography align="center" variant="h5">
+              {title}
+            </Typography>
+          </Grid>
+          <Grid item xs>
+            <Typography align="right" variant="body1">
+              {createdAt}
+            </Typography>
+          </Grid>
+        </Grid>
+        <Grid item xs={12} textAlign="center" sx={{ my: 3 }}>
+          <Box
+            component="img"
+            id="img"
+            src="https://images-ext-1.discordapp.net/external/u6wy73BhNTO4sl6lY-Dj2WM8se7qbT-G5EveXRyZE68/https/www.thecocktaildb.com/images/media/drink/qcgz0t1643821443.jpg"
+            sx={{ width: "50%" }}
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <Box
+            sx={{ bgcolor: "white", height: "0.5px", width: "80%", mx: "auto" }}
+          ></Box>
+        </Grid>
+
+        <Box sx={{ height: "30vh", mt: 3, px: 15 }}>
+          <Typography paragraph>{content}</Typography>
+        </Box>
+      </Box>
       <TableContainer
-        component={Paper}
         sx={{
           mb: 2,
           color: "white",
           bgcolor: "rgba(64,64,64,0.7)",
-          p: 5,
+
           mx: "auto",
           width: "90%",
         }}
       >
         <Table size="small">
-          <TableHead>Comments</TableHead>
+          <TableHead>
+            <TableRow>
+              <TableCell sx={{ color: "white" }}>Comment</TableCell>
+            </TableRow>
+          </TableHead>
           <TableBody>
             {comments?.map((comment, i) => {
               return (

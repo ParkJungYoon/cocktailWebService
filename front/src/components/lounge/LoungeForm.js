@@ -52,7 +52,7 @@ function LoungeForm({ userState, item, setIsForm, type }) {
         color: "white",
         bgcolor: "rgba(64,64,64,0.5)",
         width: "70vw",
-
+        mt: 10,
         mx: "auto",
         mb: 30,
         p: 5,
@@ -79,12 +79,14 @@ function LoungeForm({ userState, item, setIsForm, type }) {
           Content :
         </Typography>
         <TextField
+          multiline
           fullWidth
           type="text"
           name="content"
           label="content"
           value={form.content}
           onChange={handleFormChange}
+          rows={10}
           sx={{ bgcolor: "rgba(255,255,255,0.2)", mb: 3 }}
         />
         <Typography variant="h5" sx={{ my: "auto" }} component="span">

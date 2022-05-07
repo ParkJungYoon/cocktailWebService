@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Button, Grid, Container, Box, Link, Typography } from "@mui/material";
+import React from "react";
+import { Button, Grid, Container, Link } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import mbitResultSetPage from "../../imgs/mbitResultSetPage.jpg";
 
@@ -31,7 +31,6 @@ const TypeCheck = ({ countEI, countSN, countTF, countJP }) => {
     <>
       <Grid container sx={mbitResultSetPageImg}>
         <Container
-          container
           sx={{
             bgcolor: "rgba(0,0,0,0.6)",
             width: "80%",
