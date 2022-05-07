@@ -12,7 +12,7 @@ class UserModel {
   };
 
   static modify = async ({ userId, newValues }) => {
-    const filter = { id: userId };
+    const filter = { _id: userId };
     const update = { $set: newValues };
     const option = { returnOriginal: false };
     const updatedUser = await User.findOneAndUpdate(filter, update, option);
