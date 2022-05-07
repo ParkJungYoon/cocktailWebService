@@ -34,8 +34,12 @@ function LoungeTable({ user, setIsForm, setRankList }) {
   const [isListEdit, setIsListEdit] = useState(false);
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
+  //pagination
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
+
+  const emptyRows =
+    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - list?.length) : 0;
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -96,6 +100,7 @@ function LoungeTable({ user, setIsForm, setRankList }) {
       setIsForm((prev) => !prev);
     }
   };
+
   // style
   const tablecellStyle = {
     color: "white",
@@ -157,6 +162,46 @@ function LoungeTable({ user, setIsForm, setRankList }) {
                 </TableRow>
               </TableHead>
               <TableBody>
+                {(rowsPerPage > 0
+                  ? list
+                      .slice(0)
+                      .reverse()
+                      .slice(
+                        page * rowsPerPage,
+                        page * rowsPerPage + rowsPerPage
+                      )
+                  : list.slice(0).reverse()
+                ).map((item, i) => (
+                  <TableRow
+                    key={i}
+                    onClick={() => {
+                      setOpenItem(item);
+                      handleOpen();
+                    }}
+                    hover
+                  >
+                    <TableCell sx={tablecellStyle}>{i + 1}</TableCell>
+                    <TableCell sx={tablecellStyle} align="center">
+                      {item.title}
+                    </TableCell>
+                    <TableCell sx={tablecellStyle} align="center">
+                      {item.writer ? item.writer.name : "X"}
+                    </TableCell>
+                    <TableCell sx={tablecellStyle} align="center">
+                      {item.comment.length}
+                    </TableCell>
+                    <TableCell sx={{ color: "white" }} align="center">
+                      {item.createdAt}
+                    </TableCell>
+                  </TableRow>
+                ))}
+                {emptyRows > 0 && (
+                  <TableRow style={{ height: 53 * emptyRows }}>
+                    <TableCell colSpan={6} />
+                  </TableRow>
+                )}
+              </TableBody>
+              {/* <TableBody>
                 {list
                   .slice(0)
                   .reverse()
@@ -186,17 +231,14 @@ function LoungeTable({ user, setIsForm, setRankList }) {
                       </TableCell>
                     </TableRow>
                   ))}
-              </TableBody>
+              </TableBody> */}
               <TableFooter sx={{ color: "white" }}>
                 <TableRow sx={{ color: "white" }}>
                   <TablePagination
                     rowsPerPageOptions={[
-                      5,
-                      10,
-                      25,
-                      { label: "All", value: -1 },
+                      5, 10, 25,
+                      // { label: "All", value: -1 },
                     ]}
-                    colSpan={3}
                     count={list.length}
                     rowsPerPage={rowsPerPage}
                     page={page}

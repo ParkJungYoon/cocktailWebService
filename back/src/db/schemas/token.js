@@ -1,4 +1,5 @@
 import { Schema, model } from "mongoose";
+import { krTime } from "../../utils/time";
 
 const TokenSchema = new Schema(
   {
@@ -10,10 +11,17 @@ const TokenSchema = new Schema(
       type: String,
       required: true,
     },
+    createdAt : {
+      type : Date,
+      required : true,
+      default : krTime()
+    },
+    updatedAt : {
+      type : Date,
+      required : true,
+      default : krTime()
+    }
   },
-  {
-    timestamps: true,
-  }
 );
 
 const Token = model("Token", TokenSchema);
