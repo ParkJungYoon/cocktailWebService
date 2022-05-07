@@ -191,7 +191,9 @@ function LoungeTable({ user, setIsForm, setRankList }) {
                       {item.comment.length}
                     </TableCell>
                     <TableCell sx={{ color: "white" }} align="center">
-                      {item.createdAt}
+                      {item.createdAt.split("T")[0] +
+                        " " +
+                        item.createdAt.split("T")[1].slice(0, 5)}
                     </TableCell>
                   </TableRow>
                 ))}
@@ -201,37 +203,6 @@ function LoungeTable({ user, setIsForm, setRankList }) {
                   </TableRow>
                 )}
               </TableBody>
-              {/* <TableBody>
-                {list
-                  .slice(0)
-                  .reverse()
-                  .map((item, i) => (
-                    <TableRow
-                      key={i}
-                      onClick={() => {
-                        setOpenItem(item);
-                        handleOpen();
-                      }}
-                      hover
-                    >
-                      <TableCell sx={tablecellStyle}>{i + 1}</TableCell>
-                      <TableCell sx={tablecellStyle} align="center">
-                        {item.title}
-                      </TableCell>
-                      <TableCell sx={tablecellStyle} align="center">
-                        {item.writer ? item.writer.name : "X"}
-                      </TableCell>
-                      <TableCell sx={tablecellStyle} align="center">
-                        {item.comment.length}
-                      </TableCell>
-                      <TableCell sx={{ color: "white" }} align="center">
-                        {item.createdAt.split("T")[0] +
-                          " " +
-                          item.createdAt.split("T")[1].slice(0, 5)}
-                      </TableCell>
-                    </TableRow>
-                  ))}
-              </TableBody> */}
               <TableFooter sx={{ color: "white" }}>
                 <TableRow sx={{ color: "white" }}>
                   <TablePagination
@@ -242,15 +213,9 @@ function LoungeTable({ user, setIsForm, setRankList }) {
                     count={list.length}
                     rowsPerPage={rowsPerPage}
                     page={page}
-                    SelectProps={{
-                      inputProps: {
-                        "aria-label": "rows per page",
-                      },
-                      native: true,
-                    }}
                     onPageChange={handleChangePage}
                     onRowsPerPageChange={handleChangeRowsPerPage}
-                    ActionsComponent={TablePaginationActions}
+                    // ActionsComponent={TablePaginationActions}
                     sx={{ color: "white" }}
                   />
                 </TableRow>
