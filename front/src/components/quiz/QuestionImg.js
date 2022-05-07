@@ -4,20 +4,14 @@ import { Box } from "@mui/material";
 const QuestionImg = (props) => {
   return (
     <>
-      <div>
-        <Box>
-          <img
-            className=""
-            src={props.img}
-            alt=""
-            width="250px"
-            style={{
-              borderRadius: "1rem",
-              justifyContent: "center",
-            }}
-          />
-        </Box>
-      </div>
+      <Box
+        component="img"
+        src={props.img}
+        alt=""
+        width="30vw"
+        maxWidth="250px"
+        sx={{ borderRadius: "1rem" }}
+      />
     </>
   );
 };

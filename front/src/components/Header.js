@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { styled } from "@mui/material/styles";
 import {
   Link,
   Tab,
@@ -12,9 +13,8 @@ import {
 } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import { pink } from "@mui/material/colors";
 
-import logo from "../imgs/logo.png";
+import logo from "../imgs/logo2.jpg";
 import RegisterModal from "./user/RegisterModal";
 import LoginModal from "./user/LoginModal";
 import { UserContext } from "./user/reducer/userReducer";
@@ -23,11 +23,30 @@ import "../scss/Header.scss";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#ffffff",
+      main: "rgba(0,0,0,0)",
     },
   },
 });
-
+const StyledTabs = styled((props) => (
+  <Tabs
+    {...props}
+    TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" /> }}
+  />
+))({
+  "& .MuiTabs-indicator": {
+    display: "flex",
+    justifyContent: "center",
+    backgroundColor: "transparent",
+  },
+  "& .MuiTabs-indicatorSpan": {
+    maxWidth: 80,
+    width: "100%",
+    height: "8px",
+    backgroundColor: "#fff",
+    boxShadow:
+      "0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa",
+  },
+});
 function LinkTab(props) {
   return (
     <Tab
@@ -125,7 +144,7 @@ function Header({ user }) {
                   aria-expanded={isMenuOpen ? "true" : undefined}
                 >
                   <ArrowDropDownIcon
-                    sx={{ width: 32, height: 32, color: pink[500] }}
+                    sx={{ width: 32, height: 32, color: "rgb(125,125,125)" }}
                   />
                   <Menu
                     anchorEl={anchorEl}
@@ -143,13 +162,6 @@ function Header({ user }) {
                       }}
                     >
                       Account
-                    </MenuItem>
-                    <MenuItem
-                      onClick={() => {
-                        navigate("/cellar");
-                      }}
-                    >
-                      Cellar
                     </MenuItem>
                     <Divider />
                     <MenuItem onClick={logout}>Logout</MenuItem>
@@ -199,11 +211,10 @@ function Header({ user }) {
         </div>
 
         <Box sx={{ width: "100%" }} className="navbarMenu">
-          <Tabs
+          <StyledTabs
             value={value}
             onChange={handleChange}
             centered
-            indicatorColor="primary"
             textColor="inherit"
           >
             <LinkTab
@@ -242,7 +253,7 @@ function Header({ user }) {
                 navigate("/introduction");
               }}
             />
-          </Tabs>
+          </StyledTabs>
         </Box>
       </div>
     </ThemeProvider>

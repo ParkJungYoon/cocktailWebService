@@ -1,17 +1,21 @@
 import React from "react";
-import { Grid } from "@mui/material";
+import { Box } from "@mui/material";
 
+import star1 from "../imgs/star1.jpg";
 import "../scss/CocktailBar.scss";
 import MenuBar from "../components/cocktailBar/MenuBar";
 
-export default function Dictionary() {
+export default function CocktailBar() {
+  const boxStyle = {
+    backgroundImage: `url(${star1})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    height: "100vh",
+    overflow: "auto",
+  };
   return (
-    <div className="dictionary">
-      <Grid container sx={{ mt: 17 }}>
-        <Grid item xs={12}>
-          <MenuBar />
-        </Grid>
-      </Grid>
-    </div>
+    <Box container sx={boxStyle}>
+      <MenuBar />
+    </Box>
   );
 }

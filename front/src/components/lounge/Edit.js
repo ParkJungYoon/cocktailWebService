@@ -3,12 +3,18 @@ import { UserContext } from "../user/reducer/userReducer";
 import { Button, TextField, Box, Container } from "@mui/material";
 import * as Api from "../../api";
 
-function Edit({ setIsEdit, boardId, prevComment, type }) {
+function Edit({
+  setIsEdit,
+  boardId,
+  commentId,
+  prevComment,
+  type,
+  setTargetId,
+}) {
   const { userState, userDispatch } = useContext(UserContext);
 
   const [form, setForm] = useState({
     content: [prevComment] ? [prevComment] : "",
-    boardId: [boardId],
   });
 
   const handleFormValue = (name, value) => {
@@ -24,13 +30,15 @@ function Edit({ setIsEdit, boardId, prevComment, type }) {
       if (type === "add") {
         const res = await Api.post("board/comment", {
           ...form,
+          boardId: [boardId],
         });
       } else {
-        const res = await Api.put(`board/comment/${boardId}`, {
+        const res = await Api.put(`board/comment/${commentId}`, {
           ...form,
         });
       }
       //setUser
+      if (type === "edit") setTargetId(null);
       setIsEdit(false);
     } catch (err) {
       console.log(err.response);
@@ -39,34 +47,53 @@ function Edit({ setIsEdit, boardId, prevComment, type }) {
 
   return (
     <Box>
-      <form onSubmit={handleSubmit}>
+      <Box component="form" onSubmit={handleSubmit}>
         <TextField
           required
-          sx={{
-            bgcolor: "white",
-            color: "white",
-          }}
+          sx={{ bgcolor: "rgba(255,255,255,0.2)", my: 3 }}
           label={"comment"}
           variant="filled"
-          color="secondary"
           value={form.content}
           fullWidth
           onChange={(e) => {
             handleFormValue("content", e.target.value);
           }}
         />
-        <Button type="submit" sx={{ ml: "auto", color: "Black" }}>
-          Submit
-        </Button>
-        <Button
-          onClick={() => {
-            setIsEdit(false);
-          }}
-          sx={{ color: "Black" }}
-        >
-          WithDraw
-        </Button>
-      </form>
+        <Box sx={{ textAlign: "right" }}>
+          <Button
+            type="submit"
+            sx={{
+              mr: 1,
+              color: "white",
+              border: "2px solid white",
+              "&:hover": {
+                color: "black",
+                bgcolor: "white",
+                border: "2px solid black",
+              },
+            }}
+          >
+            Submit
+          </Button>
+          <Button
+            onClick={() => {
+              if (type === "edit") setTargetId(null);
+              setIsEdit(false);
+            }}
+            sx={{
+              color: "white",
+              border: "2px solid white",
+              "&:hover": {
+                color: "black",
+                bgcolor: "white",
+                border: "2px solid black",
+              },
+            }}
+          >
+            WithDraw
+          </Button>
+        </Box>
+      </Box>
     </Box>
   );
 }

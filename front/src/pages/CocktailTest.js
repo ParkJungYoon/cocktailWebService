@@ -1,65 +1,64 @@
 import React, { useState } from "react";
+import useUserHook from "../components/commons/useUserHook";
+import { useSnackbar } from "notistack";
 import { useNavigate } from "react-router-dom";
-import { Grid, Box, Container } from "@mui/material";
-import "../scss/CocktailTest.scss";
-import bgImg from "../imgs/bgImg.jpg";
+import { Grid, Typography, Button } from "@mui/material";
 
 function CocktailTest() {
   const navigate = useNavigate();
-  const topBlank = {
-    marginTop: "1.5rem",
-    marginLeft: "5%",
-    marginRight: "5%",
+  const userState = useUserHook();
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+  // style
+  const buttonStyle = {
+    color: "white",
+    py: 4,
+    px: 10,
+    bgcolor: "rgba(128, 128, 128, 0.1)",
+    border: "1px solid white",
+    "&:hover": { bgcolor: "rgba(128, 128, 128, 0.4)" },
   };
-  const quizGridStyle = {
-    padding: "5% 15% 5% 15%",
-    borderRadius: "2rem",
-    backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url(${bgImg})`,
-    backgroundSize: "cover",
+  const handleMbtiBtn = () => {
+    if (!userState.user) {
+      enqueueSnackbar("Login Required!");
+    } else {
+      navigate("/cocktailTest/mbti");
+    }
   };
 
   return (
-    <div className="quiz">
-      <Box sx={topBlank}>
-        <Grid
-          container
-          justifyContent="center"
-          sx={{
-            fontSize: "15px",
-            textAlign: "center",
-          }}
-        >
-          <Grid item xs={12} md={12} mt={22}></Grid>
-          <Grid item xs={12} md={12} height="720px" sx={quizGridStyle}>
-            <Grid container mt={25}>
-              <Grid item xs={6}>
-                <p className="btntitle">
-                  10개의 퀴즈로
-                  <br /> 알아보는 칵테일 상식
-                </p>
-              </Grid>
-              <Grid item xs={6}>
-                <p className="btntitle">
-                  MBTI 테스트를 통해
-                  <br /> 알아보는 맞춤 칵테일
-                </p>
-              </Grid>
-              <Container
-                className="startBtn"
-                onClick={() => navigate("/cocktailTest/quiz")}
-              >
-                QUIZ
-              </Container>
-              <Container
-                className="startBtn"
-                onClick={() => navigate("/cocktailTest/mbti")}
-              >
-                MBTI
-              </Container>
-            </Grid>
-          </Grid>
+    <div className="cocktailTest">
+      <Grid container sx={{ mt: "40vh" }}>
+        <Grid item xs textAlign="center">
+          <Typography variant="h5" sx={{ color: "white", mb: 3 }}>
+            10개의 퀴즈로
+            <br /> 알아보는 칵테일 상식
+          </Typography>
+          <Button
+            sx={buttonStyle}
+            onClick={() => navigate("/cocktailTest/quiz")}
+          >
+            QUIZ
+          </Button>
         </Grid>
-      </Box>
+        <Grid item xs textAlign="center">
+          <Typography
+            align="center"
+            variant="h5"
+            sx={{ color: "white", mb: 3 }}
+          >
+            MBTI 테스트를 통해
+            <br /> 알아보는 맞춤 칵테일
+          </Typography>
+          <Button
+            sx={buttonStyle}
+            onClick={() => {
+              handleMbtiBtn();
+            }}
+          >
+            MBTI
+          </Button>
+        </Grid>
+      </Grid>
     </div>
   );
 }

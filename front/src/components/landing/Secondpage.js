@@ -6,38 +6,48 @@ import Top10Chart from "./Top10Chart";
 
 export default function Secondpage() {
   const navigate = useNavigate();
+
+  // style
+  const chartStyle = {
+    mt: 15,
+    width: "600px",
+    ml: "10vw",
+  };
+  const textStyle = {
+    position: "relative",
+    color: "white",
+    textAlign: "right",
+    my: "auto",
+    mr: "15vw",
+  };
+  const textShadowStyle = {
+    color: "white",
+    textShadow:
+      "0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa",
+  };
   return (
     <>
-      <Grid container spacing={3}>
-        <Grid item xs sx={{ ml: 5 }}>
-          <Box sx={{ minWidth: "500px", maxWidth: "800px" }}>
-            <Top10Chart />
-          </Box>
+      <Grid container>
+        <Grid item xs sx={chartStyle}>
+          <Top10Chart />
         </Grid>
-        <Grid item xs sx={{ color: "white", ml: 5 }}>
-          <Box textAlign={"left"}>
-            <Typography variant="h4">Starts with</Typography>
-            <Typography variant="h4" sx={{ mb: 3 }}>
-              Top 10 Cocktails
-            </Typography>
-          </Box>
-          <Box sx={{ my: 5 }}>
+        <Grid item xs sx={textStyle}>
+          <Box sx={{ mt: 10 }}>
             <Typography variant="h6">방문자 수를 통계로</Typography>
-            <Typography variant="h6">
+            <Typography variant="h6" sx={textShadowStyle}>
               Top10 칵테일을 미리 골라두었습니다.
             </Typography>
             <Typography variant="h6">
               인기가 많은 칵테일을 만나보세요
             </Typography>
           </Box>
-          <Box sx={{ ml: 10 }}>
+          <Box sx={{ mt: 3 }}>
             <Link
               underline="none"
               className="top10Button"
               onClick={() => {
                 navigate("/cocktailBar");
               }}
-              sx={{ mt: 5 }}
             >
               Explore
             </Link>

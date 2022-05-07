@@ -1,10 +1,12 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "../user/reducer/userReducer";
 import { Button, TextField, Box, Container } from "@mui/material";
+import { useSnackbar } from "notistack";
 import * as Api from "../../api";
 
 function Edit({ setIsEdit, formName }) {
   const { userState, userDispatch } = useContext(UserContext);
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
   const [form, setForm] = useState({
     [formName]: userState.user[formName] ? userState.user[formName] : "",
@@ -29,13 +31,12 @@ function Edit({ setIsEdit, formName }) {
         type: "Edit",
         payload: updatedUser,
       });
-      //alert
-      alert("변경완료");
+      enqueueSnackbar("Modifications completed");
       setIsEdit(false);
     } catch (err) {
       console.log(err);
       if (err.response) {
-        alert(err.response.data);
+        enqueueSnackbar(`${err.response.data}`);
       }
     }
   };
@@ -43,14 +44,6 @@ function Edit({ setIsEdit, formName }) {
   return (
     <Box>
       <form onSubmit={handleSubmit}>
-        {/* <input
-          type="text"
-          placeholder={formName}
-          value={form.formName}
-          onChange={(e) => {
-            handleFormValue([formName], e.target.value);
-          }}
-        /> */}
         <TextField
           required
           sx={{

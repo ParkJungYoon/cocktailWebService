@@ -1,38 +1,31 @@
 import React from "react";
-import { Box, Grid, LinearProgress } from "@mui/material";
+import { Container, Button, LinearProgress, Typography } from "@mui/material";
 
 const MbtiAnswer = (props) => {
   const btnStyle = {
-    height: "100px",
-    width: "800px",
-    alignItems: "center",
-    justifyContent: "center",
+    py: 3,
+    mt: 3,
+    mx: "auto",
+    width: "70vw",
     border: "3px solid gray",
     borderRadius: "1rem",
     color: "white",
     fontSize: "20px",
+    "&:hover": { backgroundColor: "rgba(128, 128, 128, 0.5)" },
   };
   let answers = Object.keys(props.answer).map((qAnswer, i) => (
-    <div
-      style={{
-        width: "100%",
-        height: "100%",
-        textAlign: "center",
-      }}
-      onClick={() => props.checkAnswer(qAnswer)}
-      key={qAnswer}
-    >
-      <Grid container className="btn" item xs={12} mt={3} sx={btnStyle}>
+    <Container sx={{ textAlign: "center" }} key={i}>
+      <Button
+        className="btn"
+        sx={btnStyle}
+        onClick={() => props.checkAnswer(qAnswer)}
+      >
         {props.answer[qAnswer]}
-      </Grid>
-    </div>
+      </Button>
+    </Container>
   ));
 
-  return (
-    <>
-      <p className="MbtiAnswer">{answers}</p>
-    </>
-  );
+  return <>{answers}</>;
 };
 
 export default MbtiAnswer;

@@ -1,18 +1,20 @@
 import React, { useState } from "react";
-import { Grid } from "@mui/material";
-import "../scss/Introduction.scss";
+import { Grid, Box, Container } from "@mui/material";
+import star1 from "../imgs/star1.jpg";
 import IntroductionMenu from "../components/introduction/IntroductionMenu";
 
-function Introduction() {
+export default function Introduction() {
   return (
-    <div className="introduction">
-      <Grid container sx={{ mt: 17 }}>
-        <Grid item xs={12}>
-          <IntroductionMenu />
-        </Grid>
-      </Grid>
-    </div>
+    <Box
+      sx={{
+        backgroundImage: `url(${star1})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        height: "100vh",
+        overflow: "auto",
+      }}
+    >
+      <IntroductionMenu />
+    </Box>
   );
 }
-
-export default Introduction;

@@ -11,21 +11,23 @@ import {
 
 import * as Api from "../../api";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import { useSnackbar } from "notistack";
 import CompareArrowsIcon from "@mui/icons-material/CompareArrows";
 
 export default function LikeCardItem({ cocktail }) {
   // state
   const [isFront, setIsFront] = useState(true);
   const [isLike, setIsLike] = useState(cocktail.isLiked);
-  const [color, setColor] = useState(isLike ? "plum" : "white");
+  const [color, setColor] = useState(isLike ? "#ff3897" : "white");
   const [likeNum, setLikeNum] = useState(cocktail.getCocktailId.likes);
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
   // style
   const buttonStyle = {
     position: "absolute",
     bottom: 5,
     right: 6,
-    color: "violet",
+    color: "#ff3897",
   };
 
   // Card flip event
@@ -40,10 +42,10 @@ export default function LikeCardItem({ cocktail }) {
         await Api.post(`like/${cocktail.getCocktailId._id}`);
         setLikeNum((prev) => prev + 1);
         setIsLike(true);
-        setColor("plum");
+        setColor("#ff3897");
       } catch (e) {
         if (e.message === "Request failed with status code 401") {
-          alert("로그인이 필요한 서비스입니다.");
+          enqueueSnackbar("Login required");
         }
       }
     } else {
@@ -66,6 +68,7 @@ export default function LikeCardItem({ cocktail }) {
             <FavoriteIcon sx={{ color: color }} />
           </IconButton>
           {likeNum}
+
           <CardMedia
             height="180"
             component="img"
@@ -83,11 +86,11 @@ export default function LikeCardItem({ cocktail }) {
         </Card>
 
         <Card className=" back">
-          <CardContent className="descriptionBox">
+          <CardContent>
             <Typography
               variant="h6"
               align="center"
-              sx={{ mb: 2, borderBottom: "2px solid plum" }}
+              sx={{ mb: 2, borderBottom: "2px solid #ff3897" }}
             >
               {cocktail.name}
             </Typography>

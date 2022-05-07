@@ -36,9 +36,6 @@ $star1: "../imgs/star1.jpg";
       color: rgba(255, 255, 255, 0.7);
       padding: 20px;
       cursor: pointer;
-      &:hover {
-        font-weight: bolder;
-      }
     }
   }
   .navbarLogo {
@@ -48,11 +45,11 @@ $star1: "../imgs/star1.jpg";
   }
   .navbarMenu {
     color: white;
-    border-top: 1px solid white;
+    border-top: 1px solid lightgray;
     .navbarButton {
       font-size: 13px;
-      border-left: 0.5px solid white;
-      border-right: 0.5px solid white;
+      border-left: 0.5px solid lightgray;
+      border-right: 0.5px solid lightgray;
       font-family: "Pretendard-Regular";
       padding: 0px;
       a {
@@ -62,4 +59,8 @@ $star1: "../imgs/star1.jpg";
       }
     }
   }
+}
+
+.accountNav {
+  color: gray;
 }

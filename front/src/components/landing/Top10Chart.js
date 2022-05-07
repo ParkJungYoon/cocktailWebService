@@ -36,6 +36,7 @@ export const Top10Chart = ({}) => {
     setVisitors(arr2);
   }, []);
   const options = {
+    indexAxis: "y",
     responsive: true,
     scales: {
       x: {
@@ -48,6 +49,7 @@ export const Top10Chart = ({}) => {
           color: "#ffffff",
         },
         ticks: { color: "white" },
+        position: "top",
       },
       y: {
         grid: {
@@ -59,11 +61,15 @@ export const Top10Chart = ({}) => {
           color: "#ffffff",
         },
         ticks: { color: "white" },
+        position: "left",
       },
     },
     plugins: {
       legend: {
-        position: "top",
+        display: "false",
+        // color: "white",
+        // position: "right",
+        // ticks: { color: "white" },
       },
       title: {
         display: false,
@@ -77,7 +83,7 @@ export const Top10Chart = ({}) => {
       {
         label: "Visitor",
         data: visitors,
-        backgroundColor: ["rgba(153, 102, 255)"],
+        backgroundColor: ["rgb(1, 139, 101)"],
       },
     ],
   };

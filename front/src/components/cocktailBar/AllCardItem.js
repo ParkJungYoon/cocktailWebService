@@ -8,6 +8,7 @@ import {
   IconButton,
   Typography,
 } from "@mui/material";
+import { useSnackbar } from "notistack";
 
 import * as Api from "../../api";
 import FavoriteIcon from "@mui/icons-material/Favorite";
@@ -17,15 +18,16 @@ export default function AllCardItem({ cocktail }) {
   // state
   const [isFront, setIsFront] = useState(true);
   const [isLike, setIsLike] = useState(cocktail.isLiked);
-  const [color, setColor] = useState(isLike ? "plum" : "white");
+  const [color, setColor] = useState(isLike ? "#ff3897" : "white");
   const [likeNum, setLikeNum] = useState(cocktail.likes);
+  const { enqueueSnackbar } = useSnackbar();
 
   // style
   const buttonStyle = {
     position: "absolute",
     bottom: 5,
     right: 6,
-    color: "violet",
+    color: "#ff3897",
   };
 
   // Card flip event
@@ -40,10 +42,10 @@ export default function AllCardItem({ cocktail }) {
         await Api.post(`like/${cocktail._id}`);
         setLikeNum((prev) => prev + 1);
         setIsLike(true);
-        setColor("plum");
+        setColor("#ff3897");
       } catch (e) {
         if (e.message === "Request failed with status code 401") {
-          alert("로그인이 필요한 서비스입니다.");
+          enqueueSnackbar("Login required");
         }
       }
     } else {
@@ -63,7 +65,11 @@ export default function AllCardItem({ cocktail }) {
       <Box className={` ${isFront ? "cardFront" : "cardBack"}`}>
         <Card className="front">
           <IconButton onClick={handleOnClickLike}>
-            <FavoriteIcon sx={{ color: color }} />
+            <FavoriteIcon
+              sx={{
+                color: color,
+              }}
+            />
           </IconButton>
           {likeNum}
           <CardMedia
@@ -83,11 +89,11 @@ export default function AllCardItem({ cocktail }) {
         </Card>
 
         <Card className=" back">
-          <CardContent className="descriptionBox">
+          <CardContent>
             <Typography
               variant="h6"
               align="center"
-              sx={{ mb: 2, borderBottom: "2px solid plum" }}
+              sx={{ mb: 2, borderBottom: "2px solid #ff3897" }}
             >
               {cocktail.name}
             </Typography>

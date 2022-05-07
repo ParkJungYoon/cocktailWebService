@@ -44,7 +44,7 @@ function AllCard() {
   useEffect(() => {
     if (page >= 0) {
       getPost();
-    } 
+    }
   }, [page, word, sort]);
 
   const getPost = useCallback(async () => {
@@ -87,7 +87,7 @@ function AllCard() {
 
   return (
     <>
-      <Grid container sx={{ px: 15 }}>
+      <Grid container sx={{ px: 20, mx: "auto" }}>
         <Grid item xs>
           <AllSortButton
             setSort={setSort}
@@ -103,7 +103,7 @@ function AllCard() {
           />
         </Grid>
       </Grid>
-      <Grid container spacing={1} sx={{ pt: 3, px: 15, mx: "auto" }}>
+      <Grid container spacing={1} sx={{ pt: 3, px: 20, mx: "auto" }}>
         {cocktails.map((cocktail, i) => {
           return (
             <Grid key={i} item xs>

@@ -1,6 +1,6 @@
 import React from "react";
 import ReactFullpage from "@fullpage/react-fullpage";
-
+import { Box } from "@mui/material";
 import "../scss/Landingpage.scss";
 import Firstpage from "../components/landing/Firstpage";
 import Secondpage from "../components/landing/Secondpage";
@@ -17,18 +17,18 @@ export default function Landing() {
         render={({}) => {
           return (
             <ReactFullpage.Wrapper>
-              <div className="section firstPage">
+              <Box className="section firstPage">
                 <Firstpage />
-              </div>
-              <div className="section secondPage">
+              </Box>
+              <Box className="section secondPage">
                 <Secondpage />
-              </div>
-              <div className="section thirdPage">
+              </Box>
+              <Box className="section thirdPage">
                 <Thirdpage />
-              </div>
-              <div className="section fourthPage">
+              </Box>
+              <Box className="section fourthPage">
                 <Fourthpage />
-              </div>
+              </Box>
             </ReactFullpage.Wrapper>
           );
         }}

@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { Tab, Box, Grid } from "@mui/material";
 import { TabContext, TabPanel, TabList } from "@mui/lab";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-
 import Top10Card from "./Top10Card";
 import AllCard from "./AllCard";
 import Likes from "./Likes";
@@ -11,7 +10,7 @@ import Likes from "./Likes";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#ffffff",
+      main: "rgba(0,0,0,0)",
     },
   },
 });
@@ -30,25 +29,32 @@ export default function CardMenu() {
 
   //stlye
   const boxStyle = {
-    backgroundColor: "rgba(64, 64, 64, 0.5)",
+    backgroundColor: "rgba(64, 64, 64, 0.4)",
     mx: "auto",
-    mt: 5,
     py: 1,
     px: 2,
-    width: "80%",
+    mt: 22,
+    width: "70%",
     borderTop: "1px solid white",
     borderBottom: "1px solid white",
   };
-  const tabStyle = { color: "white" };
 
   return (
     <ThemeProvider theme={theme}>
       <TabContext value={value}>
         <Box sx={boxStyle}>
-          <TabList onChange={handleChange}>
-            <Tab sx={tabStyle} value={"1"} label="all" />
-            <Tab sx={tabStyle} value={"2"} label="top 10" />
-            <Tab sx={tabStyle} value={"3"} label="my likes" />
+          <TabList
+            onChange={handleChange}
+            indicatorColor="primary"
+            textColor="inherit"
+          >
+            <Tab sx={{ color: "white" }} value={"1"} label="all" />
+            <Tab sx={{ color: "white" }} value={"2"} label="top 10" />
+            <Tab
+              sx={{ color: "white", ml: "auto" }}
+              value={"3"}
+              label="my likes"
+            />
           </TabList>
         </Box>
         <TabPanel value={"1"}>

@@ -1,47 +1,113 @@
 $star1: "../imgs/star1.jpg";
+$mbitResultSetPage: "../imgs/mbitResultSetPage.jpg";
 
 .mbti {
   background-image: url($star1);
   background-size: cover;
-  background-color: rgba(64, 64, 64, 0.7);
+  background-position: center;
   height: 100vh;
   overflow: auto;
 }
-.btn {
-  cursor: pointer;
-}
+
 .btn:hover {
   background-color: rgba(128, 128, 128, 0.5);
 }
 
+.mbtiResultInfoText {
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  .mbtiResultInfoBtn {
+    text-align: center;
+    color: white;
+    font-size: 30px;
+  }
+  .mbtiResultInfoBtn:hover {
+    cursor: pointer;
+    color: #a300d9;
+  }
+}
+
 .mbtiResultPage {
-  background-image: url($star1);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url($mbitResultSetPage);
   background-size: cover;
   background-color: rgba(64, 64, 64, 0.7);
   height: 100vh;
   overflow: auto;
-}
+  .div {
+    text-align: center;
+    font-size: 30px;
+    color: white;
+  }
+  .mbtiResultImgAlingn {
+    text-align: center;
+    margin-bottom: 1rem;
+    .mbtiResultImg {
+      margin-top: 0.5vw;
+      margin-bottom: 2.7vw;
+      border-radius: 1rem;
+      justify-content: center;
+      width: 21vw;
+      max-width: 420px;
+      min-width: 210px;
+    }
+    .mbtiResultGoodImg {
+      border-radius: 1rem;
+      justify-content: center;
+      width: 12vw;
+      min-width: 150px;
+      max-width: 230px;
+    }
+    .mbtiResultBadImg {
+      border-radius: 1rem;
+      justify-content: center;
+      width: 12vw;
+      min-width: 150px;
+      max-width: 230px;
+    }
+  }
+  .mbtiResultText {
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    margin-top: 20px;
+    line-height: 1.8;
+  }
 
-.mbtiResultText{
-  text-align: center;
-  color: white;
-  font-size: 30px
-}
-.mbtiResultBtn {
-  text-align: center;
-  color: white;
-  font-size: 30px;
-}
-.mbtiResultBtn:hover {
-  cursor: pointer;
-  color: #a300d9;
-}
-.mbtiRestartBtn {
-  text-align: center;
-  color: white;
-  font-size: 30px;
-}
-.mbtiRestartBtn:hover {
-  cursor: pointer;
-  color: #a300d9;
+  .mbtiResultGood {
+    margin: 5px 0 10px 0;
+    text-align: center;
+    font-size: 25px;
+    color: white;
+  }
+  .mbtiResultBad {
+    margin: 5px 0 10px 0;
+    text-align: center;
+    font-size: 25px;
+    color: white;
+  }
+  .mbtiResultBottonBtns {
+    display: flex;
+    justify-content: center;
+    .mbtiResultLinkShareBtn {
+      cursor: pointer;
+      .mbtiResultLinkShareImg {
+        transition: all 0.2s linear;
+      }
+      .mbtiResultLinkShareImg:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+  .mbtiRestartBtn {
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    padding: 1px;
+  }
+
+  .mbtiRestartBtn:hover {
+    cursor: pointer;
+    color: #ff3897;
+  }
 }

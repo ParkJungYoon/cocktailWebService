@@ -31,7 +31,6 @@ const resizeStyle = {
   justifyContent: "center",
   border: "none",
   background: "transparent",
-  marginTop: "10rem",
 };
 const renameKeys = (mapping, objArr) => {
   const renamedObjArr = [];

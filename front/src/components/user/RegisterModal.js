@@ -10,9 +10,9 @@ import {
   DialogTitle,
   IconButton,
   FormHelperText,
+  Box,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import "../../scss/Modal.scss";
 // import imgSrc from "./test.png";
 import * as Api from "../../api";
 
@@ -70,7 +70,7 @@ function RegisterModal({ open, handleRegisterClose }) {
   return (
     <>
       <Dialog open={open} onClose={handleRegisterClose}>
-        <DialogTitle className="ModalTitle" width="552px" sx={{ pt: 5 }}>
+        <DialogTitle sx={{ bgcolor: "#212121", pt: 5, width: "552px" }}>
           <IconButton
             aria-label="close"
             onClick={handleRegisterClose}
@@ -84,18 +84,19 @@ function RegisterModal({ open, handleRegisterClose }) {
             <CloseIcon />
           </IconButton>
         </DialogTitle>
-        <form onSubmit={handleSubmit}>
-          <DialogContent className="ModalContent">
+        <Box component="form" onSubmit={handleSubmit}>
+          <DialogContent sx={{ bgcolor: "#212121" }}>
             <DialogContentText
               align="center"
-              style={{ color: "white", fontWeight: "bold" }}
+              sx={{ color: "white", fontWeight: "bold", mb: 3 }}
             >
               저쪽 손님께서
               <br /> 보내신 겁니다
             </DialogContentText>
-
+            <DialogContentText align="center" sx={{ color: "#6EC860" }}>
+              처음이신가요? 이쪽으로 안내해드릴게요.
+            </DialogContentText>
             <TextField
-              autoComplete="on"
               required
               sx={{ mt: 5, bgcolor: "white" }}
               margin="dense"
@@ -104,7 +105,7 @@ function RegisterModal({ open, handleRegisterClose }) {
               fullWidth
               variant="filled"
               value={email}
-              color="secondary"
+              color="success"
               onChange={(e) => setEmail(e.target.value)}
             />
             {!isEmailValid && (
@@ -116,7 +117,6 @@ function RegisterModal({ open, handleRegisterClose }) {
               </FormHelperText>
             )}
             <TextField
-              autoComplete="on"
               required
               sx={{ mt: 2, bgcolor: "white" }}
               margin="dense"
@@ -124,7 +124,7 @@ function RegisterModal({ open, handleRegisterClose }) {
               type="password"
               fullWidth
               variant="filled"
-              color="secondary"
+              color="success"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -137,7 +137,6 @@ function RegisterModal({ open, handleRegisterClose }) {
               </FormHelperText>
             )}
             <TextField
-              autoComplete="on"
               required
               sx={{ mt: 2, bgcolor: "white" }}
               margin="dense"
@@ -145,7 +144,7 @@ function RegisterModal({ open, handleRegisterClose }) {
               type="password"
               fullWidth
               variant="filled"
-              color="secondary"
+              color="success"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
@@ -158,14 +157,13 @@ function RegisterModal({ open, handleRegisterClose }) {
               </FormHelperText>
             )}
             <TextField
-              autoComplete="on"
               sx={{ mt: 2, bgcolor: "white" }}
               required
               fullWidth
               label="Nickname"
               variant="filled"
               id="name"
-              color="secondary"
+              color="success"
               placeholder="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -180,17 +178,16 @@ function RegisterModal({ open, handleRegisterClose }) {
               </FormHelperText>
             )}
           </DialogContent>
-          <DialogActions className="ModalButton" sx={{ pb: 5 }}>
+          <DialogActions sx={{ bgcolor: "#212121", pb: 5 }}>
             <Button
-              className="Button"
-              sx={{ mx: "auto" }}
+              sx={{ bgcolor: "#615f5f", mx: "auto", color: "white" }}
               type="submit"
               disabled={!isFormValid}
             >
               회원가입
             </Button>
           </DialogActions>
-        </form>
+        </Box>
       </Dialog>
     </>
   );

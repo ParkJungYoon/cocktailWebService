@@ -46,7 +46,7 @@ export default function Top10SortButton({ top10Cocktails, setTop10Cocktails }) {
   };
 
   return (
-    <Box sx={{ height: 50, width: 150, bgcolor: "rgba(64, 64, 64, 0.7)" }}>
+    <Box sx={{ height: 50, width: 150, bgcolor: "rgba(64, 64, 64, 0.4)" }}>
       <FormControl fullWidth>
         <Select
           value={order}

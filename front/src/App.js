@@ -13,22 +13,12 @@ import {
 import Header from "./components/Header";
 import Landing from "./pages/Landing";
 import Introduction from "./pages/Introduction";
-import Mypage from "./components/mypage/Mypage";
-import Bookmark from "./components/mypage/Bookmark";
 import CocktailBar from "./pages/CocktailBar";
-import Like from "./components/mypage/Like";
-import UserInfo from "./components/mypage/UserInfo";
-import UserTab from "./components/mypage/UserTab";
 import CocktailTest from "./pages/CocktailTest";
 import LoungePage from "./pages/LoungePage";
 import Mbti from "./components/mbti/Mbti";
 import Quiz from "./components/quiz/Quiz";
-import CellarPage from "./pages/CellarPage";
-
-import ResultESFJ from "./components/mbti/ResultESFJ";
-import ResultESFP from "./components/mbti/ResultESFP";
-import ResultISFP from "./components/mbti/ResultISFP";
-import ResultISTJ from "./components/mbti/ResultISTJ";
+import mbtiRoutes from "./mbtiRoutesList";
 
 //JY
 import SkeletonFunc from "./components/test/SkeletonFunc";
@@ -72,6 +62,11 @@ function App() {
     return <SkeletonFunc />;
   }
 
+  // mbti result pages를 위한 routes
+  const mbtiRouteComponents = mbtiRoutes.map(({ path, element }, key) => (
+    <Route exact path={path} element={element} key={key} />
+  ));
+
   return (
     <Router>
       <Header user={userState} />
@@ -79,21 +74,12 @@ function App() {
         <Route path="/" exact element={<Landing />} />
         <Route path="/introduction" element={<Introduction />} />
         <Route path="/cocktailBar" element={<CocktailBar />} />
-        <Route path="/mypage" element={<Mypage />} />
-        <Route path="/bookmark" element={<Bookmark />} />
-        <Route path="/like" element={<Like />} />
-        <Route path="/userinfo" element={<UserInfo />} />
-        <Route path="/usertab" element={<UserTab />} />
         <Route path="/cocktailTest" element={<CocktailTest />} />
         <Route path="/lounge" element={<LoungePage />} />
         <Route path="/cocktailTest/mbti" element={<Mbti />} />
         <Route path="/cocktailTest/quiz" element={<Quiz />} />
         <Route path="/account" element={<AccountPage />} />
-        <Route path="/cellar" element={<CellarPage />} />
-        <Route path="/cocktailTest/mbti/ESFJ" element={<ResultESFJ />} />
-        <Route path="/cocktailTest/mbti/ESFP" element={<ResultESFP />} />
-        <Route path="/cocktailTest/mbti/ISFP" element={<ResultISFP />} />
-        <Route path="/cocktailTest/mbti/ISTJ" element={<ResultISTJ />} />
+        {mbtiRouteComponents}
       </Routes>
     </Router>
   );

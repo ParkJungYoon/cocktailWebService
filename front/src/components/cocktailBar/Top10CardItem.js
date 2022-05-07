@@ -51,18 +51,25 @@ export default function Top10CardItem({ cocktail }) {
   return (
     <>
       <Card sx={cardStyle}>
-        <Chip
-          sx={{ color: "white", bgcolor: "plum", m: 1 }}
-          label={`${cocktail.rank.rank}위`}
-        />
+        <Typography
+          align="center"
+          variant="h6"
+          sx={{
+            color: "white",
+            m: 1,
+          }}
+        >
+          {cocktail.rank.rank}위
+        </Typography>
         <CardMedia
           component="img"
-          height="300px"
+          height="350px"
           width="300px"
           image={cocktail.imageUrl}
           alt={cocktail.name}
         />
-        <Typography sx={{ m: 1 }} variant="h4">
+
+        <Typography sx={{ m: 1 }} variant="h5">
           {cocktail.name}
         </Typography>
         <CardContent>
@@ -70,14 +77,19 @@ export default function Top10CardItem({ cocktail }) {
             return (
               <Chip
                 key={i}
-                sx={{ color: "white", bgcolor: "plum", mr: 1 }}
+                sx={{
+                  color: "white",
+                  bgcolor: "#ff3897",
+                  mb: 1,
+                  mr: 1,
+                }}
                 label={`#${t}`}
               />
             );
           })}
         </CardContent>
         <CardContent>
-          <Typography paragraph>{cocktail.description}</Typography>
+          <Typography variant="body2">{cocktail.description}</Typography>
         </CardContent>
         <CardActions disableSpacing>
           <ExpandMore
@@ -94,7 +106,7 @@ export default function Top10CardItem({ cocktail }) {
             <Typography
               variant="h5"
               align="center"
-              sx={{ pb: 3, mb: 3, borderBottom: "2px solid plum" }}
+              sx={{ pb: 3, mb: 3, borderBottom: "2px solid #ff3897" }}
             >
               칵테일에 들어가는 재료
             </Typography>
@@ -111,7 +123,7 @@ export default function Top10CardItem({ cocktail }) {
             <Typography
               variant="h5"
               align="center"
-              sx={{ pb: 3, mb: 3, borderBottom: "2px solid plum" }}
+              sx={{ pb: 3, mb: 3, borderBottom: "2px solid #ff3897" }}
             >
               칵테일에 제조법
             </Typography>

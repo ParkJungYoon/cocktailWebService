@@ -1,4 +1,5 @@
 import { Schema, model } from "mongoose";
+import { krTime } from "../../utils/time";
 
 const CommentSchema = new Schema(
   {
@@ -14,8 +15,17 @@ const CommentSchema = new Schema(
       type: String,
       required: true,
     },
+    createdAt : {
+      type : Date,
+      required : true,
+      default : krTime()
+    },
+    updatedAt : {
+      type : Date,
+      required : true,
+      default : krTime()
+    }
   },
-  { timestamps: true }
 );
 
 const Comment = model("Comment", CommentSchema);
