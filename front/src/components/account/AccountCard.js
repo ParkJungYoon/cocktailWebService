@@ -50,7 +50,7 @@ function AccountCard(props) {
   };
   return (
     <Container className={styles["accountPageContainer"]}>
-      <Grid container rowSpacing={2} sx={{ p: 10, pt: 3 }}>
+      <Grid container rowSpacing={2} sx={{ p: 10, pt: 3, mb: 10 }}>
         <Grid item xs={12} sx={{ mb: 3 }}>
           <Typography variant="h4" align="center">
             Account
