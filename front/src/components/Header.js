@@ -13,7 +13,6 @@ import {
 } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import { pink } from "@mui/material/colors";
 
 import logo from "../imgs/logo.png";
 import RegisterModal from "./user/RegisterModal";
@@ -145,7 +144,7 @@ function Header({ user }) {
                   aria-expanded={isMenuOpen ? "true" : undefined}
                 >
                   <ArrowDropDownIcon
-                    sx={{ width: 32, height: 32, color: pink[500] }}
+                    sx={{ width: 32, height: 32, color: "rgb(125,125,125)" }}
                   />
                   <Menu
                     anchorEl={anchorEl}
@@ -163,13 +162,6 @@ function Header({ user }) {
                       }}
                     >
                       Account
-                    </MenuItem>
-                    <MenuItem
-                      onClick={() => {
-                        navigate("/cellar");
-                      }}
-                    >
-                      Cellar
                     </MenuItem>
                     <Divider />
                     <MenuItem onClick={logout}>Logout</MenuItem>

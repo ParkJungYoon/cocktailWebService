@@ -8,14 +8,30 @@ export default function Secondpage() {
   const navigate = useNavigate();
   return (
     <>
-      <Grid container sx={{ pt: 15 }}>
-        <Grid item xs sx={{ ml: 10 }}>
-          <Box sx={{ minWidth: "400px", maxWidth: "600px" }}>
-            <Top10Chart />
-          </Box>
+      <Grid container>
+        <Grid
+          item
+          xs
+          sx={{
+            mt: 15,
+            width: "600px",
+            ml: "10vw",
+          }}
+        >
+          <Top10Chart />
         </Grid>
-        <Grid item xs sx={{ color: "white", textAlign: "right", mx: 10 }}>
-          <Box sx={{ my: 5 }}>
+        <Grid
+          item
+          xs
+          sx={{
+            position: "relative",
+            color: "white",
+            textAlign: "right",
+            my: "auto",
+            mr: "15vw",
+          }}
+        >
+          <Box sx={{ mt: 10 }}>
             <Typography variant="h6">방문자 수를 통계로</Typography>
             <Typography
               variant="h6"
@@ -31,14 +47,13 @@ export default function Secondpage() {
               인기가 많은 칵테일을 만나보세요
             </Typography>
           </Box>
-          <Box sx={{ ml: 10 }}>
+          <Box sx={{ mt: 3 }}>
             <Link
               underline="none"
               className="top10Button"
               onClick={() => {
                 navigate("/cocktailBar");
               }}
-              sx={{ mt: 5 }}
             >
               Explore
             </Link>

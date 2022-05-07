@@ -1,11 +1,13 @@
 import * as React from "react";
 import { Box, MenuItem, FormControl, Select } from "@mui/material";
+import { useSnackbar } from "notistack";
 import useUserHook from "../commons/useUserHook";
 
 export default function AllSortButton({ setSort, setPage, setCocktails }) {
   // state
   const [order, setOrder] = React.useState("");
   const userState = useUserHook();
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
   return (
     <Box
@@ -27,7 +29,7 @@ export default function AllSortButton({ setSort, setPage, setCocktails }) {
             value={"이름 오름차순"}
             onClick={() => {
               {
-                !userState.user && alert("로그인 후 이용해주세요.");
+                !userState.user && enqueueSnackbar("Login required");
               }
               setCocktails([]);
               setPage(0);
@@ -41,7 +43,7 @@ export default function AllSortButton({ setSort, setPage, setCocktails }) {
             value={"이름 내림차순"}
             onClick={() => {
               {
-                !userState.user && alert("로그인 후 이용해주세요.");
+                !userState.user && enqueueSnackbar("Login required");
               }
               setCocktails([]);
               setPage(0);
@@ -55,7 +57,7 @@ export default function AllSortButton({ setSort, setPage, setCocktails }) {
             value={"좋아요순"}
             onClick={() => {
               {
-                !userState.user && alert("로그인 후 이용해주세요.");
+                !userState.user && enqueueSnackbar("Login required");
               }
               setCocktails([]);
               setPage(0);

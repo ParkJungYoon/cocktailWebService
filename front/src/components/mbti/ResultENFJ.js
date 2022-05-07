@@ -7,6 +7,10 @@ import linkIcon from "../../imgs/icon-link.png";
 
 import checkState from "./TypeData";
 
+/*                              Alert                                   */
+import useUserHook from "../commons/useUserHook";
+import { useSnackbar } from "notistack";
+
 function CopyUrlToClipboard() {
   var dummy = document.createElement("input");
   var text = location.href;
@@ -22,6 +26,20 @@ function CopyUrlToClipboard() {
 function ResultENFJ() {
   const navigate = useNavigate();
   const typeName = "ENFJ";
+
+  /*                              Alert                                   */
+  const userState = useUserHook();
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+
+  const handleRestart = () => {
+    if (!userState.user) {
+      enqueueSnackbar("Login Required!");
+    } else {
+      navigate("/cocktailTest/mbti");
+    }
+  };
+  /*                                              */
+
   return (
     <div className="mbtiResultPage">
       <Box sx={{ mt: 18, height: "100vh" }}>
@@ -123,7 +141,9 @@ function ResultENFJ() {
               </Button>
               {/* restart */}
               <Link
-                onClick={() => navigate(`/cocktailTest/mbti`)}
+                onClick={() => {
+                  handleRestart();
+                }}
                 sx={{ textDecoration: "none" }}
               >
                 <Button className="mbtiRestartBtn">다시하기</Button>
