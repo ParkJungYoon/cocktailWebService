@@ -15,6 +15,7 @@ import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import LoungeItem from "./LoungeItem";
 import LoungeForm from "./LoungeForm";
+import { useSnackbar } from "notistack";
 //style
 
 const useStyles = makeStyles({
@@ -30,6 +31,7 @@ function LoungeTable({ user, setIsForm, setRankList }) {
   const [openItem, setOpenItem] = useState();
   const [isOpen, setIsOpen] = useState(false);
   const [isListEdit, setIsListEdit] = useState(false);
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
   useEffect(async () => {
     await Api.get("boardList")
@@ -55,7 +57,7 @@ function LoungeTable({ user, setIsForm, setRankList }) {
 
   const handleClickCreate = () => {
     if (!user) {
-      alert("로그인 필요");
+      enqueueSnackbar("Login Required");
     } else {
       setIsForm((prev) => !prev);
     }
@@ -124,6 +126,7 @@ function LoungeTable({ user, setIsForm, setRankList }) {
                       setOpenItem(item);
                       handleOpen();
                     }}
+                    hover
                   >
                     <TableCell sx={{ color: "white" }}>{i + 1}</TableCell>
                     <TableCell sx={{ color: "white" }} align="center">

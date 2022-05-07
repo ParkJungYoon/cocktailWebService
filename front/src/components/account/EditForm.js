@@ -10,10 +10,12 @@ import {
   Box,
   Stack,
 } from "@mui/material";
+import { useSnackbar } from "notistack";
 import * as Api from "../../api";
 
 function EditForm({ props }) {
   const { userState, userDispatch } = useContext(UserContext);
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   const { setIsEdit } = props;
   const [form, setForm] = useState({
     name: userState.user.name ? userState.user.name : "",
@@ -37,7 +39,7 @@ function EditForm({ props }) {
         name: form.name,
       });
       //setUser
-      alert("변경완료");
+      enqueueSnackbar("Modifications completed");
       const updatedUser = res.data;
       userDispatch({
         type: "Edit",
@@ -47,7 +49,7 @@ function EditForm({ props }) {
     } catch (err) {
       console.log(err);
       if (err.response) {
-        alert(err.response.data);
+        enqueueSnackbar(`${err.response.data}`);
       }
     }
   };
