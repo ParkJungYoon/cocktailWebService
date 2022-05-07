@@ -72,26 +72,25 @@ function LoungeTable({ user, setIsForm, setRankList }) {
         p: 5,
       }}
     >
-      <Table size="small">
-        {!isOpen ? (
-          <>
+      {!isOpen ? (
+        <>
+          <Button
+            onClick={() => handleClickCreate()}
+            sx={{
+              mb: 3,
+              color: "white",
+              border: "2px solid white",
+              "&:hover": {
+                color: "black",
+                bgcolor: "white",
+                border: "2px solid black",
+              },
+            }}
+          >
+            Create
+          </Button>
+          <Table size="small">
             <TableHead>
-              <Box sx={{ mb: 5 }}>
-                <Button
-                  onClick={() => handleClickCreate()}
-                  sx={{
-                    color: "white",
-                    border: "2px solid white",
-                    "&:hover": {
-                      color: "black",
-                      bgcolor: "white",
-                      border: "2px solid black",
-                    },
-                  }}
-                >
-                  Create
-                </Button>
-              </Box>
               <TableRow
                 sx={{
                   borderBottom: "2px solid white",
@@ -141,18 +140,18 @@ function LoungeTable({ user, setIsForm, setRankList }) {
                   </TableRow>
                 ))}
             </TableBody>
-          </>
-        ) : isListEdit ? (
-          <LoungeForm item={openItem} setIsForm={handleListEdit}></LoungeForm>
-        ) : (
-          <LoungeItem
-            handleOpen={handleOpen}
-            user={user}
-            item={openItem}
-            handleListEdit={handleListEdit}
-          />
-        )}
-      </Table>
+          </Table>
+        </>
+      ) : isListEdit ? (
+        <LoungeForm item={openItem} setIsForm={handleListEdit}></LoungeForm>
+      ) : (
+        <LoungeItem
+          handleOpen={handleOpen}
+          user={user}
+          item={openItem}
+          handleListEdit={handleListEdit}
+        />
+      )}
     </TableContainer>
   );
 }

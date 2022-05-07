@@ -17,8 +17,6 @@ const MbtiAnswer = (props) => {
     <Container sx={{ textAlign: "center" }} key={qAnswer}>
       <Button
         className="btn"
-        item
-        xs
         sx={btnStyle}
         onClick={() => props.checkAnswer(qAnswer)}
       >

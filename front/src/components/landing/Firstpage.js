@@ -8,17 +8,18 @@ import video from "../../video/cocktail2.webm";
 
 export default function Firstpage() {
   const navigate = useNavigate();
+
+  // style
+  const boxStyle = {
+    color: "white",
+    position: "absolute",
+    zIndex: 3,
+    right: "5%",
+    top: "40%",
+  };
   return (
     <>
-      <Box
-        sx={{
-          color: "white",
-          position: "absolute",
-          zIndex: 3,
-          right: "5%",
-          top: "40%",
-        }}
-      >
+      <Box sx={boxStyle}>
         <Typography align="right" variant="h6">
           칵테일 좋아하세요?
         </Typography>

@@ -76,7 +76,7 @@ function QuizMain(props) {
   return (
     <>
       {step <= Object.keys(state.questions).length && disable === false ? (
-        <Grid container xs={12} sx={progress}>
+        <Grid container sx={progress}>
           <Question question={state.questions[step]} />
           <Grid container sx={{ mb: 3 }}>
             {/* progress bar */}
@@ -195,9 +195,11 @@ function QuizMain(props) {
                 </Grid>
               </Box>
             ) : (
-              <Typography variant="body1" sx={{ color: "white", mt: 3 }}>
-                문제 번호를 눌려 정답을 확인해보세요.
-              </Typography>
+              <Box sx={{ mt: 3 }}>
+                <Typography variant="body1" sx={{ color: "white" }}>
+                  문제 번호를 눌려 정답을 확인해보세요.
+                </Typography>
+              </Box>
             )}
           </Container>
         </Grid>

@@ -29,7 +29,7 @@ function LoungeRank({ setIsOpen }) {
           justifyContent: "space-around",
           alignItems: "flex-end",
           height: "100%",
-          pb: 3,
+          pb: 15,
         }}
       >
         <Box textAlign="center">

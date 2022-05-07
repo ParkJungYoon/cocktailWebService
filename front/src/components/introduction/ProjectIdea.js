@@ -20,42 +20,45 @@ export default function ProjectIdea() {
       <Box sx={{ px: 5 }}>
         <Typography
           variant="h4"
-          sx={{ backgroundColor: "rgba(0,0,0,0.5)", p: 2, my: 3 }}
+          sx={{ backgroundColor: "rgba(0,0,0,0.5)", p: 2 }}
         >
           🍸저쪽 손님께서 보내신 겁니다.
         </Typography>
-        <Box component="img" src={What} alt="" width="60%" />
+        <Box component="img" src={What} alt="" width="60%" sx={{ my: 3 }} />
       </Box>
+
       <Box sx={{ px: 5 }}>
         <Typography
           variant="h5"
-          sx={{ backgroundColor: "rgba(0,0,0,0.5)", p: 2, my: 3 }}
+          sx={{ backgroundColor: "rgba(0,0,0,0.5)", p: 2 }}
         >
           프로젝트 소개
         </Typography>
-        <Typography
-          component="span"
-          variant="h5"
-          sx={{ backgroundColor: "#ff3897" }}
-        >
-          **칵린이들을 위한 칵테일 추천 서비스**
-        </Typography>
-        <Box sx={{ backgroundColor: "rgba(0,0,0,0.2)", p: 3, my: 1 }}>
-          <Typography variant="h5" sx={{ my: 3 }}>
+        <Box sx={{ my: 3 }}>
+          <Typography
+            component="span"
+            variant="h5"
+            sx={{ backgroundColor: "#ff3897" }}
+          >
+            **칵린이들을 위한 칵테일 추천 서비스**
+          </Typography>
+        </Box>
+        <Box sx={{ backgroundColor: "rgba(0,0,0,0.2)", p: 3, my: 3 }}>
+          <Typography variant="h5">
             우리나라의 칵테일 소비 증진을 위한 칵테일 소개 및 레시피 공유, 추천
             각국의 세계 주류 소비량을 비교해보면 우리나라는 칵테일 소비에 비해
             맥주 소비량이 월등히 높습니다.
           </Typography>
-          <Typography variant="h5" sx={{ mt: 3 }}>
+          <Typography variant="h5">
             이 그래프를 보면 우리나라는 칵테일 소비가 적고 인지도가 낮다는 것을
             알 수 있습니다.
           </Typography>
-          <Typography variant="h5" sx={{ mt: 3 }}>
+          <Typography variant="h5">
             따라서 우리는 칵테일을 소개해주는 서비스를 만들고자 한다. 하지만
             칵테일을 소개만 한다면 입문자가 아무 칵테일이나 골라 곧바로 만들기
             쉽지 않을 것이다.
           </Typography>
-          <Typography variant="h5" sx={{ mt: 3 }}>
+          <Typography variant="h5">
             데이터분석을 토대로 인기 있는 칵테일 정보를 제공하고, 사용자가
             가지고 있는 최소한의 재료로 만 들 수 있는 칵테일을 추천해줌으로써
             칵테일의 진입장벽을 낮추고자 한다.
@@ -67,12 +70,14 @@ export default function ProjectIdea() {
       </Box>
 
       <Box sx={{ px: 5 }}>
-        <Typography
-          sx={{ backgroundColor: "rgba(0,0,0,0.5)", p: 2, my: 3 }}
-          variant="h5"
-        >
-          프로젝트 목적
-        </Typography>
+        <Box sx={{ my: 3 }}>
+          <Typography
+            sx={{ backgroundColor: "rgba(0,0,0,0.5)", p: 2 }}
+            variant="h5"
+          >
+            프로젝트 목적
+          </Typography>
+        </Box>
         <Grid container sx={{ mt: 5 }}>
           <Grid item xs sx={{ mx: "auto" }}>
             <Box
@@ -117,15 +122,16 @@ export default function ProjectIdea() {
         </Grid>
       </Box>
 
-      <Box textAlign="left" sx={{ px: 5 }}>
+      <Box textAlign="left" sx={{ px: 5, my: 3 }}>
         <Typography
           align="center"
-          sx={{ backgroundColor: "rgba(0,0,0,0.5)", p: 2, my: 3 }}
+          sx={{ backgroundColor: "rgba(0,0,0,0.5)", p: 2 }}
           variant="h5"
         >
           칵테일이란 ?
         </Typography>
-        <Box sx={{ backgroundColor: "rgba(0,0,0,0.2)", p: 3 }}>
+
+        <Box sx={{ backgroundColor: "rgba(0,0,0,0.2)", p: 3, my: 3 }}>
           <Typography component="span" variant="h5">
             칵테일은 술과 여러 종류의 음료, 첨가물 등을 섞어 만든 혼합주를
             말합니다.

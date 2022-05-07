@@ -2,7 +2,6 @@ $star1: "../imgs/star1.jpg";
 $gatsby: "../imgs/gatsby.jpg";
 $quizBgImg: "../imgs/quizBgImg.jpg";
 
-
 .cocktailTest {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url($gatsby);
@@ -79,28 +78,5 @@ $quizBgImg: "../imgs/quizBgImg.jpg";
     text-align: left;
     padding: 10px;
     margin: 0 0 5px;
-  }
-}
-
-.oxTable {
-  margin-top: 20px;
-  width: 50vw;
-  table {
-    border-collapse: collapse;
-    background-color: black;
-  }
-  td {
-    border: 2px solid rgb(255, 255, 255);
-    color: white;
-    font-size: 1.3vw;
-    width: 50vw;
-    max-width: 500px;
-  }
-  .outlineStyle {
-    border-style: none;
-    .Number:hover {
-      cursor: pointer;
-      color: #ff3897;
-    }
   }
 }

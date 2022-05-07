@@ -43,6 +43,7 @@ function Lounge() {
         sx={{
           backgroundImage: `url(${bg1})`,
           backgroundSize: "cover",
+          backgroundPosition: "bottom",
           height: "50vh",
           mt: 5,
           mx: 10,
