@@ -5,7 +5,6 @@ import { Box, Button, Container, Grid, Link } from "@mui/material";
 import "../../scss/Mbti.scss";
 import linkIcon from "../../imgs/icon-link.png";
 import checkState from "./TypeData";
-/*                              Alert                                   */
 import useUserHook from "../commons/useUserHook";
 import { useSnackbar } from "notistack";
 
