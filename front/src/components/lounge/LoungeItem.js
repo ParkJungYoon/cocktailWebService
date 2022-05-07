@@ -66,10 +66,8 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
   }, []);
 
   useEffect(async () => {
-    //fetch board Item
     await Api.get(`board/${item._id}`)
       .then((res) => {
-        // fetch comment
         setComments(res.data.comment);
       })
       .catch((err) => {
@@ -77,6 +75,8 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
       });
   }, [isAdd, isEdit]);
 
+  console.log(item.writer);
+  console.log(user);
   return (
     <>
       <Grid container sx={{ mb: 3 }}>
@@ -98,7 +98,7 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
             Back
           </Button>
         </Grid>
-        {!(item.writer?._id === user?._id) ? (
+        {!(item.writer?._id === user?._id) || item.writer === null ? (
           <></>
         ) : (
           <Grid item xs sx={{ textAlign: "right" }}>
@@ -232,7 +232,8 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
                     {comment.writer?.name}
                   </TableCell>
                   <TableCell align="right" sx={{ color: "white" }}>
-                    {!(comment.writer?._id === user?._id) ? (
+                    {!(comment.writer?._id === user?._id) ||
+                    comment.writer === null ? (
                       <></>
                     ) : isEdit && comment._id === targetId ? (
                       <Edit
