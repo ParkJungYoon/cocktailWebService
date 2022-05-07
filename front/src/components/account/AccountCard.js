@@ -148,7 +148,7 @@ function AccountCard(props) {
             userDelete();
           }}
         >
-          Delete
+          Withdrawal (회원탈퇴)
         </Button>
       </Grid>
     </Container>

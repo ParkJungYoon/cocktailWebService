@@ -70,6 +70,7 @@ function LoungeTable({ user, setIsForm, setRankList }) {
     await Api.get("boardList")
       .then((res) => {
         setList(res.data);
+        console.log(list);
         return list;
       })
       .then((res) => {
