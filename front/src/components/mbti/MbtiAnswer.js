@@ -14,7 +14,7 @@ const MbtiAnswer = (props) => {
     "&:hover": { backgroundColor: "rgba(128, 128, 128, 0.5)" },
   };
   let answers = Object.keys(props.answer).map((qAnswer, i) => (
-    <Container sx={{ textAlign: "center" }} key={qAnswer}>
+    <Container sx={{ textAlign: "center" }} key={i}>
       <Button
         className="btn"
         sx={btnStyle}

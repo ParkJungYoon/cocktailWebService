@@ -1,6 +1,6 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState, useRef } from "react";
 import {
-  Paper,
+  IconContainerProps,
   Table,
   TableBody,
   TableCell,
@@ -10,23 +10,19 @@ import {
   Button,
   Grid,
   Box,
+  Container,
 } from "@mui/material";
 
 import * as Api from "../../api";
 import Edit from "./Edit";
 import useUserHook from "../commons/useUserHook";
+import { useSnackbar } from "notistack";
 
 //style
 import { Typography } from "@material-ui/core";
 
-//로그 아웃 상태 : userState===false
-//로그 인 상태 :  //userState.email,userState.name,userState.__id로 사용 가능합니다
-
-// const writerCheck = () => {
-//   return true;
-// };
-
 function LoungeItem({ handleOpen, item, user, handleListEdit }) {
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   /* Item */
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -49,27 +45,18 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
       .then((res) => {
         setTitle(res.data.title);
         setContent(res.data.content);
-        setCreatedAt(res.data.createdAt);
+        setCreatedAt(
+          res.data.createdAt.split("T")[0] +
+            " " +
+            res.data.createdAt.split("T")[1].slice(0, 8)
+        );
         //fetch image binary data
-        // let Buffer = require("buffer/").Buffer;
-        // let binary = Buffer.from(res.data.data[0].data); //or Buffer.from(data, 'binary')
-        // let imgData = new Blob(binary, { type: "application/octet-binary" });
-        // setLink(window.URL.createObjectURL(imgData));
-
-        //fetch image files
-        // await Api.get("images", res.data.images[0]).then((res) => {
-        //   let reader = new FileReader();
-        //   let file = res.data;
-        //   reader.onloadend = () => {
-        //     setImg({ file: file, previewURL: reader.result });
-        //   };
-        //   reader.readAsDataURL(file);
-        // });
-        // let Buffer = require("buffer/").Buffer;
-        // let binary = Buffer.from(res.data.getImage[0].data); //or Buffer.from(data, 'binary')
-        // let imgData = new Blob(binary, { type: "application/octet-binary" });
-        // setLink(window.URL.createObjectURL(imgData));
-        // console.log(link);
+        if (res.data.data[0].data) {
+          let Buffer = require("buffer/").Buffer;
+          const type = res.data.data[0].type;
+          let binary = Buffer.from(res.data.data[0].data);
+          setLink(`data:${type};base64,${binary.toString("base64")}`);
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -87,14 +74,6 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
         console.log(err);
       });
   }, [isAdd, isEdit]);
-  //mock data
-  // const mockComments = [
-  //   { writer: { name: "name1" }, content: "somethingsomething1" },
-  //   { writer: { name: "name2" }, content: "somethingsomething2" },
-  //   { writer: { name: "name3" }, content: "somethingsomething3" },
-  //   { writer: { name: "name4" }, content: "somethingsomething4" },
-  //   { writer: { name: "name5" }, content: "somethingsomething5" },
-  // ];
 
   return (
     <>
@@ -160,30 +139,49 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
           </Grid>
         )}
       </Grid>
-      <Paper
+      <Box
         sx={{
           mb: 2,
           color: "white",
           bgcolor: "rgba(64,64,64,0.7)",
-          p: 5,
           mx: "auto",
           width: "90%",
         }}
       >
-        <Typography variant="h5">Title : {title}</Typography>
-        <Typography variant="h5">
-          IMG : <Box component="img" src={link} />
-        </Typography>
-        <Typography variant="h5">Content : {content}</Typography>
+        <Grid
+          container
+          sx={{ borderBottom: "2px solid white", p: 2, alignItems: "center" }}
+        >
+          <Grid item xs>
+            <Typography variant="h5">Title</Typography>
+          </Grid>
+          <Grid item xs>
+            <Typography align="center" variant="h5">
+              {title}
+            </Typography>
+          </Grid>
+          <Grid item xs>
+            <Typography align="right" variant="body1">
+              {createdAt}
+            </Typography>
+          </Grid>
+        </Grid>
+        <Box>
+          <Typography variant="h5">
+            IMG : <Box component="img" id="img" src={link} />
+          </Typography>
+        </Box>
+        <Box>
+          <Typography variant="h5">Content : {content}</Typography>
+        </Box>
         <Typography variant="h5">CreatedAt : {createdAt}</Typography>
-      </Paper>
+      </Box>
       <TableContainer
-        component={Paper}
         sx={{
           mb: 2,
           color: "white",
           bgcolor: "rgba(64,64,64,0.7)",
-          p: 5,
+
           mx: "auto",
           width: "90%",
         }}
@@ -191,10 +189,7 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
         <Table size="small">
           <TableHead>
             <TableRow>
-              <TableCell>No</TableCell>
-              <TableCell align="right">Comment</TableCell>
-              <TableCell align="right">Name</TableCell>
-              <TableCell align="right">edit check</TableCell>
+              <TableCell sx={{ color: "white" }}>Comment</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -206,10 +201,14 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
                     setTargetId(comment._id);
                   }}
                 >
-                  <TableCell>{i + 1}</TableCell>
-                  <TableCell align="right"> {comment.content}</TableCell>
-                  <TableCell align="right">{comment.writer?.name}</TableCell>
-                  <TableCell align="right">
+                  <TableCell align="right" sx={{ color: "white" }}>
+                    {" "}
+                    {comment.content}
+                  </TableCell>
+                  <TableCell align="right" sx={{ color: "white" }}>
+                    {comment.writer?.name}
+                  </TableCell>
+                  <TableCell align="right" sx={{ color: "white" }}>
                     {!(comment.writer?._id === user?._id) ? (
                       <></>
                     ) : isEdit && comment._id === targetId ? (
@@ -260,7 +259,7 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
             <Button
               onClick={() => {
                 if (!user) {
-                  alert("로그인 필요");
+                  enqueueSnackbar("Login Required");
                 } else {
                   setIsAdd((prev) => !prev);
                 }

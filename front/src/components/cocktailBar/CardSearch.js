@@ -4,6 +4,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import { InputBase } from "@mui/material";
 import useUserHook from "../commons/useUserHook";
 import { makeStyles } from "@material-ui/core/styles";
+import { useSnackbar } from "notistack";
 
 // style
 const Search = styled("div")(({ theme }) => ({
@@ -52,9 +53,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function CardSearch({ setWord, setCocktails, setPage }) {
   const [search, setSearch] = useState("");
   const userState = useUserHook();
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   const handleOnClick = () => {
     {
-      !userState.user && alert("로그인 후 이용해주세요.");
+      !userState.user && enqueueSnackbar("Login required");
     }
     setCocktails([]);
     setPage(1);

@@ -59,7 +59,7 @@ export default function Fourthpage() {
               }}
               sx={buttonStyle}
             >
-              Explore
+              Quiz
             </Link>
           </Box>
         </Grid>
@@ -77,7 +77,7 @@ export default function Fourthpage() {
               }}
               sx={buttonStyle}
             >
-              Explore
+              Lounge
             </Link>
           </Box>
         </Grid>

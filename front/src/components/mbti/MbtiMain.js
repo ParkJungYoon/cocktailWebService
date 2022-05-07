@@ -112,7 +112,7 @@ function MbtiMain() {
           {step <= 4 ? (
             <Grid container sx={mbtiImgOne}>
               {/* progress bar */}
-              <Box mt={25} sx={{ px: 10, height: 0, width: "100%" }}>
+              <Box mt={25} sx={{ px: 10, height: 0, width: "100%", mb: 3 }}>
                 <LinearProgress
                   sx={progressBarStyle}
                   variant="determinate"

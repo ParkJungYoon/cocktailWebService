@@ -49,15 +49,18 @@ export default function ProjectIdea() {
             각국의 세계 주류 소비량을 비교해보면 우리나라는 칵테일 소비에 비해
             맥주 소비량이 월등히 높습니다.
           </Typography>
+          <br />
           <Typography variant="h5">
             이 그래프를 보면 우리나라는 칵테일 소비가 적고 인지도가 낮다는 것을
             알 수 있습니다.
           </Typography>
+          <br />
           <Typography variant="h5">
             따라서 우리는 칵테일을 소개해주는 서비스를 만들고자 한다. 하지만
             칵테일을 소개만 한다면 입문자가 아무 칵테일이나 골라 곧바로 만들기
             쉽지 않을 것이다.
           </Typography>
+          <br />
           <Typography variant="h5">
             데이터분석을 토대로 인기 있는 칵테일 정보를 제공하고, 사용자가
             가지고 있는 최소한의 재료로 만 들 수 있는 칵테일을 추천해줌으로써
@@ -136,6 +139,7 @@ export default function ProjectIdea() {
             칵테일은 술과 여러 종류의 음료, 첨가물 등을 섞어 만든 혼합주를
             말합니다.
           </Typography>
+
           <Typography variant="h5" sx={{ mt: 3 }}>
             소맥, 꿀주, 링겔주 등등... 사실 우리는 그동안 알게 모르게 칵테일을
             마셔왔습니다.

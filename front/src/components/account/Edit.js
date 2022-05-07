@@ -31,14 +31,12 @@ function Edit({ setIsEdit, formName }) {
         type: "Edit",
         payload: updatedUser,
       });
-      //alert
-      enqueueSnackbar("변경완료");
-      // alert("변경완료");
+      enqueueSnackbar("Modifications completed");
       setIsEdit(false);
     } catch (err) {
       console.log(err);
       if (err.response) {
-        alert(err.response.data);
+        enqueueSnackbar(`${err.response.data}`);
       }
     }
   };
@@ -46,14 +44,6 @@ function Edit({ setIsEdit, formName }) {
   return (
     <Box>
       <form onSubmit={handleSubmit}>
-        {/* <input
-          type="text"
-          placeholder={formName}
-          value={form.formName}
-          onChange={(e) => {
-            handleFormValue([formName], e.target.value);
-          }}
-        /> */}
         <TextField
           required
           sx={{

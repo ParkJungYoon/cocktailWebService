@@ -19,7 +19,6 @@ function LoungeRank({ setIsOpen }) {
         setRankList(res.slice(0, 5));
       });
   }, []);
-  console.log(rankList);
 
   if (rankList) {
     return (
@@ -32,36 +31,19 @@ function LoungeRank({ setIsOpen }) {
           pb: 15,
         }}
       >
-        <Box textAlign="center">
-          <Typography variant="h5" sx={{ color: "white" }}>
-            {rankList[0].title}
-          </Typography>
-          <LocalBarIcon sx={{ color: "white" }} fontSize="large" />
-        </Box>
-        <Box textAlign="center">
-          <Typography variant="h5" sx={{ color: "white" }}>
-            {rankList[1].title}
-          </Typography>
-          <LocalBarIcon sx={{ color: "white" }} fontSize="large" />
-        </Box>
-        <Box textAlign="center">
-          <Typography variant="h5" sx={{ color: "white" }}>
-            {rankList[2].title}
-          </Typography>
-          <LocalBarIcon sx={{ color: "white" }} fontSize="large" />
-        </Box>
-        <Box textAlign="center">
-          <Typography variant="h5" sx={{ color: "white" }}>
-            {rankList[3].title}
-          </Typography>
-          <LocalBarIcon sx={{ color: "white" }} fontSize="large" />
-        </Box>
-        <Box textAlign="center">
-          <Typography variant="h5" sx={{ color: "white" }}>
-            {rankList[4].title}
-          </Typography>
-          <LocalBarIcon sx={{ color: "white" }} fontSize="large" />
-        </Box>
+        {rankList.map((v, i) => {
+          return (
+            <Box key={i}>
+              <Typography
+                sx={{ color: "white", fontSize: "5vw" }}
+                align="center"
+              >
+                {v.title}
+              </Typography>
+              <LocalBarIcon sx={{ color: "white", fontSize: "10vw" }} />
+            </Box>
+          );
+        })}
       </Container>
     );
   } else {

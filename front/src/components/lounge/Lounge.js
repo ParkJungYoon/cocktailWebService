@@ -24,18 +24,15 @@ function Lounge() {
     <>
       <Box
         sx={{
-          backgroundColor: "rgba(64, 64, 64, 0.4)",
           mx: "auto",
-          py: 1,
-          px: 2,
-          mt: 22,
-          width: "70%",
-          borderTop: "1px solid white",
-          borderBottom: "1px solid white",
+          mt: 25,
+          mb: 5,
           color: "white",
+          textShadow:
+            "0 0 42px #ff0, 0 0 82px #ff0, 0 0 92px #ff0, 0 0 102px #ff0, 0 0 151px #ff0",
         }}
       >
-        <Typography variant="h5" align="center">
+        <Typography variant="h4" align="center" sx={{}}>
           Lounge
         </Typography>
       </Box>
@@ -51,9 +48,8 @@ function Lounge() {
       >
         <LoungeRank />
       </Box>
-      <Box sx={{ mt: 10 }}>
-        <LoungeList user={user} setRankList={setRankList} />
-      </Box>
+
+      <LoungeList user={user} setRankList={setRankList} />
     </>
   );
 }
