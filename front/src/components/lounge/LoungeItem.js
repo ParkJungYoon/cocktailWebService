@@ -173,9 +173,14 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
                     setTargetId(comment._id);
                   }}
                 >
-                  <TableCell align="right"> {comment.content}</TableCell>
-                  <TableCell align="right">{comment.writer?.name}</TableCell>
-                  <TableCell align="right">
+                  <TableCell align="right" sx={{ color: "white" }}>
+                    {" "}
+                    {comment.content}
+                  </TableCell>
+                  <TableCell align="right" sx={{ color: "white" }}>
+                    {comment.writer?.name}
+                  </TableCell>
+                  <TableCell align="right" sx={{ color: "white" }}>
                     {!(comment.writer?._id === user?._id) ? (
                       <></>
                     ) : isEdit && comment._id === targetId ? (

@@ -10,6 +10,8 @@ import {
   TableRow,
   Button,
   Box,
+  TablePagination,
+  TableFooter,
 } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
@@ -26,13 +28,44 @@ const useStyles = makeStyles({
 });
 
 function LoungeTable({ user, setIsForm, setRankList }) {
-  const classes = useStyles();
   const [list, setList] = useState([]);
   const [openItem, setOpenItem] = useState();
   const [isOpen, setIsOpen] = useState(false);
   const [isListEdit, setIsListEdit] = useState(false);
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(5);
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
+  };
+
+  function TablePaginationActions(props) {
+    const { count, page, rowsPerPage, onPageChange } = props;
+
+    const handleFirstPageButtonClick = (event) => {
+      onPageChange(event, 0);
+    };
+
+    const handleBackButtonClick = (event) => {
+      onPageChange(event, page - 1);
+    };
+
+    const handleNextButtonClick = (event) => {
+      onPageChange(event, page + 1);
+    };
+
+    const handleLastPageButtonClick = (event) => {
+      onPageChange(event, Math.max(0, Math.ceil(count / rowsPerPage) - 1));
+    };
+
+    return null;
+  }
   useEffect(async () => {
     await Api.get("boardList")
       .then((res) => {
@@ -155,6 +188,27 @@ function LoungeTable({ user, setIsForm, setRankList }) {
             handleListEdit={handleListEdit}
           />
         )}
+        <TableFooter sx={{ color: "white" }}>
+          <TableRow sx={{ color: "white" }}>
+            <TablePagination
+              rowsPerPageOptions={[5, 10, 25, { label: "All", value: -1 }]}
+              colSpan={3}
+              count={list.length}
+              rowsPerPage={rowsPerPage}
+              page={page}
+              SelectProps={{
+                inputProps: {
+                  "aria-label": "rows per page",
+                },
+                native: true,
+              }}
+              onPageChange={handleChangePage}
+              onRowsPerPageChange={handleChangeRowsPerPage}
+              ActionsComponent={TablePaginationActions}
+              sx={{ color: "white" }}
+            />
+          </TableRow>
+        </TableFooter>
       </Table>
     </TableContainer>
   );
