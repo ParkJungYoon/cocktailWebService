@@ -2,8 +2,8 @@ import { CocktailModel, LikeModel } from "../db";
 
 class CocktailService {
   // 칵테일 조회(cocktail DB에서)
-  static getCocktailList = async ({ offset }) => {
-    const cocktailList = await CocktailModel.getAllCocktail({ offset });
+  static getCocktailList = async ({ offset, search, sort }) => {
+    const cocktailList = await CocktailModel.getAllCocktail({ offset, search, sort });
     return cocktailList;
   };
 

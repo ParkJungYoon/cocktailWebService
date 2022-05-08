@@ -11,7 +11,9 @@ let globalReq =
 CocktailRouter.get("/cocktails/page/:offset", async (req, res, next) => {
   try {
     const offset = req.params.offset == null ? 0 : req.params.offset;
-    const cocktailList = await CocktailService.getCocktailList({ offset });
+    const search = req.query?.search?.toLocaleLowerCase();
+    const sort = req.query?.sort;
+    const cocktailList = await CocktailService.getCocktailList({ offset, search, sort });
     res.status(200).json(cocktailList);
   } catch (error) {
     next(error);
