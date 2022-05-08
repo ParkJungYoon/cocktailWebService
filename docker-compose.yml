@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  frontend_server:
+    image: tbr06057/react-cocktail-service-app:0.0.1
+    restart: "on-failure"
+    ports:
+      - 80:80
+    networks:
+      - cocktail-service
+
+  backend_server:
+    image: tbr06057/node-cocktails-service-app:0.0.1
+    restart: "on-failure"
+    ports:
+      - 5000:5000
+    networks:
+      - cocktail-service
+
+networks:
+  cocktail-service:
