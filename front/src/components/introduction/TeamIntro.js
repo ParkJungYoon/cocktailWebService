@@ -72,7 +72,7 @@ const team7 = [
     introduce: "제가 시킨 칵테일 입니다~",
     cocktail: "Jin Tonic",
     image:
-      "https://images-ext-1.discordapp.net/external/LZUqczJVjH_S0qSunTgiB22r80nbP1gBU6XWJl6yU44/https/www.mantitlement.com/wp-content/uploads/2013/12/the-godfather-cocktail-close.jpeg",
+      "https://www.thecocktaildb.com/images/media/drink/qcgz0t1643821443.jpg",
   },
   {
     name: "백진영",
