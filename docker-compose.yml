@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   frontend_server:
-    image: tbr06057/react-cocktail-service-app:0.0.3
+    image: tbr06057/react-cocktail-service-app:0.0.2
     restart: "on-failure"
     ports:
       - 80:80
