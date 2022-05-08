@@ -145,7 +145,7 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
         sx={{
           mb: 2,
           color: "white",
-          bgcolor: "rgba(64,64,64,0.7)",
+          bgcolor: "rgba(50,50,50,0.7)",
           mx: "auto",
           width: "90%",
         }}
@@ -160,7 +160,7 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
             alignItems: "center",
           }}
         >
-          <Grid item xs>
+          <Grid item xs color="#7a7a7a">
             <Typography variant="h5">Cocktail</Typography>
           </Grid>
           <Grid item xs>
@@ -168,7 +168,7 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
               {title}
             </Typography>
           </Grid>
-          <Grid item xs>
+          <Grid item xs color="#7a7a7a">
             <Typography align="right" variant="body1">
               {createdAt}
             </Typography>
@@ -176,8 +176,8 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
         </Grid>
         <Grid item xs={12} textAlign="center" sx={{ my: 3 }}>
           {link === "noImg" ? (
-            <Box sx={{ width: "50%" }} textAlign="center">
-              no Image
+            <Box textAlign="center">
+              <Typography>no Image</Typography>
             </Box>
           ) : (
             <Box
@@ -203,7 +203,7 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
         sx={{
           mb: 2,
           color: "white",
-          bgcolor: "rgba(64,64,64,0.7)",
+          bgcolor: "rgba(50,50,50,0.7)",
           mx: "auto",
           width: "90%",
         }}
@@ -211,7 +211,7 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
         <Table size="small">
           <TableHead>
             <TableRow>
-              <TableCell sx={{ color: "white" }}>Comment</TableCell>
+              <TableCell sx={{ color: "#7a7a7a" }}>Comment</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>

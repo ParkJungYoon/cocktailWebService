@@ -9,7 +9,7 @@ function Quiz() {
       <Grid
         container
         justifyContent="center"
-        pt={18}
+        mt={18}
         sx={{
           textAlign: "center",
         }}

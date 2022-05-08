@@ -17,6 +17,7 @@ export default function Top10Card() {
     await Api.get("cocktails/rank").then((res) => {
       setTop10Cocktails(res.data);
       setLoad(false);
+      console.log(res.data);
     });
   }, []);
 

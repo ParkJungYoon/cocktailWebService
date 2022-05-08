@@ -7,30 +7,30 @@ import JackPot from "../../imgs/JackPot.gif";
 const TeamCard = ({ data }) => {
   return (
     <Grid container sx={{ px: 2, mb: 3 }} spacing={2}>
-      <Grid item xs sx={{ my: "auto" }}>
+      <Grid item md={6} sx={{ m: "auto" }}>
         <Box
           component="img"
           src={data.image}
           alt=""
-          width="30vw"
+          width="350px"
           height="300px"
-          minWidth="400px"
         />
       </Grid>
-      <Grid
-        item
-        xs
-        sx={{ m: "auto", bgcolor: "rgba(0,0,0,0.5)", p: 3, textAlign: "left" }}
-      >
-        <Box sx={{ color: "white" }}>
-          <Typography variant="body1">이름 : {data.name}</Typography>
-          <Typography variant="body1">
-            좋아하는 칵테일 : {data.cocktail}
+      <Grid item md={6} sx={{ m: "auto", bgcolor: "rgba(0,0,0,0.5)", p: 3 }}>
+        <Box sx={{ color: "white", textAlign: "center" }}>
+          <Typography variant="h6">{data.name}</Typography>
+          <Typography component="span" variant="body1">
+            🍹 좋아하는 칵테일 -
           </Typography>
-          <Typography variant="body1">자기소개 :</Typography>
+          <Typography component="span" variant="h6" color="violet">
+            {" "}
+            {data.cocktail}
+          </Typography>
+
           <Typography variant="body1">{data.introduce}</Typography>
-          <Typography variant="body1">소감 :</Typography>
-          <Typography variant="body1">{data.impression}</Typography>
+          <br />
+
+          <Typography variant="body2">{data.impression}</Typography>
         </Box>
       </Grid>
     </Grid>
@@ -45,7 +45,8 @@ const team7 = [
     introduce:
       "남자의 영화 대부. 남자의 칵테일. GodFather 😠남자 중의 남자😠 김.동.현. ☜(ﾟヮﾟ☜)☜(ﾟヮﾟ☜) 이상입니다. 웃지 마세요 진지합니다.",
     cocktail: "GodFather",
-    image: UserDefaultImg,
+    image:
+      "https://www.mantitlement.com/wp-content/uploads/2013/12/the-godfather-cocktail-close.jpeg",
   },
   {
     name: "김상민",
@@ -53,8 +54,7 @@ const team7 = [
       "팀원들 분위기가 좋아서 열심히 개발할 수 있었습니다. 부족한 실력이지만 고수들이 계셔서 많은걸 배웠습니다. 3주내내 팀원들이랑 칵테일을 얘기랑 보기만하고 술 한잔도 못해 끝나고 술 한잔하고 싶습니다 ㅋㅋㅋㅋ 칵테일 한잔? 팀원들 모두에게 감사하고 고생했다고 전하고 싶습니다.",
     introduce: "졸리다 잠은 언제 잘 수 있을까?",
     cocktail: "Martini",
-    image:
-      "https://www.thecocktaildb.com/images/media/drink/71t8581504353095.jpg",
+    image: "https://static.toiimg.com/thumb/54579118.cms?width=573&height=382",
   },
   {
     name: "김승주",
@@ -63,14 +63,14 @@ const team7 = [
     introduce: "칵테일 자격증 있는데 알쓰에요😵‍💫",
     cocktail: "June Bug",
     image:
-      "https://images.unsplash.com/photo-1497534446932-c925b458314e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80",
+      "https://robbreport.com/wp-content/uploads/2020/07/jungle-bird-cocktail-campari.jpg",
   },
   {
     name: "박정윤",
     impression:
       "기능들을 차곡차곡 쌓아올려 더 단단한 코드를 구현할 수 있어서 즐거웠습니다. 좋은 팀원과 프로젝트할 수 있어 즐겁고 많이 배웠습니다. :) 모두 원하는 길 찾아서 현업에서 뵙고 싶습니다!",
     introduce: "제가 시킨 칵테일 입니다~",
-    cocktail: "진토닉",
+    cocktail: "Jin Tonic",
     image:
       "https://images-ext-1.discordapp.net/external/LZUqczJVjH_S0qSunTgiB22r80nbP1gBU6XWJl6yU44/https/www.mantitlement.com/wp-content/uploads/2013/12/the-godfather-cocktail-close.jpeg",
   },
@@ -79,16 +79,16 @@ const team7 = [
     introduce: "가장 완벽한 색은 ... 블랙",
     impression:
       "이번 팀 프로젝트를 통해 배운것이 정말 많습니다. 기획부터 의견을 많이 냈는데 팀원 분들 모두 잘 들어주셔서 정말 감사했습니다. 다들 3주 동안 수고하셨습니다!",
-    cocktail: "아이리쉬 커피",
+    cocktail: "Irish Coffee",
     image:
-      "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/becce38c-2b76-4443-80fd-9c3f67db2ffd/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220507%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220507T061352Z&X-Amz-Expires=86400&X-Amz-Signature=2c9cd52b0305b38dc0518f82bbf27874eff19f445ab4a4ae4929b8b4a2d3b3e3&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject",
+      "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/irish_coffee-5c6049f.jpg",
   },
   {
     name: "송연석",
     introduce: "칵테일 마시러 가실분!!",
     impression:
       "기획부터 개발까지 쭉 해본건 이번이 처음인데 남이 생각한걸 만들어주는 것보다 자기가 직접 기능을 생각해가며 만드는 게 훨씬 어렵다는 걸 뼈저리게 느꼈습니다. 특히 마지막 주는 이곳 저곳에서 이슈가 많이 발생해 버그 픽스하느라 진이 다 빠졌네요. 팀원분들 3주간 고생 많으셨고 나중에 사회에서도 뵀으면 좋겠습니다.  수고 많으셨습니다.",
-    cocktail: "블러디메리 (빨간걸 좋아함)",
+    cocktail: "Bloody Mary",
     image:
       "https://www.thecocktaildb.com/images/media/drink/t6caa21582485702.jpg",
   },
@@ -102,19 +102,18 @@ export default function TeamIntro() {
         color: "white",
         backgroundColor: "rgba(64, 64, 64, 0.4)",
         py: 10,
-        width: "90vw",
+        width: "80vw",
         borderRadius: "1.5rem",
       }}
     >
       <Box
-        component="img"
-        src={JackPot}
-        alt=""
-        width="10%"
-        // height="80%"
-      />
-      <Box sx={{ mb: 5 }}>
-        <Typography variant="h5">Team7 JackPot</Typography>
+        sx={{
+          mb: 15,
+          textShadow:
+            "0 0 42px #529, 0 0 82px #529, 0 0 92px #529, 0 0 102px #529, 0 0 151px #529",
+        }}
+      >
+        <Typography variant="h3">Team7 JackPot</Typography>
       </Box>
       {team7.map((data, i) => {
         return <TeamCard key={i} data={data} />;

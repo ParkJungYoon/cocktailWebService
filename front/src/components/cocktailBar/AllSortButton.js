@@ -32,7 +32,7 @@ export default function AllSortButton({ setSort, setPage, setCocktails }) {
                 !userState.user && enqueueSnackbar("Login required");
               }
               setCocktails([]);
-              setPage(0);
+              setPage(1);
               setSort("nameAsc");
               setOrder("이름 오름차순");
             }}
@@ -46,7 +46,7 @@ export default function AllSortButton({ setSort, setPage, setCocktails }) {
                 !userState.user && enqueueSnackbar("Login required");
               }
               setCocktails([]);
-              setPage(0);
+              setPage(1);
               setSort("nameDesc");
               setOrder("이름 내림차순");
             }}
@@ -60,7 +60,7 @@ export default function AllSortButton({ setSort, setPage, setCocktails }) {
                 !userState.user && enqueueSnackbar("Login required");
               }
               setCocktails([]);
-              setPage(0);
+              setPage(1);
               setSort("likeDesc");
               setOrder("좋아요순");
             }}

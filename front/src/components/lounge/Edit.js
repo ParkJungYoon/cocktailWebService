@@ -1,8 +1,24 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "../user/reducer/userReducer";
-import { Button, TextField, Box, Container } from "@mui/material";
+import { Button, TextField, Box, Container, styled } from "@mui/material";
 import * as Api from "../../api";
 
+const CssTextField = styled(TextField)({
+  "& label.Mui-focused": {
+    color: "white",
+  },
+  "& .MuiInput-underline:after": {
+    borderBottomColor: "white",
+  },
+  "& .MuiOutlinedInput-root": {
+    "&:hover fieldset": {
+      borderColor: "white",
+    },
+    "&.Mui-focused fieldset": {
+      borderColor: "white",
+    },
+  },
+});
 function Edit({
   setIsEdit,
   boardId,
@@ -48,11 +64,10 @@ function Edit({
   return (
     <Box>
       <Box component="form" onSubmit={handleSubmit}>
-        <TextField
+        <CssTextField
           required
           sx={{ bgcolor: "rgba(255,255,255,0.2)", my: 3 }}
           label={"comment"}
-          variant="filled"
           value={form.content}
           fullWidth
           onChange={(e) => {

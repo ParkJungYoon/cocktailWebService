@@ -31,13 +31,11 @@ function MbtiMain() {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    // mt: 27,
-    mx: 10,
-    px: 5,
+    mx: 15,
     color: "white",
     fontSize: "3vw",
     backgroundColor: "rgba(0, 0, 0, 0.6)",
-    height: "40%",
+    height: "30vh",
   };
 
   const progressBarStyle = {
@@ -57,7 +55,6 @@ function MbtiMain() {
     backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(${mbtiImg2})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
-    // mt: 3,
     height: "100%",
   };
   const mbtiImgThree = {
@@ -71,7 +68,6 @@ function MbtiMain() {
     backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(${mbtiImg4})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
-    // mt: 3,
     height: "100%",
   };
 
@@ -112,7 +108,7 @@ function MbtiMain() {
           {step <= 4 ? (
             <Grid container sx={mbtiImgOne}>
               {/* progress bar */}
-              <Box mt={25} sx={{ px: 10, height: 0, width: "100%", mb: 3 }}>
+              <Box mt={25} sx={{ px: 15, height: 0, width: "100%" }}>
                 <LinearProgress
                   sx={progressBarStyle}
                   variant="determinate"
@@ -137,7 +133,7 @@ function MbtiMain() {
               {step >= 5 && step <= 8 ? (
                 <Grid container sx={mbtiImgTwo}>
                   {/* progress bar */}
-                  <Box mt={25} sx={{ px: 10, width: "100%" }}>
+                  <Box mt={25} sx={{ px: 15, width: "100%" }}>
                     <LinearProgress
                       sx={progressBarStyle}
                       variant="determinate"
@@ -162,7 +158,7 @@ function MbtiMain() {
                   {step >= 9 && step <= 11 ? (
                     <Grid container sx={mbtiImgThree}>
                       {/* progress bar */}
-                      <Box mt={25} sx={{ px: 10, width: "100%" }}>
+                      <Box mt={25} sx={{ px: 15, width: "100%" }}>
                         <LinearProgress
                           sx={progressBarStyle}
                           variant="determinate"
@@ -185,7 +181,7 @@ function MbtiMain() {
                     // {/* 12~15 step background image change */}
                     <Grid container sx={mbtiImgFour}>
                       {/* progress bar */}
-                      <Box mt={25} sx={{ px: 10, width: "100%" }}>
+                      <Box mt={25} sx={{ px: 15, width: "100%" }}>
                         <LinearProgress
                           sx={progressBarStyle}
                           variant="determinate"

@@ -11,8 +11,9 @@ function CocktailTest() {
   // style
   const buttonStyle = {
     color: "white",
-    py: 4,
-    px: 10,
+    py: 2,
+    px: 5,
+    mt: 5,
     bgcolor: "rgba(128, 128, 128, 0.1)",
     border: "1px solid white",
     "&:hover": { bgcolor: "rgba(128, 128, 128, 0.4)" },
@@ -29,7 +30,15 @@ function CocktailTest() {
     <div className="cocktailTest">
       <Grid container sx={{ mt: "40vh" }}>
         <Grid item xs textAlign="center">
-          <Typography variant="h5" sx={{ color: "white", mb: 3 }}>
+          <Typography
+            variant="h4"
+            sx={{
+              color: "white",
+              mb: 3,
+              textShadow:
+                "0 0 42px #5ef, 0 0 82px #5ef, 0 0 92px #5ef, 0 0 102px #5ef, 0 0 151px #5ef",
+            }}
+          >
             10개의 퀴즈로
             <br /> 알아보는 칵테일 상식
           </Typography>
@@ -43,8 +52,13 @@ function CocktailTest() {
         <Grid item xs textAlign="center">
           <Typography
             align="center"
-            variant="h5"
-            sx={{ color: "white", mb: 3 }}
+            variant="h4"
+            sx={{
+              color: "white",
+              mb: 3,
+              textShadow:
+                "0 0 42px #5ef, 0 0 82px #5ef, 0 0 92px #5ef, 0 0 102px #5ef, 0 0 151px #5ef",
+            }}
           >
             MBTI 테스트를 통해
             <br /> 알아보는 맞춤 칵테일
