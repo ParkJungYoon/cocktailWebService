@@ -53,7 +53,9 @@ function AllCard() {
     // ---- Get Data Code ---
     if (!userState.user) {
       // 로그인 안 했을 때
-      const res = await Api.get(`cocktails/page/${page}`);
+      const res = await Api.getSearch(
+        `cocktails/page/${page}?search=${word}&sort=${sort}`
+      );
       if (res.data) {
         if (res.data.end) {
           //마지막 페이지일 경우
