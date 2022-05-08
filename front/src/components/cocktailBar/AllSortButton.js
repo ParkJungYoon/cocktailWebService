@@ -28,9 +28,9 @@ export default function AllSortButton({ setSort, setPage, setCocktails }) {
           <MenuItem
             value={"이름 오름차순"}
             onClick={() => {
-              {
-                !userState.user && enqueueSnackbar("Login required");
-              }
+              // {
+              //   !userState.user && enqueueSnackbar("Login required");
+              // }
               setCocktails([]);
               setPage(1);
               setSort("nameAsc");
@@ -42,9 +42,9 @@ export default function AllSortButton({ setSort, setPage, setCocktails }) {
           <MenuItem
             value={"이름 내림차순"}
             onClick={() => {
-              {
-                !userState.user && enqueueSnackbar("Login required");
-              }
+              // {
+              //   !userState.user && enqueueSnackbar("Login required");
+              // }
               setCocktails([]);
               setPage(1);
               setSort("nameDesc");
@@ -56,9 +56,9 @@ export default function AllSortButton({ setSort, setPage, setCocktails }) {
           <MenuItem
             value={"좋아요순"}
             onClick={() => {
-              {
-                !userState.user && enqueueSnackbar("Login required");
-              }
+              // {
+              //   !userState.user && enqueueSnackbar("Login required");
+              // }
               setCocktails([]);
               setPage(1);
               setSort("likeDesc");
