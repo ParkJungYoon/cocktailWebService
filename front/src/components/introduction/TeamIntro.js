@@ -71,8 +71,7 @@ const team7 = [
       "기능들을 차곡차곡 쌓아올려 더 단단한 코드를 구현할 수 있어서 즐거웠습니다. 좋은 팀원과 프로젝트할 수 있어 즐겁고 많이 배웠습니다. :) 모두 원하는 길 찾아서 현업에서 뵙고 싶습니다!",
     introduce: "제가 시킨 칵테일 입니다~",
     cocktail: "Jin Tonic",
-    image:
-      "https://www.thecocktaildb.com/images/media/drink/qcgz0t1643821443.jpg",
+    image: "http://www.shinsegae-lnb.com/upload/ds/14_590x442.jpg",
   },
   {
     name: "백진영",
@@ -89,8 +88,7 @@ const team7 = [
     impression:
       "기획부터 개발까지 쭉 해본건 이번이 처음인데 남이 생각한걸 만들어주는 것보다 자기가 직접 기능을 생각해가며 만드는 게 훨씬 어렵다는 걸 뼈저리게 느꼈습니다. 특히 마지막 주는 이곳 저곳에서 이슈가 많이 발생해 버그 픽스하느라 진이 다 빠졌네요. 팀원분들 3주간 고생 많으셨고 나중에 사회에서도 뵀으면 좋겠습니다.  수고 많으셨습니다.",
     cocktail: "Bloody Mary",
-    image:
-      "https://www.thecocktaildb.com/images/media/drink/t6caa21582485702.jpg",
+    image: "https://pbs.twimg.com/media/D8v3Sv3U0AIUSr8?format=jpg&name=small",
   },
 ];
 
