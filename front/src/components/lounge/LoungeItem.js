@@ -48,14 +48,16 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
         setCreatedAt(
           res.data.createdAt.split("T")[0] +
             " " +
-            res.data.createdAt.split("T")[1].slice(0, 8)
+            res.data.createdAt.split("T")[1].slice(0, 5)
         );
         //fetch image binary data
-        if (res.data.data[0].data) {
+        if (res.data.data[0]?.data) {
           let Buffer = require("buffer/").Buffer;
           const type = res.data.data[0].type;
           let binary = Buffer.from(res.data.data[0].data);
           setLink(`data:${type};base64,${binary.toString("base64")}`);
+        } else {
+          setLink("noImg");
         }
       })
       .catch((err) => {
@@ -64,10 +66,8 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
   }, []);
 
   useEffect(async () => {
-    //fetch board Item
     await Api.get(`board/${item._id}`)
       .then((res) => {
-        // fetch comment
         setComments(res.data.comment);
       })
       .catch((err) => {
@@ -75,6 +75,8 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
       });
   }, [isAdd, isEdit]);
 
+  console.log(item.writer);
+  console.log(user);
   return (
     <>
       <Grid container sx={{ mb: 3 }}>
@@ -96,7 +98,7 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
             Back
           </Button>
         </Grid>
-        {!(item.writer?._id === user?._id) ? (
+        {!(item.writer?._id === user?._id) || item.writer === null ? (
           <></>
         ) : (
           <Grid item xs sx={{ textAlign: "right" }}>
@@ -143,7 +145,7 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
         sx={{
           mb: 2,
           color: "white",
-          bgcolor: "rgba(64,64,64,0.7)",
+          bgcolor: "rgba(50,50,50,0.7)",
           mx: "auto",
           width: "90%",
         }}
@@ -158,27 +160,34 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
             alignItems: "center",
           }}
         >
-          <Grid item xs>
-            <Typography variant="h5">Title</Typography>
+          <Grid item xs color="#7a7a7a">
+            <Typography variant="h5">Cocktail</Typography>
           </Grid>
           <Grid item xs>
             <Typography align="center" variant="h5">
               {title}
             </Typography>
           </Grid>
-          <Grid item xs>
+          <Grid item xs color="#7a7a7a">
             <Typography align="right" variant="body1">
               {createdAt}
             </Typography>
           </Grid>
         </Grid>
         <Grid item xs={12} textAlign="center" sx={{ my: 3 }}>
-          <Box
-            component="img"
-            id="img"
-            src="https://images-ext-1.discordapp.net/external/u6wy73BhNTO4sl6lY-Dj2WM8se7qbT-G5EveXRyZE68/https/www.thecocktaildb.com/images/media/drink/qcgz0t1643821443.jpg"
-            sx={{ width: "50%" }}
-          />
+          {link === "noImg" ? (
+            <Box textAlign="center">
+              <Typography>no Image</Typography>
+            </Box>
+          ) : (
+            <Box
+              component="img"
+              id="img"
+              src={link}
+              alt="img"
+              sx={{ width: "50%" }}
+            />
+          )}
         </Grid>
         <Grid item xs={12}>
           <Box
@@ -194,8 +203,7 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
         sx={{
           mb: 2,
           color: "white",
-          bgcolor: "rgba(64,64,64,0.7)",
-
+          bgcolor: "rgba(50,50,50,0.7)",
           mx: "auto",
           width: "90%",
         }}
@@ -203,7 +211,7 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
         <Table size="small">
           <TableHead>
             <TableRow>
-              <TableCell sx={{ color: "white" }}>Comment</TableCell>
+              <TableCell sx={{ color: "#7a7a7a" }}>Comment</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -214,6 +222,7 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
                   onClick={() => {
                     setTargetId(comment._id);
                   }}
+                  sx={{ borderTop: "1px solid white" }}
                 >
                   <TableCell align="right" sx={{ color: "white" }}>
                     {" "}
@@ -223,7 +232,8 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
                     {comment.writer?.name}
                   </TableCell>
                   <TableCell align="right" sx={{ color: "white" }}>
-                    {!(comment.writer?._id === user?._id) ? (
+                    {!(comment.writer?._id === user?._id) ||
+                    comment.writer === null ? (
                       <></>
                     ) : isEdit && comment._id === targetId ? (
                       <Edit
@@ -279,7 +289,7 @@ function LoungeItem({ handleOpen, item, user, handleListEdit }) {
                 }
               }}
               sx={{
-                mt: 2,
+                m: 4,
                 color: "white",
                 border: "2px solid white",
                 "&:hover": {

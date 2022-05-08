@@ -85,12 +85,12 @@ export default function App() {
       {
         label: "Spirit",
         data: [92, 70, 55, 39, 36, 33, 25, 21, 10],
-        backgroundColor: "rgb(201, 104, 214)",
+        backgroundColor: "rgba(87,24,146,0.8)",
       },
       {
         label: "Beer",
         data: [8, 30, 45, 61, 64, 67, 75, 79, 90],
-        backgroundColor: "rgb(249, 252, 159)",
+        backgroundColor: "rgba(200,200,200,0.8)",
       },
     ],
   };

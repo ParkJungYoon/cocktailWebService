@@ -48,7 +48,7 @@ class BoardModel {
   };
 
   static updateUserBoard = async ({ userId }) => {
-    let board = await this.userBordList({ userId }).lean();
+    let board = await this.userBordList({ userId });
     if (board) {
       board = await Board.updateMany(
         { writer: userId },

@@ -3,8 +3,8 @@ import { Container, Button, LinearProgress, Typography } from "@mui/material";
 
 const MbtiAnswer = (props) => {
   const btnStyle = {
-    py: 3,
-    mt: 3,
+    py: 2,
+    mt: 2,
     mx: "auto",
     width: "70vw",
     border: "3px solid gray",

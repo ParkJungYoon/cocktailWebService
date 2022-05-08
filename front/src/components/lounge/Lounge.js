@@ -32,7 +32,7 @@ function Lounge() {
             "0 0 42px #ff0, 0 0 82px #ff0, 0 0 92px #ff0, 0 0 102px #ff0, 0 0 151px #ff0",
         }}
       >
-        <Typography variant="h4" align="center" sx={{}}>
+        <Typography variant="h3" align="center">
           Lounge
         </Typography>
       </Box>

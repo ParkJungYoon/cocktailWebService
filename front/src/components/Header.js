@@ -86,7 +86,7 @@ function Header({ user }) {
   const handleRegisterClose = () => setOpenRegister(false);
 
   //style
-  const linkTabstyle = { width: "130px" };
+  const linkTabstyle = { minWidth: "100px", width: "12vw", maxWidth: "200px" };
   const paperPropsStyle = {
     elevation: 0,
     sx: {

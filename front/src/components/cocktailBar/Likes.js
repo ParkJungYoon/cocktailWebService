@@ -6,6 +6,7 @@ import Loader from "./Loader";
 import LikeSortButton from "./LikeSortButton";
 import useUserHook from "../commons/useUserHook";
 import LikeCardItem from "./LikeCardItem";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 function Likes() {
   // state
@@ -70,15 +71,33 @@ function Likes() {
           <LikeSortButton cocktails={cocktails} setCocktails={setCocktails} />
         </Grid>
       </Grid>
+
       <Grid container spacing={1} sx={{ pt: 3, px: 20, mx: "auto" }}>
-        {cocktails.map((cocktail, i) => {
-          return (
-            <Grid key={i} item xs>
-              <LikeCardItem cocktail={cocktail} />
-            </Grid>
-          );
-        })}
-        {load && <Loader />}
+        {load ? (
+          <Loader />
+        ) : cocktails.length === 0 ? (
+          <Container
+            sx={{
+              mt: 5,
+              py: 5,
+            }}
+          >
+            <Typography variant="h4" align="center" sx={{ color: "darkgray" }}>
+              칵테일에 <FavoriteIcon sx={{ color: "#ff3897" }} />를
+            </Typography>
+            <Typography variant="h4" align="center" sx={{ color: "darkgray" }}>
+              눌러주세요
+            </Typography>
+          </Container>
+        ) : (
+          cocktails.map((cocktail, i) => {
+            return (
+              <Grid key={i} item xs>
+                <LikeCardItem cocktail={cocktail} />
+              </Grid>
+            );
+          })
+        )}
         {!userState.user && load && (
           <Container>
             <Typography align="center" sx={{ color: "white", mt: 5 }}>
