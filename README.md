@@ -31,7 +31,7 @@
 
 - 나라별 맥주 대비 칵테일 소비량 비교 그래프
 
-<img src='https://user-images.githubusercontent.com/97580782/167986752-9ad5503a-9b92-4b5d-ac32-f725d7611b49.png' width=550px>
+<img src='https://user-images.githubusercontent.com/97580782/167986752-9ad5503a-9b92-4b5d-ac32-f725d7611b49.png' width=700px>
 
 </details>
 
@@ -76,7 +76,7 @@
 
 ### 1) 딕셔너리 형태의 칵테일 정보 제공
 
-<img src='https://user-images.githubusercontent.com/97580782/167991366-60dcf0bd-a210-4f23-8bbb-9b0045ed697e.png'>
+<img src='https://user-images.githubusercontent.com/97580782/167991366-60dcf0bd-a210-4f23-8bbb-9b0045ed697e.png' width=700px>
 
 <details><summary>자세한 설명 보기</summary>
 
@@ -89,11 +89,9 @@
   1. mongoose의 .sort와 search를 사용
   2. 정렬 후 페이지네이션 형태로 제공
 
-<img src="https://user-images.githubusercontent.com/97580782/167992355-140fe747-aace-4a66-8fa5-53a0eaedafd2.png">
+<img src="https://user-images.githubusercontent.com/97580782/167992355-140fe747-aace-4a66-8fa5-53a0eaedafd2.png"  width=700px>
 
 - 무한 스크롤
-
-<img src='https://user-images.githubusercontent.com/97580782/167992524-a647d2b4-117c-4824-9861-41a6556171dd.png'>
 
 </details>
 
@@ -101,16 +99,16 @@
 
 | Top10                                                                                                                         | 자세한 설명                                                                                                                   |
 | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| <img src='https://user-images.githubusercontent.com/97580782/167993216-60dc277a-67a5-4868-bfe8-3c5aa45adc8f.png' width=500px> | <img src='https://user-images.githubusercontent.com/97580782/167993814-7bb9ec8a-da8a-43df-8833-1632ddaa01d6.png' width=500px> |
+| <img src='https://user-images.githubusercontent.com/97580782/167993216-60dc277a-67a5-4868-bfe8-3c5aa45adc8f.png' width=250px> | <img src='https://user-images.githubusercontent.com/97580782/167993814-7bb9ec8a-da8a-43df-8833-1632ddaa01d6.png' width=250px> |
 
 ### 3) MBTI 별 칵테일 추천
 
 - MBTI 테스트 후 유저에게 대표 칵테일 추천
 - 대표 칵테일에 대한 정보 및 소셜미디어 공유용 사이트 링크 제공
 
-<img src='https://user-images.githubusercontent.com/97580782/167994260-7463250c-ce5f-4379-b11e-ce60d2f40248.png'>
+<img src='https://user-images.githubusercontent.com/97580782/167994260-7463250c-ce5f-4379-b11e-ce60d2f40248.png' width=700px>
 
-<img src='https://user-images.githubusercontent.com/97580782/167994963-bb79351b-f3dc-4e92-a5f7-3ddfc312d84f.png'>
+<img src='https://user-images.githubusercontent.com/97580782/167994963-bb79351b-f3dc-4e92-a5f7-3ddfc312d84f.png' width=700px>
 
 <br>
 
@@ -151,7 +149,7 @@
 
 ### 📎 기술 스택
 
-<img src='https://user-images.githubusercontent.com/97580782/167986507-cdddae5f-5f5c-435c-9b68-59b50abac2a9.png' width=550px>
+<img src='https://user-images.githubusercontent.com/97580782/167986507-cdddae5f-5f5c-435c-9b68-59b50abac2a9.png' width=600px>
 
 1. Front-End : SCSS, React
 2. Back-End : NodeJS, MongoDB, Express
@@ -189,7 +187,7 @@ Data Analysis
 
 ### 📌 프로젝트 구조도
 
-<img src='https://user-images.githubusercontent.com/97580782/167986510-9b64299d-0f80-4c9c-98c3-7db4b90bdd77.png' width=550px>
+<img src='https://user-images.githubusercontent.com/97580782/167986510-9b64299d-0f80-4c9c-98c3-7db4b90bdd77.png' width=600px>
 
 <br>
 
@@ -239,3 +237,4 @@ Data Analysis
 ## 7. FAQ
 
 - 자주 받는 질문 정리
+
