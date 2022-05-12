@@ -3,7 +3,6 @@
 ### 칵린이들을 위한 칵테일 소개 및 추천 서비스
 
 <br>
-<br>
 
 ## 1. 프로젝트 소개
 
@@ -42,8 +41,6 @@
 
 > **칵테일은 술과 여러 종류의 음료, 첨가물 등을 섞어 만든 혼합주를 일컫는다**
 
-> **칵테일(Cocktail)이란, 술에다 탄산음료, 과즙 등의 부재료를 혼합하여 만든 음료의 총칭이다. (대한 칵테일조주협회)**
-
 소맥, 꿀주, 링겔주 등등...
 
 사실 우리는 그동안 알게 모르게 칵테일을 마셔왔습니다.
@@ -56,22 +53,38 @@
 
 따라서 우리는 **칵린이들을 위한 칵테일을 소개해주는 서비스**를 만들고자 합니다.
 
+### 📊 활용 데이터 셋
+
+#### 1. [Cocktails (Hotaling & Co.)](https://www.kaggle.com/datasets/shuyangli94/cocktails-hotaling-co)
+
+- 칵테일 정보 데이터( 제작자, 재료 )
+- 이유 : 칵테일에 대한 상세한 정보를 전달하기 위해 데이터를 선택
+
+#### 2. [Cocktail Popularity](https://www.kaggle.com/datasets/laurinbrechter/cocktail-popularity)
+
+- 칵테일 인기 순위 ( 연도별, 월별 )
+- 이유 : 칵테일에 대해 생소한 유저들이 칵테일을 쉽게 접할 수 있도록 과거 가장 인기 있었던 칵테일에 대한 정보를 전달하기 위해 데이터를 선택
+
+#### 3. [Alcohol Comsumption around the World](https://www.kaggle.com/datasets/codebreaker619/alcohol-comsumption-around-the-world)
+
+- 나라 별 알코올 소비 비율(beer, wine, sprit(칵테일))
+- 이유 : 칵테일이라는 술이 이미 대중적으로 소비되고 있으며 충분히 매력적인 것임을 증명하기 위해 데이터를 선택
+
 <br>
 
-## 3. 프로젝트 기능 설명
+## 3. 서비스 기능 소개
 
-**웹서비스의 유용성, 편의성 및 시각화의 실용성에 대한 설명**
-
-- 주요 기능 (주된 활용성) 및 서브 기능
-- 프로젝트만의 차별점, 기대 효과
+### 메인 기능
 
 ## 4. 프로젝트 구성도
 
-### 📑 와이어프레임/스토리보드 추가
+### 📑 와이어프레임
 
-### 기술 스택
+[figma](https://www.figma.com/file/NXgYyU9V2scU1c1P2RrhDZ/%EC%A0%80%EC%AA%BD-%EC%86%90%EB%8B%98%EA%BB%98%EC%84%9C-%EB%B3%B4%EB%82%B4%EC%8B%A0%EA%B2%81%EB%8B%88%EB%8B%A4?node-id=0%3A1)
 
-### 프로젝트 구조도
+### 📎 기술 스택
+
+### 📌 프로젝트 구조도
 
 <br>
 
